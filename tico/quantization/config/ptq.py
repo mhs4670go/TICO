@@ -40,6 +40,16 @@ class PTQConfig(BaseConfig):
         Fallback quantization scheme (per-tensor / per-channel,
         asymmetric / symmetric) for observers that DO NOT receive an explicit
         override.
+    wrapper_variant : str
+        Execution specialization used when resolving quant wrappers.
+
+        Typical values:
+            - "prefill" : full-sequence execution
+            - "decode"  : single-token autoregressive decoding
+
+        The variant propagates automatically to child configurations,
+        allowing entire model subgraphs to switch execution mode
+        consistently.
     overrides : Mapping[str, Mapping[str, Any]]
         Two-level mapping of scopes → observer-kwargs.
 
@@ -61,6 +71,7 @@ class PTQConfig(BaseConfig):
         default_dtype   = DType.uint(8),
         default_qscheme  = QScheme.PER_TENSOR_SYMM,        # <- global scheme
         default_observer = PercentileObserver,             # <- global algorithm
+        wrapper_variant = "prefill",
         overrides={
             # local override: input observer now MinMax & 4-bit, per-channel asymmetric
             "act_in": {"observer": MinMaxObserver,
@@ -74,6 +85,7 @@ class PTQConfig(BaseConfig):
     default_dtype: DType = DType.uint(8)
     default_observer: Type[ObserverBase] = MinMaxObserver  # type: ignore[type-abstract]
     default_qscheme: QScheme = QScheme.PER_TENSOR_ASYMM
+    wrapper_variant: str = "prefill"
     overrides: Mapping[str, Mapping[str, Any]] = field(default_factory=dict)
     # If True, any module that cannot be wrapped will raise.
     strict_wrap: bool = True

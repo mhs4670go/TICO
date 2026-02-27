@@ -27,6 +27,27 @@ class PTQWrapper(QuantModuleBase):
 
     It is itself a QuantModuleBase so composite wrappers can treat
      it exactly like any other quant module.
+
+    Variant-Aware Wrapping
+    ----------------------
+    Wrapper selection depends on the execution "variant"
+    specified in PTQConfig:
+
+        PTQConfig(wrapper_variant="prefill")
+        PTQConfig(wrapper_variant="decode")
+
+    This enables exporting multiple accelerator-specialized
+    graphs from the same FP model without modifying user code.
+
+    Example
+    -------
+        prepare(layer, PTQConfig(wrapper_variant="decode"))
+
+    will automatically select:
+
+        QuantLlamaAttentionDecode
+    instead of:
+        QuantLlamaAttentionPrefill
     """
 
     def __init__(
@@ -37,7 +58,8 @@ class PTQWrapper(QuantModuleBase):
         fp_name: Optional[str] = None,
     ):
         super().__init__(qcfg)
-        wrapped_cls = lookup(type(module))
+        variant = getattr(qcfg, "wrapper_variant", "prefill") if qcfg else "prefill"
+        wrapped_cls = lookup(type(module), variant=variant)
         if wrapped_cls is None:
             raise NotImplementedError(f"No quant wrapper for {type(module).__name__}")
         self.wrapped: QuantModuleBase = wrapped_cls(module, qcfg=qcfg, fp_name=fp_name)  # type: ignore[arg-type, misc]
