@@ -123,6 +123,7 @@ class PTQConfig(BaseConfig):
             self.default_dtype,
             self.default_observer,
             default_qscheme=self.default_qscheme,
+            wrapper_variant=self.wrapper_variant,
             overrides=sub_overrides,
             strict_wrap=self.strict_wrap,
         )

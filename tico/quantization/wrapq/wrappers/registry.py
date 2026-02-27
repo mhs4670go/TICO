@@ -55,7 +55,9 @@ _CORE_MODULES = (
     "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm",
     ## llama ##
     "tico.quantization.wrapq.wrappers.llama.quant_attn_prefill",
+    "tico.quantization.wrapq.wrappers.llama.quant_attn_decode",
     "tico.quantization.wrapq.wrappers.llama.quant_decoder_layer_prefill",
+    "tico.quantization.wrapq.wrappers.llama.quant_decoder_layer_decode",
     "tico.quantization.wrapq.wrappers.llama.quant_mlp",
     "tico.quantization.wrapq.wrappers.llama.quant_model",
     ## fairseq ##
