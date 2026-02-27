@@ -90,6 +90,12 @@ class QuantLlamaDecoderLayerDecode(QuantModuleBase):
         input_ln_cfg = qcfg.child("input_layernorm") if qcfg else None
         post_ln_cfg = qcfg.child("post_attention_layernorm") if qcfg else None
 
+        # Force decode variant for children when config exists
+        if attn_cfg is None:
+            attn_cfg = PTQConfig(wrapper_variant="decode", strict_wrap=True)
+        else:
+            attn_cfg.wrapper_variant = "decode"
+
         # Quantized sub-modules ---------------------------------------------
         assert hasattr(fp_layer, "self_attn") and isinstance(
             fp_layer.self_attn, nn.Module
