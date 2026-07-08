@@ -103,7 +103,7 @@ def _weight_dtype_from_bits(bits: int) -> DType:
 
 
 # Hardcoded dataset settings
-DATASET_NAME = "wikitext"
+DATASET_NAME = "Salesforce/wikitext"
 DATASET_CONFIG = "wikitext-2-raw-v1"
 TRAIN_SPLIT = "train"
 TEST_SPLIT = "test"
@@ -1037,13 +1037,14 @@ def get_sensitivities_info_name(model, dataset, seed, n_samples):
     Build a filename for stored sensitivity calibration results.
     """
     model_name = model.config.name_or_path.replace("/", "_")
+    dataset_name = dataset.replace("/", "_")
 
     name = (
         "."
         + "/sensitivities_for_"
         + model_name
         + "_"
-        + dataset
+        + dataset_name
         + "_"
         + str(n_samples)
         + "_"
@@ -1053,11 +1054,12 @@ def get_sensitivities_info_name(model, dataset, seed, n_samples):
     return name
 
 
-def get_ptq_model_name(model, args):
+def get_ptq_model_name(model, dataset, args):
     """
     Build a filename for a saved PTQ checkpoint.
     """
     model_name = model.config.name_or_path.replace("/", "_")
+    dataset_name = dataset.replace("/", "_")
 
     name = (
         f"PTQ_{model_name}_"
@@ -1393,7 +1395,7 @@ def save_requested_artifacts(q_m, tokenizer, calib_inputs, args) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if should_save(args, "ptq_checkpoint"):
-        save_path = output_dir / get_ptq_model_name(q_m.wrapped, args)
+        save_path = output_dir / get_ptq_model_name(q_m.wrapped, DATASET_NAME, args)
         print(f"Saving PTQ checkpoint to {save_path.resolve()}")
         torch.save(q_m, save_path)
 
