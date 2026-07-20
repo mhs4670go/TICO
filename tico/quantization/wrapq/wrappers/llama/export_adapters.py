@@ -277,7 +277,7 @@ class LlamaAttentionDecodeExportAdapter(nn.Module):
     Return contract
     ---------------
     - return_kv=True:
-        (hidden_states, (new_key, new_value))
+        (hidden_states, new_key, new_value)
       where new_key/new_value are the KV delta for the current token.
 
     - return_kv=False:
@@ -334,6 +334,7 @@ class LlamaDecoderLayerPrefillExportAdapter(nn.Module):
     def __init__(self, wrapped, *, return_kv: bool = True):
         super().__init__()
         self.wrapped = wrapped
+        # TODO: Replace this shared-state mutation with a per-call return-type override.
         self.wrapped.return_type = "tuple"
         self.return_kv = return_kv
 
@@ -369,21 +370,26 @@ class LlamaDecoderLayerPrefillExportAdapter(nn.Module):
 
 class LlamaDecoderLayerDecodeExportAdapter(nn.Module):
     """
-    Export adapter for decode.
+    Export adapter for cache-aware decoder-layer execution.
+
+    The adapter is query-length agnostic. Single-token decode uses `Q = 1`,
+    while append-prefill uses a fixed multi-token block `Q > 1`. In both cases,
+    the runtime supplies static attention masks, RoPE position embeddings, and
+    past-cache tensors.
 
     Input contract
     --------------
-    - hidden_states:     (B, 1, D)
-    - attention_mask:    additive mask, typically (B, 1, K)
+    - hidden_states:     (B, Q, D)
+    - attention_mask:    additive mask, typically (B, Q, K)
     - past_key / past_value:
-                        (B, num_kv_heads, K-1, head_dim)
-    - cos / sin:         (B, 1, head_dim)
+                        (B, num_kv_heads, K-Q, head_dim)
+    - cos / sin:         (B, Q, head_dim)
 
     Return contract
     ---------------
     - return_kv=True:
         (hidden_states, new_key, new_value)
-      where new_key/new_value are the delta KV for the current token.
+      where new_key/new_value are the delta KV tensors for the current block.
 
     - return_kv=False:
         hidden_states
@@ -404,7 +410,7 @@ class LlamaDecoderLayerDecodeExportAdapter(nn.Module):
         **kwargs,
     ):
         """
-        Run the decoder layer decode path and return delta-only K/V tensors
+        Run a cache-aware decoder-layer block and return delta-only K/V tensors
         when caching is enabled.
         """
         outputs = self.wrapped(

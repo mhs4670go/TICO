@@ -389,6 +389,6 @@ class QuantLlamaDecoderLayer(QuantModuleBase):
         """
         if mode == "prefill":
             return LlamaDecoderLayerPrefillExportAdapter(self, return_kv=return_kv)
-        if mode == "decode":
+        if mode in ("decode", "append_prefill"):
             return LlamaDecoderLayerDecodeExportAdapter(self, return_kv=return_kv)
         raise ValueError(f"Unsupported export mode: {mode!r}")
