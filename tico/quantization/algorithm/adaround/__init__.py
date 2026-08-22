@@ -14,6 +14,15 @@
 
 """Validation-aware AdaRound and joint learnable-scale Conv reconstruction."""
 
+from tico.quantization.algorithm.adaround.global_refinement import (
+    CheckpointInitializedScaleAdaRoundQuantizer,
+    GlobalAdaRoundWeightSet,
+    GlobalRefinementWeightStatistics,
+    GlobalWeightRefinementCheckpoint,
+    GlobalWeightRefinementConfig,
+    GlobalWeightRefinementResult,
+    GlobalWeightRefinementRunner,
+)
 from tico.quantization.algorithm.adaround.joint import (
     JointAdaRoundWeightGroup,
     JointAdaRoundWeightSet,
@@ -49,6 +58,13 @@ __all__ = [
     "AdaRoundWeightQuantizer",
     "AdaRoundWeightSet",
     "AdaRoundWeightStatistics",
+    "CheckpointInitializedScaleAdaRoundQuantizer",
+    "GlobalAdaRoundWeightSet",
+    "GlobalRefinementWeightStatistics",
+    "GlobalWeightRefinementCheckpoint",
+    "GlobalWeightRefinementConfig",
+    "GlobalWeightRefinementResult",
+    "GlobalWeightRefinementRunner",
     "JointAdaRoundCheckpoint",
     "JointAdaRoundConfig",
     "JointAdaRoundObjective",
