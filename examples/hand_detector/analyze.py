@@ -25,6 +25,7 @@ from examples.hand_detector import (
     adaround as adaround_cli,
     block_reconstruction as block_reconstruction_cli,
     conditional_weight_sensitivity as conditional_weight_sensitivity_cli,
+    discrete_code_refinement as discrete_code_refinement_cli,
     global_weight_refinement as global_weight_refinement_cli,
     joint_adaround as joint_adaround_cli,
     precision_ablation as precision_ablation_cli,
@@ -228,6 +229,7 @@ def parse_args() -> argparse.Namespace:
 
     block_reconstruction_cli.add_subparser(subparsers)
     conditional_weight_sensitivity_cli.add_subparser(subparsers)
+    discrete_code_refinement_cli.add_subparser(subparsers)
     global_weight_refinement_cli.add_subparser(subparsers)
     joint_adaround_cli.add_subparser(subparsers)
     adaround_cli.add_subparser(subparsers)
@@ -356,6 +358,8 @@ def main() -> None:
         block_reconstruction_cli.run(args)
     elif args.command == "conditional-weight-sensitivity":
         conditional_weight_sensitivity_cli.run(args)
+    elif args.command == "discrete-code-refinement":
+        discrete_code_refinement_cli.run(args)
     elif args.command == "global-weight-refinement":
         global_weight_refinement_cli.run(args)
     elif args.command == "joint-dwpw-adaround":

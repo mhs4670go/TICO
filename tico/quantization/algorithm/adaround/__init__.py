@@ -14,6 +14,20 @@
 
 """Validation-aware AdaRound and joint learnable-scale Conv reconstruction."""
 
+from tico.quantization.algorithm.adaround.discrete_refinement import (
+    DiscreteCodeCandidate,
+    DiscreteCodeFinalChange,
+    DiscreteCodeGradientStatistics,
+    DiscreteCodeProposalEvaluation,
+    DiscreteCodeRefinementConfig,
+    DiscreteCodeRefinementResult,
+    DiscreteCodeRefinementRunner,
+    DiscreteCodeRoundResult,
+    DiscreteCodeTransitionSummary,
+    DiscreteCodeWeightSet,
+    DiscreteCodeWeightStatistics,
+    FixedScaleCodeObserver,
+)
 from tico.quantization.algorithm.adaround.global_refinement import (
     CheckpointInitializedScaleAdaRoundQuantizer,
     GlobalAdaRoundWeightSet,
@@ -62,6 +76,18 @@ __all__ = [
     "AdaRoundWeightSet",
     "AdaRoundWeightStatistics",
     "CheckpointInitializedScaleAdaRoundQuantizer",
+    "DiscreteCodeCandidate",
+    "DiscreteCodeFinalChange",
+    "DiscreteCodeGradientStatistics",
+    "DiscreteCodeProposalEvaluation",
+    "DiscreteCodeRefinementConfig",
+    "DiscreteCodeRefinementResult",
+    "DiscreteCodeRefinementRunner",
+    "DiscreteCodeRoundResult",
+    "DiscreteCodeTransitionSummary",
+    "DiscreteCodeWeightSet",
+    "DiscreteCodeWeightStatistics",
+    "FixedScaleCodeObserver",
     "GlobalAdaRoundWeightSet",
     "GlobalRefinementFlipBudgetStatistics",
     "GlobalRefinementHardStateStatistics",
