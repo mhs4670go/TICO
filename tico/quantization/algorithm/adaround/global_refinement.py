@@ -52,6 +52,34 @@ MetricsEvaluator = Callable[[], OutputMetrics]
 ProgressCallback = Callable[["GlobalWeightRefinementCheckpoint"], None]
 
 
+_ALPHA_ABSOLUTE_HISTOGRAM_EDGES = (
+    1.0e-4,
+    1.0e-3,
+    1.0e-2,
+    5.0e-2,
+    1.0e-1,
+    2.5e-1,
+    5.0e-1,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+)
+_ALPHA_GRADIENT_ABSOLUTE_HISTOGRAM_EDGES = (
+    1.0e-12,
+    1.0e-10,
+    1.0e-8,
+    1.0e-7,
+    1.0e-6,
+    1.0e-5,
+    1.0e-4,
+    1.0e-3,
+    1.0e-2,
+    1.0e-1,
+    1.0,
+)
+
+
 @dataclass(frozen=True)
 class GlobalRefinementWeightStatistics:
     """Summarize one globally refined Conv weight tensor."""
@@ -115,6 +143,71 @@ class GlobalRefinementHardStateStatistics:
         }
 
 
+@dataclass(frozen=True)
+class GlobalRefinementTensorHistogram:
+    """Summarize one absolute-value tensor distribution."""
+
+    count: int
+    finite_count: int
+    nonfinite_count: int
+    zero_count: int
+    minimum: float | None
+    percentile_01: float | None
+    percentile_10: float | None
+    percentile_25: float | None
+    percentile_50: float | None
+    percentile_75: float | None
+    percentile_90: float | None
+    percentile_99: float | None
+    maximum: float | None
+    mean: float | None
+    histogram_edges: tuple[float, ...]
+    histogram_counts: tuple[int, ...]
+
+    @property
+    def zero_ratio(self) -> float:
+        return self.zero_count / max(self.finite_count, 1)
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "count": self.count,
+            "finite_count": self.finite_count,
+            "nonfinite_count": self.nonfinite_count,
+            "zero_count": self.zero_count,
+            "zero_ratio": self.zero_ratio,
+            "minimum": self.minimum,
+            "percentile_01": self.percentile_01,
+            "percentile_10": self.percentile_10,
+            "percentile_25": self.percentile_25,
+            "percentile_50": self.percentile_50,
+            "percentile_75": self.percentile_75,
+            "percentile_90": self.percentile_90,
+            "percentile_99": self.percentile_99,
+            "maximum": self.maximum,
+            "mean": self.mean,
+            "histogram_edges": list(self.histogram_edges),
+            "histogram_counts": list(self.histogram_counts),
+        }
+
+
+@dataclass(frozen=True)
+class GlobalRefinementFlipBudgetStatistics:
+    """Record projection performed by one checkpoint flip budget."""
+
+    budget: int | None
+    before_count: int
+    after_count: int
+    projected_count: int
+
+    def to_dict(self) -> dict[str, int | None]:
+        return {
+            "budget": self.budget,
+            "before_count": self.before_count,
+            "after_count": self.after_count,
+            "projected_count": self.projected_count,
+        }
+
+
 class CheckpointInitializedScaleAdaRoundQuantizer(
     LearnableScaleAdaRoundWeightQuantizer
 ):
@@ -139,6 +232,8 @@ class CheckpointInitializedScaleAdaRoundQuantizer(
         initialization_epsilon: float,
         max_scale_ratio: float,
         checkpoint_alpha_minimum_magnitude: float = 1.5,
+        checkpoint_alpha_initialization: str = "preserve",
+        checkpoint_alpha_initial_magnitude: float = 0.05,
     ) -> None:
         if (
             not math.isfinite(checkpoint_alpha_minimum_magnitude)
@@ -147,8 +242,23 @@ class CheckpointInitializedScaleAdaRoundQuantizer(
             raise ValueError(
                 "checkpoint_alpha_minimum_magnitude must be finite and positive."
             )
+        if checkpoint_alpha_initialization not in {"preserve", "constant"}:
+            raise ValueError(
+                "checkpoint_alpha_initialization must be 'preserve' or " "'constant'."
+            )
+        if (
+            not math.isfinite(checkpoint_alpha_initial_magnitude)
+            or checkpoint_alpha_initial_magnitude <= 0.0
+        ):
+            raise ValueError(
+                "checkpoint_alpha_initial_magnitude must be finite and positive."
+            )
         self.checkpoint_alpha_minimum_magnitude = float(
             checkpoint_alpha_minimum_magnitude
+        )
+        self.checkpoint_alpha_initialization = checkpoint_alpha_initialization
+        self.checkpoint_alpha_initial_magnitude = float(
+            checkpoint_alpha_initial_magnitude
         )
         super().__init__(
             original,
@@ -334,6 +444,15 @@ class CheckpointInitializedScaleAdaRoundQuantizer(
         changed = changed & self._checkpoint_decision_mask
         return int(changed.sum().cpu().item())
 
+    def checkpoint_flip_mask(self) -> torch.Tensor:
+        """Return decisions whose current hard sign differs from the checkpoint."""
+        current = self.hard_rounding().detach().to(torch.bool)
+        return (current != self._checkpoint_round_up) & self._checkpoint_decision_mask
+
+    def checkpoint_signed_alpha(self) -> torch.Tensor:
+        """Return alpha signed positive toward the checkpoint decision."""
+        return self._checkpoint_rounding_sign * self.alpha
+
     def _initialize_alpha_from_codes(self, codes: torch.Tensor) -> None:
         scale, zero_point = self.compute_qparams()
         scale_broadcast, zero_point_broadcast = _broadcast_qparams(
@@ -393,13 +512,19 @@ class CheckpointInitializedScaleAdaRoundQuantizer(
 
         with torch.no_grad():
             alpha = self.alpha
-            magnitude = torch.maximum(
-                alpha.abs(),
-                alpha.new_full(
+            if self.checkpoint_alpha_initialization == "constant":
+                magnitude = alpha.new_full(
                     (),
-                    self.checkpoint_alpha_minimum_magnitude,
-                ),
-            )
+                    self.checkpoint_alpha_initial_magnitude,
+                )
+            else:
+                magnitude = torch.maximum(
+                    alpha.abs(),
+                    alpha.new_full(
+                        (),
+                        self.checkpoint_alpha_minimum_magnitude,
+                    ),
+                )
             signed = torch.where(checkpoint_round_up, magnitude, -magnitude)
             alpha.copy_(torch.where(decision_mask, signed, alpha))
 
@@ -434,6 +559,8 @@ class GlobalAdaRoundWeightSet:
         initialization_epsilon: float,
         max_scale_ratio: float,
         checkpoint_alpha_minimum_magnitude: float = 1.5,
+        checkpoint_alpha_initialization: str = "preserve",
+        checkpoint_alpha_initial_magnitude: float = 0.05,
     ) -> None:
         definitions = tuple(groups)
         _validate_groups(definitions, source_weights)
@@ -456,6 +583,10 @@ class GlobalAdaRoundWeightSet:
                     max_scale_ratio=max_scale_ratio,
                     checkpoint_alpha_minimum_magnitude=(
                         checkpoint_alpha_minimum_magnitude
+                    ),
+                    checkpoint_alpha_initialization=(checkpoint_alpha_initialization),
+                    checkpoint_alpha_initial_magnitude=(
+                        checkpoint_alpha_initial_magnitude
                     ),
                 )
                 _replace_observer_attributes(
@@ -485,8 +616,19 @@ class GlobalAdaRoundWeightSet:
     def scale_parameters(self) -> tuple[nn.Parameter, ...]:
         return tuple(binding.proxy.raw_log_scale_delta for binding in self.bindings)
 
-    def trainable_parameters(self) -> tuple[nn.Parameter, ...]:
-        return (*self.alpha_parameters(), *self.scale_parameters())
+    def trainable_parameters(
+        self,
+        *,
+        include_scale: bool = True,
+    ) -> tuple[nn.Parameter, ...]:
+        if include_scale:
+            return (*self.alpha_parameters(), *self.scale_parameters())
+        return self.alpha_parameters()
+
+    def set_scale_trainable(self, enabled: bool) -> None:
+        """Enable or disable scale gradients for a true fixed-scale run."""
+        for parameter in self.scale_parameters():
+            parameter.requires_grad_(bool(enabled))
 
     def set_hard(self, hard: bool) -> None:
         for binding in self.bindings:
@@ -575,6 +717,93 @@ class GlobalAdaRoundWeightSet:
         if not weighted:
             return self.bindings[0].proxy.alpha.new_zeros(())
         return torch.stack(weighted).sum() / max(total, 1)
+
+    def alpha_absolute_histogram(self) -> GlobalRefinementTensorHistogram:
+        return _absolute_tensor_histogram(
+            self.alpha_parameters(),
+            edges=_ALPHA_ABSOLUTE_HISTOGRAM_EDGES,
+        )
+
+    def alpha_gradient_absolute_histogram(
+        self,
+    ) -> GlobalRefinementTensorHistogram:
+        gradients = tuple(
+            parameter.grad
+            for parameter in self.alpha_parameters()
+            if parameter.grad is not None
+        )
+        return _absolute_tensor_histogram(
+            gradients,
+            edges=_ALPHA_GRADIENT_ABSOLUTE_HISTOGRAM_EDGES,
+        )
+
+    def enforce_checkpoint_flip_budget(
+        self,
+        budget: int | None,
+        *,
+        projection_margin: float,
+    ) -> GlobalRefinementFlipBudgetStatistics:
+        """Keep only the globally strongest checkpoint-decision flips."""
+        if budget is not None and budget < 0:
+            raise ValueError("Checkpoint flip budget must be nonnegative or None.")
+        if not math.isfinite(projection_margin) or projection_margin <= 0.0:
+            raise ValueError("Checkpoint flip projection margin must be positive.")
+
+        flip_entries: list[tuple[_GlobalBinding, torch.Tensor, torch.Tensor]] = []
+        confidence_values: list[torch.Tensor] = []
+        for binding in self.bindings:
+            proxy = binding.proxy
+            mask = proxy.checkpoint_flip_mask().flatten()
+            indices = torch.nonzero(mask, as_tuple=False).flatten()
+            if indices.numel() == 0:
+                continue
+            signed = proxy.checkpoint_signed_alpha().detach().flatten()
+            confidence = (-signed[indices]).clamp_min(0.0)
+            flip_entries.append((binding, indices, confidence))
+            confidence_values.append(confidence)
+
+        before = sum(int(values.numel()) for values in confidence_values)
+        if budget is None or before <= budget:
+            return GlobalRefinementFlipBudgetStatistics(
+                budget=budget,
+                before_count=before,
+                after_count=before,
+                projected_count=0,
+            )
+
+        all_confidence = torch.cat(confidence_values)
+        keep = torch.zeros_like(all_confidence, dtype=torch.bool)
+        if budget > 0:
+            selected = torch.topk(
+                all_confidence,
+                k=budget,
+                largest=True,
+                sorted=False,
+            ).indices
+            keep[selected] = True
+
+        offset = 0
+        with torch.no_grad():
+            for binding, indices, confidence in flip_entries:
+                count = int(confidence.numel())
+                local_keep = keep[offset : offset + count]
+                restore = indices[~local_keep]
+                if restore.numel() != 0:
+                    proxy = binding.proxy
+                    flat_alpha = proxy.alpha.flatten()
+                    flat_sign = proxy._checkpoint_rounding_sign.flatten()
+                    flat_alpha[restore] = flat_sign[restore] * projection_margin
+                offset += count
+
+        after = sum(
+            binding.proxy.checkpoint_sign_flip_count() for binding in self.bindings
+        )
+        return GlobalRefinementFlipBudgetStatistics(
+            budget=budget,
+            before_count=before,
+            after_count=after,
+            projected_count=before - after,
+        )
 
     def hard_state_statistics(self) -> GlobalRefinementHardStateStatistics:
         statistics = self.statistics()
@@ -718,6 +947,12 @@ class GlobalWeightRefinementConfig:
     initialization_epsilon: float = 1.0e-6
     max_scale_ratio: float = 1.25
     checkpoint_alpha_minimum_magnitude: float = 1.5
+    checkpoint_alpha_initialization: str = "preserve"
+    checkpoint_alpha_initial_magnitude: float = 0.05
+    freeze_scale: bool = False
+    training_loss: str = "raw_mae"
+    checkpoint_flip_budget: int | None = None
+    checkpoint_flip_projection_margin: float = 1.0e-4
     checkpoint_anchor_loss_weight: float = 1.0e-2
     checkpoint_anchor_margin: float = 0.5
     checkpoint_anchor_fraction: float = 0.2
@@ -739,7 +974,6 @@ class GlobalWeightRefinementConfig:
             raise ValueError("Primary and auxiliary outputs must differ.")
         for name, value in (
             ("alpha_learning_rate", self.alpha_learning_rate),
-            ("scale_learning_rate", self.scale_learning_rate),
             ("loss_epsilon", self.loss_epsilon),
             ("beta_start", self.beta_start),
             ("beta_end", self.beta_end),
@@ -750,6 +984,40 @@ class GlobalWeightRefinementConfig:
         ):
             if not math.isfinite(value) or value <= 0.0:
                 raise ValueError(f"{name} must be finite and positive.")
+        if not math.isfinite(self.scale_learning_rate) or (
+            self.scale_learning_rate < 0.0
+            if self.freeze_scale
+            else self.scale_learning_rate <= 0.0
+        ):
+            requirement = "nonnegative" if self.freeze_scale else "positive"
+            raise ValueError(f"scale_learning_rate must be finite and {requirement}.")
+        if self.checkpoint_alpha_initialization not in {"preserve", "constant"}:
+            raise ValueError(
+                "checkpoint_alpha_initialization must be 'preserve' or " "'constant'."
+            )
+        if (
+            not math.isfinite(self.checkpoint_alpha_initial_magnitude)
+            or self.checkpoint_alpha_initial_magnitude <= 0.0
+        ):
+            raise ValueError(
+                "checkpoint_alpha_initial_magnitude must be finite and positive."
+            )
+        if self.training_loss not in {"raw_mae", "normalized_l1"}:
+            raise ValueError("training_loss must be 'raw_mae' or 'normalized_l1'.")
+        if self.checkpoint_flip_budget is not None and (
+            not isinstance(self.checkpoint_flip_budget, int)
+            or self.checkpoint_flip_budget < 0
+        ):
+            raise ValueError(
+                "checkpoint_flip_budget must be a nonnegative integer or None."
+            )
+        if (
+            not math.isfinite(self.checkpoint_flip_projection_margin)
+            or self.checkpoint_flip_projection_margin <= 0.0
+        ):
+            raise ValueError(
+                "checkpoint_flip_projection_margin must be finite and positive."
+            )
         for name, value in (
             ("auxiliary_loss_weight", self.auxiliary_loss_weight),
             ("rounding_loss_weight", self.rounding_loss_weight),
@@ -810,6 +1078,9 @@ class GlobalWeightRefinementCheckpoint:
     hard_state_statistics: GlobalRefinementHardStateStatistics | None = None
     train_checkpoint_anchor_loss: float | None = None
     checkpoint_anchor_weight: float | None = None
+    alpha_absolute_histogram: GlobalRefinementTensorHistogram | None = None
+    alpha_gradient_absolute_histogram: (GlobalRefinementTensorHistogram | None) = None
+    flip_budget_statistics: GlobalRefinementFlipBudgetStatistics | None = None
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -831,6 +1102,21 @@ class GlobalWeightRefinementCheckpoint:
             ),
             "train_checkpoint_anchor_loss": (self.train_checkpoint_anchor_loss),
             "checkpoint_anchor_weight": self.checkpoint_anchor_weight,
+            "alpha_absolute_histogram": (
+                self.alpha_absolute_histogram.to_dict()
+                if self.alpha_absolute_histogram is not None
+                else None
+            ),
+            "alpha_gradient_absolute_histogram": (
+                self.alpha_gradient_absolute_histogram.to_dict()
+                if self.alpha_gradient_absolute_histogram is not None
+                else None
+            ),
+            "flip_budget_statistics": (
+                self.flip_budget_statistics.to_dict()
+                if self.flip_budget_statistics is not None
+                else None
+            ),
         }
 
 
@@ -866,6 +1152,8 @@ class GlobalWeightRefinementResult:
     training_checkpoint_anchor_history: tuple[float, ...] = ()
     training_checkpoint_anchor_weight_history: tuple[float, ...] = ()
     training_total_history: tuple[float, ...] = ()
+    training_loss: str = "raw_mae"
+    freeze_scale: bool = False
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -914,6 +1202,8 @@ class GlobalWeightRefinementResult:
                 self.training_checkpoint_anchor_weight_history
             ),
             "training_total_history": list(self.training_total_history),
+            "training_loss": self.training_loss,
+            "freeze_scale": self.freeze_scale,
         }
 
 
@@ -979,6 +1269,12 @@ class GlobalWeightRefinementRunner:
                 checkpoint_alpha_minimum_magnitude=(
                     self.config.checkpoint_alpha_minimum_magnitude
                 ),
+                checkpoint_alpha_initialization=(
+                    self.config.checkpoint_alpha_initialization
+                ),
+                checkpoint_alpha_initial_magnitude=(
+                    self.config.checkpoint_alpha_initial_magnitude
+                ),
             )
             try:
                 weights.set_hard(True)
@@ -991,6 +1287,11 @@ class GlobalWeightRefinementRunner:
                 best_step = 0
                 best_outputs = initialized_selection
                 entry_hard_state = weights.hard_state_statistics()
+                entry_alpha_histogram = weights.alpha_absolute_histogram()
+                entry_flip_budget = weights.enforce_checkpoint_flip_budget(
+                    self.config.checkpoint_flip_budget,
+                    projection_margin=(self.config.checkpoint_flip_projection_margin),
+                )
                 entry_checkpoint = GlobalWeightRefinementCheckpoint(
                     step=0,
                     train_primary_loss=None,
@@ -1006,23 +1307,31 @@ class GlobalWeightRefinementRunner:
                     hard_state_statistics=entry_hard_state,
                     train_checkpoint_anchor_loss=None,
                     checkpoint_anchor_weight=None,
+                    alpha_absolute_histogram=entry_alpha_histogram,
+                    alpha_gradient_absolute_histogram=None,
+                    flip_budget_statistics=entry_flip_budget,
                 )
                 checkpoints = [entry_checkpoint]
                 if progress_callback is not None:
                     progress_callback(entry_checkpoint)
-                optimizer = torch.optim.Adam(
-                    (
-                        {
-                            "params": weights.alpha_parameters(),
-                            "lr": self.config.alpha_learning_rate,
-                        },
+                weights.set_scale_trainable(not self.config.freeze_scale)
+                optimizer_groups: list[dict[str, object]] = [
+                    {
+                        "params": weights.alpha_parameters(),
+                        "lr": self.config.alpha_learning_rate,
+                    }
+                ]
+                if not self.config.freeze_scale:
+                    optimizer_groups.append(
                         {
                             "params": weights.scale_parameters(),
                             "lr": self.config.scale_learning_rate,
-                        },
+                        }
                     )
+                optimizer = torch.optim.Adam(optimizer_groups)
+                parameters = weights.trainable_parameters(
+                    include_scale=not self.config.freeze_scale
                 )
-                parameters = weights.trainable_parameters()
                 primary_history: list[float] = []
                 auxiliary_history: list[float] = []
                 rounding_history: list[float] = []
@@ -1049,14 +1358,16 @@ class GlobalWeightRefinementRunner:
                             device=optimization_device,
                         )
                         outputs = output_adapter(candidate_model(sample))
-                        primary = _normalized_l1(
+                        primary = _output_loss(
                             outputs[self.config.primary_output],
                             target[self.config.primary_output],
+                            kind=self.config.training_loss,
                             epsilon=self.config.loss_epsilon,
                         )
-                        auxiliary = _normalized_l1(
+                        auxiliary = _output_loss(
                             outputs[self.config.auxiliary_output],
                             target[self.config.auxiliary_output],
+                            kind=self.config.training_loss,
                             epsilon=self.config.loss_epsilon,
                         )
                         data_loss = (
@@ -1076,7 +1387,10 @@ class GlobalWeightRefinementRunner:
                         rounding = next(iter(parameters)).new_zeros(())
                     else:
                         rounding = weights.rounding_regularizer(beta)
-                    scale = weights.scale_regularizer()
+                    if self.config.freeze_scale:
+                        scale = next(iter(parameters)).new_zeros(())
+                    else:
+                        scale = weights.scale_regularizer()
                     checkpoint_anchor_weight = self._checkpoint_anchor_weight(step)
                     if checkpoint_anchor_weight == 0.0:
                         checkpoint_anchor = scale.new_zeros(())
@@ -1089,13 +1403,29 @@ class GlobalWeightRefinementRunner:
                         + self.config.scale_loss_weight * scale
                         + checkpoint_anchor_weight * checkpoint_anchor
                     )
-                    regularization.backward()
+                    if regularization.requires_grad:
+                        regularization.backward()
+                    should_evaluate = (
+                        step % self.config.evaluation_interval == 0
+                        or step == self.config.steps
+                    )
+                    alpha_gradient_histogram = (
+                        weights.alpha_gradient_absolute_histogram()
+                        if should_evaluate
+                        else None
+                    )
                     if self.config.gradient_clip_norm is not None:
                         torch.nn.utils.clip_grad_norm_(
                             parameters,
                             self.config.gradient_clip_norm,
                         )
                     optimizer.step()
+                    flip_budget_statistics = weights.enforce_checkpoint_flip_budget(
+                        self.config.checkpoint_flip_budget,
+                        projection_margin=(
+                            self.config.checkpoint_flip_projection_margin
+                        ),
+                    )
 
                     rounding_value = float(rounding.detach().cpu().item())
                     scale_value = float(scale.detach().cpu().item())
@@ -1121,15 +1451,12 @@ class GlobalWeightRefinementRunner:
                     checkpoint_anchor_weight_history.append(checkpoint_anchor_weight)
                     total_history.append(total_value)
 
-                    should_evaluate = (
-                        step % self.config.evaluation_interval == 0
-                        or step == self.config.steps
-                    )
                     if not should_evaluate:
                         continue
                     weights.set_hard(True)
                     candidate_outputs = copy_outputs(selection_evaluator())
                     hard_state = weights.hard_state_statistics()
+                    alpha_histogram = weights.alpha_absolute_histogram()
                     better, reason = selection_objective.better(
                         candidate_outputs,
                         best_outputs,
@@ -1154,6 +1481,9 @@ class GlobalWeightRefinementRunner:
                         hard_state_statistics=hard_state,
                         train_checkpoint_anchor_loss=checkpoint_anchor_value,
                         checkpoint_anchor_weight=checkpoint_anchor_weight,
+                        alpha_absolute_histogram=alpha_histogram,
+                        alpha_gradient_absolute_histogram=(alpha_gradient_histogram),
+                        flip_budget_statistics=flip_budget_statistics,
                     )
                     checkpoints.append(checkpoint)
                     if progress_callback is not None:
@@ -1216,6 +1546,8 @@ class GlobalWeightRefinementRunner:
                 checkpoint_anchor_weight_history
             ),
             training_total_history=tuple(total_history),
+            training_loss=self.config.training_loss,
+            freeze_scale=self.config.freeze_scale,
         )
 
     def _validate_initialization(
@@ -1338,6 +1670,8 @@ def _build_binding(
     initialization_epsilon: float,
     max_scale_ratio: float,
     checkpoint_alpha_minimum_magnitude: float,
+    checkpoint_alpha_initialization: str,
+    checkpoint_alpha_initial_magnitude: float,
 ) -> _GlobalBinding:
     if site.role is not SiteRole.PARAMETER or site.observer_name != "weight":
         raise ValueError(f"Global refinement site {site.path!r} must be a weight site.")
@@ -1388,6 +1722,8 @@ def _build_binding(
         initialization_epsilon=initialization_epsilon,
         max_scale_ratio=max_scale_ratio,
         checkpoint_alpha_minimum_magnitude=(checkpoint_alpha_minimum_magnitude),
+        checkpoint_alpha_initialization=checkpoint_alpha_initialization,
+        checkpoint_alpha_initial_magnitude=(checkpoint_alpha_initial_magnitude),
     )
     return _GlobalBinding(
         group=group,
@@ -1426,20 +1762,134 @@ def _effective_hard_codes(
     )
 
 
+def _raw_mae(
+    candidate: torch.Tensor,
+    reference: torch.Tensor,
+) -> torch.Tensor:
+    _validate_output_shapes(candidate, reference)
+    return (candidate - reference).abs().mean()
+
+
 def _normalized_l1(
     candidate: torch.Tensor,
     reference: torch.Tensor,
     *,
     epsilon: float,
 ) -> torch.Tensor:
+    _validate_output_shapes(candidate, reference)
+    numerator = (candidate - reference).abs().mean()
+    denominator = reference.abs().mean().clamp_min(epsilon)
+    return numerator / denominator
+
+
+def _output_loss(
+    candidate: torch.Tensor,
+    reference: torch.Tensor,
+    *,
+    kind: str,
+    epsilon: float,
+) -> torch.Tensor:
+    if kind == "raw_mae":
+        return _raw_mae(candidate, reference)
+    if kind == "normalized_l1":
+        return _normalized_l1(candidate, reference, epsilon=epsilon)
+    raise ValueError(f"Unsupported global refinement training loss {kind!r}.")
+
+
+def _validate_output_shapes(
+    candidate: torch.Tensor,
+    reference: torch.Tensor,
+) -> None:
     if candidate.shape != reference.shape:
         raise ValueError(
             "Global output shape mismatch: "
             f"{tuple(candidate.shape)} != {tuple(reference.shape)}."
         )
-    numerator = (candidate - reference).abs().mean()
-    denominator = reference.abs().mean().clamp_min(epsilon)
-    return numerator / denominator
+
+
+def _absolute_tensor_histogram(
+    tensors: Sequence[torch.Tensor],
+    *,
+    edges: tuple[float, ...],
+) -> GlobalRefinementTensorHistogram:
+    values = tuple(
+        tensor.detach().reshape(-1).abs().to(dtype=torch.float32)
+        for tensor in tensors
+        if isinstance(tensor, torch.Tensor) and tensor.numel() != 0
+    )
+    empty_counts = tuple(0 for _ in range(len(edges) + 1))
+    if not values:
+        return GlobalRefinementTensorHistogram(
+            count=0,
+            finite_count=0,
+            nonfinite_count=0,
+            zero_count=0,
+            minimum=None,
+            percentile_01=None,
+            percentile_10=None,
+            percentile_25=None,
+            percentile_50=None,
+            percentile_75=None,
+            percentile_90=None,
+            percentile_99=None,
+            maximum=None,
+            mean=None,
+            histogram_edges=edges,
+            histogram_counts=empty_counts,
+        )
+
+    merged = torch.cat(values)
+    finite_mask = torch.isfinite(merged)
+    finite = merged[finite_mask]
+    count = int(merged.numel())
+    finite_count = int(finite.numel())
+    nonfinite_count = count - finite_count
+    if finite_count == 0:
+        return GlobalRefinementTensorHistogram(
+            count=count,
+            finite_count=0,
+            nonfinite_count=nonfinite_count,
+            zero_count=0,
+            minimum=None,
+            percentile_01=None,
+            percentile_10=None,
+            percentile_25=None,
+            percentile_50=None,
+            percentile_75=None,
+            percentile_90=None,
+            percentile_99=None,
+            maximum=None,
+            mean=None,
+            histogram_edges=edges,
+            histogram_counts=empty_counts,
+        )
+
+    quantile_levels = finite.new_tensor([0.01, 0.10, 0.25, 0.50, 0.75, 0.90, 0.99])
+    quantiles = torch.quantile(finite, quantile_levels)
+    boundaries = finite.new_tensor(edges)
+    bucket_indices = torch.bucketize(finite, boundaries, right=True)
+    histogram = torch.bincount(
+        bucket_indices,
+        minlength=len(edges) + 1,
+    )
+    return GlobalRefinementTensorHistogram(
+        count=count,
+        finite_count=finite_count,
+        nonfinite_count=nonfinite_count,
+        zero_count=int((finite == 0).sum().cpu().item()),
+        minimum=float(finite.min().cpu().item()),
+        percentile_01=float(quantiles[0].cpu().item()),
+        percentile_10=float(quantiles[1].cpu().item()),
+        percentile_25=float(quantiles[2].cpu().item()),
+        percentile_50=float(quantiles[3].cpu().item()),
+        percentile_75=float(quantiles[4].cpu().item()),
+        percentile_90=float(quantiles[5].cpu().item()),
+        percentile_99=float(quantiles[6].cpu().item()),
+        maximum=float(finite.max().cpu().item()),
+        mean=float(finite.mean().cpu().item()),
+        histogram_edges=edges,
+        histogram_counts=tuple(int(value) for value in histogram.cpu().tolist()),
+    )
 
 
 def _validate_batch_one(samples: Sequence[torch.Tensor]) -> None:

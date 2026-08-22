@@ -163,10 +163,50 @@ def _add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--zeta", type=float, default=1.1)
     parser.add_argument("--max-scale-ratio", type=float, default=1.25)
     parser.add_argument(
+        "--checkpoint-alpha-initialization",
+        choices=("preserve", "constant"),
+        default="preserve",
+        help=(
+            "Preserve the fractional AdaRound magnitude or reset every "
+            "checkpoint decision to one exact constant magnitude."
+        ),
+    )
+    parser.add_argument(
+        "--checkpoint-alpha-initial-magnitude",
+        type=float,
+        default=0.05,
+        help="Exact |alpha| used by constant checkpoint initialization.",
+    )
+    parser.add_argument(
         "--checkpoint-alpha-minimum-magnitude",
         type=float,
         default=1.5,
         help="Minimum initial |alpha| for checkpoint floor/ceil decisions.",
+    )
+    parser.add_argument(
+        "--freeze-scale",
+        action="store_true",
+        help="Remove scale tensors from autograd and the optimizer.",
+    )
+    parser.add_argument(
+        "--training-loss",
+        choices=("raw-mae", "normalized-l1"),
+        default="raw-mae",
+        help="Teacher loss used by the optimization forward.",
+    )
+    parser.add_argument(
+        "--checkpoint-flip-budget",
+        type=int,
+        help=(
+            "Maximum total checkpoint floor/ceil decisions allowed to flip; "
+            "omit for no projection and use zero to freeze all decisions."
+        ),
+    )
+    parser.add_argument(
+        "--checkpoint-flip-projection-margin",
+        type=float,
+        default=1e-4,
+        help="Signed alpha margin used when projecting excess flips back.",
     )
     parser.add_argument(
         "--checkpoint-anchor-loss-weight",
@@ -283,6 +323,12 @@ def run(args: argparse.Namespace) -> None:
         zeta=args.zeta,
         max_scale_ratio=args.max_scale_ratio,
         checkpoint_alpha_minimum_magnitude=(args.checkpoint_alpha_minimum_magnitude),
+        checkpoint_alpha_initialization=(args.checkpoint_alpha_initialization),
+        checkpoint_alpha_initial_magnitude=(args.checkpoint_alpha_initial_magnitude),
+        freeze_scale=args.freeze_scale,
+        training_loss=args.training_loss.replace("-", "_"),
+        checkpoint_flip_budget=args.checkpoint_flip_budget,
+        checkpoint_flip_projection_margin=(args.checkpoint_flip_projection_margin),
         checkpoint_anchor_loss_weight=args.checkpoint_anchor_loss_weight,
         checkpoint_anchor_margin=args.checkpoint_anchor_margin,
         checkpoint_anchor_fraction=args.checkpoint_anchor_fraction,
@@ -325,6 +371,27 @@ def run(args: argparse.Namespace) -> None:
                 f" scale=[{hard.scale_ratio_minimum:.5f},"
                 f"{hard.scale_ratio_maximum:.5f}]"
                 f" clipped={hard.clipped_code_count}"
+            )
+        alpha = checkpoint.alpha_absolute_histogram
+        if alpha is not None and alpha.percentile_50 is not None:
+            diagnostics += (
+                f" alpha_abs[p50={alpha.percentile_50:.2e},"
+                f"p90={alpha.percentile_90:.2e},"
+                f"p99={alpha.percentile_99:.2e}]"
+            )
+        gradient = checkpoint.alpha_gradient_absolute_histogram
+        if gradient is not None and gradient.percentile_50 is not None:
+            diagnostics += (
+                f" grad_abs[p50={gradient.percentile_50:.2e},"
+                f"p90={gradient.percentile_90:.2e},"
+                f"p99={gradient.percentile_99:.2e},"
+                f"zero={100.0 * gradient.zero_ratio:.1f}%]"
+            )
+        budget = checkpoint.flip_budget_statistics
+        if budget is not None and budget.budget is not None:
+            diagnostics += (
+                f" flip_budget={budget.after_count}/{budget.budget}"
+                f" projected={budget.projected_count}"
             )
         print(
             f"checkpoint step={checkpoint.step:4d} "
@@ -377,8 +444,18 @@ def run(args: argparse.Namespace) -> None:
             "gamma": args.gamma,
             "zeta": args.zeta,
             "max_scale_ratio": args.max_scale_ratio,
+            "checkpoint_alpha_initialization": (args.checkpoint_alpha_initialization),
+            "checkpoint_alpha_initial_magnitude": (
+                args.checkpoint_alpha_initial_magnitude
+            ),
             "checkpoint_alpha_minimum_magnitude": (
                 args.checkpoint_alpha_minimum_magnitude
+            ),
+            "freeze_scale": args.freeze_scale,
+            "training_loss": args.training_loss,
+            "checkpoint_flip_budget": args.checkpoint_flip_budget,
+            "checkpoint_flip_projection_margin": (
+                args.checkpoint_flip_projection_margin
             ),
             "checkpoint_anchor_loss_weight": (args.checkpoint_anchor_loss_weight),
             "checkpoint_anchor_margin": args.checkpoint_anchor_margin,
@@ -498,12 +575,21 @@ def _validate_args(args: argparse.Namespace) -> None:
     for name in (
         "classifier_limit",
         "alpha_learning_rate",
-        "scale_learning_rate",
         "checkpoint_alpha_minimum_magnitude",
+        "checkpoint_alpha_initial_magnitude",
+        "checkpoint_flip_projection_margin",
     ):
         value = float(getattr(args, name))
         if not math.isfinite(value) or value <= 0.0:
             raise ValueError(f"--{name.replace('_', '-')} must be positive.")
+    scale_learning_rate = float(args.scale_learning_rate)
+    if not math.isfinite(scale_learning_rate) or (
+        scale_learning_rate < 0.0 if args.freeze_scale else scale_learning_rate <= 0.0
+    ):
+        requirement = "nonnegative" if args.freeze_scale else "positive"
+        raise ValueError(f"--scale-learning-rate must be finite and {requirement}.")
+    if args.checkpoint_flip_budget is not None and (args.checkpoint_flip_budget < 0):
+        raise ValueError("--checkpoint-flip-budget must be nonnegative.")
     for name in (
         "classifier_loss_weight",
         "rounding_loss_weight",
