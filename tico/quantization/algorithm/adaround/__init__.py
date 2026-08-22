@@ -17,6 +17,7 @@
 from tico.quantization.algorithm.adaround.global_refinement import (
     CheckpointInitializedScaleAdaRoundQuantizer,
     GlobalAdaRoundWeightSet,
+    GlobalRefinementHardStateStatistics,
     GlobalRefinementWeightStatistics,
     GlobalWeightRefinementCheckpoint,
     GlobalWeightRefinementConfig,
@@ -60,6 +61,7 @@ __all__ = [
     "AdaRoundWeightStatistics",
     "CheckpointInitializedScaleAdaRoundQuantizer",
     "GlobalAdaRoundWeightSet",
+    "GlobalRefinementHardStateStatistics",
     "GlobalRefinementWeightStatistics",
     "GlobalWeightRefinementCheckpoint",
     "GlobalWeightRefinementConfig",

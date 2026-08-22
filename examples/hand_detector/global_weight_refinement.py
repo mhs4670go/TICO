@@ -148,11 +148,11 @@ def _add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--minimum-selection-improvement", type=float, default=0.0)
     parser.add_argument("--minimum-acceptance-improvement", type=float, default=1e-3)
 
-    parser.add_argument("--steps", type=int, default=3_000)
+    parser.add_argument("--steps", type=int, default=300)
     parser.add_argument("--gradient-accumulation-steps", type=int, default=4)
-    parser.add_argument("--evaluation-interval", type=int, default=100)
-    parser.add_argument("--alpha-learning-rate", type=float, default=1e-4)
-    parser.add_argument("--scale-learning-rate", type=float, default=3e-5)
+    parser.add_argument("--evaluation-interval", type=int, default=10)
+    parser.add_argument("--alpha-learning-rate", type=float, default=1e-5)
+    parser.add_argument("--scale-learning-rate", type=float, default=3e-6)
     parser.add_argument("--classifier-loss-weight", type=float, default=0.25)
     parser.add_argument("--rounding-loss-weight", type=float, default=1e-3)
     parser.add_argument("--scale-loss-weight", type=float, default=1e-4)
@@ -162,6 +162,30 @@ def _add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--gamma", type=float, default=-0.1)
     parser.add_argument("--zeta", type=float, default=1.1)
     parser.add_argument("--max-scale-ratio", type=float, default=1.25)
+    parser.add_argument(
+        "--checkpoint-alpha-minimum-magnitude",
+        type=float,
+        default=1.5,
+        help="Minimum initial |alpha| for checkpoint floor/ceil decisions.",
+    )
+    parser.add_argument(
+        "--checkpoint-anchor-loss-weight",
+        type=float,
+        default=1e-2,
+        help="Initial weight of the checkpoint decision-margin anchor.",
+    )
+    parser.add_argument(
+        "--checkpoint-anchor-margin",
+        type=float,
+        default=0.5,
+        help="Required signed-alpha margin around checkpoint decisions.",
+    )
+    parser.add_argument(
+        "--checkpoint-anchor-fraction",
+        type=float,
+        default=0.2,
+        help="Fraction of optimizer steps over which the anchor decays to zero.",
+    )
     parser.add_argument("--gradient-clip-norm", type=float, default=1.0)
     parser.add_argument(
         "--initialization-metric-tolerance",
@@ -258,6 +282,10 @@ def run(args: argparse.Namespace) -> None:
         gamma=args.gamma,
         zeta=args.zeta,
         max_scale_ratio=args.max_scale_ratio,
+        checkpoint_alpha_minimum_magnitude=(args.checkpoint_alpha_minimum_magnitude),
+        checkpoint_anchor_loss_weight=args.checkpoint_anchor_loss_weight,
+        checkpoint_anchor_margin=args.checkpoint_anchor_margin,
+        checkpoint_anchor_fraction=args.checkpoint_anchor_fraction,
         gradient_clip_norm=args.gradient_clip_norm,
         initialization_metric_tolerance=(args.initialization_metric_tolerance),
         initialization_metric_relative_tolerance=(
@@ -288,11 +316,22 @@ def run(args: argparse.Namespace) -> None:
 
     def progress(checkpoint) -> None:
         outputs = checkpoint.selection_outputs
+        hard = checkpoint.hard_state_statistics
+        diagnostics = ""
+        if hard is not None:
+            diagnostics = (
+                f" code_chg={100.0 * hard.changed_from_checkpoint_ratio:6.3f}%"
+                f" sign_flip={100.0 * hard.checkpoint_sign_flip_ratio:6.3f}%"
+                f" scale=[{hard.scale_ratio_minimum:.5f},"
+                f"{hard.scale_ratio_maximum:.5f}]"
+                f" clipped={hard.clipped_code_count}"
+            )
         print(
             f"checkpoint step={checkpoint.step:4d} "
             f"REG_MAE={float(outputs['regressors']['mae']):.6e} "
             f"CLS_MAE={float(outputs['classifiers']['mae']):.6e} "
             f"best={'yes' if checkpoint.selected_as_best else 'no'}"
+            f"{diagnostics}"
         )
 
     report = run_hand_detector_global_weight_refinement(
@@ -338,6 +377,12 @@ def run(args: argparse.Namespace) -> None:
             "gamma": args.gamma,
             "zeta": args.zeta,
             "max_scale_ratio": args.max_scale_ratio,
+            "checkpoint_alpha_minimum_magnitude": (
+                args.checkpoint_alpha_minimum_magnitude
+            ),
+            "checkpoint_anchor_loss_weight": (args.checkpoint_anchor_loss_weight),
+            "checkpoint_anchor_margin": args.checkpoint_anchor_margin,
+            "checkpoint_anchor_fraction": args.checkpoint_anchor_fraction,
             "initialization_metric_tolerance": (args.initialization_metric_tolerance),
             "initialization_metric_relative_tolerance": (
                 args.initialization_metric_relative_tolerance
@@ -454,6 +499,7 @@ def _validate_args(args: argparse.Namespace) -> None:
         "classifier_limit",
         "alpha_learning_rate",
         "scale_learning_rate",
+        "checkpoint_alpha_minimum_magnitude",
     ):
         value = float(getattr(args, name))
         if not math.isfinite(value) or value <= 0.0:
@@ -462,6 +508,8 @@ def _validate_args(args: argparse.Namespace) -> None:
         "classifier_loss_weight",
         "rounding_loss_weight",
         "scale_loss_weight",
+        "checkpoint_anchor_loss_weight",
+        "checkpoint_anchor_margin",
         "minimum_selection_improvement",
         "minimum_acceptance_improvement",
         "initialization_metric_tolerance",
@@ -475,6 +523,8 @@ def _validate_args(args: argparse.Namespace) -> None:
         or args.relative_classifier_tolerance < 0.0
     ):
         raise ValueError("--relative-classifier-tolerance must be nonnegative.")
+    if not 0.0 <= args.checkpoint_anchor_fraction <= 1.0:
+        raise ValueError("--checkpoint-anchor-fraction must be in [0, 1].")
     if args.save_checkpoint is not None and args.report_json == args.save_checkpoint:
         raise ValueError("Report and checkpoint paths must differ.")
 
