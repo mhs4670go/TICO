@@ -1,0 +1,104 @@
+{
+  "generated_by": "package_validation_artifacts.py",
+  "result_root": "/workspace/TICO/out/pr1073_validation/20261022T0404Z",
+  "scope": "Previously cached evaluation data rows; packaging does not rerun evaluation or calibration",
+  "protocol_path": "pretrained_fp_cli/evaluation_protocol.json",
+  "evaluation_perplexity": {
+    "dataset": "Salesforce/wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "split": "test[:12]",
+    "max_seq_len": 64,
+    "stride": 32
+  },
+  "rows": [
+    {
+      "dataset_row_index": 0,
+      "row": {
+        "text": ""
+      },
+      "row_json_sha256": "00ef5051526028d198d236b0708a9aee76d8281b731f60bfe3b865b769ab1ceb"
+    },
+    {
+      "dataset_row_index": 1,
+      "row": {
+        "text": " = Robert Boulter = \n"
+      },
+      "row_json_sha256": "51881a771eac6cff13df87c095a02894210ed9a2f80c517f6ddcd0fb22d50c55"
+    },
+    {
+      "dataset_row_index": 2,
+      "row": {
+        "text": ""
+      },
+      "row_json_sha256": "00ef5051526028d198d236b0708a9aee76d8281b731f60bfe3b865b769ab1ceb"
+    },
+    {
+      "dataset_row_index": 3,
+      "row": {
+        "text": " Robert Boulter is an English film , television and theatre actor . He had a guest @-@ starring role on the television series The Bill in 2000 . This was followed by a starring role in the play Herons written by Simon Stephens , which was performed in 2001 at the Royal Court Theatre . He had a guest role in the television series Judge John Deed in 2002 . In 2004 Boulter landed a role as \" Craig \" in the episode \" Teddy 's Story \" of the television series The Long Firm ; he starred alongside actors Mark Strong and Derek Jacobi . He was cast in the 2005 theatre productions of the Philip Ridley play Mercury Fur , which was performed at the Drum Theatre in Plymouth and the Menier Chocolate Factory in London . He was directed by John Tiffany and starred alongside Ben Whishaw , Shane Zaza , Harry Kent , Fraser Ayres , Sophie Stanton and Dominic Hall . \n"
+      },
+      "row_json_sha256": "e2fedf6b39b473af052239521d51757256baf1a65de1e97678db08db97e6078d"
+    },
+    {
+      "dataset_row_index": 4,
+      "row": {
+        "text": " In 2006 , Boulter starred alongside Whishaw in the play Citizenship written by Mark Ravenhill . He appeared on a 2006 episode of the television series , Doctors , followed by a role in the 2007 theatre production of How to Curse directed by Josie Rourke . How to Curse was performed at Bush Theatre in the London Borough of Hammersmith and Fulham . Boulter starred in two films in 2008 , Daylight Robbery by filmmaker Paris Leonti , and Donkey Punch directed by Olly Blackburn . In May 2008 , Boulter made a guest appearance on a two @-@ part episode arc of the television series Waking the Dead , followed by an appearance on the television series Survivors in November 2008 . He had a recurring role in ten episodes of the television series Casualty in 2010 , as \" Kieron Fletcher \" . Boulter starred in the 2011 film Mercenaries directed by Paris Leonti . \n"
+      },
+      "row_json_sha256": "254184653b8f0f7dd5f5d2f729829c00c25b6abd26348edc8f75db8c0d5c5a63"
+    },
+    {
+      "dataset_row_index": 5,
+      "row": {
+        "text": ""
+      },
+      "row_json_sha256": "00ef5051526028d198d236b0708a9aee76d8281b731f60bfe3b865b769ab1ceb"
+    },
+    {
+      "dataset_row_index": 6,
+      "row": {
+        "text": " = = Career = = \n"
+      },
+      "row_json_sha256": "253cbc50f40db021d7988b6e0b7bc7ae3de5ebe3dc158f7e7b13ddc65d71d68a"
+    },
+    {
+      "dataset_row_index": 7,
+      "row": {
+        "text": ""
+      },
+      "row_json_sha256": "00ef5051526028d198d236b0708a9aee76d8281b731f60bfe3b865b769ab1ceb"
+    },
+    {
+      "dataset_row_index": 8,
+      "row": {
+        "text": ""
+      },
+      "row_json_sha256": "00ef5051526028d198d236b0708a9aee76d8281b731f60bfe3b865b769ab1ceb"
+    },
+    {
+      "dataset_row_index": 9,
+      "row": {
+        "text": " = = = 2000 – 2005 = = = \n"
+      },
+      "row_json_sha256": "88c7f3f7ca974fb1bfd919d80716129609194deb58201b9fc1f8c01493a71b11"
+    },
+    {
+      "dataset_row_index": 10,
+      "row": {
+        "text": ""
+      },
+      "row_json_sha256": "00ef5051526028d198d236b0708a9aee76d8281b731f60bfe3b865b769ab1ceb"
+    },
+    {
+      "dataset_row_index": 11,
+      "row": {
+        "text": " In 2000 Boulter had a guest @-@ starring role on the television series The Bill ; he portrayed \" Scott Parry \" in the episode , \" In Safe Hands \" . Boulter starred as \" Scott \" in the play Herons written by Simon Stephens , which was performed in 2001 at the Royal Court Theatre . A review of Boulter 's performance in The Independent on Sunday described him as \" horribly menacing \" in the role , and he received critical reviews in The Herald , and Evening Standard . He appeared in the television series Judge John Deed in 2002 as \" Addem Armitage \" in the episode \" Political Expediency \" , and had a role as a different character \" Toby Steele \" on The Bill . \n"
+      },
+      "row_json_sha256": "84a003c567fbe30a66aaba6c0de08271796bc25086dac1df199031cd3ab1ca28"
+    }
+  ],
+  "status": "CAPTURED",
+  "source_arrow": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-test.arrow",
+  "source_arrow_sha256": "2b8a3efac7b468cbe6432edba5f55c21e435d93873acc6727431f08d5ed328ea",
+  "source_schema": "text: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"text\": {\"dtype\": \"string\", \"_type\":' + 12",
+  "selected_row_count": 12
+}

@@ -1,0 +1,17 @@
+{
+  "host": {},
+  "schema_version": 1,
+  "stages": {
+    "decoder_layer_decode_0.q.circle": "decoder_layer_decode_0.q.circle",
+    "decoder_layer_decode_1.q.circle": "decoder_layer_decode_1.q.circle",
+    "decoder_layer_prefill_0.q.circle": "decoder_layer_prefill_0.q.circle",
+    "decoder_layer_prefill_1.q.circle": "decoder_layer_prefill_1.q.circle",
+    "deepstack_fusion_0_t1_h2_w2.q.circle": "deepstack_fusion_0_t1_h2_w2.q.circle",
+    "lm_head.q.circle": "lm_head.q.circle",
+    "multimodal_embedding_prefill_t1_h2_w2.q.circle": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+    "token_embedding.q.circle": "token_embedding.q.circle",
+    "vision_prefill_t1_h2_w2.q.circle": "vision_prefill_t1_h2_w2.q.circle"
+  },
+  "state_differences": [],
+  "state_preserved": true
+}

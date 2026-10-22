@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "model_family": "llama",
+  "execution_mode": "fake_quantize",
+  "max_seq_len": 8,
+  "hidden_size": 32,
+  "vocab_size": 64,
+  "num_key_value_heads": 1,
+  "head_dim": 16,
+  "pad_token_id": null,
+  "eos_token_id": 2,
+  "host_context": "llama_host.npz",
+  "tokenizer": null,
+  "stages": {
+    "token_embedding": {
+      "file": "token_embedding.q.circle",
+      "inputs": [
+        "input_ids"
+      ],
+      "outputs": [
+        "hidden_states"
+      ]
+    },
+    "lm_head": {
+      "file": "lm_head.q.circle",
+      "inputs": [
+        "hidden_states"
+      ],
+      "outputs": [
+        "logits"
+      ]
+    },
+    "layers": [
+      {
+        "prefill": {
+          "file": "decoder_layer_prefill_0.q.circle",
+          "inputs": [
+            "hidden_states",
+            "attention_mask",
+            "rope_cos",
+            "rope_sin"
+          ],
+          "outputs": [
+            "hidden_states",
+            "new_key",
+            "new_value"
+          ]
+        },
+        "decode": {
+          "file": "decoder_layer_decode_0.q.circle",
+          "inputs": [
+            "hidden_states",
+            "attention_mask",
+            "past_key",
+            "past_value",
+            "rope_cos",
+            "rope_sin"
+          ],
+          "outputs": [
+            "hidden_states",
+            "new_key",
+            "new_value"
+          ]
+        }
+      },
+      {
+        "prefill": {
+          "file": "decoder_layer_prefill_1.q.circle",
+          "inputs": [
+            "hidden_states",
+            "attention_mask",
+            "rope_cos",
+            "rope_sin"
+          ],
+          "outputs": [
+            "hidden_states",
+            "new_key",
+            "new_value"
+          ]
+        },
+        "decode": {
+          "file": "decoder_layer_decode_1.q.circle",
+          "inputs": [
+            "hidden_states",
+            "attention_mask",
+            "past_key",
+            "past_value",
+            "rope_cos",
+            "rope_sin"
+          ],
+          "outputs": [
+            "hidden_states",
+            "new_key",
+            "new_value"
+          ]
+        }
+      }
+    ]
+  }
+}

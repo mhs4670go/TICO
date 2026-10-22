@@ -1,0 +1,21 @@
+{
+  "manifest": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/inputs_manifest.json",
+  "qwen_kwargs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/qwen_actual_png_kwargs.pt",
+  "qwen_pixels_shape": [
+    4,
+    24
+  ],
+  "qwen_grid": [
+    [
+      1,
+      2,
+      2
+    ]
+  ],
+  "gemma_existing_status": "BLOCKED_PROCESSOR_PROFILE_MISMATCH",
+  "gemma_new_processor_shape": [
+    1,
+    280,
+    48
+  ]
+}

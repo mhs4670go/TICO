@@ -1,0 +1,50 @@
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "qwen3_vl",
+  "repo": "/workspace/TICO-export-baseline",
+  "commit": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.pt",
+  "checkpoint_sha256": "188d63c4f58dc6fa77a1746be695236afb20b65f0a2b8e1e961dd4a2761dfac6",
+  "checkpoint_bytes": 1148993,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 64,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    },
+    {
+      "kind": "cached_text",
+      "prefill_tokens": 4,
+      "decode_steps": 2
+    },
+    {
+      "kind": "synthetic_image",
+      "seq_len": 8
+    }
+  ],
+  "model_args": {
+    "profile": "npu_export",
+    "vision": {
+      "grid_thw": [
+        1,
+        2,
+        2
+      ],
+      "visual_start_idx": 0,
+      "spatial_merge_size": 2
+    }
+  },
+  "code_sha256": "a8325a8f75753ca0ef804348f5f7faab56b021efc2eb31a90da7dbf91807af23"
+}

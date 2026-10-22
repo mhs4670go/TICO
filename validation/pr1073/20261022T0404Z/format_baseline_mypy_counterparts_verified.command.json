@@ -1,0 +1,28 @@
+{
+  "name": "format_baseline_mypy_counterparts_verified",
+  "cwd": "/workspace/TICO-export-baseline",
+  "command": [
+    "env",
+    "MYPY_CACHE_DIR=/workspace/TICO/out/pr1073_validation/20261022T0404Z/baseline_mypy_cache",
+    "lintrunner",
+    "-vv",
+    "--take",
+    "MYPY",
+    "--config",
+    "/workspace/TICO-export-baseline/.lintrunner.toml",
+    "--paths-from",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/baseline_mypy_paths.txt"
+  ],
+  "started_at": "2026-10-22T05:06:40.658277+00:00",
+  "environment": {
+    "VIRTUAL_ENV": "/workspace/TICO/.venv",
+    "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 7.29409651099968
+}

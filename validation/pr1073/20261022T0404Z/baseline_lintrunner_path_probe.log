@@ -1,0 +1,16 @@
+[2026-10-22T05:05:50Z DEBUG lintrunner] Version: 0.11.0
+[2026-10-22T05:05:50Z DEBUG lintrunner] Passed args: Args { inner: ["lintrunner", "-vv", "--take", "MYPY", "--config", "/workspace/TICO-export-baseline/.lintrunner.toml", "test/quantization/recipes/test_export_llama_bundle.py", "tico/quantization/recipes/export/llama.py"] }
+[2026-10-22T05:05:50Z DEBUG lintrunner] Computed args: Args { verbose: 2, configs: "/workspace/TICO-export-baseline/.lintrunner.toml", apply_patches: false, paths_cmd: None, paths_from: None, revision: None, merge_base_with: None, skip: None, take: Some("MYPY"), output: Default, cmd: None, paths: [], force_color: false, data_path: None, tee_json: None, all_files: false, only_lint_under_config_dir: false }
+[2026-10-22T05:05:50Z DEBUG lintrunner] Current rev: bb09ca852b0ca1b1a6271cfe1e10c162104c997e
+[2026-10-22T05:05:50Z DEBUG lintrunner::lint_config] Found linters: {"PYLINT", "UFMT", "MYPY"}
+[2026-10-22T05:05:50Z DEBUG lintrunner::lint_config] Taking linters: {"MYPY"}
+[2026-10-22T05:05:50Z DEBUG lintrunner::persistent_data] Checking data file '<USER_HOME>/.local/share/lintrunner/034dc82d070cf7735a0d0ca2572e82658b082d48f4b97ce3969e801eed75fdac/.lintrunner.toml' to see if config has changed
+WARNING: No previous init data found. If this is the first time you're running lintrunner, you should run `lintrunner init`.
+[2026-10-22T05:05:50Z DEBUG lintrunner] Running linters: ["MYPY"]
+[2026-10-22T05:05:50Z TRACE lintrunner::log_utils] Linting commit diff files: {}
+[2026-10-22T05:05:50Z TRACE lintrunner::log_utils] Linting working tree diff files: {}
+[2026-10-22T05:05:50Z TRACE lintrunner::log_utils] These files were deleted in the working tree and won't be checked: {}
+[2026-10-22T05:05:50Z TRACE lintrunner::log_utils] Linting files: []
+[2026-10-22T05:05:50Z TRACE lintrunner::log_utils] Linter 'MYPY' matched files: []
+ok No lint issues.
+[2026-10-22T05:05:50Z DEBUG lintrunner::persistent_data] Writing run info to <USER_HOME>/.local/share/lintrunner/034dc82d070cf7735a0d0ca2572e82658b082d48f4b97ce3969e801eed75fdac/runs/2026-10-22T05-05-50.398Z_9bdbb85326b40be78172703b529eca2b6bfc0e116e1924227043e763cebf6b82

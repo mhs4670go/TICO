@@ -1,0 +1,21 @@
+{
+  "name": "initial_environment",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "bash",
+    "-c",
+    "python --version; command -v python; python -m pip list --format=json; lscpu; free -h; df -h /workspace /tmp; cat /sys/fs/cgroup/memory.max /sys/fs/cgroup/cpu.max; if command -v nvidia-smi; then nvidia-smi; else echo GPU_NOT_AVAILABLE; fi; cat /etc/codex/network-policy.json"
+  ],
+  "started_at": "2026-10-22T04:04:31.508849+00:00",
+  "environment": {
+    "VIRTUAL_ENV": null,
+    "PATH": "<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": null
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 1.1683311379999992
+}

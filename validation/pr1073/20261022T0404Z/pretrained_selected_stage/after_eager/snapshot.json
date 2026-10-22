@@ -1,0 +1,67 @@
+{
+  "host": {
+    "selected_host_static_inputs.npz": {
+      "decode_cos": {
+        "dtype": "float32",
+        "sha256": "b86573ffedc5f3ca87b7e9847f26ff84bf66e96b07da7116b1acfc027574c450",
+        "shape": [
+          1,
+          1,
+          4
+        ]
+      },
+      "decode_mask": {
+        "dtype": "float32",
+        "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+        "shape": [
+          1,
+          1,
+          16
+        ]
+      },
+      "decode_sin": {
+        "dtype": "float32",
+        "sha256": "4bdc9713c437438f258cde06cf74bd5300e8ae0fdf66f2321f75b09b00bc4e37",
+        "shape": [
+          1,
+          1,
+          4
+        ]
+      },
+      "prefill_cos": {
+        "dtype": "float32",
+        "sha256": "80cbbef4df7dcf41760c6786c738c009591e48ef2e2123d93f44957e44ba2735",
+        "shape": [
+          1,
+          16,
+          4
+        ]
+      },
+      "prefill_mask": {
+        "dtype": "float32",
+        "sha256": "b5f9e82b577007626fd169a02b608e9bd7f4857af5a7ffdcc57c3bb238ef0383",
+        "shape": [
+          1,
+          16,
+          16
+        ]
+      },
+      "prefill_sin": {
+        "dtype": "float32",
+        "sha256": "7f49d9c1894fb80794433df2f68ae5fbecd65ce650c510e589674992223aa33e",
+        "shape": [
+          1,
+          16,
+          4
+        ]
+      }
+    }
+  },
+  "schema_version": 1,
+  "stages": {
+    "decoder_layer_decode_0.q.circle": "decoder_layer_decode_0.q.circle",
+    "decoder_layer_prefill_0.q.circle": "decoder_layer_prefill_0.q.circle"
+  },
+  "state_differences": [],
+  "state_preserved": true
+}

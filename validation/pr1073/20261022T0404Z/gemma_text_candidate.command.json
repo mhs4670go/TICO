@@ -1,0 +1,34 @@
+{
+  "name": "gemma_text_candidate",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "env",
+    "RESULT_ROOT=/workspace/TICO/out/pr1073_validation/20261022T0404Z",
+    "PYTHONPATH=/workspace/TICO",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    ".venv/bin/python",
+    "out/pr1073_validation/20261022T0404Z/gemma_text_stage_worker.py",
+    "--repo",
+    "/workspace/TICO",
+    "--checkpoint",
+    "out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.pt",
+    "--output",
+    "out/pr1073_validation/20261022T0404Z/gemma-text-independent-candidate",
+    "--stress"
+  ],
+  "started_at": "2026-10-22T04:55:56.341028+00:00",
+  "environment": {
+    "VIRTUAL_ENV": null,
+    "PATH": "<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": null
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 305.78034186700006
+}

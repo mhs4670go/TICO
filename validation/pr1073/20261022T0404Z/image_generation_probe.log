@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/image_generation_probe.py", line 38, in attempt
+    tokens = model.generate(**copy.deepcopy(sample), **settings)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2976, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 3197, in _sample
+    with self._optimize_model_for_decode():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2480, in _optimize_model_for_decode
+    original_experts_implementation = self.get_experts_implementation()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1967, in __getattr__
+    raise AttributeError(
+AttributeError: 'QuantQwen3VLForConditionalGeneration' object has no attribute 'get_experts_implementation'
+qwen3_vl FAIL
+gemma4 PASS

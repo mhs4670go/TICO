@@ -1,0 +1,2 @@
+usage: summarize_circle_components.py [-h] --run RUN
+summarize_circle_components.py: error: the following arguments are required: --run

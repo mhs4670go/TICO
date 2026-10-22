@@ -1,0 +1,543 @@
+{
+  "draft_layout": "validation/pr1073/20261022T0404Z/",
+  "relative_link_count": 57,
+  "missing_source_files": [],
+  "expected_new_file": "PUBLICATION_MANIFEST.json",
+  "links": {
+    "PR1073_VALIDATION.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 22833,
+      "source_sha256": "ae6279a08b4bc6865e11368d102a5c3ffb48387e7467284e15873ca205ebe308",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/PR1073_VALIDATION.md"
+    },
+    "VALIDATION_LEVELS.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 1985,
+      "source_sha256": "dae3caed644e57ed2a8f1c3adcc140df1f6f2dfbb9d6ec594800f79b3512d76c",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/VALIDATION_LEVELS.md"
+    },
+    "model_results.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 1934,
+      "source_sha256": "0062a8c2fa523a34f42ef5cca9f39fddd4d5b5b70de6959c5b42e596f522b86e",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/model_results.json"
+    },
+    "summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 567376,
+      "source_sha256": "22e511794046148b6e6daa0cce46109dc4c5853351ec7f4b56edddafdc7f0f19",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/summary.json"
+    },
+    "commands.sh": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 36709,
+      "source_sha256": "be4d3f3a4430b60ca62b02f4fb8af865899e0073198149a6b34e8260669f9385",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/commands.sh"
+    },
+    "environment.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 2833,
+      "source_sha256": "71b6797bc6ba838097dd2af38767bb64d215c121c02fdec1e2bfd9b1a192b68a",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/environment.json"
+    },
+    "packages.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 3694,
+      "source_sha256": "ad4be468ed0dc7b3086ecdcbec4f3c640d00728699f4f6452138f0d84064b1bd",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/packages.json"
+    },
+    "CHATGPT_REVIEW_PROMPT.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 4608,
+      "source_sha256": "a900fd3bf5386069a47bd45b0bf56a6b9dce0400ca2aa2af27302694ecbf6d3d",
+      "source_path": "/workspace/pr1073-publication-staging/CHATGPT_REVIEW_PROMPT.md"
+    },
+    "unit_test_analysis.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 9980,
+      "source_sha256": "2bfb2d82e4d8886c4af207604020dcd07df85a3d9b859b1260644095083b67d2",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/unit_test_analysis.md"
+    },
+    "STATIC_CHECKS.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 6086,
+      "source_sha256": "e47ddbac269b4a5179fae6009dace01df497900d12c6938110ae4dc25ca9e8a8",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/STATIC_CHECKS.md"
+    },
+    "unit_results.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 63164,
+      "source_sha256": "cef55e75d6c259ca7aca256910ca4206ac4971bba2e7b40068d691cc98851f45",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/unit_results.json"
+    },
+    "unit_failure_classification.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 3817,
+      "source_sha256": "0dd168a2e2633a34846035b14e445d7dbbed179eca7089244e56bdc68f3f2bc8",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/unit_failure_classification.json"
+    },
+    "changed_unit_discovery.log": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 116284,
+      "source_sha256": "980ab3fa5384fcec89bdd69c6d27adb7e3b150c2efe9d32afe3ba1658ccf9bab",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/changed_unit_discovery.log"
+    },
+    "quantization_suite.log": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 602709,
+      "source_sha256": "09932ada0dadd14375cafb792c9b8a2d4a031e62acd7c4da4df0831ff5f93ec1",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/quantization_suite.log"
+    },
+    "full_unit_suite.command.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 983,
+      "source_sha256": "e109a0e62977d3a54fb6a2dcd1b8770e3ff521810254c6fdfdc47086c0193898",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/full_unit_suite.command.json"
+    },
+    "static_diagnostics.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 35390,
+      "source_sha256": "7252263126c185f63a9b4427b64d392bdee07b53f783ecca7fa0e4396a3b0539",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/static_diagnostics.json"
+    },
+    "EAGER_COVERAGE.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 12006,
+      "source_sha256": "9270dec37a44e528b95afda7c053b161708e98418d03c2001e863c31112bb903",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/EAGER_COVERAGE.md"
+    },
+    "EAGER_SUPPLEMENT_RESULTS.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 3972,
+      "source_sha256": "b0edabe42d1285fc6bf07f1b2dd42515cbccefdb668fb802fc914c64bf6ce654",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/EAGER_SUPPLEMENT_RESULTS.md"
+    },
+    "supplemental_eager_state/summary.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 6509,
+      "source_sha256": "a6cb3d5f3e8c8acd968a348a5a5358f61feb3aa550513be78a9248df4d0ffc16",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/supplemental_eager_state/summary.json"
+    },
+    "generated_image_eager/summary.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 6708,
+      "source_sha256": "d506913d92f9321e9546dea4be9e234626a038b140c095d243fd55b5e5395aab",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/generated_image_eager/summary.json"
+    },
+    "IMAGE_GENERATION_FINDINGS.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 5877,
+      "source_sha256": "3858c625b12ca41fb9620d0ce2df9d6a1e1d557d491510a37eccdffd98a4ee35",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/IMAGE_GENERATION_FINDINGS.md"
+    },
+    "GENERATION_PROBE.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 4521,
+      "source_sha256": "c56532f940cf98b29bb564ef4c5b31c1e9fcf47ae5299634f4dd7327d16b325d",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GENERATION_PROBE.md"
+    },
+    "image_generation_probe/summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 8090,
+      "source_sha256": "29cf12cc6624882e4d959c7481b24302e69670f145767a29648329a4cbd7dca3",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/image_generation_probe/summary.json"
+    },
+    "image_generation_analysis.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 2352,
+      "source_sha256": "2c6ab549daba8010c75ae32c692d425a5f7a2825099bddce1cf6420898bb31db",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/image_generation_analysis.json"
+    },
+    "qwen_image_generation_fresh_baseline/summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 18383,
+      "source_sha256": "1788779158622047cd9bd70a5405202a534f4a71b1b2eef534f1ba18f657af75",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/qwen_image_generation_fresh_baseline/summary.json"
+    },
+    "PRETRAINED_SMOKE.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 8649,
+      "source_sha256": "09bcdfbaca12a2bebe5c8031689935aa6e38cc9c749f29daf3ddcd9324f9e92d",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/PRETRAINED_SMOKE.md"
+    },
+    "pretrained_summary.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 36236,
+      "source_sha256": "837eacb0092362dc1b2eedf41143082b67b45f10247735a1f9dbfb2383a58c3a",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_summary.json"
+    },
+    "pretrained_protocol_comparison.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 2972,
+      "source_sha256": "56c04a5a5a49ebb7edb011d3e918c744c1eb561c7664f2825c0789f01ba46baf",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_protocol_comparison.json"
+    },
+    "pretrained_selected_stage/summary.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 22653,
+      "source_sha256": "72984cb071354b7aac9918597d5f9ce16d3883654975e5a77ed3c0a8b87172ec",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_selected_stage/summary.json"
+    },
+    "CIRCLE_VALIDATION.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 12898,
+      "source_sha256": "4a13a4783a09d88284b5430a87ace24d7f098ff240a2c03022a14fd80ff9372c",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/CIRCLE_VALIDATION.md"
+    },
+    "circle_validation_summary.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 31497,
+      "source_sha256": "cee1f257d9b3353c47ef68ea42f86a278781fd1f5166f4db3d80b0e0bb5d9428",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/circle_validation_summary.json"
+    },
+    "PARITY_DIAGNOSIS.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 5582,
+      "source_sha256": "8c2f72492461a93ac1ee890e232e11a04191e4383f7ca4b576d2e6967a27598a",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/PARITY_DIAGNOSIS.md"
+    },
+    "llama-rope-checks.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 347,
+      "source_sha256": "e300c387aa67eaa50a6792fba36122eef66f1a3d85fe7c9f5dbbcabe0b8ebe48",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/llama-rope-checks.json"
+    },
+    "tiny-llama-old-new-v2/summary.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 48815,
+      "source_sha256": "ca72c8b1535e4d21ead611f69493dc9a5d64a7c937ca0885b0b3ba5808418877",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/summary.json"
+    },
+    "tiny-llama-old-new-v2/llama_rope_diagnosis.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 18967,
+      "source_sha256": "eed7a8bb28e1eb29447f98ddecdf7d886b566be8bc9c569459ca9e66ab6d6bff",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/llama_rope_diagnosis.json"
+    },
+    "tiny-llama-old-new-v2/independent_evidence_inventory.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 86381,
+      "source_sha256": "3e09f485a2098d498735511d63175b2d894f347aed69c22f86d6b8237be25cd6",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/independent_evidence_inventory.json"
+    },
+    "LLAMA_LONG_EAGER_ISOLATION.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 6291,
+      "source_sha256": "bad7173bcb8c6b340320a758f54994dfeeecbec9299d58f228306ba704205f04",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/LLAMA_LONG_EAGER_ISOLATION.md"
+    },
+    "llama_long_eager_analysis.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 1666,
+      "source_sha256": "88dc03fc6a8cf8e57a3d5bb579c2e31cdd06789cf11f62245d4c72685e4ecfd2",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/llama_long_eager_analysis.json"
+    },
+    "tiny-llama-native16384-long-eager-full/summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 3820,
+      "source_sha256": "a19402e1689a37a6a7e14559b44f110f40f4efbd74458c1fb1f0c0de80c6fd37",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-native16384-long-eager-full/summary.json"
+    },
+    "tiny-llama-native16384-long-eager-full/independent_full_evidence.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 1189476,
+      "source_sha256": "2698cb073545f949c1037b9ad009a141838f9737722f87c8ce80d5573fb5fd60",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-native16384-long-eager-full/independent_full_evidence.json"
+    },
+    "QWEN_PARITY_DIAGNOSTIC.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 4463,
+      "source_sha256": "f68a3a78e3e288da68a86128fe808d6b8055322bb59570963cb620641445222f",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/QWEN_PARITY_DIAGNOSTIC.md"
+    },
+    "tiny-qwen-old-new-cached/summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 57111,
+      "source_sha256": "f3af77da27879fbd6e8398b7b575240be02d265edb194822b9c02a65ff6840d2",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-old-new-cached/summary.json"
+    },
+    "tiny-qwen-full-text-png-dirs-retry/summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 3194,
+      "source_sha256": "f1debbfb4e8eb3f5b74de007e095df81b45cfe1b662dee5db42411240d1e56db",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-full-text-png-dirs-retry/summary.json"
+    },
+    "GEMMA_TEXT_STAGE_VALIDATION.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 6838,
+      "source_sha256": "87a817a754b08afb66453d220fa7713a75f625a759be8ef6432ce3855057dead",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GEMMA_TEXT_STAGE_VALIDATION.md"
+    },
+    "GEMMA_TEXT_PARITY_DIAGNOSIS.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 7368,
+      "source_sha256": "8ad509c68095ef6ae4b6e18d7b01a0631623e47386f522820790e0afcd855398",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GEMMA_TEXT_PARITY_DIAGNOSIS.md"
+    },
+    "GEMMA_FULL_TEXT_DIAGNOSTIC.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 4584,
+      "source_sha256": "c21d97026130d6a618ffa0ae0341f55218e8c305d660423465996409b238715b",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GEMMA_FULL_TEXT_DIAGNOSTIC.md"
+    },
+    "tiny-gemma-old-new-image70/summary.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 125,
+      "source_sha256": "562fd9f7b96a4cbe591433eb546024e9d2968164f3d9ec8f0b73f707e747c2a2",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-gemma-old-new-image70/summary.json"
+    },
+    "gemma_text_strict_comparison.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 244998,
+      "source_sha256": "03ce8685eaaeaed5408970dbaac36f654ea37088c033a0f821fba2ebb6c32e5d",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma_text_strict_comparison.json"
+    },
+    "GEMMA_TEXT_PARITY_DIAGNOSIS.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 18478,
+      "source_sha256": "b347e429b301312b4b43867966d68e9bd8a268ac3f1d0f3eebdf21265441b5aa",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GEMMA_TEXT_PARITY_DIAGNOSIS.json"
+    },
+    "GEMMA_FULL_TEXT_DIAGNOSTIC.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 15230,
+      "source_sha256": "7fefaa2cfae4cf54aff32505533794e44df48e74c0ef7acbeb5a981ab2437fa0",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GEMMA_FULL_TEXT_DIAGNOSTIC.json"
+    },
+    "COMPARATOR_GAPS.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 1874,
+      "source_sha256": "5ed3b5090d73c3807632d817d8f26d229f002d778925557798ce013f6cbb0704",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/COMPARATOR_GAPS.md"
+    },
+    "CALIBRATION_PATH_AUDIT.md": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 9673,
+      "source_sha256": "14ca5785515b0d6d2d864a7422132e1accd3df3b26531aface8501708dbf06de",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/CALIBRATION_PATH_AUDIT.md"
+    },
+    "FIXTURE_INFRASTRUCTURE.md": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 5532,
+      "source_sha256": "80abaeb81db58ad941a65c744ea27f0f2257ba60b30058f6dc1f2bc14699caba",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/FIXTURE_INFRASTRUCTURE.md"
+    },
+    "comparator_extra_negatives.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 2798,
+      "source_sha256": "901a0fc2f49860f12a723fa5b9ce738a414dd34b89c230f6e6429e5ea475e51f",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/comparator_extra_negatives.json"
+    },
+    "PUBLICATION_MANIFEST.json": {
+      "from": [
+        "README.md",
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": false,
+      "expected_new_publication_file": true
+    },
+    "artifact_manifest.json": {
+      "from": [
+        "README.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 177322,
+      "source_sha256": "78b588b2a9f99808fa848b2894e5ae8beb13297c81b08c785a3e373914477320",
+      "source_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/artifact_manifest.json"
+    },
+    "README.md": {
+      "from": [
+        "CHATGPT_REVIEW_PROMPT.md"
+      ],
+      "exists_in_staging_or_sealed_root": true,
+      "size_bytes": 7316,
+      "source_sha256": "a397a5c836ef987f946ff607a18aab55afe18a2ef2cb803ca8d63a623e44d85d",
+      "source_path": "/workspace/pr1073-publication-staging/README.md"
+    }
+  },
+  "sealed_result_root_modified": false
+}

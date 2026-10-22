@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 862, in main
+    _worker(args)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 676, in _worker
+    _export_phase(ctx, root / "before", options, initial)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 536, in _export_phase
+    ctx.adapter.export(ctx)
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/adapters/llama.py", line 445, in export
+    raise RuntimeError(
+RuntimeError: Circle export requires at least one calibration input.

@@ -1,0 +1,160 @@
+{
+  "host": {
+    "llama_host.npz": {
+      "mask_fill_values": {
+        "dtype": "float32",
+        "sha256": "0c3dce34f17940c2d118e33617d706ba413ac0b8738e1a39dde706d552077a9e",
+        "shape": [
+          2
+        ]
+      },
+      "rope_cos_0": {
+        "dtype": "float32",
+        "sha256": "c3c9038939bd8fed8a8e752921580fde3e7d521fb3c48144137bc60ba6c36e93",
+        "shape": [
+          1,
+          8,
+          16
+        ]
+      },
+      "rope_cos_1": {
+        "dtype": "float32",
+        "sha256": "c3c9038939bd8fed8a8e752921580fde3e7d521fb3c48144137bc60ba6c36e93",
+        "shape": [
+          1,
+          8,
+          16
+        ]
+      },
+      "rope_sin_0": {
+        "dtype": "float32",
+        "sha256": "090c13644eac2ed1785e419efcaf1066793f9110695d23ab3419384ae7735839",
+        "shape": [
+          1,
+          8,
+          16
+        ]
+      },
+      "rope_sin_1": {
+        "dtype": "float32",
+        "sha256": "090c13644eac2ed1785e419efcaf1066793f9110695d23ab3419384ae7735839",
+        "shape": [
+          1,
+          8,
+          16
+        ]
+      }
+    },
+    "llama_manifest.json": {
+      "eos_token_id": 2,
+      "execution_mode": "fake_quantize",
+      "head_dim": 16,
+      "hidden_size": 32,
+      "host_context": "llama_host.npz",
+      "max_seq_len": 8,
+      "model_family": "llama",
+      "num_key_value_heads": 1,
+      "pad_token_id": null,
+      "schema_version": 1,
+      "stages": {
+        "layers": [
+          {
+            "decode": {
+              "file": "decoder_layer_decode_0.q.circle",
+              "inputs": [
+                "hidden_states",
+                "attention_mask",
+                "past_key",
+                "past_value",
+                "rope_cos",
+                "rope_sin"
+              ],
+              "outputs": [
+                "hidden_states",
+                "new_key",
+                "new_value"
+              ]
+            },
+            "prefill": {
+              "file": "decoder_layer_prefill_0.q.circle",
+              "inputs": [
+                "hidden_states",
+                "attention_mask",
+                "rope_cos",
+                "rope_sin"
+              ],
+              "outputs": [
+                "hidden_states",
+                "new_key",
+                "new_value"
+              ]
+            }
+          },
+          {
+            "decode": {
+              "file": "decoder_layer_decode_1.q.circle",
+              "inputs": [
+                "hidden_states",
+                "attention_mask",
+                "past_key",
+                "past_value",
+                "rope_cos",
+                "rope_sin"
+              ],
+              "outputs": [
+                "hidden_states",
+                "new_key",
+                "new_value"
+              ]
+            },
+            "prefill": {
+              "file": "decoder_layer_prefill_1.q.circle",
+              "inputs": [
+                "hidden_states",
+                "attention_mask",
+                "rope_cos",
+                "rope_sin"
+              ],
+              "outputs": [
+                "hidden_states",
+                "new_key",
+                "new_value"
+              ]
+            }
+          }
+        ],
+        "lm_head": {
+          "file": "lm_head.q.circle",
+          "inputs": [
+            "hidden_states"
+          ],
+          "outputs": [
+            "logits"
+          ]
+        },
+        "token_embedding": {
+          "file": "token_embedding.q.circle",
+          "inputs": [
+            "input_ids"
+          ],
+          "outputs": [
+            "hidden_states"
+          ]
+        }
+      },
+      "tokenizer": null,
+      "vocab_size": 64
+    }
+  },
+  "schema_version": 1,
+  "stages": {
+    "decoder_layer_decode_0.q.circle": "decoder_layer_decode_0.q.circle",
+    "decoder_layer_decode_1.q.circle": "decoder_layer_decode_1.q.circle",
+    "decoder_layer_prefill_0.q.circle": "decoder_layer_prefill_0.q.circle",
+    "decoder_layer_prefill_1.q.circle": "decoder_layer_prefill_1.q.circle",
+    "lm_head.q.circle": "lm_head.q.circle",
+    "token_embedding.q.circle": "token_embedding.q.circle"
+  },
+  "state_differences": [],
+  "state_preserved": true
+}

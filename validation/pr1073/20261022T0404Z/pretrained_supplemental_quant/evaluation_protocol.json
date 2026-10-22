@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "purpose": "quantization_quality",
+  "model": {
+    "family": "llama",
+    "name_or_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_assets/Maykeye-TinyLLama-v0",
+    "loaded_name_or_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_assets/Maykeye-TinyLLama-v0",
+    "revision": "298338802ab94432b917bcce11382aa151aee50f",
+    "resolved_revision": null
+  },
+  "tokenizer": {
+    "class": "LlamaTokenizer",
+    "name_or_path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_assets/Maykeye-TinyLLama-v0",
+    "chat_template_sha256": null
+  },
+  "processor": null,
+  "context": {
+    "requested": 128,
+    "resolved": 128,
+    "model_capacity": 2048,
+    "pretrained_capacity": 2048,
+    "calibration_seq_len": 32,
+    "export_max_seq_len": 16
+  },
+  "use_cache": true,
+  "seed": 42,
+  "device": "cpu",
+  "configured_dtype": "torch.float32",
+  "parameter_dtypes": [
+    "torch.float32"
+  ],
+  "quantization_modes": [
+    "quant"
+  ],
+  "model_class": "QuantLlamaForCausalLM",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt",
+  "evaluation": {
+    "enabled": true,
+    "max_seq_len": 128,
+    "use_cache": true,
+    "perplexity": {
+      "dataset": "Salesforce/wikitext",
+      "dataset_config": "wikitext-2-raw-v1",
+      "split": "test[:12]",
+      "max_seq_len": 64,
+      "stride": 32
+    },
+    "selected_tasks": [
+      "ppl"
+    ]
+  },
+  "versions": {
+    "tico": "0.1.0",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0",
+    "datasets": "4.8.4",
+    "lm-eval": null,
+    "lmms-eval": null
+  }
+}

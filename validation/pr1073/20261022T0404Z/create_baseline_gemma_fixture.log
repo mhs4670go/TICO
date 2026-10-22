@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/create_tiny_frozen_fixture.py", line 167, in <module>
+    main()
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/create_tiny_frozen_fixture.py", line 131, in main
+    model(**sample)
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py", line 46, in forward
+    return self.wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/gemma4/quant_for_conditional_generation.py", line 105, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py", line 46, in forward
+    return self.wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/gemma4/quant_model.py", line 395, in forward
+    self._validate_static_visual_token_count(image_embeds)
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/gemma4/quant_model.py", line 236, in _validate_static_visual_token_count
+    raise ValueError(
+ValueError: Vision tower produced 32 visual tokens, but static Gemma4 config expects 4. Check model_args.vision.image_height, model_args.vision.image_width, and model_args.vision.num_visual_tokens.

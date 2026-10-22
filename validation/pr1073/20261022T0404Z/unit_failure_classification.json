@@ -1,0 +1,97 @@
+{
+  "scope": "Analysis separate from raw FAIL results; no product or existing test files changed.",
+  "failures": [
+    {
+      "category": "TEST_CONTRACT_MISMATCH",
+      "count": 2,
+      "tests": [
+        "test_export_llama_per_layer_exports_embedding_layers_and_lm_head",
+        "test_export_llama_per_layer_uses_float_artifact_names"
+      ],
+      "test_file": "test/quantization/recipes/test_export_llama.py",
+      "test_lines": [
+        105,
+        147
+      ],
+      "source_file": "tico/quantization/wrapq/wrappers/llama/static_inputs.py",
+      "source_line": 56,
+      "cause": "FakeLayerWrapper does not implement canonical static-input owner config/rotary provenance.",
+      "baseline": "baseline_llama_export_units.log: 23 tests PASS",
+      "proposal_not_applied": "Update routing fixture to implement the new owner protocol; preserve explicit provenance rejection."
+    },
+    {
+      "category": "TEST_CONTRACT_MISMATCH",
+      "count": 2,
+      "tests": [
+        "test_export_adapters_without_cache_return_hidden_only",
+        "test_prefill_export_adapter_returns_delta_kv"
+      ],
+      "test_file": "test/quantization/wrapq/wrappers/llama/test_quant_attention.py",
+      "test_lines": [
+        528,
+        480
+      ],
+      "source_file": "tico/quantization/wrapq/utils/static_export.py",
+      "source_line": 38,
+      "cause": "Static attention adapter test omits required explicit attention_mask.",
+      "baseline": "baseline_llama_attention_units.log: 18 tests PASS",
+      "proposal_not_applied": "Pass explicit host mask/RoPE in positive tests; retain missing-input negative cases."
+    },
+    {
+      "category": "TEST_CONTRACT_MISMATCH",
+      "count": 3,
+      "tests": [
+        "test_decode_adapter_with_cache_return_logits_and_kv",
+        "test_export_adapter_with_cache_return_logits_and_kv",
+        "test_export_adapter_without_cache_return_logits_only"
+      ],
+      "test_file": "test/quantization/wrapq/wrappers/llama/test_quant_model_for_casual_lm.py",
+      "test_lines": [
+        215,
+        180,
+        160
+      ],
+      "source_file": "tico/quantization/wrapq/wrappers/llama/export_adapters.py",
+      "source_lines": [
+        532,
+        482
+      ],
+      "cause": "Static full-model adapters called outside prepared_static_export.",
+      "baseline": "baseline_llama_causal_units.log: 6 tests PASS",
+      "proposal_not_applied": "Activate prepared_static_export with explicit capacity for the positive adapter calls."
+    },
+    {
+      "category": "TEST_CONTRACT_MISMATCH",
+      "count": 1,
+      "tests": [
+        "test_full_text_export_builds_only_the_captured_visual_positions"
+      ],
+      "test_file": "test/quantization/wrapq/wrappers/qwen_vl/test_eager_context.py",
+      "test_lines": [
+        225
+      ],
+      "source_file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py",
+      "source_line": 564,
+      "cause": "New full-text tracing test does not activate prepared_static_export.",
+      "baseline": "New test file absent from pre-PR baseline.",
+      "proposal_not_applied": "Trace within actual prepared_static_export, comparing the same fixed profile."
+    },
+    {
+      "category": "RESOURCE_SENSITIVE_TEST_TIMEOUT",
+      "count": 1,
+      "tests": [
+        "test_full_model_example_rejects_bit_mismatch"
+      ],
+      "test_file": "test/quantization/examples/test_gptq_qparam_handoff.py",
+      "test_lines": [
+        181,
+        165,
+        171
+      ],
+      "cause": "Existing subprocess timeout45 expired under concurrent CPU load.",
+      "baseline": "baseline_qparam_timeout_probe.log: isolated exact test PASS33.394s",
+      "candidate_retry": "candidate_qparam_timeout_probe.log: isolated exact test PASS35.758s",
+      "raw_suite_status": "ERROR preserved; no timeout changed."
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "raw_status": "FAIL",
+  "raw_torch_parity_required": true,
+  "comparisons_complete": true,
+  "same_checkpoint_and_dependencies": true,
+  "same_initial_quantization_state": true,
+  "frozen_state_preserved": true,
+  "baseline_candidate_components": {
+    "stage_count": 6,
+    "structure_equal": true,
+    "all_input_and_output_arrays_match": false,
+    "host_equal": false,
+    "strict_comparison_ok": false,
+    "stage_failures": [
+      "Host $.llama_host.npz.rope_cos_0.sha256: value differs",
+      "Host $.llama_host.npz.rope_cos_1.sha256: value differs",
+      "Host $.llama_host.npz.rope_sin_0.sha256: value differs",
+      "Host $.llama_host.npz.rope_sin_1.sha256: value differs",
+      "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "actual_numerical_differences": {
+      "decoder_layer_prefill_0.q.circle": {
+        "p0_input_2": {
+          "max_abs_error": 4.4465065002441406e-05,
+          "ok": false
+        },
+        "p0_input_3": {
+          "max_abs_error": 0.006892439676448703,
+          "ok": false
+        },
+        "p1_input_2": {
+          "max_abs_error": 4.4465065002441406e-05,
+          "ok": false
+        },
+        "p1_input_3": {
+          "max_abs_error": 0.006892439676448703,
+          "ok": false
+        }
+      },
+      "decoder_layer_prefill_1.q.circle": {
+        "p0_input_2": {
+          "max_abs_error": 4.4465065002441406e-05,
+          "ok": false
+        },
+        "p0_input_3": {
+          "max_abs_error": 0.006892439676448703,
+          "ok": false
+        },
+        "p1_input_2": {
+          "max_abs_error": 4.4465065002441406e-05,
+          "ok": false
+        },
+        "p1_input_3": {
+          "max_abs_error": 0.006892439676448703,
+          "ok": false
+        }
+      }
+    }
+  },
+  "candidate_before_after_components": {
+    "stage_count": 6,
+    "structure_equal": true,
+    "all_input_and_output_arrays_match": true,
+    "host_equal": true,
+    "strict_comparison_ok": false,
+    "stage_failures": [
+      "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "actual_numerical_differences": {}
+  },
+  "actual_stage_count_per_phase": {
+    "baseline/before": 6,
+    "candidate/after_eager": 6,
+    "candidate/before": 6
+  },
+  "independent_complete_array_coverage": true,
+  "independent_finite_arrays": true,
+  "old_new_same_external_input_replay_exact": true,
+  "host_diagnosis": {
+    "rope_cos_0": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      }
+    },
+    "rope_sin_0": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      }
+    },
+    "rope_cos_1": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      }
+    },
+    "rope_sin_1": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      }
+    },
+    "mask_fill_values": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      }
+    }
+  }
+}

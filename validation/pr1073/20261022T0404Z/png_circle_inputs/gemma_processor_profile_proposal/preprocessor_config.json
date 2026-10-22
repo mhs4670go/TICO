@@ -1,0 +1,22 @@
+{
+  "do_convert_rgb": true,
+  "do_normalize": false,
+  "do_rescale": true,
+  "do_resize": false,
+  "image_mean": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "image_processor_type": "Gemma4ImageProcessor",
+  "image_std": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "max_soft_tokens": 70,
+  "patch_size": 4,
+  "pooling_kernel_size": 2,
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098
+}

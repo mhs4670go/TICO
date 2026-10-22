@@ -1,0 +1,39 @@
+test_checkpoint_argument_preserves_checkpoint_export (quantization.recipes.test_export_llama.TestExportMain.test_checkpoint_argument_preserves_checkpoint_export)
+Checkpoint-only invocation should continue to bypass model loading. ... ok
+test_model_source_loads_the_adapter_model (quantization.recipes.test_export_llama.TestExportMain.test_model_source_loads_the_adapter_model)
+Model-source export should load the FP model through the adapter. ... ok
+test_export_llama_per_layer_exports_embedding_layers_and_lm_head (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)
+Per-layer LLaMA export should preserve quantized artifact names. ... ok
+test_export_llama_per_layer_uses_float_artifact_names (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)
+Floating-point per-layer export should use an explicit f32 tag. ... ok
+test_float_export_rejects_non_float32_model (quantization.recipes.test_export_llama.TestLlamaExport.test_float_export_rejects_non_float32_model)
+The first float export implementation should reject other dtypes. ... ok
+test_float_model_is_wrapped_without_enabling_quantization (quantization.recipes.test_export_llama.TestLlamaExport.test_float_model_is_wrapped_without_enabling_quantization)
+Structural float wrapping should keep quant modules in NO_QUANT mode. ... ok
+test_checkpoint_is_inferred_for_backward_compatibility (quantization.recipes.test_export_llama.TestResolveExportSource.test_checkpoint_is_inferred_for_backward_compatibility)
+Passing only a checkpoint should retain the existing CLI behavior. ... ok
+test_checkpoint_source_requires_checkpoint (quantization.recipes.test_export_llama.TestResolveExportSource.test_checkpoint_source_requires_checkpoint)
+An explicit checkpoint source should require a checkpoint path. ... ok
+test_missing_source_is_rejected (quantization.recipes.test_export_llama.TestResolveExportSource.test_missing_source_is_rejected)
+The CLI should reject an ambiguous export request. ... ok
+test_model_source_does_not_require_checkpoint (quantization.recipes.test_export_llama.TestResolveExportSource.test_model_source_does_not_require_checkpoint)
+Floating-point export should accept an explicit model source. ... ok
+test_model_source_rejects_checkpoint (quantization.recipes.test_export_llama.TestResolveExportSource.test_model_source_rejects_checkpoint)
+A model source should not silently ignore a checkpoint argument. ... ok
+test_context_preserves_actual_per_layer_templates_and_mask_values (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_context_preserves_actual_per_layer_templates_and_mask_values) ... ok
+test_context_rejects_incomplete_rope_and_nonfinite_mask (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_context_rejects_incomplete_rope_and_nonfinite_mask) ... ok
+test_failed_overwrite_invalidates_old_manifest_after_preflight (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_failed_overwrite_invalidates_old_manifest_after_preflight) ... ok
+test_generation_ids_take_precedence_and_tokenizer_supplies_missing_pad (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_generation_ids_take_precedence_and_tokenizer_supplies_missing_pad) ... ok
+test_legacy_per_layer_overwrite_also_invalidates_bundle_manifest (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_legacy_per_layer_overwrite_also_invalidates_bundle_manifest) ... ok
+test_preflight_failure_preserves_existing_bundle_manifest (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_preflight_failure_preserves_existing_bundle_manifest) ... ok
+test_public_bundle_rejects_non_generation_capacity_before_export (quantization.recipes.test_export_llama_bundle.TestLlamaBundleContext.test_public_bundle_rejects_non_generation_capacity_before_export) ... ok
+test_failed_tokenizer_save_preserves_existing_directory (quantization.recipes.test_export_llama_bundle.TestLlamaBundleManifest.test_failed_tokenizer_save_preserves_existing_directory) ... ok
+test_fresh_tokenizer_save_removes_stale_files (quantization.recipes.test_export_llama_bundle.TestLlamaBundleManifest.test_fresh_tokenizer_save_removes_stale_files) ... ok
+test_manifest_records_serialized_input_order_and_tokenizer (quantization.recipes.test_export_llama_bundle.TestLlamaBundleManifest.test_manifest_records_serialized_input_order_and_tokenizer) ... ok
+test_stage_contract_rejects_unrecognized_or_duplicate_inputs (quantization.recipes.test_export_llama_bundle.TestLlamaBundleManifest.test_stage_contract_rejects_unrecognized_or_duplicate_inputs) ... ok
+test_stage_contract_rejects_wrong_output_arity (quantization.recipes.test_export_llama_bundle.TestLlamaBundleManifest.test_stage_contract_rejects_wrong_output_arity) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.769s
+
+OK

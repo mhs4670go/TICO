@@ -1,0 +1,410 @@
+{
+  "scope": "Read-only source audit; no model/calibration/export run. Does not prove pretrained numerical quality.",
+  "head": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "baseline": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "function_comparisons": [
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter._disable_cache",
+      "baseline_line": 147,
+      "candidate_line": 147,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "c52ed6c4ca3e3b4b951a55d0f2d66e62c985df41d69d0c3cb4a35280a38e1424",
+      "candidate_source_sha256": "c52ed6c4ca3e3b4b951a55d0f2d66e62c985df41d69d0c3cb4a35280a38e1424"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.forward_calibration",
+      "baseline_line": 171,
+      "candidate_line": 171,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "9ed1d37a6d4136d439ad9db444a00a4ac6fc6c999ca76321edb8153824921ecf",
+      "candidate_source_sha256": "9ed1d37a6d4136d439ad9db444a00a4ac6fc6c999ca76321edb8153824921ecf"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.calibrate_prepared_model",
+      "baseline_line": 186,
+      "candidate_line": 186,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "c647266f9860d10f8b3b6c516b3ca1f56a010c58ddc34a5fbc01f5a1b5615629",
+      "candidate_source_sha256": "c647266f9860d10f8b3b6c516b3ca1f56a010c58ddc34a5fbc01f5a1b5615629"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.build_calibration_inputs",
+      "baseline_line": 154,
+      "candidate_line": 154,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "4c776fddbaae608b5d8b97cbcc73a1afc6e1e406a82dfd6d70e9145b491e9a60",
+      "candidate_source_sha256": "4c776fddbaae608b5d8b97cbcc73a1afc6e1e406a82dfd6d70e9145b491e9a60"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.build_ptq_config",
+      "baseline_line": 199,
+      "candidate_line": 199,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "936ef634763228e91caeba41097d1e82d366e74beb9868ab7f639f4e892c69e3",
+      "candidate_source_sha256": "936ef634763228e91caeba41097d1e82d366e74beb9868ab7f639f4e892c69e3"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "function": "QuantQwen3VLTextAttention._normalize_static_past_key_values",
+      "baseline_line": 417,
+      "candidate_line": 392,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "9c0459af94635c8c8b7746ce60d9aee6afc6934d5aa8b1f2d68eb112057e3c8f",
+      "candidate_source_sha256": "9c0459af94635c8c8b7746ce60d9aee6afc6934d5aa8b1f2d68eb112057e3c8f"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "function": "QuantQwen3VLTextAttention._build_present_key_values",
+      "baseline_line": 532,
+      "candidate_line": 507,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "b6b65cc75f835f7e26b171ef6539fc0cff5e36d4cb66a8fee179d58bec986a78",
+      "candidate_source_sha256": "b6b65cc75f835f7e26b171ef6539fc0cff5e36d4cb66a8fee179d58bec986a78"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "function": "QuantQwen3VLTextAttention._update_cache_like",
+      "baseline_line": 478,
+      "candidate_line": 453,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "86ea111617929803322dbba5ea5f604705da6046de8cbd1955ee1675a122a535",
+      "candidate_source_sha256": "86ea111617929803322dbba5ea5f604705da6046de8cbd1955ee1675a122a535"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/llama.py",
+      "function": "LlamaAdapter.calibrate_prepared_model",
+      "baseline_line": 259,
+      "candidate_line": 253,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "ceafeb919d1bb955be386d2dce2c3033a1c0e0433ffa4da6864172a907b8acce",
+      "candidate_source_sha256": "ceafeb919d1bb955be386d2dce2c3033a1c0e0433ffa4da6864172a907b8acce"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/llama/quant_attention.py",
+      "function": "QuantLlamaAttention._normalize_past_key_value",
+      "baseline_line": 486,
+      "candidate_line": 480,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "af0d692ff21d9d804ce43b64a2666c078e8eb31f3b1586f6242a6c0dc5689067",
+      "candidate_source_sha256": "af0d692ff21d9d804ce43b64a2666c078e8eb31f3b1586f6242a6c0dc5689067"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/llama/quant_attention.py",
+      "function": "QuantLlamaAttention._get_layer_kv_from_cache",
+      "baseline_line": 316,
+      "candidate_line": 310,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "f4a04f35b169e586112c06c01be0932cc1286340295bbbeaffd2d42858ffd94c",
+      "candidate_source_sha256": "f4a04f35b169e586112c06c01be0932cc1286340295bbbeaffd2d42858ffd94c"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "function": "Gemma4Adapter._disable_cache",
+      "baseline_line": 205,
+      "candidate_line": 202,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "0c957a8c6cf4e7d7266317ec081dce88ad71662760e94001af6f8ab161ef1adf",
+      "candidate_source_sha256": "0c957a8c6cf4e7d7266317ec081dce88ad71662760e94001af6f8ab161ef1adf"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "function": "Gemma4Adapter.forward_calibration",
+      "baseline_line": 318,
+      "candidate_line": 315,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "6a6588bae346c4445b2fbb07bbc884d8e0c5067d3c948ed4f009d93d4942313a",
+      "candidate_source_sha256": "6a6588bae346c4445b2fbb07bbc884d8e0c5067d3c948ed4f009d93d4942313a"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "function": "Gemma4Adapter.calibrate_prepared_model",
+      "baseline_line": 334,
+      "candidate_line": 331,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "2837274b7e8b242abd8244a4c06707c2442ed116cf3e984b3ac4a4bb48960eab",
+      "candidate_source_sha256": "2837274b7e8b242abd8244a4c06707c2442ed116cf3e984b3ac4a4bb48960eab"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+      "function": "QuantGemma4TextAttention._build_present_key_value",
+      "baseline_line": 447,
+      "candidate_line": 465,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "7b76b9ed75a3f9974f14b9898ebe423e4aebeae15098779348206ff134f88632",
+      "candidate_source_sha256": "7b76b9ed75a3f9974f14b9898ebe423e4aebeae15098779348206ff134f88632"
+    },
+    {
+      "file": "tico/quantization/recipes/stages/ptq.py",
+      "function": "PTQStage.run",
+      "baseline_line": 145,
+      "candidate_line": 145,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "9ec31da0e53695a3506694c2a820e0e192acc680e17cdb2ca9d85f558fe03ef5",
+      "candidate_source_sha256": "9ec31da0e53695a3506694c2a820e0e192acc680e17cdb2ca9d85f558fe03ef5"
+    }
+  ],
+  "source_excerpts": [
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "windows": [
+        {
+          "start": 140,
+          "end": 197,
+          "text": "140:         ctx.model.eval()\n141:         self._disable_cache(ctx.model)\n142: \n143:         ctx.artifacts[\"pretrained_context_length\"] = model_context_length(ctx.model)\n144:         return ctx\n145: \n146:     @staticmethod\n147:     def _disable_cache(model: Any) -> None:\n148:         if hasattr(model, \"config\") and hasattr(model.config, \"use_cache\"):\n149:             model.config.use_cache = False\n150:         if hasattr(model, \"config\") and hasattr(model.config, \"text_config\"):\n151:             if hasattr(model.config.text_config, \"use_cache\"):\n152:                 model.config.text_config.use_cache = False\n153: \n154:     def build_calibration_inputs(self, ctx: RecipeContext) -> list[dict]:\n155:         calib = ctx.cfg.get(\"calibration\", {})\n156:         runtime = ctx.cfg.get(\"runtime\", {})\n157:         return build_vlm_calibration_inputs(\n158:             processor=ctx.processor,\n159:             dataset=calib.get(\"dataset\", \"vqav2\"),\n160:             datasets=calib.get(\"datasets\"),\n161:             n_samples=int(calib.get(\"n_samples\", 128)),\n162:             split=calib.get(\"split\"),\n163:             max_seq_len=calib.get(\"seq_len\"),\n164:             seed=int(runtime.get(\"seed\", 42)),\n165:             allow_benchmark_overlap=bool(calib.get(\"allow_benchmark_overlap\", False)),\n166:             allow_unregistered_dataset=bool(\n167:                 calib.get(\"allow_unregistered_dataset\", False)\n168:             ),\n169:         )\n170: \n171:     def forward_calibration(\n172:         self,\n173:         ctx: RecipeContext,\n174:         model: torch.nn.Module,\n175:         calibration_inputs: Sequence[Any],\n176:         *,\n177:         desc: str,\n178:     ) -> None:\n179:         show_progress = bool(ctx.cfg.get(\"runtime\", {}).get(\"show_progress\", True))\n180:         iterator = tqdm.tqdm(calibration_inputs, desc=desc, disable=not show_progress)\n181:         model.eval()\n182:         with torch.no_grad():\n183:             for batch in iterator:\n184:                 model(**move_to_device(batch, ctx.device))\n185: \n186:     def calibrate_prepared_model(\n187:         self,\n188:         ctx: RecipeContext,\n189:         prepared_model: torch.nn.Module,\n190:         stage_cfg: Mapping[str, Any],\n191:     ) -> None:\n192:         self.forward_calibration(\n193:             ctx,\n194:             prepared_model,\n195:             ctx.calibration_inputs,\n196:             desc=\"PTQ calibration\",\n197:         )"
+        },
+        {
+          "start": 212,
+          "end": 235,
+          "text": "212:         return build_qwen3_vl_ptq_config(\n213:             num_vision_blocks=num_vision_blocks,\n214:             num_text_layers=num_text_layers,\n215:             num_deepstack_mergers=num_deepstack_mergers,\n216:             model_args=model_args,\n217:             activation=quant_spec_from_config(stage_cfg.get(\"activation\", \"int16\")),\n218:             linear_weight=quant_spec_from_config(stage_cfg.get(\"linear_weight\")),\n219:             text_linear_weight=quant_spec_from_config(\n220:                 stage_cfg.get(\"text_linear_weight\")\n221:             ),\n222:             vision_linear_weight=quant_spec_from_config(\n223:                 stage_cfg.get(\"vision_linear_weight\")\n224:             ),\n225:             vision_patch_embed_weight=quant_spec_from_config(\n226:                 stage_cfg.get(\"vision_patch_embed_weight\")\n227:             ),\n228:             embedding_weight=quant_spec_from_config(stage_cfg.get(\"embedding_weight\")),\n229:             lm_head_weight=quant_spec_from_config(stage_cfg.get(\"lm_head_weight\")),\n230:             spin_rotation_weight=quant_spec_from_config(\n231:                 stage_cfg.get(\"spin_rotation_weight\")\n232:             ),\n233:             norm=quant_spec_from_config(stage_cfg.get(\"norm\")),\n234:             norm_weight=quant_spec_from_config(stage_cfg.get(\"norm_weight\")),\n235:             strict_wrap=bool(stage_cfg.get(\"strict_wrap\", True)),"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/llama.py",
+      "windows": [
+        {
+          "start": 152,
+          "end": 164,
+          "text": "152:     def _ptq_decode_calibration_steps(self, cfg: Mapping[str, Any]) -> int:\n153:         calib = cfg.get(\"calibration\", {})\n154:         if not isinstance(calib, Mapping):\n155:             calib = {}\n156:         decode_steps = int(calib.get(\"decode_steps\", 0))\n157: \n158:         for stage in cfg.get(\"pipeline\", []):\n159:             if not isinstance(stage, Mapping):\n160:                 continue\n161:             if stage.get(\"name\") == \"ptq\" and stage.get(\"enabled\", True):\n162:                 return int(stage.get(\"decode_calibration_steps\", decode_steps))\n163: \n164:         return decode_steps"
+        },
+        {
+          "start": 253,
+          "end": 294,
+          "text": "253:     def calibrate_prepared_model(\n254:         self,\n255:         ctx: RecipeContext,\n256:         prepared_model: torch.nn.Module,\n257:         stage_cfg: Mapping[str, Any],\n258:     ) -> None:\n259:         decode_steps = int(\n260:             stage_cfg.get(\n261:                 \"decode_calibration_steps\",\n262:                 ctx.cfg.get(\"calibration\", {}).get(\"decode_steps\", 0),\n263:             )\n264:         )\n265:         show_progress = bool(ctx.cfg.get(\"runtime\", {}).get(\"show_progress\", True))\n266:         iterator = tqdm.tqdm(\n267:             ctx.calibration_inputs, desc=\"PTQ calibration\", disable=not show_progress\n268:         )\n269:         prepared_model.eval()\n270: \n271:         with torch.no_grad():\n272:             for inp in iterator:\n273:                 inp = inp.to(ctx.device)\n274:                 if decode_steps <= 0:\n275:                     prepared_model(inp)\n276:                     continue\n277: \n278:                 outputs = prepared_model(\n279:                     input_ids=inp, use_cache=True, return_dict=True\n280:                 )\n281:                 past_key_values = outputs.past_key_values\n282:                 next_input_ids = outputs.logits[:, -1, :].argmax(dim=-1, keepdim=True)\n283: \n284:                 for _ in range(decode_steps):\n285:                     outputs = prepared_model(\n286:                         input_ids=next_input_ids,\n287:                         past_key_values=past_key_values,\n288:                         use_cache=True,\n289:                         return_dict=True,\n290:                     )\n291:                     past_key_values = outputs.past_key_values\n292:                     next_input_ids = outputs.logits[:, -1, :].argmax(\n293:                         dim=-1, keepdim=True\n294:                     )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "windows": [
+        {
+          "start": 168,
+          "end": 170,
+          "text": "168:         ctx.model.eval()\n169:         self._disable_cache(ctx.model)\n170:         assert_gemma4_e2b_no_moe(ctx.model)"
+        },
+        {
+          "start": 201,
+          "end": 217,
+          "text": "201:     @staticmethod\n202:     def _disable_cache(model: Any) -> None:\n203:         \"\"\"Disable HF dynamic cache paths during PTQ calibration.\"\"\"\n204:         if hasattr(model, \"config\") and hasattr(model.config, \"use_cache\"):\n205:             model.config.use_cache = False\n206:         text_config = getattr(getattr(model, \"config\", None), \"text_config\", None)\n207:         if text_config is not None and hasattr(text_config, \"use_cache\"):\n208:             text_config.use_cache = False\n209: \n210:     @staticmethod\n211:     def _enable_cache(model: Any) -> None:\n212:         \"\"\"Re-enable HF dynamic cache for autoregressive generation.\"\"\"\n213:         if hasattr(model, \"config\") and hasattr(model.config, \"use_cache\"):\n214:             model.config.use_cache = True\n215:         text_config = getattr(getattr(model, \"config\", None), \"text_config\", None)\n216:         if text_config is not None and hasattr(text_config, \"use_cache\"):\n217:             text_config.use_cache = True"
+        },
+        {
+          "start": 315,
+          "end": 340,
+          "text": "315:     def forward_calibration(\n316:         self,\n317:         ctx: RecipeContext,\n318:         model: torch.nn.Module,\n319:         calibration_inputs: Sequence[Any],\n320:         *,\n321:         desc: str,\n322:     ) -> None:\n323:         \"\"\"Run calibration samples through the prepared Gemma4 model.\"\"\"\n324:         show_progress = bool(ctx.cfg.get(\"runtime\", {}).get(\"show_progress\", True))\n325:         iterator = tqdm.tqdm(calibration_inputs, desc=desc, disable=not show_progress)\n326:         model.eval()\n327:         with torch.no_grad():\n328:             for batch in iterator:\n329:                 model(**move_to_device(batch, ctx.device))\n330: \n331:     def calibrate_prepared_model(\n332:         self,\n333:         ctx: RecipeContext,\n334:         prepared_model: torch.nn.Module,\n335:         stage_cfg: Mapping[str, Any],\n336:     ) -> None:\n337:         \"\"\"Calibrate a prepared PTQ model.\"\"\"\n338:         self.forward_calibration(\n339:             ctx, prepared_model, ctx.calibration_inputs, desc=\"Gemma4 PTQ calibration\"\n340:         )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/recipes/stages/ptq.py",
+      "windows": [
+        {
+          "start": 209,
+          "end": 219,
+          "text": "209:             print(\n210:                 f\"[Info] Reused GPTQ qparams for {stats['matched']} \"\n211:                 \"PTQ weight observer(s).\"\n212:             )\n213: \n214:         ctx.adapter.calibrate_prepared_model(ctx, q_model, stage_cfg)\n215: \n216:         ctx.model = convert(q_model)\n217:         if bool(stage_cfg.get(\"print_model\", False)):\n218:             print(\"=== Model after PTQ ===\")\n219:             print(ctx.require_model())"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/recipes/data/vlm.py",
+      "windows": [
+        {
+          "start": 81,
+          "end": 114,
+          "text": "81:     Returns:\n82:         A list of processor output dictionaries for calibration.\n83:     \"\"\"\n84:     if datasets is not None:\n85:         dataset_config = normalize_mixed_dataset_config(datasets, n_samples)\n86:         return get_mixed_calib_inputs(\n87:             processor=processor,\n88:             dataset_config=dataset_config,\n89:             max_seq_len=max_seq_len or 2048,\n90:             seed=seed,\n91:             allow_benchmark_overlap=allow_benchmark_overlap,\n92:             allow_unregistered_dataset=allow_unregistered_dataset,\n93:         )\n94: \n95:     if dataset is not None and \",\" in dataset:\n96:         dataset_config = normalize_mixed_dataset_config(dataset, n_samples)\n97:         return get_mixed_calib_inputs(\n98:             processor=processor,\n99:             dataset_config=dataset_config,\n100:             max_seq_len=max_seq_len or 2048,\n101:             seed=seed,\n102:             allow_benchmark_overlap=allow_benchmark_overlap,\n103:             allow_unregistered_dataset=allow_unregistered_dataset,\n104:         )\n105: \n106:     return get_calib_inputs(\n107:         dataset or DEFAULT_CALIBRATION_DATASET,\n108:         processor,\n109:         n_samples=n_samples,\n110:         split=split,\n111:         max_seq_len=max_seq_len,\n112:         allow_benchmark_overlap=allow_benchmark_overlap,\n113:         allow_unregistered_dataset=allow_unregistered_dataset,\n114:     )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/evaluation/vlm_eval_utils.py",
+      "windows": [
+        {
+          "start": 1594,
+          "end": 1609,
+          "text": "1594:         calib_inputs = []\n1595:         for ex in selected:\n1596:             item = adapter(ex)\n1597:             if item.get(\"image\") is None:\n1598:                 continue\n1599:             inputs = build_vlm_inputs(\n1600:                 processor=processor,\n1601:                 image=item[\"image\"],\n1602:                 question=item[\"question\"],\n1603:                 return_tensors=\"pt\",\n1604:                 max_seq_len=max_seq_len,\n1605:             )\n1606:             calib_inputs.append(inputs)\n1607: \n1608:         print(f\"[info] Built {len(calib_inputs)} calibration inputs from {dataset}\")\n1609:         return calib_inputs"
+        },
+        {
+          "start": 1621,
+          "end": 1636,
+          "text": "1621:     calib_inputs = []\n1622:     for ex in ds:\n1623:         item = adapter(ex)\n1624:         # Skip samples without a valid image (e.g. multi-image MMMU samples)\n1625:         if item.get(\"image\") is None:\n1626:             continue\n1627:         inputs = build_vlm_inputs(\n1628:             processor=processor,\n1629:             image=item[\"image\"],\n1630:             question=item[\"question\"],\n1631:             return_tensors=\"pt\",\n1632:             max_seq_len=max_seq_len,\n1633:         )\n1634:         calib_inputs.append(inputs)\n1635: \n1636:     return calib_inputs"
+        },
+        {
+          "start": 1709,
+          "end": 1715,
+          "text": "1709:         sample_ids = input_ids[:, start:end]\n1710: \n1711:         # Build inputs dict similar to processor output\n1712:         inputs = {\"input_ids\": sample_ids}\n1713:         calib_inputs.append(inputs)\n1714: \n1715:     return calib_inputs"
+        },
+        {
+          "start": 1850,
+          "end": 1863,
+          "text": "1850:             # Concatenate all text\n1851:             full_text = \"\\n\\n\".join(all_texts)\n1852:             print(f\"[info] Tokenizing {len(full_text)} chars from '{dataset}'\")\n1853: \n1854:             # Sample random fixed-length sequences\n1855:             text_inputs = _build_text_calib_inputs(\n1856:                 processor=processor,\n1857:                 text=full_text,\n1858:                 n_samples=n_samples,\n1859:                 max_seq_len=max_seq_len,\n1860:                 seed=seed,\n1861:             )\n1862:             calib_inputs.extend(text_inputs)\n1863:         else:"
+        },
+        {
+          "start": 1879,
+          "end": 1891,
+          "text": "1879:             for ex in ds:\n1880:                 item = adapter(ex)\n1881:                 # Skip samples without a valid image (e.g. multi-image MMMU samples)\n1882:                 if item.get(\"image\") is None:\n1883:                     continue\n1884:                 inputs = build_vlm_inputs(\n1885:                     processor=processor,\n1886:                     image=item[\"image\"],\n1887:                     question=item[\"question\"],\n1888:                     return_tensors=\"pt\",\n1889:                     max_seq_len=max_seq_len,\n1890:                 )\n1891:                 calib_inputs.append(inputs)"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py",
+      "windows": [
+        {
+          "start": 519,
+          "end": 534,
+          "text": "519:         prepared = getattr(self, \"_static_export_inputs\", None)\n520:         if prepared is not None:\n521:             if use_cache or past_key_values is not None:\n522:                 raise ValueError(\n523:                     \"Full Qwen3-VL static text export is cache-free prefill. \"\n524:                     \"Use per-layer adapters for external KV-cache export.\"\n525:                 )\n526:             use_cache = False\n527:         elif use_cache is None:\n528:             use_cache = self.config.use_cache\n529: \n530:         # torch.jit.trace() doesn't support cache objects in the output\n531:         if use_cache and past_key_values is None and not torch.jit.is_tracing():\n532:             from transformers.cache_utils import DynamicCache\n533: \n534:             past_key_values = DynamicCache(config=self.config)"
+        },
+        {
+          "start": 618,
+          "end": 629,
+          "text": "618:         # decoder layers\n619:         for layer_idx, decoder_layer in enumerate(self.layers):\n620:             layer_outputs = decoder_layer(\n621:                 hidden_states,\n622:                 attention_mask=attention_mask,\n623:                 position_ids=text_position_ids,\n624:                 past_key_values=past_key_values,\n625:                 position_embeddings=position_embeddings,\n626:                 cache_position=cache_position,\n627:                 use_cache=use_cache,\n628:                 **kwargs,\n629:             )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "windows": [
+        {
+          "start": 179,
+          "end": 185,
+          "text": "179:         # Cache tensors\n180:         self.obs_past_key = mk(\"past_key\")\n181:         self.obs_past_value = mk(\"past_value\")\n182:         self.obs_new_k = mk(\"new_k\")\n183:         self.obs_new_v = mk(\"new_v\")\n184:         self.obs_present_key = mk(\"present_key\")\n185:         self.obs_present_value = mk(\"present_value\")"
+        },
+        {
+          "start": 392,
+          "end": 406,
+          "text": "392:     def _normalize_static_past_key_values(\n393:         self,\n394:         past_key_values,\n395:     ) -> Optional[LayerKV]:\n396:         \"\"\"Quantize and return a per-layer static KV tuple when one is provided.\"\"\"\n397:         if not self._is_static_kv_tuple(past_key_values):\n398:             return None\n399: \n400:         past_k, past_v = past_key_values[0], past_key_values[1]\n401:         if past_k is None or past_v is None:\n402:             return None\n403: \n404:         past_k = self._fq(past_k, self.obs_past_key)\n405:         past_v = self._fq(past_v, self.obs_past_value)\n406:         return past_k, past_v"
+        },
+        {
+          "start": 518,
+          "end": 548,
+          "text": "518:         \"\"\"Build the full present KV tensors used by the attention matmul.\"\"\"\n519:         if normalized_static_past is not None:\n520:             past_k, past_v = normalized_static_past\n521:             present_k = self._fq(\n522:                 torch.cat([past_k, new_k], dim=2),\n523:                 self.obs_present_key,\n524:             )\n525:             present_v = self._fq(\n526:                 torch.cat([past_v, new_v], dim=2),\n527:                 self.obs_present_value,\n528:             )\n529:             return present_k, present_v\n530: \n531:         if past_key_values is not None and not self._is_static_kv_tuple(\n532:             past_key_values\n533:         ):\n534:             present_k, present_v = self._update_cache_like(\n535:                 past_key_values,\n536:                 new_k,\n537:                 new_v,\n538:                 cos=cos,\n539:                 sin=sin,\n540:                 cache_position=cache_position,\n541:             )\n542:             present_k = self._fq(present_k, self.obs_present_key)\n543:             present_v = self._fq(present_v, self.obs_present_value)\n544:             return present_k, present_v\n545: \n546:         present_k = self._fq(new_k, self.obs_present_key)\n547:         present_v = self._fq(new_v, self.obs_present_value)\n548:         return present_k, present_v"
+        },
+        {
+          "start": 761,
+          "end": 774,
+          "text": "761:         normalized_static_past = self._normalize_static_past_key_values(past_key_values)\n762: \n763:         new_k = self._fq(k_rot, self.obs_new_k)\n764:         new_v = self._fq(v, self.obs_new_v)\n765: \n766:         present_k, present_v = self._build_present_key_values(\n767:             past_key_values=past_key_values,\n768:             normalized_static_past=normalized_static_past,\n769:             new_k=new_k,\n770:             new_v=new_v,\n771:             cos=cos,\n772:             sin=sin,\n773:             cache_position=cache_position,\n774:         )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/llama/quant_attention.py",
+      "windows": [
+        {
+          "start": 332,
+          "end": 337,
+          "text": "332:         def maybe_quantize(k: torch.Tensor, v: torch.Tensor) -> LayerKV:\n333:             if k_obs is not None:\n334:                 k = self._fq(k, k_obs)\n335:             if v_obs is not None:\n336:                 v = self._fq(v, v_obs)\n337:             return k, v"
+        },
+        {
+          "start": 480,
+          "end": 514,
+          "text": "480:     def _normalize_past_key_value(\n481:         self,\n482:         past_key_value: Optional[Cache | LayerKV],\n483:     ) -> Optional[LayerKV]:\n484:         \"\"\"\n485:         Convert an HF cache object into a per-layer legacy KV tuple.\n486: \n487:         Args:\n488:             past_key_value: Input cache in HF `Cache` form or legacy tuple form.\n489: \n490:         Returns:\n491:             A per-layer tuple `(past_k, past_v)` if cache exists, otherwise None.\n492: \n493:         Raises:\n494:             RuntimeError: If a `Cache` object is provided but this module cannot\n495:                 extract the current layer's KV tensors.\n496:         \"\"\"\n497:         if past_key_value is None:\n498:             return None\n499: \n500:         if isinstance(past_key_value, tuple):\n501:             past_k, past_v = past_key_value\n502:             if past_k is None or past_v is None:\n503:                 return None\n504:             past_k = self._fq(past_k, self.obs_past_key)\n505:             past_v = self._fq(past_v, self.obs_past_value)\n506:             return (past_k, past_v)\n507: \n508:         past_key_value = self._get_layer_kv_from_cache(\n509:             past_key_value,\n510:             k_obs=self.obs_past_key,\n511:             v_obs=self.obs_past_value,\n512:         )\n513: \n514:         return past_key_value"
+        },
+        {
+          "start": 1034,
+          "end": 1037,
+          "text": "1034:         del cache_position, kwargs\n1035: \n1036:         past_key_value_in = past_key_value\n1037:         past_key_value = self._normalize_past_key_value(past_key_value)"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+      "windows": [
+        {
+          "start": 465,
+          "end": 498,
+          "text": "465:     def _build_present_key_value(\n466:         self,\n467:         *,\n468:         new_key_value: LayerKV,\n469:         past_key_value: Optional[Any],\n470:     ) -> tuple[LayerKV, Optional[Any]]:\n471:         \"\"\"Build full K/V tensors for attention and an optional cache object.\"\"\"\n472:         new_k, new_v = new_key_value\n473:         cache_object_out = None\n474: \n475:         if past_key_value is None:\n476:             present_k = self._fq(new_k, self.obs_present_key)\n477:             present_v = self._fq(new_v, self.obs_present_value)\n478:             return (present_k, present_v), cache_object_out\n479: \n480:         if isinstance(past_key_value, tuple):\n481:             past_k, past_v = past_key_value\n482:             past_k = self._fq(past_k, self.obs_present_key)\n483:             past_v = self._fq(past_v, self.obs_present_value)\n484:             present_k = self._fq(\n485:                 torch.cat([past_k, new_k], dim=2), self.obs_present_key\n486:             )\n487:             present_v = self._fq(\n488:                 torch.cat([past_v, new_v], dim=2), self.obs_present_value\n489:             )\n490:             return (present_k, present_v), cache_object_out\n491: \n492:         update = getattr(past_key_value, \"update\", None)\n493:         if callable(update):\n494:             present_k, present_v = update(new_k, new_v, self.layer_idx)\n495:             present_k = self._fq(present_k, self.obs_present_key)\n496:             present_v = self._fq(present_v, self.obs_present_value)\n497:             cache_object_out = past_key_value\n498:             return (present_k, present_v), cache_object_out"
+        },
+        {
+          "start": 788,
+          "end": 812,
+          "text": "788:         new_key_value: Optional[LayerKV]\n789:         cache_object_out: Optional[Any] = None\n790:         if self.is_kv_shared_layer:\n791:             key_states, value_states = self._resolve_shared_key_value(\n792:                 shared_key_value,\n793:                 shared_kv_states,\n794:             )\n795:             key_states = self._fq(\n796:                 key_states.to(device=query_states.device, dtype=query_states.dtype),\n797:                 self.obs_present_key,\n798:             )\n799:             value_states = self._fq(\n800:                 value_states.to(device=query_states.device, dtype=query_states.dtype),\n801:                 self.obs_present_value,\n802:             )\n803:             new_key_value = None\n804:             present_key_value: Optional[LayerKV] = (key_states, value_states)\n805:         else:\n806:             new_key_value = self._project_current_key_value(\n807:                 hidden, hidden_shape, cos, sin\n808:             )\n809:             present_key_value, cache_object_out = self._build_present_key_value(\n810:                 new_key_value=new_key_value,\n811:                 past_key_value=past_key_value,\n812:             )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/quant_module_base.py",
+      "windows": [
+        {
+          "start": 104,
+          "end": 131,
+          "text": "104:     def enable_calibration(self) -> None:\n105:         self._mode = Mode.CALIB\n106:         for obs in self._all_observers():\n107:             obs.enabled = True\n108:             obs.reset()\n109: \n110:         # propagate to children\n111:         for child in self._child_quant_modules():\n112:             child.enable_calibration()\n113: \n114:     def freeze_qparams(self) -> None:\n115:         self._mode = Mode.QUANT\n116:         for obs in self._all_observers():\n117:             obs.enabled = False\n118:             obs.compute_qparams()\n119: \n120:         # propagate to children\n121:         for child in self._child_quant_modules():\n122:             child.freeze_qparams()\n123: \n124:     def _fq(self, x: torch.Tensor, obs: ObserverBase) -> torch.Tensor:\n125:         \"\"\"Fake-quant or collect.\"\"\"\n126:         if self._mode is Mode.CALIB:\n127:             obs.collect(x.detach())\n128:             return x\n129:         if self._mode is Mode.QUANT:\n130:             return obs.fake_quant(x)\n131:         return x  # NO_QUANT"
+        },
+        {
+          "start": 164,
+          "end": 180,
+          "text": "164:     def _make_obs(\n165:         self,\n166:         name: str,\n167:         **default_kwargs,\n168:     ) -> ObserverBase:\n169:         \"\"\"\n170:         Instantiate an observer named `name`.\n171: \n172:         Precedence for observer, dtype, qscheme, and other kwargs is:\n173:             1. explicit observer override in PTQConfig.overrides\n174:             2. wrapper defaults passed by the wrapper implementation\n175:             3. role-level QuantSpec from PTQConfig.activation or PTQConfig.weight\n176: \n177:         ``QuantSpec.to_kwargs(mark_replace=True)`` adds the internal\n178:         ``__quant_spec_replace_role__`` marker to an explicit observer override.\n179:         This method removes the marker before observer construction. When the\n180:         marker is set, the role-level activation or weight QuantSpec is discarded"
+        },
+        {
+          "start": 189,
+          "end": 194,
+          "text": "189:         _UNSPEC: Any = object()\n190: \n191:         wrapper_defaults = default_kwargs.copy()\n192:         role_cfg = self.qcfg.get_role_kwargs(name).copy()\n193:         user_cfg = self.qcfg.get_kwargs(name).copy()\n194:         replace_role = bool(user_cfg.pop(\"__quant_spec_replace_role__\", False))"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/config/builders.py",
+      "windows": [
+        {
+          "start": 45,
+          "end": 52,
+          "text": "45: def _default_builder_activation() -> QuantSpec:\n46:     \"\"\"Return the default builder activation spec.\"\"\"\n47:     return affine(DType.int(16))\n48: \n49: \n50: def _default_builder_weight() -> QuantSpec:\n51:     \"\"\"Return the default builder parameter spec.\"\"\"\n52:     return affine(DType.int(16))"
+        },
+        {
+          "start": 322,
+          "end": 351,
+          "text": "322: def _build_qwen3_vl_text_layer_overrides(\n323:     *,\n324:     linear_weight: Optional[QuantSpec],\n325:     norm: Optional[QuantSpec],\n326:     norm_weight: Optional[QuantSpec],\n327: ) -> Dict[str, Any]:\n328:     \"\"\"Build per-layer overrides for a Qwen3-VL text decoder block.\"\"\"\n329:     layer_overrides: Dict[str, Any] = {}\n330: \n331:     linear_override = _build_weight_override(linear_weight)\n332:     if linear_override:\n333:         _set_nested_override(layer_overrides, (\"self_attn\", \"q_proj\"), linear_override)\n334:         _set_nested_override(layer_overrides, (\"self_attn\", \"k_proj\"), linear_override)\n335:         _set_nested_override(layer_overrides, (\"self_attn\", \"v_proj\"), linear_override)\n336:         _set_nested_override(layer_overrides, (\"self_attn\", \"o_proj\"), linear_override)\n337: \n338:         _set_nested_override(layer_overrides, (\"mlp\", \"gate_proj\"), linear_override)\n339:         _set_nested_override(layer_overrides, (\"mlp\", \"up_proj\"), linear_override)\n340:         _set_nested_override(layer_overrides, (\"mlp\", \"down_proj\"), linear_override)\n341: \n342:     norm_override = _build_qwen3_vl_norm_override(norm=norm, norm_weight=norm_weight)\n343:     if norm_override:\n344:         _set_nested_override(layer_overrides, (\"input_layernorm\",), norm_override)\n345:         _set_nested_override(\n346:             layer_overrides, (\"post_attention_layernorm\",), norm_override\n347:         )\n348:         _set_nested_override(layer_overrides, (\"self_attn\", \"q_norm\"), norm_override)\n349:         _set_nested_override(layer_overrides, (\"self_attn\", \"k_norm\"), norm_override)\n350: \n351:     return layer_overrides"
+        },
+        {
+          "start": 510,
+          "end": 534,
+          "text": "510:     activation = activation or _default_builder_activation()\n511:     weight = weight or _default_builder_weight()\n512: \n513:     overrides = _build_qwen3_vl_overrides(\n514:         num_vision_blocks=num_vision_blocks,\n515:         num_text_layers=num_text_layers,\n516:         num_deepstack_mergers=num_deepstack_mergers,\n517:         linear_weight=linear_weight,\n518:         text_linear_weight=text_linear_weight,\n519:         vision_linear_weight=vision_linear_weight,\n520:         vision_patch_embed_weight=vision_patch_embed_weight,\n521:         embedding_weight=embedding_weight,\n522:         lm_head_weight=lm_head_weight,\n523:         spin_rotation_weight=spin_rotation_weight,\n524:         norm=norm,\n525:         norm_weight=norm_weight,\n526:     )\n527: \n528:     return PTQConfig(\n529:         activation=activation,\n530:         weight=weight,\n531:         overrides=overrides,\n532:         strict_wrap=strict_wrap,\n533:         model_args=model_args,\n534:     )"
+        }
+      ]
+    },
+    {
+      "file": "tico/quantization/recipes/export/qwen3_vl.py",
+      "windows": [
+        {
+          "start": 454,
+          "end": 481,
+          "text": "454:         if prefill_decode:\n455:             decode_hidden = torch.randn(1, 1, hidden_size, device=\"cpu\")\n456:             decode_position_embeddings = _make_position_embeddings(\n457:                 seq_len=1,\n458:                 head_dim=head_dim,\n459:             )\n460:             decode_mask = _make_decode_attention_mask(max_seq_len)\n461:             past_key = torch.randn(\n462:                 1,\n463:                 num_kv_heads,\n464:                 max_seq_len - 1,\n465:                 head_dim,\n466:                 device=\"cpu\",\n467:             )\n468:             past_value = torch.randn_like(past_key)\n469:             _convert_and_save(\n470:                 cast(QuantQwen3VLTextDecoderLayer, layer.wrapped).as_export_module(\n471:                     \"decode\", return_kv=True\n472:                 ),\n473:                 (decode_hidden,),\n474:                 output_dir\n475:                 / _circle_name(f\"decoder_layer_decode_{layer_idx}\", artifact_tag),\n476:                 kwargs={\n477:                     \"attention_mask\": decode_mask,\n478:                     \"position_embeddings\": decode_position_embeddings,\n479:                     \"past_key_values\": (past_key, past_value),\n480:                 },\n481:                 strict=strict,"
+        }
+      ]
+    }
+  ]
+}

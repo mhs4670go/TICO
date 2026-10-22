@@ -1,0 +1,101 @@
+{
+  "scope": "comparator unit negative tests; schema-shaped fixture, no compiler/runtime",
+  "cases": {
+    "missing_torch_arrays_and_parity": {
+      "expected_comparator_ok": false,
+      "actual_comparator_ok": true,
+      "negative_test_status": "FAIL",
+      "comparison": {
+        "ok": true,
+        "failures": [],
+        "stages": {
+          "decoder.q.circle": {
+            "circle_structure_equal": true,
+            "circle_structure_differences": [],
+            "torch_export_ops_equal": true,
+            "probe_names_equal": true,
+            "execution_mode_equal": true,
+            "torch_parity_left": [
+              {
+                "probe": "export_example",
+                "torch_parity": []
+              }
+            ],
+            "torch_parity_right": [
+              {
+                "probe": "export_example",
+                "torch_parity": []
+              }
+            ],
+            "arrays": {
+              "p0_circle_0": {
+                "ok": true,
+                "max_abs_error": 0.0
+              },
+              "p0_input_0": {
+                "ok": true,
+                "max_abs_error": 0.0
+              }
+            },
+            "array_keys_equal": true,
+            "numerical_coverage_complete": true,
+            "ok": true
+          }
+        }
+      }
+    },
+    "missing_input_arrays": {
+      "expected_comparator_ok": false,
+      "actual_comparator_ok": true,
+      "negative_test_status": "FAIL",
+      "comparison": {
+        "ok": true,
+        "failures": [],
+        "stages": {
+          "decoder.q.circle": {
+            "circle_structure_equal": true,
+            "circle_structure_differences": [],
+            "torch_export_ops_equal": true,
+            "probe_names_equal": true,
+            "execution_mode_equal": true,
+            "torch_parity_left": [
+              {
+                "probe": "export_example",
+                "torch_parity": [
+                  {
+                    "max_abs_error": 0.0,
+                    "ok": true
+                  }
+                ]
+              }
+            ],
+            "torch_parity_right": [
+              {
+                "probe": "export_example",
+                "torch_parity": [
+                  {
+                    "max_abs_error": 0.0,
+                    "ok": true
+                  }
+                ]
+              }
+            ],
+            "arrays": {
+              "p0_circle_0": {
+                "ok": true,
+                "max_abs_error": 0.0
+              },
+              "p0_torch_0": {
+                "ok": true,
+                "max_abs_error": 0.0
+              }
+            },
+            "array_keys_equal": true,
+            "numerical_coverage_complete": true,
+            "ok": true
+          }
+        }
+      }
+    }
+  }
+}

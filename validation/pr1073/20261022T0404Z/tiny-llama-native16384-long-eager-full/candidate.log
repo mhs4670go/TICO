@@ -1,0 +1,4 @@
+[QuantCheck] WARNING: 9 nodes without qparam detected (see logs).
+Saved Circle model to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-native16384-long-eager-full/candidate/before/artifacts/model.q.circle
+[QuantCheck] WARNING: 9 nodes without qparam detected (see logs).
+Saved Circle model to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-native16384-long-eager-full/candidate/after_eager/artifacts/model.q.circle

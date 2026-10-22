@@ -1,0 +1,1006 @@
+[
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/changed_unit_tests.log",
+    "status": "FAIL",
+    "tests_run": 314,
+    "partial_console_status_counts": {
+      "ok": 302,
+      "FAIL": 0,
+      "ERROR": 11
+    },
+    "elapsed_seconds": 195.205,
+    "console_outcome": "FAILED (errors=11)",
+    "counts": {
+      "errors": 11
+    },
+    "failures": [
+      "test_adapter_llava_bench_routing (unittest.loader._FailedTest.test_adapter_llava_bench_routing)",
+      "test_adapter_mmmu_routing (unittest.loader._FailedTest.test_adapter_mmmu_routing)",
+      "test_adapter_vqa_routing (unittest.loader._FailedTest.test_adapter_vqa_routing)",
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (test.quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (test.quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)",
+      "test_llama_adapter (unittest.loader._FailedTest.test_llama_adapter)",
+      "test_runner (unittest.loader._FailedTest.test_runner)",
+      "test_runner_preflight (unittest.loader._FailedTest.test_runner_preflight)",
+      "test_video_mme_evaluation (unittest.loader._FailedTest.test_video_mme_evaluation)",
+      "test_vlm_adapter_model_loading (unittest.loader._FailedTest.test_vlm_adapter_model_loading)",
+      "test_full_text_export_builds_only_the_captured_visual_positions (test.quantization.wrapq.wrappers.qwen_vl.test_eager_context.TestQwen3VLEagerContext.test_full_text_export_builds_only_the_captured_visual_positions)"
+    ],
+    "partial_error_tests": [
+      "test_adapter_llava_bench_routing (unittest.loader._FailedTest.test_adapter_llava_bench_routing)",
+      "test_adapter_mmmu_routing (unittest.loader._FailedTest.test_adapter_mmmu_routing)",
+      "test_adapter_vqa_routing (unittest.loader._FailedTest.test_adapter_vqa_routing)",
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (test.quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (test.quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)",
+      "test_llama_adapter (unittest.loader._FailedTest.test_llama_adapter)",
+      "test_runner (unittest.loader._FailedTest.test_runner)",
+      "test_runner_preflight (unittest.loader._FailedTest.test_runner_preflight)",
+      "test_video_mme_evaluation (unittest.loader._FailedTest.test_video_mme_evaluation)",
+      "test_vlm_adapter_model_loading (unittest.loader._FailedTest.test_vlm_adapter_model_loading)",
+      "test_full_text_export_builds_only_the_captured_visual_positions (test.quantization.wrapq.wrappers.qwen_vl.test_eager_context.TestQwen3VLEagerContext.test_full_text_export_builds_only_the_captured_visual_positions)"
+    ],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 1,
+    "passed_excluding_skips_expected_failures": 303
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/changed_unit_discovery.log",
+    "status": "FAIL",
+    "tests_run": 461,
+    "partial_console_status_counts": {
+      "ok": 454,
+      "FAIL": 0,
+      "ERROR": 6
+    },
+    "elapsed_seconds": 115.456,
+    "console_outcome": "FAILED (errors=6)",
+    "counts": {
+      "errors": 6
+    },
+    "failures": [
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)",
+      "test_decode_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_decode_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_without_cache_return_logits_only (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_without_cache_return_logits_only)",
+      "test_full_text_export_builds_only_the_captured_visual_positions (quantization.wrapq.wrappers.qwen_vl.test_eager_context.TestQwen3VLEagerContext.test_full_text_export_builds_only_the_captured_visual_positions)"
+    ],
+    "partial_error_tests": [
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)",
+      "test_decode_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_decode_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_without_cache_return_logits_only (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_without_cache_return_logits_only)",
+      "test_full_text_export_builds_only_the_captured_visual_positions (quantization.wrapq.wrappers.qwen_vl.test_eager_context.TestQwen3VLEagerContext.test_full_text_export_builds_only_the_captured_visual_positions)"
+    ],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 1,
+    "passed_excluding_skips_expected_failures": 455
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/baseline_llama_export_units.log",
+    "status": "PASS",
+    "tests_run": 23,
+    "partial_console_status_counts": {
+      "ok": 23,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "elapsed_seconds": 0.769,
+    "console_outcome": "OK",
+    "counts": {},
+    "failures": [],
+    "partial_error_tests": [],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 0,
+    "passed_excluding_skips_expected_failures": 23
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/baseline_llama_causal_units.log",
+    "status": "PASS",
+    "tests_run": 6,
+    "partial_console_status_counts": {
+      "ok": 6,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "elapsed_seconds": 4.028,
+    "console_outcome": "OK",
+    "counts": {},
+    "failures": [],
+    "partial_error_tests": [],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 0,
+    "passed_excluding_skips_expected_failures": 6
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/baseline_llama_attention_units.log",
+    "status": "PASS",
+    "tests_run": 18,
+    "partial_console_status_counts": {
+      "ok": 18,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "elapsed_seconds": 0.938,
+    "console_outcome": "OK",
+    "counts": {},
+    "failures": [],
+    "partial_error_tests": [],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 0,
+    "passed_excluding_skips_expected_failures": 18
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/baseline_qparam_timeout_probe.log",
+    "status": "PASS",
+    "tests_run": 1,
+    "partial_console_status_counts": {
+      "ok": 1,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "elapsed_seconds": 33.394,
+    "console_outcome": "OK",
+    "counts": {},
+    "failures": [],
+    "partial_error_tests": [],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 0,
+    "passed_excluding_skips_expected_failures": 1
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/candidate_qparam_timeout_probe.log",
+    "status": "PASS",
+    "tests_run": 1,
+    "partial_console_status_counts": {
+      "ok": 1,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "elapsed_seconds": 35.758,
+    "console_outcome": "OK",
+    "counts": {},
+    "failures": [],
+    "partial_error_tests": [],
+    "partial_failure_tests": [],
+    "skips": [],
+    "exit_code": 0,
+    "passed_excluding_skips_expected_failures": 1
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/quantization_suite.log",
+    "status": "FAIL",
+    "tests_run": 2670,
+    "partial_console_status_counts": {
+      "ok": 2506,
+      "FAIL": 0,
+      "ERROR": 9
+    },
+    "elapsed_seconds": 1020.806,
+    "console_outcome": "FAILED (errors=9, skipped=141)",
+    "counts": {
+      "errors": 9,
+      "skipped": 141
+    },
+    "failures": [
+      "test_full_model_example_rejects_bit_mismatch (quantization.examples.test_gptq_qparam_handoff.TestLegacyGPTQQParamHandoff.test_full_model_example_rejects_bit_mismatch)",
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)",
+      "test_export_adapters_without_cache_return_hidden_only (quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_export_adapters_without_cache_return_hidden_only)",
+      "test_prefill_export_adapter_returns_delta_kv (quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_prefill_export_adapter_returns_delta_kv)",
+      "test_decode_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_decode_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_without_cache_return_logits_only (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_without_cache_return_logits_only)",
+      "test_full_text_export_builds_only_the_captured_visual_positions (quantization.wrapq.wrappers.qwen_vl.test_eager_context.TestQwen3VLEagerContext.test_full_text_export_builds_only_the_captured_visual_positions)"
+    ],
+    "partial_error_tests": [
+      "test_full_model_example_rejects_bit_mismatch (quantization.examples.test_gptq_qparam_handoff.TestLegacyGPTQQParamHandoff.test_full_model_example_rejects_bit_mismatch)",
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)",
+      "test_export_adapters_without_cache_return_hidden_only (quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_export_adapters_without_cache_return_hidden_only)",
+      "test_prefill_export_adapter_returns_delta_kv (quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_prefill_export_adapter_returns_delta_kv)",
+      "test_decode_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_decode_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_with_cache_return_logits_and_kv (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_with_cache_return_logits_and_kv)",
+      "test_export_adapter_without_cache_return_logits_only (quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_without_cache_return_logits_only)",
+      "test_full_text_export_builds_only_the_captured_visual_positions (quantization.wrapq.wrappers.qwen_vl.test_eager_context.TestQwen3VLEagerContext.test_full_text_export_builds_only_the_captured_visual_positions)"
+    ],
+    "partial_failure_tests": [],
+    "skips": [
+      {
+        "test": "test_groupwise_conv1d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_groupwise_conv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_groupwise_conv2d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_groupwise_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_net)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net_on_zero_inputs (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_net_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_normconv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_normconv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_on_zero_inputs (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_normconv2d_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_transposed_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_groupwise_conv1d (quantization.algorithm.test_gptq.GPTQTest.test_groupwise_conv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_groupwise_conv2d (quantization.algorithm.test_gptq.GPTQTest.test_groupwise_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_model (quantization.algorithm.test_gptq.GPTQTest.test_model)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net (quantization.algorithm.test_gptq.GPTQTest.test_net)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net_on_zero_inputs (quantization.algorithm.test_gptq.GPTQTest.test_net_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_on_zero_inputs (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_on_zero_inputs (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_paddednormconv2d (quantization.algorithm.test_gptq.GPTQTest.test_paddednormconv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_paddednormconv3d (quantization.algorithm.test_gptq.GPTQTest.test_paddednormconv3d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_value (quantization.algorithm.test_smooth_quant.SmoothQuantTest.test_value)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_plot_two_outputs_installed_plotext (quantization.evaluation.test_evaluation.TestEvaluationUtils.test_plot_two_outputs_installed_plotext)",
+        "reason": "'Optional plotting dependency plotext is not installed'"
+      },
+      {
+        "test": "test_s16 (quantization.passes.test_propagate_quant_param.SliceTest.test_s16)",
+        "reason": "\"Skip when torch doesn't produce redundant slices.\""
+      },
+      {
+        "test": "test_u8 (quantization.passes.test_propagate_quant_param.SliceTest.test_u8)",
+        "reason": "\"Skip when torch doesn't produce redundant slices.\""
+      },
+      {
+        "test": "test_fp_wrapper_parity_and_ptq_flow (quantization.recipes.integration.test_gemma4_assistant_integration.TestRealGemma4AssistantCheckpoint.test_fp_wrapper_parity_and_ptq_flow)",
+        "reason": "'set GEMMA4_ASSISTANT_PATH to a local Gemma4 assistant checkpoint to run this integration test'"
+      },
+      {
+        "test": "test_greedy_assisted_generation_matches_target_only (quantization.recipes.integration.test_gemma4_assistant_integration.TestRealGemma4AssistedGeneration.test_greedy_assisted_generation_matches_target_only)",
+        "reason": "'set GEMMA4_TARGET_PATH and GEMMA4_ASSISTANT_PATH to local Gemma4 checkpoints to run this integration test'"
+      },
+      {
+        "test": "test_custom_metric (quantization.wrapq.utils.test_introspection.TestSmoothQuantPTQDiff.test_custom_metric)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_layerwise_diff (quantization.wrapq.utils.test_introspection.TestSmoothQuantPTQDiff.test_layerwise_diff)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_layerwise_peir (quantization.wrapq.utils.test_introspection.TestSmoothQuantPTQDiff.test_layerwise_peir)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_metric_subset_selection (quantization.wrapq.utils.test_introspection.TestSmoothQuantPTQDiff.test_metric_subset_selection)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_generate_extends_sequence (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMGeneration.test_generate_extends_sequence)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_generate_returns_tensor (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMGeneration.test_generate_returns_tensor)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_forward_output_shape (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_forward_output_shape)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logit_softcapping_applied (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_logit_softcapping_applied)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logits_to_keep (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_logits_to_keep)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_observers_calibrated (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_observers_calibrated)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_flow (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_prepare_convert_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_returns_correct_wrapper (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_prepare_returns_correct_wrapper)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_text_only_forward_is_finite (quantization.wrapq.wrappers.gemma4.test_quant_for_causal_lm.TestQuantGemma4ForCausalLMSmoke.test_text_only_forward_is_finite)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_generate_extends_sequence (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationGeneration.test_generate_extends_sequence)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_generate_returns_tensor (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationGeneration.test_generate_returns_tensor)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_forward_output_shape (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_forward_output_shape)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logit_softcapping_applied (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_logit_softcapping_applied)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logits_to_keep (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_logits_to_keep)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_observers_calibrated (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_observers_calibrated)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_flow (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_prepare_convert_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_returns_correct_wrapper (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_prepare_returns_correct_wrapper)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_text_only_forward_is_finite (quantization.wrapq.wrappers.gemma4.test_quant_for_conditional_generation.TestQuantGemma4ForConditionalGenerationSmoke.test_text_only_forward_is_finite)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_inputs_embeds_with_per_layer_inputs_works (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_inputs_embeds_with_per_layer_inputs_works)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_inputs_embeds_without_per_layer_inputs_raises (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_inputs_embeds_without_per_layer_inputs_raises)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_placeholder_replacement_produces_pad_embedding (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_placeholder_replacement_produces_pad_embedding)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_flow (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_prepare_convert_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_text_only_forward_is_finite (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_text_only_forward_is_finite)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_reject_both_input_ids_and_inputs_embeds (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelValidation.test_reject_both_input_ids_and_inputs_embeds)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_reject_input_ids_with_per_layer_inputs (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelValidation.test_reject_input_ids_with_per_layer_inputs)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_reject_neither_input_ids_nor_inputs_embeds (quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelValidation.test_reject_neither_input_ids_nor_inputs_embeds)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logit_softcapping_bounded (quantization.wrapq.wrappers.gemma4.test_quantize_for_causal_lm.TestGemma4ForCausalLMSmoke.test_logit_softcapping_bounded)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logits_to_keep (quantization.wrapq.wrappers.gemma4.test_quantize_for_causal_lm.TestGemma4ForCausalLMSmoke.test_logits_to_keep)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_model_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_for_causal_lm.TestGemma4ForCausalLMSmoke.test_no_quant_model_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_flow (quantization.wrapq.wrappers.gemma4.test_quantize_for_causal_lm.TestGemma4ForCausalLMSmoke.test_prepare_convert_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logit_softcapping_bounded (quantization.wrapq.wrappers.gemma4.test_quantize_for_conditional_generation.TestGemma4ForConditionalGenerationSmoke.test_logit_softcapping_bounded)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_logits_to_keep (quantization.wrapq.wrappers.gemma4.test_quantize_for_conditional_generation.TestGemma4ForConditionalGenerationSmoke.test_logits_to_keep)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_model_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_for_conditional_generation.TestGemma4ForConditionalGenerationSmoke.test_no_quant_model_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_flow (quantization.wrapq.wrappers.gemma4.test_quantize_for_conditional_generation.TestGemma4ForConditionalGenerationSmoke.test_prepare_convert_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_flow_with_image (quantization.wrapq.wrappers.gemma4.test_quantize_for_conditional_generation.TestGemma4ForConditionalGenerationSmoke.test_prepare_convert_flow_with_image)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_as_export_module_flow (quantization.wrapq.wrappers.gemma4.test_quantize_model.TestGemma4ModelSmoke.test_as_export_module_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_get_placeholder_mask (quantization.wrapq.wrappers.gemma4.test_quantize_model.TestGemma4ModelSmoke.test_get_placeholder_mask)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_model_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_model.TestGemma4ModelSmoke.test_no_quant_model_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_model_flow (quantization.wrapq.wrappers.gemma4.test_quantize_model.TestGemma4ModelSmoke.test_prepare_convert_model_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_model_flow_with_image (quantization.wrapq.wrappers.gemma4.test_quantize_model.TestGemma4ModelSmoke.test_prepare_convert_model_flow_with_image)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_as_export_module_flow (quantization.wrapq.wrappers.gemma4.test_quantize_multimodal_embedder.TestGemma4MultimodalEmbedderSmoke.test_as_export_module_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_multimodal_embedder_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_multimodal_embedder.TestGemma4MultimodalEmbedderSmoke.test_no_quant_multimodal_embedder_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_multimodal_embedder_flow (quantization.wrapq.wrappers.gemma4.test_quantize_multimodal_embedder.TestGemma4MultimodalEmbedderSmoke.test_prepare_convert_multimodal_embedder_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_text_attention_flow (quantization.wrapq.wrappers.gemma4.test_quantize_text_attention.TestGemma4TextAttentionSmoke.test_prepare_convert_text_attention_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_decode_export_adapter_contract_after_convert (quantization.wrapq.wrappers.gemma4.test_quantize_text_decoder_layer.TestGemma4TextDecoderLayerSmoke.test_decode_export_adapter_contract_after_convert)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_text_decoder_layer_flow (quantization.wrapq.wrappers.gemma4.test_quantize_text_decoder_layer.TestGemma4TextDecoderLayerSmoke.test_prepare_convert_text_decoder_layer_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_as_export_module_flow (quantization.wrapq.wrappers.gemma4.test_quantize_text_scaled_word_embedding.TestGemma4TextScaledWordEmbeddingSmoke.test_as_export_module_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_embedding_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_text_scaled_word_embedding.TestGemma4TextScaledWordEmbeddingSmoke.test_no_quant_embedding_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_embedding_flow (quantization.wrapq.wrappers.gemma4.test_quantize_text_scaled_word_embedding.TestGemma4TextScaledWordEmbeddingSmoke.test_prepare_convert_embedding_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_vision_attention_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_vision_attention.TestGemma4VisionAttentionSmoke.test_no_quant_vision_attention_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_vision_attention_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_attention.TestGemma4VisionAttentionSmoke.test_prepare_convert_vision_attention_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_vision_rope_dimension_is_fixed_to_two (quantization.wrapq.wrappers.gemma4.test_quantize_vision_attention.TestGemma4VisionAttentionSmoke.test_vision_rope_dimension_is_fixed_to_two)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_vision_encoder_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_vision_encoder.TestGemma4VisionEncoderSmoke.test_no_quant_vision_encoder_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prefill_export_adapter_after_convert (quantization.wrapq.wrappers.gemma4.test_quantize_vision_encoder.TestGemma4VisionEncoderSmoke.test_prefill_export_adapter_after_convert)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_vision_encoder_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_encoder.TestGemma4VisionEncoderSmoke.test_prepare_convert_vision_encoder_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_vision_encoder_layer_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_vision_encoder_layer.TestGemma4VisionEncoderLayerSmoke.test_no_quant_vision_encoder_layer_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prefill_export_adapter_after_convert (quantization.wrapq.wrappers.gemma4.test_quantize_vision_encoder_layer.TestGemma4VisionEncoderLayerSmoke.test_prefill_export_adapter_after_convert)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_vision_encoder_layer_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_encoder_layer.TestGemma4VisionEncoderLayerSmoke.test_prepare_convert_vision_encoder_layer_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_as_export_module_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_model.TestGemma4VisionModelSmoke.test_as_export_module_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_vision_model_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_vision_model.TestGemma4VisionModelSmoke.test_no_quant_vision_model_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_vision_model_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_model.TestGemma4VisionModelSmoke.test_prepare_convert_vision_model_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_vision_model_with_standardize_false (quantization.wrapq.wrappers.gemma4.test_quantize_vision_model.TestGemma4VisionModelSmoke.test_vision_model_with_standardize_false)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_as_export_module_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_patch_embedder.TestGemma4VisionPatchEmbedderSmoke.test_as_export_module_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_vision_patch_embedder_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_vision_patch_embedder.TestGemma4VisionPatchEmbedderSmoke.test_no_quant_vision_patch_embedder_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_vision_patch_embedder_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_patch_embedder.TestGemma4VisionPatchEmbedderSmoke.test_prepare_convert_vision_patch_embedder_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_as_export_module_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_pooler.TestGemma4VisionPoolerSmoke.test_as_export_module_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_no_quant_vision_pooler_matches_reference (quantization.wrapq.wrappers.gemma4.test_quantize_vision_pooler.TestGemma4VisionPoolerSmoke.test_no_quant_vision_pooler_matches_reference)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_vision_pooler_flow (quantization.wrapq.wrappers.gemma4.test_quantize_vision_pooler.TestGemma4VisionPoolerSmoke.test_prepare_convert_vision_pooler_flow)",
+        "reason": "'Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.'"
+      },
+      {
+        "test": "test_prepare_convert_decode_flow_matches_example (quantization.wrapq.wrappers.llama.test_quantize_decoder_layer_decode.TestLlamaDecoderLayerDecodeExample.test_prepare_convert_decode_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_prefill_flow_matches_example (quantization.wrapq.wrappers.llama.test_quantize_decoder_layer_prefill.TestLlamaDecoderLayerPrefillExample.test_prepare_convert_prefill_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_mlp_flow_matches_example (quantization.wrapq.wrappers.llama.test_quantize_mlp.TestLlamaMLPExample.test_prepare_convert_mlp_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_activation_stats_collected (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_activation_stats_collected)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_bias_not_quantized (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_bias_not_quantized)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_conv3d_without_bias (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_conv3d_without_bias)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_different_kernel_sizes (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_different_kernel_sizes)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_dtype_override (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_dtype_override)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_mode_transitions (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_mode_transitions)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_no_quant_matches_reference_various_shapes (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_no_quant_matches_reference_various_shapes)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_per_channel_weight_quantization (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_per_channel_weight_quantization)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_quantized_output_close (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_quantized_output_close)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_registration_in_registry (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_registration_in_registry)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_weight_stats_survive (quantization.wrapq.wrappers.nn.test_quant_conv3d.TestQuantConv3d.test_weight_stats_survive)",
+        "reason": "'This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d'"
+      },
+      {
+        "test": "test_prepare_convert_conv3d_flow_matches_example (quantization.wrapq.wrappers.nn.test_quantize_conv3d.TestNNConv3dExample.test_prepare_convert_conv3d_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_conv3d_special_case_flow_matches_example (quantization.wrapq.wrappers.nn.test_quantize_conv3d_special_case.TestNNConv3dSpecialCaseExample.test_prepare_convert_conv3d_special_case_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_layernorm_flow_matches_example (quantization.wrapq.wrappers.nn.test_quantize_layernorm.TestNNLayerNormExample.test_prepare_convert_layernorm_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_qwen3vl_generation_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_for_conditional_generation.TestQwenForConditionalGenerationExample.test_prepare_convert_qwen3vl_generation_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_qwen3vl_model_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_model.TestQwenModelExample.test_prepare_convert_qwen3vl_model_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_text_attention_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_text_attention.TestQwenTextAttentionExample.test_prepare_convert_text_attention_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_text_decoder_layer_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_text_decoder_layer.TestQwenTextDecoderLayerExample.test_prepare_convert_text_decoder_layer_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_text_mlp_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_text_mlp.TestQwenTextMLPExample.test_prepare_convert_text_mlp_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_text_model_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_text_model.TestQwenTextModelExample.test_prepare_convert_text_model_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_vision_attention_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_vision_attention.TestQwenVisionAttentionExample.test_prepare_convert_vision_attention_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_vision_block_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_vision_block.TestQwenVisionBlockExample.test_prepare_convert_vision_block_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_vision_mlp_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_vision_mlp.TestQwenVisionMLPExample.test_prepare_convert_vision_mlp_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_vision_model_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_vision_model.TestQwenVisionModelExample.test_prepare_convert_vision_model_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_vision_patch_embed_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_vision_patch_embed.TestQwenVisionPatchEmbedExample.test_prepare_convert_vision_patch_embed_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_prepare_convert_vision_patch_merger_flow_matches_example (quantization.wrapq.wrappers.qwen_vl.test_quantize_vision_patch_merger.TestQwenVisionPatchMergerExample.test_prepare_convert_vision_patch_merger_flow_matches_example)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_evaluate_simple_linear (unit_test.quantization.test_evaluate.EvaluateTest.test_evaluate_simple_linear)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      }
+    ],
+    "exit_code": 1,
+    "passed_excluding_skips_expected_failures": 2520
+  },
+  {
+    "log": "out/pr1073_validation/20261022T0404Z/full_unit_suite.log",
+    "status": "INCOMPLETE",
+    "tests_run": null,
+    "partial_console_status_counts": {
+      "ok": 2020,
+      "FAIL": 0,
+      "ERROR": 2
+    },
+    "elapsed_seconds": null,
+    "console_outcome": null,
+    "counts": {},
+    "failures": [],
+    "partial_error_tests": [
+      "test_export_llama_per_layer_exports_embedding_layers_and_lm_head (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_exports_embedding_layers_and_lm_head)",
+      "test_export_llama_per_layer_uses_float_artifact_names (quantization.recipes.test_export_llama.TestLlamaExport.test_export_llama_per_layer_uses_float_artifact_names)"
+    ],
+    "partial_failure_tests": [],
+    "skips": [
+      {
+        "test": "test.modules.op.avg_pool2d.AvgPoolWithNoSamePaddingNoCountIncludePad (pt2_to_circle_test.test_op.test.modules.op.avg_pool2d.test.modules.op.avg_pool2d.AvgPoolWithNoSamePaddingNoCountIncludePad)",
+        "reason": "'Not supported yet'"
+      },
+      {
+        "test": "test.modules.op.conv_transpose2d.SimpleConvTransposeDynamicShape (pt2_to_circle_test.test_op.test.modules.op.conv_transpose2d.test.modules.op.conv_transpose2d.SimpleConvTransposeDynamicShape)",
+        "reason": "'luci-interpreter does not support dynamic shape yet && onert does not support TransposeConv yet'"
+      },
+      {
+        "test": "test.modules.op.gather.SimpleGatherDim0 (pt2_to_circle_test.test_op.test.modules.op.gather.test.modules.op.gather.SimpleGatherDim0)",
+        "reason": "'No kernel exist'"
+      },
+      {
+        "test": "test.modules.op.gather.SimpleGatherDim1 (pt2_to_circle_test.test_op.test.modules.op.gather.test.modules.op.gather.SimpleGatherDim1)",
+        "reason": "'No kernel exist'"
+      },
+      {
+        "test": "test.modules.op.gather.SimpleGatherDim2 (pt2_to_circle_test.test_op.test.modules.op.gather.test.modules.op.gather.SimpleGatherDim2)",
+        "reason": "'No kernel exist'"
+      },
+      {
+        "test": "test.modules.op.gather.SimpleGatherDim3 (pt2_to_circle_test.test_op.test.modules.op.gather.test.modules.op.gather.SimpleGatherDim3)",
+        "reason": "'No kernel exist'"
+      },
+      {
+        "test": "test.modules.op.gather.SimpleGatherNegativeDim (pt2_to_circle_test.test_op.test.modules.op.gather.test.modules.op.gather.SimpleGatherNegativeDim)",
+        "reason": "'No kernel exist'"
+      },
+      {
+        "test": "test.modules.op.max_pool2d.MaxPoolReturningIndices (pt2_to_circle_test.test_op.test.modules.op.max_pool2d.test.modules.op.max_pool2d.MaxPoolReturningIndices)",
+        "reason": "'Not Support Operator'"
+      },
+      {
+        "test": "test.modules.op.repeat.RepeatLongerRepeats (pt2_to_circle_test.test_op.test.modules.op.repeat.test.modules.op.repeat.RepeatLongerRepeats)",
+        "reason": "'Not Support Operator'"
+      },
+      {
+        "test": "test.modules.op.sum.SimpleSumDim2Int (pt2_to_circle_test.test_op.test.modules.op.sum.test.modules.op.sum.SimpleSumDim2Int)",
+        "reason": "'Not supported yet'"
+      },
+      {
+        "test": "test.modules.op.to.ToWithMemoryFormat (pt2_to_circle_test.test_op.test.modules.op.to.test.modules.op.to.ToWithMemoryFormat)",
+        "reason": "'Not Support Operator'"
+      },
+      {
+        "test": "test_groupwise_conv1d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_groupwise_conv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_groupwise_conv2d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_groupwise_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_net)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net_on_zero_inputs (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_net_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_normconv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_normconv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_on_zero_inputs (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_normconv2d_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d (quantization.algorithm.test_fpi_gptq.FPIGPTQTest.test_transposed_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_groupwise_conv1d (quantization.algorithm.test_gptq.GPTQTest.test_groupwise_conv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_groupwise_conv2d (quantization.algorithm.test_gptq.GPTQTest.test_groupwise_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_model (quantization.algorithm.test_gptq.GPTQTest.test_model)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net (quantization.algorithm.test_gptq.GPTQTest.test_net)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_net_on_zero_inputs (quantization.algorithm.test_gptq.GPTQTest.test_net_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv1d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv1d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_on_zero_inputs (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv2d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv2d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_on_zero_inputs (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_on_zero_inputs)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_normconv3d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_normconv3d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_paddednormconv2d (quantization.algorithm.test_gptq.GPTQTest.test_paddednormconv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_paddednormconv3d (quantization.algorithm.test_gptq.GPTQTest.test_paddednormconv3d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d_with_logits (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d_with_logits)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d_with_logits_mse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d_with_logits_mse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_transposed_conv2d_with_logits_smse_for_gptq (quantization.algorithm.test_gptq.GPTQTest.test_transposed_conv2d_with_logits_smse_for_gptq)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_value (quantization.algorithm.test_smooth_quant.SmoothQuantTest.test_value)",
+        "reason": "'Internal test \u2014 run only if --include-internal is set'"
+      },
+      {
+        "test": "test_plot_two_outputs_installed_plotext (quantization.evaluation.test_evaluation.TestEvaluationUtils.test_plot_two_outputs_installed_plotext)",
+        "reason": "'Optional plotting dependency plotext is not installed'"
+      },
+      {
+        "test": "test_s16 (quantization.passes.test_propagate_quant_param.SliceTest.test_s16)",
+        "reason": "\"Skip when torch doesn't produce redundant slices.\""
+      },
+      {
+        "test": "test_u8 (quantization.passes.test_propagate_quant_param.SliceTest.test_u8)",
+        "reason": "\"Skip when torch doesn't produce redundant slices.\""
+      },
+      {
+        "test": "test_fp_wrapper_parity_and_ptq_flow (quantization.recipes.integration.test_gemma4_assistant_integration.TestRealGemma4AssistantCheckpoint.test_fp_wrapper_parity_and_ptq_flow)",
+        "reason": "'set GEMMA4_ASSISTANT_PATH to a local Gemma4 assistant checkpoint to run this integration test'"
+      },
+      {
+        "test": "test_greedy_assisted_generation_matches_target_only (quantization.recipes.integration.test_gemma4_assistant_integration.TestRealGemma4AssistedGeneration.test_greedy_assisted_generation_matches_target_only)",
+        "reason": "'set GEMMA4_TARGET_PATH and GEMMA4_ASSISTANT_PATH to local Gemma4 checkpoints to run this integration test'"
+      }
+    ],
+    "exit_code": 124
+  }
+]

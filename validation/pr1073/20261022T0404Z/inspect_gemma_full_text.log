@@ -1,0 +1,291 @@
+{
+  "report": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/GEMMA_FULL_TEXT_DIAGNOSTIC.json",
+  "raw_status": "FAIL",
+  "phases": {
+    "baseline/before": {
+      "stage_count": 1,
+      "state_preserved": true,
+      "stages": {
+        "full_text_regression.q.circle": {
+          "execution_mode": "fake_quantize",
+          "graph_input_count": 1,
+          "graph_output_count": 1,
+          "operator_count": 109,
+          "tensor_count": 195,
+          "qparam_tensor_count": 149,
+          "constant_tensor_count": 81,
+          "contract_sha256": "22e161794744786423878d9f9024f44572c479bfefb1e0904457cd92dd1b51a8",
+          "topology_options_sha256": "8acaa1d03de7948fc49887dae1a256be9bab8ee2224deac4443f8c416185e5f1",
+          "qparams_sha256": "5fe407dc94a348a553e699859980cdc1edf8eadb3ee1aaa0758f1d7e082ea55a",
+          "constants_sha256": "6dedfb0aa98819189ede3c62ce5b12da316d327ab5afacde12820b3125c823e7",
+          "probes": [
+            {
+              "probe": "export_example",
+              "input_array_count": 1,
+              "circle_output_count": 1,
+              "torch_output_count": 1,
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "last_hidden_state",
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "max_abs_error": 0.0869361162185669,
+                  "max_position": [
+                    0,
+                    4,
+                    10
+                  ],
+                  "torch_value": 1.695252776145935,
+                  "circle_value": 1.782188892364502,
+                  "failing_elements": 92,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      3
+                    ],
+                    [
+                      0,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      2,
+                      5
+                    ],
+                    [
+                      0,
+                      2,
+                      6
+                    ],
+                    [
+                      0,
+                      2,
+                      8
+                    ],
+                    [
+                      0,
+                      2,
+                      9
+                    ],
+                    [
+                      0,
+                      2,
+                      13
+                    ]
+                  ],
+                  "strict_ok": false,
+                  "torch_raw_sha256": "8260c490c1178cd19d7b194b466cd64a6892458bbc6ee0e2990f4db1d786b9c7",
+                  "circle_raw_sha256": "b3076616ab42a01038622065dba407685ee65a3b8e56f71d5f9a1166f6f718a6"
+                }
+              ]
+            }
+          ],
+          "all_arrays_finite": true
+        }
+      }
+    },
+    "candidate/before": {
+      "stage_count": 1,
+      "state_preserved": true,
+      "stages": {
+        "full_text_regression.q.circle": {
+          "execution_mode": "fake_quantize",
+          "graph_input_count": 1,
+          "graph_output_count": 1,
+          "operator_count": 109,
+          "tensor_count": 195,
+          "qparam_tensor_count": 149,
+          "constant_tensor_count": 81,
+          "contract_sha256": "22e161794744786423878d9f9024f44572c479bfefb1e0904457cd92dd1b51a8",
+          "topology_options_sha256": "8acaa1d03de7948fc49887dae1a256be9bab8ee2224deac4443f8c416185e5f1",
+          "qparams_sha256": "5fe407dc94a348a553e699859980cdc1edf8eadb3ee1aaa0758f1d7e082ea55a",
+          "constants_sha256": "6dedfb0aa98819189ede3c62ce5b12da316d327ab5afacde12820b3125c823e7",
+          "probes": [
+            {
+              "probe": "export_example",
+              "input_array_count": 1,
+              "circle_output_count": 1,
+              "torch_output_count": 1,
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "last_hidden_state",
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "max_abs_error": 0.0869361162185669,
+                  "max_position": [
+                    0,
+                    4,
+                    10
+                  ],
+                  "torch_value": 1.695252776145935,
+                  "circle_value": 1.782188892364502,
+                  "failing_elements": 92,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      3
+                    ],
+                    [
+                      0,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      2,
+                      5
+                    ],
+                    [
+                      0,
+                      2,
+                      6
+                    ],
+                    [
+                      0,
+                      2,
+                      8
+                    ],
+                    [
+                      0,
+                      2,
+                      9
+                    ],
+                    [
+                      0,
+                      2,
+                      13
+                    ]
+                  ],
+                  "strict_ok": false,
+                  "torch_raw_sha256": "8260c490c1178cd19d7b194b466cd64a6892458bbc6ee0e2990f4db1d786b9c7",
+                  "circle_raw_sha256": "b3076616ab42a01038622065dba407685ee65a3b8e56f71d5f9a1166f6f718a6"
+                }
+              ]
+            }
+          ],
+          "all_arrays_finite": true
+        }
+      }
+    },
+    "candidate/after_eager": {
+      "stage_count": 1,
+      "state_preserved": true,
+      "stages": {
+        "full_text_regression.q.circle": {
+          "execution_mode": "fake_quantize",
+          "graph_input_count": 1,
+          "graph_output_count": 1,
+          "operator_count": 109,
+          "tensor_count": 195,
+          "qparam_tensor_count": 149,
+          "constant_tensor_count": 81,
+          "contract_sha256": "22e161794744786423878d9f9024f44572c479bfefb1e0904457cd92dd1b51a8",
+          "topology_options_sha256": "8acaa1d03de7948fc49887dae1a256be9bab8ee2224deac4443f8c416185e5f1",
+          "qparams_sha256": "5fe407dc94a348a553e699859980cdc1edf8eadb3ee1aaa0758f1d7e082ea55a",
+          "constants_sha256": "6dedfb0aa98819189ede3c62ce5b12da316d327ab5afacde12820b3125c823e7",
+          "probes": [
+            {
+              "probe": "export_example",
+              "input_array_count": 1,
+              "circle_output_count": 1,
+              "torch_output_count": 1,
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "last_hidden_state",
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "max_abs_error": 0.0869361162185669,
+                  "max_position": [
+                    0,
+                    4,
+                    10
+                  ],
+                  "torch_value": 1.695252776145935,
+                  "circle_value": 1.782188892364502,
+                  "failing_elements": 92,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      3
+                    ],
+                    [
+                      0,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      2,
+                      5
+                    ],
+                    [
+                      0,
+                      2,
+                      6
+                    ],
+                    [
+                      0,
+                      2,
+                      8
+                    ],
+                    [
+                      0,
+                      2,
+                      9
+                    ],
+                    [
+                      0,
+                      2,
+                      13
+                    ]
+                  ],
+                  "strict_ok": false,
+                  "torch_raw_sha256": "8260c490c1178cd19d7b194b466cd64a6892458bbc6ee0e2990f4db1d786b9c7",
+                  "circle_raw_sha256": "b3076616ab42a01038622065dba407685ee65a3b8e56f71d5f9a1166f6f718a6"
+                }
+              ]
+            }
+          ],
+          "all_arrays_finite": true
+        }
+      }
+    }
+  }
+}

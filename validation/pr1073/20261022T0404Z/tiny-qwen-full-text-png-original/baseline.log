@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 862, in main
+    _worker(args)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 676, in _worker
+    _export_phase(ctx, root / "before", options, initial)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 538, in _export_phase
+    _export_full_text_probe(ctx, phase / "artifacts", options)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 525, in _export_full_text_probe
+    result.save(path / "full_text_regression.q.circle")
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 419, in capture_save
+    self.old_save(converted, path)
+  File "/workspace/TICO-export-baseline/tico/utils/model.py", line 47, in save
+    with open(circle_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-full-text-png-original/baseline/before/artifacts/full_text_regression.q.circle'
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).

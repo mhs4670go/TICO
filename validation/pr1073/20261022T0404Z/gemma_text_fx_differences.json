@@ -1,0 +1,118 @@
+{
+  "decoder_layer_decode_0.q.circle.json": {
+    "baseline_count": 505,
+    "candidate_count": 502,
+    "baseline_minus_candidate": {
+      "aten._assert_tensor_metadata.default": 1,
+      "aten.to.dtype_layout": 1,
+      "aten.slice.Tensor": 1
+    },
+    "candidate_minus_baseline": {},
+    "ordered_differences": [
+      {
+        "kind": "delete",
+        "baseline_indices": [
+          257,
+          260
+        ],
+        "candidate_indices": [
+          257,
+          257
+        ],
+        "baseline_ops": [
+          "aten.slice.Tensor",
+          "aten._assert_tensor_metadata.default",
+          "aten.to.dtype_layout"
+        ],
+        "candidate_ops": []
+      }
+    ]
+  },
+  "decoder_layer_decode_1.q.circle.json": {
+    "baseline_count": 505,
+    "candidate_count": 502,
+    "baseline_minus_candidate": {
+      "aten._assert_tensor_metadata.default": 1,
+      "aten.to.dtype_layout": 1,
+      "aten.slice.Tensor": 1
+    },
+    "candidate_minus_baseline": {},
+    "ordered_differences": [
+      {
+        "kind": "delete",
+        "baseline_indices": [
+          257,
+          260
+        ],
+        "candidate_indices": [
+          257,
+          257
+        ],
+        "baseline_ops": [
+          "aten.slice.Tensor",
+          "aten._assert_tensor_metadata.default",
+          "aten.to.dtype_layout"
+        ],
+        "candidate_ops": []
+      }
+    ]
+  },
+  "decoder_layer_prefill_0.q.circle.json": {
+    "baseline_count": 492,
+    "candidate_count": 489,
+    "baseline_minus_candidate": {
+      "aten._assert_tensor_metadata.default": 1,
+      "aten.to.dtype_layout": 1,
+      "aten.alias.default": 1
+    },
+    "candidate_minus_baseline": {},
+    "ordered_differences": [
+      {
+        "kind": "delete",
+        "baseline_indices": [
+          245,
+          248
+        ],
+        "candidate_indices": [
+          245,
+          245
+        ],
+        "baseline_ops": [
+          "aten.alias.default",
+          "aten._assert_tensor_metadata.default",
+          "aten.to.dtype_layout"
+        ],
+        "candidate_ops": []
+      }
+    ]
+  },
+  "decoder_layer_prefill_1.q.circle.json": {
+    "baseline_count": 492,
+    "candidate_count": 489,
+    "baseline_minus_candidate": {
+      "aten._assert_tensor_metadata.default": 1,
+      "aten.to.dtype_layout": 1,
+      "aten.alias.default": 1
+    },
+    "candidate_minus_baseline": {},
+    "ordered_differences": [
+      {
+        "kind": "delete",
+        "baseline_indices": [
+          245,
+          248
+        ],
+        "candidate_indices": [
+          245,
+          245
+        ],
+        "baseline_ops": [
+          "aten.alias.default",
+          "aten._assert_tensor_metadata.default",
+          "aten.to.dtype_layout"
+        ],
+        "candidate_ops": []
+      }
+    ]
+  }
+}

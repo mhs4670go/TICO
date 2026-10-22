@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 862, in main
+    _worker(args)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 676, in _worker
+    _export_phase(ctx, root / "before", options, initial)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 536, in _export_phase
+    ctx.adapter.export(ctx)
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/adapters/llama.py", line 457, in export
+    ctx.artifacts["circle_bundle"] = export_llama_bundle(
+                                     ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/export/llama.py", line 427, in export_llama_bundle
+    ) = _prepare_llama_export_model(q_model)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/export/llama.py", line 209, in _prepare_llama_export_model
+    export_model = PTQWrapHelper(strict_wrap=wrapper_config.strict_wrap).wrap_supported(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrap_helper.py", line 50, in wrap_supported
+    assert not isinstance(root, QuantModuleBase), "The module is already wrapped."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The module is already wrapped.

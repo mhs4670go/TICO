@@ -1,0 +1,28 @@
+{
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt",
+  "bytes": 20501731,
+  "sha256": "5f8b5a9b5f7e8ff182c6fc96d52f232a9958424f68c09039fd9452e101b17345",
+  "format": "torch.save full nn.Module, not state_dict",
+  "pickle_first_global": "tico.quantization.wrapq.wrappers.ptq_wrapper PTQWrapper",
+  "tico_head": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "pretrained_model_id": "Maykeye/TinyLLama-v0",
+  "pretrained_revision": "298338802ab94432b917bcce11382aa151aee50f",
+  "generation_script": "pretrained_llama_smoke_executed_v1.py calibrate",
+  "generation_script_sha256": "09364f17f053665de396acec160f9df364ad202701b8aa238ec0b8edfa9ef79c",
+  "recorded_capacity": 2048,
+  "parameter_dtype": "torch.float32",
+  "device": "cpu",
+  "quantization_profile": "npu_export",
+  "quantization_stage": {
+    "name": "ptq",
+    "profile": "npu_export",
+    "activation": "int16",
+    "linear_weight": "uint8",
+    "embedding_weight": "uint8",
+    "lm_head_weight": "uint8",
+    "norm_weight": "int16",
+    "strict_wrap": true
+  },
+  "vision_profile": null,
+  "note": "Created for tiny pretrained smoke. No compatible user pre-PR pretrained checkpoint existed. Native capacity was preserved and not enlarged."
+}

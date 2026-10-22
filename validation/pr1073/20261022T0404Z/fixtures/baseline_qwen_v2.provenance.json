@@ -1,0 +1,154 @@
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "qwen3_vl",
+  "repo": "/workspace/TICO-export-baseline",
+  "commit": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_v2.pt",
+  "checkpoint_sha256": "f7dd409d2026b4c44add103f1c87319c14038d2e8124990e8964cd07d72b2362",
+  "checkpoint_bytes": 1144117,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 64,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    },
+    {
+      "kind": "synthetic_image",
+      "seq_len": 8
+    }
+  ],
+  "model_args": {
+    "profile": "npu_export",
+    "vision": {
+      "grid_thw": [
+        1,
+        2,
+        2
+      ],
+      "visual_start_idx": 0,
+      "spatial_merge_size": 2
+    }
+  },
+  "hf_config": {
+    "transformers_version": "5.18.0",
+    "architectures": null,
+    "output_hidden_states": false,
+    "return_dict": true,
+    "dtype": null,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "problem_type": null,
+    "text_config": {
+      "architectures": null,
+      "output_hidden_states": false,
+      "return_dict": true,
+      "dtype": null,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "problem_type": null,
+      "vocab_size": 64,
+      "hidden_size": 32,
+      "intermediate_size": 64,
+      "num_hidden_layers": 2,
+      "num_attention_heads": 4,
+      "num_key_value_heads": 2,
+      "head_dim": 8,
+      "hidden_act": "silu",
+      "max_position_embeddings": 64,
+      "initializer_range": 0.02,
+      "rms_norm_eps": 1e-06,
+      "use_cache": true,
+      "rope_parameters": {
+        "rope_type": "default",
+        "mrope_section": [
+          1,
+          1,
+          2
+        ],
+        "rope_theta": 500000.0
+      },
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "pad_token_id": null,
+      "_name_or_path": "",
+      "model_type": "qwen3_vl_text",
+      "output_attentions": false
+    },
+    "vision_config": {
+      "architectures": null,
+      "output_hidden_states": false,
+      "return_dict": true,
+      "dtype": null,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "problem_type": null,
+      "depth": 1,
+      "hidden_size": 32,
+      "hidden_act": "gelu_pytorch_tanh",
+      "intermediate_size": 64,
+      "num_heads": 4,
+      "in_channels": 3,
+      "patch_size": 2,
+      "spatial_merge_size": 2,
+      "temporal_patch_size": 2,
+      "out_hidden_size": 32,
+      "num_position_embeddings": 2304,
+      "deepstack_visual_indexes": [
+        0
+      ],
+      "initializer_range": 0.02,
+      "rope_parameters": {
+        "rope_theta": 10000.0,
+        "rope_type": "axial"
+      },
+      "_name_or_path": "",
+      "model_type": "qwen3_vl_vision",
+      "output_attentions": false
+    },
+    "image_token_id": 62,
+    "video_token_id": 63,
+    "vision_start_token_id": 61,
+    "vision_end_token_id": 151653,
+    "tie_word_embeddings": false,
+    "_name_or_path": "",
+    "model_type": "qwen3_vl",
+    "output_attentions": false
+  },
+  "code_sha256": "d700d1c13944aeacec8908454035da825d01cb8d2a5d862d0a351ed54d44655d"
+}

@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/create_tiny_frozen_fixture.py", line 167, in <module>
+    main()
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/create_tiny_frozen_fixture.py", line 77, in main
+    model = PTQWrapper(Qwen3VLForConditionalGeneration(config).eval(),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py", line 43, in __init__
+    self.wrapped: QuantModuleBase = wrapped_cls(module, qcfg=qcfg, fp_name=fp_name)  # type: ignore[arg-type, misc]
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/qwen_vl/quant_for_conditional_generation.py", line 71, in __init__
+    self.model = PTQWrapper(
+                 ^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py", line 43, in __init__
+    self.wrapped: QuantModuleBase = wrapped_cls(module, qcfg=qcfg, fp_name=fp_name)  # type: ignore[arg-type, misc]
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/qwen_vl/quant_model.py", line 94, in __init__
+    self.language_model = PTQWrapper(
+                          ^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py", line 43, in __init__
+    self.wrapped: QuantModuleBase = wrapped_cls(module, qcfg=qcfg, fp_name=fp_name)  # type: ignore[arg-type, misc]
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py", line 133, in __init__
+    grid_thw = self._get_vision_grid_thw(qcfg)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py", line 464, in _get_vision_grid_thw
+    raise ValueError(
+ValueError: vision.grid_thw must be a tuple of length 3, but got [1, 2, 2].

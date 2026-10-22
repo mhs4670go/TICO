@@ -1,0 +1,9 @@
+{
+  "host": {},
+  "schema_version": 1,
+  "stages": {
+    "model.q.circle": "model.q.circle"
+  },
+  "state_differences": [],
+  "state_preserved": true
+}

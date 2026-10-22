@@ -1,0 +1,3223 @@
+
+
+>>> Lint for test/quantization/recipes/test_export_llama_bundle.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     53   53 | 
+     54   54 |     def __init__(self, index):
+     55   55 |         super().__init__()
+     55      |-        from tico.quantization.wrapq.wrappers.llama.static_inputs import capture_rope_state
+          56 |+        from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+          57 |+            capture_rope_state,
+          58 |+        )
+     57   59 | 
+     58   60 |         self.config = SimpleNamespace(max_position_embeddings=6, head_dim=4)
+     59   61 |         self.qcfg = SimpleNamespace(attention_mask_fill_value=-100.0 - index)
+--------------------------------------------------------------------------------
+    112  114 |             for key in ("rope_cos", "rope_sin"):
+    113  115 |                 np.testing.assert_array_equal(
+    114  116 |                     context[f"{key}_{index}"],
+    114      |-                    getattr(layer.wrapped._export_rotary_emb, key.replace("rope_", ""))[:, :4].numpy(),
+         117 |+                    getattr(layer.wrapped._export_rotary_emb, key.replace("rope_", ""))[
+         118 |+                        :, :4
+         119 |+                    ].numpy(),
+    116  120 |                 )
+    117  121 |                 self.assertEqual(context[f"{key}_{index}"].dtype, np.float32)
+    118  122 |         np.testing.assert_array_equal(context["mask_fill_values"], [-100.0, -101.0])
+--------------------------------------------------------------------------------
+    138  142 |     def test_context_rejects_incomplete_rope_and_nonfinite_mask(self):
+    139  143 |         for mutation, message in (
+    140  144 |             (
+    140      |-                lambda layer: setattr(layer._export_rotary_emb, "sin", torch.zeros(1, 2, 4)),
+         145 |+                lambda layer: setattr(
+         146 |+                    layer._export_rotary_emb, "sin", torch.zeros(1, 2, 4)
+         147 |+                ),
+    142  148 |                 "head_dim",
+    143  149 |             ),
+    144  150 |             (
+--------------------------------------------------------------------------------
+    210  216 | 
+    211  217 |     def test_preflight_failure_preserves_existing_bundle_manifest(self):
+    212  218 |         qmodel = _bundle_model()
+    212      |-        qmodel.model.wrapped.layers[0].wrapped._export_rotary_emb.cos = torch.zeros(1, 2, 4)
+         219 |+        qmodel.model.wrapped.layers[0].wrapped._export_rotary_emb.cos = torch.zeros(
+         220 |+            1, 2, 4
+         221 |+        )
+    214  222 |         with tempfile.TemporaryDirectory() as directory:
+    215  223 |             manifest = Path(directory) / "llama_manifest.json"
+    216  224 |             manifest.write_text("old manifest")
+
+
+
+>>> Lint for test/quantization/recipes/test_export_regression.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     44   44 | 
+     45   45 | def _document(*, constant=1, qscale=0.5, internal_name="tmp", output_name="result"):
+     46   46 |     """Build an Object-API-shaped fixture without pretending to serialize Circle."""
+     46      |-    quant = SimpleNamespace(scale=np.array([qscale], dtype=np.float32), zeroPoint=np.array([0]))
+          47 |+    quant = SimpleNamespace(
+          48 |+        scale=np.array([qscale], dtype=np.float32), zeroPoint=np.array([0])
+          49 |+    )
+     48   50 |     tensors = [
+     48      |-        SimpleNamespace(name="input", buffer=0, shape=np.array([1]), type=0, quantization=None),
+     49      |-        SimpleNamespace(name=internal_name, buffer=1, shape=np.array([1]), type=0, quantization=quant),
+     50      |-        SimpleNamespace(name=output_name, buffer=0, shape=np.array([1]), type=0, quantization=None),
+          51 |+        SimpleNamespace(
+          52 |+            name="input", buffer=0, shape=np.array([1]), type=0, quantization=None
+          53 |+        ),
+          54 |+        SimpleNamespace(
+          55 |+            name=internal_name,
+          56 |+            buffer=1,
+          57 |+            shape=np.array([1]),
+          58 |+            type=0,
+          59 |+            quantization=quant,
+          60 |+        ),
+          61 |+        SimpleNamespace(
+          62 |+            name=output_name, buffer=0, shape=np.array([1]), type=0, quantization=None
+          63 |+        ),
+     52   64 |     ]
+     53   65 |     opcode = SimpleNamespace(builtinCode=0, version=1, customCode=None)
+     53      |-    operator = SimpleNamespace(opcodeIndex=0, inputs=np.array([0, 1]), outputs=np.array([2]), builtinOptions=None, customOptions=None)
+     54      |-    graph = SimpleNamespace(tensors=tensors, operators=[operator], inputs=np.array([0]), outputs=np.array([2]))
+          66 |+    operator = SimpleNamespace(
+          67 |+        opcodeIndex=0,
+          68 |+        inputs=np.array([0, 1]),
+          69 |+        outputs=np.array([2]),
+          70 |+        builtinOptions=None,
+          71 |+        customOptions=None,
+          72 |+    )
+          73 |+    graph = SimpleNamespace(
+          74 |+        tensors=tensors,
+          75 |+        operators=[operator],
+          76 |+        inputs=np.array([0]),
+          77 |+        outputs=np.array([2]),
+          78 |+    )
+     56   79 |     model = SimpleNamespace(
+     56      |-        version=3, subgraphs=[graph], signatureDefs=None, operatorCodes=[opcode],
+     57      |-        buffers=[SimpleNamespace(data=None), SimpleNamespace(data=np.array([constant], dtype=np.uint8))],
+          80 |+        version=3,
+          81 |+        subgraphs=[graph],
+          82 |+        signatureDefs=None,
+          83 |+        operatorCodes=[opcode],
+          84 |+        buffers=[
+          85 |+            SimpleNamespace(data=None),
+          86 |+            SimpleNamespace(data=np.array([constant], dtype=np.uint8)),
+          87 |+        ],
+     59   88 |     )
+     60   89 |     return SimpleNamespace(model=model)
+     61   90 | 
+--------------------------------------------------------------------------------
+     66   95 |     snapshot = {
+     67   96 |         "schema_version": 1,
+     68   97 |         "stages": {"decoder.q.circle": "decoder"},
+     68      |-        "state_preserved": True, "host": {"host.npz": {"rope": {"sha256": "fixed"}}},
+          98 |+        "state_preserved": True,
+          99 |+        "host": {"host.npz": {"rope": {"sha256": "fixed"}}},
+     70  100 |     }
+     71  101 |     _write_json(root / "snapshot.json", snapshot)
+     72  102 |     record = {
+     72      |-        "contract": circle_contract(_document()), "fx": [{"op": "call_function", "target": "aten.add.Tensor"}],
+         103 |+        "contract": circle_contract(_document()),
+         104 |+        "fx": [{"op": "call_function", "target": "aten.add.Tensor"}],
+     74  105 |         "mode": "fake_quantize",
+     74      |-        "probes": [{"probe": "export_example", "torch_parity": [{"ok": True, "max_abs_error": 0.0}]}],
+         106 |+        "probes": [
+         107 |+            {
+         108 |+                "probe": "export_example",
+         109 |+                "torch_parity": [{"ok": True, "max_abs_error": 0.0}],
+         110 |+            }
+         111 |+        ],
+     76  112 |     }
+     77  113 |     _write_json(root / "records/decoder.json", record)
+     77      |-    np.savez(root / "records/decoder.npz", p0_input_0=np.array([1.0], np.float32), p0_circle_0=np.array([value], np.float32), p0_torch_0=np.array([value], np.float32))
+         114 |+    np.savez(
+         115 |+        root / "records/decoder.npz",
+         116 |+        p0_input_0=np.array([1.0], np.float32),
+         117 |+        p0_circle_0=np.array([value], np.float32),
+         118 |+        p0_torch_0=np.array([value], np.float32),
+         119 |+    )
+     79  120 | 
+     80  121 | 
+     81  122 | class TestArrayComparison(unittest.TestCase):
+--------------------------------------------------------------------------------
+    116  157 | 
+    117  158 | class TestCircleContract(unittest.TestCase):
+    118  159 |     def test_internal_names_do_not_change_execution_contract(self):
+    118      |-        self.assertEqual(circle_contract(_document(internal_name="a")), circle_contract(_document(internal_name="b")))
+         160 |+        self.assertEqual(
+         161 |+            circle_contract(_document(internal_name="a")),
+         162 |+            circle_contract(_document(internal_name="b")),
+         163 |+        )
+    120  164 | 
+    121  165 |     def test_constants_qparams_io_names_and_operator_versions_are_significant(self):
+    122  166 |         reference = circle_contract(_document())
+    122      |-        for other in (_document(constant=2), _document(qscale=0.25), _document(output_name="renamed")):
+         167 |+        for other in (
+         168 |+            _document(constant=2),
+         169 |+            _document(qscale=0.25),
+         170 |+            _document(output_name="renamed"),
+         171 |+        ):
+    124  172 |             self.assertNotEqual(reference, circle_contract(other))
+    125  173 |         other = _document()
+    126  174 |         other.model.operatorCodes[0].version = 2
+--------------------------------------------------------------------------------
+    170  218 |         self.assertFalse(self.compare()["ok"])
+    171  219 | 
+    172  220 |     def test_missing_array_keys_and_nonfinite_values_fail(self):
+    172      |-        np.savez(self.right / "records/decoder.npz", p0_circle_0=np.array([np.nan], np.float32))
+         221 |+        np.savez(
+         222 |+            self.right / "records/decoder.npz",
+         223 |+            p0_circle_0=np.array([np.nan], np.float32),
+         224 |+        )
+    174  225 |         result = self.compare()
+    175  226 |         self.assertFalse(result["ok"])
+    175      |-        self.assertFalse(result["stages"]["decoder.q.circle"]["arrays"]["p0_circle_0"]["ok"])
+         227 |+        self.assertFalse(
+         228 |+            result["stages"]["decoder.q.circle"]["arrays"]["p0_circle_0"]["ok"]
+         229 |+        )
+    177  230 | 
+    178  231 |     def test_empty_numerical_artifacts_do_not_pass(self):
+    179  232 |         for root in (self.left, self.right):
+--------------------------------------------------------------------------------
+    189  242 |         self.assertFalse(self.compare()["ok"])
+    190  243 | 
+    191  244 |     def test_inputs_are_exact_even_when_output_tolerance_would_allow_change(self):
+    191      |-        np.savez(self.right / "records/decoder.npz", p0_input_0=np.array([1.000001], np.float32), p0_circle_0=np.array([2.0], np.float32), p0_torch_0=np.array([2.0], np.float32))
+         245 |+        np.savez(
+         246 |+            self.right / "records/decoder.npz",
+         247 |+            p0_input_0=np.array([1.000001], np.float32),
+         248 |+            p0_circle_0=np.array([2.0], np.float32),
+         249 |+            p0_torch_0=np.array([2.0], np.float32),
+         250 |+        )
+    193  251 |         self.assertFalse(self.compare()["ok"])
+    194  252 | 
+    195  253 |     def test_pytorch_parity_is_reported_and_can_be_required(self):
+--------------------------------------------------------------------------------
+    213  271 |         self.mutate_snapshot("state_preserved", False)
+    214  272 |         report = Path(self.directory.name) / "report.json"
+    215  273 |         with contextlib.redirect_stdout(io.StringIO()):
+    215      |-            status = main(["compare", str(self.left), str(self.right), "--report", str(report)])
+         274 |+            status = main(
+         275 |+                ["compare", str(self.left), str(self.right), "--report", str(report)]
+         276 |+            )
+    217  277 |         self.assertEqual(status, 1)
+    218  278 |         self.assertFalse(json.loads(report.read_text())["ok"])
+    219  279 | 
+    220  280 |     def test_invalid_tolerance_is_rejected(self):
+    221  281 |         for value in ("nan", "inf", "-1"):
+    221      |-            with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
+         282 |+            with self.assertRaises(SystemExit), contextlib.redirect_stderr(
+         283 |+                io.StringIO()
+         284 |+            ):
+    223  285 |                 main(["compare", "a", "b", "--report", "unused", "--atol", value])
+    224  286 | 
+    225  287 |     def test_difference_locations_are_bounded(self):
+    225      |-        changes = _first_differences({str(i): 1 for i in range(50)}, {str(i): 2 for i in range(50)})
+         288 |+        changes = _first_differences(
+         289 |+            {str(i): 1 for i in range(50)}, {str(i): 2 for i in range(50)}
+         290 |+        )
+    227  291 |         self.assertEqual(len(changes), 20)
+    228  292 | 
+    229  293 | 
+--------------------------------------------------------------------------------
+    233  297 |         mask = torch.tensor([[[0.0, -120.0, 0.0]]])
+    234  298 |         kv = (torch.ones(1, 1, 2, 4), torch.ones(1, 1, 2, 4))
+    235  299 |         probes = _probes((hidden,), {"attention_mask": mask, "past_key_value": kv})
+    235      |-        self.assertEqual([p[0] for p in probes], ["export_example", "decode_empty_past", "decode_full_past"])
+         300 |+        self.assertEqual(
+         301 |+            [p[0] for p in probes],
+         302 |+            ["export_example", "decode_empty_past", "decode_full_past"],
+         303 |+        )
+    237  304 |         torch.testing.assert_close(mask, torch.tensor([[[0.0, -120.0, 0.0]]]))
+    238  305 |         self.assertEqual(float(probes[1][2]["past_key_value"][0].sum()), 0.0)
+    239  306 |         self.assertEqual(float(kv[0].sum()), 8.0)
+--------------------------------------------------------------------------------
+    242  309 |         with tempfile.TemporaryDirectory() as directory:
+    243  310 |             root = Path(directory)
+    244  311 |             np.savez(root / "host.npz", rope=np.ones((1, 2, 4), np.float32))
+    244      |-            torch.save({"weight": torch.ones(2), "scale": 0.25, "name": "embedding"}, root / "host.pt")
+         312 |+            torch.save(
+         313 |+                {"weight": torch.ones(2), "scale": 0.25, "name": "embedding"},
+         314 |+                root / "host.pt",
+         315 |+            )
+    246  316 |             first = _host_contract(root)
+    247  317 |             np.savez(root / "host.npz", rope=np.ones((1, 2, 4), np.float32))
+    248  318 |             second = _host_contract(root)
+--------------------------------------------------------------------------------
+    253  323 | 
+    254  324 | class TestFrozenStateFingerprint(unittest.TestCase):
+    255  325 |     def make_model(self):
+         326 |+        from tico.quantization.wrapq.observers.minmax import MinMaxObserver
+    256  327 |         from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
+    256      |-        from tico.quantization.wrapq.observers.minmax import MinMaxObserver
+    258  328 | 
+    259  329 |         class Model(QuantModuleBase):
+    260  330 |             def __init__(self):
+--------------------------------------------------------------------------------
+    296  366 |         model.enable_calibration()
+    297  367 |         with self.assertRaisesRegex(ValueError, "Calibration"):
+    298  368 |             _state_contract(model)
+    298      |-
+    300  369 | 
+    301  370 | 
+    302  371 | class TestRopeMigrationRouting(unittest.TestCase):
+--------------------------------------------------------------------------------
+    307  376 | 
+    308  377 |         root = Path(directory)
+    309  378 |         options = SimpleNamespace(
+    309      |-            command="run", output=str(root / "results"), config=str(root / "config.yaml"),
+    310      |-            checkpoint=str(root / "model.pt"), seq_len=16, eager_seq_len=8,
+    311      |-            decode_steps=2, artifacts="auto", seed=42, threads=1, atol=1e-5,
+    312      |-            rtol=1e-4, eager_inputs=None, include_full_text=False, set=[],
+    313      |-            candidate_repo=str(root / "candidate"), baseline_repo=str(root / "baseline"),
+    314      |-            require_torch_parity=False, migrate_llama_rope=migration,
+         379 |+            command="run",
+         380 |+            output=str(root / "results"),
+         381 |+            config=str(root / "config.yaml"),
+         382 |+            checkpoint=str(root / "model.pt"),
+         383 |+            seq_len=16,
+         384 |+            eager_seq_len=8,
+         385 |+            decode_steps=2,
+         386 |+            artifacts="auto",
+         387 |+            seed=42,
+         388 |+            threads=1,
+         389 |+            atol=1e-5,
+         390 |+            rtol=1e-4,
+         391 |+            eager_inputs=None,
+         392 |+            include_full_text=False,
+         393 |+            set=[],
+         394 |+            candidate_repo=str(root / "candidate"),
+         395 |+            baseline_repo=str(root / "baseline"),
+         396 |+            require_torch_parity=False,
+         397 |+            migrate_llama_rope=migration,
+    316  398 |         )
+    317  399 |         commands = []
+    318  400 | 
+    319  401 |         def worker(command, **kwargs):
+    320  402 |             commands.append(command)
+    321  403 |             target = Path(command[command.index("--output") + 1])
+    321      |-            _write_json(target / "environment.json", {"versions": {}, "checkpoint_sha256": "same"})
+         404 |+            _write_json(
+         405 |+                target / "environment.json",
+         406 |+                {"versions": {}, "checkpoint_sha256": "same"},
+         407 |+            )
+    323  408 |             _write_json(target / "quantization_state.json", {})
+    324  409 |             if "--stress" in command:
+    325  410 |                 _write_json(target / "eager.json", {"state_preserved": True})
+--------------------------------------------------------------------------------
+    335  420 | 
+    336  421 |     def test_only_candidate_receives_explicit_migration_flag(self):
+    337  422 |         for enabled in (False, True):
+    337      |-            with self.subTest(enabled=enabled), tempfile.TemporaryDirectory() as directory:
+    338      |-                code, commands, summary = self._run_fixture(directory, migration=enabled, old_new_ok=True)
+         423 |+            with self.subTest(
+         424 |+                enabled=enabled
+         425 |+            ), tempfile.TemporaryDirectory() as directory:
+         426 |+                code, commands, summary = self._run_fixture(
+         427 |+                    directory, migration=enabled, old_new_ok=True
+         428 |+                )
+    340  429 |                 self.assertEqual(code, 0)
+    341  430 |                 self.assertNotIn("--migrate-llama-rope", commands[0])
+    342  431 |                 self.assertEqual("--migrate-llama-rope" in commands[1], enabled)
+--------------------------------------------------------------------------------
+    344  433 | 
+    345  434 |     def test_intentional_rope_difference_is_still_a_reported_failure(self):
+    346  435 |         with tempfile.TemporaryDirectory() as directory:
+    346      |-            code, _, summary = self._run_fixture(directory, migration=True, old_new_ok=False)
+         436 |+            code, _, summary = self._run_fixture(
+         437 |+                directory, migration=True, old_new_ok=False
+         438 |+            )
+    348  439 |         self.assertEqual(code, 1)
+    349  440 |         self.assertEqual(summary["status"], "FAIL")
+    350  441 |         self.assertTrue(summary["candidate_before_vs_after_eager"]["ok"])
+    351  442 |         self.assertIn("never waived", summary["intentional_change_note"])
+    352  443 | 
+         444 |+
+    353  445 | if __name__ == "__main__":
+    354  446 |     unittest.main()
+
+
+
+>>> Lint for test/quantization/wrapq/utils/test_static_export_inputs.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     20   20 | from unittest.mock import patch
+     21   21 | 
+     22   22 | import torch
+     22      |-from torch import nn
+     24   23 | 
+     25   24 | from tico.quantization.wrapq.utils.static_export import (
+     26   25 |     prepared_static_export,
+--------------------------------------------------------------------------------
+     34   33 | from tico.quantization.wrapq.wrappers.qwen_vl.static_inputs import (
+     35   34 |     prepare_qwen3_vl_static_text_inputs,
+     36   35 | )
+          36 |+from torch import nn
+     37   37 | 
+     38   38 | 
+     39   39 | class _LlamaRotary(nn.Module):
+--------------------------------------------------------------------------------
+     49   49 |         self.calls += 1
+     50   50 |         frequencies = positions.float().unsqueeze(-1) * self.inv_freq
+     51   51 |         phases = torch.cat((frequencies, frequencies), dim=-1)
+     51      |-        return phases.cos() * self.attention_scaling, phases.sin() * self.attention_scaling
+          52 |+        return (
+          53 |+            phases.cos() * self.attention_scaling,
+          54 |+            phases.sin() * self.attention_scaling,
+          55 |+        )
+     53   56 | 
+     54   57 | 
+     55   58 | class _LlamaOwner(nn.Module):
+--------------------------------------------------------------------------------
+     59   62 |         super().__init__()
+     60   63 |         self.weight = nn.Parameter(torch.ones(1))
+     61   64 |         self.config = SimpleNamespace(
+     61      |-            hidden_size=8, num_attention_heads=2, head_dim=4,
+     62      |-            max_position_embeddings=capacity, rope_theta=10000.0,
+          65 |+            hidden_size=8,
+          66 |+            num_attention_heads=2,
+          67 |+            head_dim=4,
+          68 |+            max_position_embeddings=capacity,
+          69 |+            rope_theta=10000.0,
+     64   70 |         )
+     65   71 |         self.qcfg = SimpleNamespace(attention_mask_fill_value=-120.0)
+     66   72 |         self.attn_options = SimpleNamespace(rope=rope)
+     66      |-        capture_rope_state(self, self.config, source if source is not None else _LlamaRotary())
+          73 |+        capture_rope_state(
+          74 |+            self, self.config, source if source is not None else _LlamaRotary()
+          75 |+        )
+     68   76 | 
+     69   77 |     def _build_static_export_inputs(self, length):
+     70   78 |         return prepare_llama_static_inputs(self, length)
+--------------------------------------------------------------------------------
+    132  140 |         original_keys = tuple(owner.state_dict())
+    133  141 |         with prepared_static_export(owner, 8):
+    134  142 |             self.assertEqual(owner._static_export_inputs.cos.shape, (1, 8, 4))
+    134      |-            self.assertEqual(owner._static_export_inputs.attention_mask.shape, (1, 1, 8, 8))
+         143 |+            self.assertEqual(
+         144 |+                owner._static_export_inputs.attention_mask.shape, (1, 1, 8, 8)
+         145 |+            )
+    136  146 |             self.assertIs(owner.weight, weight)
+    137  147 |             self.assertEqual(tuple(owner.state_dict()), original_keys)
+    138  148 |         self.assertFalse(hasattr(owner, "_static_export_inputs"))
+--------------------------------------------------------------------------------
+    188  198 |         require_static_decoder_inputs(mask, positions)
+    189  199 |         # Existing boolean-mask support remains the responsibility of each wrapper.
+    190  200 |         require_static_decoder_inputs(mask.bool(), positions)
+    190      |-        for bad_mask, bad_rope in ((None, positions), (mask, None), (mask, (positions[0],))):
+         201 |+        for bad_mask, bad_rope in (
+         202 |+            (None, positions),
+         203 |+            (mask, None),
+         204 |+            (mask, (positions[0],)),
+         205 |+        ):
+    192  206 |             with self.assertRaises(ValueError):
+    193  207 |                 require_static_decoder_inputs(bad_mask, bad_rope)
+    194  208 | 
+--------------------------------------------------------------------------------
+    198  212 |         for convention in ("hf", "pre_negated_sin"):
+    199  213 |             owner = _LlamaOwner(rope=convention)
+    200  214 |             actual = prepare_llama_static_inputs(owner, 6)
+    200      |-            frequencies = torch.outer(torch.arange(6).float(), torch.tensor([1.0, 0.01]))
+         215 |+            frequencies = torch.outer(
+         216 |+                torch.arange(6).float(), torch.tensor([1.0, 0.01])
+         217 |+            )
+    202  218 |             phases = torch.cat((frequencies, frequencies), dim=-1)
+    203  219 |             expected_sin = phases.sin()
+    204  220 |             if convention == "pre_negated_sin":
+    205  221 |                 expected_sin[:, :2] *= -1
+    205      |-            torch.testing.assert_close(actual.cos, phases.cos().unsqueeze(0), atol=0, rtol=0)
+    206      |-            torch.testing.assert_close(actual.sin, expected_sin.unsqueeze(0), atol=0, rtol=0)
+         222 |+            torch.testing.assert_close(
+         223 |+                actual.cos, phases.cos().unsqueeze(0), atol=0, rtol=0
+         224 |+            )
+         225 |+            torch.testing.assert_close(
+         226 |+                actual.sin, expected_sin.unsqueeze(0), atol=0, rtol=0
+         227 |+            )
+    208  228 |             expected_mask = torch.full((6, 6), -120.0).triu(1)
+    208      |-            torch.testing.assert_close(actual.attention_mask[0, 0], expected_mask, atol=0, rtol=0)
+         229 |+            torch.testing.assert_close(
+         230 |+                actual.attention_mask[0, 0], expected_mask, atol=0, rtol=0
+         231 |+            )
+    210  232 | 
+    211  233 |     def test_source_frequency_and_scaling_are_snapshotted(self):
+    212  234 |         source = _LlamaRotary()
+--------------------------------------------------------------------------------
+    280  302 |         owner.register_buffer("_export_rope_inv_freq", torch.ones(2))
+    281  303 |         owner._export_rope_attention_scaling = 1.0
+    282  304 |         capture_rope_state(owner, owner.config, _LlamaRotary())
+    282      |-        for name in ("rope_cos_template", "rope_sin_template", "_export_rope_inv_freq",
+    283      |-                     "_export_rope_attention_scaling"):
+         305 |+        for name in (
+         306 |+            "rope_cos_template",
+         307 |+            "rope_sin_template",
+         308 |+            "_export_rope_inv_freq",
+         309 |+            "_export_rope_attention_scaling",
+         310 |+        ):
+    285  311 |             self.assertFalse(hasattr(owner, name), name)
+    286  312 | 
+    287  313 |     def test_no_native_context_allocation(self):
+--------------------------------------------------------------------------------
+    308  334 |                 self.inputs = inputs
+    309  335 | 
+    310  336 |             def forward(self, hidden):
+    310      |-                cos, sin = self.inputs.rope(0, 4, device=hidden.device, dtype=hidden.dtype)
+         337 |+                cos, sin = self.inputs.rope(
+         338 |+                    0, 4, device=hidden.device, dtype=hidden.dtype
+         339 |+                )
+    312  340 |                 mask = self.inputs.mask(4, 4, 0, device=hidden.device)
+    313  341 |                 return hidden * cos + sin + mask
+    314  342 | 
+    315  343 |         consumer = Consumer(prepare_llama_static_inputs(_LlamaOwner(), 4))
+    316  344 |         hidden = torch.randn(1, 4, 4)
+    317  345 |         exported = torch.export.export(consumer, (hidden,), strict=False)
+    317      |-        torch.testing.assert_close(exported.module()(hidden), consumer(hidden), atol=0, rtol=0)
+    318      |-        targets = [str(node.target) for node in exported.graph.nodes if node.op == "call_function"]
+    319      |-        for forbidden in ("aten.sin.", "aten.cos.", "aten.arange.", "aten.triu.", "aten.outer."):
+         346 |+        torch.testing.assert_close(
+         347 |+            exported.module()(hidden), consumer(hidden), atol=0, rtol=0
+         348 |+        )
+         349 |+        targets = [
+         350 |+            str(node.target)
+         351 |+            for node in exported.graph.nodes
+         352 |+            if node.op == "call_function"
+         353 |+        ]
+         354 |+        for forbidden in (
+         355 |+            "aten.sin.",
+         356 |+            "aten.cos.",
+         357 |+            "aten.arange.",
+         358 |+            "aten.triu.",
+         359 |+            "aten.outer.",
+         360 |+        ):
+    321  361 |             self.assertFalse(any(forbidden in target for target in targets), targets)
+    322  362 | 
+    323  363 | 
+--------------------------------------------------------------------------------
+    354  394 |         with prepared_static_export(owner, 8):
+    355  395 |             self.assertEqual(owner._static_export_inputs.attention_mask.shape[-1], 8)
+    356  396 |         self.assertFalse(hasattr(owner, "_static_export_inputs"))
+    356      |-
+    358  397 | 
+    359  398 | 
+    360  399 | class TestDecoderExportBoundaries(unittest.TestCase):
+    361  400 |     def test_llama_and_qwen_adapters_do_not_change_eager_return_policy(self):
+    362  401 |         from tico.quantization.wrapq.wrappers.llama.export_adapters import (
+    362      |-            LlamaDecoderLayerPrefillExportAdapter,
+    364  402 |             LlamaDecoderLayerDecodeExportAdapter,
+         403 |+            LlamaDecoderLayerPrefillExportAdapter,
+    365  404 |         )
+    366  405 |         from tico.quantization.wrapq.wrappers.qwen_vl.export_adapters import (
+    366      |-            Qwen3VLTextDecoderLayerPrefillExportAdapter,
+    368  406 |             Qwen3VLTextDecoderLayerDecodeExportAdapter,
+         407 |+            Qwen3VLTextDecoderLayerPrefillExportAdapter,
+    369  408 |         )
+    370  409 | 
+    371  410 |         class Layer(nn.Module):
+--------------------------------------------------------------------------------
+    373  412 |                 super().__init__()
+    374  413 |                 self.return_type = "tensor"
+    375  414 | 
+    375      |-            def forward(self, hidden_states, *, return_type=None, use_cache=False, **kwargs):
+         415 |+            def forward(
+         416 |+                self, hidden_states, *, return_type=None, use_cache=False, **kwargs
+         417 |+            ):
+    377  418 |                 hidden = hidden_states + 1
+    378  419 |                 key = hidden.unsqueeze(1)
+    379  420 |                 return (hidden, (key, key)) if return_type == "tuple" else hidden
+--------------------------------------------------------------------------------
+    382  423 |         mask = torch.zeros(1, 1, 4)
+    383  424 |         positions = (torch.ones(1, 1, 4), torch.zeros(1, 1, 4))
+    384  425 |         past = (torch.zeros(1, 1, 3, 4), torch.zeros(1, 1, 3, 4))
+    384      |-        for cls in (LlamaDecoderLayerPrefillExportAdapter, LlamaDecoderLayerDecodeExportAdapter,
+    385      |-                    Qwen3VLTextDecoderLayerPrefillExportAdapter, Qwen3VLTextDecoderLayerDecodeExportAdapter):
+         426 |+        for cls in (
+         427 |+            LlamaDecoderLayerPrefillExportAdapter,
+         428 |+            LlamaDecoderLayerDecodeExportAdapter,
+         429 |+            Qwen3VLTextDecoderLayerPrefillExportAdapter,
+         430 |+            Qwen3VLTextDecoderLayerDecodeExportAdapter,
+         431 |+        ):
+    387  432 |             with self.subTest(adapter=cls.__name__):
+    388  433 |                 layer = Layer()
+    389  434 |                 adapter = cls(layer, return_kv=True)
+    390  435 |                 self.assertEqual(layer.return_type, "tensor")
+    391  436 |                 kwargs = {"attention_mask": mask, "position_embeddings": positions}
+    392  437 |                 if "DecodeExportAdapter" in cls.__name__:
+    392      |-                    key = "past_key_values" if cls.__name__.startswith("Qwen") else "past_key_value"
+         438 |+                    key = (
+         439 |+                        "past_key_values"
+         440 |+                        if cls.__name__.startswith("Qwen")
+         441 |+                        else "past_key_value"
+         442 |+                    )
+    394  443 |                     kwargs[key] = past
+    395  444 |                 output = adapter(hidden, **kwargs)
+    396  445 |                 self.assertEqual(len(output), 3)
+    397  446 |                 self.assertEqual(layer.return_type, "tensor")
+    398  447 |                 self.assertIsInstance(layer(hidden), torch.Tensor)
+    398      |-                program = torch.export.export(adapter, (hidden,), kwargs=kwargs, strict=False)
+         448 |+                program = torch.export.export(
+         449 |+                    adapter, (hidden,), kwargs=kwargs, strict=False
+         450 |+                )
+    400  451 |                 for actual, expected in zip(program.module()(hidden, **kwargs), output):
+    401  452 |                     torch.testing.assert_close(actual, expected, atol=0, rtol=0)
+    402  453 |                 with self.assertRaisesRegex(ValueError, "explicit attention_mask"):
+--------------------------------------------------------------------------------
+    408  459 |         )
+    409  460 | 
+    410  461 |         class Consumer(nn.Module):
+    410      |-            def forward(self, hidden_states, *, shared_key_value, static_export, **kwargs):
+         462 |+            def forward(
+         463 |+                self, hidden_states, *, shared_key_value, static_export, **kwargs
+         464 |+            ):
+    412  465 |                 if not static_export:
+    413  466 |                     raise AssertionError("Static path was not selected")
+    414  467 |                 return hidden_states + shared_key_value[0][:, 0, -1:]
+--------------------------------------------------------------------------------
+    426  479 |         self.assertEqual(output.shape, hidden.shape)
+    427  480 |         self.assertEqual(shared[0].shape[-2], 8)
+    428  481 |         program = torch.export.export(adapter, (hidden,), kwargs=kwargs, strict=False)
+    428      |-        torch.testing.assert_close(program.module()(hidden, **kwargs), output, atol=0, rtol=0)
+         482 |+        torch.testing.assert_close(
+         483 |+            program.module()(hidden, **kwargs), output, atol=0, rtol=0
+         484 |+        )
+    430  485 | 
+    431  486 |     def test_full_model_owner_suppresses_duplicate_layer_tables(self):
+    432  487 |         owner = _LlamaOwner()
+
+
+
+>>> Lint for test/quantization/wrapq/wrappers/llama/test_rope_consistency.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     19   19 | import unittest
+     20   20 | 
+     21   21 | import torch
+     21      |-
+     22      |-from test.quantization.quant_spec_helpers import make_affine_ptq_config
+     24   22 | from tico.quantization.recipes.debug.export_regression import _state_contract
+     25   23 | from tico.quantization.wrapq.utils.static_export import prepared_static_export
+     25      |-from tico.quantization.wrapq.wrappers.llama.quant_decoder_layer import QuantLlamaDecoderLayer
+          24 |+from tico.quantization.wrapq.wrappers.llama.quant_decoder_layer import (
+          25 |+    QuantLlamaDecoderLayer,
+          26 |+)
+     27   27 | from tico.quantization.wrapq.wrappers.llama.quant_model import QuantLlamaModel
+     28   28 | from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+     29   29 |     migrate_llama_rope_state,
+     30   30 |     prepare_llama_static_inputs,
+     31   31 | )
+     32   32 | 
+          33 |+from test.quantization.quant_spec_helpers import make_affine_ptq_config
+          34 |+
+     33   35 | 
+     34   36 | class TestLlamaRoPEConsistency(unittest.TestCase):
+     35   37 |     """Check actual wrappers, not mocks, using tiny randomly initialized models."""
+--------------------------------------------------------------------------------
+     47   49 |             "default": None,
+     48   50 |             "linear": {"rope_type": "linear", "factor": 4.0},
+     49   51 |             "llama3": {
+     49      |-                "rope_type": "llama3", "factor": 32.0,
+     50      |-                "low_freq_factor": 1.0, "high_freq_factor": 4.0,
+          52 |+                "rope_type": "llama3",
+          53 |+                "factor": 32.0,
+          54 |+                "low_freq_factor": 1.0,
+          55 |+                "high_freq_factor": 4.0,
+     52   56 |                 "original_max_position_embeddings": 8192,
+     53   57 |             },
+     54   58 |         }[kind]
+     55   59 |         config = LlamaConfig(
+     55      |-            vocab_size=64, hidden_size=32, intermediate_size=64,
+     56      |-            num_hidden_layers=2, num_attention_heads=2, num_key_value_heads=1,
+     57      |-            head_dim=16, max_position_embeddings=131072, rope_theta=500000.0,
+     58      |-            rope_scaling=scaling, attention_dropout=0.0,
+          60 |+            vocab_size=64,
+          61 |+            hidden_size=32,
+          62 |+            intermediate_size=64,
+          63 |+            num_hidden_layers=2,
+          64 |+            num_attention_heads=2,
+          65 |+            num_key_value_heads=1,
+          66 |+            head_dim=16,
+          67 |+            max_position_embeddings=131072,
+          68 |+            rope_theta=500000.0,
+          69 |+            rope_scaling=scaling,
+          70 |+            attention_dropout=0.0,
+     60   71 |         )
+     61   72 |         config._attn_implementation = "eager"
+     62   73 |         return LlamaModel(config).eval()
+--------------------------------------------------------------------------------
+     90  101 |                     standalone = QuantLlamaDecoderLayer(
+     91  102 |                         copy.deepcopy(model.layers[0]),
+     92  103 |                         qcfg=make_affine_ptq_config(model_args={"profile": profile}),
+     92      |-                        layer_idx=0, return_type="tuple",
+         104 |+                        layer_idx=0,
+         105 |+                        return_type="tuple",
+     94  106 |                     ).eval()
+     95  107 |                     expected = self._expected(model, 32, negate=profile == "npu_export")
+     95      |-                    for owner in (full, standalone, *(layer.wrapped for layer in full.layers)):
+         108 |+                    for owner in (
+         109 |+                        full,
+         110 |+                        standalone,
+         111 |+                        *(layer.wrapped for layer in full.layers),
+         112 |+                    ):
+     97  113 |                         inputs = prepare_llama_static_inputs(owner, 32)
+     98  114 |                         for actual, target in zip((inputs.cos, inputs.sin), expected):
+     99  115 |                             torch.testing.assert_close(actual, target, atol=0, rtol=0)
+--------------------------------------------------------------------------------
+    131  147 |             for actual, target in zip((prepared.cos, prepared.sin), expected):
+    132  148 |                 torch.testing.assert_close(actual, target, atol=0, rtol=0)
+    133  149 |             self.assertIsNot(owner._export_rotary_emb, model.rotary_emb)
+    133      |-            self.assertNotEqual(owner._export_rotary_emb.inv_freq.data_ptr(), model.rotary_emb.inv_freq.data_ptr())
+         150 |+            self.assertNotEqual(
+         151 |+                owner._export_rotary_emb.inv_freq.data_ptr(),
+         152 |+                model.rotary_emb.inv_freq.data_ptr(),
+         153 |+            )
+    135  154 | 
+    136  155 |     def test_eager_mutations_cannot_change_static_tables_or_serialized_snapshot(self):
+    137  156 |         """The snapshot survives an eager call, live mutation, and pickle roundtrip."""
+--------------------------------------------------------------------------------
+    158  177 |                 model = self._wrapper(self._model(), profile)
+    159  178 |                 length, valid = 16, 5
+    160  179 |                 tokens = torch.randint(0, 64, (1, valid + 2))
+    160      |-                hidden = model.embed_tokens(torch.nn.functional.pad(tokens[:, :valid], (0, length - valid)))
+    161      |-                inputs = [prepare_llama_static_inputs(layer.wrapped, length) for layer in model.layers]
+         180 |+                hidden = model.embed_tokens(
+         181 |+                    torch.nn.functional.pad(tokens[:, :valid], (0, length - valid))
+         182 |+                )
+         183 |+                inputs = [
+         184 |+                    prepare_llama_static_inputs(layer.wrapped, length)
+         185 |+                    for layer in model.layers
+         186 |+                ]
+    163  187 |                 caches = []
+    164  188 |                 for layer, prepared in zip(model.layers, inputs):
+    165  189 |                     mask = prepared.mask(length, length, 0, device="cpu").clone()
+    165      |-                    mask[:, :, valid:] = float(layer.wrapped.qcfg.attention_mask_fill_value)
+    166      |-                    hidden, key, value = layer.wrapped.as_export_module("prefill", return_kv=True)(
+    167      |-                        hidden, attention_mask=mask, position_embeddings=(prepared.cos, prepared.sin)
+         190 |+                    mask[:, :, valid:] = float(
+         191 |+                        layer.wrapped.qcfg.attention_mask_fill_value
+         192 |+                    )
+         193 |+                    hidden, key, value = layer.wrapped.as_export_module(
+         194 |+                        "prefill", return_kv=True
+         195 |+                    )(
+         196 |+                        hidden,
+         197 |+                        attention_mask=mask,
+         198 |+                        position_embeddings=(prepared.cos, prepared.sin),
+         199 |+                    )
+         200 |+                    caches.append(
+         201 |+                        (
+         202 |+                            key[:, :, : length - 1].clone(),
+         203 |+                            value[:, :, : length - 1].clone(),
+         204 |+                        )
+    169  205 |                     )
+    169      |-                    caches.append((key[:, :, :length - 1].clone(), value[:, :, :length - 1].clone()))
+    171  206 |                 expected = model(tokens[:, :valid], use_cache=False).last_hidden_state
+    171      |-                torch.testing.assert_close(model.norm(hidden)[:, :valid], expected, atol=2e-6, rtol=2e-5)
+         207 |+                torch.testing.assert_close(
+         208 |+                    model.norm(hidden)[:, :valid], expected, atol=2e-6, rtol=2e-5
+         209 |+                )
+    173  210 |                 for position in range(valid, valid + 2):
+    173      |-                    hidden = model.embed_tokens(tokens[:, position:position + 1])
+    174      |-                    for index, (layer, prepared) in enumerate(zip(model.layers, inputs)):
+    175      |-                        mask = torch.full((1, 1, length), float(layer.wrapped.qcfg.attention_mask_fill_value))
+         211 |+                    hidden = model.embed_tokens(tokens[:, position : position + 1])
+         212 |+                    for index, (layer, prepared) in enumerate(
+         213 |+                        zip(model.layers, inputs)
+         214 |+                    ):
+         215 |+                        mask = torch.full(
+         216 |+                            (1, 1, length),
+         217 |+                            float(layer.wrapped.qcfg.attention_mask_fill_value),
+         218 |+                        )
+    177  219 |                         mask[..., :position] = 0
+    178  220 |                         mask[..., -1] = 0
+    178      |-                        rope = prepared.rope(position, 1, device="cpu", dtype=torch.float32)
+    179      |-                        hidden, delta_k, delta_v = layer.wrapped.as_export_module("decode")(
+    180      |-                            hidden, attention_mask=mask, position_embeddings=rope, past_key_value=caches[index]
+         221 |+                        rope = prepared.rope(
+         222 |+                            position, 1, device="cpu", dtype=torch.float32
+    182  223 |                         )
+         224 |+                        hidden, delta_k, delta_v = layer.wrapped.as_export_module(
+         225 |+                            "decode"
+         226 |+                        )(
+         227 |+                            hidden,
+         228 |+                            attention_mask=mask,
+         229 |+                            position_embeddings=rope,
+         230 |+                            past_key_value=caches[index],
+         231 |+                        )
+    183  232 |                         self.assertEqual(tuple(delta_k.shape), (1, 1, 1, 16))
+    184  233 |                         self.assertEqual(tuple(delta_v.shape), (1, 1, 1, 16))
+    184      |-                        caches[index][0][:, :, position:position + 1] = delta_k
+    185      |-                        caches[index][1][:, :, position:position + 1] = delta_v
+    186      |-                    expected = model(tokens[:, :position + 1], use_cache=False).last_hidden_state[:, -1:]
+    187      |-                    torch.testing.assert_close(model.norm(hidden), expected, atol=2e-6, rtol=2e-5)
+         234 |+                        caches[index][0][:, :, position : position + 1] = delta_k
+         235 |+                        caches[index][1][:, :, position : position + 1] = delta_v
+         236 |+                    expected = model(
+         237 |+                        tokens[:, : position + 1], use_cache=False
+         238 |+                    ).last_hidden_state[:, -1:]
+         239 |+                    torch.testing.assert_close(
+         240 |+                        model.norm(hidden), expected, atol=2e-6, rtol=2e-5
+         241 |+                    )
+    189  242 | 
+    190  243 |     def test_explicit_migration_preserves_frozen_weights_and_qparams(self):
+    191  244 |         """Changing positional provenance must not recalibrate frozen observers."""
+--------------------------------------------------------------------------------
+    199  252 |         for owner in (model, *(layer.wrapped for layer in model.layers)):
+    200  253 |             del owner._export_rotary_emb
+    201  254 |             del owner._export_rope_contract_version
+    201      |-            owner.register_buffer("rope_cos_template", torch.ones(1, 16, 16), persistent=False)
+    202      |-            owner.register_buffer("rope_sin_template", torch.zeros(1, 16, 16), persistent=False)
+         255 |+            owner.register_buffer(
+         256 |+                "rope_cos_template", torch.ones(1, 16, 16), persistent=False
+         257 |+            )
+         258 |+            owner.register_buffer(
+         259 |+                "rope_sin_template", torch.zeros(1, 16, 16), persistent=False
+         260 |+            )
+    204  261 |         with self.assertRaisesRegex(ValueError, "migrate_llama_rope_state"):
+    205  262 |             prepare_llama_static_inputs(model, 16)
+    206  263 |         report = migrate_llama_rope_state(model)
+    207  264 |         self.assertEqual(report["roots"][0]["source"], "recorded_config")
+    208  265 |         self.assertEqual(original, _state_contract(model))
+    208      |-        self.assertEqual(identities, {name: id(value) for name, value in model.named_parameters()})
+         266 |+        self.assertEqual(
+         267 |+            identities, {name: id(value) for name, value in model.named_parameters()}
+         268 |+        )
+    210  269 |         full = prepare_llama_static_inputs(model, 16)
+    211  270 |         for layer in model.layers:
+    212  271 |             result = prepare_llama_static_inputs(layer.wrapped, 16)
+--------------------------------------------------------------------------------
+    239  298 |         }
+    240  299 |         adapter = layer.as_export_module("prefill", return_kv=True)
+    241  300 |         program = torch.export.export(adapter, (hidden,), kwargs=kwargs, strict=False)
+    241      |-        targets = [str(node.target) for node in program.graph.nodes if node.op == "call_function"]
+         301 |+        targets = [
+         302 |+            str(node.target)
+         303 |+            for node in program.graph.nodes
+         304 |+            if node.op == "call_function"
+         305 |+        ]
+    243  306 |         for target in targets:
+    243      |-            self.assertFalse(any(op in target for op in ("aten.sin.", "aten.cos.", "aten.arange.")), target)
+         307 |+            self.assertFalse(
+         308 |+                any(op in target for op in ("aten.sin.", "aten.cos.", "aten.arange.")),
+         309 |+                target,
+         310 |+            )
+    245  311 |         with torch.no_grad():
+    245      |-            for actual, expected in zip(program.module()(hidden, **kwargs), adapter(hidden, **kwargs)):
+         312 |+            for actual, expected in zip(
+         313 |+                program.module()(hidden, **kwargs), adapter(hidden, **kwargs)
+         314 |+            ):
+    247  315 |                 torch.testing.assert_close(actual, expected, atol=0, rtol=0)
+    248  316 | 
+    249  317 | 
+
+
+
+>>> Lint for test/quantization/wrapq/wrappers/qwen_vl/test_quant_text_model.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    23  23 | from tico.quantization.config.ptq import PTQConfig
+    24  24 | from tico.quantization.wrapq.dtypes import DType
+    25  25 | from tico.quantization.wrapq.mode import Mode
+        26 |+from tico.quantization.wrapq.utils.static_export import prepared_static_export
+    26  27 | from tico.quantization.wrapq.utils.version import has_transformers_for
+    26     |-from tico.quantization.wrapq.utils.static_export import prepared_static_export
+    28  28 | from tico.quantization.wrapq.wrappers.qwen_vl.quant_text_model import (
+    29  29 |     QuantQwen3VLTextModel,
+    30  30 | )
+
+
+
+>>> Lint for tico/quantization/recipes/debug/export_regression.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+      99    99 |         return {str(key): _json_value(item) for key, item in sorted(value.items())}
+     100   100 |     if hasattr(value, "detach"):
+     101   101 |         import torch
+           102 |+
+     102   103 |         raw = value.detach().contiguous().cpu()
+     103   104 |         return {
+     103       |-            "tensor_shape": list(raw.shape), "tensor_dtype": str(raw.dtype),
+           105 |+            "tensor_shape": list(raw.shape),
+           106 |+            "tensor_dtype": str(raw.dtype),
+     105   107 |             "bytes": _array_record(raw.reshape(-1).view(torch.uint8)),
+     106   108 |         }
+     107   109 |     if hasattr(value, "__dict__"):
+--------------------------------------------------------------------------------
+     159   161 |             }
+     160   162 |             fields["opcode"] = _json_value(opcodes[int(operator.opcodeIndex)])
+     161   163 |             operators.append(fields)
+     161       |-        subgraphs.append({
+     162       |-            "inputs": input_indices, "outputs": output_indices,
+     163       |-            "tensors": tensors, "operators": operators,
+     164       |-        })
+           164 |+        subgraphs.append(
+           165 |+            {
+           166 |+                "inputs": input_indices,
+           167 |+                "outputs": output_indices,
+           168 |+                "tensors": tensors,
+           169 |+                "operators": operators,
+           170 |+            }
+           171 |+        )
+     166   172 |     return {
+     167   173 |         "version": int(model.version),
+     168   174 |         "subgraphs": subgraphs,
+--------------------------------------------------------------------------------
+     187   193 |         # TICO registers HF caches as PyTrees. Use that registered ordering rather
+     188   194 |         # than guessing the order of keys/values for a transformers version.
+     189   195 |         from torch.utils._pytree import tree_flatten
+           196 |+
+     190   197 |         leaves, _ = tree_flatten(value)
+     191   198 |         if len(leaves) == 1 and leaves[0] is value:
+     192   199 |             raise TypeError(f"Unsupported output artifact: {type(value).__name__}")
+--------------------------------------------------------------------------------
+     203   210 | 
+     204   211 |     left, right = _array(left), _array(right)
+     205   212 |     if left.shape != right.shape or left.dtype != right.dtype:
+     205       |-        return {"ok": False, "reason": "shape_or_dtype", "left": _array_record(left), "right": _array_record(right)}
+           213 |+        return {
+           214 |+            "ok": False,
+           215 |+            "reason": "shape_or_dtype",
+           216 |+            "left": _array_record(left),
+           217 |+            "right": _array_record(right),
+           218 |+        }
+     207   219 |     if not np.isfinite(left).all() or not np.isfinite(right).all():
+     208   220 |         return {"ok": False, "reason": "nonfinite"}
+     209   221 |     if left.dtype.kind in "biu":
+     210   222 |         ok = np.array_equal(left, right)
+     211   223 |     else:
+     212   224 |         ok = np.allclose(left, right, atol=atol, rtol=rtol, equal_nan=False)
+     212       |-    maximum = float(np.max(np.abs(left.astype(np.float64) - right.astype(np.float64)))) if left.size else 0.0
+           225 |+    maximum = (
+           226 |+        float(np.max(np.abs(left.astype(np.float64) - right.astype(np.float64))))
+           227 |+        if left.size
+           228 |+        else 0.0
+           229 |+    )
+     214   230 |     return {"ok": bool(ok), "max_abs_error": maximum}
+     215   231 | 
+     216   232 | 
+--------------------------------------------------------------------------------
+     245   261 | def _state_contract(model) -> dict:
+     246   262 |     """Fingerprint weights, all observer buffers/qparams, and quantization modes."""
+     247   263 |     import torch
+           264 |+
+     248   265 |     from tico.quantization.wrapq.mode import Mode
+     249   266 |     from tico.quantization.wrapq.observers.base import ObserverBase
+     250   267 |     from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
+--------------------------------------------------------------------------------
+     252   269 |     def tensor_record(tensor):
+     253   270 |         raw = tensor.detach().contiguous().cpu()
+     254   271 |         # Byte view also supports BF16, which NumPy may not expose as a dtype.
+     254       |-        return {"shape": list(raw.shape), "dtype": str(raw.dtype), "bytes": _array_record(raw.reshape(-1).view(torch.uint8))}
+           272 |+        return {
+           273 |+            "shape": list(raw.shape),
+           274 |+            "dtype": str(raw.dtype),
+           275 |+            "bytes": _array_record(raw.reshape(-1).view(torch.uint8)),
+           276 |+        }
+     256   277 | 
+     257   278 |     weights = {name: tensor_record(tensor) for name, tensor in model.named_parameters()}
+     258   279 |     observers, modes = {}, {}
+     259   280 |     for name, module in model.named_modules():
+     260   281 |         if isinstance(module, QuantModuleBase):
+     261   282 |             if module._mode is Mode.CALIB:
+     261       |-                raise ValueError(f"Calibration is enabled at {name}; provide a frozen checkpoint.")
+           283 |+                raise ValueError(
+           284 |+                    f"Calibration is enabled at {name}; provide a frozen checkpoint."
+           285 |+                )
+     263   286 |             modes[name] = module._mode.name
+     264   287 |         if isinstance(module, ObserverBase):
+     265   288 |             fields = {
+     266   289 |                 key: repr(getattr(module, key, None))
+     266       |-                for key in ("enabled", "fake_quant_enabled", "dtype", "qscheme", "channel_axis", "_qparams_locked")
+           290 |+                for key in (
+           291 |+                    "enabled",
+           292 |+                    "fake_quant_enabled",
+           293 |+                    "dtype",
+           294 |+                    "qscheme",
+           295 |+                    "channel_axis",
+           296 |+                    "_qparams_locked",
+           297 |+                )
+     268   298 |             }
+     269   299 |             fields["buffers"] = {
+     270   300 |                 key: tensor_record(tensor) for key, tensor in module.named_buffers()
+--------------------------------------------------------------------------------
+     275   305 |                     fields[key] = tensor_record(value)
+     276   306 |                 elif key == "_qparams" and value is not None:
+     277   307 |                     if isinstance(value, (tuple, list)):
+     277       |-                        fields[key] = [tensor_record(item) if isinstance(item, torch.Tensor) else _json_value(item) for item in value]
+           308 |+                        fields[key] = [
+           309 |+                            tensor_record(item)
+           310 |+                            if isinstance(item, torch.Tensor)
+           311 |+                            else _json_value(item)
+           312 |+                            for item in value
+           313 |+                        ]
+     279   314 |                     elif isinstance(value, dict):
+     279       |-                        fields[key] = {str(k): tensor_record(v) if isinstance(v, torch.Tensor) else _json_value(v) for k, v in value.items()}
+           315 |+                        fields[key] = {
+           316 |+                            str(k): tensor_record(v)
+           317 |+                            if isinstance(v, torch.Tensor)
+           318 |+                            else _json_value(v)
+           319 |+                            for k, v in value.items()
+           320 |+                        }
+     281   321 |                     else:
+     282   322 |                         fields[key] = _json_value(value)
+     283   323 |             observers[name] = fields
+     284   324 |     if not observers or not any(mode == "QUANT" for mode in modes.values()):
+     284       |-        raise ValueError("This regression runner requires a frozen quantized checkpoint.")
+           325 |+        raise ValueError(
+           326 |+            "This regression runner requires a frozen quantized checkpoint."
+           327 |+        )
+     286   328 |     return {"weights": weights, "observers": observers, "modes": modes}
+     287   329 | 
+     288   330 | 
+     289   331 | def _seed(seed: int) -> None:
+     290   332 |     """Reset all random sources before every export, not only before model load."""
+     291   333 |     import random
+           334 |+
+     292   335 |     import numpy as np
+     293   336 |     import torch
+     294   337 | 
+--------------------------------------------------------------------------------
+     318   361 | 
+     319   362 |     probes = [("export_example", _clone_inputs(args), _clone_inputs(kwargs))]
+     320   363 |     mask = kwargs.get("attention_mask")
+     320       |-    if not isinstance(mask, torch.Tensor) or not mask.is_floating_point() or mask.ndim < 3:
+           364 |+    if (
+           365 |+        not isinstance(mask, torch.Tensor)
+           366 |+        or not mask.is_floating_point()
+           367 |+        or mask.ndim < 3
+           368 |+    ):
+     322   369 |         return probes
+     323   370 |     if mask.shape[-2] == 1:
+     324   371 |         for name, empty in (("decode_empty_past", True), ("decode_full_past", False)):
+--------------------------------------------------------------------------------
+     329   376 |             if empty:
+     330   377 |                 for key in ("past_key_value", "past_key_values"):
+     331   378 |                     past = new_kwargs.get(key)
+     331       |-                    if isinstance(past, (tuple, list)) and all(isinstance(t, torch.Tensor) for t in past):
+           379 |+                    if isinstance(past, (tuple, list)) and all(
+           380 |+                        isinstance(t, torch.Tensor) for t in past
+           381 |+                    ):
+     333   382 |                         new_kwargs[key] = tuple(torch.zeros_like(t) for t in past)
+     334   383 |             probes.append((name, new_args, new_kwargs))
+     335   384 |     elif mask.shape[-1] == mask.shape[-2] and mask.shape[-1] > 1:
+--------------------------------------------------------------------------------
+     372   421 |         def capture_convert(module, args, *positional, **options):
+     373   422 |             import numpy as np
+     374   423 |             import torch
+           424 |+
+     375   425 |             from tico.circle.runtime import CircleReferenceRuntime, ExecutionMode
+     376   426 |             from tico.utils.signature import ModelInputSpec
+     377   427 | 
+--------------------------------------------------------------------------------
+     382   432 |             expected = []
+     383   433 |             with torch.no_grad():
+     384   434 |                 for name, probe_args, probe_kwargs in probes:
+     384       |-                    tensors = list(_tree_arrays(module(*_clone_inputs(probe_args), **_clone_inputs(probe_kwargs))).values())
+           435 |+                    tensors = list(
+           436 |+                        _tree_arrays(
+           437 |+                            module(
+           438 |+                                *_clone_inputs(probe_args),
+           439 |+                                **_clone_inputs(probe_kwargs),
+           440 |+                            )
+           441 |+                        ).values()
+           442 |+                    )
+     386   443 |                     expected.append(tensors)
+     387   444 |                 self.fx = None
+     388   445 |                 converted = self.old_convert(module, args, **options)
+     389   446 |             if self.fx is None:
+     389       |-                raise RuntimeError("No Torch Export graph was captured; conversion path changed.")
+           447 |+                raise RuntimeError(
+           448 |+                    "No Torch Export graph was captured; conversion path changed."
+           449 |+                )
+     391   450 |             runtime = CircleReferenceRuntime(converted.circle_binary)
+     391       |-            mode = ExecutionMode.FAKE_QUANTIZE if runtime.has_quantized_activations() else ExecutionMode.NATIVE
+           451 |+            mode = (
+           452 |+                ExecutionMode.FAKE_QUANTIZE
+           453 |+                if runtime.has_quantized_activations()
+           454 |+                else ExecutionMode.NATIVE
+           455 |+            )
+     393   456 |             specification = ModelInputSpec(converted.circle_binary)
+     394   457 |             arrays, numerical = {}, []
+     395   458 |             for probe_index, (name, probe_args, probe_kwargs) in enumerate(probes):
+--------------------------------------------------------------------------------
+     407   470 |                 else:
+     408   471 |                     for index, (before, after) in enumerate(zip(golden, actual)):
+     409   472 |                         arrays[f"p{probe_index}_torch_{index}"] = before
+     409       |-                        comparisons.append(compare_arrays(before, after, atol=self.atol, rtol=self.rtol))
+           473 |+                        comparisons.append(
+           474 |+                            compare_arrays(
+           475 |+                                before, after, atol=self.atol, rtol=self.rtol
+           476 |+                            )
+           477 |+                        )
+     411   478 |                 numerical.append({"probe": name, "torch_parity": comparisons})
+     411       |-            converted._export_regression = {"fx": self.fx, "arrays": arrays, "probes": numerical, "mode": mode.value}
+           479 |+            converted._export_regression = {
+           480 |+                "fx": self.fx,
+           481 |+                "arrays": arrays,
+           482 |+                "probes": numerical,
+           483 |+                "mode": mode.value,
+           484 |+            }
+     413   485 |             self.pending += 1
+     414   486 |             return converted
+     415   487 | 
+--------------------------------------------------------------------------------
+     420   492 |             payload = getattr(converted, "_export_regression", None)
+     421   493 |             if payload is None:
+     422   494 |                 raise RuntimeError(f"Saved Circle was not captured: {path}")
+     422       |-            relative = Path(path).resolve().relative_to((self.root / "artifacts").resolve()).as_posix()
+           495 |+            relative = (
+           496 |+                Path(path)
+           497 |+                .resolve()
+           498 |+                .relative_to((self.root / "artifacts").resolve())
+           499 |+                .as_posix()
+           500 |+            )
+     424   501 |             if relative in self.stages:
+     425   502 |                 raise RuntimeError(f"Duplicate exported stage: {relative}")
+     426   503 |             import numpy as np
+           504 |+
+     427   505 |             snapshot_name = relative.replace("/", "__")
+     428   506 |             np.savez(self.records / (snapshot_name + ".npz"), **payload.pop("arrays"))
+     429   507 |             with CircleDocument.load_mapped(path) as document:
+     430   508 |                 document.verify(raise_on_error=True)
+     431   509 |                 contract = circle_contract(document)
+     431       |-            _write_json(self.records / (snapshot_name + ".json"), {"contract": contract, **payload})
+           510 |+            _write_json(
+           511 |+                self.records / (snapshot_name + ".json"),
+           512 |+                {"contract": contract, **payload},
+           513 |+            )
+     433   514 |             self.stages[relative] = snapshot_name
+     434   515 |             delattr(converted, "_export_regression")
+     435   516 |             self.pending -= 1
+--------------------------------------------------------------------------------
+     462   543 |         name = path.relative_to(root).as_posix()
+     463   544 |         if path.suffix == ".npz":
+     464   545 |             with np.load(path, allow_pickle=False) as values:
+     464       |-                result[name] = {key: _array_record(values[key]) for key in sorted(values.files)}
+           546 |+                result[name] = {
+           547 |+                    key: _array_record(values[key]) for key in sorted(values.files)
+           548 |+                }
+     466   549 |         elif path.suffix == ".npy":
+     466       |-            result[name] = _array_record(np.load(path, allow_pickle=False, mmap_mode="r"))
+           550 |+            result[name] = _array_record(
+           551 |+                np.load(path, allow_pickle=False, mmap_mode="r")
+           552 |+            )
+     468   553 |         elif path.suffix in (".pt", ".pth"):
+     469   554 |             values = torch.load(path, map_location="cpu", weights_only=True)
+     470   555 |             result[name] = _json_value(values)
+--------------------------------------------------------------------------------
+     483   568 |     catching mask/RoPE generation accidentally reintroduced inside the trace.
+     484   569 |     """
+     485   570 |     from contextlib import nullcontext
+           571 |+
+     486   572 |     import torch
+           573 |+
+     487   574 |     import tico
+     488   575 | 
+     489   576 |     owners = [
+     489       |-        module for module in ctx.model.modules()
+           577 |+        module
+           578 |+        for module in ctx.model.modules()
+     491   579 |         if type(module).__name__ in ("QuantQwen3VLTextModel", "QuantGemma4TextModel")
+     492   580 |     ]
+     493   581 |     if len(owners) != 1:
+--------------------------------------------------------------------------------
+     514   602 |     builder = getattr(owner, "_build_static_export_inputs", None)
+     515   603 |     if callable(builder):
+     516   604 |         from tico.quantization.wrapq.utils.static_export import prepared_static_export
+           605 |+
+     517   606 |         context = prepared_static_export(adapter, options.seq_len)
+     518   607 |     else:
+     519   608 |         context = nullcontext()
+--------------------------------------------------------------------------------
+     527   616 |         owner.force_export = previous_force_export
+     528   617 | 
+     529   618 | 
+     529       |-def _export_phase(ctx, phase: Path, options: argparse.Namespace, initial_state: dict) -> dict:
+           619 |+def _export_phase(
+           620 |+    ctx, phase: Path, options: argparse.Namespace, initial_state: dict
+           621 |+) -> dict:
+     531   622 |     """Export one phase and check that it preserved the frozen quantization state."""
+     532   623 |     phase.mkdir(parents=True, exist_ok=False)
+     533   624 |     ctx.cfg["export"]["output_dir"] = str(phase / "artifacts")
+--------------------------------------------------------------------------------
+     566   657 |         loaded = torch.load(options.eager_inputs, map_location="cpu", weights_only=True)
+     567   658 |         calls = loaded if isinstance(loaded, list) else [loaded]
+     568   659 |         if not calls or not all(isinstance(item, dict) for item in calls):
+     568       |-            raise ValueError("--eager-inputs must contain a dict or a list of kwargs dicts.")
+           660 |+            raise ValueError(
+           661 |+                "--eager-inputs must contain a dict or a list of kwargs dicts."
+           662 |+            )
+     570   663 |         with torch.no_grad():
+     571   664 |             for call in calls:
+     572   665 |                 ctx.model(**_clone_inputs(call))
+     572       |-        return {"kind": "user_kwargs", "calls": len(calls), "file_sha256": _file_sha256(Path(options.eager_inputs))}
+           666 |+        return {
+           667 |+            "kind": "user_kwargs",
+           668 |+            "calls": len(calls),
+           669 |+            "file_sha256": _file_sha256(Path(options.eager_inputs)),
+           670 |+        }
+     574   671 |     config = getattr(ctx.model, "config", None)
+     575   672 |     if config is None and hasattr(ctx.model, "wrapped"):
+     576   673 |         config = ctx.model.wrapped.config
+--------------------------------------------------------------------------------
+     585   682 |         )
+     586   683 |     inputs = torch.randint(0, int(text_config.vocab_size), (1, length))
+     587   684 |     with torch.no_grad():
+     587       |-        output = ctx.model(input_ids=inputs, use_cache=True, logits_to_keep=1, return_dict=True)
+           685 |+        output = ctx.model(
+           686 |+            input_ids=inputs, use_cache=True, logits_to_keep=1, return_dict=True
+           687 |+        )
+     589   688 |         cache = output.past_key_values
+     590   689 |         if cache is None and options.decode_steps:
+     591   690 |             raise RuntimeError("Eager prefill did not produce a KV cache.")
+     592   691 |         for _ in range(options.decode_steps):
+     593   692 |             token = torch.randint(0, int(text_config.vocab_size), (1, 1))
+     593       |-            output = ctx.model(input_ids=token, past_key_values=cache, use_cache=True, logits_to_keep=1, return_dict=True)
+           693 |+            output = ctx.model(
+           694 |+                input_ids=token,
+           695 |+                past_key_values=cache,
+           696 |+                use_cache=True,
+           697 |+                logits_to_keep=1,
+           698 |+                return_dict=True,
+           699 |+            )
+     595   700 |             cache = output.past_key_values
+     595       |-    return {"kind": "text_only", "prefill_tokens": length, "decode_steps": options.decode_steps, "capacity": capacity}
+           701 |+    return {
+           702 |+        "kind": "text_only",
+           703 |+        "prefill_tokens": length,
+           704 |+        "decode_steps": options.decode_steps,
+           705 |+        "capacity": capacity,
+           706 |+    }
+     597   707 | 
+     598   708 | 
+     599   709 | def _worker(options: argparse.Namespace) -> None:
+--------------------------------------------------------------------------------
+     601   711 |     repo = Path(options.repo).resolve()
+     602   712 |     sys.path.insert(0, str(repo))
+     603   713 |     import torch
+           714 |+
+     604   715 |     import tico
+     605   716 |     from tico.quantization.recipes.adapters import resolve_adapter
+     606   717 |     from tico.quantization.recipes.config import load_recipe_config
+--------------------------------------------------------------------------------
+     614   725 |     root.mkdir(parents=True, exist_ok=False)
+     615   726 |     overrides = list(options.set)
+     616   727 |     overrides += [
+     616       |-        "runtime.device=cpu", "runtime.dtype=float32", "evaluation.enabled=false",
+     617       |-        "export.enabled=true", "export.prefill_decode=true",
+           728 |+        "runtime.device=cpu",
+           729 |+        "runtime.dtype=float32",
+           730 |+        "evaluation.enabled=false",
+           731 |+        "export.enabled=true",
+           732 |+        "export.prefill_decode=true",
+     619   733 |         "export.artifacts=[" + options.artifacts + "]",
+     620   734 |         f"export.max_seq_len={options.seq_len}",
+     621   735 |         # The pre-PR adapter takes its export length from calibration.seq_len.
+--------------------------------------------------------------------------------
+     638   752 |     if not isinstance(model, torch.nn.Module):
+     639   753 |         raise TypeError("The checkpoint must be a frozen TICO model, not a state_dict.")
+     640   754 |     non_fp32 = [
+     640       |-        name for name, value in model.named_parameters()
+           755 |+        name
+           756 |+        for name, value in model.named_parameters()
+     642   757 |         if value.is_floating_point() and value.dtype != torch.float32
+     643   758 |     ]
+     644   759 |     if non_fp32:
+--------------------------------------------------------------------------------
+     648   763 |             + ", ".join(non_fp32[:5])
+     649   764 |         )
+     650   765 |     model.eval()
+     650       |-    ctx = RecipeContext(cfg=cfg, adapter=adapter, model=model, device=torch.device("cpu"), dtype=torch.float32)
+           766 |+    ctx = RecipeContext(
+           767 |+        cfg=cfg,
+           768 |+        adapter=adapter,
+           769 |+        model=model,
+           770 |+        device=torch.device("cpu"),
+           771 |+        dtype=torch.float32,
+           772 |+    )
+     652   773 |     initial = _state_contract(model)
+     653   774 |     rope_migration = None
+     654   775 |     if options.migrate_llama_rope:
+--------------------------------------------------------------------------------
+     657   778 |         from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+     658   779 |             migrate_llama_rope_state,
+     659   780 |         )
+           781 |+
+     660   782 |         rope_migration = migrate_llama_rope_state(model)
+     661   783 |         if _state_contract(model) != initial:
+     662   784 |             raise RuntimeError("RoPE migration changed frozen quantization state.")
+--------------------------------------------------------------------------------
+     664   786 |     versions = {}
+     665   787 |     for package in ("torch", "transformers", "circle-schema", "numpy"):
+     666   788 |         versions[package] = importlib.metadata.version(package)
+     666       |-    git = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True, text=True)
+     667       |-    dirty = subprocess.run(["git", "-C", str(repo), "status", "--porcelain"], capture_output=True, text=True)
+     668       |-    _write_json(root / "environment.json", {
+     669       |-        "repo": str(repo), "commit": git.stdout.strip() if git.returncode == 0 else None,
+     670       |-        "working_tree": dirty.stdout if dirty.returncode == 0 else None,
+     671       |-        "versions": versions, "checkpoint_sha256": _file_sha256(Path(options.checkpoint)),
+     672       |-        "effective_config": cfg,
+     673       |-        "llama_rope_migration": rope_migration,
+     674       |-    })
+           789 |+    git = subprocess.run(
+           790 |+        ["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True, text=True
+           791 |+    )
+           792 |+    dirty = subprocess.run(
+           793 |+        ["git", "-C", str(repo), "status", "--porcelain"],
+           794 |+        capture_output=True,
+           795 |+        text=True,
+           796 |+    )
+           797 |+    _write_json(
+           798 |+        root / "environment.json",
+           799 |+        {
+           800 |+            "repo": str(repo),
+           801 |+            "commit": git.stdout.strip() if git.returncode == 0 else None,
+           802 |+            "working_tree": dirty.stdout if dirty.returncode == 0 else None,
+           803 |+            "versions": versions,
+           804 |+            "checkpoint_sha256": _file_sha256(Path(options.checkpoint)),
+           805 |+            "effective_config": cfg,
+           806 |+            "llama_rope_migration": rope_migration,
+           807 |+        },
+           808 |+    )
+     676   809 |     _export_phase(ctx, root / "before", options, initial)
+     677   810 |     if options.stress:
+     678   811 |         exercise = _exercise_eager(ctx, options)
+--------------------------------------------------------------------------------
+     683   816 |         _export_phase(ctx, root / "after_eager", options, initial)
+     684   817 | 
+     685   818 | 
+     685       |-def compare_snapshots(left_root: Path, right_root: Path, *, atol: float, rtol: float, require_torch_parity: bool = False) -> dict:
+           819 |+def compare_snapshots(
+           820 |+    left_root: Path,
+           821 |+    right_root: Path,
+           822 |+    *,
+           823 |+    atol: float,
+           824 |+    rtol: float,
+           825 |+    require_torch_parity: bool = False,
+           826 |+) -> dict:
+     687   827 |     """Compare structure, actual inputs/outputs, host data, and state invariants."""
+     688   828 |     import numpy as np
+     689   829 | 
+--------------------------------------------------------------------------------
+     698   838 |     if left["stages"].keys() != right["stages"].keys():
+     699   839 |         failures.append("Exported stage sets differ")
+     700   840 |     if left["host"] != right["host"]:
+     700       |-        failures.extend("Host " + item for item in _first_differences(left["host"], right["host"]))
+           841 |+        failures.extend(
+           842 |+            "Host " + item for item in _first_differences(left["host"], right["host"])
+           843 |+        )
+     702   844 |     for name in sorted(left["stages"].keys() & right["stages"].keys()):
+     703   845 |         a_path = left_root / "records" / left["stages"][name]
+     704   846 |         b_path = right_root / "records" / right["stages"][name]
+     704       |-        a, b = json.loads(Path(str(a_path) + ".json").read_text()), json.loads(Path(str(b_path) + ".json").read_text())
+           847 |+        a, b = json.loads(Path(str(a_path) + ".json").read_text()), json.loads(
+           848 |+            Path(str(b_path) + ".json").read_text()
+           849 |+        )
+     706   850 |         record = {
+     707   851 |             "circle_structure_equal": a["contract"] == b["contract"],
+     707       |-            "circle_structure_differences": _first_differences(a["contract"], b["contract"]),
+           852 |+            "circle_structure_differences": _first_differences(
+           853 |+                a["contract"], b["contract"]
+           854 |+            ),
+     709   855 |             "torch_export_ops_equal": a["fx"] == b["fx"],
+     709       |-            "probe_names_equal": [p["probe"] for p in a["probes"]] == [p["probe"] for p in b["probes"]],
+           856 |+            "probe_names_equal": [p["probe"] for p in a["probes"]]
+           857 |+            == [p["probe"] for p in b["probes"]],
+     711   858 |             "execution_mode_equal": a["mode"] == b["mode"],
+     711       |-            "torch_parity_left": a["probes"], "torch_parity_right": b["probes"],
+           859 |+            "torch_parity_left": a["probes"],
+           860 |+            "torch_parity_right": b["probes"],
+     713   861 |             "arrays": {},
+     714   862 |         }
+     714       |-        with np.load(str(a_path) + ".npz", allow_pickle=False) as av, np.load(str(b_path) + ".npz", allow_pickle=False) as bv:
+           863 |+        with np.load(str(a_path) + ".npz", allow_pickle=False) as av, np.load(
+           864 |+            str(b_path) + ".npz", allow_pickle=False
+           865 |+        ) as bv:
+     716   866 |             record["array_keys_equal"] = set(av.files) == set(bv.files)
+     717   867 |             record["numerical_coverage_complete"] = all(
+     718   868 |                 bool(metadata["probes"])
+--------------------------------------------------------------------------------
+     725   875 |             for key in sorted(set(av.files) & set(bv.files)):
+     726   876 |                 # Inputs must match exactly; output tolerances are explicit.
+     727   877 |                 tol = (0.0, 0.0) if "_input_" in key else (atol, rtol)
+     727       |-                record["arrays"][key] = compare_arrays(av[key], bv[key], atol=tol[0], rtol=tol[1])
+     728       |-        stage_ok = all(record[key] for key in ("circle_structure_equal", "probe_names_equal", "execution_mode_equal", "array_keys_equal", "numerical_coverage_complete"))
+           878 |+                record["arrays"][key] = compare_arrays(
+           879 |+                    av[key], bv[key], atol=tol[0], rtol=tol[1]
+           880 |+                )
+           881 |+        stage_ok = all(
+           882 |+            record[key]
+           883 |+            for key in (
+           884 |+                "circle_structure_equal",
+           885 |+                "probe_names_equal",
+           886 |+                "execution_mode_equal",
+           887 |+                "array_keys_equal",
+           888 |+                "numerical_coverage_complete",
+           889 |+            )
+           890 |+        )
+     730   891 |         stage_ok &= all(value["ok"] for value in record["arrays"].values())
+     731   892 |         if require_torch_parity:
+     731       |-            stage_ok &= all(item["ok"] for p in a["probes"] + b["probes"] for item in p["torch_parity"])
+           893 |+            stage_ok &= all(
+           894 |+                item["ok"]
+           895 |+                for p in a["probes"] + b["probes"]
+           896 |+                for item in p["torch_parity"]
+           897 |+            )
+     733   898 |         record["ok"] = bool(stage_ok)
+     734   899 |         if not stage_ok:
+     734       |-            failures.append(name + ": structural, input, output, or requested Torch parity mismatch")
+           900 |+            failures.append(
+           901 |+                name + ": structural, input, output, or requested Torch parity mismatch"
+           902 |+            )
+     736   903 |         stages[name] = record
+     737   904 |     if not stages:
+     738   905 |         failures.append("No common exported stages were compared")
+--------------------------------------------------------------------------------
+     745   912 |     output.mkdir(parents=True, exist_ok=False)
+     746   913 |     script = str(Path(__file__).resolve())
+     747   914 |     common = [
+     747       |-        "--config", str(Path(options.config).resolve()),
+     748       |-        "--checkpoint", str(Path(options.checkpoint).resolve()),
+     749       |-        "--seq-len", str(options.seq_len), "--eager-seq-len", str(options.eager_seq_len),
+     750       |-        "--decode-steps", str(options.decode_steps), "--artifacts", options.artifacts,
+     751       |-        "--seed", str(options.seed), "--threads", str(options.threads),
+     752       |-        "--atol", str(options.atol), "--rtol", str(options.rtol),
+           915 |+        "--config",
+           916 |+        str(Path(options.config).resolve()),
+           917 |+        "--checkpoint",
+           918 |+        str(Path(options.checkpoint).resolve()),
+           919 |+        "--seq-len",
+           920 |+        str(options.seq_len),
+           921 |+        "--eager-seq-len",
+           922 |+        str(options.eager_seq_len),
+           923 |+        "--decode-steps",
+           924 |+        str(options.decode_steps),
+           925 |+        "--artifacts",
+           926 |+        options.artifacts,
+           927 |+        "--seed",
+           928 |+        str(options.seed),
+           929 |+        "--threads",
+           930 |+        str(options.threads),
+           931 |+        "--atol",
+           932 |+        str(options.atol),
+           933 |+        "--rtol",
+           934 |+        str(options.rtol),
+     754   935 |     ]
+     755   936 |     if options.eager_inputs:
+     756   937 |         common += ["--eager-inputs", str(Path(options.eager_inputs).resolve())]
+--------------------------------------------------------------------------------
+     762   943 |     if options.command == "run":
+     763   944 |         workers.insert(0, ("baseline", options.baseline_repo, False))
+     764   945 |     for role, repo, stress in workers:
+     764       |-        command = [sys.executable, script, "_worker", "--repo", str(Path(repo).resolve()), "--output", str(output / role), *common]
+           946 |+        command = [
+           947 |+            sys.executable,
+           948 |+            script,
+           949 |+            "_worker",
+           950 |+            "--repo",
+           951 |+            str(Path(repo).resolve()),
+           952 |+            "--output",
+           953 |+            str(output / role),
+           954 |+            *common,
+           955 |+        ]
+     766   956 |         if stress:
+     767   957 |             command.append("--stress")
+     768   958 |         if role == "candidate" and options.migrate_llama_rope:
+--------------------------------------------------------------------------------
+     772   962 |         env["HF_HUB_OFFLINE"] = "1"
+     773   963 |         env["TRANSFORMERS_OFFLINE"] = "1"
+     774   964 |         with (output / (role + ".log")).open("w") as log:
+     774       |-            result = subprocess.run(command, cwd=Path(repo).resolve(), env=env, stdout=log, stderr=subprocess.STDOUT)
+           965 |+            result = subprocess.run(
+           966 |+                command,
+           967 |+                cwd=Path(repo).resolve(),
+           968 |+                env=env,
+           969 |+                stdout=log,
+           970 |+                stderr=subprocess.STDOUT,
+           971 |+            )
+     776   972 |         if result.returncode:
+     776       |-            _write_json(output / "summary.json", {"status": "ERROR", "worker": role, "returncode": result.returncode, "log": role + ".log", "comparisons_complete": False})
+           973 |+            _write_json(
+           974 |+                output / "summary.json",
+           975 |+                {
+           976 |+                    "status": "ERROR",
+           977 |+                    "worker": role,
+           978 |+                    "returncode": result.returncode,
+           979 |+                    "log": role + ".log",
+           980 |+                    "comparisons_complete": False,
+           981 |+                },
+           982 |+            )
+     778   983 |             print(f"ERROR: {role} worker failed; inspect {output / (role + '.log')}")
+     779   984 |             return 2
+     780   985 |     identities_match, initial_match = True, True
+     780       |-    old_new = {"status": "NOT_RUN", "reason": "Isolation-only run; no baseline checkout."}
+           986 |+    old_new = {
+           987 |+        "status": "NOT_RUN",
+           988 |+        "reason": "Isolation-only run; no baseline checkout.",
+           989 |+    }
+     782   990 |     if options.command == "run":
+     783   991 |         baseline = json.loads((output / "baseline/environment.json").read_text())
+     784   992 |         candidate = json.loads((output / "candidate/environment.json").read_text())
+     784       |-        identities_match = baseline["versions"] == candidate["versions"] and baseline["checkpoint_sha256"] == candidate["checkpoint_sha256"]
+     785       |-        initial_match = json.loads((output / "baseline/quantization_state.json").read_text()) == json.loads((output / "candidate/quantization_state.json").read_text())
+     786       |-        old_new = compare_snapshots(output / "baseline/before", output / "candidate/before", atol=options.atol, rtol=options.rtol, require_torch_parity=options.require_torch_parity)
+     787       |-    before_after = compare_snapshots(output / "candidate/before", output / "candidate/after_eager", atol=options.atol, rtol=options.rtol, require_torch_parity=options.require_torch_parity)
+           993 |+        identities_match = (
+           994 |+            baseline["versions"] == candidate["versions"]
+           995 |+            and baseline["checkpoint_sha256"] == candidate["checkpoint_sha256"]
+           996 |+        )
+           997 |+        initial_match = json.loads(
+           998 |+            (output / "baseline/quantization_state.json").read_text()
+           999 |+        ) == json.loads((output / "candidate/quantization_state.json").read_text())
+          1000 |+        old_new = compare_snapshots(
+          1001 |+            output / "baseline/before",
+          1002 |+            output / "candidate/before",
+          1003 |+            atol=options.atol,
+          1004 |+            rtol=options.rtol,
+          1005 |+            require_torch_parity=options.require_torch_parity,
+          1006 |+        )
+          1007 |+    before_after = compare_snapshots(
+          1008 |+        output / "candidate/before",
+          1009 |+        output / "candidate/after_eager",
+          1010 |+        atol=options.atol,
+          1011 |+        rtol=options.rtol,
+          1012 |+        require_torch_parity=options.require_torch_parity,
+          1013 |+    )
+     789  1014 |     eager = json.loads((output / "candidate/eager.json").read_text())
+     789       |-    ok = identities_match and initial_match and old_new.get("ok", options.command == "isolation") and before_after["ok"] and eager["state_preserved"]
+          1015 |+    ok = (
+          1016 |+        identities_match
+          1017 |+        and initial_match
+          1018 |+        and old_new.get("ok", options.command == "isolation")
+          1019 |+        and before_after["ok"]
+          1020 |+        and eager["state_preserved"]
+          1021 |+    )
+     791  1022 |     summary = {
+     791       |-        "status": "PASS" if ok else "FAIL", "comparisons_complete": True,
+          1023 |+        "status": "PASS" if ok else "FAIL",
+          1024 |+        "comparisons_complete": True,
+     793  1025 |         "requested_scope": options.command,
+     794  1026 |         "baseline_comparison_performed": options.command == "run",
+     795  1027 |         "same_checkpoint_and_dependencies": identities_match,
+     796  1028 |         "same_initial_quantization_state": initial_match,
+     796       |-        "baseline_vs_candidate": old_new, "candidate_before_vs_after_eager": before_after,
+     797       |-        "eager": eager, "atol": options.atol, "rtol": options.rtol,
+          1029 |+        "baseline_vs_candidate": old_new,
+          1030 |+        "candidate_before_vs_after_eager": before_after,
+          1031 |+        "eager": eager,
+          1032 |+        "atol": options.atol,
+          1033 |+        "rtol": options.rtol,
+     799  1034 |         "torch_parity_required": options.require_torch_parity,
+     800  1035 |         "llama_rope_migration_requested": options.migrate_llama_rope,
+     801  1036 |         "intentional_change_note": (
+     802  1037 |             "The candidate uses unified LLaMA RoPE. Differences from an old "
+     803  1038 |             "unscaled decoder are reported as FAIL, never waived automatically."
+     803       |-            if options.migrate_llama_rope else None
+          1039 |+            if options.migrate_llama_rope
+          1040 |+            else None
+     805  1041 |         ),
+     806  1042 |         "scope": "Conservative Circle structure and stage-level reference numerics; not NPU or end-to-end generation validation.",
+     807  1043 |     }
+--------------------------------------------------------------------------------
+     814  1050 |     """Provide isolated collection, complete orchestration, and offline comparison."""
+     815  1051 |     parser = argparse.ArgumentParser(description=__doc__)
+     816  1052 |     sub = parser.add_subparsers(dest="command", required=True)
+     816       |-    run = sub.add_parser("run", help="Export both revisions and candidate after eager use.")
+          1053 |+    run = sub.add_parser(
+          1054 |+        "run", help="Export both revisions and candidate after eager use."
+          1055 |+    )
+     818  1056 |     run.add_argument("--baseline-repo", required=True)
+     819  1057 |     run.add_argument("--candidate-repo", default=".")
+     819       |-    isolation = sub.add_parser("isolation", help="Compare only candidate export before/after eager use.")
+          1058 |+    isolation = sub.add_parser(
+          1059 |+        "isolation", help="Compare only candidate export before/after eager use."
+          1060 |+    )
+     821  1061 |     isolation.add_argument("--candidate-repo", default=".")
+     822  1062 |     worker = sub.add_parser("_worker", help=argparse.SUPPRESS)
+     823  1063 |     worker.add_argument("--repo", required=True)
+     824  1064 |     worker.add_argument("--stress", action="store_true")
+     825  1065 |     for command in (run, isolation, worker):
+     826  1066 |         command.add_argument("--config", required=True)
+     826       |-        command.add_argument("--checkpoint", required=True, help="Trusted frozen model checkpoint; torch.load uses weights_only=False.")
+     827       |-        command.add_argument("--output", required=True, help="A new output directory; existing results are never overwritten.")
+          1067 |+        command.add_argument(
+          1068 |+            "--checkpoint",
+          1069 |+            required=True,
+          1070 |+            help="Trusted frozen model checkpoint; torch.load uses weights_only=False.",
+          1071 |+        )
+          1072 |+        command.add_argument(
+          1073 |+            "--output",
+          1074 |+            required=True,
+          1075 |+            help="A new output directory; existing results are never overwritten.",
+          1076 |+        )
+     829  1077 |         command.add_argument("--seq-len", type=int, required=True)
+     830  1078 |         command.add_argument("--eager-seq-len", type=int, required=True)
+     830       |-        command.add_argument("--eager-inputs", help="Optional torch-saved kwargs dict/list for real multimodal eager stress.")
+     831       |-        command.add_argument("--include-full-text", action="store_true", help="Also compare a text-only full-model probe for Qwen3-VL/Gemma4.")
+     833  1079 |         command.add_argument(
+     833       |-            "--migrate-llama-rope", action="store_true",
+          1080 |+            "--eager-inputs",
+          1081 |+            help="Optional torch-saved kwargs dict/list for real multimodal eager stress.",
+          1082 |+        )
+          1083 |+        command.add_argument(
+          1084 |+            "--include-full-text",
+          1085 |+            action="store_true",
+          1086 |+            help="Also compare a text-only full-model probe for Qwen3-VL/Gemma4.",
+          1087 |+        )
+          1088 |+        command.add_argument(
+          1089 |+            "--migrate-llama-rope",
+          1090 |+            action="store_true",
+     835  1091 |             help="Explicitly rebuild candidate LLaMA RoPE from its unified snapshot or recorded config. The baseline and frozen qparams are unchanged.",
+     836  1092 |         )
+     837  1093 |         command.add_argument("--decode-steps", type=int, default=2)
+     837       |-        command.add_argument("--artifacts", default="auto", help="Comma-separated Circle artifacts; auto selects LLaMA bundle or VLM per-layer export.")
+          1094 |+        command.add_argument(
+          1095 |+            "--artifacts",
+          1096 |+            default="auto",
+          1097 |+            help="Comma-separated Circle artifacts; auto selects LLaMA bundle or VLM per-layer export.",
+          1098 |+        )
+     839  1099 |         command.add_argument("--seed", type=int, default=42)
+     840  1100 |         command.add_argument("--threads", type=int, default=1)
+     841  1101 |         command.add_argument("--set", action="append", default=[])
+     841       |-    compare = sub.add_parser("compare", help="Compare previously collected phase directories.")
+          1102 |+    compare = sub.add_parser(
+          1103 |+        "compare", help="Compare previously collected phase directories."
+          1104 |+    )
+     843  1105 |     compare.add_argument("left")
+     844  1106 |     compare.add_argument("right")
+     845  1107 |     compare.add_argument("--report", required=True)
+     846  1108 |     for command in (run, isolation, worker, compare):
+     847  1109 |         command.add_argument("--atol", type=float, default=1e-5)
+     848  1110 |         command.add_argument("--rtol", type=float, default=1e-4)
+     848       |-        command.add_argument("--require-torch-parity", action="store_true", help="Also require PyTorch-vs-Circle parity, not just before-vs-after parity.")
+          1111 |+        command.add_argument(
+          1112 |+            "--require-torch-parity",
+          1113 |+            action="store_true",
+          1114 |+            help="Also require PyTorch-vs-Circle parity, not just before-vs-after parity.",
+          1115 |+        )
+     850  1116 |     args = parser.parse_args(argv)
+     851  1117 |     if not all(math.isfinite(value) and value >= 0 for value in (args.atol, args.rtol)):
+     852  1118 |         parser.error("Tolerances must be finite and nonnegative.")
+     853  1119 |     if args.command != "compare":
+     853       |-        if min(args.seq_len, args.eager_seq_len, args.threads) < 1 or args.decode_steps < 0:
+     854       |-            parser.error("Lengths/threads must be positive and decode steps nonnegative.")
+          1120 |+        if (
+          1121 |+            min(args.seq_len, args.eager_seq_len, args.threads) < 1
+          1122 |+            or args.decode_steps < 0
+          1123 |+        ):
+          1124 |+            parser.error(
+          1125 |+                "Lengths/threads must be positive and decode steps nonnegative."
+          1126 |+            )
+     856  1127 |         if not Path(args.checkpoint).is_file() or not Path(args.config).is_file():
+     857  1128 |             parser.error("Checkpoint and config must be existing files.")
+     858  1129 |         if Path(args.output).exists():
+--------------------------------------------------------------------------------
+     863  1134 |             return 0
+     864  1135 |         if args.command in ("run", "isolation"):
+     865  1136 |             return _run(args)
+     865       |-        result = compare_snapshots(Path(args.left), Path(args.right), atol=args.atol, rtol=args.rtol, require_torch_parity=args.require_torch_parity)
+          1137 |+        result = compare_snapshots(
+          1138 |+            Path(args.left),
+          1139 |+            Path(args.right),
+          1140 |+            atol=args.atol,
+          1141 |+            rtol=args.rtol,
+          1142 |+            require_torch_parity=args.require_torch_parity,
+          1143 |+        )
+     867  1144 |         _write_json(Path(args.report), result)
+     868  1145 |         print("PASS" if result["ok"] else "FAIL")
+     869  1146 |         return 0 if result["ok"] else 1
+--------------------------------------------------------------------------------
+     871  1148 |         traceback.print_exc()
+     872  1149 |         output = getattr(args, "output", None)
+     873  1150 |         if output and Path(output).is_dir():
+     873       |-            _write_json(Path(output) / "error.json", {
+     874       |-                "status": "ERROR", "error_type": type(exc).__name__,
+     875       |-                "message": str(exc), "comparisons_complete": False,
+     876       |-            })
+          1151 |+            _write_json(
+          1152 |+                Path(output) / "error.json",
+          1153 |+                {
+          1154 |+                    "status": "ERROR",
+          1155 |+                    "error_type": type(exc).__name__,
+          1156 |+                    "message": str(exc),
+          1157 |+                    "comparisons_complete": False,
+          1158 |+                },
+          1159 |+            )
+     878  1160 |         return 2
+     879  1161 | 
+     880  1162 | 
+
+
+
+>>> Lint for tico/quantization/recipes/debug/verify_llama_rope.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    26  26 | def main(argv=None) -> int:
+    27  27 |     """Run tiny real-HF models and static-input tests without downloading weights."""
+    28  28 |     parser = argparse.ArgumentParser(description=__doc__)
+    28     |-    parser.add_argument("--repo", default=".", help="Patched TICO source checkout, including test/.")
+        29 |+    parser.add_argument(
+        30 |+        "--repo", default=".", help="Patched TICO source checkout, including test/."
+        31 |+    )
+    30  32 |     parser.add_argument("--report", required=True, type=Path)
+    31  33 |     parser.add_argument("--threads", type=int, default=1)
+    32  34 |     args = parser.parse_args(argv)
+--------------------------------------------------------------------------------
+    35  37 |     if args.report.exists():
+    36  38 |         parser.error("Report already exists; choose a new path.")
+    37  39 |     repo = Path(args.repo).resolve()
+    37     |-    if not (repo / "test/quantization/wrapq/wrappers/llama/test_rope_consistency.py").is_file():
+        40 |+    if not (
+        41 |+        repo / "test/quantization/wrapq/wrappers/llama/test_rope_consistency.py"
+        42 |+    ).is_file():
+    39  43 |         parser.error("--repo must include the patched RoPE consistency test.")
+    40  44 |     sys.path.insert(0, str(repo))
+    40     |-    report = {"status": "ERROR", "repo": str(repo), "scope": "Tiny real-HF models, actual wrappers, and Torch Export; not pretrained-model Circle or NPU validation."}
+        45 |+    report = {
+        46 |+        "status": "ERROR",
+        47 |+        "repo": str(repo),
+        48 |+        "scope": "Tiny real-HF models, actual wrappers, and Torch Export; not pretrained-model Circle or NPU validation.",
+        49 |+    }
+    42  50 |     code = 2
+    43  51 |     try:
+    44  52 |         import torch
+        53 |+
+    45  54 |         import tico
+    46  55 | 
+    47  56 |         if not Path(tico.__file__).resolve().is_relative_to(repo):
+--------------------------------------------------------------------------------
+    51  60 |             name: importlib.metadata.version(name)
+    52  61 |             for name in ("torch", "transformers", "circle-schema")
+    53  62 |         }
+    53     |-        suite = unittest.defaultTestLoader.loadTestsFromNames([
+    54     |-            "test.quantization.wrapq.wrappers.llama.test_rope_consistency",
+    55     |-            "test.quantization.wrapq.utils.test_static_export_inputs",
+    56     |-        ])
+        63 |+        suite = unittest.defaultTestLoader.loadTestsFromNames(
+        64 |+            [
+        65 |+                "test.quantization.wrapq.wrappers.llama.test_rope_consistency",
+        66 |+                "test.quantization.wrapq.utils.test_static_export_inputs",
+        67 |+            ]
+        68 |+        )
+    58  69 |         result = unittest.TextTestRunner(verbosity=2).run(suite)
+    59  70 |         incomplete = bool(result.errors or result.skipped or result.testsRun == 0)
+    60  71 |         code = 2 if incomplete else 0 if result.wasSuccessful() else 1
+    60     |-        report.update({
+    61     |-            "status": {0: "PASS", 1: "FAIL", 2: "ERROR"}[code],
+    62     |-            "tests_run": result.testsRun,
+    63     |-            "failures": [{"test": str(test), "traceback": text} for test, text in result.failures],
+    64     |-            "errors": [{"test": str(test), "traceback": text} for test, text in result.errors],
+    65     |-            "skipped": [{"test": str(test), "reason": reason} for test, reason in result.skipped],
+    66     |-        })
+        72 |+        report.update(
+        73 |+            {
+        74 |+                "status": {0: "PASS", 1: "FAIL", 2: "ERROR"}[code],
+        75 |+                "tests_run": result.testsRun,
+        76 |+                "failures": [
+        77 |+                    {"test": str(test), "traceback": text}
+        78 |+                    for test, text in result.failures
+        79 |+                ],
+        80 |+                "errors": [
+        81 |+                    {"test": str(test), "traceback": text}
+        82 |+                    for test, text in result.errors
+        83 |+                ],
+        84 |+                "skipped": [
+        85 |+                    {"test": str(test), "reason": reason}
+        86 |+                    for test, reason in result.skipped
+        87 |+                ],
+        88 |+            }
+        89 |+        )
+    68  90 |     except Exception as exc:
+    69  91 |         traceback.print_exc()
+    70  92 |         report.update({"error_type": type(exc).__name__, "message": str(exc)})
+
+
+
+>>> Lint for tico/quantization/recipes/export/circle.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     19   19 | import torch
+     20   20 | 
+     21   21 | import tico
+          22 |+from tico.quantization.wrapq.utils.static_export import prepared_static_export
+     22   23 | from tico.utils.utils import SuppressWarning
+     22      |-from tico.quantization.wrapq.utils.static_export import prepared_static_export
+     24   24 | 
+     25   25 | 
+     26   26 | def convert_and_save_circle(
+--------------------------------------------------------------------------------
+     94   94 |         raise ValueError("Full text export requires an explicit max_seq_len profile.")
+     95   95 |     preparation = (
+     96   96 |         prepared_static_export(export_model, max_seq_len)
+     96      |-        if max_seq_len is not None else nullcontext()
+          97 |+        if max_seq_len is not None
+          98 |+        else nullcontext()
+     98   99 |     )
+     99  100 |     with preparation, torch.no_grad(), SuppressWarning(UserWarning, ".*"):
+    100  101 |         cm = tico.convert(export_model, args, kwargs=kwargs, strict=strict)
+
+
+
+>>> Lint for tico/quantization/recipes/export/llama.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    18  18 | import torch
+    19  19 | 
+    20  20 | from tico.quantization.config.ptq import PTQConfig
+    20     |-from tico.quantization.wrapq.wrappers.llama.static_inputs import prepare_llama_static_inputs
+    22  21 | from tico.quantization.recipes.export.circle import (
+    23  22 |     convert_and_save_circle as _convert_and_save,
+    24  23 | )
+--------------------------------------------------------------------------------
+    37  36 | from tico.quantization.wrapq.wrappers.llama.quant_model_for_causal_lm import (
+    38  37 |     QuantLlamaForCausalLM,
+    39  38 | )
+        39 |+from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+        40 |+    prepare_llama_static_inputs,
+        41 |+)
+    40  42 | from tico.quantization.wrapq.wrappers.ptq_wrapper import PTQWrapper
+    41  43 | 
+    42  44 | 
+
+
+
+>>> Lint for tico/quantization/recipes/export/llama_bundle.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    20  20 | from pathlib import Path
+    21  21 | from typing import Any
+    22  22 | 
+    22     |-from tico.quantization.wrapq.wrappers.llama.static_inputs import prepare_llama_static_inputs
+    23     |-
+    25  23 | import numpy as np
+    26  24 | import torch
+    27  25 | 
+    28  26 | from tico.circle import CircleDocument
+    29  27 | from tico.circle._schema import decode_text
+    30  28 | 
+        29 |+from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+        30 |+    prepare_llama_static_inputs,
+        31 |+)
+        32 |+
+    31  33 | 
+    32  34 | _INPUT_ROLES = {
+    33  35 |     "input_ids": "input_ids",
+
+
+
+>>> Lint for tico/quantization/wrapq/examples/llama/quantize_decoder_layer_prefill.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    135  135 | # -------------------------------------------------------------------------
+    136  136 | import tico
+    137  137 | from tico.quantization.wrapq.utils.static_export import prepared_static_export
+    137      |-from tico.quantization.wrapq.wrappers.llama.static_inputs import prepare_llama_static_inputs
+         138 |+from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+         139 |+    prepare_llama_static_inputs,
+         140 |+)
+    139  141 | 
+    140  142 | save_path = pathlib.Path("decoder_layer_prefill.q.circle")
+    141  143 | B, S, D = 1, MAX_SEQ, model.config.hidden_size
+
+
+
+>>> Lint for tico/quantization/wrapq/examples/quantize_full_qmodel_with_gptq.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     47   47 | import numpy as np
+     48   48 | 
+     49   49 | import torch
+     49      |-from tico.quantization.wrapq.utils.static_export import prepared_static_export
+     50      |-from tico.quantization.wrapq.wrappers.llama.static_inputs import prepare_llama_static_inputs
+     52   50 | import tqdm
+     53   51 | from datasets import load_dataset
+     54   52 | from lm_eval.utils import make_table
+--------------------------------------------------------------------------------
+     72   70 | )
+     73   71 | from tico.quantization.wrapq.dtypes import DType
+     74   72 | from tico.quantization.wrapq.utils.metrics import perplexity
+          73 |+from tico.quantization.wrapq.utils.static_export import prepared_static_export
+     75   74 | from tico.quantization.wrapq.wrappers.llama.export_adapters import (
+     76   75 |     LlamaLMHeadExportAdapter,
+     77   76 |     LlamaTokenEmbeddingExportAdapter,
+--------------------------------------------------------------------------------
+     79   78 |     make_token_embedding_example_input,
+     80   79 |     register_fake_quant_meta_kernels_for_dynamic_export,
+     81   80 | )
+          81 |+from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+          82 |+    prepare_llama_static_inputs,
+          83 |+)
+     82   84 | 
+     83   85 | from tico.utils.utils import SuppressWarning
+     84   86 | 
+--------------------------------------------------------------------------------
+    792  794 | 
+    793  795 |         static_inputs = prepare_llama_static_inputs(qlayer.wrapped, max_seq_len)
+    794  796 |         attention_mask = static_inputs.mask(S, S, 0, device=torch.device("cpu"))
+    794      |-        pos_embeds = static_inputs.rope(
+    795      |-            0, S, device="cpu", dtype=example_hidden.dtype
+    796      |-        )
+         797 |+        pos_embeds = static_inputs.rope(0, S, device="cpu", dtype=example_hidden.dtype)
+    798  798 | 
+    799  799 |         print(f"Saving {layer_name} to {save_path.resolve()}")
+    800  800 |         with torch.no_grad():
+
+
+
+>>> Lint for tico/quantization/wrapq/utils/static_export.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    14  14 | 
+    15  15 | """Explicit, temporary input preparation for static model export."""
+    16  16 | 
+    16     |-from contextlib import ExitStack, contextmanager
+        17 |+from contextlib import contextmanager, ExitStack
+    18  18 | from typing import Iterator
+    19  19 | 
+    20  20 | import torch
+--------------------------------------------------------------------------------
+    80  80 |             was_registered = "_static_export_inputs" in owner._modules
+    81  81 | 
+    82  82 |             def restore(
+    82     |-                owner=owner, existed=existed, previous=previous,
+        83 |+                owner=owner,
+        84 |+                existed=existed,
+        85 |+                previous=previous,
+    84  86 |                 was_registered=was_registered,
+    85  87 |             ):
+    86  88 |                 if hasattr(owner, "_static_export_inputs"):
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/gemma4/export_adapters.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    24  24 | import torch
+    25  25 | import torch.nn as nn
+    26  26 | 
+    26     |-from tico.quantization.wrapq.utils.static_export import require_static_decoder_inputs
+    27     |-
+    29  27 | from tico.quantization.config.ptq import PTQConfig
+    30  28 | from tico.quantization.wrapq.mode import Mode
+    31  29 | from tico.quantization.wrapq.observers.base import ObserverBase
+        30 |+
+        31 |+from tico.quantization.wrapq.utils.static_export import require_static_decoder_inputs
+    32  32 | from tico.quantization.wrapq.wrappers.gemma4.utils import (
+    33  33 |     fixed_slot_fuse,
+    34  34 |     lookup_gemma4_per_layer_token_inputs,
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/llama/quant_decoder_layer.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     29   29 | 
+     30   30 | from tico.quantization.config.llama_attention import get_llama_attention_options
+     31   31 | from tico.quantization.config.ptq import ExportMode, PTQConfig
+     31      |-from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+     32      |-    capture_rope_state,
+     33      |-    prepare_llama_static_inputs,
+     34      |-)
+     36   32 | from tico.quantization.wrapq.utils.utils import join_name
+     37   33 | from tico.quantization.wrapq.wrappers.llama.export_adapters import (
+     38   34 |     LlamaDecoderLayerDecodeExportAdapter,
+--------------------------------------------------------------------------------
+     44   40 |     make_rotary_embedding,
+     45   41 |     position_embeddings as make_position_embeddings,
+     46   42 | )
+          43 |+from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+          44 |+    capture_rope_state,
+          45 |+    prepare_llama_static_inputs,
+          46 |+)
+     47   47 | from tico.quantization.wrapq.wrappers.ptq_wrapper import PTQWrapper
+     48   48 | from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
+     49   49 | from tico.quantization.wrapq.wrappers.registry import try_register
+--------------------------------------------------------------------------------
+    145  145 |         assert hasattr(cfg, "max_position_embeddings")
+    146  146 |         assert isinstance(cfg.max_position_embeddings, int)
+    147  147 |         self.max_seq = cfg.max_position_embeddings
+    147      |-        source = rotary_emb if rotary_emb is not None else getattr(fp_layer, "rotary_emb", None)
+         148 |+        source = (
+         149 |+            rotary_emb
+         150 |+            if rotary_emb is not None
+         151 |+            else getattr(fp_layer, "rotary_emb", None)
+         152 |+        )
+    149  153 |         self.rotary_emb = make_rotary_embedding(cfg, source)
+    150  154 |         capture_rope_state(self, cfg, self.rotary_emb)
+    151  155 | 
+--------------------------------------------------------------------------------
+    234  238 |         prepared = getattr(self, "_static_export_inputs", None)
+    235  239 |         if position_embeddings is None and prepared is not None:
+    236  240 |             if position_ids is not None:
+    236      |-                raise ValueError("Provide explicit RoPE tensors for custom static positions.")
+         241 |+                raise ValueError(
+         242 |+                    "Provide explicit RoPE tensors for custom static positions."
+         243 |+                )
+    238  244 |             cos, sin = prepared.rope(
+    238      |-                self._get_past_len(past_key_value), hidden_states.size(1),
+    239      |-                device=hidden_states.device, dtype=hidden_states.dtype,
+         245 |+                self._get_past_len(past_key_value),
+         246 |+                hidden_states.size(1),
+         247 |+                device=hidden_states.device,
+         248 |+                dtype=hidden_states.dtype,
+    241  249 |             )
+    242  250 |         elif position_embeddings is None:
+    243  251 |             if torch.compiler.is_compiling():
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/llama/quant_model.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     35   35 | 
+     36   36 | from tico.quantization.config.llama_attention import get_llama_attention_options
+     37   37 | from tico.quantization.config.ptq import PTQConfig
+     37      |-from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+     38      |-    capture_rope_state,
+     39      |-    prepare_llama_static_inputs,
+     40      |-)
+     42   38 | from tico.quantization.wrapq.utils.utils import join_name
+     43   39 | from tico.quantization.wrapq.wrappers.llama.position import (
+     44   40 |     build_causal_mask,
+--------------------------------------------------------------------------------
+     46   42 |     make_rotary_embedding,
+     47   43 |     position_embeddings as make_position_embeddings,
+     48   44 | )
+          45 |+from tico.quantization.wrapq.wrappers.llama.static_inputs import (
+          46 |+    capture_rope_state,
+          47 |+    prepare_llama_static_inputs,
+          48 |+)
+     49   49 | from tico.quantization.wrapq.wrappers.ptq_wrapper import PTQWrapper
+     50   50 | from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
+     51   51 | from tico.quantization.wrapq.wrappers.registry import try_register
+--------------------------------------------------------------------------------
+    497  497 |         prepared = getattr(self, "_static_export_inputs", None)
+    498  498 |         if prepared is not None:
+    499  499 |             cos, sin = prepared.rope(
+    499      |-                start, hidden_states.size(1),
+    500      |-                device=hidden_states.device, dtype=hidden_states.dtype,
+         500 |+                start,
+         501 |+                hidden_states.size(1),
+         502 |+                device=hidden_states.device,
+         503 |+                dtype=hidden_states.dtype,
+    502  504 |             )
+    503  505 |             return self._fq(cos, self.obs_cos), self._fq(sin, self.obs_sin)
+    504  506 |         if torch.compiler.is_compiling():
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/llama/static_inputs.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     43   43 |     # Old table/snapshot names must not override the canonical source after an
+     44   44 |     # explicit migration. Quantized parameters and observer state are untouched.
+     45   45 |     for name in (
+     45      |-        "rope_cos_template", "rope_sin_template", "_export_rope_inv_freq",
+          46 |+        "rope_cos_template",
+          47 |+        "rope_sin_template",
+          48 |+        "_export_rope_inv_freq",
+     47   49 |         "_export_rope_attention_scaling",
+     48   50 |     ):
+     49   51 |         if hasattr(owner, name):
+--------------------------------------------------------------------------------
+     59   61 | def _canonical_snapshot(owner: nn.Module) -> nn.Module:
+     60   62 |     """Require the unified contract rather than reusing legacy unscaled tables."""
+     61   63 |     snapshot = getattr(owner, "_export_rotary_emb", None)
+     61      |-    if (
+     62      |-        getattr(owner, "_export_rope_contract_version", None) != ROPE_CONTRACT_VERSION
+     63      |-        or not isinstance(snapshot, nn.Module)
+     64      |-    ):
+          64 |+    if getattr(
+          65 |+        owner, "_export_rope_contract_version", None
+          66 |+    ) != ROPE_CONTRACT_VERSION or not isinstance(snapshot, nn.Module):
+     66   67 |         raise ValueError(
+     67   68 |             "This LLaMA checkpoint predates the unified RoPE contract. Regenerate "
+     68   69 |             "it, or explicitly call migrate_llama_rope_state(model) before eager "
+--------------------------------------------------------------------------------
+    103  104 |     full_models = [m for m in modules if isinstance(m, QuantLlamaModel)]
+    104  105 |     covered = {id(child) for m in full_models for child in m.modules()}
+    105  106 |     roots = full_models + [
+    105      |-        m for m in modules
+         107 |+        m
+         108 |+        for m in modules
+    107  109 |         if isinstance(m, QuantLlamaDecoderLayer) and id(m) not in covered
+    108  110 |     ]
+    109  111 |     if not roots:
+--------------------------------------------------------------------------------
+    117  119 |         config = _owner_config(owner)
+    118  120 |         if rotary_emb is not None:
+    119  121 |             source, origin = rotary_emb, "explicit_model_rotary"
+    119      |-        elif getattr(owner, "_export_rope_contract_version", None) == ROPE_CONTRACT_VERSION:
+         122 |+        elif (
+         123 |+            getattr(owner, "_export_rope_contract_version", None)
+         124 |+            == ROPE_CONTRACT_VERSION
+         125 |+        ):
+    121  126 |             source, origin = _canonical_snapshot(owner), "unified_snapshot"
+    122  127 |         else:
+    123  128 |             source, origin = None, "recorded_config"
+    124  129 |         source = make_rotary_embedding(config, source)
+    125  130 |         children = (
+    126  131 |             [layer.wrapped for layer in owner.layers]
+    126      |-            if isinstance(owner, QuantLlamaModel) else []
+         132 |+            if isinstance(owner, QuantLlamaModel)
+         133 |+            else []
+    128  134 |         )
+    129  135 |         if any(not isinstance(child, QuantLlamaDecoderLayer) for child in children):
+    130  136 |             raise TypeError("Expected quantized LLaMA decoder layers for migration.")
+--------------------------------------------------------------------------------
+    150  156 |         super().__init__()
+    151  157 |         if cos.ndim != 3 or cos.shape != sin.shape or cos.shape[0] != 1:
+    152  158 |             raise ValueError("Static LLaMA RoPE tables must have shape [1, S, D].")
+    152      |-        if not math.isfinite(fill_value) or abs(fill_value) > torch.finfo(torch.float32).max:
+         159 |+        if (
+         160 |+            not math.isfinite(fill_value)
+         161 |+            or abs(fill_value) > torch.finfo(torch.float32).max
+         162 |+        ):
+    154  163 |             raise ValueError("Static attention mask fill value must be finite float32.")
+    155  164 |         self.max_seq_len = int(cos.shape[1])
+    156  165 |         self.register_buffer("cos", cos.detach().clone(), persistent=False)
+    157  166 |         self.register_buffer("sin", sin.detach().clone(), persistent=False)
+    158  167 |         mask = torch.full(
+    159  168 |             (1, 1, self.max_seq_len, self.max_seq_len),
+    159      |-            fill_value, dtype=torch.float32, device=cos.device,
+         169 |+            fill_value,
+         170 |+            dtype=torch.float32,
+         171 |+            device=cos.device,
+    161  172 |         ).triu_(1)
+    162  173 |         self.register_buffer("attention_mask", mask, persistent=False)
+    163  174 | 
+--------------------------------------------------------------------------------
+    174  185 |     def mask(self, query_length: int, key_length: int, start: int, *, device):
+    175  186 |         """Slice the legacy [1, Q, K] additive mask."""
+    176  187 |         if (
+    176      |-            start < 0 or query_length < 1 or key_length < 1
+         188 |+            start < 0
+         189 |+            or query_length < 1
+         190 |+            or key_length < 1
+    178  191 |             or start + query_length > self.max_seq_len
+    179  192 |             or key_length > self.max_seq_len
+    180  193 |         ):
+    181  194 |             raise ValueError("Requested mask exceeds the static export profile.")
+    181      |-        return self.attention_mask[:, 0, start : start + query_length, :key_length].to(device)
+         195 |+        return self.attention_mask[:, 0, start : start + query_length, :key_length].to(
+         196 |+            device
+         197 |+        )
+    183  198 | 
+    184  199 | 
+    185  200 | @torch.no_grad()
+    185      |-def prepare_llama_static_inputs(owner: nn.Module, max_seq_len: int) -> LlamaStaticInputs:
+         201 |+def prepare_llama_static_inputs(
+         202 |+    owner: nn.Module, max_seq_len: int
+         203 |+) -> LlamaStaticInputs:
+    187  204 |     """Prepare canonical static tables before tracing, never from live eager state.
+    188  205 | 
+    189  206 |     The snapshot includes the complete RoPE implementation, not only theta.
+--------------------------------------------------------------------------------
+    197  214 |     parameter = next(owner.parameters(), None)
+    198  215 |     buffer = next(snapshot.buffers(), None)
+    199  216 |     device = (
+    199      |-        parameter.device if parameter is not None else
+    200      |-        buffer.device if buffer is not None else torch.device("cpu")
+         217 |+        parameter.device
+         218 |+        if parameter is not None
+         219 |+        else buffer.device
+         220 |+        if buffer is not None
+         221 |+        else torch.device("cpu")
+    202  222 |     )
+    203  223 |     rotary = copy.deepcopy(snapshot).to(device=device, dtype=torch.float32)
+    204  224 |     positions = torch.arange(max_seq_len, device=device).unsqueeze(0)
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+     23   23 | 
+     24   24 | 
+     25   25 | from tico.quantization.config.ptq import PTQConfig
+     25      |-from tico.quantization.wrapq.wrappers.qwen_vl.static_inputs import (
+     26      |-    prepare_qwen3_vl_static_text_inputs,
+     27      |-)
+     29   26 | from tico.quantization.wrapq.utils.utils import get_model_arg, join_name
+     30   27 | from tico.quantization.wrapq.wrappers.ptq_wrapper import PTQWrapper
+     31   28 | from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
+          29 |+from tico.quantization.wrapq.wrappers.qwen_vl.static_inputs import (
+          30 |+    prepare_qwen3_vl_static_text_inputs,
+          31 |+)
+     32   32 | from tico.quantization.wrapq.wrappers.registry import try_register
+     33   33 | from transformers.cache_utils import Cache
+     34   34 | 
+--------------------------------------------------------------------------------
+    604  604 |         # rotary_emb returns (cos, sin) which are float tensors and need quantization
+    605  605 | 
+    606  606 |         if prepared is not None:
+    606      |-            cos = prepared.cos[:, past_seen_tokens:end].to(hidden_states).expand(batch_size, -1, -1)
+    607      |-            sin = prepared.sin[:, past_seen_tokens:end].to(hidden_states).expand(batch_size, -1, -1)
+         607 |+            cos = (
+         608 |+                prepared.cos[:, past_seen_tokens:end]
+         609 |+                .to(hidden_states)
+         610 |+                .expand(batch_size, -1, -1)
+         611 |+            )
+         612 |+            sin = (
+         613 |+                prepared.sin[:, past_seen_tokens:end]
+         614 |+                .to(hidden_states)
+         615 |+                .expand(batch_size, -1, -1)
+         616 |+            )
+    609  617 |         else:
+    610  618 |             cos, sin = self.rotary_emb(hidden_states, position_ids)
+    611  619 |         position_embeddings = (cos, sin)
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/qwen_vl/static_inputs.py:
+
+  Warning (UFMT) format
+    Run `lintrunner -a` to apply this patch.
+
+    You can run `lintrunner -a` to apply this patch.
+
+    17  17 | import copy
+    18  18 | 
+    19  19 | import torch
+    19     |-from torch import nn
+    21  20 | 
+    22  21 | from tico.quantization.wrapq.utils.static_export import validate_static_length
+        22 |+from torch import nn
+    23  23 | 
+    24  24 | 
+    25  25 | class Qwen3VLStaticTextInputs(nn.Module):
+--------------------------------------------------------------------------------
+    32  32 |             raise ValueError("Qwen3-VL static positions must have shape [3, 1, S].")
+    33  33 |         if cos.shape[:2] != (1, self.max_seq_len) or cos.shape != sin.shape:
+    34  34 |             raise ValueError("Qwen3-VL static RoPE tables must have shape [1, S, D].")
+    34     |-        self.register_buffer("position_ids", positions.detach().clone(), persistent=False)
+        35 |+        self.register_buffer(
+        36 |+            "position_ids", positions.detach().clone(), persistent=False
+        37 |+        )
+    36  38 |         self.register_buffer("cos", cos.detach().clone(), persistent=False)
+    37  39 |         self.register_buffer("sin", sin.detach().clone(), persistent=False)
+    38  40 |         mask = torch.full(
+    38     |-            (1, 1, self.max_seq_len, self.max_seq_len), fill_value,
+    39     |-            device=cos.device, dtype=torch.float32,
+        41 |+            (1, 1, self.max_seq_len, self.max_seq_len),
+        42 |+            fill_value,
+        43 |+            device=cos.device,
+        44 |+            dtype=torch.float32,
+    41  45 |         ).triu_(1)
+    42  46 |         self.register_buffer("attention_mask", mask, persistent=False)
+    43  47 | 
+--------------------------------------------------------------------------------
+    53  57 |     validate_static_length(max_seq_len, int(owner.config.max_position_embeddings))
+    54  58 |     parameter = next(owner.parameters())
+    55  59 |     device = parameter.device
+    55     |-    legacy = [getattr(owner, name, None) for name in (
+    56     |-        "position_ids_template", "cos_template", "sin_template"
+    57     |-    )]
+        60 |+    legacy = [
+        61 |+        getattr(owner, name, None)
+        62 |+        for name in ("position_ids_template", "cos_template", "sin_template")
+        63 |+    ]
+    59  64 |     if all(isinstance(value, torch.Tensor) for value in legacy):
+    60  65 |         positions, cos, sin = legacy
+    61  66 |         if positions.shape[-1] < max_seq_len or cos.shape[1] < max_seq_len:
+
+
+
+>>> Lint for test/quantization/recipes/test_export_llama_bundle.py:
+
+  Error (MYPY) index
+    Value of type "Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+         45  |
+         46  |    def forward(self, hidden, positions):
+         47  |        length = positions.shape[-1]
+    >>>  48  |        return self.cos[:, :length], self.sin[:, :length]
+         49  |
+         50  |
+         51  |class _BundleLayer(torch.nn.Module):
+
+
+
+>>> Lint for test/quantization/recipes/test_export_regression.py:
+
+  Error (MYPY) arg-type
+    Argument 1 to "_run" has incompatible type "SimpleNamespace"; expected
+    "Namespace"
+    
+    To disable, use `  # type: ignore[arg-type]`
+
+        329  |        with patch(owner + ".subprocess.run", side_effect=worker), patch(
+        330  |            owner + ".compare_snapshots", side_effect=[{"ok": old_new_ok}, {"ok": True}]
+        331  |        ), contextlib.redirect_stdout(io.StringIO()):
+    >>> 332  |            code = _run(options)
+        333  |        summary = json.loads((root / "results/summary.json").read_text())
+        334  |        return code, commands, summary
+        335  |
+
+
+
+>>> Lint for test/quantization/wrapq/utils/test_static_export_inputs.py:
+
+  Error (MYPY) arg-type
+    Argument 1 to "validate_static_length" has incompatible type "bool | float
+    | str | None"; expected "int"
+    
+    To disable, use `  # type: ignore[arg-type]`
+
+        120  |    def test_explicit_length_validation(self):
+        121  |        for value in (None, True, 2.5, "4"):
+        122  |            with self.subTest(value=value), self.assertRaises(TypeError):
+    >>> 123  |                validate_static_length(value, 8)
+        124  |        for value in (-1, 0, 9):
+        125  |            with self.subTest(value=value), self.assertRaises(ValueError):
+        126  |                validate_static_length(value, 8)
+
+  Error (MYPY) union-attr
+    Item "function" of "Callable[[], Tensor] | Tensor | Module" has no
+    attribute "shape"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        131  |        weight = owner.weight
+        132  |        original_keys = tuple(owner.state_dict())
+        133  |        with prepared_static_export(owner, 8):
+    >>> 134  |            self.assertEqual(owner._static_export_inputs.cos.shape, (1, 8, 4))
+        135  |            self.assertEqual(owner._static_export_inputs.attention_mask.shape, (1, 1, 8, 8))
+        136  |            self.assertIs(owner.weight, weight)
+        137  |            self.assertEqual(tuple(owner.state_dict()), original_keys)
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute "attention_mask"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        132  |        original_keys = tuple(owner.state_dict())
+        133  |        with prepared_static_export(owner, 8):
+        134  |            self.assertEqual(owner._static_export_inputs.cos.shape, (1, 8, 4))
+    >>> 135  |            self.assertEqual(owner._static_export_inputs.attention_mask.shape, (1, 1, 8, 8))
+        136  |            self.assertIs(owner.weight, weight)
+        137  |            self.assertEqual(tuple(owner.state_dict()), original_keys)
+        138  |        self.assertFalse(hasattr(owner, "_static_export_inputs"))
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "None", variable has
+    type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        168  |            if registered:
+        169  |                owner.add_module("_static_export_inputs", None)
+        170  |            else:
+    >>> 171  |                owner._static_export_inputs = None
+        172  |            with prepared_static_export(owner, 4):
+        173  |                self.assertIsInstance(owner._static_export_inputs, nn.Module)
+        174  |            self.assertIsNone(owner._static_export_inputs)
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "SimpleNamespace",
+    variable has type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        176  |
+        177  |    def test_calibration_rejected_before_preparation(self):
+        178  |        owner = _LlamaOwner()
+    >>> 179  |        owner._mode = SimpleNamespace(name="CALIB")
+        180  |        with self.assertRaisesRegex(ValueError, "calibration"):
+        181  |            with prepared_static_export(owner, 4):
+        182  |                pass
+
+  Error (MYPY) index
+    Value of type "Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        206  |            torch.testing.assert_close(actual.cos, phases.cos().unsqueeze(0), atol=0, rtol=0)
+        207  |            torch.testing.assert_close(actual.sin, expected_sin.unsqueeze(0), atol=0, rtol=0)
+        208  |            expected_mask = torch.full((6, 6), -120.0).triu(1)
+    >>> 209  |            torch.testing.assert_close(actual.attention_mask[0, 0], expected_mask, atol=0, rtol=0)
+        210  |
+        211  |    def test_source_frequency_and_scaling_are_snapshotted(self):
+        212  |        source = _LlamaRotary()
+
+  Error (MYPY) operator
+    "Tensor" not callable
+    
+    To disable, use `  # type: ignore[operator]`
+
+        213  |        source.attention_scaling = 1.25
+        214  |        owner = _LlamaOwner(source=source)
+        215  |        before = prepare_llama_static_inputs(owner, 8)
+    >>> 216  |        source.inv_freq.mul_(10)
+        217  |        source.attention_scaling = 9.0
+        218  |        after = prepare_llama_static_inputs(owner, 8)
+        219  |        torch.testing.assert_close(before.cos, after.cos, atol=0, rtol=0)
+
+  Error (MYPY) index
+    Value of type "Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        219  |        torch.testing.assert_close(before.cos, after.cos, atol=0, rtol=0)
+        220  |        torch.testing.assert_close(before.sin, after.sin, atol=0, rtol=0)
+        221  |        self.assertEqual(source.calls, 0)
+    >>> 222  |        self.assertEqual(float(before.cos[0, 0, 0]), 1.25)
+        223  |
+        224  |    def test_stale_legacy_tables_never_override_the_canonical_snapshot(self):
+        225  |        owner = _LlamaOwner()
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "int", variable has
+    type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        240  |            with self.assertRaisesRegex(ValueError, "migrate_llama_rope_state"):
+        241  |                prepare_llama_static_inputs(owner, 4)
+        242  |        owner = _LlamaOwner()
+    >>> 243  |        owner._export_rope_contract_version = 1
+        244  |        with self.assertRaisesRegex(ValueError, "unified RoPE"):
+        245  |            prepare_llama_static_inputs(owner, 4)
+        246  |
+
+  Error (MYPY) operator
+    Unsupported operand types for / (Module and "int")
+    
+    To disable, use `  # type: ignore[operator]`
+
+        248  |        owner = _LlamaOwner()
+        249  |        owner.config.rope_scaling = {"rope_type": "llama3", "factor": 32.0}
+        250  |        source = _LlamaRotary()
+    >>> 251  |        source.inv_freq /= 4
+        252  |        with patch(
+        253  |            "tico.quantization.wrapq.wrappers.llama.static_inputs.make_rotary_embedding",
+        254  |            return_value=source,
+
+  Advice (MYPY) note
+    Left operand is of type "Tensor | Module"
+
+        248  |        owner = _LlamaOwner()
+        249  |        owner.config.rope_scaling = {"rope_type": "llama3", "factor": 32.0}
+        250  |        source = _LlamaRotary()
+    >>> 251  |        source.inv_freq /= 4
+        252  |        with patch(
+        253  |            "tico.quantization.wrapq.wrappers.llama.static_inputs.make_rotary_embedding",
+        254  |            return_value=source,
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "Tensor | float",
+    variable has type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        248  |        owner = _LlamaOwner()
+        249  |        owner.config.rope_scaling = {"rope_type": "llama3", "factor": 32.0}
+        250  |        source = _LlamaRotary()
+    >>> 251  |        source.inv_freq /= 4
+        252  |        with patch(
+        253  |            "tico.quantization.wrapq.wrappers.llama.static_inputs.make_rotary_embedding",
+        254  |            return_value=source,
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute "inv_freq"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        255  |        ) as factory:
+        256  |            capture_rope_state(owner, owner.config)
+        257  |        factory.assert_called_once_with(owner.config, None)
+    >>> 258  |        torch.testing.assert_close(owner._export_rotary_emb.inv_freq, source.inv_freq)
+        259  |
+        260  |    def test_a_fresh_copy_is_used_for_each_length_dependent_preparation(self):
+        261  |        class DynamicRotary(_LlamaRotary):
+
+  Error (MYPY) operator
+    Unsupported operand types for / (Module and "float")
+    
+    To disable, use `  # type: ignore[operator]`
+
+        260  |    def test_a_fresh_copy_is_used_for_each_length_dependent_preparation(self):
+        261  |        class DynamicRotary(_LlamaRotary):
+        262  |            def forward(self, hidden, positions):
+    >>> 263  |                self.inv_freq /= float(positions.shape[-1])
+        264  |                return super().forward(hidden, positions)
+        265  |
+        266  |        source = DynamicRotary()
+
+  Advice (MYPY) note
+    Left operand is of type "Tensor | Module"
+
+        260  |    def test_a_fresh_copy_is_used_for_each_length_dependent_preparation(self):
+        261  |        class DynamicRotary(_LlamaRotary):
+        262  |            def forward(self, hidden, positions):
+    >>> 263  |                self.inv_freq /= float(positions.shape[-1])
+        264  |                return super().forward(hidden, positions)
+        265  |
+        266  |        source = DynamicRotary()
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "Tensor | float",
+    variable has type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        260  |    def test_a_fresh_copy_is_used_for_each_length_dependent_preparation(self):
+        261  |        class DynamicRotary(_LlamaRotary):
+        262  |            def forward(self, hidden, positions):
+    >>> 263  |                self.inv_freq /= float(positions.shape[-1])
+        264  |                return super().forward(hidden, positions)
+        265  |
+        266  |        source = DynamicRotary()
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute "calls"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        270  |        after = prepare_llama_static_inputs(owner, 4)
+        271  |        torch.testing.assert_close(before.cos, after.cos, atol=0, rtol=0)
+        272  |        torch.testing.assert_close(before.sin, after.sin, atol=0, rtol=0)
+    >>> 273  |        self.assertEqual(owner._export_rotary_emb.calls, 0)
+        274  |        self.assertEqual(source.calls, 0)
+        275  |
+        276  |    def test_rebinding_removes_obsolete_tables_and_frequency_fallbacks(self):
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "float", variable
+    has type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        278  |        owner.register_buffer("rope_cos_template", torch.ones(1, 8, 4))
+        279  |        owner.register_buffer("rope_sin_template", torch.zeros(1, 8, 4))
+        280  |        owner.register_buffer("_export_rope_inv_freq", torch.ones(2))
+    >>> 281  |        owner._export_rope_attention_scaling = 1.0
+        282  |        capture_rope_state(owner, owner.config, _LlamaRotary())
+        283  |        for name in ("rope_cos_template", "rope_sin_template", "_export_rope_inv_freq",
+        284  |                     "_export_rope_attention_scaling"):
+
+  Error (MYPY) operator
+    "Tensor" not callable
+    
+    To disable, use `  # type: ignore[operator]`
+
+        325  |    def test_snapshot_not_live_rotary_is_executed(self):
+        326  |        owner = _QwenOwner()
+        327  |        before = prepare_qwen3_vl_static_text_inputs(owner, 8)
+    >>> 328  |        owner.rotary_emb.inv_freq.mul_(100)
+        329  |        owner.rotary_emb.calls = 10
+        330  |        after = prepare_qwen3_vl_static_text_inputs(owner, 8)
+        331  |        torch.testing.assert_close(before.cos, after.cos, atol=0, rtol=0)
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute "attention_mask"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        352  |        owner = _QwenOwner()
+        353  |        self.assertEqual(sum(t.numel() for t in owner.buffers()), 4)
+        354  |        with prepared_static_export(owner, 8):
+    >>> 355  |            self.assertEqual(owner._static_export_inputs.attention_mask.shape[-1], 8)
+        356  |        self.assertFalse(hasattr(owner, "_static_export_inputs"))
+        357  |
+        358  |
+
+  Error (MYPY) index
+    Value of type "Any | Size | Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        352  |        owner = _QwenOwner()
+        353  |        self.assertEqual(sum(t.numel() for t in owner.buffers()), 4)
+        354  |        with prepared_static_export(owner, 8):
+    >>> 355  |            self.assertEqual(owner._static_export_inputs.attention_mask.shape[-1], 8)
+        356  |        self.assertFalse(hasattr(owner, "_static_export_inputs"))
+        357  |
+        358  |
+
+  Error (PYLINT) E1101
+    Instance of '_LlamaRotary' has no 'inv_freq' member (no-member)
+    See [no-member](https://pylint.pycqa.org/en/latest/user_guide/messages/
+    error/no-member.html).
+
+         47  |
+         48  |    def forward(self, hidden, positions):
+         49  |        self.calls += 1
+    >>>  50  |        frequencies = positions.float().unsqueeze(-1) * self.inv_freq
+         51  |        phases = torch.cat((frequencies, frequencies), dim=-1)
+         52  |        return phases.cos() * self.attention_scaling, phases.sin() * self.attention_scaling
+         53  |
+
+  Error (PYLINT) E1101
+    Instance of '_LlamaRotary' has no 'inv_freq' member (no-member)
+    See [no-member](https://pylint.pycqa.org/en/latest/user_guide/messages/
+    error/no-member.html).
+
+        213  |        source.attention_scaling = 1.25
+        214  |        owner = _LlamaOwner(source=source)
+        215  |        before = prepare_llama_static_inputs(owner, 8)
+    >>> 216  |        source.inv_freq.mul_(10)
+        217  |        source.attention_scaling = 9.0
+        218  |        after = prepare_llama_static_inputs(owner, 8)
+        219  |        torch.testing.assert_close(before.cos, after.cos, atol=0, rtol=0)
+
+  Error (PYLINT) E1101
+    Instance of '_LlamaRotary' has no 'inv_freq' member (no-member)
+    See [no-member](https://pylint.pycqa.org/en/latest/user_guide/messages/
+    error/no-member.html).
+
+        248  |        owner = _LlamaOwner()
+        249  |        owner.config.rope_scaling = {"rope_type": "llama3", "factor": 32.0}
+        250  |        source = _LlamaRotary()
+    >>> 251  |        source.inv_freq /= 4
+        252  |        with patch(
+        253  |            "tico.quantization.wrapq.wrappers.llama.static_inputs.make_rotary_embedding",
+        254  |            return_value=source,
+
+  Error (PYLINT) E1101
+    Instance of '_LlamaRotary' has no 'inv_freq' member (no-member)
+    See [no-member](https://pylint.pycqa.org/en/latest/user_guide/messages/
+    error/no-member.html).
+
+        255  |        ) as factory:
+        256  |            capture_rope_state(owner, owner.config)
+        257  |        factory.assert_called_once_with(owner.config, None)
+    >>> 258  |        torch.testing.assert_close(owner._export_rotary_emb.inv_freq, source.inv_freq)
+        259  |
+        260  |    def test_a_fresh_copy_is_used_for_each_length_dependent_preparation(self):
+        261  |        class DynamicRotary(_LlamaRotary):
+
+  Error (PYLINT) E1101
+    Instance of 'DynamicRotary' has no 'inv_freq' member (no-member)
+    See [no-member](https://pylint.pycqa.org/en/latest/user_guide/messages/
+    error/no-member.html).
+
+        260  |    def test_a_fresh_copy_is_used_for_each_length_dependent_preparation(self):
+        261  |        class DynamicRotary(_LlamaRotary):
+        262  |            def forward(self, hidden, positions):
+    >>> 263  |                self.inv_freq /= float(positions.shape[-1])
+        264  |                return super().forward(hidden, positions)
+        265  |
+        266  |        source = DynamicRotary()
+
+
+
+>>> Lint for test/quantization/wrapq/wrappers/llama/test_rope_consistency.py:
+
+  Error (MYPY) call-arg
+    Unexpected keyword argument "rope_theta" for "LlamaConfig"
+    
+    To disable, use `  # type: ignore[call-arg]`
+
+         52  |                "original_max_position_embeddings": 8192,
+         53  |            },
+         54  |        }[kind]
+    >>>  55  |        config = LlamaConfig(
+         56  |            vocab_size=64, hidden_size=32, intermediate_size=64,
+         57  |            num_hidden_layers=2, num_attention_heads=2, num_key_value_heads=1,
+         58  |            head_dim=16, max_position_embeddings=131072, rope_theta=500000.0,
+
+  Error (MYPY) call-arg
+    Unexpected keyword argument "rope_scaling" for "LlamaConfig"
+    
+    To disable, use `  # type: ignore[call-arg]`
+
+         52  |                "original_max_position_embeddings": 8192,
+         53  |            },
+         54  |        }[kind]
+    >>>  55  |        config = LlamaConfig(
+         56  |            vocab_size=64, hidden_size=32, intermediate_size=64,
+         57  |            num_hidden_layers=2, num_attention_heads=2, num_key_value_heads=1,
+         58  |            head_dim=16, max_position_embeddings=131072, rope_theta=500000.0,
+
+  Error (MYPY) operator
+    Unsupported operand types for - (Module and "Tensor")
+    
+    To disable, use `  # type: ignore[operator]`
+
+        110  |        phases = torch.outer(torch.arange(32).float(), raw)
+        111  |        old_sin = torch.cat((phases, phases), dim=-1).sin().unsqueeze(0)
+        112  |        # The original unscaled implementation must fail this test.
+    >>> 113  |        self.assertGreater(float((actual.sin - old_sin).abs().max()), 1e-4)
+        114  |        for value, target in zip((actual.cos, actual.sin), self._expected(model, 32)):
+        115  |            torch.testing.assert_close(value, target, atol=0, rtol=0)
+        116  |
+
+  Advice (MYPY) note
+    Left operand is of type "Tensor | Module"
+
+        110  |        phases = torch.outer(torch.arange(32).float(), raw)
+        111  |        old_sin = torch.cat((phases, phases), dim=-1).sin().unsqueeze(0)
+        112  |        # The original unscaled implementation must fail this test.
+    >>> 113  |        self.assertGreater(float((actual.sin - old_sin).abs().max()), 1e-4)
+        114  |        for value, target in zip((actual.cos, actual.sin), self._expected(model, 32)):
+        115  |            torch.testing.assert_close(value, target, atol=0, rtol=0)
+        116  |
+
+
+
+>>> Lint for test/quantization/wrapq/wrappers/qwen_vl/test_eager_context.py:
+
+  Error (MYPY) call-arg
+    Unexpected keyword argument "rope_scaling" for "Qwen3VLTextConfig"
+    
+    To disable, use `  # type: ignore[call-arg]`
+
+         46  |        )
+         47  |        from transformers.models.qwen3_vl.modeling_qwen3_vl import Qwen3VLTextModel
+         48  |
+    >>>  49  |        config = Qwen3VLTextConfig(
+         50  |            vocab_size=32,
+         51  |            hidden_size=16,
+         52  |            intermediate_size=32,
+
+
+
+>>> Lint for tico/quantization/recipes/debug/export_regression.py:
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "dict[str, Any]",
+    target has type "str")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        266  |                key: repr(getattr(module, key, None))
+        267  |                for key in ("enabled", "fake_quant_enabled", "dtype", "qscheme", "channel_axis", "_qparams_locked")
+        268  |            }
+    >>> 269  |            fields["buffers"] = {
+        270  |                key: tensor_record(tensor) for key, tensor in module.named_buffers()
+        271  |            }
+        272  |            # Some observers keep qparams outside registered buffers.
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "list[Any]", target
+    has type "str")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        275  |                    fields[key] = tensor_record(value)
+        276  |                elif key == "_qparams" and value is not None:
+        277  |                    if isinstance(value, (tuple, list)):
+    >>> 278  |                        fields[key] = [tensor_record(item) if isinstance(item, torch.Tensor) else _json_value(item) for item in value]
+        279  |                    elif isinstance(value, dict):
+        280  |                        fields[key] = {str(k): tensor_record(v) if isinstance(v, torch.Tensor) else _json_value(v) for k, v in value.items()}
+        281  |                    else:
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "dict[str, Any]",
+    target has type "str")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        277  |                    if isinstance(value, (tuple, list)):
+        278  |                        fields[key] = [tensor_record(item) if isinstance(item, torch.Tensor) else _json_value(item) for item in value]
+        279  |                    elif isinstance(value, dict):
+    >>> 280  |                        fields[key] = {str(k): tensor_record(v) if isinstance(v, torch.Tensor) else _json_value(v) for k, v in value.items()}
+        281  |                    else:
+        282  |                        fields[key] = _json_value(value)
+        283  |            observers[name] = fields
+
+  Error (MYPY) var-annotated
+    Need type annotation for "stages" (hint: "stages: dict[<type>, <type>]
+    = ...")
+    
+    To disable, use `  # type: ignore[var-annotated]`
+
+        347  |        self.records = root / "records"
+        348  |        self.records.mkdir(parents=True)
+        349  |        self.atol, self.rtol = atol, rtol
+    >>> 350  |        self.stages = {}
+        351  |        self.pending = 0
+        352  |
+        353  |    def __enter__(self):
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "def
+    capture_convert(module: Any, args: Any, *positional: Any, **options:
+    Any) -> Any", variable has type "Callable[[Module, tuple[Any, ...],
+    dict[str, Any] | None, dict[Any, Any] | None, bool, CompileConfigBase],
+    CircleModel]")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        434  |            delattr(converted, "_export_regression")
+        435  |            self.pending -= 1
+        436  |
+    >>> 437  |        tico.convert = capture_convert
+        438  |        CircleModel.save = capture_save
+        439  |        self.convert_module.export = capture_export
+        440  |        return self
+
+  Error (MYPY) method-assign
+    Cannot assign to a method
+    
+    To disable, use `  # type: ignore[method-assign]`
+
+        435  |            self.pending -= 1
+        436  |
+        437  |        tico.convert = capture_convert
+    >>> 438  |        CircleModel.save = capture_save
+        439  |        self.convert_module.export = capture_export
+        440  |        return self
+        441  |
+
+  Error (MYPY) attr-defined
+    Module has no attribute "export"
+    
+    To disable, use `  # type: ignore[attr-defined]`
+
+        436  |
+        437  |        tico.convert = capture_convert
+        438  |        CircleModel.save = capture_save
+    >>> 439  |        self.convert_module.export = capture_export
+        440  |        return self
+        441  |
+        442  |    def __exit__(self, exc_type, exc_value, trace):
+
+  Error (MYPY) method-assign
+    Cannot assign to a method
+    
+    To disable, use `  # type: ignore[method-assign]`
+
+        444  |        from tico.utils.model import CircleModel
+        445  |
+        446  |        tico.convert = self.old_convert
+    >>> 447  |        CircleModel.save = self.old_save
+        448  |        self.convert_module.export = self.old_export
+        449  |        if exc_type is None and self.pending:
+        450  |            raise RuntimeError("Some converted stages were not saved and verified.")
+
+  Error (MYPY) attr-defined
+    Module has no attribute "export"
+    
+    To disable, use `  # type: ignore[attr-defined]`
+
+        445  |
+        446  |        tico.convert = self.old_convert
+        447  |        CircleModel.save = self.old_save
+    >>> 448  |        self.convert_module.export = self.old_export
+        449  |        if exc_type is None and self.pending:
+        450  |            raise RuntimeError("Some converted stages were not saved and verified.")
+        451  |
+
+  Error (MYPY) dict-item
+    Dict entry 0 has incompatible type "str": "str"; expected "Any":
+    "dict[Any, Any]"
+    
+    To disable, use `  # type: ignore[dict-item]`
+
+        472  |            result[name] = json.loads(path.read_text())
+        473  |        else:
+        474  |            # Text/vocabulary artifacts are intentionally compared byte-for-byte.
+    >>> 475  |            result[name] = {"sha256": _file_sha256(path)}
+        476  |    return result
+        477  |
+        478  |
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "nullcontext[None]",
+    variable has type "_GeneratorContextManager[None, None, None]")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        516  |        from tico.quantization.wrapq.utils.static_export import prepared_static_export
+        517  |        context = prepared_static_export(adapter, options.seq_len)
+        518  |    else:
+    >>> 519  |        context = nullcontext()
+        520  |    previous_force_export = owner.force_export
+        521  |    try:
+        522  |        owner.force_export = True
+
+  Error (MYPY) union-attr
+    Item "None" of "Any | None" has no attribute "max_position_embeddings"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        575  |    if config is None and hasattr(ctx.model, "wrapped"):
+        576  |        config = ctx.model.wrapped.config
+        577  |    text_config = getattr(config, "text_config", config)
+    >>> 578  |    capacity = int(text_config.max_position_embeddings)
+        579  |    length = options.eager_seq_len
+        580  |    if length + options.decode_steps > capacity:
+        581  |        raise ValueError(
+
+  Error (MYPY) union-attr
+    Item "None" of "Any | None" has no attribute "vocab_size"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        583  |            f"checkpoint records capacity={capacity}. Do not silently enlarge its "
+        584  |            "RoPE config; select a valid stress length or a native-context checkpoint."
+        585  |        )
+    >>> 586  |    inputs = torch.randint(0, int(text_config.vocab_size), (1, length))
+        587  |    with torch.no_grad():
+        588  |        output = ctx.model(input_ids=inputs, use_cache=True, logits_to_keep=1, return_dict=True)
+        589  |        cache = output.past_key_values
+
+  Error (MYPY) union-attr
+    Item "None" of "Any | None" has no attribute "vocab_size"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        590  |        if cache is None and options.decode_steps:
+        591  |            raise RuntimeError("Eager prefill did not produce a KV cache.")
+        592  |        for _ in range(options.decode_steps):
+    >>> 593  |            token = torch.randint(0, int(text_config.vocab_size), (1, 1))
+        594  |            output = ctx.model(input_ids=token, past_key_values=cache, use_cache=True, logits_to_keep=1, return_dict=True)
+        595  |            cache = output.past_key_values
+        596  |    return {"kind": "text_only", "prefill_tokens": length, "decode_steps": options.decode_steps, "capacity": capacity}
+
+
+
+>>> Lint for tico/quantization/recipes/debug/verify_llama_rope.py:
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "dict[str, str]",
+    target has type "str")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+        47  |        if not Path(tico.__file__).resolve().is_relative_to(repo):
+        48  |            raise RuntimeError("TICO was imported from a different checkout.")
+        49  |        torch.set_num_threads(args.threads)
+    >>> 50  |        report["versions"] = {
+        51  |            name: importlib.metadata.version(name)
+        52  |            for name in ("torch", "transformers", "circle-schema")
+        53  |        }
+
+  Error (MYPY) dict-item
+    Dict entry 1 has incompatible type "str": "int"; expected "str": "str"
+    
+    To disable, use `  # type: ignore[dict-item]`
+
+        60  |        code = 2 if incomplete else 0 if result.wasSuccessful() else 1
+        61  |        report.update({
+        62  |            "status": {0: "PASS", 1: "FAIL", 2: "ERROR"}[code],
+    >>> 63  |            "tests_run": result.testsRun,
+        64  |            "failures": [{"test": str(test), "traceback": text} for test, text in result.failures],
+        65  |            "errors": [{"test": str(test), "traceback": text} for test, text in result.errors],
+        66  |            "skipped": [{"test": str(test), "reason": reason} for test, reason in result.skipped],
+
+  Error (MYPY) dict-item
+    Dict entry 2 has incompatible type "str": "list[dict[str, str]]"; expected
+    "str": "str"
+    
+    To disable, use `  # type: ignore[dict-item]`
+
+        61  |        report.update({
+        62  |            "status": {0: "PASS", 1: "FAIL", 2: "ERROR"}[code],
+        63  |            "tests_run": result.testsRun,
+    >>> 64  |            "failures": [{"test": str(test), "traceback": text} for test, text in result.failures],
+        65  |            "errors": [{"test": str(test), "traceback": text} for test, text in result.errors],
+        66  |            "skipped": [{"test": str(test), "reason": reason} for test, reason in result.skipped],
+        67  |        })
+
+  Error (MYPY) dict-item
+    Dict entry 3 has incompatible type "str": "list[dict[str, str]]"; expected
+    "str": "str"
+    
+    To disable, use `  # type: ignore[dict-item]`
+
+        62  |            "status": {0: "PASS", 1: "FAIL", 2: "ERROR"}[code],
+        63  |            "tests_run": result.testsRun,
+        64  |            "failures": [{"test": str(test), "traceback": text} for test, text in result.failures],
+    >>> 65  |            "errors": [{"test": str(test), "traceback": text} for test, text in result.errors],
+        66  |            "skipped": [{"test": str(test), "reason": reason} for test, reason in result.skipped],
+        67  |        })
+        68  |    except Exception as exc:
+
+  Error (MYPY) dict-item
+    Dict entry 4 has incompatible type "str": "list[dict[str, str]]"; expected
+    "str": "str"
+    
+    To disable, use `  # type: ignore[dict-item]`
+
+        63  |            "tests_run": result.testsRun,
+        64  |            "failures": [{"test": str(test), "traceback": text} for test, text in result.failures],
+        65  |            "errors": [{"test": str(test), "traceback": text} for test, text in result.errors],
+    >>> 66  |            "skipped": [{"test": str(test), "reason": reason} for test, reason in result.skipped],
+        67  |        })
+        68  |    except Exception as exc:
+        69  |        traceback.print_exc()
+
+
+
+>>> Lint for tico/quantization/recipes/export/llama.py:
+
+  Error (MYPY) arg-type
+    Argument 1 to "prepare_llama_static_inputs" has incompatible type "Tensor
+    | Module"; expected Module
+    
+    To disable, use `  # type: ignore[arg-type]`
+
+        335  |
+        336  |        batch, seq, hidden_size = 1, max_seq_len, config.hidden_size
+        337  |        example_hidden = torch.randn(batch, seq, hidden_size, device="cpu")
+    >>> 338  |        prepared_inputs = prepare_llama_static_inputs(qlayer.wrapped, max_seq_len)
+        339  |        attention_mask = prepared_inputs.mask(seq, seq, 0, device=torch.device("cpu"))
+        340  |        position_embeddings = prepared_inputs.rope(
+        341  |            0, seq, device=torch.device("cpu"), dtype=example_hidden.dtype
+
+
+
+>>> Lint for tico/quantization/wrapq/utils/static_export.py:
+
+  Error (MYPY) var-annotated
+    Need type annotation for "covered" (hint: "covered: set[<type>] = ...")
+    
+    To disable, use `  # type: ignore[var-annotated]`
+
+        60  |        if getattr(getattr(owner, "_mode", None), "name", None) == "CALIB":
+        61  |            raise ValueError("Static export cannot run while calibration is enabled.")
+        62  |    with ExitStack() as stack:
+    >>> 63  |        covered = set()
+        64  |        for owner in owners:
+        65  |            if id(owner) in covered:
+        66  |                continue
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/llama/static_inputs.py:
+
+  Error (MYPY) assignment
+    Incompatible types in assignment (expression has type "int", variable has
+    type "Tensor | Module")
+    
+    To disable, use `  # type: ignore[assignment]`
+
+         39  |    """
+         40  |    snapshot = make_rotary_embedding(config, source).eval()
+         41  |    owner.add_module("_export_rotary_emb", snapshot)
+    >>>  42  |    owner._export_rope_contract_version = ROPE_CONTRACT_VERSION
+         43  |    # Old table/snapshot names must not override the canonical source after an
+         44  |    # explicit migration. Quantized parameters and observer state are untouched.
+         45  |    for name in (
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute "wrapped"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+         53  |def _owner_config(owner: nn.Module) -> Any:
+         54  |    """Resolve configuration on a model or a standalone wrapped decoder."""
+         55  |    config = getattr(owner, "config", None)
+    >>>  56  |    return config if config is not None else owner.self_attn.wrapped.config
+         57  |
+         58  |
+         59  |def _canonical_snapshot(owner: nn.Module) -> nn.Module:
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Any | Tensor | Module" has no attribute "config"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+         53  |def _owner_config(owner: nn.Module) -> Any:
+         54  |    """Resolve configuration on a model or a standalone wrapped decoder."""
+         55  |    config = getattr(owner, "config", None)
+    >>>  56  |    return config if config is not None else owner.self_attn.wrapped.config
+         57  |
+         58  |
+         59  |def _canonical_snapshot(owner: nn.Module) -> nn.Module:
+
+  Error (MYPY) arg-type
+    Argument 1 to "_install_rope_source" has incompatible type "Tensor |
+    Module"; expected Module
+    
+    To disable, use `  # type: ignore[arg-type]`
+
+        134  |    for owner, config, source, origin, children in plans:
+        135  |        _install_rope_source(owner, config, source)
+        136  |        for child in children:
+    >>> 137  |            _install_rope_source(child, config, source)
+        138  |        result.append({"source": origin, "decoder_layers": len(children) or 1})
+        139  |    return {
+        140  |        "contract_version": ROPE_CONTRACT_VERSION,
+
+  Error (MYPY) index
+    Value of type "Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        167  |        if start < 0 or length < 1 or end > self.max_seq_len:
+        168  |            raise ValueError("Requested RoPE span exceeds the static export profile.")
+        169  |        return (
+    >>> 170  |            self.cos[:, start:end].to(device=device, dtype=dtype),
+        171  |            self.sin[:, start:end].to(device=device, dtype=dtype),
+        172  |        )
+        173  |
+
+  Error (MYPY) index
+    Value of type "Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        168  |            raise ValueError("Requested RoPE span exceeds the static export profile.")
+        169  |        return (
+        170  |            self.cos[:, start:end].to(device=device, dtype=dtype),
+    >>> 171  |            self.sin[:, start:end].to(device=device, dtype=dtype),
+        172  |        )
+        173  |
+        174  |    def mask(self, query_length: int, key_length: int, start: int, *, device):
+
+  Error (MYPY) index
+    Value of type "Tensor | Module" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        179  |            or key_length > self.max_seq_len
+        180  |        ):
+        181  |            raise ValueError("Requested mask exceeds the static export profile.")
+    >>> 182  |        return self.attention_mask[:, 0, start : start + query_length, :key_length].to(device)
+        183  |
+        184  |
+        185  |@torch.no_grad()
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute "rope"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        211  |        raise ValueError("Canonical LLaMA rotary must return [1, S, head_dim] tables.")
+        212  |    if not torch.isfinite(cos).all() or not torch.isfinite(sin).all():
+        213  |        raise ValueError("Canonical LLaMA rotary produced non-finite values.")
+    >>> 214  |    if owner.attn_options.rope == "pre_negated_sin":
+        215  |        half = sin.shape[-1] // 2
+        216  |        sin = torch.cat((-sin[..., :half], sin[..., half:]), dim=-1)
+        217  |    return LlamaStaticInputs(cos, sin, float(owner.qcfg.attention_mask_fill_value))
+
+  Error (MYPY) union-attr
+    Item "Tensor" of "Tensor | Module" has no attribute
+    "attention_mask_fill_value"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        214  |    if owner.attn_options.rope == "pre_negated_sin":
+        215  |        half = sin.shape[-1] // 2
+        216  |        sin = torch.cat((-sin[..., :half], sin[..., half:]), dim=-1)
+    >>> 217  |    return LlamaStaticInputs(cos, sin, float(owner.qcfg.attention_mask_fill_value))
+
+  Error (MYPY) arg-type
+    Argument 1 to "float" has incompatible type "Any | Tensor | Module";
+    expected "str | Buffer | SupportsFloat | SupportsIndex"
+    
+    To disable, use `  # type: ignore[arg-type]`
+
+        214  |    if owner.attn_options.rope == "pre_negated_sin":
+        215  |        half = sin.shape[-1] // 2
+        216  |        sin = torch.cat((-sin[..., :half], sin[..., half:]), dim=-1)
+    >>> 217  |    return LlamaStaticInputs(cos, sin, float(owner.qcfg.attention_mask_fill_value))
+
+
+
+>>> Lint for tico/quantization/wrapq/wrappers/qwen_vl/static_inputs.py:
+
+  Error (MYPY) union-attr
+    Item "None" of "Any | None" has no attribute "shape"
+    
+    To disable, use `  # type: ignore[union-attr]`
+
+        58  |    )]
+        59  |    if all(isinstance(value, torch.Tensor) for value in legacy):
+        60  |        positions, cos, sin = legacy
+    >>> 61  |        if positions.shape[-1] < max_seq_len or cos.shape[1] < max_seq_len:
+        62  |            raise ValueError("Legacy Qwen3-VL tables do not cover the export profile.")
+        63  |        positions = positions[..., :max_seq_len]
+        64  |        cos, sin = cos[:, :max_seq_len], sin[:, :max_seq_len]
+
+  Error (MYPY) index
+    Value of type "Any | None" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        60  |        positions, cos, sin = legacy
+        61  |        if positions.shape[-1] < max_seq_len or cos.shape[1] < max_seq_len:
+        62  |            raise ValueError("Legacy Qwen3-VL tables do not cover the export profile.")
+    >>> 63  |        positions = positions[..., :max_seq_len]
+        64  |        cos, sin = cos[:, :max_seq_len], sin[:, :max_seq_len]
+        65  |    else:
+        66  |        snapshot = getattr(owner, "_export_rotary_emb", None)
+
+  Error (MYPY) index
+    Value of type "Any | None" is not indexable
+    
+    To disable, use `  # type: ignore[index]`
+
+        61  |        if positions.shape[-1] < max_seq_len or cos.shape[1] < max_seq_len:
+        62  |            raise ValueError("Legacy Qwen3-VL tables do not cover the export profile.")
+        63  |        positions = positions[..., :max_seq_len]
+    >>> 64  |        cos, sin = cos[:, :max_seq_len], sin[:, :max_seq_len]
+        65  |    else:
+        66  |        snapshot = getattr(owner, "_export_rotary_emb", None)
+        67  |        if snapshot is None:
+

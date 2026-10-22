@@ -1,0 +1,166 @@
+Prepare format/style checkers...
+Collecting lintrunner==0.11.0 (from -r /workspace/TICO/infra/style/requirements.txt (line 1))
+  Downloading lintrunner-0.11.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.4 kB)
+Collecting lintrunner-adapters==0.11.0 (from -r /workspace/TICO/infra/style/requirements.txt (line 2))
+  Downloading lintrunner_adapters-0.11.0-py3-none-any.whl.metadata (3.2 kB)
+Collecting types-PyYAML==6.0.12.20260906 (from -r /workspace/TICO/infra/style/requirements.txt (line 3))
+  Downloading types_pyyaml-6.0.12.20260906-py3-none-any.whl.metadata (1.8 kB)
+Requirement already satisfied: click<9.0.0,>=8.1.3 in ./.venv/lib/python3.12/site-packages (from lintrunner-adapters==0.11.0->-r /workspace/TICO/infra/style/requirements.txt (line 2)) (8.5.0)
+Downloading lintrunner-0.11.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 7.2 MB/s eta 0:00:00
+Downloading lintrunner_adapters-0.11.0-py3-none-any.whl (60 kB)
+Downloading types_pyyaml-6.0.12.20260906-py3-none-any.whl (21 kB)
+Installing collected packages: types-PyYAML, lintrunner-adapters, lintrunner
+Successfully installed lintrunner-0.11.0 lintrunner-adapters-0.11.0 types-PyYAML-6.0.12.20260906
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+[2026-10-22T04:08:31Z INFO lintrunner::linter] Initializing linter: 'PYLINT'
+[2026-10-22T04:08:31Z INFO lintrunner::linter] the init commands are ["lintrunner_adapters", "run", "pip_init", "--dry-run=0", "--requirement=requirements-lintrunner.txt"]
+<MainThread:DEBUG> $ /workspace/TICO/.venv/bin/python3 -m pip install -r requirements-lintrunner.txt
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Requirement already satisfied: lintrunner==0.11.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 2)) (0.11.0)
+Requirement already satisfied: lintrunner-adapters==0.11.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 3)) (0.11.0)
+Collecting pylint==3.3.1 (from -r requirements-lintrunner.txt (line 6))
+  Downloading pylint-3.3.1-py3-none-any.whl.metadata (12 kB)
+Collecting astroid==3.3.10 (from -r requirements-lintrunner.txt (line 7))
+  Downloading astroid-3.3.10-py3-none-any.whl.metadata (4.4 kB)
+Collecting black==22.12.0 (from -r requirements-lintrunner.txt (line 10))
+  Downloading black-22.12.0-py3-none-any.whl.metadata (52 kB)
+Collecting ufmt==2.9.1 (from -r requirements-lintrunner.txt (line 11))
+  Downloading ufmt-2.9.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting usort==1.0.5 (from -r requirements-lintrunner.txt (line 12))
+  Downloading usort-1.0.5-py3-none-any.whl.metadata (3.2 kB)
+Requirement already satisfied: attrs==26.1.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 17)) (26.1.0)
+Requirement already satisfied: click==8.5.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 18)) (8.5.0)
+Collecting libcst==1.9.0 (from -r requirements-lintrunner.txt (line 19))
+  Downloading libcst-1.9.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (15 kB)
+Collecting moreorless==0.6.0 (from -r requirements-lintrunner.txt (line 20))
+  Downloading moreorless-0.6.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting mypy-extensions==1.1.0 (from -r requirements-lintrunner.txt (line 21))
+  Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting pathspec==1.1.1 (from -r requirements-lintrunner.txt (line 22))
+  Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+Collecting platformdirs==4.13.3 (from -r requirements-lintrunner.txt (line 23))
+  Downloading platformdirs-4.13.3-py3-none-any.whl.metadata (5.5 kB)
+Requirement already satisfied: PyYAML==6.0.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 24)) (6.0.2)
+Collecting stdlibs==2026.9.3 (from -r requirements-lintrunner.txt (line 25))
+  Downloading stdlibs-2026.9.3-py3-none-any.whl.metadata (4.7 kB)
+Collecting toml==0.10.2 (from -r requirements-lintrunner.txt (line 26))
+  Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+Collecting tomlkit==0.15.2 (from -r requirements-lintrunner.txt (line 28))
+  Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
+Collecting trailrunner==1.4.0 (from -r requirements-lintrunner.txt (line 29))
+  Downloading trailrunner-1.4.0-py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: typing-extensions==4.16.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 30)) (4.16.0)
+Collecting mypy==2.4.0 (from -r requirements-lintrunner.txt (line 34))
+  Downloading mypy-2.4.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting ast-serialize==0.13.1 (from -r requirements-lintrunner.txt (line 35))
+  Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+Collecting librt==0.16.0 (from -r requirements-lintrunner.txt (line 36))
+  Downloading librt-0.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.3 kB)
+Collecting isort!=5.13.0,<6,>=4.2.5 (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6))
+  Downloading isort-5.13.2-py3-none-any.whl.metadata (12 kB)
+Collecting mccabe<0.8,>=0.6 (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6))
+  Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Requirement already satisfied: dill>=0.3.6 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (0.4.1)
+Downloading pylint-3.3.1-py3-none-any.whl (521 kB)
+Downloading astroid-3.3.10-py3-none-any.whl (275 kB)
+Downloading black-22.12.0-py3-none-any.whl (167 kB)
+Downloading ufmt-2.9.1-py3-none-any.whl (29 kB)
+Downloading usort-1.0.5-py3-none-any.whl (23 kB)
+Downloading libcst-1.9.0-cp312-cp312-manylinux_2_28_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 6.7 MB/s eta 0:00:00
+Downloading moreorless-0.6.0-py3-none-any.whl (10 kB)
+Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+Downloading platformdirs-4.13.3-py3-none-any.whl (32 kB)
+Downloading stdlibs-2026.9.3-py3-none-any.whl (59 kB)
+Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Downloading trailrunner-1.4.0-py3-none-any.whl (11 kB)
+Downloading mypy-2.4.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (15.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 26.3 MB/s eta 0:00:00
+Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 17.9 MB/s eta 0:00:00
+Downloading librt-0.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (531 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 532.0/532.0 kB 5.1 MB/s eta 0:00:00
+Downloading isort-5.13.2-py3-none-any.whl (92 kB)
+Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Installing collected packages: tomlkit, toml, stdlibs, platformdirs, pathspec, mypy-extensions, moreorless, mccabe, librt, libcst, isort, astroid, ast-serialize, trailrunner, pylint, mypy, black, usort, ufmt
+Successfully installed ast-serialize-0.13.1 astroid-3.3.10 black-22.12.0 isort-5.13.2 libcst-1.9.0 librt-0.16.0 mccabe-0.7.0 moreorless-0.6.0 mypy-2.4.0 mypy-extensions-1.1.0 pathspec-1.1.1 platformdirs-4.13.3 pylint-3.3.1 stdlibs-2026.9.3 toml-0.10.2 tomlkit-0.15.2 trailrunner-1.4.0 ufmt-2.9.1 usort-1.0.5
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+<MainThread:DEBUG> took 23240ms
+[2026-10-22T04:08:55Z INFO lintrunner::linter] the status is ExitStatus(unix_wait_status(0))
+[2026-10-22T04:08:55Z INFO lintrunner::linter] Initializing linter: 'UFMT'
+[2026-10-22T04:08:55Z INFO lintrunner::linter] the init commands are ["lintrunner_adapters", "run", "pip_init", "--dry-run=0", "--no-black-binary", "--requirement=requirements-lintrunner.txt"]
+<MainThread:DEBUG> $ /workspace/TICO/.venv/bin/python3 -m pip install -r requirements-lintrunner.txt
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Requirement already satisfied: lintrunner==0.11.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 2)) (0.11.0)
+Requirement already satisfied: lintrunner-adapters==0.11.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 3)) (0.11.0)
+Requirement already satisfied: pylint==3.3.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 6)) (3.3.1)
+Requirement already satisfied: astroid==3.3.10 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 7)) (3.3.10)
+Requirement already satisfied: black==22.12.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 10)) (22.12.0)
+Requirement already satisfied: ufmt==2.9.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 11)) (2.9.1)
+Requirement already satisfied: usort==1.0.5 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 12)) (1.0.5)
+Requirement already satisfied: attrs==26.1.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 17)) (26.1.0)
+Requirement already satisfied: click==8.5.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 18)) (8.5.0)
+Requirement already satisfied: libcst==1.9.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 19)) (1.9.0)
+Requirement already satisfied: moreorless==0.6.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 20)) (0.6.0)
+Requirement already satisfied: mypy-extensions==1.1.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 21)) (1.1.0)
+Requirement already satisfied: pathspec==1.1.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 22)) (1.1.1)
+Requirement already satisfied: platformdirs==4.13.3 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 23)) (4.13.3)
+Requirement already satisfied: PyYAML==6.0.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 24)) (6.0.2)
+Requirement already satisfied: stdlibs==2026.9.3 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 25)) (2026.9.3)
+Requirement already satisfied: toml==0.10.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 26)) (0.10.2)
+Requirement already satisfied: tomlkit==0.15.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 28)) (0.15.2)
+Requirement already satisfied: trailrunner==1.4.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 29)) (1.4.0)
+Requirement already satisfied: typing-extensions==4.16.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 30)) (4.16.0)
+Requirement already satisfied: mypy==2.4.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 34)) (2.4.0)
+Requirement already satisfied: ast-serialize==0.13.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 35)) (0.13.1)
+Requirement already satisfied: librt==0.16.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 36)) (0.16.0)
+Requirement already satisfied: isort!=5.13.0,<6,>=4.2.5 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (5.13.2)
+Requirement already satisfied: mccabe<0.8,>=0.6 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (0.7.0)
+Requirement already satisfied: dill>=0.3.6 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (0.4.1)
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+<MainThread:DEBUG> took 1747ms
+[2026-10-22T04:08:57Z INFO lintrunner::linter] the status is ExitStatus(unix_wait_status(0))
+[2026-10-22T04:08:57Z INFO lintrunner::linter] Initializing linter: 'MYPY'
+[2026-10-22T04:08:57Z INFO lintrunner::linter] the init commands are ["lintrunner_adapters", "run", "pip_init", "--dry-run=0", "--requirement=requirements-lintrunner.txt"]
+<MainThread:DEBUG> $ /workspace/TICO/.venv/bin/python3 -m pip install -r requirements-lintrunner.txt
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Requirement already satisfied: lintrunner==0.11.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 2)) (0.11.0)
+Requirement already satisfied: lintrunner-adapters==0.11.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 3)) (0.11.0)
+Requirement already satisfied: pylint==3.3.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 6)) (3.3.1)
+Requirement already satisfied: astroid==3.3.10 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 7)) (3.3.10)
+Requirement already satisfied: black==22.12.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 10)) (22.12.0)
+Requirement already satisfied: ufmt==2.9.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 11)) (2.9.1)
+Requirement already satisfied: usort==1.0.5 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 12)) (1.0.5)
+Requirement already satisfied: attrs==26.1.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 17)) (26.1.0)
+Requirement already satisfied: click==8.5.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 18)) (8.5.0)
+Requirement already satisfied: libcst==1.9.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 19)) (1.9.0)
+Requirement already satisfied: moreorless==0.6.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 20)) (0.6.0)
+Requirement already satisfied: mypy-extensions==1.1.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 21)) (1.1.0)
+Requirement already satisfied: pathspec==1.1.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 22)) (1.1.1)
+Requirement already satisfied: platformdirs==4.13.3 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 23)) (4.13.3)
+Requirement already satisfied: PyYAML==6.0.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 24)) (6.0.2)
+Requirement already satisfied: stdlibs==2026.9.3 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 25)) (2026.9.3)
+Requirement already satisfied: toml==0.10.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 26)) (0.10.2)
+Requirement already satisfied: tomlkit==0.15.2 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 28)) (0.15.2)
+Requirement already satisfied: trailrunner==1.4.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 29)) (1.4.0)
+Requirement already satisfied: typing-extensions==4.16.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 30)) (4.16.0)
+Requirement already satisfied: mypy==2.4.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 34)) (2.4.0)
+Requirement already satisfied: ast-serialize==0.13.1 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 35)) (0.13.1)
+Requirement already satisfied: librt==0.16.0 in ./.venv/lib/python3.12/site-packages (from -r requirements-lintrunner.txt (line 36)) (0.16.0)
+Requirement already satisfied: isort!=5.13.0,<6,>=4.2.5 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (5.13.2)
+Requirement already satisfied: mccabe<0.8,>=0.6 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (0.7.0)
+Requirement already satisfied: dill>=0.3.6 in ./.venv/lib/python3.12/site-packages (from pylint==3.3.1->-r requirements-lintrunner.txt (line 6)) (0.4.1)
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+<MainThread:DEBUG> took 3678ms
+[2026-10-22T04:09:01Z INFO lintrunner::linter] the status is ExitStatus(unix_wait_status(0))

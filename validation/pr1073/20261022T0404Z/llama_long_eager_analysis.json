@@ -1,0 +1,52 @@
+{
+  "raw_status": "FAIL",
+  "raw_exit_code": 1,
+  "scope": "tiny random native16384 model, static full Circle capacity8, actual eager4096+4 cache decode; not pretrained or static2048 or NPU",
+  "checkpoint_sha256": "bc5efaaaf81d4e3d4efdd8b9bbb790971e58a171cdbf26f80577739f2ac602bf",
+  "checkpoint_file_unchanged": true,
+  "native_capacity_original": 16384,
+  "original_rope_capacity": 8192,
+  "eager": {
+    "capacity": 16384,
+    "decode_steps": 4,
+    "kind": "text_only",
+    "prefill_tokens": 4096,
+    "state_differences": [],
+    "state_preserved": true
+  },
+  "evidence_complete": true,
+  "pre_post_component_identity": true,
+  "strict_torch_circle_parity": false,
+  "strict_ok": false,
+  "runner": "unmodified tico/quantization/recipes/debug/export_regression.py",
+  "runner_sha256": "451508ace4f387be5306fe829a76bfbd5a11249148e80be089e1173e1a851111",
+  "infrastructure_patch_used": false,
+  "resource_gate": {
+    "cgroup_current_bytes": 5644763136,
+    "cgroup_max_bytes": "17179869184",
+    "threshold_bytes": 12884901888,
+    "workspace_free_bytes": 29324861440,
+    "status": "READY"
+  },
+  "resources": {
+    "started_at": "2026-10-22T04:39:17.051086+00:00",
+    "disk_before": {
+      "total": 33770192896,
+      "used": 2710728704,
+      "free": 29324701696
+    },
+    "exit_code": 1,
+    "elapsed_seconds": 178.48865684700013,
+    "disk_after": {
+      "total": 33770192896,
+      "used": 2718707712,
+      "free": 29316722688
+    },
+    "max_process_tree_rss_bytes": 1374711808,
+    "minimum_available_memory_bytes": 14227992576
+  },
+  "parameter_count": 22688,
+  "weight_tensors": 21,
+  "observer_count": 143,
+  "quantization_modes_checked": 62
+}

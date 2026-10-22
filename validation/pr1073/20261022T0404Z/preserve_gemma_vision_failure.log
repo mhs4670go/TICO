@@ -1,0 +1,26 @@
+/workspace/TICO/.venv/lib/python3.12/site-packages/torch/export/_unlift.py:843: UserWarning: A model attribute `vision_model.wrapped_model.patch_embedder.wrapped.position_embedding_table` requires gradient but it's not properly registered as a parameter. torch.export will detach it and treat it as a constant tensor but please register it as parameter instead.
+  unlift_gm = _create_stateful_graph_module(new_gm, ep.range_constraints, ep)
+/workspace/TICO/.venv/lib/python3.12/site-packages/torch/export/_unlift.py:843: UserWarning: A model attribute `vision_model.wrapped_model.patch_embedder_export.wrapped.position_embedding_table` requires gradient but it's not properly registered as a parameter. torch.export will detach it and treat it as a constant tensor but please register it as parameter instead.
+  unlift_gm = _create_stateful_graph_module(new_gm, ep.range_constraints, ep)
+Traceback (most recent call last):
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/preserve_gemma_vision_failure.py", line 73, in main
+    actual=runtime.run([pixel_values.detach().numpy()],mode=mode).outputs
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/executor.py", line 247, in run
+    self._execute_operator(operator, values, mode)
+  File "/workspace/TICO/tico/circle/runtime/executor.py", line 329, in _execute_operator
+    results = kernel(context)
+              ^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/kernels/nn.py", line 620, in _rms_norm
+    raise ctx.fail(
+tico.circle.runtime.errors.UnsupportedCircleOperatorError: RMS_NORM supports rank 3 or 4 inputs, found shape (4, 32).
+  at subgraphs[0].operators[102] RMS_NORM (builtin code -6, version 1) inputs=[tensors[140] 'tico.quantization.wrapq.wrappers.gemma4.export_adapters.Gemma4VisionModelPrefillExportAdapter::mul_12' UINT8[4, 32] (activation, per-tensor quantized), tensors[1] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::_prop_tensor_constant412' UINT8[32] (constant, per-tensor quantized)] outputs=[tensors[141] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_7' UINT8[4, 32] (activation, per-tensor quantized)]
+{
+  "status": "ERROR",
+  "saved_circle": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma-vision-failure-artifact/vision_prefill.q.circle",
+  "saved_circle_sha256": "4cb5d8deecfef8cf41338211d4d298170048ef0bf64f1893d4b85b6442b0af5d",
+  "error_type": "UnsupportedCircleOperatorError",
+  "message": "RMS_NORM supports rank 3 or 4 inputs, found shape (4, 32).\n  at subgraphs[0].operators[102] RMS_NORM (builtin code -6, version 1) inputs=[tensors[140] 'tico.quantization.wrapq.wrappers.gemma4.export_adapters.Gemma4VisionModelPrefillExportAdapter::mul_12' UINT8[4, 32] (activation, per-tensor quantized), tensors[1] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::_prop_tensor_constant412' UINT8[32] (constant, per-tensor quantized)] outputs=[tensors[141] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_7' UINT8[4, 32] (activation, per-tensor quantized)]",
+  "runtime_mode": "fake_quantize",
+  "frozen_state_preserved": true
+}

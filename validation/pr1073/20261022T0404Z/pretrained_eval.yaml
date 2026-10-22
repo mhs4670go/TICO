@@ -1,0 +1,33 @@
+model:
+  family: llama
+  name_or_path: /workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_assets/Maykeye-TinyLLama-v0
+  revision: 298338802ab94432b917bcce11382aa151aee50f
+  trust_remote_code: false
+  cache_dir: /workspace/TICO/out/pr1073_validation/20261022T0404Z/hf_cache
+runtime:
+  device: cpu
+  dtype: float32
+  seed: 42
+  show_progress: false
+model_args:
+  profile: npu_export
+calibration:
+  seq_len: 32
+  decode_steps: 0
+pipeline: []
+evaluation:
+  enabled: true
+  max_seq_len: 128
+  use_cache: true
+  perplexity:
+    dataset: Salesforce/wikitext
+    dataset_config: wikitext-2-raw-v1
+    split: test[:12]
+    max_seq_len: 64
+    stride: 32
+  selected_tasks:
+  - ppl
+  output_dir: /workspace/TICO/out/pr1073_validation/20261022T0404Z/supplemental
+export:
+  enabled: false
+  max_seq_len: 16

@@ -1,0 +1,12 @@
+--- tico/quantization/recipes/debug/export_regression.py
++++ out/pr1073_validation/20261022T0404Z/export_regression_full_shape_fixture.py
+@@ -649,6 +649,9 @@
+         )
+     model.eval()
+     ctx = RecipeContext(cfg=cfg, adapter=adapter, model=model, device=torch.device("cpu"), dtype=torch.float32)
++    # Validation infrastructure: baseline full export needs a deterministic shape example.
++    if str(cfg.get("model", {}).get("family", "")) == "llama" and "circle_full" in cfg["export"]["artifacts"]:
++        ctx.calibration_inputs = [torch.zeros((1, options.seq_len), dtype=torch.long)]
+     initial = _state_contract(model)
+     rope_migration = None
+     if options.migrate_llama_rope:

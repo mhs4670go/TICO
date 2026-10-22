@@ -1,0 +1,12 @@
+test_decode_adapter_with_cache_return_logits_and_kv (test.quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_decode_adapter_with_cache_return_logits_and_kv) ... ok
+test_export_adapter_with_cache_return_logits_and_kv (test.quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_with_cache_return_logits_and_kv) ... ok
+test_export_adapter_without_cache_return_logits_only (test.quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_export_adapter_without_cache_return_logits_only) ... ok
+test_forward_diff (test.quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_forward_diff) ... ok
+test_generation_hook_accepts_current_transformers_positional_arguments (test.quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_generation_hook_accepts_current_transformers_positional_arguments)
+Keep the current generation hook's positional inputs aligned. ... ok
+test_mode_transitions (test.quantization.wrapq.wrappers.llama.test_quant_model_for_casual_lm.TestQuantLlamaForCausalLM.test_mode_transitions) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.028s
+
+OK

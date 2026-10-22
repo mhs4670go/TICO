@@ -1,0 +1,23 @@
+test_as_export_module_can_require_npu_profile (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_as_export_module_can_require_npu_profile) ... ok
+test_cache_tuple_concat_prefill_and_present_decode (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_cache_tuple_concat_prefill_and_present_decode) ... ok
+test_decode_export_adapter_returns_delta_kv (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_decode_export_adapter_returns_delta_kv) ... ok
+test_default_profile_preserves_npu_export_options (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_default_profile_preserves_npu_export_options) ... ok
+test_export_adapters_without_cache_return_hidden_only (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_export_adapters_without_cache_return_hidden_only) ... ok
+test_forward_diff_prefill (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_forward_diff_prefill) ... ok
+test_forward_diff_vs_self_consistency_decode (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_forward_diff_vs_self_consistency_decode) ... ok
+test_forward_shapes_and_cache_delta_decode (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_forward_shapes_and_cache_delta_decode) ... ok
+test_forward_with_bool_attention_mask_prefill (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_forward_with_bool_attention_mask_prefill) ... ok
+test_forward_with_float_attention_mask_prefill (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_forward_with_float_attention_mask_prefill) ... ok
+test_invalid_cache_output_mode_raises (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_invalid_cache_output_mode_raises) ... ok
+test_mode_transitions_decode (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_mode_transitions_decode) ... ok
+test_mode_transitions_prefill (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_mode_transitions_prefill) ... ok
+test_per_projection_override (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_per_projection_override) ... ok
+test_prefill_export_adapter_returns_delta_kv (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_prefill_export_adapter_returns_delta_kv) ... ok
+test_projection_scale_fusion_is_profile_controlled (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_projection_scale_fusion_is_profile_controlled) ... ok
+test_reference_eval_and_npu_export_profiles_are_float_equivalent (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_reference_eval_and_npu_export_profiles_are_float_equivalent) ... ok
+test_reference_eval_profile_selects_batched_hf_like_path (test.quantization.wrapq.wrappers.llama.test_quant_attention.TestQuantLlamaAttention.test_reference_eval_profile_selects_batched_hf_like_path) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.938s
+
+OK

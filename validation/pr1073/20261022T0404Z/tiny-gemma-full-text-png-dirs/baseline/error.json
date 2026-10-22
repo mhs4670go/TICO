@@ -1,0 +1,6 @@
+{
+  "comparisons_complete": false,
+  "error_type": "NotImplementedError",
+  "message": "QuantGemma4TextModel static/export mode requires static masks as a dict keyed by layer type.",
+  "status": "ERROR"
+}

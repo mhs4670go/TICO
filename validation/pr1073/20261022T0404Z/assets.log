@@ -1,0 +1,40 @@
+{
+  "scope": "Configured project paths and approved caches only; before fixture generation",
+  "roots": [
+    {
+      "root": "/workspace/TICO/out",
+      "exists": true,
+      "assets": []
+    },
+    {
+      "root": "/workspace/TICO/outputs",
+      "exists": false,
+      "assets": []
+    },
+    {
+      "root": "/workspace/TICO/models",
+      "exists": false,
+      "assets": []
+    },
+    {
+      "root": "/workspace/TICO/checkpoints",
+      "exists": false,
+      "assets": []
+    },
+    {
+      "root": "/workspace/shared/downloads",
+      "exists": true,
+      "assets": []
+    },
+    {
+      "root": "/workspace/library-files",
+      "exists": true,
+      "assets": []
+    },
+    {
+      "root": "<USER_HOME>/.cache/huggingface",
+      "exists": false,
+      "assets": []
+    }
+  ]
+}

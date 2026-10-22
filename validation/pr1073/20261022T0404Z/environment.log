@@ -1,0 +1,49 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/workspace/TICO/.venv/bin/python",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu_count": 5,
+  "disk": {
+    "total": 33770192896,
+    "used": 2035462144,
+    "free": 29999968256
+  },
+  "packages": {
+    "tico": "0.1.0",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "transformers": "5.18.0",
+    "circle-schema": "0.10.1",
+    "datasets": "4.8.4",
+    "numpy": "2.5.4",
+    "accelerate": null,
+    "sentencepiece": null,
+    "lm-eval": null,
+    "lmms-eval": null,
+    "lintrunner": "0.11.0",
+    "mypy": "2.4.0",
+    "pylint": "3.3.1"
+  },
+  "imports": {
+    "tico": "/workspace/TICO/tico/__init__.py",
+    "torch": "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/__init__.py",
+    "transformers": "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/__init__.py"
+  },
+  "cache_configuration": {
+    "HF_HOME": null,
+    "HF_HUB_CACHE": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "head": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "baseline": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "torch": {
+    "cuda_available": false,
+    "cuda_version": null,
+    "threads": 1
+  },
+  "memory_info": "MemTotal:       18488496 kB\nMemFree:        15647780 kB\nMemAvailable:   17465824 kB\nBuffers:           37148 kB\nCached:          1974892 kB\nSwapCached:            0 kB\nActive:           311452 kB\nInactive:        1894812 kB\nActive(anon):         60 kB\nInactive(anon):   224072 kB\nActive(file):     311392 kB\nInactive(file):  1670740 kB\nUnevictable:       29924 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            591068 kB\nWriteback:             0 kB\nAnonPages:        224020 kB\nMapped:           175724 kB\nShmem:                16 kB\nKReclaimable:     188304 kB\nSlab:             240772 kB\nSReclaimable:     188304 kB\nSUnreclaim:        52468 kB\nKernelStack:        2256 kB\nPageTables:         2752 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9244248 kB\nCommitted_AS:     557356 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4556 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:     22528 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       18432 kB\nDirectMap2M:     3182592 kB\nDirectMap1G:    32505856 kB\n",
+  "cgroups": {
+    "memory.max": "17179869184",
+    "cpu.max": "400000 100000"
+  }
+}

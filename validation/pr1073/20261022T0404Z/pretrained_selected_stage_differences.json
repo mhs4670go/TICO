@@ -1,0 +1,1984 @@
+{
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "scope": "Actual selected layer0 numerical outputs; not a full bundle and no expected-RoPE exemption",
+  "stages": [
+    {
+      "phase": "before",
+      "stage": "decoder_layer_decode_0.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.42222386598587036,
+              "circle_at_max": -0.42222386598587036,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                0,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.07002538442611694,
+              "circle_at_max": 0.07002538442611694,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.3776540160179138,
+              "circle_at_max": -0.3776540160179138,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                0,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.07002538442611694,
+              "circle_at_max": 0.07002538442611694,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.42222386598587036,
+              "circle_at_max": -0.42222386598587036,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                0,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.07002538442611694,
+              "circle_at_max": 0.07002538442611694,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_prefill_0.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 4,
+              "max_abs_error": 4.0411949157714844e-05,
+              "max_error_index": [
+                0,
+                4,
+                21
+              ],
+              "torch_at_max": -1.0946036577224731,
+              "circle_at_max": -1.0946440696716309,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 1.0019146534304118,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    4,
+                    9
+                  ],
+                  "torch": -0.2729450762271881,
+                  "circle": -0.27290472388267517,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    19
+                  ],
+                  "torch": -0.02266811393201351,
+                  "circle": -0.02270844765007496,
+                  "absolute_error": 4.0333718061447144e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    56
+                  ],
+                  "torch": 0.29557284712791443,
+                  "circle": 0.2955324947834015,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    52
+                  ],
+                  "torch": -0.10011077672243118,
+                  "circle": -0.10015111416578293,
+                  "absolute_error": 4.0337443351745605e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                15,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 3.863871097564697e-05,
+              "max_error_index": [
+                0,
+                7,
+                6,
+                0
+              ],
+              "torch_at_max": 0.24949443340301514,
+              "circle_at_max": 0.24953307211399078,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.9998280107185,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    7,
+                    6,
+                    0
+                  ],
+                  "torch": 0.24949443340301514,
+                  "circle": 0.24953307211399078,
+                  "absolute_error": 3.863871097564697e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 4,
+              "max_abs_error": 4.0411949157714844e-05,
+              "max_error_index": [
+                0,
+                4,
+                21
+              ],
+              "torch_at_max": -1.0946036577224731,
+              "circle_at_max": -1.0946440696716309,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 1.0019146534304118,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    4,
+                    9
+                  ],
+                  "torch": -0.2729450762271881,
+                  "circle": -0.27290472388267517,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    19
+                  ],
+                  "torch": -0.02266811393201351,
+                  "circle": -0.02270844765007496,
+                  "absolute_error": 4.0333718061447144e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    56
+                  ],
+                  "torch": 0.29557284712791443,
+                  "circle": 0.2955324947834015,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    52
+                  ],
+                  "torch": -0.10011077672243118,
+                  "circle": -0.10015111416578293,
+                  "absolute_error": 4.0337443351745605e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                15,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 3.863871097564697e-05,
+              "max_error_index": [
+                0,
+                7,
+                6,
+                0
+              ],
+              "torch_at_max": 0.24949443340301514,
+              "circle_at_max": 0.24953307211399078,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.9998280107185,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    7,
+                    6,
+                    0
+                  ],
+                  "torch": 0.24949443340301514,
+                  "circle": 0.24953307211399078,
+                  "absolute_error": 3.863871097564697e-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "after_eager",
+      "stage": "decoder_layer_decode_0.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.42222386598587036,
+              "circle_at_max": -0.42222386598587036,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                0,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.07002538442611694,
+              "circle_at_max": 0.07002538442611694,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.3776540160179138,
+              "circle_at_max": -0.3776540160179138,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                0,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.07002538442611694,
+              "circle_at_max": 0.07002538442611694,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.42222386598587036,
+              "circle_at_max": -0.42222386598587036,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                0,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.07002538442611694,
+              "circle_at_max": 0.07002538442611694,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "after_eager",
+      "stage": "decoder_layer_prefill_0.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 4,
+              "max_abs_error": 4.0411949157714844e-05,
+              "max_error_index": [
+                0,
+                4,
+                21
+              ],
+              "torch_at_max": -1.0946036577224731,
+              "circle_at_max": -1.0946440696716309,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 1.0019146534304118,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    4,
+                    9
+                  ],
+                  "torch": -0.2729450762271881,
+                  "circle": -0.27290472388267517,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    19
+                  ],
+                  "torch": -0.02266811393201351,
+                  "circle": -0.02270844765007496,
+                  "absolute_error": 4.0333718061447144e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    56
+                  ],
+                  "torch": 0.29557284712791443,
+                  "circle": 0.2955324947834015,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    52
+                  ],
+                  "torch": -0.10011077672243118,
+                  "circle": -0.10015111416578293,
+                  "absolute_error": 4.0337443351745605e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                15,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 3.863871097564697e-05,
+              "max_error_index": [
+                0,
+                7,
+                6,
+                0
+              ],
+              "torch_at_max": 0.24949443340301514,
+              "circle_at_max": 0.24953307211399078,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.9998280107185,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    7,
+                    6,
+                    0
+                  ],
+                  "torch": 0.24949443340301514,
+                  "circle": 0.24953307211399078,
+                  "absolute_error": 3.863871097564697e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 4,
+              "max_abs_error": 4.0411949157714844e-05,
+              "max_error_index": [
+                0,
+                4,
+                21
+              ],
+              "torch_at_max": -1.0946036577224731,
+              "circle_at_max": -1.0946440696716309,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 1.0019146534304118,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    4,
+                    9
+                  ],
+                  "torch": -0.2729450762271881,
+                  "circle": -0.27290472388267517,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    19
+                  ],
+                  "torch": -0.02266811393201351,
+                  "circle": -0.02270844765007496,
+                  "absolute_error": 4.0333718061447144e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    56
+                  ],
+                  "torch": 0.29557284712791443,
+                  "circle": 0.2955324947834015,
+                  "absolute_error": 4.035234451293945e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    52
+                  ],
+                  "torch": -0.10011077672243118,
+                  "circle": -0.10015111416578293,
+                  "absolute_error": 4.0337443351745605e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 8.225440979003906e-05,
+              "max_error_index": [
+                0,
+                7,
+                15,
+                3
+              ],
+              "torch_at_max": -0.8507066369056702,
+              "circle_at_max": -0.8507888913154602,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.9998662712825008,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 3.863871097564697e-05,
+              "max_error_index": [
+                0,
+                7,
+                6,
+                0
+              ],
+              "torch_at_max": 0.24949443340301514,
+              "circle_at_max": 0.24953307211399078,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.9998280107185,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    7,
+                    6,
+                    0
+                  ],
+                  "torch": 0.24949443340301514,
+                  "circle": 0.24953307211399078,
+                  "absolute_error": 3.863871097564697e-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "raw_coordinator_summary_exists": true,
+  "raw_summary": {
+    "atol": 1e-05,
+    "baseline_comparison": "NOT_RUN",
+    "before_after_isolation": {
+      "failures": [],
+      "ok": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": true,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": true,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "checkpoint_sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+    "comparisons_complete": true,
+    "eager_prefill_tokens": 64,
+    "frozen_state_preserved": true,
+    "host_source_recomputed_each_phase": true,
+    "model_class": "PTQWrapper",
+    "owner_layer_id": 139635236837360,
+    "owner_model_id": 139635307943632,
+    "python": "/workspace/TICO/.venv/bin/python",
+    "recorded_capacity": 2048,
+    "rtol": 0.0001,
+    "scope": "Selected first decoder prefill/decode stages of one full 4.62M pretrained model only; not full bundle, not pre-PR equivalence, not Llama-3.2 or NPU validation",
+    "selected_layers": [
+      0
+    ],
+    "static_capacity": 16,
+    "status": "FAIL",
+    "strict_torch_circle_validation": {
+      "failures": [
+        "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch"
+      ],
+      "ok": false,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": true,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": false,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "teacher_forced_decode_steps": 4,
+    "tico_file": "/workspace/TICO/tico/__init__.py",
+    "total_layers": 8,
+    "versions": {
+      "circle-schema": "0.10.1",
+      "numpy": "2.5.4",
+      "torch": "2.13.0+cpu",
+      "transformers": "5.18.0"
+    }
+  }
+}

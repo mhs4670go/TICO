@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 862, in main
+    _worker(args)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 676, in _worker
+    _export_phase(ctx, root / "before", options, initial)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 536, in _export_phase
+    ctx.adapter.export(ctx)
+  File "/workspace/TICO/tico/quantization/recipes/adapters/llama.py", line 443, in export
+    ctx.artifacts["circle_bundle"] = export_llama_bundle(
+                                     ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/quantization/recipes/export/llama.py", line 433, in export_llama_bundle
+    _export_prepared_llama_per_layer(
+  File "/workspace/TICO/tico/quantization/recipes/export/llama.py", line 344, in _export_prepared_llama_per_layer
+    _convert_and_save(
+  File "/workspace/TICO/tico/quantization/recipes/export/circle.py", line 38, in convert_and_save_circle
+    circle_model = tico.convert(
+                   ^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 398, in capture_convert
+    actual = runtime.run(bound, mode=mode).outputs
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/executor.py", line 247, in run
+    self._execute_operator(operator, values, mode)
+  File "/workspace/TICO/tico/circle/runtime/executor.py", line 329, in _execute_operator
+    results = kernel(context)
+              ^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/kernels/quantize.py", line 49, in _quantize
+    return (fake_quantize_array(value, output_tensor),)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/quantization.py", line 146, in fake_quantize_array
+    quantized = quantize_array(value, tensor)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/quantization.py", line 134, in quantize_array
+    scale, zero_point = _broadcast_parameters(quantization, value.shape, tensor)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/circle/runtime/quantization.py", line 82, in _broadcast_parameters
+    raise CircleRuntimeValidationError(
+tico.circle.runtime.errors.CircleRuntimeValidationError: tensors[393] 'tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_307' INT16[1, 16, 16, 4] (activation, per-tensor quantized) has a non-positive or non-finite quantization scale: [inf].
+Saving token_embedding.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_isolation_16/candidate/before/artifacts/token_embedding.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+Saving decoder_layer_prefill_0.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_isolation_16/candidate/before/artifacts/decoder_layer_prefill_0.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).

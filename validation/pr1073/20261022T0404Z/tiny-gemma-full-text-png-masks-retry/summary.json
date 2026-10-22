@@ -1,0 +1,129 @@
+{
+  "atol": 1e-05,
+  "baseline_comparison_performed": true,
+  "baseline_vs_candidate": {
+    "failures": [
+      "full_text_regression.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "ok": false,
+    "stages": {
+      "full_text_regression.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": false,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0869361162185669,
+                "ok": false
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0869361162185669,
+                "ok": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "candidate_before_vs_after_eager": {
+    "failures": [
+      "full_text_regression.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "ok": false,
+    "stages": {
+      "full_text_regression.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0869361162185669,
+                "ok": false
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0869361162185669,
+                "ok": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "comparisons_complete": true,
+  "eager": {
+    "calls": 1,
+    "file_sha256": "fde489de9d8bb2ccd08126eab0a96b0b0a9d6d9f21a628194d682af34ecfe1c0",
+    "kind": "user_kwargs",
+    "state_differences": [],
+    "state_preserved": true
+  },
+  "intentional_change_note": null,
+  "llama_rope_migration_requested": false,
+  "requested_scope": "run",
+  "rtol": 0.0001,
+  "same_checkpoint_and_dependencies": true,
+  "same_initial_quantization_state": true,
+  "scope": "Conservative Circle structure and stage-level reference numerics; not NPU or end-to-end generation validation.",
+  "status": "FAIL",
+  "torch_parity_required": true
+}

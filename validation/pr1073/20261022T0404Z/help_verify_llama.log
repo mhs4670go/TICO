@@ -1,0 +1,11 @@
+usage: verify_llama_rope.py [-h] [--repo REPO] --report REPORT
+                            [--threads THREADS]
+
+Run offline RoPE checks on a source checkout; missing tests never count as
+PASS.
+
+options:
+  -h, --help         show this help message and exit
+  --repo REPO        Patched TICO source checkout, including test/.
+  --report REPORT
+  --threads THREADS

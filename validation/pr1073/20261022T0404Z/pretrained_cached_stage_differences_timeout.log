@@ -1,0 +1,9 @@
+{
+  "stage_records": 9,
+  "strict_fail_stage_records": 6,
+  "raw_summary": {
+    "status": "TIMEOUT",
+    "comparisons_complete": false,
+    "command_exit_code": 124
+  }
+}

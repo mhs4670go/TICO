@@ -1,0 +1,2406 @@
+{
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "circle_sha256": "932c1dc0e93b2881c52270bb7f002e173140a78ea47a2b67a0520144c8db0a94",
+  "circle_replay_exact": [
+    true,
+    true,
+    true
+  ],
+  "torch_replay_exact": [
+    true,
+    true,
+    true
+  ],
+  "state_preserved": true,
+  "scope": "Existing binary replay and real frozen eager call only; no conversion/calibration/parameter changes. Diagnostic recorder delegates to original _fq and is restored.",
+  "fq_calls": [
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "act_in",
+      "index": 0,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.0027673146687448025,
+      "zero": 117,
+      "circle_tensor": 15,
+      "circle_name": "tico::hidden_states",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.3818894326686859,
+        "right": 0.3818894326686859
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.3818894326686859,
+        "right": 0.3818894326686859
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped",
+      "observer": "act_in",
+      "index": 1,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.0027673146687448025,
+      "zero": 117,
+      "circle_tensor": 15,
+      "circle_name": "tico::hidden_states",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.3818894326686859,
+        "right": 0.3818894326686859
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.3818894326686859,
+        "right": 0.3818894326686859
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped",
+      "observer": "act_out",
+      "index": 2,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.025791015475988388,
+      "zero": 129,
+      "circle_tensor": 19,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "hidden",
+      "index": 3,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.025791015475988388,
+      "zero": 129,
+      "circle_tensor": 19,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "cos",
+      "index": 4,
+      "shape": [
+        1,
+        8,
+        16
+      ],
+      "scale": 0.0078038922511041164,
+      "zero": 127,
+      "circle_tensor": 17,
+      "circle_name": "tico::position_embeddings_0",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.9988982081413269,
+        "right": 0.9988982081413269
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.9988982081413269,
+        "right": 0.9988982081413269
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "sin",
+      "index": 5,
+      "shape": [
+        1,
+        8,
+        16
+      ],
+      "scale": 0.007842717692255974,
+      "zero": 128,
+      "circle_tensor": 18,
+      "circle_name": "tico::position_embeddings_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped",
+      "observer": "act_in",
+      "index": 6,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.025791015475988388,
+      "zero": 129,
+      "circle_tensor": 19,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped",
+      "observer": "act_out",
+      "index": 7,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.0028251665644347668,
+      "zero": 131,
+      "circle_tensor": 20,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.07062916457653046,
+        "right": -0.07062916457653046
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.07062916457653046,
+        "right": -0.07062916457653046
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped",
+      "observer": "act_in",
+      "index": 8,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.0028251665644347668,
+      "zero": 131,
+      "circle_tensor": 21,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::reshape_default",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.07062916457653046,
+        "right": -0.07062916457653046
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.07062916457653046,
+        "right": -0.07062916457653046
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped",
+      "observer": "act_out",
+      "index": 9,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.023234067484736443,
+      "zero": 134,
+      "circle_tensor": 22,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_1",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7899582982063293,
+        "right": -0.7899582982063293
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7899582982063293,
+        "right": -0.7899582982063293
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_x1",
+      "index": 10,
+      "shape": [
+        1,
+        8,
+        2,
+        8
+      ],
+      "scale": 0.02118774875998497,
+      "zero": 147
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_x2",
+      "index": 11,
+      "shape": [
+        1,
+        8,
+        2,
+        8
+      ],
+      "scale": 0.02068050019443035,
+      "zero": 119
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_cat",
+      "index": 12,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.023234067484736443,
+      "zero": 134,
+      "circle_tensor": 27,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::cat",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.4879152774810791,
+        "index": [
+          0,
+          4,
+          0,
+          12
+        ],
+        "nonzero": 2,
+        "left": 2.2769386768341064,
+        "right": 2.7648539543151855
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.9990649223327637,
+        "right": 0.9990649223327637
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_cos",
+      "index": 13,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.02321934886276722,
+      "zero": 134,
+      "circle_tensor": 28,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::mul",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7894578576087952,
+        "right": -0.7894578576087952
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7894578576087952,
+        "right": -0.7894578576087952
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_sin",
+      "index": 14,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.018626894801855087,
+      "zero": 133,
+      "circle_tensor": 29,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::mul_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.01862689107656479,
+        "index": [
+          0,
+          4,
+          0,
+          12
+        ],
+        "nonzero": 1,
+        "left": 0.09313447773456573,
+        "right": 0.11176136881113052
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_rot",
+      "index": 15,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.023346511647105217,
+      "zero": 133,
+      "circle_tensor": 30,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::add",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.023346513509750366,
+        "index": [
+          0,
+          4,
+          0,
+          12
+        ],
+        "nonzero": 1,
+        "left": -0.16342557966709137,
+        "right": -0.140079066157341
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7937813997268677,
+        "right": -0.7937813997268677
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped",
+      "observer": "act_in",
+      "index": 16,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.025791015475988388,
+      "zero": 129,
+      "circle_tensor": 19,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped",
+      "observer": "act_out",
+      "index": 17,
+      "shape": [
+        1,
+        8,
+        16
+      ],
+      "scale": 0.002278889762237668,
+      "zero": 133,
+      "circle_tensor": 32,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.015952227637171745,
+        "right": -0.015952227637171745
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.015952227637171745,
+        "right": -0.015952227637171745
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped",
+      "observer": "act_in",
+      "index": 18,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.025791015475988388,
+      "zero": 129,
+      "circle_tensor": 19,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.1605956554412842,
+        "right": 1.1605956554412842
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped",
+      "observer": "act_out",
+      "index": 19,
+      "shape": [
+        1,
+        8,
+        16
+      ],
+      "scale": 0.0025212850887328386,
+      "zero": 132,
+      "circle_tensor": 34,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.10337268561124802,
+        "right": -0.10337268561124802
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.10337268561124802,
+        "right": -0.10337268561124802
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped",
+      "observer": "act_in",
+      "index": 20,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.002278889762237668,
+      "zero": 133,
+      "circle_tensor": 33,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::reshape_default_3",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.015952227637171745,
+        "right": -0.015952227637171745
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.015952227637171745,
+        "right": -0.015952227637171745
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped",
+      "observer": "act_out",
+      "index": 21,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.019639205187559128,
+      "zero": 133,
+      "circle_tensor": 36,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_2",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.11783523112535477,
+        "right": -0.11783523112535477
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.11783523112535477,
+        "right": -0.11783523112535477
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "k_x1",
+      "index": 22,
+      "shape": [
+        1,
+        8,
+        1,
+        8
+      ],
+      "scale": 0.01909051090478897,
+      "zero": 137
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "k_x2",
+      "index": 23,
+      "shape": [
+        1,
+        8,
+        1,
+        8
+      ],
+      "scale": 0.019407372921705246,
+      "zero": 131
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "k_cat",
+      "index": 24,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.019639205187559128,
+      "zero": 133,
+      "circle_tensor": 41,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::cat_1",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.25530967116355896,
+        "right": -0.25530967116355896
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.25530967116355896,
+        "right": -0.25530967116355896
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "k_cos",
+      "index": 25,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.019637856632471085,
+      "zero": 133,
+      "circle_tensor": 42,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::mul_2",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.11782713979482651,
+        "right": -0.11782713979482651
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.11782713979482651,
+        "right": -0.11782713979482651
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "k_sin",
+      "index": 26,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.01484581921249628,
+      "zero": 107,
+      "circle_tensor": 43,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::mul_3",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "k_rot",
+      "index": 27,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.02036028355360031,
+      "zero": 137,
+      "circle_tensor": 44,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::add_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.12216170132160187,
+        "right": -0.12216170132160187
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.12216170132160187,
+        "right": -0.12216170132160187
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped",
+      "observer": "act_in",
+      "index": 28,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.0025212850887328386,
+      "zero": 132,
+      "circle_tensor": 35,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::reshape_default_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.10337268561124802,
+        "right": -0.10337268561124802
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.10337268561124802,
+        "right": -0.10337268561124802
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped",
+      "observer": "act_out",
+      "index": 29,
+      "shape": [
+        1,
+        8,
+        1,
+        16
+      ],
+      "scale": 0.020529836416244507,
+      "zero": 139,
+      "circle_tensor": 46,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_3",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0264918804168701,
+        "right": -1.0264918804168701
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0264918804168701,
+        "right": -1.0264918804168701
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "new_k",
+      "index": 30,
+      "shape": [
+        1,
+        1,
+        8,
+        16
+      ],
+      "scale": 0.02036028355360031,
+      "zero": 137,
+      "circle_tensor": 45,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::permute_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.12216170132160187,
+        "right": -0.12216170132160187
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.12216170132160187,
+        "right": -0.12216170132160187
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "new_v",
+      "index": 31,
+      "shape": [
+        1,
+        1,
+        8,
+        16
+      ],
+      "scale": 0.020529836416244507,
+      "zero": 139,
+      "circle_tensor": 47,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::permute_2",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0264918804168701,
+        "right": -1.0264918804168701
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0264918804168701,
+        "right": -1.0264918804168701
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "present_key",
+      "index": 32,
+      "shape": [
+        1,
+        1,
+        8,
+        16
+      ],
+      "scale": 0.02036028355360031,
+      "zero": 137,
+      "circle_tensor": 45,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::permute_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.12216170132160187,
+        "right": -0.12216170132160187
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.12216170132160187,
+        "right": -0.12216170132160187
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "present_value",
+      "index": 33,
+      "shape": [
+        1,
+        1,
+        8,
+        16
+      ],
+      "scale": 0.020529836416244507,
+      "zero": 139,
+      "circle_tensor": 47,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::permute_2",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0264918804168701,
+        "right": -1.0264918804168701
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0264918804168701,
+        "right": -1.0264918804168701
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "attn_mask",
+      "index": 34,
+      "shape": [
+        1,
+        1,
+        8,
+        8
+      ],
+      "scale": 0.47058823704719543,
+      "zero": 255,
+      "circle_tensor": 16,
+      "circle_name": "tico::attention_mask",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "logits_raw",
+      "index": 35,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.08203807473182678,
+      "zero": 130,
+      "circle_tensor": 54,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.08203840255737305,
+        "index": [
+          0,
+          4,
+          0
+        ],
+        "nonzero": 6,
+        "left": -5.660627365112305,
+        "right": -5.578588962554932
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -7.629540920257568,
+        "right": -7.629540920257568
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "logits",
+      "index": 36,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.08203807473182678,
+      "zero": 130,
+      "circle_tensor": 54,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.08203840255737305,
+        "index": [
+          0,
+          4,
+          0
+        ],
+        "nonzero": 6,
+        "left": -5.660627365112305,
+        "right": -5.578588962554932
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -7.629540920257568,
+        "right": -7.629540920257568
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "mask_add",
+      "index": 37,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.5511019229888916,
+      "zero": 236,
+      "circle_tensor": 55,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::add_2",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.5511019229888916,
+        "index": [
+          0,
+          4,
+          1
+        ],
+        "nonzero": 1,
+        "left": 0.0,
+        "right": -0.5511019229888916
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -7.715426921844482,
+        "right": -7.715426921844482
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "softmax",
+      "index": 38,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.003921568859368563,
+      "zero": 0,
+      "circle_tensor": 56,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::_softmax",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.08235293626785278,
+        "index": [
+          0,
+          4,
+          1
+        ],
+        "nonzero": 4,
+        "left": 0.8549020290374756,
+        "right": 0.7725490927696228
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.0,
+        "right": 1.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "attn_out",
+      "index": 39,
+      "shape": [
+        1,
+        8,
+        16
+      ],
+      "scale": 0.01898876391351223,
+      "zero": 129,
+      "circle_tensor": 57,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_1",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.20887643098831177,
+        "index": [
+          0,
+          4,
+          4
+        ],
+        "nonzero": 14,
+        "left": -0.9874157309532166,
+        "right": -0.7785392999649048
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0253932476043701,
+        "right": -1.0253932476043701
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "logits_raw",
+      "index": 40,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.08203807473182678,
+      "zero": 130,
+      "circle_tensor": 61,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_2",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.4766852855682373,
+        "right": 1.4766852855682373
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.4766852855682373,
+        "right": 1.4766852855682373
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "logits",
+      "index": 41,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.08203807473182678,
+      "zero": 130,
+      "circle_tensor": 61,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_2",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.4766852855682373,
+        "right": 1.4766852855682373
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.4766852855682373,
+        "right": 1.4766852855682373
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "mask_add",
+      "index": 42,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.5511019229888916,
+      "zero": 236,
+      "circle_tensor": 62,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::add_3",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.6533057689666748,
+        "right": 1.6533057689666748
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.6533057689666748,
+        "right": 1.6533057689666748
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "softmax",
+      "index": 43,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.003921568859368563,
+      "zero": 0,
+      "circle_tensor": 63,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::_softmax_1",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.0,
+        "right": 1.0
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.0,
+        "right": 1.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "attn_out",
+      "index": 44,
+      "shape": [
+        1,
+        8,
+        16
+      ],
+      "scale": 0.01898876391351223,
+      "zero": 129,
+      "circle_tensor": 64,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_3",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0253932476043701,
+        "right": -1.0253932476043701
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0253932476043701,
+        "right": -1.0253932476043701
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "attn_weights",
+      "index": 45,
+      "shape": [
+        1,
+        2,
+        8,
+        8
+      ],
+      "scale": 0.003921568859368563,
+      "zero": 0
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "attn_out_h",
+      "index": 46,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.01898876391351223,
+      "zero": 129
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped",
+      "observer": "act_in",
+      "index": 47,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.01898876391351223,
+      "zero": 129,
+      "circle_tensor": 65,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::cat_2",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.20887643098831177,
+        "index": [
+          0,
+          4,
+          4
+        ],
+        "nonzero": 14,
+        "left": -0.9874157309532166,
+        "right": -0.7785392999649048
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.0253932476043701,
+        "right": -1.0253932476043701
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped",
+      "observer": "act_out",
+      "index": 48,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.002617867197841406,
+      "zero": 134,
+      "circle_tensor": 66,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_3",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.02094293385744095,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 28,
+        "left": -0.11780402064323425,
+        "right": -0.0968610867857933
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.10995042324066162,
+        "right": -0.10995042324066162
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped",
+      "observer": "act_in",
+      "index": 49,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.002617867197841406,
+      "zero": 134,
+      "circle_tensor": 66,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_3",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.02094293385744095,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 28,
+        "left": -0.11780402064323425,
+        "right": -0.0968610867857933
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.10995042324066162,
+        "right": -0.10995042324066162
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped",
+      "observer": "act_out",
+      "index": 50,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023073559626936913,
+      "zero": 126,
+      "circle_tensor": 67,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.2538090944290161,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 31,
+        "left": -1.6612962484359741,
+        "right": -1.407487154006958
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.1306043863296509,
+        "right": -1.1306043863296509
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "attn_residual_out",
+      "index": 51,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023837318643927574,
+      "zero": 126,
+      "circle_tensor": 68,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::add_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.2383732795715332,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 31,
+        "left": -1.9784975051879883,
+        "right": -1.740124225616455
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.738956868648529,
+        "right": -0.738956868648529
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped",
+      "observer": "act_in",
+      "index": 52,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023837318643927574,
+      "zero": 126,
+      "circle_tensor": 68,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::add_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.2383732795715332,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 31,
+        "left": -1.9784975051879883,
+        "right": -1.740124225616455
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.738956868648529,
+        "right": -0.738956868648529
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped",
+      "observer": "act_out",
+      "index": 53,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023731466382741928,
+      "zero": 126,
+      "circle_tensor": 69,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_5",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.21358323097229004,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 29,
+        "left": -1.8035914897918701,
+        "right": -1.59000825881958
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7119439840316772,
+        "right": -0.7119439840316772
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped",
+      "observer": "act_in",
+      "index": 54,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023731466382741928,
+      "zero": 126,
+      "circle_tensor": 69,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_5",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.21358323097229004,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 29,
+        "left": -1.8035914897918701,
+        "right": -1.59000825881958
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7119439840316772,
+        "right": -0.7119439840316772
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped",
+      "observer": "act_out",
+      "index": 55,
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "scale": 0.0032918991055339575,
+      "zero": 123,
+      "circle_tensor": 70,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.023043304681777954,
+        "index": [
+          0,
+          4,
+          39
+        ],
+        "nonzero": 53,
+        "left": -0.19093014299869537,
+        "right": -0.21397344768047333
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.3983197808265686,
+        "right": -0.3983197808265686
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped",
+      "observer": "gate_act",
+      "index": 56,
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "scale": 0.00168060720898211,
+      "zero": 83,
+      "circle_tensor": 71,
+      "circle_name": "transformers.activations.GELUTanh::gelu",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.01344485953450203,
+        "index": [
+          0,
+          4,
+          37
+        ],
+        "nonzero": 53,
+        "left": 0.052098821848630905,
+        "right": 0.06554368138313293
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.13780979812145233,
+        "right": -0.13780979812145233
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped",
+      "observer": "act_in",
+      "index": 57,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023731466382741928,
+      "zero": 126,
+      "circle_tensor": 69,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_5",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.21358323097229004,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 29,
+        "left": -1.8035914897918701,
+        "right": -1.59000825881958
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7119439840316772,
+        "right": -0.7119439840316772
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped",
+      "observer": "act_out",
+      "index": 58,
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "scale": 0.002757198642939329,
+      "zero": 132,
+      "circle_tensor": 72,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_5",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0165431946516037,
+        "index": [
+          0,
+          4,
+          61
+        ],
+        "nonzero": 55,
+        "left": -0.06341557204723358,
+        "right": -0.04687237739562988
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.08547315746545792,
+        "right": -0.08547315746545792
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped",
+      "observer": "mul",
+      "index": 59,
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "scale": 0.00038808389217592776,
+      "zero": 119,
+      "circle_tensor": 73,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_mlp.QuantGemma4TextMLP::mul_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0046570077538490295,
+        "index": [
+          0,
+          4,
+          55
+        ],
+        "nonzero": 44,
+        "left": -0.02755395695567131,
+        "right": -0.03221096470952034
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.01164251659065485,
+        "right": 0.01164251659065485
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped",
+      "observer": "act_in",
+      "index": 60,
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "scale": 0.00038808389217592776,
+      "zero": 119,
+      "circle_tensor": 73,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_mlp.QuantGemma4TextMLP::mul_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0046570077538490295,
+        "index": [
+          0,
+          4,
+          55
+        ],
+        "nonzero": 44,
+        "left": -0.02755395695567131,
+        "right": -0.03221096470952034
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.01164251659065485,
+        "right": 0.01164251659065485
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped",
+      "observer": "act_out",
+      "index": 61,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 2.7159921955899335e-05,
+      "zero": 117,
+      "circle_tensor": 74,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.00027159921592101455,
+        "index": [
+          0,
+          4,
+          2
+        ],
+        "nonzero": 31,
+        "left": 0.0003530789981596172,
+        "right": 0.0006246782140806317
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0010592369362711906,
+        "right": 0.0010592369362711906
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped",
+      "observer": "act_in",
+      "index": 62,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 2.7159921955899335e-05,
+      "zero": 117,
+      "circle_tensor": 74,
+      "circle_name": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.00027159921592101455,
+        "index": [
+          0,
+          4,
+          2
+        ],
+        "nonzero": 31,
+        "left": 0.0003530789981596172,
+        "right": 0.0006246782140806317
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0010592369362711906,
+        "right": 0.0010592369362711906
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped",
+      "observer": "act_out",
+      "index": 63,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.01792495884001255,
+      "zero": 117,
+      "circle_tensor": 75,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_6",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.1971745491027832,
+        "index": [
+          0,
+          4,
+          2
+        ],
+        "nonzero": 32,
+        "left": 0.2509494125843048,
+        "right": 0.448123961687088
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.7169983386993408,
+        "right": 0.7169983386993408
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "mlp_residual_out",
+      "index": 64,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.027242189273238182,
+      "zero": 128,
+      "circle_tensor": 76,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::add_5",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.3541484475135803,
+        "index": [
+          0,
+          4,
+          28
+        ],
+        "nonzero": 30,
+        "left": -0.9262344241142273,
+        "right": -1.2803828716278076
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.027242189273238182,
+        "right": -0.027242189273238182
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "layer_scalar",
+      "index": 65,
+      "shape": [
+        1
+      ],
+      "scale": 1.0,
+      "zero": 0,
+      "circle_tensor": 0,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::_prop_tensor_constant160",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.0,
+        "right": 1.0
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.0,
+        "right": 1.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "layer_scalar_out",
+      "index": 66,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.027242189273238182,
+      "zero": 128,
+      "circle_tensor": 76,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::add_5",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.3541484475135803,
+        "index": [
+          0,
+          4,
+          28
+        ],
+        "nonzero": 30,
+        "left": -0.9262344241142273,
+        "right": -1.2803828716278076
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.027242189273238182,
+        "right": -0.027242189273238182
+      }
+    }
+  ],
+  "process_cpu_seconds": 0.28956699799999797
+}

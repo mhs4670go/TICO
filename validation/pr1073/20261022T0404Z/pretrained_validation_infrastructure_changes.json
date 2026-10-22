@@ -1,0 +1,15 @@
+{
+  "product_changes": false,
+  "external_evaluator_changes": false,
+  "original_evidence": [
+    "pretrained_supplemental.log",
+    "pretrained_supplemental.command.json",
+    "pretrained_llama_smoke_executed_v1.py"
+  ],
+  "validation_change": "Capture a generation exception as FAIL in JSON and continue independent NLL/frozen-state checks; preserve exit1 when generation fails. Add incremental report writes. No model or library method patched.",
+  "rerun_evidence": [
+    "pretrained_supplemental_v2.log",
+    "pretrained_supplemental_v2.command.json",
+    "pretrained_smoke_results.json"
+  ]
+}

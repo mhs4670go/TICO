@@ -1,0 +1,29 @@
+{
+  "atol": 1e-05,
+  "baseline_comparison": "NOT_RUN",
+  "checkpoint_sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+  "comparisons_complete": false,
+  "eager_prefill_tokens": 64,
+  "host_source_recomputed_each_phase": true,
+  "model_class": "PTQWrapper",
+  "owner_layer_id": 139635236837360,
+  "owner_model_id": 139635307943632,
+  "python": "/workspace/TICO/.venv/bin/python",
+  "recorded_capacity": 2048,
+  "rtol": 0.0001,
+  "scope": "Selected first decoder prefill/decode stages of one full 4.62M pretrained model only; not full bundle, not pre-PR equivalence, not Llama-3.2 or NPU validation",
+  "selected_layers": [
+    0
+  ],
+  "static_capacity": 16,
+  "status": "ERROR",
+  "teacher_forced_decode_steps": 4,
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "total_layers": 8,
+  "versions": {
+    "circle-schema": "0.10.1",
+    "numpy": "2.5.4",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0"
+  }
+}

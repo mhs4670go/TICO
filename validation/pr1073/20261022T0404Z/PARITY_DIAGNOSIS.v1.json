@@ -1,0 +1,4428 @@
+{
+  "repo": "/workspace/TICO-export-baseline",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "scope": "diagnostic replay of existing baseline Circle files; raw strictFAIL retained",
+  "stages": {
+    "decoder_layer_decode_0.q.circle": {
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                32
+              ],
+              "max_abs_error": 0.005344359029550105,
+              "max_position": [
+                0,
+                0,
+                15
+              ],
+              "torch_value": -0.0009717016364447773,
+              "circle_value": -0.006316060665994883,
+              "failing_elements": 1,
+              "first_failing_positions": [
+                [
+                  0,
+                  0,
+                  15
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                32
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.06121720373630524,
+              "circle_value": 0.06121720373630524,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                32
+              ],
+              "max_abs_error": 0.005344359029550105,
+              "max_position": [
+                0,
+                0,
+                15
+              ],
+              "torch_value": -0.0009717016364447773,
+              "circle_value": -0.006316060665994883,
+              "failing_elements": 1,
+              "first_failing_positions": [
+                [
+                  0,
+                  0,
+                  15
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        }
+      ],
+      "replay_matches_saved_torch": [
+        true,
+        true,
+        true
+      ],
+      "replay_matches_saved_circle": [
+        true,
+        true,
+        true
+      ],
+      "input_quantization": [
+        {
+          "name": "hidden_states",
+          "quantized_integer": false,
+          "max_raw_grid_error": 0.0,
+          "scale": null,
+          "zero_point": null
+        },
+        {
+          "name": "attention_mask",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.0,
+          "scale": [
+            0.47058823704719543
+          ],
+          "zero_point": [
+            255
+          ]
+        },
+        {
+          "name": "past_key_value_0",
+          "quantized_integer": true,
+          "max_raw_grid_error": 2.7805278301239014,
+          "scale": [
+            0.0005670393002219498
+          ],
+          "zero_point": [
+            129
+          ]
+        },
+        {
+          "name": "past_key_value_1",
+          "quantized_integer": true,
+          "max_raw_grid_error": 2.5650014877319336,
+          "scale": [
+            0.002422163961455226
+          ],
+          "zero_point": [
+            133
+          ]
+        },
+        {
+          "name": "position_embeddings_0",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.06934958696365356,
+          "scale": [
+            0.0078038922511041164
+          ],
+          "zero_point": [
+            127
+          ]
+        },
+        {
+          "name": "position_embeddings_1",
+          "quantized_integer": true,
+          "max_raw_grid_error": 1.5839149951934814,
+          "scale": [
+            0.007665331941097975
+          ],
+          "zero_point": [
+            128
+          ]
+        }
+      ],
+      "torch_grid_inputs_vs_circle_raw_inputs": [
+        {
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "max_abs_error": 0.005344359029550105,
+          "max_position": [
+            0,
+            0,
+            15
+          ],
+          "torch_value": -0.0009717016364447773,
+          "circle_value": -0.006316060665994883,
+          "failing_elements": 1,
+          "first_failing_positions": [
+            [
+              0,
+              0,
+              15
+            ]
+          ]
+        },
+        {
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 0.0,
+          "circle_value": 0.0,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        },
+        {
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 0.0,
+          "circle_value": 0.0,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        }
+      ],
+      "observer_trace_matching": [
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor",
+          "best_tensor_index": 15,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 13,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant143",
+          "best_tensor_index": 7,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear",
+          "best_tensor_index": 17,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant142",
+          "best_tensor_index": 6,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_1",
+          "best_tensor_index": 19,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant141",
+          "best_tensor_index": 5,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+          "best_tensor_index": 20,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 13,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::getitem_1",
+          "best_tensor_index": 22,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat",
+          "best_tensor_index": 23,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul",
+          "best_tensor_index": 24,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_1",
+          "best_tensor_index": 25,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add",
+          "best_tensor_index": 26,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_1",
+          "best_tensor_index": 29,
+          "best_max_abs_error": 0.07314807176589966
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_2",
+          "best_tensor_index": 30,
+          "best_max_abs_error": 0.32214781641960144
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_3",
+          "best_tensor_index": 35,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_2",
+          "best_tensor_index": 36,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_3",
+          "best_tensor_index": 37,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_1",
+          "best_tensor_index": 38,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_2",
+          "best_tensor_index": 53,
+          "best_max_abs_error": 0.03420558571815491
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 41,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 42,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 43,
+          "best_max_abs_error": 0.20501641929149628
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_4",
+          "best_tensor_index": 48,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_4",
+          "best_tensor_index": 49,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_5",
+          "best_tensor_index": 50,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_3",
+          "best_tensor_index": 51,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_2",
+          "best_tensor_index": 53,
+          "best_max_abs_error": 0.03420558571815491
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 41,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 42,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 43,
+          "best_max_abs_error": 0.20501641929149628
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_5",
+          "best_tensor_index": 57,
+          "best_max_abs_error": 0.20501641929149628
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant140",
+          "best_tensor_index": 4,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_3",
+          "best_tensor_index": 58,
+          "best_max_abs_error": 0.019780578091740608
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_49",
+          "best_tensor_index": 61,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_50",
+          "best_tensor_index": 64,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor_51",
+          "best_tensor_index": 67,
+          "best_max_abs_error": 0.004802435636520386
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.08594471961259842
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.08594471961259842
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.08594471961259842
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant138",
+          "best_tensor_index": 2,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 69,
+          "best_max_abs_error": 0.003048151731491089
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.08594471961259842
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant137",
+          "best_tensor_index": 1,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_5",
+          "best_tensor_index": 70,
+          "best_max_abs_error": 0.005764450877904892
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 69,
+          "best_max_abs_error": 0.003048151731491089
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::sigmoid",
+          "best_tensor_index": 71,
+          "best_max_abs_error": 0.0023494958877563477
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::mul_6",
+          "best_tensor_index": 72,
+          "best_max_abs_error": 0.0015436187386512756
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_mul",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 73,
+          "best_max_abs_error": 0.000597961712628603
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 73,
+          "best_max_abs_error": 0.000597961712628603
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant136",
+          "best_tensor_index": 0,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6",
+          "best_tensor_index": 74,
+          "best_max_abs_error": 5.7716271840035915e-05
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_mlp_residual_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_decoder_layer.QuantLlamaDecoderLayer::add_6",
+          "best_tensor_index": 75,
+          "best_max_abs_error": 0.005344359204173088
+        }
+      ]
+    },
+    "decoder_layer_decode_1.q.circle": {
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                32
+              ],
+              "max_abs_error": 0.03138008713722229,
+              "max_position": [
+                0,
+                0,
+                18
+              ],
+              "torch_value": -0.00861414149403572,
+              "circle_value": -0.03999422863125801,
+              "failing_elements": 3,
+              "first_failing_positions": [
+                [
+                  0,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  18
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                32
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.07322020828723907,
+              "circle_value": 0.07322020828723907,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                32
+              ],
+              "max_abs_error": 0.01107532624155283,
+              "max_position": [
+                0,
+                0,
+                6
+              ],
+              "torch_value": -0.019074171781539917,
+              "circle_value": -0.007998845539987087,
+              "failing_elements": 3,
+              "first_failing_positions": [
+                [
+                  0,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  18
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                1,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        }
+      ],
+      "replay_matches_saved_torch": [
+        true,
+        true,
+        true
+      ],
+      "replay_matches_saved_circle": [
+        true,
+        true,
+        true
+      ],
+      "input_quantization": [
+        {
+          "name": "hidden_states",
+          "quantized_integer": false,
+          "max_raw_grid_error": 0.0,
+          "scale": null,
+          "zero_point": null
+        },
+        {
+          "name": "attention_mask",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.0,
+          "scale": [
+            0.47058823704719543
+          ],
+          "zero_point": [
+            255
+          ]
+        },
+        {
+          "name": "past_key_value_0",
+          "quantized_integer": true,
+          "max_raw_grid_error": 2.22727108001709,
+          "scale": [
+            0.0005832037422806025
+          ],
+          "zero_point": [
+            117
+          ]
+        },
+        {
+          "name": "past_key_value_1",
+          "quantized_integer": true,
+          "max_raw_grid_error": 2.4933853149414062,
+          "scale": [
+            0.0028679403476417065
+          ],
+          "zero_point": [
+            148
+          ]
+        },
+        {
+          "name": "position_embeddings_0",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.4157056212425232,
+          "scale": [
+            0.0078038922511041164
+          ],
+          "zero_point": [
+            127
+          ]
+        },
+        {
+          "name": "position_embeddings_1",
+          "quantized_integer": true,
+          "max_raw_grid_error": 1.3128609657287598,
+          "scale": [
+            0.007665331941097975
+          ],
+          "zero_point": [
+            128
+          ]
+        }
+      ],
+      "torch_grid_inputs_vs_circle_raw_inputs": [
+        {
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "max_abs_error": 0.03138008713722229,
+          "max_position": [
+            0,
+            0,
+            18
+          ],
+          "torch_value": -0.00861414149403572,
+          "circle_value": -0.03999422863125801,
+          "failing_elements": 3,
+          "first_failing_positions": [
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              18
+            ]
+          ]
+        },
+        {
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 0.0,
+          "circle_value": 0.0,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        },
+        {
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 0.0,
+          "circle_value": 0.0,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        }
+      ],
+      "observer_trace_matching": [
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor",
+          "best_tensor_index": 15,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 13,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_hidden",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant143",
+          "best_tensor_index": 7,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear",
+          "best_tensor_index": 17,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant142",
+          "best_tensor_index": 6,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_1",
+          "best_tensor_index": 19,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 16,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant141",
+          "best_tensor_index": 5,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+          "best_tensor_index": 20,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 13,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x1",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::getitem",
+          "best_tensor_index": 21,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cat",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat",
+          "best_tensor_index": 23,
+          "best_max_abs_error": 0.0011244304478168488
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul",
+          "best_tensor_index": 24,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_1",
+          "best_tensor_index": 25,
+          "best_max_abs_error": 0.0010095611214637756
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_rot",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add",
+          "best_tensor_index": 26,
+          "best_max_abs_error": 0.0011664070188999176
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_1",
+          "best_tensor_index": 29,
+          "best_max_abs_error": 0.080482117831707
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_2",
+          "best_tensor_index": 30,
+          "best_max_abs_error": 0.4244551658630371
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_3",
+          "best_tensor_index": 35,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_2",
+          "best_tensor_index": 36,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_3",
+          "best_tensor_index": 37,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_1",
+          "best_tensor_index": 38,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_2",
+          "best_tensor_index": 53,
+          "best_max_abs_error": 0.03718375414609909
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 41,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 42,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 43,
+          "best_max_abs_error": 0.3854924142360687
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_4",
+          "best_tensor_index": 48,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_4",
+          "best_tensor_index": 49,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_5",
+          "best_tensor_index": 50,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_3",
+          "best_tensor_index": 51,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_2",
+          "best_tensor_index": 53,
+          "best_max_abs_error": 0.03718375414609909
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 41,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            1,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 42,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 43,
+          "best_max_abs_error": 0.3854924142360687
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_5",
+          "best_tensor_index": 57,
+          "best_max_abs_error": 0.3854924142360687
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant140",
+          "best_tensor_index": 4,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_3",
+          "best_tensor_index": 58,
+          "best_max_abs_error": 0.031397316604852676
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_49",
+          "best_tensor_index": 61,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+          "shape": [
+            1,
+            1,
+            1,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_50",
+          "best_tensor_index": 64,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor_51",
+          "best_tensor_index": 67,
+          "best_max_abs_error": 0.03144218027591705
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.4210491180419922
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.4210491180419922
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.4210491180419922
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant138",
+          "best_tensor_index": 2,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 69,
+          "best_max_abs_error": 0.03304840624332428
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.4210491180419922
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant137",
+          "best_tensor_index": 1,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_5",
+          "best_tensor_index": 70,
+          "best_max_abs_error": 0.037478670477867126
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 69,
+          "best_max_abs_error": 0.03304840624332428
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::sigmoid",
+          "best_tensor_index": 71,
+          "best_max_abs_error": 0.009111464023590088
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::mul_6",
+          "best_tensor_index": 72,
+          "best_max_abs_error": 0.014778494834899902
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.obs_mul",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 73,
+          "best_max_abs_error": 0.0022796879056841135
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            1,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 73,
+          "best_max_abs_error": 0.0022796879056841135
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant136",
+          "best_tensor_index": 0,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6",
+          "best_tensor_index": 74,
+          "best_max_abs_error": 0.00024657160975039005
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_mlp_residual_out",
+          "shape": [
+            1,
+            1,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_decoder_layer.QuantLlamaDecoderLayer::add_6",
+          "best_tensor_index": 75,
+          "best_max_abs_error": 0.03138008713722229
+        }
+      ]
+    },
+    "decoder_layer_prefill_0.q.circle": {
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                8,
+                32
+              ],
+              "max_abs_error": 0.00048585236072540283,
+              "max_position": [
+                0,
+                5,
+                28
+              ],
+              "torch_value": -0.044212423264980316,
+              "circle_value": -0.04469827562570572,
+              "failing_elements": 2,
+              "first_failing_positions": [
+                [
+                  0,
+                  5,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  28
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 2.550000090195681e-06,
+              "circle_value": 2.550000090195681e-06,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                8,
+                32
+              ],
+              "max_abs_error": 0.00048585236072540283,
+              "max_position": [
+                0,
+                5,
+                28
+              ],
+              "torch_value": -0.044212423264980316,
+              "circle_value": -0.04469827562570572,
+              "failing_elements": 2,
+              "first_failing_positions": [
+                [
+                  0,
+                  5,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  28
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 2.550000090195681e-06,
+              "circle_value": 2.550000090195681e-06,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        }
+      ],
+      "replay_matches_saved_torch": [
+        true,
+        true,
+        true
+      ],
+      "replay_matches_saved_circle": [
+        true,
+        true,
+        true
+      ],
+      "input_quantization": [
+        {
+          "name": "hidden_states",
+          "quantized_integer": false,
+          "max_raw_grid_error": 0.0,
+          "scale": null,
+          "zero_point": null
+        },
+        {
+          "name": "attention_mask",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.0,
+          "scale": [
+            0.47058823704719543
+          ],
+          "zero_point": [
+            255
+          ]
+        },
+        {
+          "name": "position_embeddings_0",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.0037831664085388184,
+          "scale": [
+            0.0078038922511041164
+          ],
+          "zero_point": [
+            127
+          ]
+        },
+        {
+          "name": "position_embeddings_1",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.003832697868347168,
+          "scale": [
+            0.007665331941097975
+          ],
+          "zero_point": [
+            128
+          ]
+        }
+      ],
+      "torch_grid_inputs_vs_circle_raw_inputs": [
+        {
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "max_abs_error": 0.00048585236072540283,
+          "max_position": [
+            0,
+            5,
+            28
+          ],
+          "torch_value": -0.044212423264980316,
+          "circle_value": -0.04469827562570572,
+          "failing_elements": 2,
+          "first_failing_positions": [
+            [
+              0,
+              5,
+              5
+            ],
+            [
+              0,
+              5,
+              28
+            ]
+          ]
+        },
+        {
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 0.0,
+          "circle_value": 0.0,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        },
+        {
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 2.550000090195681e-06,
+          "circle_value": 2.550000090195681e-06,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        }
+      ],
+      "observer_trace_matching": [
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor",
+          "best_tensor_index": 13,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 11,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 12,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant143",
+          "best_tensor_index": 7,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear",
+          "best_tensor_index": 15,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant142",
+          "best_tensor_index": 6,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_1",
+          "best_tensor_index": 17,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant141",
+          "best_tensor_index": 5,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+          "best_tensor_index": 18,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 11,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 12,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::getitem_1",
+          "best_tensor_index": 20,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat",
+          "best_tensor_index": 21,
+          "best_max_abs_error": 0.0028451383113861084
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul",
+          "best_tensor_index": 22,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_1",
+          "best_tensor_index": 23,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add",
+          "best_tensor_index": 24,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add",
+          "best_tensor_index": 24,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+          "best_tensor_index": 18,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_1",
+          "best_tensor_index": 29,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_2",
+          "best_tensor_index": 30,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_3",
+          "best_tensor_index": 31,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_1",
+          "best_tensor_index": 32,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm",
+          "best_tensor_index": 34,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 35,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 36,
+          "best_max_abs_error": 0.003921568393707275
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 37,
+          "best_max_abs_error": 0.0019341185688972473
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_2",
+          "best_tensor_index": 42,
+          "best_max_abs_error": 0.04074084758758545
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_4",
+          "best_tensor_index": 43,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_5",
+          "best_tensor_index": 44,
+          "best_max_abs_error": 0.016627520322799683
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_3",
+          "best_tensor_index": 45,
+          "best_max_abs_error": 0.015894517302513123
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_2",
+          "best_tensor_index": 47,
+          "best_max_abs_error": 0.0006706975400447845
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 35,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 36,
+          "best_max_abs_error": 0.003921568393707275
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 37,
+          "best_max_abs_error": 0.0019341185688972473
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_3",
+          "best_tensor_index": 51,
+          "best_max_abs_error": 0.0019341185688972473
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant140",
+          "best_tensor_index": 4,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_3",
+          "best_tensor_index": 52,
+          "best_max_abs_error": 0.0003139777109026909
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_47",
+          "best_tensor_index": 55,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_48",
+          "best_tensor_index": 58,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor_49",
+          "best_tensor_index": 61,
+          "best_max_abs_error": 0.00048024579882621765
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.02148616313934326
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.02148616313934326
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.02148616313934326
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant138",
+          "best_tensor_index": 2,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 63,
+          "best_max_abs_error": 0.003048151731491089
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.02148616313934326
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant137",
+          "best_tensor_index": 1,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_5",
+          "best_tensor_index": 64,
+          "best_max_abs_error": 0.002882227301597595
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 63,
+          "best_max_abs_error": 0.003048151731491089
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::sigmoid",
+          "best_tensor_index": 65,
+          "best_max_abs_error": 0.0023494958877563477
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::mul_6",
+          "best_tensor_index": 66,
+          "best_max_abs_error": 0.0030872300267219543
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_mul",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 67,
+          "best_max_abs_error": 0.0005979621782898903
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 67,
+          "best_max_abs_error": 0.0005979621782898903
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant136",
+          "best_tensor_index": 0,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 5.7716271840035915e-05
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_mlp_residual_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_decoder_layer.QuantLlamaDecoderLayer::add_6",
+          "best_tensor_index": 69,
+          "best_max_abs_error": 0.00048585236072540283
+        }
+      ]
+    },
+    "decoder_layer_prefill_1.q.circle": {
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                8,
+                32
+              ],
+              "max_abs_error": 0.0006152968853712082,
+              "max_position": [
+                0,
+                5,
+                0
+              ],
+              "torch_value": 0.02276594564318657,
+              "circle_value": 0.023381242528557777,
+              "failing_elements": 1,
+              "first_failing_positions": [
+                [
+                  0,
+                  5,
+                  0
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 2.550000090195681e-06,
+              "circle_value": 2.550000090195681e-06,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                8,
+                32
+              ],
+              "max_abs_error": 0.0006152968853712082,
+              "max_position": [
+                0,
+                5,
+                0
+              ],
+              "torch_value": 0.02276594564318657,
+              "circle_value": 0.023381242528557777,
+              "failing_elements": 1,
+              "first_failing_positions": [
+                [
+                  0,
+                  5,
+                  0
+                ]
+              ]
+            },
+            {
+              "output_index": 1,
+              "role": "delta_key",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 2.550000090195681e-06,
+              "circle_value": 2.550000090195681e-06,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            },
+            {
+              "output_index": 2,
+              "role": "delta_value",
+              "shape": [
+                1,
+                1,
+                8,
+                16
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0,
+              "circle_value": 0.0,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        }
+      ],
+      "replay_matches_saved_torch": [
+        true,
+        true,
+        true
+      ],
+      "replay_matches_saved_circle": [
+        true,
+        true,
+        true
+      ],
+      "input_quantization": [
+        {
+          "name": "hidden_states",
+          "quantized_integer": false,
+          "max_raw_grid_error": 0.0,
+          "scale": null,
+          "zero_point": null
+        },
+        {
+          "name": "attention_mask",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.0,
+          "scale": [
+            0.47058823704719543
+          ],
+          "zero_point": [
+            255
+          ]
+        },
+        {
+          "name": "position_embeddings_0",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.0037831664085388184,
+          "scale": [
+            0.0078038922511041164
+          ],
+          "zero_point": [
+            127
+          ]
+        },
+        {
+          "name": "position_embeddings_1",
+          "quantized_integer": true,
+          "max_raw_grid_error": 0.003832697868347168,
+          "scale": [
+            0.007665331941097975
+          ],
+          "zero_point": [
+            128
+          ]
+        }
+      ],
+      "torch_grid_inputs_vs_circle_raw_inputs": [
+        {
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "max_abs_error": 0.0006152968853712082,
+          "max_position": [
+            0,
+            5,
+            0
+          ],
+          "torch_value": 0.02276594564318657,
+          "circle_value": 0.023381242528557777,
+          "failing_elements": 1,
+          "first_failing_positions": [
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 2.550000090195681e-06,
+          "circle_value": 2.550000090195681e-06,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        },
+        {
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "max_abs_error": 0.0,
+          "max_position": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "torch_value": 0.0,
+          "circle_value": 0.0,
+          "failing_elements": 0,
+          "first_failing_positions": []
+        }
+      ],
+      "observer_trace_matching": [
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor",
+          "best_tensor_index": 13,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 11,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 12,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_hidden",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant143",
+          "best_tensor_index": 7,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear",
+          "best_tensor_index": 15,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant142",
+          "best_tensor_index": 6,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_1",
+          "best_tensor_index": 17,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm",
+          "best_tensor_index": 14,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+          "shape": [
+            16,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant141",
+          "best_tensor_index": 5,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+          "best_tensor_index": 18,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_0",
+          "best_tensor_index": 11,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::position_embeddings_1",
+          "best_tensor_index": 12,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_mask",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico::attention_mask",
+          "best_tensor_index": 10,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x1",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::getitem",
+          "best_tensor_index": 19,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cat",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat",
+          "best_tensor_index": 21,
+          "best_max_abs_error": 0.010119851678609848
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul",
+          "best_tensor_index": 22,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_1",
+          "best_tensor_index": 23,
+          "best_max_abs_error": 0.005047809332609177
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_rot",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add",
+          "best_tensor_index": 24,
+          "best_max_abs_error": 0.0052488334476947784
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add",
+          "best_tensor_index": 24,
+          "best_max_abs_error": 0.0052488334476947784
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_2",
+          "best_tensor_index": 18,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_1",
+          "best_tensor_index": 29,
+          "best_max_abs_error": 0.028874218463897705
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_2",
+          "best_tensor_index": 30,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_3",
+          "best_tensor_index": 31,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_1",
+          "best_tensor_index": 32,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm",
+          "best_tensor_index": 34,
+          "best_max_abs_error": 0.0010936399921774864
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 35,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 36,
+          "best_max_abs_error": 0.003921568393707275
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 37,
+          "best_max_abs_error": 0.0025871992111206055
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 4,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_2",
+          "best_tensor_index": 42,
+          "best_max_abs_error": 0.005774855613708496
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_4",
+          "best_tensor_index": 43,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_5",
+          "best_tensor_index": 44,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_3",
+          "best_tensor_index": 45,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_2",
+          "best_tensor_index": 47,
+          "best_max_abs_error": 0.0018227342516183853
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_2",
+          "best_tensor_index": 35,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+          "shape": [
+            1,
+            8,
+            8
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::_softmax",
+          "best_tensor_index": 36,
+          "best_max_abs_error": 0.003921568393707275
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+          "shape": [
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::bmm_1",
+          "best_tensor_index": 37,
+          "best_max_abs_error": 0.0025871992111206055
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_3",
+          "best_tensor_index": 51,
+          "best_max_abs_error": 0.0025871992111206055
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant140",
+          "best_tensor_index": 4,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_3",
+          "best_tensor_index": 52,
+          "best_max_abs_error": 0.0004651462659239769
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_47",
+          "best_tensor_index": 55,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+          "shape": [
+            1,
+            1,
+            8,
+            16
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_48",
+          "best_tensor_index": 58,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::quantize_per_tensor_49",
+          "best_tensor_index": 61,
+          "best_max_abs_error": 0.000616513192653656
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_weight",
+          "shape": [
+            32
+          ],
+          "candidate_count": 2,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::_prop_tensor_constant139",
+          "best_tensor_index": 3,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant138",
+          "best_tensor_index": 2,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 63,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_1",
+          "best_tensor_index": 62,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+          "shape": [
+            64,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant137",
+          "best_tensor_index": 1,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_5",
+          "best_tensor_index": 64,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_4",
+          "best_tensor_index": 63,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::sigmoid",
+          "best_tensor_index": 65,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_silu.QuantSiLU::mul_6",
+          "best_tensor_index": 66,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.obs_mul",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 67,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+          "shape": [
+            1,
+            8,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_mlp.QuantLlamaMLP::mul_7",
+          "best_tensor_index": 67,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+          "shape": [
+            32,
+            64
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::_prop_tensor_constant136",
+          "best_tensor_index": 0,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6",
+          "best_tensor_index": 68,
+          "best_max_abs_error": 0.0
+        },
+        {
+          "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_mlp_residual_out",
+          "shape": [
+            1,
+            8,
+            32
+          ],
+          "candidate_count": 1,
+          "best_tensor": "tico.quantization.wrapq.wrappers.llama.quant_decoder_layer.QuantLlamaDecoderLayer::add_6",
+          "best_tensor_index": 69,
+          "best_max_abs_error": 0.0006152968853712082
+        }
+      ]
+    },
+    "lm_head.q.circle": {
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0778307095170021,
+              "circle_value": 0.0778307095170021,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        }
+      ]
+    },
+    "token_embedding.q.circle": {
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "role": "hidden",
+              "shape": [
+                1,
+                8,
+                32
+              ],
+              "max_abs_error": 0.0,
+              "max_position": [
+                0,
+                0,
+                0
+              ],
+              "torch_value": 0.0033487824257463217,
+              "circle_value": 0.0033487824257463217,
+              "failing_elements": 0,
+              "first_failing_positions": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

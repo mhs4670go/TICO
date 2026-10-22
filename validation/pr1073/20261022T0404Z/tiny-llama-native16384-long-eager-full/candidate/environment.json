@@ -1,0 +1,44 @@
+{
+  "checkpoint_sha256": "bc5efaaaf81d4e3d4efdd8b9bbb790971e58a171cdbf26f80577739f2ac602bf",
+  "commit": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "effective_config": {
+    "calibration": {
+      "seq_len": 8
+    },
+    "evaluation": {
+      "enabled": false
+    },
+    "export": {
+      "artifacts": [
+        "circle_full"
+      ],
+      "enabled": true,
+      "max_seq_len": 8,
+      "prefill_decode": true,
+      "strict": false
+    },
+    "model": {
+      "family": "llama",
+      "name_or_path": "tiny-random-local-validation-fixture"
+    },
+    "model_args": {
+      "profile": "npu_export"
+    },
+    "pipeline": [],
+    "runtime": {
+      "device": "cpu",
+      "dtype": "float32",
+      "seed": 42,
+      "show_progress": false
+    }
+  },
+  "llama_rope_migration": null,
+  "repo": "/workspace/TICO",
+  "versions": {
+    "circle-schema": "0.10.1",
+    "numpy": "2.5.4",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0"
+  },
+  "working_tree": ""
+}

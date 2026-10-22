@@ -1,0 +1,6 @@
+{
+  "comparisons_complete": false,
+  "error_type": "FileNotFoundError",
+  "message": "[Errno 2] No such file or directory: '/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-full-text-png-original/baseline/before/artifacts/full_text_regression.q.circle'",
+  "status": "ERROR"
+}

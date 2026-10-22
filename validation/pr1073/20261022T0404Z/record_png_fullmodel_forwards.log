@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.pt",
+  "checkpoint_sha256": "188d63c4f58dc6fa77a1746be695236afb20b65f0a2b8e1e961dd4a2761dfac6",
+  "inputs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/qwen_actual_png_kwargs.pt",
+  "inputs_sha256": "0f5355c6eae31e9e29622acc40f356bac2af8f07697c5c0bb4ed755e9b60e25c",
+  "calls": 1,
+  "use_cache": false,
+  "past_key_values_returned": false,
+  "logits": {
+    "shape": [
+      1,
+      8,
+      64
+    ],
+    "dtype": "float32",
+    "element_count": 512,
+    "finite": true,
+    "min": -0.37144675850868225,
+    "max": 0.33430206775665283,
+    "array": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/qwen3_vl_actual_png_quant_logits.npy",
+    "array_file_sha256": "53606779e3babe51d3e0236bb139359c631247e0826807e746699ea486748179",
+    "raw_bytes_sha256": "80e58d7f5d7c2a57ce179487544c25da9728b78fb8f078176564e7009717a175"
+  },
+  "frozen_state_preserved": true,
+  "profile_qcfg_config_preserved": true,
+  "all_quantization_modes": [
+    "QUANT"
+  ],
+  "memory_current_after_bytes": 11780104192
+}
+{
+  "status": "PASS",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.pt",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "inputs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_actual_png_kwargs.pt",
+  "inputs_sha256": "fde489de9d8bb2ccd08126eab0a96b0b0a9d6d9f21a628194d682af34ecfe1c0",
+  "calls": 1,
+  "use_cache": false,
+  "past_key_values_returned": false,
+  "logits": {
+    "shape": [
+      1,
+      8,
+      64
+    ],
+    "dtype": "float32",
+    "element_count": 512,
+    "finite": true,
+    "min": -0.30248501896858215,
+    "max": 0.167714461684227,
+    "array": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma4_actual_png_quant_logits.npy",
+    "array_file_sha256": "9d391201a036595fb9a78a062013ef80439b3e97afb6c4d5852b0ef6195ab05c",
+    "raw_bytes_sha256": "5e6768a189f852239921f002fa02fa0358241db2767dd71eed49cc4d28f1cc9b"
+  },
+  "frozen_state_preserved": true,
+  "profile_qcfg_config_preserved": true,
+  "all_quantization_modes": [
+    "QUANT"
+  ],
+  "memory_current_after_bytes": 11415306240
+}

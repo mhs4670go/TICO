@@ -1,0 +1,44 @@
+[
+  {
+    "name": "config.json",
+    "bytes": 498,
+    "sha256": "92d9f842bbff69a6646eb69472d5f342ad832e718c079bf04d605ae4a4634dfd",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/config.json"
+  },
+  {
+    "name": "generation_config.json",
+    "bytes": 132,
+    "sha256": "e594efa3d5f29e494af0ab38ec7f341f31cdd45a3a570657f260d1f4b5c6ced2",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/generation_config.json"
+  },
+  {
+    "name": "model.safetensors",
+    "bytes": 9251608,
+    "sha256": "c302246d91e2854ff350e52a79938a818c203186c2f0671213ce372a0289cd91",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/model.safetensors"
+  },
+  {
+    "name": "special_tokens_map.json",
+    "bytes": 411,
+    "sha256": "ff3b4a612c4e447acb02d40071bddd989fe0da87eb5b7fe0dbadfc4f74de7531",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/special_tokens_map.json"
+  },
+  {
+    "name": "tokenizer.json",
+    "bytes": 1984889,
+    "sha256": "608ef1b5bb4bbfe6d3fdff0a5d3a4baaef0fd99fa678311a1e013bf5b37cd2a0",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/tokenizer.json"
+  },
+  {
+    "name": "tokenizer.model",
+    "bytes": 534194,
+    "sha256": "ab1b681ec7fc02fed5edd3026687d7a692a918c4dd8e150ca2e3994a6229843b",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/tokenizer.model"
+  },
+  {
+    "name": "tokenizer_config.json",
+    "bytes": 649,
+    "sha256": "be843e84b4b7d0b226b500a22dceabcbbf54b8e8b0dab85a252b0958e230ffbf",
+    "url": "https://huggingface.co/Maykeye/TinyLLama-v0/resolve/298338802ab94432b917bcce11382aa151aee50f/tokenizer_config.json"
+  }
+]

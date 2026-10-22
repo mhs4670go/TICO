@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "purpose": "quantization_quality",
+  "model": {
+    "family": "qwen3_vl",
+    "name_or_path": "random-local-config-no-pretrained",
+    "loaded_name_or_path": "",
+    "revision": null,
+    "resolved_revision": null
+  },
+  "tokenizer": null,
+  "processor": null,
+  "context": {
+    "requested": 20,
+    "resolved": 20,
+    "model_capacity": 32,
+    "pretrained_capacity": 32,
+    "calibration_seq_len": 3,
+    "export_max_seq_len": 6
+  },
+  "use_cache": false,
+  "seed": 1073,
+  "device": "cpu",
+  "configured_dtype": "torch.float32",
+  "parameter_dtypes": [
+    "torch.float32"
+  ],
+  "quantization_modes": [
+    "quant"
+  ],
+  "model_class": "QuantQwen3VLTextModel",
+  "checkpoint": null,
+  "evaluation": {
+    "max_seq_len": 20,
+    "use_cache": false
+  },
+  "versions": {
+    "tico": "0.1.0",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0",
+    "datasets": "4.8.4",
+    "lm-eval": null,
+    "lmms-eval": null
+  }
+}

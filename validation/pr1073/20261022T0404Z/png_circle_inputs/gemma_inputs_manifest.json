@@ -1,0 +1,34 @@
+{
+  "scope": "tiny frozen Gemma image70 fixture + actual PNG + normal HF processor; one image forward; no metric/pretrained/linked-cache decode claim",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.pt",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "source_kwargs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.image_inputs.pt",
+  "source_kwargs_sha256": "656ba199551493df615e82cc50611042571a6cd444d54240630733dcfc285a87",
+  "png": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_16x16_profile_proposal.png",
+  "png_sha256": "39423039ce55b9dd52d4a287c720351a50727c2fec7433f66489314c1d3ffd4d",
+  "processor_config": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_processor_profile_proposal/preprocessor_config.json",
+  "processor_config_sha256": "402a6418150e1f2e44442d1537537892758392ee7f6d80112225acf29c04b818",
+  "output_kwargs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_actual_png_kwargs.pt",
+  "output_kwargs_sha256": "fde489de9d8bb2ccd08126eab0a96b0b0a9d6d9f21a628194d682af34ecfe1c0",
+  "preserved_keys": [
+    "input_ids",
+    "return_dict",
+    "use_cache"
+  ],
+  "pixel_values_shape": [
+    1,
+    280,
+    48
+  ],
+  "image_position_ids_shape": [
+    1,
+    280,
+    2
+  ],
+  "num_soft_tokens_per_image": [
+    4
+  ],
+  "normal_processor_positions_equal_synthetic_template": true,
+  "max_soft_tokens": 70,
+  "valid_visual_tokens": 4
+}

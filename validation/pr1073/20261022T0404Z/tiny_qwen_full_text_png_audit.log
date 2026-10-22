@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "report": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-full-text-png-dirs-retry/independent_evidence_inventory.json",
+  "phases": {
+    "baseline/before": {
+      "ok": true,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 1,
+      "state_preserved": true
+    },
+    "candidate/after_eager": {
+      "ok": true,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 1,
+      "state_preserved": true
+    },
+    "candidate/before": {
+      "ok": true,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 1,
+      "state_preserved": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+test_image_placeholders (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestGetPlaceholderMask.test_image_placeholders)
+Image token IDs should be marked in the image mask only. ... ok
+test_missing_token_ids (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestGetPlaceholderMask.test_missing_token_ids)
+When a token ID is None, the corresponding mask should be all-False. ... ok
+test_mixed_placeholders (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestGetPlaceholderMask.test_mixed_placeholders)
+Each placeholder type should appear in its own mask only. ... ok
+test_no_placeholders (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestGetPlaceholderMask.test_no_placeholders)
+All-text input should produce all-False masks. ... ok
+test_inputs_embeds_with_per_layer_inputs_works (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_inputs_embeds_with_per_layer_inputs_works)
+When PLE is enabled and both inputs_embeds and per_layer_inputs are given, it should work. ... ok
+test_inputs_embeds_without_per_layer_inputs_raises (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_inputs_embeds_without_per_layer_inputs_raises)
+When PLE is enabled and inputs_embeds is given without per_layer_inputs, it should raise. ... ok
+test_placeholder_replacement_produces_pad_embedding (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_placeholder_replacement_produces_pad_embedding)
+Image placeholder tokens should be replaced with pad_token_id before embedding. ... ok
+test_prepare_convert_flow (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_prepare_convert_flow)
+Full prepare → calibrate → convert flow should succeed. ... ok
+test_text_only_forward_is_finite (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelSmoke.test_text_only_forward_is_finite)
+Text-only forward through the wrapper should produce finite output. ... ok
+test_reject_both_input_ids_and_inputs_embeds (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelValidation.test_reject_both_input_ids_and_inputs_embeds)
+Providing both input_ids and inputs_embeds should raise ValueError. ... ok
+test_reject_input_ids_with_per_layer_inputs (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelValidation.test_reject_input_ids_with_per_layer_inputs)
+Providing both input_ids and per_layer_inputs should raise ValueError. ... ok
+test_reject_neither_input_ids_nor_inputs_embeds (test.quantization.wrapq.wrappers.gemma4.test_quant_model.TestQuantGemma4ModelValidation.test_reject_neither_input_ids_nor_inputs_embeds)
+Providing neither input_ids nor inputs_embeds should raise ValueError. ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 215.990s
+
+OK

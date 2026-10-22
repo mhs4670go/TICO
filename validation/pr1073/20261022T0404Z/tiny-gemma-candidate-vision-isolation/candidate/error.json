@@ -1,0 +1,6 @@
+{
+  "comparisons_complete": false,
+  "error_type": "UnsupportedCircleOperatorError",
+  "message": "RMS_NORM supports rank 3 or 4 inputs, found shape (4, 32).\n  at subgraphs[0].operators[102] RMS_NORM (builtin code -6, version 1) inputs=[tensors[140] 'tico.quantization.wrapq.wrappers.gemma4.export_adapters.Gemma4VisionModelPrefillExportAdapter::mul_12' UINT8[4, 32] (activation, per-tensor quantized), tensors[1] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::_prop_tensor_constant412' UINT8[32] (constant, per-tensor quantized)] outputs=[tensors[141] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_7' UINT8[4, 32] (activation, per-tensor quantized)]",
+  "status": "ERROR"
+}

@@ -1,0 +1,132 @@
+{
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "past_observers": {
+    "layer0.obs_past_key": {
+      "min_val": {
+        "values": [
+          "inf"
+        ],
+        "finite": false
+      },
+      "max_val": {
+        "values": [
+          "-inf"
+        ],
+        "finite": false
+      },
+      "_cached_scale": {
+        "values": [
+          9.99999993922529e-09
+        ],
+        "finite": true
+      },
+      "_cached_zp": {
+        "values": [
+          0.0
+        ],
+        "finite": true
+      }
+    },
+    "layer0.obs_past_value": {
+      "min_val": {
+        "values": [
+          "inf"
+        ],
+        "finite": false
+      },
+      "max_val": {
+        "values": [
+          "-inf"
+        ],
+        "finite": false
+      },
+      "_cached_scale": {
+        "values": [
+          9.99999993922529e-09
+        ],
+        "finite": true
+      },
+      "_cached_zp": {
+        "values": [
+          0.0
+        ],
+        "finite": true
+      }
+    },
+    "layer1.obs_past_key": {
+      "min_val": {
+        "values": [
+          "inf"
+        ],
+        "finite": false
+      },
+      "max_val": {
+        "values": [
+          "-inf"
+        ],
+        "finite": false
+      },
+      "_cached_scale": {
+        "values": [
+          9.99999993922529e-09
+        ],
+        "finite": true
+      },
+      "_cached_zp": {
+        "values": [
+          0.0
+        ],
+        "finite": true
+      }
+    },
+    "layer1.obs_past_value": {
+      "min_val": {
+        "values": [
+          "inf"
+        ],
+        "finite": false
+      },
+      "max_val": {
+        "values": [
+          "-inf"
+        ],
+        "finite": false
+      },
+      "_cached_scale": {
+        "values": [
+          9.99999993922529e-09
+        ],
+        "finite": true
+      },
+      "_cached_zp": {
+        "values": [
+          0.0
+        ],
+        "finite": true
+      }
+    }
+  },
+  "rounding": {
+    "source": "uniform six-key softmax row",
+    "value": [
+      0.1666666716337204
+    ],
+    "scale": 0.003921568859368563,
+    "scaled_value": [
+      42.5
+    ],
+    "torch_fake_quant": [
+      0.16470588743686676
+    ],
+    "circle_fake_quant": [
+      0.16862745583057404
+    ],
+    "max_abs_error": 0.003921568393707275,
+    "torch_grid_integer": [
+      42.0
+    ],
+    "circle_grid_integer": [
+      43.0
+    ]
+  }
+}

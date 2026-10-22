@@ -1,0 +1,37 @@
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "llama",
+  "repo": "/workspace/TICO",
+  "commit": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/candidate_llama_native16384.pt",
+  "checkpoint_sha256": "bc5efaaaf81d4e3d4efdd8b9bbb790971e58a171cdbf26f80577739f2ac602bf",
+  "checkpoint_bytes": 336357,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 16384,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    },
+    {
+      "kind": "cached_text",
+      "prefill_tokens": 4,
+      "decode_steps": 2
+    }
+  ],
+  "model_args": {
+    "profile": "npu_export"
+  },
+  "code_sha256": "041bb03ca7e9e080eac42672f58062490ee373c9467d2af4cf36d650f60b7dd0"
+}

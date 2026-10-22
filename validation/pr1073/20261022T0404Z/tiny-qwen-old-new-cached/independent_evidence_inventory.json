@@ -1,0 +1,3916 @@
+{
+  "run": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-old-new-cached",
+  "scope": "actual serialized Circle stage evidence inventory",
+  "phases": {
+    "baseline/before": {
+      "ok": false,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 9,
+      "state_preserved": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 92,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3",
+                  "p0_input_4",
+                  "p0_input_5"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.044739918783307076,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_empty_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3",
+                  "p1_input_4",
+                  "p1_input_5"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_full_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p2_input_0",
+                  "p2_input_1",
+                  "p2_input_2",
+                  "p2_input_3",
+                  "p2_input_4",
+                  "p2_input_5"
+                ],
+                "circle": [
+                  "p2_circle_0",
+                  "p2_circle_1",
+                  "p2_circle_2"
+                ],
+                "torch": [
+                  "p2_torch_0",
+                  "p2_torch_1",
+                  "p2_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.042583780363202095,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p2_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p2_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p2_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_decode_1.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 92,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3",
+                  "p0_input_4",
+                  "p0_input_5"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.03140721470117569,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_empty_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3",
+                  "p1_input_4",
+                  "p1_input_5"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_full_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p2_input_0",
+                  "p2_input_1",
+                  "p2_input_2",
+                  "p2_input_3",
+                  "p2_input_4",
+                  "p2_input_5"
+                ],
+                "circle": [
+                  "p2_circle_0",
+                  "p2_circle_1",
+                  "p2_circle_2"
+                ],
+                "torch": [
+                  "p2_torch_0",
+                  "p2_torch_1",
+                  "p2_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.03140721842646599,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p2_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p2_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p2_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 91,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0010780766606330872,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0064430832862854,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0010780766606330872,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0064430832862854,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_prefill_1.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 91,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0015320554375648499,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0416334867477417,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0015320554375648499,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0416334867477417,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "deepstack_fusion_0_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::visual_embeds'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.export_adapters.Qwen3VLDeepstackFusionExportAdapter::cat_default'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 0,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 2,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "native"
+        },
+        "lm_head.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  64
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 5,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  64
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::image_embeds'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.export_adapters.Qwen3VLMultimodalEmbeddingExportAdapter::cat_default'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 3,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 2,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "token_embedding.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_embedding.QuantEmbedding::quantize_per_tensor'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 3,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "vision_prefill_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  4,
+                  24
+                ],
+                "type": 3,
+                "name": "b'tico::pixel_values'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_8'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 171,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 2,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        }
+      }
+    },
+    "candidate/after_eager": {
+      "ok": false,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 9,
+      "state_preserved": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 92,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3",
+                  "p0_input_4",
+                  "p0_input_5"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.044739918783307076,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_empty_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3",
+                  "p1_input_4",
+                  "p1_input_5"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_full_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p2_input_0",
+                  "p2_input_1",
+                  "p2_input_2",
+                  "p2_input_3",
+                  "p2_input_4",
+                  "p2_input_5"
+                ],
+                "circle": [
+                  "p2_circle_0",
+                  "p2_circle_1",
+                  "p2_circle_2"
+                ],
+                "torch": [
+                  "p2_torch_0",
+                  "p2_torch_1",
+                  "p2_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.042583780363202095,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p2_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p2_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p2_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_decode_1.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 92,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3",
+                  "p0_input_4",
+                  "p0_input_5"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.03140721470117569,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_empty_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3",
+                  "p1_input_4",
+                  "p1_input_5"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_full_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p2_input_0",
+                  "p2_input_1",
+                  "p2_input_2",
+                  "p2_input_3",
+                  "p2_input_4",
+                  "p2_input_5"
+                ],
+                "circle": [
+                  "p2_circle_0",
+                  "p2_circle_1",
+                  "p2_circle_2"
+                ],
+                "torch": [
+                  "p2_torch_0",
+                  "p2_torch_1",
+                  "p2_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.03140721842646599,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p2_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p2_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p2_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 91,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0010780766606330872,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0064430832862854,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0010780766606330872,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0064430832862854,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_prefill_1.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 91,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0015320554375648499,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0416334867477417,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0015320554375648499,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0416334867477417,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "deepstack_fusion_0_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::visual_embeds'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.export_adapters.Qwen3VLDeepstackFusionExportAdapter::cat_default'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 0,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 2,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "native"
+        },
+        "lm_head.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  64
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 5,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  64
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::image_embeds'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.export_adapters.Qwen3VLMultimodalEmbeddingExportAdapter::cat_default'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 3,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 2,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "token_embedding.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_embedding.QuantEmbedding::quantize_per_tensor'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 3,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "vision_prefill_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  4,
+                  24
+                ],
+                "type": 3,
+                "name": "b'tico::pixel_values'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_8'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 171,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 2,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        }
+      }
+    },
+    "candidate/before": {
+      "ok": false,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 9,
+      "state_preserved": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 92,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3",
+                  "p0_input_4",
+                  "p0_input_5"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.044739918783307076,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_empty_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3",
+                  "p1_input_4",
+                  "p1_input_5"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_full_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p2_input_0",
+                  "p2_input_1",
+                  "p2_input_2",
+                  "p2_input_3",
+                  "p2_input_4",
+                  "p2_input_5"
+                ],
+                "circle": [
+                  "p2_circle_0",
+                  "p2_circle_1",
+                  "p2_circle_2"
+                ],
+                "torch": [
+                  "p2_torch_0",
+                  "p2_torch_1",
+                  "p2_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.042583780363202095,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.00644307304173708,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p2_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p2_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p2_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_decode_1.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  7,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::past_key_values_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 92,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3",
+                  "p0_input_4",
+                  "p0_input_5"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.03140721470117569,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_empty_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3",
+                  "p1_input_4",
+                  "p1_input_5"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "decode_full_past",
+              "ok": false,
+              "expected_inputs": 6,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p2_input_0",
+                  "p2_input_1",
+                  "p2_input_2",
+                  "p2_input_3",
+                  "p2_input_4",
+                  "p2_input_5"
+                ],
+                "circle": [
+                  "p2_circle_0",
+                  "p2_circle_1",
+                  "p2_circle_2"
+                ],
+                "torch": [
+                  "p2_torch_0",
+                  "p2_torch_1",
+                  "p2_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.03140721842646599,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.006938904523849487,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p2_circle_0": [
+                  1,
+                  1,
+                  32
+                ],
+                "p2_circle_1": [
+                  1,
+                  2,
+                  1,
+                  8
+                ],
+                "p2_circle_2": [
+                  1,
+                  2,
+                  1,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 91,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0010780766606330872,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0064430832862854,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0010780766606330872,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0064430832862854,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "decoder_layer_prefill_1.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::attention_mask'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_0'"
+              },
+              {
+                "shape": [
+                  1,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico::position_embeddings_1'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_decoder_layer.QuantQwen3VLTextDecoderLayer::add_7'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::add_1'"
+              },
+              {
+                "shape": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.quant_text_attention.QuantQwen3VLTextAttention::permute_2'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 91,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1",
+                  "p0_input_2",
+                  "p0_input_3"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1",
+                  "p0_circle_2"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1",
+                  "p0_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0015320554375648499,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0416334867477417,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p0_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "ok": false,
+              "expected_inputs": 4,
+              "expected_outputs": 3,
+              "array_keys": {
+                "input": [
+                  "p1_input_0",
+                  "p1_input_1",
+                  "p1_input_2",
+                  "p1_input_3"
+                ],
+                "circle": [
+                  "p1_circle_0",
+                  "p1_circle_1",
+                  "p1_circle_2"
+                ],
+                "torch": [
+                  "p1_torch_0",
+                  "p1_torch_1",
+                  "p1_torch_2"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0015320554375648499,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0416334867477417,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p1_circle_0": [
+                  1,
+                  8,
+                  32
+                ],
+                "p1_circle_1": [
+                  1,
+                  2,
+                  8,
+                  8
+                ],
+                "p1_circle_2": [
+                  1,
+                  2,
+                  8,
+                  8
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "deepstack_fusion_0_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::hidden_states'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::visual_embeds'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.export_adapters.Qwen3VLDeepstackFusionExportAdapter::cat_default'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 0,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 2,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "native"
+        },
+        "lm_head.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico::hidden_states'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  64
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 5,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  1,
+                  64
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico::image_embeds'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 0,
+                "name": "b'tico.quantization.wrapq.wrappers.qwen_vl.export_adapters.Qwen3VLMultimodalEmbeddingExportAdapter::cat_default'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 3,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 2,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0",
+                  "p0_input_1"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "token_embedding.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  1
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_embedding.QuantEmbedding::quantize_per_tensor'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 3,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        },
+        "vision_prefill_t1_h2_w2.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  4,
+                  24
+                ],
+                "type": 3,
+                "name": "b'tico::pixel_values'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_8'"
+              },
+              {
+                "shape": [
+                  1,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.nn.quant_linear.QuantLinear::linear_6'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 171,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 2,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0",
+                  "p0_circle_1"
+                ],
+                "torch": [
+                  "p0_torch_0",
+                  "p0_torch_1"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  32
+                ],
+                "p0_circle_1": [
+                  1,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        }
+      }
+    }
+  },
+  "ok": false
+}

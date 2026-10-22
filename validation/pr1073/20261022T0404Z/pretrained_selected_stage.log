@@ -1,0 +1,6 @@
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+{"status": "FAIL", "comparisons_complete": true, "scope": "Selected first decoder prefill/decode stages of one full 4.62M pretrained model only; not full bundle, not pre-PR equivalence, not Llama-3.2 or NPU validation", "frozen_state_preserved": true, "before_after_equal": true, "strict_ok": false, "error": null}
+{"command": ["python", "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_selected_stage_isolation.py", "--output", "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_selected_stage"], "started_at": "2026-10-22T04:58:39.137893+00:00", "disk_before": {"total": 33770192896, "used": 2747408384, "free": 29288022016}, "status": "COMPLETE", "max_process_tree_rss_bytes": 738463744, "minimum_available_memory_bytes": 9077440512, "exit_code": 1, "elapsed_seconds": 459.0538090259997, "disk_after": {"total": 33770192896, "used": 2893668352, "free": 29141762048}}

@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "report": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-old-new-cached/independent_evidence_inventory.json",
+  "phases": {
+    "baseline/before": {
+      "ok": false,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 9,
+      "state_preserved": true
+    },
+    "candidate/after_eager": {
+      "ok": false,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 9,
+      "state_preserved": true
+    },
+    "candidate/before": {
+      "ok": false,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 9,
+      "state_preserved": true
+    }
+  }
+}

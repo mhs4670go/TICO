@@ -1,0 +1,86 @@
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "llama",
+  "repo": "/workspace/TICO",
+  "commit": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/candidate_llama_native4100.pt",
+  "checkpoint_sha256": "1aed6e74fc9b75b220c167c1efe53a673c5562722bedb71206acef9b751ac6f4",
+  "checkpoint_bytes": 335744,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 4100,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    },
+    {
+      "kind": "cached_text",
+      "prefill_tokens": 4,
+      "decode_steps": 2
+    }
+  ],
+  "model_args": {
+    "profile": "npu_export"
+  },
+  "hf_config": {
+    "transformers_version": "5.18.0",
+    "architectures": null,
+    "output_hidden_states": false,
+    "return_dict": true,
+    "dtype": null,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "problem_type": null,
+    "vocab_size": 64,
+    "hidden_size": 32,
+    "intermediate_size": 64,
+    "num_hidden_layers": 2,
+    "num_attention_heads": 2,
+    "num_key_value_heads": 1,
+    "hidden_act": "silu",
+    "max_position_embeddings": 4100,
+    "initializer_range": 0.02,
+    "rms_norm_eps": 1e-06,
+    "use_cache": true,
+    "pad_token_id": null,
+    "bos_token_id": 1,
+    "eos_token_id": 2,
+    "pretraining_tp": 1,
+    "tie_word_embeddings": false,
+    "rope_parameters": {
+      "rope_type": "llama3",
+      "factor": 32.0,
+      "low_freq_factor": 1.0,
+      "high_freq_factor": 4.0,
+      "original_max_position_embeddings": 8192,
+      "rope_theta": 500000.0
+    },
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "mlp_bias": false,
+    "head_dim": 16,
+    "_name_or_path": "",
+    "model_type": "llama",
+    "output_attentions": false
+  },
+  "code_sha256": "041bb03ca7e9e080eac42672f58062490ee373c9467d2af4cf36d650f60b7dd0"
+}

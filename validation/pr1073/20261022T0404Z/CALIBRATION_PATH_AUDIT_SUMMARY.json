@@ -1,0 +1,27 @@
+{
+  "status": "READ_ONLY_ANALYSIS_COMPLETED",
+  "scope": "Source inspection and previously executed tiny-Qwen diagnostic evidence; no new calibration/model/export run.",
+  "head": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "baseline": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "compared_functions": 16,
+  "source_identical_functions": 16,
+  "qwen_classification": "PREEXISTING_STANDARD_RECIPE_STATIC_CACHE_OBSERVER_COVERAGE_RISK",
+  "fixture_only_conclusion_supported": false,
+  "new_pr_pretrained_regression_proven": false,
+  "pretrained_recipe_numerical_validation": "NOT_RUN",
+  "qwen_cause_limit": "Unobserved past KV cannot fully explain past-free prefill/delta-K strict-parity differences.",
+  "model_paths": {
+    "llama": "Positive decode_steps full-model HF cache is normalized through obs_past; decode_steps=0 does not establish past calibration.",
+    "qwen3_vl": "Stock calibration disables cache and forwards prompt batches once; even HF DynamicCache decode does not visit tuple-only obs_past.",
+    "gemma4": "Stock calibration is cache-free; tuple/HF/current KV share obs_present, so no identical distinct-past observer gap."
+  },
+  "artifacts": [
+    "CALIBRATION_PATH_AUDIT.md",
+    "CALIBRATION_PATH_AUDIT_EVIDENCE.json",
+    "calibration_path_audit.command.json",
+    "calibration_path_audit.log",
+    "QWEN_PARITY_DIAGNOSTIC.md",
+    "QWEN_PARITY_DIAGNOSTIC.json"
+  ],
+  "product_or_checkpoint_changes": false
+}

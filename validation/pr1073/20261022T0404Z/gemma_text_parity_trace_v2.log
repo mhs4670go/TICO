@@ -1,0 +1,19 @@
+{
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "circle_sha256": "932c1dc0e93b2881c52270bb7f002e173140a78ea47a2b67a0520144c8db0a94",
+  "circle_replay_exact": [
+    true,
+    true,
+    true
+  ],
+  "torch_replay_exact": [
+    true,
+    true,
+    true
+  ],
+  "state_preserved": true,
+  "scope": "Existing binary replay and real frozen eager call only; no conversion/calibration/parameter changes. Diagnostic recorder delegates to original _fq and is restored.",
+  "process_cpu_seconds": 0.28956699799999797
+}
+Divergent isolated quantizer calls:

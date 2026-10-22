@@ -1,0 +1,8 @@
+{
+  "stage_records": 6,
+  "strict_fail_stage_records": 4,
+  "raw_summary": {
+    "status": "RUNNING",
+    "comparisons_complete": false
+  }
+}

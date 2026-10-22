@@ -1,0 +1,88 @@
+{
+  "qwen3_vl": {
+    "raw_candidate": "FAIL",
+    "raw_baseline_fresh": "FAIL",
+    "analysis": "PREEXISTING_GENERATION_COMPATIBILITY_FAILURE",
+    "error": "missing get_experts_implementation",
+    "source_blob_candidate": "ceea433c15c26f39e33d977c2161806c0f01772f",
+    "source_blob_baseline": "ceea433c15c26f39e33d977c2161806c0f01772f",
+    "hf_parameter_hashes_equal": true,
+    "hf_parameter_tensors": 70,
+    "same_fp_generated_tokens": true,
+    "baseline_calibration": "independent tiny baseline calibration; not export-only equivalence",
+    "same_candidate_checkpoint_baseline_attempt": "FAIL: incompatible candidate checkpoint lacks legacy causal_mask_template",
+    "frozen_state_candidate": "PASS",
+    "frozen_state_baseline": "PASS",
+    "parameter_count": 2020960
+  },
+  "gemma4": {
+    "raw_candidate": "PASS",
+    "scope": "random local HF config, generated PNG and local real image processor, normal FP/Quant .generate 2 tokens",
+    "fp": {
+      "status": "PASS",
+      "tokens": [
+        [
+          10,
+          10,
+          10,
+          10,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          251,
+          245
+        ]
+      ],
+      "token_tensor": {
+        "shape": [
+          1,
+          14
+        ],
+        "dtype": "torch.int64",
+        "sha256": "3a79288356538ae8ae62b137e00d88445221d5390f8b25f157daf8d654bb2a12"
+      },
+      "new_tokens": 2
+    },
+    "quant": {
+      "status": "PASS",
+      "tokens": [
+        [
+          10,
+          10,
+          10,
+          10,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          251,
+          245
+        ]
+      ],
+      "token_tensor": {
+        "shape": [
+          1,
+          14
+        ],
+        "dtype": "torch.int64",
+        "sha256": "3a79288356538ae8ae62b137e00d88445221d5390f8b25f157daf8d654bb2a12"
+      },
+      "new_tokens": 2
+    },
+    "frozen_state": "PASS",
+    "parameter_count": 67231088
+  },
+  "proposed_product_fix": {
+    "applied": false,
+    "proposal": "Delegate get_experts_implementation() and set_experts_implementation(value) to self.module, following Gemma4 conditional wrapper lines261-265. Re-run actual generation after fix; no guarantee this is the last compatibility issue."
+  }
+}

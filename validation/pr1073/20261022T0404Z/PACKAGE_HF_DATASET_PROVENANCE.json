@@ -1,0 +1,108 @@
+{
+  "generated_by": "package_validation_artifacts.py",
+  "result_root": "/workspace/TICO/out/pr1073_validation/20261022T0404Z",
+  "generated_at": "2026-10-22T05:24:23.873665+00:00",
+  "excluded_cache_root": "hf_cache",
+  "cache_files": [
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_info.json",
+      "bytes": 1219,
+      "sha256": "062223be81a2c7be7bf5d6827fdff35da4c21291e65a1455559b1145f14ca4a7"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-test.arrow",
+      "bytes": 1306200,
+      "sha256": "2b8a3efac7b468cbe6432edba5f55c21e435d93873acc6727431f08d5ed328ea"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-train.arrow",
+      "bytes": 11068328,
+      "sha256": "57947bc7b58df4b19662c0609cc30651bc84328dab5fd588860b752072911789"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-validation.arrow",
+      "bytes": 1160224,
+      "sha256": "8e136ab7130c5fca602eb406ce2557967a974d901b53c4f2992f87b873e0fe5b"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3.incomplete_info.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3_builder.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "hf_cache/_workspace_TICO_out_pr1073_validation_20261022T0404Z_hf_cache_Salesforce___wikitext_wikitext-2-raw-v1_0.0.0_b08601e04326c79dfdd32d625aee71d232d685c3.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "dataset_info": [
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_info.json",
+      "metadata": {
+        "description": "",
+        "citation": "",
+        "homepage": "",
+        "license": "",
+        "features": {
+          "text": {
+            "dtype": "string",
+            "_type": "Value"
+          }
+        },
+        "builder_name": "parquet",
+        "dataset_name": "wikitext",
+        "config_name": "wikitext-2-raw-v1",
+        "version": {
+          "version_str": "0.0.0",
+          "major": 0,
+          "minor": 0,
+          "patch": 0
+        },
+        "splits": {
+          "test": {
+            "name": "test",
+            "num_bytes": 1305088,
+            "num_examples": 4358,
+            "dataset_name": "wikitext"
+          },
+          "train": {
+            "name": "train",
+            "num_bytes": 11061717,
+            "num_examples": 36718,
+            "dataset_name": "wikitext"
+          },
+          "validation": {
+            "name": "validation",
+            "num_bytes": 1159288,
+            "num_examples": 3760,
+            "dataset_name": "wikitext"
+          }
+        },
+        "download_checksums": {
+          "hf://datasets/Salesforce/wikitext@b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet": {
+            "num_bytes": 732610,
+            "checksum": null
+          },
+          "hf://datasets/Salesforce/wikitext@b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet": {
+            "num_bytes": 6357543,
+            "checksum": null
+          },
+          "hf://datasets/Salesforce/wikitext@b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/validation-00000-of-00001.parquet": {
+            "num_bytes": 657209,
+            "checksum": null
+          }
+        },
+        "download_size": 7747362,
+        "dataset_size": 13526093,
+        "size_in_bytes": 21273455
+      }
+    }
+  ],
+  "sample_evidence": "PACKAGE_HF_TEST_SAMPLES.json",
+  "note": "Original protocol, metrics, sample IDs, tokenizer/input hashes and logs remain included as separate evidence"
+}

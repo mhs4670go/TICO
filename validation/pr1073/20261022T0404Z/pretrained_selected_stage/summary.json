@@ -1,0 +1,896 @@
+{
+  "atol": 1e-05,
+  "baseline_comparison": "NOT_RUN",
+  "before_after_isolation": {
+    "failures": [],
+    "ok": true,
+    "stages": {
+      "decoder_layer_decode_0.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "decoder_layer_prefill_0.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "checkpoint_sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+  "comparisons_complete": true,
+  "eager_prefill_tokens": 64,
+  "frozen_state_preserved": true,
+  "host_source_recomputed_each_phase": true,
+  "model_class": "PTQWrapper",
+  "owner_layer_id": 139635236837360,
+  "owner_model_id": 139635307943632,
+  "python": "/workspace/TICO/.venv/bin/python",
+  "recorded_capacity": 2048,
+  "rtol": 0.0001,
+  "scope": "Selected first decoder prefill/decode stages of one full 4.62M pretrained model only; not full bundle, not pre-PR equivalence, not Llama-3.2 or NPU validation",
+  "selected_layers": [
+    0
+  ],
+  "static_capacity": 16,
+  "status": "FAIL",
+  "strict_torch_circle_validation": {
+    "failures": [
+      "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "ok": false,
+    "stages": {
+      "decoder_layer_decode_0.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "decoder_layer_prefill_0.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.0411949157714844e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 8.225440979003906e-05,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.863871097564697e-05,
+                "ok": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "teacher_forced_decode_steps": 4,
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "total_layers": 8,
+  "versions": {
+    "circle-schema": "0.10.1",
+    "numpy": "2.5.4",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0"
+  }
+}

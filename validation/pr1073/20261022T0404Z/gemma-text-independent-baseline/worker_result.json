@@ -1,0 +1,8 @@
+{
+  "scope": "independent Gemma text decoder stage validation, not multimodal export",
+  "before": {
+    "complete": true,
+    "state_preserved": true,
+    "errors": {}
+  }
+}

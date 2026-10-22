@@ -1,0 +1,20 @@
+{
+  "gemma_internal_multimodal_units": {
+    "exit_code": 0,
+    "tests": 12,
+    "test_elapsed_seconds": 215.99,
+    "status": "PASS",
+    "scope": "existing tests, tiny random real HF multimodal models with synthetic patch inputs; not pretrained image/video evaluation",
+    "logs": "gemma_internal_multimodal_units.log",
+    "command_record": "gemma_internal_multimodal_units.command.json"
+  },
+  "qwen_tiny_multimodal_units": {
+    "exit_code": 0,
+    "tests": 23,
+    "test_elapsed_seconds": 105.025,
+    "status": "PASS",
+    "scope": "existing tests, tiny random real HF multimodal models with synthetic patch inputs; not pretrained image/video evaluation",
+    "logs": "qwen_tiny_multimodal_units.log",
+    "command_record": "qwen_tiny_multimodal_units.command.json"
+  }
+}

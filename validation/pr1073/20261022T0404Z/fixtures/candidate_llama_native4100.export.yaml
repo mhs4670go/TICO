@@ -1,0 +1,22 @@
+model:
+  family: llama
+  name_or_path: tiny-random-local-validation-fixture
+runtime:
+  device: cpu
+  dtype: float32
+  seed: 42
+  show_progress: false
+model_args:
+  profile: npu_export
+calibration:
+  seq_len: 8
+pipeline: []
+evaluation:
+  enabled: false
+export:
+  enabled: true
+  max_seq_len: 8
+  prefill_decode: true
+  strict: false
+  artifacts:
+  - circle_bundle

@@ -1,0 +1,6 @@
+{"at": "2026-10-22T04:48:27.919110+00:00", "phase": "before_full_static_retry", "memory_current_bytes": 3933687808, "disk_free_bytes": 29302022144, "full_unit_suite_exit": 124, "quantization_suite_exit": 1}
+{"at": "2026-10-22T04:49:40.859491+00:00", "phase": "full_static_retry", "memory_current_bytes": 5527760896, "disk_free_bytes": 29301104640}
+{"at": "2026-10-22T04:51:48.518735+00:00", "phase": "full_static_retry", "memory_current_bytes": 6502551552, "disk_free_bytes": 29298626560}
+{"at": "2026-10-22T04:54:43.559339+00:00", "phase": "full_static_retry", "memory_current_bytes": 8962949120, "disk_free_bytes": 29295493120}
+{"at": "2026-10-22T04:57:40.013833+00:00", "phase": "full_static_retry", "memory_current_bytes": 10830553088, "disk_free_bytes": 29291732992}
+{"at": "2026-10-22T05:00:59.950845+00:00", "phase": "full_static_retry", "memory_current_bytes": 11878371328, "disk_free_bytes": 29282889728}

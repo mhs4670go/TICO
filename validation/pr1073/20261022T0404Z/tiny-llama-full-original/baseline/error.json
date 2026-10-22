@@ -1,0 +1,6 @@
+{
+  "comparisons_complete": false,
+  "error_type": "RuntimeError",
+  "message": "Circle export requires at least one calibration input.",
+  "status": "ERROR"
+}

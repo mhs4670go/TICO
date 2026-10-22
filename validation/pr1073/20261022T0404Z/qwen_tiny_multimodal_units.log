@@ -1,0 +1,51 @@
+test_activation_stats_collected_text_only (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_activation_stats_collected_text_only)
+Test that activation statistics are collected during calibration (text-only). ... ok
+test_activation_stats_collected_with_images (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_activation_stats_collected_with_images)
+Test that activation statistics are collected during calibration (with images). ... ok
+test_compute_3d_position_ids_reuses_cached_rope_deltas (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_compute_3d_position_ids_reuses_cached_rope_deltas)
+Test that _compute_3d_position_ids reuses cached rope_deltas for subsequent passes. ... ok
+test_different_batch_sizes_text_only (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_different_batch_sizes_text_only)
+Test that quantization works correctly with different batch sizes. ... ok
+test_dtype_override (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_dtype_override)
+PTQConfig overrides should propagate to observers created by QuantQwen3VLModel. ... ok
+test_forward_diff_text_only (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_diff_text_only)
+Test that quantized output is acceptably close to FP reference for text-only input. ... ok
+test_forward_input_validation (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_input_validation)
+Test that forward validates input requirements. ... ok
+test_forward_text_only (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_text_only)
+Test forward pass with text-only input. ... ok
+test_forward_with_both_images_and_videos (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_with_both_images_and_videos)
+Test forward pass with both image and video inputs (tests deepstack feature combination). ... ok
+test_forward_with_images (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_with_images)
+Test forward pass with image input. ... ok
+test_forward_with_inputs_embeds (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_with_inputs_embeds)
+Test forward pass with inputs_embeds (triggers embedding comparison logic). ... ok
+test_forward_with_inputs_embeds_and_images (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_with_inputs_embeds_and_images)
+Test forward pass with inputs_embeds and images (triggers QuantQwen3VLModel._get_placeholder_mask). ... ok
+test_forward_with_inputs_embeds_without_attention_mask (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_with_inputs_embeds_without_attention_mask)
+Test text-only inputs_embeds path when attention_mask is omitted. ... ok
+test_forward_with_videos (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_forward_with_videos)
+Test forward pass with video input. ... ok
+test_get_rope_index_with_images_and_videos (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_get_rope_index_with_images_and_videos)
+Test _get_rope_index generates correct 3D position IDs for mixed image/video input. ... ok
+test_graph_tracing_behavior_with_images (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_graph_tracing_behavior_with_images)
+Test that QuantQwen3VLModel behavior in graph tracing mode. ... ok
+test_graph_tracing_behavior_with_videos (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_graph_tracing_behavior_with_videos)
+Test that QuantQwen3VLModel behavior in graph tracing mode. ... ok
+test_mode_transitions (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_mode_transitions)
+Test quantization mode transitions: NO_QUANT → CALIB → QUANT ... ok
+test_multiple_calibration_steps_text_only (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_multiple_calibration_steps_text_only)
+Test that running multiple calibration iterations works correctly. ... ok
+test_observer_count (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_observer_count)
+Test that the wrapper has the correct number of observers. ... ok
+test_registration_in_registry (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_registration_in_registry)
+Test that Qwen3VLModel is properly registered. ... ok
+test_rope_deltas_computed_after_forward (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_rope_deltas_computed_after_forward)
+Test that rope_deltas are computed after forward pass. ... ok
+test_wraps_submodules (test.quantization.wrapq.wrappers.qwen_vl.test_quant_model.TestQuantQwen3VLModel.test_wraps_submodules)
+Test that __init__ wraps all submodules with PTQWrapper. ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 105.025s
+
+OK

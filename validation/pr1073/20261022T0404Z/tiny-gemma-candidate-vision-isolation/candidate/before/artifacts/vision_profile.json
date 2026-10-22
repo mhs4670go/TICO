@@ -1,0 +1,27 @@
+{
+  "batch_size": 1,
+  "image_height": 16,
+  "image_position_ids_sha256": "111375aac2fb04b1eafcc4c00a4c22eabc27f6bd80ae1e71bf17d21e6f246dfa",
+  "image_position_ids_shape": [
+    1,
+    280,
+    2
+  ],
+  "image_width": 16,
+  "max_soft_tokens": 70,
+  "name": "custom",
+  "num_padding_patches": 264,
+  "num_patches": 280,
+  "num_valid_patches": 16,
+  "num_visual_tokens": 4,
+  "patch_grid_height": 4,
+  "patch_grid_width": 4,
+  "patch_size": 4,
+  "patch_vector_size": 48,
+  "pooling_kernel_size": 2,
+  "soft_grid_height": 2,
+  "soft_grid_width": 2,
+  "tokenizer_add_bos_token": false,
+  "visual_end_idx": 4,
+  "visual_start_idx": 0
+}

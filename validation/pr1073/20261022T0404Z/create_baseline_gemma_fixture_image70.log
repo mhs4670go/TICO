@@ -1,0 +1,86 @@
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "gemma4",
+  "repo": "/workspace/TICO-export-baseline",
+  "commit": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.pt",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "checkpoint_bytes": 648421,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 64,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    },
+    {
+      "kind": "cached_text",
+      "prefill_tokens": 4,
+      "decode_steps": 2
+    },
+    {
+      "kind": "manual_vision_contract",
+      "shape": [
+        4,
+        32
+      ],
+      "effective_validate_static_layout": false,
+      "profile": {
+        "name": "custom",
+        "visual_start_idx": 0,
+        "num_visual_tokens": 4,
+        "max_soft_tokens": 70,
+        "patch_grid_height": 4,
+        "patch_grid_width": 4,
+        "patch_size": 4,
+        "pooling_kernel_size": 2,
+        "batch_size": 1,
+        "tokenizer_add_bos_token": false,
+        "num_valid_patches": 16,
+        "num_patches": 280,
+        "num_padding_patches": 264,
+        "soft_grid_height": 2,
+        "soft_grid_width": 2,
+        "image_height": 16,
+        "image_width": 16,
+        "patch_vector_size": 48,
+        "visual_end_idx": 4,
+        "image_position_ids_shape": [
+          1,
+          280,
+          2
+        ],
+        "image_position_ids_sha256": "111375aac2fb04b1eafcc4c00a4c22eabc27f6bd80ae1e71bf17d21e6f246dfa"
+      }
+    },
+    {
+      "kind": "synthetic_image",
+      "seq_len": 8
+    }
+  ],
+  "model_args": {
+    "text": {
+      "max_seq": 8
+    },
+    "vision": {
+      "visual_start_idx": 0,
+      "num_visual_tokens": 4,
+      "max_soft_tokens": 70,
+      "patch_grid_height": 4,
+      "patch_grid_width": 4,
+      "validate_static_layout": false
+    }
+  },
+  "code_sha256": "498436a1285856811b484075fa8bcfd58d5d870d4bcb71a25646dc96c316d4ba"
+}

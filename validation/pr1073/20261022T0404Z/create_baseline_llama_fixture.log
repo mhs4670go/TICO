@@ -1,0 +1,33 @@
+[transformers] `rope_parameters`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=64
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "llama",
+  "repo": "/workspace/TICO-export-baseline",
+  "commit": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_llama.pt",
+  "checkpoint_sha256": "bfa8572246ac1a4e85238356acd6dc996d1f09f5c0eda71e09e131825a83bf6d",
+  "checkpoint_bytes": 429311,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 64,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    }
+  ],
+  "model_args": {
+    "profile": "npu_export"
+  },
+  "code_sha256": "62120959ae2eef2846bfe580ad548b38ac7f9f2008289dcd3fe9d9d137c791e6"
+}

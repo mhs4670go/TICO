@@ -1,0 +1,1303 @@
+{
+  "scope": "Tiny pretrained Maykeye/TinyLLama-v0 4.62M only; not Llama-3.2, not NPU validation",
+  "model_revision": "298338802ab94432b917bcce11382aa151aee50f",
+  "candidate_sha": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "baseline_sha": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "original_checkpoint": {
+    "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt",
+    "bytes": 20501731,
+    "sha256": "5f8b5a9b5f7e8ff182c6fc96d52f232a9958424f68c09039fd9452e101b17345",
+    "format": "torch.save full nn.Module, not state_dict",
+    "pickle_first_global": "tico.quantization.wrapq.wrappers.ptq_wrapper PTQWrapper",
+    "tico_head": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+    "pretrained_model_id": "Maykeye/TinyLLama-v0",
+    "pretrained_revision": "298338802ab94432b917bcce11382aa151aee50f",
+    "generation_script": "pretrained_llama_smoke_executed_v1.py calibrate",
+    "generation_script_sha256": "09364f17f053665de396acec160f9df364ad202701b8aa238ec0b8edfa9ef79c",
+    "recorded_capacity": 2048,
+    "parameter_dtype": "torch.float32",
+    "device": "cpu",
+    "quantization_profile": "npu_export",
+    "quantization_stage": {
+      "name": "ptq",
+      "profile": "npu_export",
+      "activation": "int16",
+      "linear_weight": "uint8",
+      "embedding_weight": "uint8",
+      "lm_head_weight": "uint8",
+      "norm_weight": "int16",
+      "strict_wrap": true
+    },
+    "vision_profile": null,
+    "note": "Created for tiny pretrained smoke. No compatible user pre-PR pretrained checkpoint existed. Native capacity was preserved and not enlarged."
+  },
+  "cached_checkpoint": {
+    "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized_cached.pt",
+    "sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+    "model_id": "Maykeye/TinyLLama-v0",
+    "model_revision": "298338802ab94432b917bcce11382aa151aee50f",
+    "tico_file": "/workspace/TICO/tico/__init__.py",
+    "root_class": "PTQWrapper",
+    "wrapped_class": "QuantLlamaForCausalLM",
+    "recorded_capacity": 2048,
+    "parameter_dtypes": [
+      "torch.float32"
+    ],
+    "quantization_stage": {
+      "name": "ptq",
+      "profile": "npu_export",
+      "activation": "int16",
+      "linear_weight": "uint8",
+      "embedding_weight": "uint8",
+      "lm_head_weight": "uint8",
+      "norm_weight": "int16",
+      "strict_wrap": true
+    },
+    "calibration_prefill_tokens": 28,
+    "teacher_forced_decode_steps": 4,
+    "calibration_total_tokens": 32,
+    "calibration_inputs": [
+      [
+        [
+          1,
+          347,
+          1435,
+          4842,
+          7749,
+          13579,
+          266,
+          6617,
+          10766,
+          31843,
+          308,
+          4508,
+          25926,
+          3802,
+          780,
+          266,
+          31822,
+          31824,
+          6059,
+          1101,
+          266,
+          10282,
+          8067,
+          266,
+          9482,
+          2231,
+          266,
+          1579,
+          31843,
+          347,
+          12476,
+          17491
+        ]
+      ],
+      [
+        [
+          1,
+          308,
+          3182,
+          4618,
+          260,
+          1171,
+          562,
+          3315,
+          291,
+          1036,
+          266,
+          712,
+          2460,
+          8310,
+          31843,
+          1100,
+          3331,
+          1852,
+          5476,
+          31844,
+          11650,
+          266,
+          6268,
+          31844,
+          291,
+          887,
+          5763,
+          266,
+          2466,
+          289,
+          260,
+          1573
+        ]
+      ],
+      [
+        [
+          1,
+          455,
+          266,
+          6850,
+          31844,
+          266,
+          3360,
+          7155,
+          10685,
+          291,
+          1579,
+          288,
+          260,
+          1886,
+          10294,
+          31843,
+          1761,
+          5622,
+          329,
+          266,
+          19213,
+          289,
+          4925,
+          31844,
+          350,
+          13209,
+          260,
+          2216,
+          1737,
+          291,
+          1429,
+          357
+        ]
+      ],
+      [
+        [
+          1,
+          347,
+          4634,
+          6181,
+          389,
+          266,
+          4452,
+          1855,
+          288,
+          266,
+          3646,
+          31843,
+          3520,
+          5485,
+          12112,
+          1751,
+          266,
+          3101,
+          291,
+          3824,
+          329,
+          518,
+          8680,
+          31843,
+          308,
+          24580,
+          11650,
+          266,
+          31822,
+          31824,
+          28157,
+          1009
+        ]
+      ]
+    ],
+    "scope": "Separate new tiny pretrained cache-calibrated export fixture; not the original checkpoint and not an evaluation score replacement",
+    "original_checkpoint_unchanged": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt"
+  },
+  "quality_smoke_status": "FAIL",
+  "ppl": {
+    "status": "PASS",
+    "metrics": {
+      "fp": 6019.2490234375,
+      "quant": 5889.0615234375
+    },
+    "quant_minus_fp": -130.1875,
+    "sample_rows": 12,
+    "corpus_tokens": 660,
+    "window": 64,
+    "stride": 32,
+    "evaluation_cap": 128,
+    "calibration_length": 32,
+    "export_length": 16
+  },
+  "likelihood": {
+    "status": "PASS",
+    "samples": [
+      {
+        "model": "fp",
+        "sample_id": 0,
+        "input_length": 6,
+        "nll": 39.65800094604492,
+        "target_tokens": 5
+      },
+      {
+        "model": "fp",
+        "sample_id": 1,
+        "input_length": 73,
+        "nll": 359.3289794921875,
+        "target_tokens": 72
+      },
+      {
+        "model": "quant",
+        "sample_id": 0,
+        "input_length": 6,
+        "nll": 39.426918029785156,
+        "target_tokens": 5
+      },
+      {
+        "model": "quant",
+        "sample_id": 1,
+        "input_length": 73,
+        "nll": 368.0004577636719,
+        "target_tokens": 72
+      }
+    ]
+  },
+  "generation": {
+    "fp": "PASS",
+    "quant": "FAIL",
+    "failure": "QuantLlamaForCausalLM lacks get_experts_implementation required by Transformers5.18.0",
+    "classification": "PREEXISTING_COMPATIBILITY_FAILURE",
+    "baseline_evidence": "baseline_pretrained_generation.json"
+  },
+  "frozen_eval_state": {
+    "status": "PASS",
+    "coverage": "weights, observers, frozen qparams, modes, full config, qcfg profiles, attention options, return_type"
+  },
+  "original_circle": {
+    "raw_summary": {
+      "comparisons_complete": false,
+      "log": "candidate.log",
+      "returncode": 2,
+      "status": "ERROR",
+      "worker": "candidate"
+    },
+    "command": {
+      "name": "pretrained_circle_isolation_16",
+      "cwd": "/workspace/TICO",
+      "command": [
+        "python",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/resource_monitor.py",
+        "--report",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_circle_isolation_16_resources.json",
+        "--",
+        "python",
+        "tico/quantization/recipes/debug/export_regression.py",
+        "isolation",
+        "--candidate-repo",
+        ".",
+        "--config",
+        "tico/quantization/examples/configs/llama_export.yaml",
+        "--checkpoint",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt",
+        "--seq-len",
+        "16",
+        "--eager-seq-len",
+        "64",
+        "--decode-steps",
+        "4",
+        "--threads",
+        "1",
+        "--atol",
+        "1e-5",
+        "--rtol",
+        "1e-4",
+        "--artifacts",
+        "circle_bundle",
+        "--require-torch-parity",
+        "--output",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_isolation_16"
+      ],
+      "started_at": "2026-10-22T04:28:10.684861+00:00",
+      "environment": {
+        "VIRTUAL_ENV": "/workspace/TICO/.venv",
+        "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "HF_HUB_OFFLINE": null,
+        "TRANSFORMERS_OFFLINE": null,
+        "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+      },
+      "exit_code": 2,
+      "elapsed_seconds": 360.50430049099987
+    },
+    "recorded_stages": {
+      "before": 1,
+      "after_eager": 0
+    },
+    "status": "ERROR",
+    "comparisons_complete": false
+  },
+  "cached_circle": {
+    "raw_summary": null,
+    "command": {
+      "name": "pretrained_cached_circle_isolation_16",
+      "cwd": "/workspace/TICO",
+      "command": [
+        "python",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/resource_monitor.py",
+        "--report",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_cached_circle_isolation_16_resources.json",
+        "--",
+        "python",
+        "tico/quantization/recipes/debug/export_regression.py",
+        "isolation",
+        "--candidate-repo",
+        ".",
+        "--config",
+        "tico/quantization/examples/configs/llama_export.yaml",
+        "--checkpoint",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized_cached.pt",
+        "--seq-len",
+        "16",
+        "--eager-seq-len",
+        "64",
+        "--decode-steps",
+        "4",
+        "--threads",
+        "1",
+        "--atol",
+        "1e-5",
+        "--rtol",
+        "1e-4",
+        "--artifacts",
+        "circle_bundle",
+        "--require-torch-parity",
+        "--output",
+        "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_cached_isolation_16"
+      ],
+      "started_at": "2026-10-22T04:38:18.670008+00:00",
+      "environment": {
+        "VIRTUAL_ENV": "/workspace/TICO/.venv",
+        "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "HF_HUB_OFFLINE": null,
+        "TRANSFORMERS_OFFLINE": null,
+        "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+      },
+      "exit_code": 124,
+      "timeout": true,
+      "elapsed_seconds": 1200.049754869
+    },
+    "recorded_stages": {
+      "before": 9,
+      "after_eager": 0
+    },
+    "status": "TIMEOUT",
+    "comparisons_complete": false
+  },
+  "selected_stage": {
+    "atol": 1e-05,
+    "baseline_comparison": "NOT_RUN",
+    "before_after_isolation": {
+      "failures": [],
+      "ok": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": true,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": true,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "checkpoint_sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+    "comparisons_complete": true,
+    "eager_prefill_tokens": 64,
+    "frozen_state_preserved": true,
+    "host_source_recomputed_each_phase": true,
+    "model_class": "PTQWrapper",
+    "owner_layer_id": 139635236837360,
+    "owner_model_id": 139635307943632,
+    "python": "/workspace/TICO/.venv/bin/python",
+    "recorded_capacity": 2048,
+    "rtol": 0.0001,
+    "scope": "Selected first decoder prefill/decode stages of one full 4.62M pretrained model only; not full bundle, not pre-PR equivalence, not Llama-3.2 or NPU validation",
+    "selected_layers": [
+      0
+    ],
+    "static_capacity": 16,
+    "status": "FAIL",
+    "strict_torch_circle_validation": {
+      "failures": [
+        "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch"
+      ],
+      "ok": false,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_4": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_input_5": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p2_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": true,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "array_keys_equal": true,
+          "arrays": {
+            "p0_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p0_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_circle_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_input_3": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_0": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_1": {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            "p1_torch_2": {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          },
+          "circle_structure_differences": [],
+          "circle_structure_equal": true,
+          "execution_mode_equal": true,
+          "numerical_coverage_complete": true,
+          "ok": false,
+          "probe_names_equal": true,
+          "torch_export_ops_equal": true,
+          "torch_parity_left": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ],
+          "torch_parity_right": [
+            {
+              "probe": "export_example",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "torch_parity": [
+                {
+                  "max_abs_error": 4.0411949157714844e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 8.225440979003906e-05,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.863871097564697e-05,
+                  "ok": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "teacher_forced_decode_steps": 4,
+    "tico_file": "/workspace/TICO/tico/__init__.py",
+    "total_layers": 8,
+    "versions": {
+      "circle-schema": "0.10.1",
+      "numpy": "2.5.4",
+      "torch": "2.13.0+cpu",
+      "transformers": "5.18.0"
+    }
+  },
+  "old_new_export": {
+    "status": "BLOCKED",
+    "reason": "No compatible user pre-PR pretrained full-module checkpoint; fresh baseline preparation was generation diagnosis only"
+  },
+  "seq2048_export": {
+    "status": "NOT_RUN",
+    "reason": "Shape-independent strict Torch/Circle failure at16tokens; not repeated at2048"
+  },
+  "eager4096_plus4": {
+    "status": "BLOCKED",
+    "recorded_capacity": 2048,
+    "required_capacity": 4100,
+    "reason": "Native config/checkpoint capacity was not enlarged"
+  },
+  "product_code_changed": false,
+  "tolerances_changed": false
+}

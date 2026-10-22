@@ -1,0 +1,7 @@
+{
+  "cgroup_current_bytes": 5644763136,
+  "cgroup_max_bytes": "17179869184",
+  "threshold_bytes": 12884901888,
+  "workspace_free_bytes": 29324861440,
+  "status": "READY"
+}

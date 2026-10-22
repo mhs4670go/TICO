@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 862, in main
+    _worker(args)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 676, in _worker
+    _export_phase(ctx, root / "before", options, initial)
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 536, in _export_phase
+    ctx.adapter.export(ctx)
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/adapters/gemma4.py", line 592, in export
+    export_gemma4_per_layer(
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/export/gemma4.py", line 1018, in export_gemma4_per_layer
+    _export_gemma4_vision_stages(
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/export/gemma4.py", line 415, in _export_gemma4_vision_stages
+    _convert_and_save(
+  File "/workspace/TICO-export-baseline/tico/quantization/recipes/export/circle.py", line 36, in convert_and_save_circle
+    circle_model = tico.convert(
+                   ^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/quantization/recipes/debug/export_regression.py", line 398, in capture_convert
+    actual = runtime.run(bound, mode=mode).outputs
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/circle/runtime/executor.py", line 247, in run
+    self._execute_operator(operator, values, mode)
+  File "/workspace/TICO-export-baseline/tico/circle/runtime/executor.py", line 329, in _execute_operator
+    results = kernel(context)
+              ^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/circle/runtime/kernels/nn.py", line 620, in _rms_norm
+    raise ctx.fail(
+tico.circle.runtime.errors.UnsupportedCircleOperatorError: RMS_NORM supports rank 3 or 4 inputs, found shape (4, 32).
+  at subgraphs[0].operators[102] RMS_NORM (builtin code -6, version 1) inputs=[tensors[140] 'tico.quantization.wrapq.wrappers.gemma4.export_adapters.Gemma4VisionModelPrefillExportAdapter::mul_12' UINT8[4, 32] (activation, per-tensor quantized), tensors[1] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::_prop_tensor_constant412' UINT8[32] (constant, per-tensor quantized)] outputs=[tensors[141] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_7' UINT8[4, 32] (activation, per-tensor quantized)]
+Saving vision_prefill.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-gemma-old-new-image70/baseline/before/artifacts/vision_prefill.q.circle

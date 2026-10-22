@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/inspect_gemma_text_parity.py", line 29, in <module>
+    runtime=CircleReferenceRuntime(BASE/'artifacts'/STAGE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/circle/runtime/executor.py", line 90, in __init__
+    else CircleDocument.from_bytes(circle)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/circle/document.py", line 126, in from_bytes
+    return cls(model_from_bytes(data))
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO-export-baseline/tico/circle/io.py", line 331, in model_from_bytes
+    raise TypeError(f"Expected bytes, received {type(data).__name__}.")
+TypeError: Expected bytes, received PosixPath.

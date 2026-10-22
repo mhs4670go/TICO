@@ -1,0 +1,20 @@
+{
+  "name": "long_llama_resource_gate",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "python",
+    "out/pr1073_validation/20261022T0404Z/long_llama_resource_gate.py"
+  ],
+  "started_at": "2026-10-22T04:39:15.928486+00:00",
+  "environment": {
+    "VIRTUAL_ENV": null,
+    "PATH": "<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": null
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.18314073300007294
+}

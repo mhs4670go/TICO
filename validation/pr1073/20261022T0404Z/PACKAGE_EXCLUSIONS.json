@@ -1,0 +1,188 @@
+{
+  "generated_by": "package_validation_artifacts.py",
+  "result_root": "/workspace/TICO/out/pr1073_validation/20261022T0404Z",
+  "excluded_paths": [
+    {
+      "path": "__pycache__/compare_gemma_text_stages.cpython-312.pyc",
+      "bytes": 17946,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/compare_pretrained_protocol.cpython-312.pyc",
+      "bytes": 5706,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/gemma_text_export_recording.cpython-312.pyc",
+      "bytes": 61690,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/gemma_text_stage_worker.cpython-312.pyc",
+      "bytes": 17293,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/generated_image_eager.cpython-312.pyc",
+      "bytes": 11173,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/pretrained_llama_smoke.cpython-312.pyc",
+      "bytes": 18778,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/pretrained_selected_stage_isolation.cpython-312.pyc",
+      "bytes": 15311,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/resource_monitor_v2.cpython-312.pyc",
+      "bytes": 4888,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "__pycache__/supplemental_eager_state.cpython-312.pyc",
+      "bytes": 16142,
+      "reason": "Transient generated cache component: __pycache__"
+    },
+    {
+      "path": "baseline_mypy_cache/.gitignore",
+      "bytes": 34,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.0.db",
+      "bytes": 7491584,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.1.db",
+      "bytes": 8175616,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.10.db",
+      "bytes": 7319552,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.11.db",
+      "bytes": 7405568,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.12.db",
+      "bytes": 8540160,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.13.db",
+      "bytes": 7139328,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.14.db",
+      "bytes": 9728000,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.15.db",
+      "bytes": 7593984,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.2.db",
+      "bytes": 7663616,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.3.db",
+      "bytes": 7344128,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.4.db",
+      "bytes": 7221248,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.5.db",
+      "bytes": 7671808,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.6.db",
+      "bytes": 7368704,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.7.db",
+      "bytes": 7274496,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.8.db",
+      "bytes": 7593984,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/3.12/cache.9.db",
+      "bytes": 7725056,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "baseline_mypy_cache/CACHEDIR.TAG",
+      "bytes": 190,
+      "reason": "Transient generated cache component: baseline_mypy_cache"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3.incomplete_info.lock",
+      "bytes": 0,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_info.json",
+      "bytes": 1219,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-test.arrow",
+      "bytes": 1306200,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-train.arrow",
+      "bytes": 11068328,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-validation.arrow",
+      "bytes": 1160224,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    },
+    {
+      "path": "hf_cache/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3_builder.lock",
+      "bytes": 0,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    },
+    {
+      "path": "hf_cache/_workspace_TICO_out_pr1073_validation_20261022T0404Z_hf_cache_Salesforce___wikitext_wikitext-2-raw-v1_0.0.0_b08601e04326c79dfdd32d625aee71d232d685c3.lock",
+      "bytes": 0,
+      "reason": "HF datasets cache; provenance and selected evaluation row evidence are preserved separately"
+    }
+  ],
+  "manifest_self_exclusion": {
+    "path": "artifact_manifest.json",
+    "reason": "Manifest excludes its own checksum to avoid recursion; the manifest IS included in the ZIP"
+  },
+  "archive_exclusion": {
+    "path": "/workspace/shared/downloads/TICO_PR1073_validation_20261022T0404Z.zip",
+    "reason": "Archive and its execution/checksum records reside outside result_root to avoid recursion"
+  },
+  "dataset_cache_derivatives_included": [
+    "PACKAGE_HF_DATASET_PROVENANCE.json",
+    "PACKAGE_HF_TEST_SAMPLES.json"
+  ]
+}

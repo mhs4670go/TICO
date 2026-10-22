@@ -1,0 +1,7 @@
+{
+  "original": "tico/quantization/recipes/debug/export_regression.py",
+  "original_sha256": "451508ace4f387be5306fe829a76bfbd5a11249148e80be089e1173e1a851111",
+  "patched_copy": "out/pr1073_validation/20261022T0404Z/export_regression_full_text_dirs.py",
+  "patched_sha256": "ba6d08e91af4c5bd9187b2af20d85121c9da00d132228997164c8901e920e002",
+  "change": "Create full-text artifact directory inside worker before saving when an empty base artifact set is selected; no product/compiler/runtime, tolerance, qparam or state-check changes"
+}

@@ -1,0 +1,45 @@
+{
+  "scope": "tiny random real-HF PTQ fixture; not pretrained validation",
+  "family": "qwen3_vl",
+  "repo": "/workspace/TICO-export-baseline",
+  "commit": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_v2.pt",
+  "checkpoint_sha256": "f7dd409d2026b4c44add103f1c87319c14038d2e8124990e8964cd07d72b2362",
+  "checkpoint_bytes": 1144117,
+  "seed": 1073,
+  "dtype": "float32",
+  "device": "cpu",
+  "native_capacity": 64,
+  "calibration": [
+    {
+      "kind": "text_only",
+      "seq_len": 8
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 6
+    },
+    {
+      "kind": "text_only",
+      "seq_len": 4
+    },
+    {
+      "kind": "synthetic_image",
+      "seq_len": 8
+    }
+  ],
+  "model_args": {
+    "profile": "npu_export",
+    "vision": {
+      "grid_thw": [
+        1,
+        2,
+        2
+      ],
+      "visual_start_idx": 0,
+      "spatial_merge_size": 2
+    }
+  },
+  "code_sha256": "d700d1c13944aeacec8908454035da825d01cb8d2a5d862d0a351ed54d44655d"
+}

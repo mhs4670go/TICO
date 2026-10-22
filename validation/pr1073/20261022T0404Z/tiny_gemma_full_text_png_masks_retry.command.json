@@ -1,0 +1,43 @@
+{
+  "name": "tiny_gemma_full_text_png_masks_retry",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "python",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/export_regression_gemma_full_text_masks.py",
+    "run",
+    "--baseline-repo",
+    "/workspace/TICO-export-baseline",
+    "--candidate-repo",
+    ".",
+    "--config",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.export.yaml",
+    "--checkpoint",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.pt",
+    "--seq-len",
+    "8",
+    "--eager-seq-len",
+    "12",
+    "--decode-steps",
+    "4",
+    "--artifacts",
+    "",
+    "--include-full-text",
+    "--eager-inputs",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_actual_png_kwargs.pt",
+    "--require-torch-parity",
+    "--output",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-gemma-full-text-png-masks-retry"
+  ],
+  "started_at": "2026-10-22T05:04:02.164932+00:00",
+  "environment": {
+    "VIRTUAL_ENV": "/workspace/TICO/.venv",
+    "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 122.53926736799986
+}

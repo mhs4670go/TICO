@@ -1,0 +1,8 @@
+Saving decoder_layer_prefill_0.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma-text-independent-baseline/before/artifacts/decoder_layer_prefill_0.q.circle
+COMPLETED decoder_layer_prefill_0.q.circle
+Saving decoder_layer_decode_0.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma-text-independent-baseline/before/artifacts/decoder_layer_decode_0.q.circle
+COMPLETED decoder_layer_decode_0.q.circle
+Saving decoder_layer_prefill_1.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma-text-independent-baseline/before/artifacts/decoder_layer_prefill_1.q.circle
+COMPLETED decoder_layer_prefill_1.q.circle
+Saving decoder_layer_decode_1.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma-text-independent-baseline/before/artifacts/decoder_layer_decode_1.q.circle
+COMPLETED decoder_layer_decode_1.q.circle

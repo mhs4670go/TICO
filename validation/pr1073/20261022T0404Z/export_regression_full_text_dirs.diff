@@ -1,0 +1,10 @@
+--- tico/quantization/recipes/debug/export_regression.py
++++ out/pr1073_validation/20261022T0404Z/export_regression_full_text_dirs.py
+@@ -509,6 +509,7 @@
+                 input_ids=input_ids, use_cache=False, return_dict=True
+             ).last_hidden_state
+ 
++    path.mkdir(parents=True, exist_ok=True)
+     adapter = TextProbe(owner).eval()
+     inputs = torch.randint(0, int(owner.config.vocab_size), (1, options.seq_len))
+     builder = getattr(owner, "_build_static_export_inputs", None)

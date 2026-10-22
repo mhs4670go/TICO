@@ -1,0 +1,4 @@
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+llama PASS
+qwen3_vl PASS
+gemma4 PASS

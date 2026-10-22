@@ -1,0 +1,59 @@
+{
+  "repo": "/workspace/TICO-export-baseline",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "python": "/workspace/TICO/.venv/bin/python",
+  "torch": "2.13.0+cpu",
+  "checkpoint_sha256": "5f8b5a9b5f7e8ff182c6fc96d52f232a9958424f68c09039fd9452e101b17345",
+  "scope": "Baseline generation API diagnosis only; fresh fallback PTQ is not old-new export equivalence",
+  "attempts": [
+    {
+      "mode": "same_candidate_checkpoint",
+      "status": "FAIL",
+      "model_class": "PTQWrapper",
+      "error_type": "AttributeError",
+      "error": "'QuantLlamaModel' object has no attribute 'causal_mask_template'",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/TICO/out/pr1073_validation/20261022T0404Z/baseline_pretrained_generation.py\", line 37, in <module>\n    with torch.no_grad():output=model.generate(**inputs,max_new_tokens=8,do_sample=False,use_cache=True,pad_token_id=tokenizer.pad_token_id)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 90, in generate\n    return getattr(self.wrapped, \"generate\")(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py\", line 2976, in generate\n    result = decoding_method(\n             ^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py\", line 3176, in _sample\n    outputs = self._prefill(\n              ^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py\", line 4287, in _prefill\n    return self(**model_inputs, return_dict=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/llama/quant_model_for_causal_lm.py\", line 240, in forward\n    outputs = self.model(\n              ^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 46, in forward\n    return self.wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/llama/quant_model.py\", line 598, in forward\n    model_attention_mask = self.get_attention_mask_for(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/llama/quant_model.py\", line 487, in get_attention_mask_for\n    causal_mask = self._slice_causal(\n                  ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/llama/quant_model.py\", line 467, in _slice_causal\n    assert isinstance(self.causal_mask_template, torch.Tensor)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1967, in __getattr__\n    raise AttributeError(\nAttributeError: 'QuantLlamaModel' object has no attribute 'causal_mask_template'\n"
+    },
+    {
+      "mode": "fresh_baseline_prepare",
+      "status": "FAIL",
+      "calibration_input_ids": [
+        [
+          1,
+          347,
+          1435,
+          4842,
+          7749,
+          13579,
+          266,
+          6617,
+          10766,
+          31843,
+          308,
+          4508,
+          25926,
+          3802,
+          780,
+          266,
+          31822,
+          31824,
+          6059,
+          1101,
+          266,
+          10282,
+          8067,
+          266,
+          9482,
+          2231,
+          266,
+          1579,
+          31843
+        ]
+      ],
+      "model_class": "PTQWrapper",
+      "error_type": "AttributeError",
+      "error": "'QuantLlamaForCausalLM' object has no attribute 'get_experts_implementation'",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/TICO/out/pr1073_validation/20261022T0404Z/baseline_pretrained_generation.py\", line 37, in <module>\n    with torch.no_grad():output=model.generate(**inputs,max_new_tokens=8,do_sample=False,use_cache=True,pad_token_id=tokenizer.pad_token_id)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 90, in generate\n    return getattr(self.wrapped, \"generate\")(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py\", line 2976, in generate\n    result = decoding_method(\n             ^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py\", line 3197, in _sample\n    with self._optimize_model_for_decode():\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py\", line 2480, in _optimize_model_for_decode\n    original_experts_implementation = self.get_experts_implementation()\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1967, in __getattr__\n    raise AttributeError(\nAttributeError: 'QuantLlamaForCausalLM' object has no attribute 'get_experts_implementation'\n"
+    }
+  ]
+}

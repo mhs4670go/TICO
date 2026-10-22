@@ -1,0 +1,214 @@
+{
+  "run": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-full-text-png-dirs-retry",
+  "scope": "actual serialized Circle stage evidence inventory",
+  "phases": {
+    "baseline/before": {
+      "ok": true,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 1,
+      "state_preserved": true,
+      "stages": {
+        "full_text_regression.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_8'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 187,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        }
+      }
+    },
+    "candidate/after_eager": {
+      "ok": true,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 1,
+      "state_preserved": true,
+      "stages": {
+        "full_text_regression.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_8'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 187,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        }
+      }
+    },
+    "candidate/before": {
+      "ok": true,
+      "artifact_stage_sets_equal": true,
+      "stage_count": 1,
+      "state_preserved": true,
+      "stages": {
+        "full_text_regression.q.circle": {
+          "boundary": {
+            "inputs": [
+              {
+                "shape": [
+                  1,
+                  8
+                ],
+                "type": 4,
+                "name": "b'tico::input_ids'"
+              }
+            ],
+            "outputs": [
+              {
+                "shape": [
+                  1,
+                  8,
+                  32
+                ],
+                "type": 3,
+                "name": "b'tico.quantization.wrapq.wrappers.ops.quant_rmsnorm.QuantRMSNorm::rms_norm_8'"
+              }
+            ]
+          },
+          "qparam_tensor_count": 187,
+          "probes": [
+            {
+              "probe": "export_example",
+              "ok": true,
+              "expected_inputs": 1,
+              "expected_outputs": 1,
+              "array_keys": {
+                "input": [
+                  "p0_input_0"
+                ],
+                "circle": [
+                  "p0_circle_0"
+                ],
+                "torch": [
+                  "p0_torch_0"
+                ]
+              },
+              "finite": true,
+              "coverage_complete": true,
+              "torch_parity": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "circle_shapes": {
+                "p0_circle_0": [
+                  1,
+                  8,
+                  32
+                ]
+              }
+            }
+          ],
+          "execution_mode": "fake_quantize"
+        }
+      }
+    }
+  },
+  "ok": true
+}

@@ -1,0 +1,3660 @@
+{
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "scope": "Actual saved numerical outputs; does not change original comparator status or infer a RoPE cause",
+  "stages": [
+    {
+      "phase": "before",
+      "stage": "decoder_layer_decode_0.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.21373368799686432,
+              "circle_at_max": -0.21373368799686432,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.6165792346000671,
+              "circle_at_max": 0.6165792346000671,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.10036199539899826,
+              "circle_at_max": 0.10036199539899826,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.13479864597320557,
+              "circle_at_max": -0.13479864597320557,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.6165792346000671,
+              "circle_at_max": 0.6165792346000671,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.10036199539899826,
+              "circle_at_max": 0.10036199539899826,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.04114141687750816,
+              "circle_at_max": -0.04114141687750816,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.6165792346000671,
+              "circle_at_max": 0.6165792346000671,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.10036199539899826,
+              "circle_at_max": 0.10036199539899826,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_decode_1.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 10,
+              "max_abs_error": 0.00014209747314453125,
+              "max_error_index": [
+                0,
+                0,
+                41
+              ],
+              "torch_at_max": 1.422008752822876,
+              "circle_at_max": 1.4221508502960205,
+              "circle_output_scale": [
+                7.104715041350573e-05
+              ],
+              "max_error_in_scale_units": 2.0000446508762324,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch": 0.1774047315120697,
+                  "circle": 0.17747578024864197,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    6
+                  ],
+                  "torch": 0.325040727853775,
+                  "circle": 0.3251117467880249,
+                  "absolute_error": 7.101893424987793e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch": -0.2225196808576584,
+                  "circle": -0.22259072959423065,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    8
+                  ],
+                  "torch": 0.48766764998435974,
+                  "circle": 0.487738698720932,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    12
+                  ],
+                  "torch": 0.28305184841156006,
+                  "circle": 0.2829807996749878,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    16
+                  ],
+                  "torch": -0.39132770895957947,
+                  "circle": -0.39139875769615173,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    28
+                  ],
+                  "torch": 0.1653977632522583,
+                  "circle": 0.16546881198883057,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    31
+                  ],
+                  "torch": 0.423654168844223,
+                  "circle": 0.42358312010765076,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    39
+                  ],
+                  "torch": -0.3122522234916687,
+                  "circle": -0.31232327222824097,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    53
+                  ],
+                  "torch": -0.5933147668838501,
+                  "circle": -0.5932437181472778,
+                  "absolute_error": 7.104873657226562e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.375457227230072,
+              "circle_at_max": -0.375457227230072,
+              "circle_output_scale": [
+                0.0001647464814595878
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 6.341934204101562e-05,
+              "max_error_index": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "torch_at_max": 0.5067539811134338,
+              "circle_at_max": 0.5068174004554749,
+              "circle_output_scale": [
+                6.339972605928779e-05
+              ],
+              "max_error_in_scale_units": 1.0003094016795828,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "torch": 0.5067539811134338,
+                  "circle": 0.5068174004554749,
+                  "absolute_error": 6.341934204101562e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 13,
+              "max_abs_error": 7.104873657226562e-05,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -1.013061285018921,
+              "circle_at_max": -1.0129902362823486,
+              "circle_output_scale": [
+                7.104715041350573e-05
+              ],
+              "max_error_in_scale_units": 1.0000223254381162,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "torch": -0.5447185039520264,
+                  "circle": -0.5446474552154541,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    10
+                  ],
+                  "torch": 0.3031581938266754,
+                  "circle": 0.3032292425632477,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    12
+                  ],
+                  "torch": -0.046535883098840714,
+                  "circle": -0.046464838087558746,
+                  "absolute_error": 7.104501128196716e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    15
+                  ],
+                  "torch": -0.4520019590854645,
+                  "circle": -0.45207300782203674,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch": -0.13811565935611725,
+                  "circle": -0.13804461061954498,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    25
+                  ],
+                  "torch": 0.1433020979166031,
+                  "circle": 0.14337314665317535,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    26
+                  ],
+                  "torch": -0.09449271112680435,
+                  "circle": -0.09442166239023209,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    28
+                  ],
+                  "torch": 0.11388858407735825,
+                  "circle": 0.11381753534078598,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    30
+                  ],
+                  "torch": 0.4879518151283264,
+                  "circle": 0.48788079619407654,
+                  "absolute_error": 7.101893424987793e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    39
+                  ],
+                  "torch": -0.014138382859528065,
+                  "circle": -0.014209429733455181,
+                  "absolute_error": 7.10468739271164e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    46
+                  ],
+                  "torch": 0.07715720683336258,
+                  "circle": 0.07722825556993484,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    56
+                  ],
+                  "torch": 0.3067815899848938,
+                  "circle": 0.30671054124832153,
+                  "absolute_error": 7.104873657226562e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.375457227230072,
+              "circle_at_max": -0.375457227230072,
+              "circle_output_scale": [
+                0.0001647464814595878
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 6.341934204101562e-05,
+              "max_error_index": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "torch_at_max": 0.5067539811134338,
+              "circle_at_max": 0.5068174004554749,
+              "circle_output_scale": [
+                6.339972605928779e-05
+              ],
+              "max_error_in_scale_units": 1.0003094016795828,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "torch": 0.5067539811134338,
+                  "circle": 0.5068174004554749,
+                  "absolute_error": 6.341934204101562e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.47836047410964966,
+              "circle_at_max": -0.47836047410964966,
+              "circle_output_scale": [
+                7.104715041350573e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.375457227230072,
+              "circle_at_max": -0.375457227230072,
+              "circle_output_scale": [
+                0.0001647464814595878
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 6.341934204101562e-05,
+              "max_error_index": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "torch_at_max": 0.5067539811134338,
+              "circle_at_max": 0.5068174004554749,
+              "circle_output_scale": [
+                6.339972605928779e-05
+              ],
+              "max_error_in_scale_units": 1.0003094016795828,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "torch": 0.5067539811134338,
+                  "circle": 0.5068174004554749,
+                  "absolute_error": 6.341934204101562e-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_decode_2.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 17,
+              "max_abs_error": 0.00013017654418945312,
+              "max_error_index": [
+                0,
+                0,
+                59
+              ],
+              "torch_at_max": -1.4662373065948486,
+              "circle_at_max": -1.466367483139038,
+              "circle_output_scale": [
+                0.0001301009178860113
+              ],
+              "max_error_in_scale_units": 1.0005812895456132,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch": 0.49503397941589355,
+                  "circle": 0.49516409635543823,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    2
+                  ],
+                  "torch": 0.11670052260160446,
+                  "circle": 0.11657042056322098,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    6
+                  ],
+                  "torch": -0.8593165874481201,
+                  "circle": -0.85944664478302,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    9
+                  ],
+                  "torch": -0.3026147484779358,
+                  "circle": -0.3027448356151581,
+                  "absolute_error": 0.00013008713722229004
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    12
+                  ],
+                  "torch": 0.5227454900741577,
+                  "circle": 0.5228756070137024,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    26
+                  ],
+                  "torch": 0.9856445789337158,
+                  "circle": 0.9855144619941711,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    27
+                  ],
+                  "torch": 0.9328235983848572,
+                  "circle": 0.9329536557197571,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    30
+                  ],
+                  "torch": 0.468233197927475,
+                  "circle": 0.46836331486701965,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    37
+                  ],
+                  "torch": 0.1196928471326828,
+                  "circle": 0.11982294172048569,
+                  "absolute_error": 0.00013009458780288696
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    38
+                  ],
+                  "torch": 1.0216825008392334,
+                  "circle": 1.0215524435043335,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    43
+                  ],
+                  "torch": 0.6233134865760803,
+                  "circle": 0.6231833696365356,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    44
+                  ],
+                  "torch": -0.12086375057697296,
+                  "circle": -0.12073364853858948,
+                  "absolute_error": 0.0001301020383834839
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.0037969197146594524,
+              "circle_at_max": -0.0037969197146594524,
+              "circle_output_scale": [
+                0.00010546998964855447
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.40109702944755554,
+              "circle_at_max": -0.40109702944755554,
+              "circle_output_scale": [
+                7.418106542900205e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 14,
+              "max_abs_error": 0.00013017654418945312,
+              "max_error_index": [
+                0,
+                0,
+                34
+              ],
+              "torch_at_max": 1.0833503007888794,
+              "circle_at_max": 1.0834804773330688,
+              "circle_output_scale": [
+                0.0001301009178860113
+              ],
+              "max_error_in_scale_units": 1.0005812895456132,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    3
+                  ],
+                  "torch": 0.47356733679771423,
+                  "circle": 0.47343724966049194,
+                  "absolute_error": 0.00013008713722229004
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch": -0.9497367143630981,
+                  "circle": -0.949866771697998,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch": 0.5867551565170288,
+                  "circle": 0.5868852138519287,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    9
+                  ],
+                  "torch": 0.23795457184314728,
+                  "circle": 0.23808467388153076,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    16
+                  ],
+                  "torch": 0.3085993826389313,
+                  "circle": 0.3084692656993866,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    20
+                  ],
+                  "torch": -0.8306943774223328,
+                  "circle": -0.8305642604827881,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    22
+                  ],
+                  "torch": 0.20009520649909973,
+                  "circle": 0.19996510446071625,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    32
+                  ],
+                  "torch": -0.9767976999282837,
+                  "circle": -0.9769278168678284,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    34
+                  ],
+                  "torch": 1.0833503007888794,
+                  "circle": 1.0834804773330688,
+                  "absolute_error": 0.00013017654418945312
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    38
+                  ],
+                  "torch": 0.7318176627159119,
+                  "circle": 0.7316875457763672,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    54
+                  ],
+                  "torch": 0.3934251666069031,
+                  "circle": 0.39355528354644775,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    57
+                  ],
+                  "torch": -0.36207085847854614,
+                  "circle": -0.36194074153900146,
+                  "absolute_error": 0.00013011693954467773
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.0037969197146594524,
+              "circle_at_max": -0.0037969197146594524,
+              "circle_output_scale": [
+                0.00010546998964855447
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.40109702944755554,
+              "circle_at_max": -0.40109702944755554,
+              "circle_output_scale": [
+                7.418106542900205e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.3641524612903595,
+              "circle_at_max": 0.3641524612903595,
+              "circle_output_scale": [
+                0.0001301009178860113
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.0037969197146594524,
+              "circle_at_max": -0.0037969197146594524,
+              "circle_output_scale": [
+                0.00010546998964855447
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.40109702944755554,
+              "circle_at_max": -0.40109702944755554,
+              "circle_output_scale": [
+                7.418106542900205e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_decode_3.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0001150369644165039,
+              "max_error_index": [
+                0,
+                0,
+                26
+              ],
+              "torch_at_max": -1.5478811264038086,
+              "circle_at_max": -1.547996163368225,
+              "circle_output_scale": [
+                0.00011503278074087575
+              ],
+              "max_error_in_scale_units": 1.0000363694209704,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.29491108655929565,
+              "circle_at_max": 0.29491108655929565,
+              "circle_output_scale": [
+                8.240041643148288e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.8395739793777466,
+              "circle_at_max": -0.8395739793777466,
+              "circle_output_scale": [
+                6.498753646155819e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.10456480085849762,
+              "circle_at_max": -0.10456480085849762,
+              "circle_output_scale": [
+                0.00011503278074087575
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.29491108655929565,
+              "circle_at_max": 0.29491108655929565,
+              "circle_output_scale": [
+                8.240041643148288e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.8395739793777466,
+              "circle_at_max": -0.8395739793777466,
+              "circle_output_scale": [
+                6.498753646155819e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                1,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.1406850963830948,
+              "circle_at_max": 0.1406850963830948,
+              "circle_output_scale": [
+                0.00011503278074087575
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.29491108655929565,
+              "circle_at_max": 0.29491108655929565,
+              "circle_output_scale": [
+                8.240041643148288e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.8395739793777466,
+              "circle_at_max": -0.8395739793777466,
+              "circle_output_scale": [
+                6.498753646155819e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_prefill_0.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 22,
+              "max_abs_error": 8.07046890258789e-05,
+              "max_error_index": [
+                0,
+                3,
+                9
+              ],
+              "torch_at_max": 0.9071279168128967,
+              "circle_at_max": 0.9070472121238708,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 2.0008738064082263,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    3,
+                    29
+                  ],
+                  "torch": 0.13165253400802612,
+                  "circle": 0.13161219656467438,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    30
+                  ],
+                  "torch": 0.34401485323905945,
+                  "circle": 0.34409552812576294,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    31
+                  ],
+                  "torch": 0.2138950377702713,
+                  "circle": 0.21393536031246185,
+                  "absolute_error": 4.032254219055176e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    37
+                  ],
+                  "torch": -0.23700682818889618,
+                  "circle": -0.23696649074554443,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    57
+                  ],
+                  "torch": -0.15161822736263275,
+                  "circle": -0.15153755247592926,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    61
+                  ],
+                  "torch": 0.20296432077884674,
+                  "circle": 0.202923983335495,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    0
+                  ],
+                  "torch": 0.031017402186989784,
+                  "circle": 0.030977066606283188,
+                  "absolute_error": 4.0335580706596375e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    4
+                  ],
+                  "torch": 0.45493534207344055,
+                  "circle": 0.45485466718673706,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    6
+                  ],
+                  "torch": -0.23450607061386108,
+                  "circle": -0.23458674550056458,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    9
+                  ],
+                  "torch": 0.21131360530853271,
+                  "circle": 0.21135394275188446,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    18
+                  ],
+                  "torch": 0.4290807843208313,
+                  "circle": 0.4291614294052124,
+                  "absolute_error": 8.064508438110352e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    20
+                  ],
+                  "torch": -0.516365110874176,
+                  "circle": -0.5164457559585571,
+                  "absolute_error": 8.064508438110352e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 3,
+              "max_abs_error": 8.226558566093445e-05,
+              "max_error_index": [
+                0,
+                15,
+                13,
+                3
+              ],
+              "torch_at_max": -0.012668873183429241,
+              "circle_at_max": -0.012751138769090176,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 1.0000021226780555,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    9,
+                    4,
+                    2
+                  ],
+                  "torch": -0.0929599180817604,
+                  "circle": -0.09304217994213104,
+                  "absolute_error": 8.226186037063599e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    12,
+                    3
+                  ],
+                  "torch": 0.25197896361351013,
+                  "circle": 0.25206121802330017,
+                  "absolute_error": 8.225440979003906e-05
+                },
+                {
+                  "index": [
+                    0,
+                    15,
+                    13,
+                    3
+                  ],
+                  "torch": -0.012668873183429241,
+                  "circle": -0.012751138769090176,
+                  "absolute_error": 8.226558566093445e-05
+                }
+              ]
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 3.8683414459228516e-05,
+              "max_error_index": [
+                0,
+                10,
+                14,
+                2
+              ],
+              "torch_at_max": 0.5889552235603333,
+              "circle_at_max": 0.5889939069747925,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 1.0009847727825785,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    14,
+                    13,
+                    0
+                  ],
+                  "torch": 0.1333264857530594,
+                  "circle": 0.13328783214092255,
+                  "absolute_error": 3.865361213684082e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 27,
+              "max_abs_error": 8.07046890258789e-05,
+              "max_error_index": [
+                0,
+                3,
+                9
+              ],
+              "torch_at_max": 0.9071279168128967,
+              "circle_at_max": 0.9070472121238708,
+              "circle_output_scale": [
+                4.03347221435979e-05
+              ],
+              "max_error_in_scale_units": 2.0008738064082263,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    3,
+                    29
+                  ],
+                  "torch": 0.13165253400802612,
+                  "circle": 0.13161219656467438,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    30
+                  ],
+                  "torch": 0.34401485323905945,
+                  "circle": 0.34409552812576294,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    31
+                  ],
+                  "torch": 0.2138950377702713,
+                  "circle": 0.21393536031246185,
+                  "absolute_error": 4.032254219055176e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    37
+                  ],
+                  "torch": -0.23700682818889618,
+                  "circle": -0.23696649074554443,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    57
+                  ],
+                  "torch": -0.15161822736263275,
+                  "circle": -0.15153755247592926,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    61
+                  ],
+                  "torch": 0.20296432077884674,
+                  "circle": 0.202923983335495,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    0
+                  ],
+                  "torch": 0.031017402186989784,
+                  "circle": 0.030977066606283188,
+                  "absolute_error": 4.0335580706596375e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    4
+                  ],
+                  "torch": 0.45493534207344055,
+                  "circle": 0.45485466718673706,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    6
+                  ],
+                  "torch": -0.23450607061386108,
+                  "circle": -0.23458674550056458,
+                  "absolute_error": 8.067488670349121e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    9
+                  ],
+                  "torch": 0.21131360530853271,
+                  "circle": 0.21135394275188446,
+                  "absolute_error": 4.0337443351745605e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    18
+                  ],
+                  "torch": 0.4290807843208313,
+                  "circle": 0.4291614294052124,
+                  "absolute_error": 8.064508438110352e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    20
+                  ],
+                  "torch": -0.516365110874176,
+                  "circle": -0.5164457559585571,
+                  "absolute_error": 8.064508438110352e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 3,
+              "max_abs_error": 8.226558566093445e-05,
+              "max_error_index": [
+                0,
+                15,
+                13,
+                3
+              ],
+              "torch_at_max": -0.012668873183429241,
+              "circle_at_max": -0.012751138769090176,
+              "circle_output_scale": [
+                8.226541103795171e-05
+              ],
+              "max_error_in_scale_units": 1.0000021226780555,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    9,
+                    4,
+                    2
+                  ],
+                  "torch": -0.0929599180817604,
+                  "circle": -0.09304217994213104,
+                  "absolute_error": 8.226186037063599e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    12,
+                    3
+                  ],
+                  "torch": 0.25197896361351013,
+                  "circle": 0.25206121802330017,
+                  "absolute_error": 8.225440979003906e-05
+                },
+                {
+                  "index": [
+                    0,
+                    15,
+                    13,
+                    3
+                  ],
+                  "torch": -0.012668873183429241,
+                  "circle": -0.012751138769090176,
+                  "absolute_error": 8.226558566093445e-05
+                }
+              ]
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 3.8683414459228516e-05,
+              "max_error_index": [
+                0,
+                10,
+                14,
+                2
+              ],
+              "torch_at_max": 0.5889552235603333,
+              "circle_at_max": 0.5889939069747925,
+              "circle_output_scale": [
+                3.864535756292753e-05
+              ],
+              "max_error_in_scale_units": 1.0009847727825785,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    14,
+                    13,
+                    0
+                  ],
+                  "torch": 0.1333264857530594,
+                  "circle": 0.13328783214092255,
+                  "absolute_error": 3.865361213684082e-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_prefill_1.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 30,
+              "max_abs_error": 0.00014209747314453125,
+              "max_error_index": [
+                0,
+                4,
+                21
+              ],
+              "torch_at_max": 0.21001537144184113,
+              "circle_at_max": 0.21015746891498566,
+              "circle_output_scale": [
+                7.104715041350573e-05
+              ],
+              "max_error_in_scale_units": 2.0000446508762324,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    18
+                  ],
+                  "torch": 0.39786404371261597,
+                  "circle": 0.39793509244918823,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    23
+                  ],
+                  "torch": -0.43729519844055176,
+                  "circle": -0.437366247177124,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    43
+                  ],
+                  "torch": -0.2157701998949051,
+                  "circle": -0.21569915115833282,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    49
+                  ],
+                  "torch": 0.5556597709655762,
+                  "circle": 0.5557308197021484,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    54
+                  ],
+                  "torch": -0.318362295627594,
+                  "circle": -0.31829124689102173,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    60
+                  ],
+                  "torch": -0.33761605620384216,
+                  "circle": -0.3375450074672699,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    6
+                  ],
+                  "torch": -0.1647583395242691,
+                  "circle": -0.16482938826084137,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    8
+                  ],
+                  "torch": 0.5015218257904053,
+                  "circle": 0.5015928745269775,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    9
+                  ],
+                  "torch": 0.588341474533081,
+                  "circle": 0.5882704257965088,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    21
+                  ],
+                  "torch": 0.21001537144184113,
+                  "circle": 0.21015746891498566,
+                  "absolute_error": 0.00014209747314453125
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    22
+                  ],
+                  "torch": 0.4075264632701874,
+                  "circle": 0.4074554145336151,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    25
+                  ],
+                  "torch": 0.3143836259841919,
+                  "circle": 0.314312607049942,
+                  "absolute_error": 7.101893424987793e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.15453219413757324,
+              "circle_at_max": 0.15453219413757324,
+              "circle_output_scale": [
+                0.0001647464814595878
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 6.341934204101562e-05,
+              "max_error_index": [
+                0,
+                5,
+                1,
+                3
+              ],
+              "torch_at_max": 1.0785561800003052,
+              "circle_at_max": 1.0784927606582642,
+              "circle_output_scale": [
+                6.339972605928779e-05
+              ],
+              "max_error_in_scale_units": 1.0003094016795828,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    15,
+                    14,
+                    0
+                  ],
+                  "torch": -0.16002090275287628,
+                  "circle": -0.15995751321315765,
+                  "absolute_error": 6.338953971862793e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 30,
+              "max_abs_error": 0.00014209747314453125,
+              "max_error_index": [
+                0,
+                4,
+                21
+              ],
+              "torch_at_max": 0.21001537144184113,
+              "circle_at_max": 0.21015746891498566,
+              "circle_output_scale": [
+                7.104715041350573e-05
+              ],
+              "max_error_in_scale_units": 2.0000446508762324,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    18
+                  ],
+                  "torch": 0.39786404371261597,
+                  "circle": 0.39793509244918823,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    23
+                  ],
+                  "torch": -0.43729519844055176,
+                  "circle": -0.437366247177124,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    43
+                  ],
+                  "torch": -0.2157701998949051,
+                  "circle": -0.21569915115833282,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    49
+                  ],
+                  "torch": 0.5556597709655762,
+                  "circle": 0.5557308197021484,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    54
+                  ],
+                  "torch": -0.318362295627594,
+                  "circle": -0.31829124689102173,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    60
+                  ],
+                  "torch": -0.33761605620384216,
+                  "circle": -0.3375450074672699,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    6
+                  ],
+                  "torch": -0.1647583395242691,
+                  "circle": -0.16482938826084137,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    8
+                  ],
+                  "torch": 0.5015218257904053,
+                  "circle": 0.5015928745269775,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    9
+                  ],
+                  "torch": 0.588341474533081,
+                  "circle": 0.5882704257965088,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    21
+                  ],
+                  "torch": 0.21001537144184113,
+                  "circle": 0.21015746891498566,
+                  "absolute_error": 0.00014209747314453125
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    22
+                  ],
+                  "torch": 0.4075264632701874,
+                  "circle": 0.4074554145336151,
+                  "absolute_error": 7.104873657226562e-05
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    25
+                  ],
+                  "torch": 0.3143836259841919,
+                  "circle": 0.314312607049942,
+                  "absolute_error": 7.101893424987793e-05
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": 0.15453219413757324,
+              "circle_at_max": 0.15453219413757324,
+              "circle_output_scale": [
+                0.0001647464814595878
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 1,
+              "max_abs_error": 6.341934204101562e-05,
+              "max_error_index": [
+                0,
+                5,
+                1,
+                3
+              ],
+              "torch_at_max": 1.0785561800003052,
+              "circle_at_max": 1.0784927606582642,
+              "circle_output_scale": [
+                6.339972605928779e-05
+              ],
+              "max_error_in_scale_units": 1.0003094016795828,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    15,
+                    14,
+                    0
+                  ],
+                  "torch": -0.16002090275287628,
+                  "circle": -0.15995751321315765,
+                  "absolute_error": 6.338953971862793e-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_prefill_2.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 52,
+              "max_abs_error": 0.00026023387908935547,
+              "max_error_index": [
+                0,
+                11,
+                49
+              ],
+              "torch_at_max": -1.1269341707229614,
+              "circle_at_max": -1.1271944046020508,
+              "circle_output_scale": [
+                0.0001301009178860113
+              ],
+              "max_error_in_scale_units": 2.000246295859042,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch": -0.7669448852539062,
+                  "circle": -0.7668148279190063,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    8
+                  ],
+                  "torch": -0.25070446729660034,
+                  "circle": -0.250834584236145,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    15
+                  ],
+                  "torch": 0.5909183621406555,
+                  "circle": 0.5910484790802002,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    18
+                  ],
+                  "torch": 0.5340642929077148,
+                  "circle": 0.5339341759681702,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    19
+                  ],
+                  "torch": -0.6661167144775391,
+                  "circle": -0.6659865975379944,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch": 0.9423209428787231,
+                  "circle": 0.9421908259391785,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    23
+                  ],
+                  "torch": 1.0717713832855225,
+                  "circle": 1.071641206741333,
+                  "absolute_error": 0.00013017654418945312
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    25
+                  ],
+                  "torch": 0.06934379041194916,
+                  "circle": 0.06947389245033264,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    31
+                  ],
+                  "torch": 0.04969855025410652,
+                  "circle": 0.049828652292490005,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    39
+                  ],
+                  "torch": -0.3501015603542328,
+                  "circle": -0.35023167729377747,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    44
+                  ],
+                  "torch": -0.7678556442260742,
+                  "circle": -0.7677255272865295,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    52
+                  ],
+                  "torch": -1.043799638748169,
+                  "circle": -1.0439298152923584,
+                  "absolute_error": 0.00013017654418945312
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.45499753952026367,
+              "circle_at_max": -0.45499753952026367,
+              "circle_output_scale": [
+                0.00010546998964855447
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.8020457029342651,
+              "circle_at_max": -0.8020457029342651,
+              "circle_output_scale": [
+                7.418106542900205e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 63,
+              "max_abs_error": 0.00026023387908935547,
+              "max_error_index": [
+                0,
+                11,
+                49
+              ],
+              "torch_at_max": -1.1269341707229614,
+              "circle_at_max": -1.1271944046020508,
+              "circle_output_scale": [
+                0.0001301009178860113
+              ],
+              "max_error_in_scale_units": 2.000246295859042,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch": -0.7669448852539062,
+                  "circle": -0.7668148279190063,
+                  "absolute_error": 0.00013005733489990234
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    8
+                  ],
+                  "torch": -0.25070446729660034,
+                  "circle": -0.250834584236145,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    15
+                  ],
+                  "torch": 0.5909183621406555,
+                  "circle": 0.5910484790802002,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    18
+                  ],
+                  "torch": 0.5340642929077148,
+                  "circle": 0.5339341759681702,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    19
+                  ],
+                  "torch": -0.6661167144775391,
+                  "circle": -0.6659865975379944,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch": 0.9423209428787231,
+                  "circle": 0.9421908259391785,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    23
+                  ],
+                  "torch": 1.0717713832855225,
+                  "circle": 1.071641206741333,
+                  "absolute_error": 0.00013017654418945312
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    25
+                  ],
+                  "torch": 0.06934379041194916,
+                  "circle": 0.06947389245033264,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    31
+                  ],
+                  "torch": 0.04969855025410652,
+                  "circle": 0.049828652292490005,
+                  "absolute_error": 0.0001301020383834839
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    39
+                  ],
+                  "torch": -0.3501015603542328,
+                  "circle": -0.35023167729377747,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    44
+                  ],
+                  "torch": -0.7678556442260742,
+                  "circle": -0.7677255272865295,
+                  "absolute_error": 0.00013011693954467773
+                },
+                {
+                  "index": [
+                    0,
+                    0,
+                    52
+                  ],
+                  "torch": -1.043799638748169,
+                  "circle": -1.0439298152923584,
+                  "absolute_error": 0.00013017654418945312
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.45499753952026367,
+              "circle_at_max": -0.45499753952026367,
+              "circle_output_scale": [
+                0.00010546998964855447
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 0.0,
+              "max_error_index": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "torch_at_max": -0.8020457029342651,
+              "circle_at_max": -0.8020457029342651,
+              "circle_output_scale": [
+                7.418106542900205e-05
+              ],
+              "max_error_in_scale_units": 0.0,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "decoder_layer_prefill_3.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 76,
+              "max_abs_error": 0.00011515617370605469,
+              "max_error_index": [
+                0,
+                6,
+                5
+              ],
+              "torch_at_max": -3.1177334785461426,
+              "circle_at_max": -3.1176183223724365,
+              "circle_output_scale": [
+                0.00011503278074087575
+              ],
+              "max_error_in_scale_units": 1.0010726765395412,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    3,
+                    6
+                  ],
+                  "torch": -0.4741651117801666,
+                  "circle": -0.4740500748157501,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    10
+                  ],
+                  "torch": -0.6278489232063293,
+                  "circle": -0.6279639601707458,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    11
+                  ],
+                  "torch": -0.9896270036697388,
+                  "circle": -0.9895119667053223,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    18
+                  ],
+                  "torch": 0.7472529411315918,
+                  "circle": 0.7473679780960083,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    41
+                  ],
+                  "torch": 0.22350868582725525,
+                  "circle": 0.22362372279167175,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    47
+                  ],
+                  "torch": -1.0340297222137451,
+                  "circle": -1.0339146852493286,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    48
+                  ],
+                  "torch": -0.22017274796962738,
+                  "circle": -0.22005771100521088,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    54
+                  ],
+                  "torch": -0.9189968705177307,
+                  "circle": -0.9188818335533142,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    14
+                  ],
+                  "torch": 0.07626673579216003,
+                  "circle": 0.07638176530599594,
+                  "absolute_error": 0.00011502951383590698
+                },
+                {
+                  "index": [
+                    0,
+                    5,
+                    0
+                  ],
+                  "torch": -0.23455184698104858,
+                  "circle": -0.2346668690443039,
+                  "absolute_error": 0.00011502206325531006
+                },
+                {
+                  "index": [
+                    0,
+                    5,
+                    4
+                  ],
+                  "torch": -0.17220407724380493,
+                  "circle": -0.17231909930706024,
+                  "absolute_error": 0.00011502206325531006
+                },
+                {
+                  "index": [
+                    0,
+                    5,
+                    18
+                  ],
+                  "torch": 0.044977817684412,
+                  "circle": 0.0448627844452858,
+                  "absolute_error": 0.00011503323912620544
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 8,
+              "max_abs_error": 0.00016480684280395508,
+              "max_error_index": [
+                0,
+                2,
+                3,
+                3
+              ],
+              "torch_at_max": -0.29021427035331726,
+              "circle_at_max": -0.2903790771961212,
+              "circle_output_scale": [
+                8.240041643148288e-05
+              ],
+              "max_error_in_scale_units": 2.0000729358084532,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    3,
+                    0
+                  ],
+                  "torch": 0.0017304087523370981,
+                  "circle": 0.0018128091469407082,
+                  "absolute_error": 8.240039460361004e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    3,
+                    2
+                  ],
+                  "torch": 0.5117065906524658,
+                  "circle": 0.5117889642715454,
+                  "absolute_error": 8.237361907958984e-05
+                },
+                {
+                  "index": [
+                    0,
+                    2,
+                    3,
+                    3
+                  ],
+                  "torch": -0.29021427035331726,
+                  "circle": -0.2903790771961212,
+                  "absolute_error": 0.00016480684280395508
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    3,
+                    3
+                  ],
+                  "torch": -0.5932006239891052,
+                  "circle": -0.5932829976081848,
+                  "absolute_error": 8.237361907958984e-05
+                },
+                {
+                  "index": [
+                    0,
+                    6,
+                    3,
+                    0
+                  ],
+                  "torch": 0.49802812933921814,
+                  "circle": 0.49794572591781616,
+                  "absolute_error": 8.240342140197754e-05
+                },
+                {
+                  "index": [
+                    0,
+                    10,
+                    3,
+                    1
+                  ],
+                  "torch": 0.08157641440629959,
+                  "circle": 0.08165881037712097,
+                  "absolute_error": 8.239597082138062e-05
+                },
+                {
+                  "index": [
+                    0,
+                    10,
+                    3,
+                    3
+                  ],
+                  "torch": 0.09764449298381805,
+                  "circle": 0.09772689640522003,
+                  "absolute_error": 8.240342140197754e-05
+                },
+                {
+                  "index": [
+                    0,
+                    13,
+                    3,
+                    3
+                  ],
+                  "torch": -0.09195886552333832,
+                  "circle": -0.09187646210193634,
+                  "absolute_error": 8.240342140197754e-05
+                }
+              ]
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 5,
+              "max_abs_error": 6.502866744995117e-05,
+              "max_error_index": [
+                0,
+                7,
+                8,
+                3
+              ],
+              "torch_at_max": 0.7234412431716919,
+              "circle_at_max": 0.7235062718391418,
+              "circle_output_scale": [
+                6.498753646155819e-05
+              ],
+              "max_error_in_scale_units": 1.0006329057944412,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    3,
+                    0
+                  ],
+                  "torch": -0.5487547516822815,
+                  "circle": -0.5488197207450867,
+                  "absolute_error": 6.496906280517578e-05
+                },
+                {
+                  "index": [
+                    0,
+                    10,
+                    3,
+                    1
+                  ],
+                  "torch": 0.544790506362915,
+                  "circle": 0.544855535030365,
+                  "absolute_error": 6.502866744995117e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    3,
+                    2
+                  ],
+                  "torch": -0.08786314725875854,
+                  "circle": -0.08779816329479218,
+                  "absolute_error": 6.498396396636963e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    3,
+                    3
+                  ],
+                  "torch": -0.26235467195510864,
+                  "circle": -0.2624196708202362,
+                  "absolute_error": 6.499886512756348e-05
+                },
+                {
+                  "index": [
+                    0,
+                    14,
+                    3,
+                    3
+                  ],
+                  "torch": -0.2662539482116699,
+                  "circle": -0.26618894934654236,
+                  "absolute_error": 6.499886512756348e-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 76,
+              "max_abs_error": 0.00011515617370605469,
+              "max_error_index": [
+                0,
+                6,
+                5
+              ],
+              "torch_at_max": -3.1177334785461426,
+              "circle_at_max": -3.1176183223724365,
+              "circle_output_scale": [
+                0.00011503278074087575
+              ],
+              "max_error_in_scale_units": 1.0010726765395412,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    3,
+                    6
+                  ],
+                  "torch": -0.4741651117801666,
+                  "circle": -0.4740500748157501,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    10
+                  ],
+                  "torch": -0.6278489232063293,
+                  "circle": -0.6279639601707458,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    11
+                  ],
+                  "torch": -0.9896270036697388,
+                  "circle": -0.9895119667053223,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    18
+                  ],
+                  "torch": 0.7472529411315918,
+                  "circle": 0.7473679780960083,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    41
+                  ],
+                  "torch": 0.22350868582725525,
+                  "circle": 0.22362372279167175,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    47
+                  ],
+                  "torch": -1.0340297222137451,
+                  "circle": -1.0339146852493286,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    48
+                  ],
+                  "torch": -0.22017274796962738,
+                  "circle": -0.22005771100521088,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    3,
+                    54
+                  ],
+                  "torch": -0.9189968705177307,
+                  "circle": -0.9188818335533142,
+                  "absolute_error": 0.0001150369644165039
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    14
+                  ],
+                  "torch": 0.07626673579216003,
+                  "circle": 0.07638176530599594,
+                  "absolute_error": 0.00011502951383590698
+                },
+                {
+                  "index": [
+                    0,
+                    5,
+                    0
+                  ],
+                  "torch": -0.23455184698104858,
+                  "circle": -0.2346668690443039,
+                  "absolute_error": 0.00011502206325531006
+                },
+                {
+                  "index": [
+                    0,
+                    5,
+                    4
+                  ],
+                  "torch": -0.17220407724380493,
+                  "circle": -0.17231909930706024,
+                  "absolute_error": 0.00011502206325531006
+                },
+                {
+                  "index": [
+                    0,
+                    5,
+                    18
+                  ],
+                  "torch": 0.044977817684412,
+                  "circle": 0.0448627844452858,
+                  "absolute_error": 0.00011503323912620544
+                }
+              ]
+            },
+            {
+              "output_index": 1,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 8,
+              "max_abs_error": 0.00016480684280395508,
+              "max_error_index": [
+                0,
+                2,
+                3,
+                3
+              ],
+              "torch_at_max": -0.29021427035331726,
+              "circle_at_max": -0.2903790771961212,
+              "circle_output_scale": [
+                8.240041643148288e-05
+              ],
+              "max_error_in_scale_units": 2.0000729358084532,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    1,
+                    3,
+                    0
+                  ],
+                  "torch": 0.0017304087523370981,
+                  "circle": 0.0018128091469407082,
+                  "absolute_error": 8.240039460361004e-05
+                },
+                {
+                  "index": [
+                    0,
+                    1,
+                    3,
+                    2
+                  ],
+                  "torch": 0.5117065906524658,
+                  "circle": 0.5117889642715454,
+                  "absolute_error": 8.237361907958984e-05
+                },
+                {
+                  "index": [
+                    0,
+                    2,
+                    3,
+                    3
+                  ],
+                  "torch": -0.29021427035331726,
+                  "circle": -0.2903790771961212,
+                  "absolute_error": 0.00016480684280395508
+                },
+                {
+                  "index": [
+                    0,
+                    4,
+                    3,
+                    3
+                  ],
+                  "torch": -0.5932006239891052,
+                  "circle": -0.5932829976081848,
+                  "absolute_error": 8.237361907958984e-05
+                },
+                {
+                  "index": [
+                    0,
+                    6,
+                    3,
+                    0
+                  ],
+                  "torch": 0.49802812933921814,
+                  "circle": 0.49794572591781616,
+                  "absolute_error": 8.240342140197754e-05
+                },
+                {
+                  "index": [
+                    0,
+                    10,
+                    3,
+                    1
+                  ],
+                  "torch": 0.08157641440629959,
+                  "circle": 0.08165881037712097,
+                  "absolute_error": 8.239597082138062e-05
+                },
+                {
+                  "index": [
+                    0,
+                    10,
+                    3,
+                    3
+                  ],
+                  "torch": 0.09764449298381805,
+                  "circle": 0.09772689640522003,
+                  "absolute_error": 8.240342140197754e-05
+                },
+                {
+                  "index": [
+                    0,
+                    13,
+                    3,
+                    3
+                  ],
+                  "torch": -0.09195886552333832,
+                  "circle": -0.09187646210193634,
+                  "absolute_error": 8.240342140197754e-05
+                }
+              ]
+            },
+            {
+              "output_index": 2,
+              "shape": [
+                1,
+                16,
+                16,
+                4
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": false,
+              "failure_count": 5,
+              "max_abs_error": 6.502866744995117e-05,
+              "max_error_index": [
+                0,
+                7,
+                8,
+                3
+              ],
+              "torch_at_max": 0.7234412431716919,
+              "circle_at_max": 0.7235062718391418,
+              "circle_output_scale": [
+                6.498753646155819e-05
+              ],
+              "max_error_in_scale_units": 1.0006329057944412,
+              "first_failure_locations": [
+                {
+                  "index": [
+                    0,
+                    0,
+                    3,
+                    0
+                  ],
+                  "torch": -0.5487547516822815,
+                  "circle": -0.5488197207450867,
+                  "absolute_error": 6.496906280517578e-05
+                },
+                {
+                  "index": [
+                    0,
+                    10,
+                    3,
+                    1
+                  ],
+                  "torch": 0.544790506362915,
+                  "circle": 0.544855535030365,
+                  "absolute_error": 6.502866744995117e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    3,
+                    2
+                  ],
+                  "torch": -0.08786314725875854,
+                  "circle": -0.08779816329479218,
+                  "absolute_error": 6.498396396636963e-05
+                },
+                {
+                  "index": [
+                    0,
+                    12,
+                    3,
+                    3
+                  ],
+                  "torch": -0.26235467195510864,
+                  "circle": -0.2624196708202362,
+                  "absolute_error": 6.499886512756348e-05
+                },
+                {
+                  "index": [
+                    0,
+                    14,
+                    3,
+                    3
+                  ],
+                  "torch": -0.2662539482116699,
+                  "circle": -0.26618894934654236,
+                  "absolute_error": 6.499886512756348e-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "stage": "token_embedding.q.circle",
+      "runtime_mode": "fake_quantize",
+      "probes": [
+        {
+          "probe": "export_example",
+          "outputs": [
+            {
+              "output_index": 0,
+              "shape": [
+                1,
+                16,
+                64
+              ],
+              "dtype": "float32",
+              "all_finite": true,
+              "strict_parity": true,
+              "failure_count": 0,
+              "max_abs_error": 7.867813110351562e-06,
+              "max_error_index": [
+                0,
+                11,
+                0
+              ],
+              "torch_at_max": -0.06892414391040802,
+              "circle_at_max": -0.06893201172351837,
+              "circle_output_scale": [
+                7.86805321695283e-06
+              ],
+              "max_error_in_scale_units": 0.9999694833531692,
+              "first_failure_locations": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "raw_coordinator_summary_exists": false,
+  "raw_summary": {
+    "status": "TIMEOUT",
+    "comparisons_complete": false,
+    "command_exit_code": 124
+  }
+}

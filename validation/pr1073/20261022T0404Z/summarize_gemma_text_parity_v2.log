@@ -1,0 +1,121 @@
+{
+  "status": "LOCALISED_EXISTING_CONVERSION_BOUNDARY_MISMATCH",
+  "proof": {
+    "qnorm_output_exact": true,
+    "serialized_split0_equals_unrequantized_first_half": true,
+    "serialized_split1_equals_unrequantized_second_half": true,
+    "serialized_cat_equals_reordered_unrequantized_halves": true,
+    "torch_cat_input_equals_reordered_requantized_halves": true,
+    "q_cat_difference_indices": [
+      [
+        0,
+        2,
+        0,
+        15
+      ],
+      [
+        0,
+        4,
+        0,
+        12
+      ]
+    ],
+    "frozen_q_x1_grid": {
+      "scale": 0.02118774875998497,
+      "zero_point": 147
+    },
+    "frozen_q_x2_grid": {
+      "scale": 0.02068050019443035,
+      "zero_point": 119
+    },
+    "q_x1_grid_serialized_tensors": [],
+    "q_x2_grid_serialized_tensors": [],
+    "serialized_tensor_grids": [
+      {
+        "index": 22,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          16
+        ]
+      },
+      {
+        "index": 25,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          8
+        ]
+      },
+      {
+        "index": 26,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          8
+        ]
+      },
+      {
+        "index": 27,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          16
+        ]
+      }
+    ],
+    "example": {
+      "qnorm_index": [
+        0,
+        4,
+        0,
+        4
+      ],
+      "qnorm_value": 2.7648539543151855,
+      "torch_qx1_after_quant": 2.2882769107818604,
+      "qcat_index": [
+        0,
+        4,
+        0,
+        12
+      ],
+      "torch_qcat": 2.2769386768341064,
+      "circle_qcat": 2.7648539543151855
+    },
+    "mapped_quantizer_calls": 61,
+    "isolated_same_input_quantizer_mismatches": 0
+  },
+  "source_files_unchanged": {
+    "tico/quantization/passes/fold_quant_ops.py": true,
+    "tico/quantization/passes/propagate_qparam_forward.py": true,
+    "tico/quantization/passes/propagate_qparam_backward.py": true
+  }
+}

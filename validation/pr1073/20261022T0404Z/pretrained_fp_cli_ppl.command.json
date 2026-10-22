@@ -1,0 +1,42 @@
+{
+  "name": "pretrained_fp_cli_ppl",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "python",
+    "-m",
+    "tico.quantization.examples.evaluate",
+    "--config",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_eval.yaml",
+    "--tasks",
+    "ppl",
+    "--set",
+    "calibration.seq_len=32",
+    "--set",
+    "export.max_seq_len=16",
+    "--set",
+    "evaluation.max_seq_len=128",
+    "--set",
+    "evaluation.perplexity.max_seq_len=64",
+    "--set",
+    "evaluation.perplexity.stride=32",
+    "--set",
+    "evaluation.perplexity.split=test[:12]",
+    "--device",
+    "cpu",
+    "--no-progress",
+    "--output-dir",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_fp_cli"
+  ],
+  "started_at": "2026-10-22T04:17:40.844272+00:00",
+  "environment": {
+    "VIRTUAL_ENV": "/workspace/TICO/.venv",
+    "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 59.63189415700003
+}

@@ -1,0 +1,6 @@
+{
+  "comparisons_complete": false,
+  "error_type": "CircleRuntimeValidationError",
+  "message": "tensors[393] 'tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::quantize_per_tensor_307' INT16[1, 16, 16, 4] (activation, per-tensor quantized) has a non-positive or non-finite quantization scale: [inf].",
+  "status": "ERROR"
+}

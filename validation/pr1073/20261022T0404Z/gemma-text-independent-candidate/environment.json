@@ -1,0 +1,11 @@
+{
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "commit": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "torch": "2.13.0+cpu",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "static_capacity": 8,
+  "native_capacity": 64,
+  "rope_convention": "pre_negated_sin",
+  "PLE": 0,
+  "shared_KV": 0
+}

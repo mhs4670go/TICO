@@ -1,0 +1,1 @@
+{"status": "FAIL", "full_standard_completed": true, "UFMT": 19, "PYLINT_errors": 5, "MYPY_errors": 59, "MYPY_notes": 3, "baseline_verified_counts": {"UFMT": 11, "MYPY": 2}}

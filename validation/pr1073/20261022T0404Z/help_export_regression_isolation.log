@@ -1,0 +1,44 @@
+usage: export_regression.py isolation [-h] [--candidate-repo CANDIDATE_REPO]
+                                      --config CONFIG --checkpoint CHECKPOINT
+                                      --output OUTPUT --seq-len SEQ_LEN
+                                      --eager-seq-len EAGER_SEQ_LEN
+                                      [--eager-inputs EAGER_INPUTS]
+                                      [--include-full-text]
+                                      [--migrate-llama-rope]
+                                      [--decode-steps DECODE_STEPS]
+                                      [--artifacts ARTIFACTS] [--seed SEED]
+                                      [--threads THREADS] [--set SET]
+                                      [--atol ATOL] [--rtol RTOL]
+                                      [--require-torch-parity]
+
+options:
+  -h, --help            show this help message and exit
+  --candidate-repo CANDIDATE_REPO
+  --config CONFIG
+  --checkpoint CHECKPOINT
+                        Trusted frozen model checkpoint; torch.load uses
+                        weights_only=False.
+  --output OUTPUT       A new output directory; existing results are never
+                        overwritten.
+  --seq-len SEQ_LEN
+  --eager-seq-len EAGER_SEQ_LEN
+  --eager-inputs EAGER_INPUTS
+                        Optional torch-saved kwargs dict/list for real
+                        multimodal eager stress.
+  --include-full-text   Also compare a text-only full-model probe for
+                        Qwen3-VL/Gemma4.
+  --migrate-llama-rope  Explicitly rebuild candidate LLaMA RoPE from its
+                        unified snapshot or recorded config. The baseline and
+                        frozen qparams are unchanged.
+  --decode-steps DECODE_STEPS
+  --artifacts ARTIFACTS
+                        Comma-separated Circle artifacts; auto selects LLaMA
+                        bundle or VLM per-layer export.
+  --seed SEED
+  --threads THREADS
+  --set SET
+  --atol ATOL
+  --rtol RTOL
+  --require-torch-parity
+                        Also require PyTorch-vs-Circle parity, not just
+                        before-vs-after parity.

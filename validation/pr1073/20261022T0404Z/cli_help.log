@@ -1,0 +1,158 @@
+usage: verify_llama_rope.py [-h] [--repo REPO] --report REPORT
+                            [--threads THREADS]
+
+Run offline RoPE checks on a source checkout; missing tests never count as
+PASS.
+
+options:
+  -h, --help         show this help message and exit
+  --repo REPO        Patched TICO source checkout, including test/.
+  --report REPORT
+  --threads THREADS
+usage: export_regression.py [-h] {run,isolation,_worker,compare} ...
+
+Compare actual exports from two source trees and after candidate eager use.
+Run this file directly so the coordinator does not import TICO from the wrong
+checkout. Workers use the same interpreter and the same trusted frozen Torch
+checkpoint. No calibration, model download, or NPU execution is performed.
+
+positional arguments:
+  {run,isolation,_worker,compare}
+    run                 Export both revisions and candidate after eager use.
+    isolation           Compare only candidate export before/after eager use.
+    _worker             ==SUPPRESS==
+    compare             Compare previously collected phase directories.
+
+options:
+  -h, --help            show this help message and exit
+usage: export_regression.py run [-h] --baseline-repo BASELINE_REPO
+                                [--candidate-repo CANDIDATE_REPO] --config
+                                CONFIG --checkpoint CHECKPOINT --output OUTPUT
+                                --seq-len SEQ_LEN --eager-seq-len
+                                EAGER_SEQ_LEN [--eager-inputs EAGER_INPUTS]
+                                [--include-full-text] [--migrate-llama-rope]
+                                [--decode-steps DECODE_STEPS]
+                                [--artifacts ARTIFACTS] [--seed SEED]
+                                [--threads THREADS] [--set SET] [--atol ATOL]
+                                [--rtol RTOL] [--require-torch-parity]
+
+options:
+  -h, --help            show this help message and exit
+  --baseline-repo BASELINE_REPO
+  --candidate-repo CANDIDATE_REPO
+  --config CONFIG
+  --checkpoint CHECKPOINT
+                        Trusted frozen model checkpoint; torch.load uses
+                        weights_only=False.
+  --output OUTPUT       A new output directory; existing results are never
+                        overwritten.
+  --seq-len SEQ_LEN
+  --eager-seq-len EAGER_SEQ_LEN
+  --eager-inputs EAGER_INPUTS
+                        Optional torch-saved kwargs dict/list for real
+                        multimodal eager stress.
+  --include-full-text   Also compare a text-only full-model probe for
+                        Qwen3-VL/Gemma4.
+  --migrate-llama-rope  Explicitly rebuild candidate LLaMA RoPE from its
+                        unified snapshot or recorded config. The baseline and
+                        frozen qparams are unchanged.
+  --decode-steps DECODE_STEPS
+  --artifacts ARTIFACTS
+                        Comma-separated Circle artifacts; auto selects LLaMA
+                        bundle or VLM per-layer export.
+  --seed SEED
+  --threads THREADS
+  --set SET
+  --atol ATOL
+  --rtol RTOL
+  --require-torch-parity
+                        Also require PyTorch-vs-Circle parity, not just
+                        before-vs-after parity.
+usage: export_regression.py isolation [-h] [--candidate-repo CANDIDATE_REPO]
+                                      --config CONFIG --checkpoint CHECKPOINT
+                                      --output OUTPUT --seq-len SEQ_LEN
+                                      --eager-seq-len EAGER_SEQ_LEN
+                                      [--eager-inputs EAGER_INPUTS]
+                                      [--include-full-text]
+                                      [--migrate-llama-rope]
+                                      [--decode-steps DECODE_STEPS]
+                                      [--artifacts ARTIFACTS] [--seed SEED]
+                                      [--threads THREADS] [--set SET]
+                                      [--atol ATOL] [--rtol RTOL]
+                                      [--require-torch-parity]
+
+options:
+  -h, --help            show this help message and exit
+  --candidate-repo CANDIDATE_REPO
+  --config CONFIG
+  --checkpoint CHECKPOINT
+                        Trusted frozen model checkpoint; torch.load uses
+                        weights_only=False.
+  --output OUTPUT       A new output directory; existing results are never
+                        overwritten.
+  --seq-len SEQ_LEN
+  --eager-seq-len EAGER_SEQ_LEN
+  --eager-inputs EAGER_INPUTS
+                        Optional torch-saved kwargs dict/list for real
+                        multimodal eager stress.
+  --include-full-text   Also compare a text-only full-model probe for
+                        Qwen3-VL/Gemma4.
+  --migrate-llama-rope  Explicitly rebuild candidate LLaMA RoPE from its
+                        unified snapshot or recorded config. The baseline and
+                        frozen qparams are unchanged.
+  --decode-steps DECODE_STEPS
+  --artifacts ARTIFACTS
+                        Comma-separated Circle artifacts; auto selects LLaMA
+                        bundle or VLM per-layer export.
+  --seed SEED
+  --threads THREADS
+  --set SET
+  --atol ATOL
+  --rtol RTOL
+  --require-torch-parity
+                        Also require PyTorch-vs-Circle parity, not just
+                        before-vs-after parity.
+usage: evaluate.py [-h] --config CONFIG [--checkpoint CHECKPOINT]
+                   [--model MODEL] [--device DEVICE] [--output-dir OUTPUT_DIR]
+                   [--tasks TASKS] [--set KEY=VALUE] [--verbose]
+                   [--no-progress]
+
+Evaluate an FP or fake-quant checkpoint.
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG       Base recipe config.
+  --checkpoint CHECKPOINT
+                        Optional torch checkpoint to evaluate.
+  --model MODEL         Override model.name_or_path.
+  --device DEVICE       Override runtime.device.
+  --output-dir OUTPUT_DIR
+                        Write evaluation_protocol.json here.
+  --tasks TASKS         Comma-separated top-level evaluation targets. When
+                        set, only these targets run; benchmark details remain
+                        in the config.
+  --set KEY=VALUE
+  --verbose             Print detailed evaluation sample logs.
+  --no-progress         Disable tqdm/progress bars.
+usage: test_run.py [-h] [-a] [-k KEYWORD] [-m MODEL] [-i]
+                   [-r {reference,circle-interpreter,onert}] [-p] [-v]
+
+Run unit tests
+
+options:
+  -h, --help            show this help message and exit
+  -a, --all             Run all unit tests.
+  -k KEYWORD, --keyword KEYWORD
+                        Specify keywords to filter tests.
+  -m MODEL, --model MODEL
+                        Specify model to run tests on.
+  -i, --include-internal
+                        Include internal-only tests
+  -r {reference,circle-interpreter,onert}, --runtime {reference,circle-interpreter,onert}
+                        Which Circle runtime executes converted models (or set
+                        CCEX_RUNTIME). 'reference' (default) is built into
+                        TICO; 'circle-interpreter' and 'onert' need the
+                        corresponding external package.
+  -p, --perf            Run performance tests.
+  -v, --verbose         Verbose mode
+[ERROR] Unknown parameter passed: --help

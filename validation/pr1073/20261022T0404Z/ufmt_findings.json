@@ -1,0 +1,135 @@
+[
+  {
+    "path": "test/quantization/recipes/test_export_llama_bundle.py",
+    "first_reformat_line": 55,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "test/quantization/recipes/test_export_regression.py",
+    "first_reformat_line": 46,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "test/quantization/wrapq/utils/test_static_export_inputs.py",
+    "first_reformat_line": 22,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "test/quantization/wrapq/wrappers/llama/test_rope_consistency.py",
+    "first_reformat_line": 21,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "test/quantization/wrapq/wrappers/qwen_vl/test_quant_text_model.py",
+    "first_reformat_line": 26,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/recipes/debug/export_regression.py",
+    "first_reformat_line": 103,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "tico/quantization/recipes/debug/verify_llama_rope.py",
+    "first_reformat_line": 28,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "tico/quantization/recipes/export/circle.py",
+    "first_reformat_line": 22,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/recipes/export/llama.py",
+    "first_reformat_line": 20,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/recipes/export/llama_bundle.py",
+    "first_reformat_line": 22,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/examples/llama/quantize_decoder_layer_prefill.py",
+    "first_reformat_line": 137,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/examples/quantize_full_qmodel_with_gptq.py",
+    "first_reformat_line": 49,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/utils/static_export.py",
+    "first_reformat_line": 16,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "tico/quantization/wrapq/wrappers/gemma4/export_adapters.py",
+    "first_reformat_line": 26,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/wrappers/llama/quant_decoder_layer.py",
+    "first_reformat_line": 31,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/wrappers/llama/quant_model.py",
+    "first_reformat_line": 37,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/wrappers/llama/static_inputs.py",
+    "first_reformat_line": 45,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  },
+  {
+    "path": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py",
+    "first_reformat_line": 25,
+    "changed_in_pr": true,
+    "exists_in_baseline": true,
+    "classification": "PR_CHANGE_BASELINE_COUNTERPART_VERIFIED_PASS"
+  },
+  {
+    "path": "tico/quantization/wrapq/wrappers/qwen_vl/static_inputs.py",
+    "first_reformat_line": 19,
+    "changed_in_pr": true,
+    "exists_in_baseline": false,
+    "classification": "NEW_FILE_DIAGNOSTIC"
+  }
+]

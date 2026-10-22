@@ -1,0 +1,47 @@
+test_default_linear_llama3_match_in_both_conventions (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_default_linear_llama3_match_in_both_conventions)
+Independent layer wrapping must retain all configured scaling fields. ... ok
+test_eager_mutations_cannot_change_static_tables_or_serialized_snapshot (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_eager_mutations_cannot_change_static_tables_or_serialized_snapshot)
+The snapshot survives an eager call, live mutation, and pickle roundtrip. ... [transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+ok
+test_explicit_migration_preserves_frozen_weights_and_qparams (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_explicit_migration_preserves_frozen_weights_and_qparams)
+Changing positional provenance must not recalibrate frozen observers. ... ok
+test_layer_export_graph_has_no_dynamic_rope_generation (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_layer_export_graph_has_no_dynamic_rope_generation)
+The new source must not insert rotary calculations into the layer IR. ... ok
+test_llama3_is_not_the_old_unscaled_theta_formula (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_llama3_is_not_the_old_unscaled_theta_formula)
+Catch a regression that could otherwise make both wrappers wrong together. ... ok
+test_migration_rejects_calibration_and_prepared_export (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_migration_rejects_calibration_and_prepared_export)
+Reject lifecycle transitions that could invalidate active work. ... ok
+test_model_source_overrides_layer_fallback_and_can_be_passed_explicitly (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_model_source_overrides_layer_fallback_and_can_be_passed_explicitly)
+Custom pretrained frequency/scaling values propagate to every layer. ... ok
+test_staged_prefill_and_delta_decode_match_full_model (test.quantization.wrapq.wrappers.llama.test_rope_consistency.TestLlamaRoPEConsistency.test_staged_prefill_and_delta_decode_match_full_model)
+Use identical weights with padded static caches for two decode steps. ... ok
+test_full_model_owner_suppresses_duplicate_layer_tables (test.quantization.wrapq.utils.test_static_export_inputs.TestDecoderExportBoundaries.test_full_model_owner_suppresses_duplicate_layer_tables) ... ok
+test_gemma4_preserves_shared_kv_and_boolean_mask_contract (test.quantization.wrapq.utils.test_static_export_inputs.TestDecoderExportBoundaries.test_gemma4_preserves_shared_kv_and_boolean_mask_contract) ... ok
+test_llama_and_qwen_adapters_do_not_change_eager_return_policy (test.quantization.wrapq.utils.test_static_export_inputs.TestDecoderExportBoundaries.test_llama_and_qwen_adapters_do_not_change_eager_return_policy) ... ok
+test_a_fresh_copy_is_used_for_each_length_dependent_preparation (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_a_fresh_copy_is_used_for_each_length_dependent_preparation) ... ok
+test_default_frequencies_and_sine_conventions (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_default_frequencies_and_sine_conventions) ... ok
+test_legacy_and_intermediate_checkpoints_require_explicit_migration (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_legacy_and_intermediate_checkpoints_require_explicit_migration) ... ok
+test_missing_source_uses_the_complete_config_factory (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_missing_source_uses_the_complete_config_factory) ... ok
+test_no_native_context_allocation (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_no_native_context_allocation) ... ok
+test_rebinding_removes_obsolete_tables_and_frequency_fallbacks (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_rebinding_removes_obsolete_tables_and_frequency_fallbacks) ... ok
+test_slice_boundaries (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_slice_boundaries) ... ok
+test_source_frequency_and_scaling_are_snapshotted (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_source_frequency_and_scaling_are_snapshotted) ... ok
+test_stale_legacy_tables_never_override_the_canonical_snapshot (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_stale_legacy_tables_never_override_the_canonical_snapshot) ... ok
+test_torch_export_graph_contains_no_table_generation (test.quantization.wrapq.utils.test_static_export_inputs.TestLlamaStaticInputs.test_torch_export_graph_contains_no_table_generation) ... ok
+test_legacy_tables_and_bounds (test.quantization.wrapq.utils.test_static_export_inputs.TestQwenStaticInputs.test_legacy_tables_and_bounds) ... ok
+test_snapshot_not_live_rotary_is_executed (test.quantization.wrapq.utils.test_static_export_inputs.TestQwenStaticInputs.test_snapshot_not_live_rotary_is_executed) ... ok
+test_snapshot_storage_does_not_scale_with_native_capacity (test.quantization.wrapq.utils.test_static_export_inputs.TestQwenStaticInputs.test_snapshot_storage_does_not_scale_with_native_capacity) ... ok
+test_calibration_rejected_before_preparation (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_calibration_rejected_before_preparation) ... ok
+test_cleanup_after_later_owner_preparation_failure (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_cleanup_after_later_owner_preparation_failure) ... ok
+test_cleanup_after_trace_failure (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_cleanup_after_trace_failure) ... ok
+test_explicit_length_validation (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_explicit_length_validation) ... ok
+test_nested_context_does_not_remove_outer_inputs (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_nested_context_does_not_remove_outer_inputs) ... ok
+test_preexisting_none_attribute_is_restored (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_preexisting_none_attribute_is_restored) ... ok
+test_required_host_inputs_do_not_silently_fall_back (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_required_host_inputs_do_not_silently_fall_back) ... ok
+test_temporary_buffers_preserve_weight_identity_and_state_dict (test.quantization.wrapq.utils.test_static_export_inputs.TestStaticInputContext.test_temporary_buffers_preserve_weight_identity_and_state_dict) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 4.633s
+
+OK
+PASS: /workspace/TICO/out/pr1073_validation/20261022T0404Z/llama-rope-checks.json

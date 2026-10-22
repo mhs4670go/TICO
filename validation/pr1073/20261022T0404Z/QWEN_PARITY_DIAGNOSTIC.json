@@ -1,0 +1,5020 @@
+{
+  "scope": "tiny random real-HF frozen Qwen fixture; read-only analysis of actual completed Circle records; no new export and no pretrained validation",
+  "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.pt",
+  "checkpoint_sha256": "188d63c4f58dc6fa77a1746be695236afb20b65f0a2b8e1e961dd4a2761dfac6",
+  "raw_strict_status": "FAIL",
+  "component_summary": {
+    "raw_status": "FAIL",
+    "raw_torch_parity_required": true,
+    "comparisons_complete": true,
+    "same_checkpoint_and_dependencies": true,
+    "same_initial_quantization_state": true,
+    "frozen_state_preserved": true,
+    "baseline_candidate_components": {
+      "stage_count": 9,
+      "structure_equal": true,
+      "all_input_and_output_arrays_match": true,
+      "host_equal": true,
+      "strict_comparison_ok": false,
+      "stage_failures": [
+        "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+        "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+        "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+        "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+      ],
+      "actual_numerical_differences": {}
+    },
+    "candidate_before_after_components": {
+      "stage_count": 9,
+      "structure_equal": true,
+      "all_input_and_output_arrays_match": true,
+      "host_equal": true,
+      "strict_comparison_ok": false,
+      "stage_failures": [
+        "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+        "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+        "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+        "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+      ],
+      "actual_numerical_differences": {}
+    },
+    "actual_stage_count_per_phase": {
+      "baseline/before": 9,
+      "candidate/after_eager": 9,
+      "candidate/before": 9
+    },
+    "independent_complete_array_coverage": true,
+    "independent_finite_arrays": true
+  },
+  "cache_observers": {
+    "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped": {
+      "mode": "QUANT",
+      "observers": {
+        "obs_past_key": {
+          "min_val": {
+            "values": [
+              "inf"
+            ],
+            "finite": false
+          },
+          "max_val": {
+            "values": [
+              "-inf"
+            ],
+            "finite": false
+          },
+          "_cached_scale": {
+            "values": [
+              9.99999993922529e-09
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              0.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        },
+        "obs_past_value": {
+          "min_val": {
+            "values": [
+              "inf"
+            ],
+            "finite": false
+          },
+          "max_val": {
+            "values": [
+              "-inf"
+            ],
+            "finite": false
+          },
+          "_cached_scale": {
+            "values": [
+              9.99999993922529e-09
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              0.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        },
+        "obs_present_key": {
+          "min_val": {
+            "values": [
+              -0.8698522448539734
+            ],
+            "finite": true
+          },
+          "max_val": {
+            "values": [
+              0.7731314897537231
+            ],
+            "finite": true
+          },
+          "_cached_scale": {
+            "values": [
+              0.00644307304173708
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              135.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        },
+        "obs_present_value": {
+          "min_val": {
+            "values": [
+              -0.3159874677658081
+            ],
+            "finite": true
+          },
+          "max_val": {
+            "values": [
+              0.3598369359970093
+            ],
+            "finite": true
+          },
+          "_cached_scale": {
+            "values": [
+              0.0026502918917685747
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              119.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        }
+      }
+    },
+    "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped": {
+      "mode": "QUANT",
+      "observers": {
+        "obs_past_key": {
+          "min_val": {
+            "values": [
+              "inf"
+            ],
+            "finite": false
+          },
+          "max_val": {
+            "values": [
+              "-inf"
+            ],
+            "finite": false
+          },
+          "_cached_scale": {
+            "values": [
+              9.99999993922529e-09
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              0.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        },
+        "obs_past_value": {
+          "min_val": {
+            "values": [
+              "inf"
+            ],
+            "finite": false
+          },
+          "max_val": {
+            "values": [
+              "-inf"
+            ],
+            "finite": false
+          },
+          "_cached_scale": {
+            "values": [
+              9.99999993922529e-09
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              0.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        },
+        "obs_present_key": {
+          "min_val": {
+            "values": [
+              -0.8454070687294006
+            ],
+            "finite": true
+          },
+          "max_val": {
+            "values": [
+              0.9240149855613708
+            ],
+            "finite": true
+          },
+          "_cached_scale": {
+            "values": [
+              0.006938910111784935
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              122.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        },
+        "obs_present_value": {
+          "min_val": {
+            "values": [
+              -0.29538875818252563
+            ],
+            "finite": true
+          },
+          "max_val": {
+            "values": [
+              0.31640127301216125
+            ],
+            "finite": true
+          },
+          "_cached_scale": {
+            "values": [
+              0.002399176824837923
+            ],
+            "finite": true
+          },
+          "_cached_zp": {
+            "values": [
+              123.0
+            ],
+            "finite": true
+          },
+          "enabled": false
+        }
+      }
+    }
+  },
+  "phases": {
+    "baseline/before": {
+      "stage_count": 9,
+      "state_preserved": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.044739918783307076,
+                  "max_position": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch_value_at_max": -0.07007457315921783,
+                  "circle_value_at_max": -0.02533465437591076,
+                  "failing_elements": 31,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.046896062791347504,
+                  "circle_value_at_max": 0.046896062791347504,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.042583780363202095,
+                  "max_position": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch_value_at_max": -0.06791843473911285,
+                  "circle_value_at_max": -0.02533465437591076,
+                  "failing_elements": 32,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_decode_1.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.03140721470117569,
+                  "max_position": [
+                    0,
+                    0,
+                    9
+                  ],
+                  "torch_value_at_max": -0.0888594388961792,
+                  "circle_value_at_max": -0.05745222419500351,
+                  "failing_elements": 31,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.09039149433374405,
+                  "circle_value_at_max": 0.09039149433374405,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.03140721842646599,
+                  "max_position": [
+                    0,
+                    0,
+                    24
+                  ],
+                  "torch_value_at_max": -0.08962547034025192,
+                  "circle_value_at_max": -0.058218251913785934,
+                  "failing_elements": 32,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0010780766606330872,
+                  "max_position": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "torch_value_at_max": -0.06468421965837479,
+                  "circle_value_at_max": -0.06576229631900787,
+                  "failing_elements": 22,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      1,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      9
+                    ],
+                    [
+                      0,
+                      1,
+                      11
+                    ],
+                    [
+                      0,
+                      1,
+                      21
+                    ],
+                    [
+                      0,
+                      1,
+                      25
+                    ],
+                    [
+                      0,
+                      1,
+                      26
+                    ],
+                    [
+                      0,
+                      1,
+                      29
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0064430832862854,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch_value_at_max": 0.47034433484077454,
+                  "circle_value_at_max": 0.47678741812705994,
+                  "failing_elements": 16,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      2,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      3,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.14576604962348938,
+                  "circle_value_at_max": 0.14576604962348938,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0010780766606330872,
+                  "max_position": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "torch_value_at_max": -0.06468421965837479,
+                  "circle_value_at_max": -0.06576229631900787,
+                  "failing_elements": 22,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      1,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      9
+                    ],
+                    [
+                      0,
+                      1,
+                      11
+                    ],
+                    [
+                      0,
+                      1,
+                      21
+                    ],
+                    [
+                      0,
+                      1,
+                      25
+                    ],
+                    [
+                      0,
+                      1,
+                      26
+                    ],
+                    [
+                      0,
+                      1,
+                      29
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0064430832862854,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch_value_at_max": 0.47034433484077454,
+                  "circle_value_at_max": 0.47678741812705994,
+                  "failing_elements": 16,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      2,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      3,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.14576604962348938,
+                  "circle_value_at_max": 0.14576604962348938,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_1.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0015320554375648499,
+                  "max_position": [
+                    0,
+                    5,
+                    24
+                  ],
+                  "torch_value_at_max": 0.07507090270519257,
+                  "circle_value_at_max": 0.07353884726762772,
+                  "failing_elements": 11,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      5,
+                      0
+                    ],
+                    [
+                      0,
+                      5,
+                      1
+                    ],
+                    [
+                      0,
+                      5,
+                      3
+                    ],
+                    [
+                      0,
+                      5,
+                      9
+                    ],
+                    [
+                      0,
+                      5,
+                      13
+                    ],
+                    [
+                      0,
+                      5,
+                      16
+                    ],
+                    [
+                      0,
+                      5,
+                      18
+                    ],
+                    [
+                      0,
+                      5,
+                      23
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0416334867477417,
+                  "max_position": [
+                    0,
+                    0,
+                    5,
+                    7
+                  ],
+                  "torch_value_at_max": 0.5134793519973755,
+                  "circle_value_at_max": 0.5551128387451172,
+                  "failing_elements": 7,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      6,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.10556378215551376,
+                  "circle_value_at_max": -0.10556378215551376,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0015320554375648499,
+                  "max_position": [
+                    0,
+                    5,
+                    24
+                  ],
+                  "torch_value_at_max": 0.07507090270519257,
+                  "circle_value_at_max": 0.07353884726762772,
+                  "failing_elements": 11,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      5,
+                      0
+                    ],
+                    [
+                      0,
+                      5,
+                      1
+                    ],
+                    [
+                      0,
+                      5,
+                      3
+                    ],
+                    [
+                      0,
+                      5,
+                      9
+                    ],
+                    [
+                      0,
+                      5,
+                      13
+                    ],
+                    [
+                      0,
+                      5,
+                      16
+                    ],
+                    [
+                      0,
+                      5,
+                      18
+                    ],
+                    [
+                      0,
+                      5,
+                      23
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0416334867477417,
+                  "max_position": [
+                    0,
+                    0,
+                    5,
+                    7
+                  ],
+                  "torch_value_at_max": 0.5134793519973755,
+                  "circle_value_at_max": 0.5551128387451172,
+                  "failing_elements": 7,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      6,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.10556378215551376,
+                  "circle_value_at_max": -0.10556378215551376,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "deepstack_fusion_0_t1_h2_w2.q.circle": {
+          "execution_mode": "native",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.371177077293396,
+                  "circle_value_at_max": 0.371177077293396,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "lm_head.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    64
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.19500954449176788,
+                  "circle_value_at_max": -0.19500954449176788,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -1.457029104232788,
+                  "circle_value_at_max": -1.457029104232788,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "token_embedding.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.001904066652059555,
+                  "circle_value_at_max": -0.001904066652059555,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "vision_prefill_t1_h2_w2.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.043440405279397964,
+                  "circle_value_at_max": -0.043440405279397964,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.0009965036297217011,
+                  "circle_value_at_max": -0.0009965036297217011,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "candidate/before": {
+      "stage_count": 9,
+      "state_preserved": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.044739918783307076,
+                  "max_position": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch_value_at_max": -0.07007457315921783,
+                  "circle_value_at_max": -0.02533465437591076,
+                  "failing_elements": 31,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.046896062791347504,
+                  "circle_value_at_max": 0.046896062791347504,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.042583780363202095,
+                  "max_position": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch_value_at_max": -0.06791843473911285,
+                  "circle_value_at_max": -0.02533465437591076,
+                  "failing_elements": 32,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_decode_1.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.03140721470117569,
+                  "max_position": [
+                    0,
+                    0,
+                    9
+                  ],
+                  "torch_value_at_max": -0.0888594388961792,
+                  "circle_value_at_max": -0.05745222419500351,
+                  "failing_elements": 31,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.09039149433374405,
+                  "circle_value_at_max": 0.09039149433374405,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.03140721842646599,
+                  "max_position": [
+                    0,
+                    0,
+                    24
+                  ],
+                  "torch_value_at_max": -0.08962547034025192,
+                  "circle_value_at_max": -0.058218251913785934,
+                  "failing_elements": 32,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0010780766606330872,
+                  "max_position": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "torch_value_at_max": -0.06468421965837479,
+                  "circle_value_at_max": -0.06576229631900787,
+                  "failing_elements": 22,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      1,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      9
+                    ],
+                    [
+                      0,
+                      1,
+                      11
+                    ],
+                    [
+                      0,
+                      1,
+                      21
+                    ],
+                    [
+                      0,
+                      1,
+                      25
+                    ],
+                    [
+                      0,
+                      1,
+                      26
+                    ],
+                    [
+                      0,
+                      1,
+                      29
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0064430832862854,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch_value_at_max": 0.47034433484077454,
+                  "circle_value_at_max": 0.47678741812705994,
+                  "failing_elements": 16,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      2,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      3,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.14576604962348938,
+                  "circle_value_at_max": 0.14576604962348938,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0010780766606330872,
+                  "max_position": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "torch_value_at_max": -0.06468421965837479,
+                  "circle_value_at_max": -0.06576229631900787,
+                  "failing_elements": 22,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      1,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      9
+                    ],
+                    [
+                      0,
+                      1,
+                      11
+                    ],
+                    [
+                      0,
+                      1,
+                      21
+                    ],
+                    [
+                      0,
+                      1,
+                      25
+                    ],
+                    [
+                      0,
+                      1,
+                      26
+                    ],
+                    [
+                      0,
+                      1,
+                      29
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0064430832862854,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch_value_at_max": 0.47034433484077454,
+                  "circle_value_at_max": 0.47678741812705994,
+                  "failing_elements": 16,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      2,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      3,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.14576604962348938,
+                  "circle_value_at_max": 0.14576604962348938,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_1.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0015320554375648499,
+                  "max_position": [
+                    0,
+                    5,
+                    24
+                  ],
+                  "torch_value_at_max": 0.07507090270519257,
+                  "circle_value_at_max": 0.07353884726762772,
+                  "failing_elements": 11,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      5,
+                      0
+                    ],
+                    [
+                      0,
+                      5,
+                      1
+                    ],
+                    [
+                      0,
+                      5,
+                      3
+                    ],
+                    [
+                      0,
+                      5,
+                      9
+                    ],
+                    [
+                      0,
+                      5,
+                      13
+                    ],
+                    [
+                      0,
+                      5,
+                      16
+                    ],
+                    [
+                      0,
+                      5,
+                      18
+                    ],
+                    [
+                      0,
+                      5,
+                      23
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0416334867477417,
+                  "max_position": [
+                    0,
+                    0,
+                    5,
+                    7
+                  ],
+                  "torch_value_at_max": 0.5134793519973755,
+                  "circle_value_at_max": 0.5551128387451172,
+                  "failing_elements": 7,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      6,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.10556378215551376,
+                  "circle_value_at_max": -0.10556378215551376,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0015320554375648499,
+                  "max_position": [
+                    0,
+                    5,
+                    24
+                  ],
+                  "torch_value_at_max": 0.07507090270519257,
+                  "circle_value_at_max": 0.07353884726762772,
+                  "failing_elements": 11,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      5,
+                      0
+                    ],
+                    [
+                      0,
+                      5,
+                      1
+                    ],
+                    [
+                      0,
+                      5,
+                      3
+                    ],
+                    [
+                      0,
+                      5,
+                      9
+                    ],
+                    [
+                      0,
+                      5,
+                      13
+                    ],
+                    [
+                      0,
+                      5,
+                      16
+                    ],
+                    [
+                      0,
+                      5,
+                      18
+                    ],
+                    [
+                      0,
+                      5,
+                      23
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0416334867477417,
+                  "max_position": [
+                    0,
+                    0,
+                    5,
+                    7
+                  ],
+                  "torch_value_at_max": 0.5134793519973755,
+                  "circle_value_at_max": 0.5551128387451172,
+                  "failing_elements": 7,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      6,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.10556378215551376,
+                  "circle_value_at_max": -0.10556378215551376,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "deepstack_fusion_0_t1_h2_w2.q.circle": {
+          "execution_mode": "native",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.371177077293396,
+                  "circle_value_at_max": 0.371177077293396,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "lm_head.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    64
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.19500954449176788,
+                  "circle_value_at_max": -0.19500954449176788,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -1.457029104232788,
+                  "circle_value_at_max": -1.457029104232788,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "token_embedding.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.001904066652059555,
+                  "circle_value_at_max": -0.001904066652059555,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "vision_prefill_t1_h2_w2.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.043440405279397964,
+                  "circle_value_at_max": -0.043440405279397964,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.0009965036297217011,
+                  "circle_value_at_max": -0.0009965036297217011,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "candidate/after_eager": {
+      "stage_count": 9,
+      "state_preserved": true,
+      "stages": {
+        "decoder_layer_decode_0.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.044739918783307076,
+                  "max_position": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch_value_at_max": -0.07007457315921783,
+                  "circle_value_at_max": -0.02533465437591076,
+                  "failing_elements": 31,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.046896062791347504,
+                  "circle_value_at_max": 0.046896062791347504,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.042583780363202095,
+                  "max_position": [
+                    0,
+                    0,
+                    21
+                  ],
+                  "torch_value_at_max": -0.06791843473911285,
+                  "circle_value_at_max": -0.02533465437591076,
+                  "failing_elements": 32,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.00644307304173708,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    4
+                  ],
+                  "torch_value_at_max": 0.0,
+                  "circle_value_at_max": -0.00644307304173708,
+                  "failing_elements": 1,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.1510666310787201,
+                  "circle_value_at_max": -0.1510666310787201,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_decode_1.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.03140721470117569,
+                  "max_position": [
+                    0,
+                    0,
+                    9
+                  ],
+                  "torch_value_at_max": -0.0888594388961792,
+                  "circle_value_at_max": -0.05745222419500351,
+                  "failing_elements": 31,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_empty_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.09039149433374405,
+                  "circle_value_at_max": 0.09039149433374405,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "decode_full_past",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.03140721842646599,
+                  "max_position": [
+                    0,
+                    0,
+                    24
+                  ],
+                  "torch_value_at_max": -0.08962547034025192,
+                  "circle_value_at_max": -0.058218251913785934,
+                  "failing_elements": 32,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.006938904523849487,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    7
+                  ],
+                  "torch_value_at_max": 0.24286185204982758,
+                  "circle_value_at_max": 0.2359229475259781,
+                  "failing_elements": 3,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      0,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    1,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.01679423823952675,
+                  "circle_value_at_max": 0.01679423823952675,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_0.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0010780766606330872,
+                  "max_position": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "torch_value_at_max": -0.06468421965837479,
+                  "circle_value_at_max": -0.06576229631900787,
+                  "failing_elements": 22,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      1,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      9
+                    ],
+                    [
+                      0,
+                      1,
+                      11
+                    ],
+                    [
+                      0,
+                      1,
+                      21
+                    ],
+                    [
+                      0,
+                      1,
+                      25
+                    ],
+                    [
+                      0,
+                      1,
+                      26
+                    ],
+                    [
+                      0,
+                      1,
+                      29
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0064430832862854,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch_value_at_max": 0.47034433484077454,
+                  "circle_value_at_max": 0.47678741812705994,
+                  "failing_elements": 16,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      2,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      3,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.14576604962348938,
+                  "circle_value_at_max": 0.14576604962348938,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0010780766606330872,
+                  "max_position": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "torch_value_at_max": -0.06468421965837479,
+                  "circle_value_at_max": -0.06576229631900787,
+                  "failing_elements": 22,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      1,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      9
+                    ],
+                    [
+                      0,
+                      1,
+                      11
+                    ],
+                    [
+                      0,
+                      1,
+                      21
+                    ],
+                    [
+                      0,
+                      1,
+                      25
+                    ],
+                    [
+                      0,
+                      1,
+                      26
+                    ],
+                    [
+                      0,
+                      1,
+                      29
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0064430832862854,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    5
+                  ],
+                  "torch_value_at_max": 0.47034433484077454,
+                  "circle_value_at_max": 0.47678741812705994,
+                  "failing_elements": 16,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      2,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      3,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      7,
+                      4
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.14576604962348938,
+                  "circle_value_at_max": 0.14576604962348938,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "decoder_layer_prefill_1.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0015320554375648499,
+                  "max_position": [
+                    0,
+                    5,
+                    24
+                  ],
+                  "torch_value_at_max": 0.07507090270519257,
+                  "circle_value_at_max": 0.07353884726762772,
+                  "failing_elements": 11,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      5,
+                      0
+                    ],
+                    [
+                      0,
+                      5,
+                      1
+                    ],
+                    [
+                      0,
+                      5,
+                      3
+                    ],
+                    [
+                      0,
+                      5,
+                      9
+                    ],
+                    [
+                      0,
+                      5,
+                      13
+                    ],
+                    [
+                      0,
+                      5,
+                      16
+                    ],
+                    [
+                      0,
+                      5,
+                      18
+                    ],
+                    [
+                      0,
+                      5,
+                      23
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0416334867477417,
+                  "max_position": [
+                    0,
+                    0,
+                    5,
+                    7
+                  ],
+                  "torch_value_at_max": 0.5134793519973755,
+                  "circle_value_at_max": 0.5551128387451172,
+                  "failing_elements": 7,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      6,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.10556378215551376,
+                  "circle_value_at_max": -0.10556378215551376,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            },
+            {
+              "probe": "prefill_last_key_padded",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "hidden",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0015320554375648499,
+                  "max_position": [
+                    0,
+                    5,
+                    24
+                  ],
+                  "torch_value_at_max": 0.07507090270519257,
+                  "circle_value_at_max": 0.07353884726762772,
+                  "failing_elements": 11,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      5,
+                      0
+                    ],
+                    [
+                      0,
+                      5,
+                      1
+                    ],
+                    [
+                      0,
+                      5,
+                      3
+                    ],
+                    [
+                      0,
+                      5,
+                      9
+                    ],
+                    [
+                      0,
+                      5,
+                      13
+                    ],
+                    [
+                      0,
+                      5,
+                      16
+                    ],
+                    [
+                      0,
+                      5,
+                      18
+                    ],
+                    [
+                      0,
+                      5,
+                      23
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 1,
+                  "role": "delta_key",
+                  "strict_ok": false,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": false,
+                  "max_abs_error": 0.0416334867477417,
+                  "max_position": [
+                    0,
+                    0,
+                    5,
+                    7
+                  ],
+                  "torch_value_at_max": 0.5134793519973755,
+                  "circle_value_at_max": 0.5551128387451172,
+                  "failing_elements": 7,
+                  "first_failing_positions": [
+                    [
+                      0,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      6
+                    ],
+                    [
+                      0,
+                      0,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      0,
+                      6,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      7
+                    ],
+                    [
+                      0,
+                      1,
+                      6,
+                      7
+                    ]
+                  ]
+                },
+                {
+                  "output_index": 2,
+                  "role": "delta_value",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    2,
+                    8,
+                    8
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.10556378215551376,
+                  "circle_value_at_max": -0.10556378215551376,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "deepstack_fusion_0_t1_h2_w2.q.circle": {
+          "execution_mode": "native",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": 0.371177077293396,
+                  "circle_value_at_max": 0.371177077293396,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "lm_head.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    1,
+                    64
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.19500954449176788,
+                  "circle_value_at_max": -0.19500954449176788,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -1.457029104232788,
+                  "circle_value_at_max": -1.457029104232788,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "token_embedding.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    8,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.001904066652059555,
+                  "circle_value_at_max": -0.001904066652059555,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        },
+        "vision_prefill_t1_h2_w2.q.circle": {
+          "execution_mode": "fake_quantize",
+          "probes": [
+            {
+              "probe": "export_example",
+              "outputs": [
+                {
+                  "output_index": 0,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.043440405279397964,
+                  "circle_value_at_max": -0.043440405279397964,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                },
+                {
+                  "output_index": 1,
+                  "role": "stage_output",
+                  "strict_ok": true,
+                  "shape": [
+                    1,
+                    32
+                  ],
+                  "dtype": "float32",
+                  "finite": true,
+                  "exact_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_position": [
+                    0,
+                    0
+                  ],
+                  "torch_value_at_max": -0.0009965036297217011,
+                  "circle_value_at_max": -0.0009965036297217011,
+                  "failing_elements": 0,
+                  "first_failing_positions": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

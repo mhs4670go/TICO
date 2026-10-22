@@ -1,0 +1,43 @@
+{
+  "name": "tiny_qwen_full_text_png_original",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "python",
+    "tico/quantization/recipes/debug/export_regression.py",
+    "run",
+    "--baseline-repo",
+    "/workspace/TICO-export-baseline",
+    "--candidate-repo",
+    ".",
+    "--config",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.export.yaml",
+    "--checkpoint",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.pt",
+    "--seq-len",
+    "8",
+    "--eager-seq-len",
+    "12",
+    "--decode-steps",
+    "4",
+    "--artifacts",
+    "",
+    "--include-full-text",
+    "--eager-inputs",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/qwen_actual_png_kwargs.pt",
+    "--require-torch-parity",
+    "--output",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-qwen-full-text-png-original"
+  ],
+  "started_at": "2026-10-22T04:51:14.080551+00:00",
+  "environment": {
+    "VIRTUAL_ENV": "/workspace/TICO/.venv",
+    "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+  },
+  "exit_code": 2,
+  "elapsed_seconds": 118.34826013500015
+}

@@ -1,0 +1,9 @@
+{
+  "host": {},
+  "schema_version": 1,
+  "stages": {
+    "full_text_regression.q.circle": "full_text_regression.q.circle"
+  },
+  "state_differences": [],
+  "state_preserved": true
+}

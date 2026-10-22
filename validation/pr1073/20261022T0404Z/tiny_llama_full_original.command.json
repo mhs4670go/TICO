@@ -1,0 +1,41 @@
+{
+  "name": "tiny_llama_full_original",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "python",
+    "tico/quantization/recipes/debug/export_regression.py",
+    "run",
+    "--baseline-repo",
+    "/workspace/TICO-export-baseline",
+    "--candidate-repo",
+    ".",
+    "--config",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_llama_v2.export.yaml",
+    "--checkpoint",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_llama_v2.pt",
+    "--migrate-llama-rope",
+    "--seq-len",
+    "8",
+    "--eager-seq-len",
+    "12",
+    "--decode-steps",
+    "4",
+    "--artifacts",
+    "circle_full",
+    "--require-torch-parity",
+    "--output",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-full-original"
+  ],
+  "started_at": "2026-10-22T04:38:52.621364+00:00",
+  "environment": {
+    "VIRTUAL_ENV": "/workspace/TICO/.venv",
+    "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+  },
+  "exit_code": 2,
+  "elapsed_seconds": 30.742392224000014
+}

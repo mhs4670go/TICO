@@ -1,0 +1,784 @@
+{
+  "status": "LOCALISED_EXISTING_CONVERSION_BOUNDARY_MISMATCH",
+  "raw_strict_result": "FAIL_UNCHANGED",
+  "scope": "One tiny frozen baseline text stage; no pretrained or NPU claim.",
+  "original_stages": {
+    "decoder_layer_decode_0.q.circle": [
+      {
+        "probe": "export_example",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "probe": "decode_empty_past",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "probe": "decode_full_past",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      }
+    ],
+    "decoder_layer_decode_1.q.circle": [
+      {
+        "probe": "export_example",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "probe": "decode_empty_past",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "probe": "decode_full_past",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      }
+    ],
+    "decoder_layer_prefill_0.q.circle": [
+      {
+        "probe": "export_example",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.3541484475135803,
+            "ok": false
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "probe": "prefill_last_key_padded",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.3541484475135803,
+            "ok": false
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      }
+    ],
+    "decoder_layer_prefill_1.q.circle": [
+      {
+        "probe": "export_example",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "probe": "prefill_last_key_padded",
+        "torch_parity": [
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        ]
+      }
+    ]
+  },
+  "replay": {
+    "tico_file": "/workspace/TICO-export-baseline/tico/__init__.py",
+    "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+    "circle_sha256": "932c1dc0e93b2881c52270bb7f002e173140a78ea47a2b67a0520144c8db0a94",
+    "circle_replay_exact": [
+      true,
+      true,
+      true
+    ],
+    "torch_replay_exact": [
+      true,
+      true,
+      true
+    ],
+    "state_preserved": true,
+    "scope": "Existing binary replay and real frozen eager call only; no conversion/calibration/parameter changes. Diagnostic recorder delegates to original _fq and is restored.",
+    "process_cpu_seconds": 0.28956699799999797
+  },
+  "profile": {
+    "sequence_length": 8,
+    "layer0_sliding_window": 8,
+    "layer1_full_attention": true,
+    "mask_equal_between_layers": true,
+    "PLE": 0,
+    "shared_KV": 0,
+    "sine_convention": "pre_negated_sin"
+  },
+  "proof": {
+    "qnorm_output_exact": true,
+    "serialized_split0_equals_unrequantized_first_half": true,
+    "serialized_split1_equals_unrequantized_second_half": true,
+    "serialized_cat_equals_reordered_unrequantized_halves": true,
+    "torch_cat_input_equals_reordered_requantized_halves": true,
+    "q_cat_difference_indices": [
+      [
+        0,
+        2,
+        0,
+        15
+      ],
+      [
+        0,
+        4,
+        0,
+        12
+      ]
+    ],
+    "frozen_q_x1_grid": {
+      "scale": 0.02118774875998497,
+      "zero_point": 147
+    },
+    "frozen_q_x2_grid": {
+      "scale": 0.02068050019443035,
+      "zero_point": 119
+    },
+    "q_x1_grid_serialized_tensors": [],
+    "q_x2_grid_serialized_tensors": [],
+    "serialized_tensor_grids": [
+      {
+        "index": 22,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          16
+        ]
+      },
+      {
+        "index": 25,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          8
+        ]
+      },
+      {
+        "index": 26,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          8
+        ]
+      },
+      {
+        "index": 27,
+        "scale": [
+          0.023234067484736443
+        ],
+        "zero_point": [
+          134
+        ],
+        "shape": [
+          1,
+          8,
+          2,
+          16
+        ]
+      }
+    ],
+    "example": {
+      "qnorm_index": [
+        0,
+        4,
+        0,
+        4
+      ],
+      "qnorm_value": 2.7648539543151855,
+      "torch_qx1_after_quant": 2.2882769107818604,
+      "qcat_index": [
+        0,
+        4,
+        0,
+        12
+      ],
+      "torch_qcat": 2.2769386768341064,
+      "circle_qcat": 2.7648539543151855
+    },
+    "mapped_quantizer_calls": 61,
+    "isolated_same_input_quantizer_mismatches": 0
+  },
+  "selected_quantizer_boundaries": [
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped",
+      "observer": "act_out",
+      "index": 9,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.023234067484736443,
+      "zero": 134,
+      "circle_tensor": 22,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_1",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7899582982063293,
+        "right": -0.7899582982063293
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7899582982063293,
+        "right": -0.7899582982063293
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_x1",
+      "index": 10,
+      "shape": [
+        1,
+        8,
+        2,
+        8
+      ],
+      "scale": 0.02118774875998497,
+      "zero": 147
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_x2",
+      "index": 11,
+      "shape": [
+        1,
+        8,
+        2,
+        8
+      ],
+      "scale": 0.02068050019443035,
+      "zero": 119
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_cat",
+      "index": 12,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.023234067484736443,
+      "zero": 134,
+      "circle_tensor": 27,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::cat",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.4879152774810791,
+        "index": [
+          0,
+          4,
+          0,
+          12
+        ],
+        "nonzero": 2,
+        "left": 2.2769386768341064,
+        "right": 2.7648539543151855
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.9990649223327637,
+        "right": 0.9990649223327637
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_sin",
+      "index": 14,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.018626894801855087,
+      "zero": 133,
+      "circle_tensor": 29,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::mul_1",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.01862689107656479,
+        "index": [
+          0,
+          4,
+          0,
+          12
+        ],
+        "nonzero": 1,
+        "left": 0.09313447773456573,
+        "right": 0.11176136881113052
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "q_rot",
+      "index": 15,
+      "shape": [
+        1,
+        8,
+        2,
+        16
+      ],
+      "scale": 0.023346511647105217,
+      "zero": 133,
+      "circle_tensor": 30,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::add",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.023346513509750366,
+        "index": [
+          0,
+          4,
+          0,
+          12
+        ],
+        "nonzero": 1,
+        "left": -0.16342557966709137,
+        "right": -0.140079066157341
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.7937813997268677,
+        "right": -0.7937813997268677
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "attn_mask",
+      "index": 34,
+      "shape": [
+        1,
+        1,
+        8,
+        8
+      ],
+      "scale": 0.47058823704719543,
+      "zero": 255,
+      "circle_tensor": 16,
+      "circle_name": "tico::attention_mask",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 0.0,
+        "right": 0.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "logits_raw",
+      "index": 35,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.08203807473182678,
+      "zero": 130,
+      "circle_tensor": 54,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.08203840255737305,
+        "index": [
+          0,
+          4,
+          0
+        ],
+        "nonzero": 6,
+        "left": -5.660627365112305,
+        "right": -5.578588962554932
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -7.629540920257568,
+        "right": -7.629540920257568
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "mask_add",
+      "index": 37,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.5511019229888916,
+      "zero": 236,
+      "circle_tensor": 55,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::add_2",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.5511019229888916,
+        "index": [
+          0,
+          4,
+          1
+        ],
+        "nonzero": 1,
+        "left": 0.0,
+        "right": -0.5511019229888916
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -7.715426921844482,
+        "right": -7.715426921844482
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped",
+      "observer": "softmax",
+      "index": 38,
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "scale": 0.003921568859368563,
+      "zero": 0,
+      "circle_tensor": 56,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::_softmax",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.08235293626785278,
+        "index": [
+          0,
+          4,
+          1
+        ],
+        "nonzero": 4,
+        "left": 0.8549020290374756,
+        "right": 0.7725490927696228
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": 1.0,
+        "right": 1.0
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped",
+      "observer": "act_out",
+      "index": 50,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023073559626936913,
+      "zero": 126,
+      "circle_tensor": 67,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.2538090944290161,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 31,
+        "left": -1.6612962484359741,
+        "right": -1.407487154006958
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -1.1306043863296509,
+        "right": -1.1306043863296509
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "attn_residual_out",
+      "index": 51,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.023837318643927574,
+      "zero": 126,
+      "circle_tensor": 68,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::add_4",
+      "matching_tensor_count": 1,
+      "trace_difference": {
+        "max_abs": 0.2383732795715332,
+        "index": [
+          0,
+          4,
+          24
+        ],
+        "nonzero": 31,
+        "left": -1.9784975051879883,
+        "right": -1.740124225616455
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.738956868648529,
+        "right": -0.738956868648529
+      }
+    },
+    {
+      "module": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped",
+      "observer": "mlp_residual_out",
+      "index": 64,
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "scale": 0.027242189273238182,
+      "zero": 128,
+      "circle_tensor": 76,
+      "circle_name": "tico.quantization.wrapq.wrappers.gemma4.quant_text_decoder_layer.QuantGemma4TextDecoderLayer::add_5",
+      "matching_tensor_count": 2,
+      "trace_difference": {
+        "max_abs": 0.3541484475135803,
+        "index": [
+          0,
+          4,
+          28
+        ],
+        "nonzero": 30,
+        "left": -0.9262344241142273,
+        "right": -1.2803828716278076
+      },
+      "isolated_quantizer_difference": {
+        "max_abs": 0.0,
+        "index": [
+          0,
+          0,
+          0
+        ],
+        "nonzero": 0,
+        "left": -0.027242189273238182,
+        "right": -0.027242189273238182
+      }
+    }
+  ],
+  "source_pipeline_files_unchanged_from_baseline": {
+    "tico/quantization/passes/fold_quant_ops.py": true,
+    "tico/quantization/passes/propagate_qparam_forward.py": true,
+    "tico/quantization/passes/propagate_qparam_backward.py": true
+  },
+  "established": "The serialized SPLIT/CONCAT path does not retain two frozen query-half requantization domains; their loss first changes q_cat, then query rotation/attention and row4 hidden output.",
+  "not_established": "Exact pass at which boundaries disappear; a corrected export/fix; applicability to pretrained checkpoints or other profiles.",
+  "no_changes": "No re-export, recalibration, checkpoint write, product fix, tolerance change, or replacement runtime.",
+  "infrastructure_failure_preserved": "Initial helper passed Path to baseline runtime expecting bytes; original failed script/log retained and minimal read_bytes fix rerun separately."
+}

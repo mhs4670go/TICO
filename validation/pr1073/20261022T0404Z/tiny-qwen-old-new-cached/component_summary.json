@@ -1,0 +1,43 @@
+{
+  "raw_status": "FAIL",
+  "raw_torch_parity_required": true,
+  "comparisons_complete": true,
+  "same_checkpoint_and_dependencies": true,
+  "same_initial_quantization_state": true,
+  "frozen_state_preserved": true,
+  "baseline_candidate_components": {
+    "stage_count": 9,
+    "structure_equal": true,
+    "all_input_and_output_arrays_match": true,
+    "host_equal": true,
+    "strict_comparison_ok": false,
+    "stage_failures": [
+      "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "actual_numerical_differences": {}
+  },
+  "candidate_before_after_components": {
+    "stage_count": 9,
+    "structure_equal": true,
+    "all_input_and_output_arrays_match": true,
+    "host_equal": true,
+    "strict_comparison_ok": false,
+    "stage_failures": [
+      "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "actual_numerical_differences": {}
+  },
+  "actual_stage_count_per_phase": {
+    "baseline/before": 9,
+    "candidate/after_eager": 9,
+    "candidate/before": 9
+  },
+  "independent_complete_array_coverage": true,
+  "independent_finite_arrays": true
+}

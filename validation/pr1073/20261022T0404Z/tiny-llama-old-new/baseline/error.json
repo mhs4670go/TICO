@@ -1,0 +1,6 @@
+{
+  "comparisons_complete": false,
+  "error_type": "AssertionError",
+  "message": "The module is already wrapped.",
+  "status": "ERROR"
+}

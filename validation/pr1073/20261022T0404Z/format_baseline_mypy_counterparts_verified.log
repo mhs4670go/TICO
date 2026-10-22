@@ -1,0 +1,15 @@
+[2026-10-22T05:06:40Z DEBUG lintrunner] Version: 0.11.0
+[2026-10-22T05:06:40Z DEBUG lintrunner] Passed args: Args { inner: ["lintrunner", "-vv", "--take", "MYPY", "--config", "/workspace/TICO-export-baseline/.lintrunner.toml", "--paths-from", "/workspace/TICO/out/pr1073_validation/20261022T0404Z/baseline_mypy_paths.txt"] }
+[2026-10-22T05:06:40Z DEBUG lintrunner] Computed args: Args { verbose: 2, configs: "/workspace/TICO-export-baseline/.lintrunner.toml", apply_patches: false, paths_cmd: None, paths_from: Some("/workspace/TICO/out/pr1073_validation/20261022T0404Z/baseline_mypy_paths.txt"), revision: None, merge_base_with: None, skip: None, take: Some("MYPY"), output: Default, cmd: None, paths: [], force_color: false, data_path: None, tee_json: None, all_files: false, only_lint_under_config_dir: false }
+[2026-10-22T05:06:40Z DEBUG lintrunner] Current rev: bb09ca852b0ca1b1a6271cfe1e10c162104c997e
+[2026-10-22T05:06:40Z DEBUG lintrunner::lint_config] Found linters: {"UFMT", "PYLINT", "MYPY"}
+[2026-10-22T05:06:40Z DEBUG lintrunner::lint_config] Taking linters: {"MYPY"}
+[2026-10-22T05:06:40Z DEBUG lintrunner::persistent_data] Checking data file '<USER_HOME>/.local/share/lintrunner/034dc82d070cf7735a0d0ca2572e82658b082d48f4b97ce3969e801eed75fdac/.lintrunner.toml' to see if config has changed
+WARNING: No previous init data found. If this is the first time you're running lintrunner, you should run `lintrunner init`.
+[2026-10-22T05:06:40Z DEBUG lintrunner] Running linters: ["MYPY"]
+[2026-10-22T05:06:40Z TRACE lintrunner::log_utils] Linting files: [/workspace/TICO-export-baseline/test/quantization/recipes/test_export_llama_bundle.py, /workspace/TICO-export-baseline/tico/quantization/recipes/export/llama.py]
+[2026-10-22T05:06:40Z TRACE lintrunner::log_utils] Linter 'MYPY' matched files: [/workspace/TICO-export-baseline/test/quantization/recipes/test_export_llama_bundle.py, /workspace/TICO-export-baseline/tico/quantization/recipes/export/llama.py]
+[2026-10-22T05:06:40Z DEBUG lintrunner::linter] Running linter MYPY: lintrunner_adapters 'run' 'mypy_linter' '--config=mypy.ini' '--show-notes' '--show-disable' '--' '@/tmp/.tmpriRoVE'
+[2026-10-22T05:06:47Z DEBUG lintrunner::linter] Linter MYPY took: 7.264948277s
+ok No lint issues.
+[2026-10-22T05:06:47Z DEBUG lintrunner::persistent_data] Writing run info to <USER_HOME>/.local/share/lintrunner/034dc82d070cf7735a0d0ca2572e82658b082d48f4b97ce3969e801eed75fdac/runs/2026-10-22T05-06-40.664Z_e2d2bfd2213881cf16918ceee9207f8a78594bf7c7b659b0be3287bb56257a60

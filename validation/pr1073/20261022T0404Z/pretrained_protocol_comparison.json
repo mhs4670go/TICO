@@ -1,0 +1,103 @@
+{
+  "status": "FAIL",
+  "scope": "Tiny pretrained Llama only; protocol equality does not require equal FP and Quant quality scores",
+  "cli_protocol_equal": true,
+  "allowed_protocol_differences": {
+    "checkpoint": {
+      "fp": null,
+      "quant": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt"
+    },
+    "model_class": {
+      "fp": "LlamaForCausalLM",
+      "quant": "QuantLlamaForCausalLM"
+    },
+    "quantization_modes": {
+      "fp": [],
+      "quant": [
+        "quant"
+      ]
+    }
+  },
+  "cli_metrics": {
+    "fp": {
+      "exit_code": 0,
+      "ppl_printed": 6019.25
+    },
+    "quant": {
+      "exit_code": 0,
+      "ppl_printed": 5889.06
+    }
+  },
+  "dataset": {
+    "name": "Salesforce/wikitext",
+    "config": "wikitext-2-raw-v1",
+    "split": "test[:12]",
+    "sample_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "fingerprint": "67f322cface4b1d9",
+    "text_sha256": "85cdbded35583b332b7a6b754edabdb2ddb7f1ae2a37b563b39d19f6d0aa61aa",
+    "token_ids_sha256": "1c2cb6f91e78684e309530484adb768efda9842b5cbda5e76c30321747dc37de",
+    "token_count": 660,
+    "sample_text_sha256": [
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "9a75cb43e8b09a7c551726fb066db694a380479f17874a069299797332a34456",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "a4cca4687094f729d137d7e6377f5fc847055357babe03e5e416ed7a5abfb5c6",
+      "778feb224c65cf94569b938ed06e7408f2682e134cfe92a86d87effbf35a9f51",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "7a99af1fa98d66152eae32ecb8093ae0dbd655e718a08a7db56afa05f8035e3a",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ac10d12f3161d608850e9ee12b379083eb1976a3a7e18ef4ce974124e1651c07",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "37e64c5547f876d903f2ffecb0c8a55d2ec93359d9046ba144a15b4afbd8a5a4"
+    ]
+  },
+  "supplemental_protocol": {
+    "seed": 42,
+    "dtype": "float32",
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 8,
+      "use_cache": true
+    },
+    "ppl": {
+      "dataset": "Salesforce/wikitext",
+      "dataset_config": "wikitext-2-raw-v1",
+      "split": "test[:12]",
+      "max_seq_len": 64,
+      "stride": 32
+    },
+    "context_cap": 128,
+    "fewshot": 0,
+    "prompt_mode": "raw",
+    "calibration_length": 32,
+    "export_length": 16
+  },
+  "supplemental_conditions_equal": true,
+  "generation_and_likelihood_inputs_equal": true,
+  "cli_exact_ppl_consistency": {
+    "fp": true,
+    "quant": true
+  },
+  "frozen_state_equal": true,
+  "ppl_quant_minus_fp": -130.1875,
+  "metrics_exact": {
+    "fp": 6019.2490234375,
+    "quant": 5889.0615234375
+  },
+  "protocol_status": "PASS",
+  "generation_status": "FAIL"
+}

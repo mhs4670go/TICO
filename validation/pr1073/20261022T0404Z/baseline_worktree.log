@@ -1,0 +1,2 @@
+Preparing worktree (detached HEAD bb09ca8)
+HEAD is now at bb09ca8 [quantization] Fix reuse_gptq_qparams option for Qwen3-vl (#1015)

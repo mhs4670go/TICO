@@ -1,0 +1,164 @@
+6b2f6a0511458d6a750e2a260d706080a78149dd
+ea
+6b2f6a0 remove unnecessary parts.
+61f3a05 [quantization] Remove eager evaluation backend selector
+ed6f644 [quantization] Standardize FP eager vs. Quant eager benchmarks
+0e29e44 [test] Fix internal Gemma4 and Qwen3-VL wrapper tests (#1071)
+68cb950 [passes] Preserve negative axes in reshape fusion (#1070)
+946d1c2 [quantization] Restore FPI-GPTQ cache state (#1069)
+318bd7e [quantization] Reuse evaluation target selection (#1068)
+2cb42fe [circle] Guard dequantize folding scales (#1067)
+2a2db3e [circle] Complete partial binary writes (#1066)
+3257a58 [quantization] Add saved-Circle LLaMA generation (#1065)
+70b4035 [circle] Reduce conversion memory with direct file output (#1064)
+fd1548d [test] Fix Python 3.10 and Transformers 4.57 regressions (#1063)
+ .../evaluation/test_video_mme_gemma4.py            | 109 ++-
+ .../recipes/test_adapter_llava_bench_routing.py    |  12 +-
+ .../recipes/test_adapter_mmmu_routing.py           |   8 +-
+ .../recipes/test_adapter_vqa_routing.py            |  14 +-
+ test/quantization/recipes/test_eager_evaluation.py | 340 ++++++++
+ test/quantization/recipes/test_export_llama.py     |   8 +
+ .../recipes/test_export_llama_bundle.py            |  52 +-
+ .../quantization/recipes/test_export_regression.py | 354 +++++++++
+ test/quantization/recipes/test_llama_adapter.py    |  21 +
+ test/quantization/recipes/test_mmmu_protocol.py    |   5 +-
+ test/quantization/recipes/test_runner.py           |  16 +
+ test/quantization/recipes/test_runner_preflight.py |  19 +-
+ .../recipes/test_video_mme_evaluation.py           | 154 +++-
+ .../recipes/test_vlm_adapter_model_loading.py      |   4 +-
+ .../wrapq/utils/test_static_export_inputs.py       | 441 +++++++++++
+ .../wrappers/gemma4/test_quant_text_attention.py   |  19 +
+ .../wrapq/wrappers/gemma4/test_quant_text_model.py | 207 +++++
+ .../test_text_decoder_ple_export_boundary.py       |   2 +
+ .../wrapq/wrappers/llama/test_eager_context.py     | 284 +++++++
+ .../wrappers/llama/test_quant_decoder_layer.py     |  28 +-
+ .../wrapq/wrappers/llama/test_quant_model.py       |  21 +-
+ .../wrapq/wrappers/llama/test_rope_consistency.py  | 251 ++++++
+ .../wrapq/wrappers/qwen_vl/test_eager_context.py   | 269 +++++++
+ .../wrappers/qwen_vl/test_quant_text_attention.py  |   4 -
+ .../wrappers/qwen_vl/test_quant_text_model.py      |   7 +-
+ .../qwen_vl/test_quant_vision_attention.py         |  50 +-
+ tico/quantization/evaluation/lmms_eval_utils.py    |  95 +--
+ tico/quantization/examples/README.md               |   9 +-
+ tico/quantization/examples/configs/README.md       |  36 +
+ .../examples/configs/gemma4_eval_suite.yaml        |   8 +-
+ .../examples/configs/llama_eval_suite.yaml         |   4 +-
+ .../examples/configs/qwen3_vl_eval_suite.yaml      |   8 +-
+ .../qwen3_vl_eval_suite_mx_override_polices.yaml   |   8 +-
+ tico/quantization/examples/evaluate.py             |   6 +
+ tico/quantization/recipes/adapters/base.py         |   3 +
+ tico/quantization/recipes/adapters/gemma4.py       |  48 +-
+ tico/quantization/recipes/adapters/llama.py        |  48 +-
+ tico/quantization/recipes/adapters/qwen3_vl.py     |  37 +-
+ .../recipes/debug/export_regression.py             | 882 +++++++++++++++++++++
+ .../recipes/debug/verify_llama_rope.py             |  78 ++
+ tico/quantization/recipes/evaluation/README.md     | 118 +++
+ tico/quantization/recipes/evaluation/eager.py      | 172 ++++
+ tico/quantization/recipes/evaluation/llm.py        |   9 +-
+ tico/quantization/recipes/evaluation/video_mme.py  |   6 +
+ .../recipes/export/LLAMA_ROPE_UNIFICATION.md       | 124 +++
+ tico/quantization/recipes/export/README.md         |   9 +
+ .../recipes/export/STATIC_EXPORT_REGRESSION.md     | 282 +++++++
+ tico/quantization/recipes/export/circle.py         |  15 +-
+ tico/quantization/recipes/export/llama.py          |  16 +-
+ tico/quantization/recipes/export/llama_bundle.py   |  11 +-
+ tico/quantization/recipes/qparams.py               |  35 +-
+ tico/quantization/recipes/runner.py                |  26 +-
+ tico/quantization/recipes/sequence_length.py       |  94 +++
+ .../examples/llama/quantize_attention_prefill.py   |   4 +-
+ .../llama/quantize_decoder_layer_prefill.py        |  20 +-
+ .../examples/quantize_full_qmodel_with_gptq.py     |  25 +-
+ tico/quantization/wrapq/utils/linear_folding.py    |  14 +-
+ tico/quantization/wrapq/utils/static_export.py     |  97 +++
+ .../wrapq/wrappers/gemma4/export_adapters.py       |  10 +
+ .../wrapq/wrappers/gemma4/quant_text_attention.py  |  76 +-
+ .../wrapq/wrappers/gemma4/quant_text_model.py      | 146 +++-
+ .../wrapq/wrappers/llama/export_adapters.py        |  22 +-
+ tico/quantization/wrapq/wrappers/llama/position.py |  91 +++
+ .../wrapq/wrappers/llama/quant_attention.py        |  56 +-
+ .../wrapq/wrappers/llama/quant_decoder_layer.py    | 195 ++---
+ .../wrapq/wrappers/llama/quant_model.py            | 152 ++--
+ .../wrapq/wrappers/llama/static_inputs.py          | 217 +++++
+ .../wrapq/wrappers/qwen_vl/export_adapters.py      |  10 +-
+ .../wrapq/wrappers/qwen_vl/quant_text_attention.py |  53 +-
+ .../wrappers/qwen_vl/quant_text_decoder_layer.py   |   6 +-
+ .../wrapq/wrappers/qwen_vl/quant_text_model.py     | 125 ++-
+ .../wrappers/qwen_vl/quant_vision_attention.py     |  11 -
+ .../wrapq/wrappers/qwen_vl/static_inputs.py        |  85 ++
+ 73 files changed, 5508 insertions(+), 793 deletions(-)
+test/quantization/evaluation/test_video_mme_gemma4.py
+test/quantization/recipes/test_adapter_llava_bench_routing.py
+test/quantization/recipes/test_adapter_mmmu_routing.py
+test/quantization/recipes/test_adapter_vqa_routing.py
+test/quantization/recipes/test_eager_evaluation.py
+test/quantization/recipes/test_export_llama.py
+test/quantization/recipes/test_export_llama_bundle.py
+test/quantization/recipes/test_export_regression.py
+test/quantization/recipes/test_llama_adapter.py
+test/quantization/recipes/test_mmmu_protocol.py
+test/quantization/recipes/test_runner.py
+test/quantization/recipes/test_runner_preflight.py
+test/quantization/recipes/test_video_mme_evaluation.py
+test/quantization/recipes/test_vlm_adapter_model_loading.py
+test/quantization/wrapq/utils/test_static_export_inputs.py
+test/quantization/wrapq/wrappers/gemma4/test_quant_text_attention.py
+test/quantization/wrapq/wrappers/gemma4/test_quant_text_model.py
+test/quantization/wrapq/wrappers/gemma4/test_text_decoder_ple_export_boundary.py
+test/quantization/wrapq/wrappers/llama/test_eager_context.py
+test/quantization/wrapq/wrappers/llama/test_quant_decoder_layer.py
+test/quantization/wrapq/wrappers/llama/test_quant_model.py
+test/quantization/wrapq/wrappers/llama/test_rope_consistency.py
+test/quantization/wrapq/wrappers/qwen_vl/test_eager_context.py
+test/quantization/wrapq/wrappers/qwen_vl/test_quant_text_attention.py
+test/quantization/wrapq/wrappers/qwen_vl/test_quant_text_model.py
+test/quantization/wrapq/wrappers/qwen_vl/test_quant_vision_attention.py
+tico/quantization/evaluation/lmms_eval_utils.py
+tico/quantization/examples/README.md
+tico/quantization/examples/configs/README.md
+tico/quantization/examples/configs/gemma4_eval_suite.yaml
+tico/quantization/examples/configs/llama_eval_suite.yaml
+tico/quantization/examples/configs/qwen3_vl_eval_suite.yaml
+tico/quantization/examples/configs/qwen3_vl_eval_suite_mx_override_polices.yaml
+tico/quantization/examples/evaluate.py
+tico/quantization/recipes/adapters/base.py
+tico/quantization/recipes/adapters/gemma4.py
+tico/quantization/recipes/adapters/llama.py
+tico/quantization/recipes/adapters/qwen3_vl.py
+tico/quantization/recipes/debug/export_regression.py
+tico/quantization/recipes/debug/verify_llama_rope.py
+tico/quantization/recipes/evaluation/README.md
+tico/quantization/recipes/evaluation/eager.py
+tico/quantization/recipes/evaluation/llm.py
+tico/quantization/recipes/evaluation/video_mme.py
+tico/quantization/recipes/export/LLAMA_ROPE_UNIFICATION.md
+tico/quantization/recipes/export/README.md
+tico/quantization/recipes/export/STATIC_EXPORT_REGRESSION.md
+tico/quantization/recipes/export/circle.py
+tico/quantization/recipes/export/llama.py
+tico/quantization/recipes/export/llama_bundle.py
+tico/quantization/recipes/qparams.py
+tico/quantization/recipes/runner.py
+tico/quantization/recipes/sequence_length.py
+tico/quantization/wrapq/examples/llama/quantize_attention_prefill.py
+tico/quantization/wrapq/examples/llama/quantize_decoder_layer_prefill.py
+tico/quantization/wrapq/examples/quantize_full_qmodel_with_gptq.py
+tico/quantization/wrapq/utils/linear_folding.py
+tico/quantization/wrapq/utils/static_export.py
+tico/quantization/wrapq/wrappers/gemma4/export_adapters.py
+tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py
+tico/quantization/wrapq/wrappers/gemma4/quant_text_model.py
+tico/quantization/wrapq/wrappers/llama/export_adapters.py
+tico/quantization/wrapq/wrappers/llama/position.py
+tico/quantization/wrapq/wrappers/llama/quant_attention.py
+tico/quantization/wrapq/wrappers/llama/quant_decoder_layer.py
+tico/quantization/wrapq/wrappers/llama/quant_model.py
+tico/quantization/wrapq/wrappers/llama/static_inputs.py
+tico/quantization/wrapq/wrappers/qwen_vl/export_adapters.py
+tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py
+tico/quantization/wrapq/wrappers/qwen_vl/quant_text_decoder_layer.py
+tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py
+tico/quantization/wrapq/wrappers/qwen_vl/quant_vision_attention.py
+tico/quantization/wrapq/wrappers/qwen_vl/static_inputs.py
+/workspace/TICO  6b2f6a0 [ea]
+6b2f6a0511458d6a750e2a260d706080a78149dd	refs/heads/ea
+6b2f6a0511458d6a750e2a260d706080a78149dd	refs/pull/1073/head

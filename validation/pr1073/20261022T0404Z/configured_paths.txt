@@ -1,0 +1,22 @@
+tico/quantization/examples/configs/llama_export.yaml:  cache_dir: null
+tico/quantization/examples/configs/llama_export.yaml:  output_dir: ./out/llama_quantized/circle_layers
+tico/quantization/examples/configs/qwen3_vl_eval_suite.yaml:  cache_dir: null
+tico/quantization/examples/configs/qwen3_vl_eval_suite.yaml:  output_dir: ./out/qwen3_vl_eval_suite/evaluation
+tico/quantization/examples/configs/qwen3_vl_eval_suite.yaml:      model_id: unsloth/Llama-3.2-3B-Instruct
+tico/quantization/examples/configs/qwen3_vl_eval_suite.yaml:  output_dir: ./out/qwen3_vl_eval_suite
+tico/quantization/examples/configs/qwen3_vl_eval_suite.yaml:    - ptq_checkpoint
+tico/quantization/examples/configs/llama_eval_suite.yaml:  cache_dir: null
+tico/quantization/examples/configs/llama_eval_suite.yaml:  output_dir: ./out/llama_eval_suite/evaluation
+tico/quantization/examples/configs/llama_eval_suite.yaml:  output_dir: ./out/llama_eval
+tico/quantization/examples/configs/llama_eval_suite.yaml:    - ptq_checkpoint
+tico/quantization/examples/configs/gemma4_export.yaml:# Export a Gemma4 E2B model or saved checkpoint without running quantization stages.
+tico/quantization/examples/configs/gemma4_export.yaml:  cache_dir: null
+tico/quantization/examples/configs/gemma4_export.yaml:  output_dir: ./out/gemma4_quantized/circle_layers
+tico/quantization/examples/configs/gemma4_eval_suite.yaml:# Evaluate a floating-point Gemma4 E2B model or a saved checkpoint.
+tico/quantization/examples/configs/gemma4_eval_suite.yaml:  cache_dir: null
+tico/quantization/examples/configs/gemma4_eval_suite.yaml:  output_dir: ./out/gemma4_eval_suite/evaluation
+tico/quantization/examples/configs/gemma4_eval_suite.yaml:      model_id: unsloth/Llama-3.2-3B-Instruct
+tico/quantization/examples/configs/gemma4_eval_suite.yaml:  output_dir: ./out/gemma4_eval_suite
+tico/quantization/examples/configs/qwen3_vl_export.yaml:# Export a Qwen3-VL model or saved checkpoint without running quantization stages.
+tico/quantization/examples/configs/qwen3_vl_export.yaml:  cache_dir: null
+tico/quantization/examples/configs/qwen3_vl_export.yaml:  output_dir: ./out/qwen3_vl_quantized/circle_layers

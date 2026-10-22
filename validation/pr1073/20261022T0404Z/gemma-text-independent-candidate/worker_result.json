@@ -1,0 +1,75 @@
+{
+  "scope": "independent Gemma text decoder stage validation, not multimodal export",
+  "before": {
+    "complete": true,
+    "state_preserved": true,
+    "errors": {}
+  },
+  "eager": {
+    "kind": "actual Gemma text wrapper only; no image/video or conditional generation",
+    "prefill_tokens": 12,
+    "decode_steps": 4,
+    "native_capacity": 64,
+    "static_capacity": 8,
+    "all_hidden_outputs_finite": true,
+    "output_hashes": [
+      {
+        "shape": [
+          1,
+          12,
+          32
+        ],
+        "dtype": "torch.float32",
+        "sha256": "7c366c3dfe079b52c5aa8610e204a304011ee02225ec1cf24a2252c13ab1bae1"
+      },
+      {
+        "shape": [
+          1,
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "sha256": "5a060f034e91e9252274804797a812cad78f03440347a7185a7ef805ee1f1b00"
+      },
+      {
+        "shape": [
+          1,
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "sha256": "e93fb7ea6597ade84949b5e7e87e07d12ebc73467617752f057c6a22e2fb18f8"
+      },
+      {
+        "shape": [
+          1,
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "sha256": "205a1a925b5bc9fa1002fd3d3af2e6e026421fef334cafd4380f80ea54a39868"
+      },
+      {
+        "shape": [
+          1,
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "sha256": "2c957f6e7e80dce619b40c9cf1b01437cc4826ea613bc995aba8fb29b58b0475"
+      }
+    ],
+    "state_changes": {
+      "parameters": [],
+      "buffers": [],
+      "observers": [],
+      "modules": []
+    },
+    "state_preserved": true
+  },
+  "after_eager": {
+    "complete": true,
+    "state_preserved": true,
+    "errors": {}
+  }
+}

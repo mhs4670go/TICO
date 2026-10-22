@@ -1,0 +1,181 @@
+{
+  "functions_checked": 16,
+  "function_comparisons": [
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter._disable_cache",
+      "baseline_line": 147,
+      "candidate_line": 147,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "c52ed6c4ca3e3b4b951a55d0f2d66e62c985df41d69d0c3cb4a35280a38e1424",
+      "candidate_source_sha256": "c52ed6c4ca3e3b4b951a55d0f2d66e62c985df41d69d0c3cb4a35280a38e1424"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.forward_calibration",
+      "baseline_line": 171,
+      "candidate_line": 171,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "9ed1d37a6d4136d439ad9db444a00a4ac6fc6c999ca76321edb8153824921ecf",
+      "candidate_source_sha256": "9ed1d37a6d4136d439ad9db444a00a4ac6fc6c999ca76321edb8153824921ecf"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.calibrate_prepared_model",
+      "baseline_line": 186,
+      "candidate_line": 186,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "c647266f9860d10f8b3b6c516b3ca1f56a010c58ddc34a5fbc01f5a1b5615629",
+      "candidate_source_sha256": "c647266f9860d10f8b3b6c516b3ca1f56a010c58ddc34a5fbc01f5a1b5615629"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.build_calibration_inputs",
+      "baseline_line": 154,
+      "candidate_line": 154,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "4c776fddbaae608b5d8b97cbcc73a1afc6e1e406a82dfd6d70e9145b491e9a60",
+      "candidate_source_sha256": "4c776fddbaae608b5d8b97cbcc73a1afc6e1e406a82dfd6d70e9145b491e9a60"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/qwen3_vl.py",
+      "function": "Qwen3VLAdapter.build_ptq_config",
+      "baseline_line": 199,
+      "candidate_line": 199,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "936ef634763228e91caeba41097d1e82d366e74beb9868ab7f639f4e892c69e3",
+      "candidate_source_sha256": "936ef634763228e91caeba41097d1e82d366e74beb9868ab7f639f4e892c69e3"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "function": "QuantQwen3VLTextAttention._normalize_static_past_key_values",
+      "baseline_line": 417,
+      "candidate_line": 392,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "9c0459af94635c8c8b7746ce60d9aee6afc6934d5aa8b1f2d68eb112057e3c8f",
+      "candidate_source_sha256": "9c0459af94635c8c8b7746ce60d9aee6afc6934d5aa8b1f2d68eb112057e3c8f"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "function": "QuantQwen3VLTextAttention._build_present_key_values",
+      "baseline_line": 532,
+      "candidate_line": 507,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "b6b65cc75f835f7e26b171ef6539fc0cff5e36d4cb66a8fee179d58bec986a78",
+      "candidate_source_sha256": "b6b65cc75f835f7e26b171ef6539fc0cff5e36d4cb66a8fee179d58bec986a78"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/qwen_vl/quant_text_attention.py",
+      "function": "QuantQwen3VLTextAttention._update_cache_like",
+      "baseline_line": 478,
+      "candidate_line": 453,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "86ea111617929803322dbba5ea5f604705da6046de8cbd1955ee1675a122a535",
+      "candidate_source_sha256": "86ea111617929803322dbba5ea5f604705da6046de8cbd1955ee1675a122a535"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/llama.py",
+      "function": "LlamaAdapter.calibrate_prepared_model",
+      "baseline_line": 259,
+      "candidate_line": 253,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "ceafeb919d1bb955be386d2dce2c3033a1c0e0433ffa4da6864172a907b8acce",
+      "candidate_source_sha256": "ceafeb919d1bb955be386d2dce2c3033a1c0e0433ffa4da6864172a907b8acce"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/llama/quant_attention.py",
+      "function": "QuantLlamaAttention._normalize_past_key_value",
+      "baseline_line": 486,
+      "candidate_line": 480,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "af0d692ff21d9d804ce43b64a2666c078e8eb31f3b1586f6242a6c0dc5689067",
+      "candidate_source_sha256": "af0d692ff21d9d804ce43b64a2666c078e8eb31f3b1586f6242a6c0dc5689067"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/llama/quant_attention.py",
+      "function": "QuantLlamaAttention._get_layer_kv_from_cache",
+      "baseline_line": 316,
+      "candidate_line": 310,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "f4a04f35b169e586112c06c01be0932cc1286340295bbbeaffd2d42858ffd94c",
+      "candidate_source_sha256": "f4a04f35b169e586112c06c01be0932cc1286340295bbbeaffd2d42858ffd94c"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "function": "Gemma4Adapter._disable_cache",
+      "baseline_line": 205,
+      "candidate_line": 202,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "0c957a8c6cf4e7d7266317ec081dce88ad71662760e94001af6f8ab161ef1adf",
+      "candidate_source_sha256": "0c957a8c6cf4e7d7266317ec081dce88ad71662760e94001af6f8ab161ef1adf"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "function": "Gemma4Adapter.forward_calibration",
+      "baseline_line": 318,
+      "candidate_line": 315,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "6a6588bae346c4445b2fbb07bbc884d8e0c5067d3c948ed4f009d93d4942313a",
+      "candidate_source_sha256": "6a6588bae346c4445b2fbb07bbc884d8e0c5067d3c948ed4f009d93d4942313a"
+    },
+    {
+      "file": "tico/quantization/recipes/adapters/gemma4.py",
+      "function": "Gemma4Adapter.calibrate_prepared_model",
+      "baseline_line": 334,
+      "candidate_line": 331,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "2837274b7e8b242abd8244a4c06707c2442ed116cf3e984b3ac4a4bb48960eab",
+      "candidate_source_sha256": "2837274b7e8b242abd8244a4c06707c2442ed116cf3e984b3ac4a4bb48960eab"
+    },
+    {
+      "file": "tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+      "function": "QuantGemma4TextAttention._build_present_key_value",
+      "baseline_line": 447,
+      "candidate_line": 465,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "7b76b9ed75a3f9974f14b9898ebe423e4aebeae15098779348206ff134f88632",
+      "candidate_source_sha256": "7b76b9ed75a3f9974f14b9898ebe423e4aebeae15098779348206ff134f88632"
+    },
+    {
+      "file": "tico/quantization/recipes/stages/ptq.py",
+      "function": "PTQStage.run",
+      "baseline_line": 145,
+      "candidate_line": 145,
+      "both_present": true,
+      "ast_equal": true,
+      "source_equal": true,
+      "baseline_source_sha256": "9ec31da0e53695a3506694c2a820e0e192acc680e17cdb2ca9d85f558fe03ef5",
+      "candidate_source_sha256": "9ec31da0e53695a3506694c2a820e0e192acc680e17cdb2ca9d85f558fe03ef5"
+    }
+  ]
+}

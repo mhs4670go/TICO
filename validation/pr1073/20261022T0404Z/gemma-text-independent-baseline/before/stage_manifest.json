@@ -1,0 +1,56 @@
+{
+  "scope": "Explicit text decoder stages only; original multimodal vision failure not skipped as success",
+  "expected_stages": {
+    "decoder_layer_prefill_0.q.circle": {
+      "kind": "prefill",
+      "layer_index": 0,
+      "layer_type": "sliding_attention",
+      "sliding_window": 8,
+      "kv_heads": 1,
+      "head_dim": 16,
+      "expected_outputs": 3,
+      "expected_delta_kv_length": 8,
+      "host_rope": "frozen checkpoint static templates, including its recorded sine convention"
+    },
+    "decoder_layer_decode_0.q.circle": {
+      "kind": "decode",
+      "layer_index": 0,
+      "layer_type": "sliding_attention",
+      "sliding_window": 8,
+      "kv_heads": 1,
+      "head_dim": 16,
+      "expected_outputs": 3,
+      "expected_delta_kv_length": 1,
+      "host_rope": "frozen checkpoint static templates, including its recorded sine convention"
+    },
+    "decoder_layer_prefill_1.q.circle": {
+      "kind": "prefill",
+      "layer_index": 1,
+      "layer_type": "full_attention",
+      "sliding_window": null,
+      "kv_heads": 1,
+      "head_dim": 16,
+      "expected_outputs": 3,
+      "expected_delta_kv_length": 8,
+      "host_rope": "frozen checkpoint static templates, including its recorded sine convention"
+    },
+    "decoder_layer_decode_1.q.circle": {
+      "kind": "decode",
+      "layer_index": 1,
+      "layer_type": "full_attention",
+      "sliding_window": null,
+      "kv_heads": 1,
+      "head_dim": 16,
+      "expected_outputs": 3,
+      "expected_delta_kv_length": 1,
+      "host_rope": "frozen checkpoint static templates, including its recorded sine convention"
+    }
+  },
+  "errors": {},
+  "actual_stages": [
+    "decoder_layer_decode_0.q.circle",
+    "decoder_layer_decode_1.q.circle",
+    "decoder_layer_prefill_0.q.circle",
+    "decoder_layer_prefill_1.q.circle"
+  ]
+}

@@ -1,0 +1,988 @@
+{
+  "candidate_sha": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "baseline_sha": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "scope": "tiny fixture Circle validation only; excludes separately reported pretrained runs, NPU, static2048, leaderboard",
+  "cases": {
+    "llama_bundle": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "native64, export8, eager12+4; baseline/candidate/candidate after",
+      "output": "tiny-llama-old-new-v2",
+      "raw_status": "FAIL",
+      "comparisons_complete": true,
+      "torch_parity_required": true,
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "infrastructure_copy": false,
+      "same_checkpoint_and_dependencies": true,
+      "same_initial_quantization_state": true,
+      "eager": {
+        "capacity": 64,
+        "decode_steps": 4,
+        "kind": "text_only",
+        "prefill_tokens": 12,
+        "state_differences": [],
+        "state_preserved": true
+      },
+      "components_without_overriding_raw_status": {
+        "raw_status": "FAIL",
+        "raw_torch_parity_required": true,
+        "comparisons_complete": true,
+        "same_checkpoint_and_dependencies": true,
+        "same_initial_quantization_state": true,
+        "frozen_state_preserved": true,
+        "baseline_candidate_components": {
+          "stage_count": 6,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": false,
+          "host_equal": false,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "Host $.llama_host.npz.rope_cos_0.sha256: value differs",
+            "Host $.llama_host.npz.rope_cos_1.sha256: value differs",
+            "Host $.llama_host.npz.rope_sin_0.sha256: value differs",
+            "Host $.llama_host.npz.rope_sin_1.sha256: value differs",
+            "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {
+            "decoder_layer_prefill_0.q.circle": {
+              "p0_input_2": {
+                "max_abs_error": 4.4465065002441406e-05,
+                "ok": false
+              },
+              "p0_input_3": {
+                "max_abs_error": 0.006892439676448703,
+                "ok": false
+              },
+              "p1_input_2": {
+                "max_abs_error": 4.4465065002441406e-05,
+                "ok": false
+              },
+              "p1_input_3": {
+                "max_abs_error": 0.006892439676448703,
+                "ok": false
+              }
+            },
+            "decoder_layer_prefill_1.q.circle": {
+              "p0_input_2": {
+                "max_abs_error": 4.4465065002441406e-05,
+                "ok": false
+              },
+              "p0_input_3": {
+                "max_abs_error": 0.006892439676448703,
+                "ok": false
+              },
+              "p1_input_2": {
+                "max_abs_error": 4.4465065002441406e-05,
+                "ok": false
+              },
+              "p1_input_3": {
+                "max_abs_error": 0.006892439676448703,
+                "ok": false
+              }
+            }
+          }
+        },
+        "candidate_before_after_components": {
+          "stage_count": 6,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "actual_stage_count_per_phase": {
+          "baseline/before": 6,
+          "candidate/after_eager": 6,
+          "candidate/before": 6
+        },
+        "independent_complete_array_coverage": true,
+        "independent_finite_arrays": true,
+        "old_new_same_external_input_replay_exact": true,
+        "host_diagnosis": {
+          "rope_cos_0": {
+            "old_new": {
+              "same_shape": true,
+              "max_abs_error": 4.4465065002441406e-05,
+              "different_elements": 32,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  2,
+                  4
+                ],
+                [
+                  0,
+                  2,
+                  5
+                ],
+                [
+                  0,
+                  2,
+                  12
+                ],
+                [
+                  0,
+                  2,
+                  13
+                ]
+              ]
+            },
+            "candidate_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0,
+              "first_positions": []
+            },
+            "baseline_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 4.4465065002441406e-05,
+              "different_elements": 32,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  2,
+                  4
+                ],
+                [
+                  0,
+                  2,
+                  5
+                ],
+                [
+                  0,
+                  2,
+                  12
+                ],
+                [
+                  0,
+                  2,
+                  13
+                ]
+              ]
+            }
+          },
+          "rope_sin_0": {
+            "old_new": {
+              "same_shape": true,
+              "max_abs_error": 0.006892439676448703,
+              "different_elements": 56,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  1,
+                  14
+                ],
+                [
+                  0,
+                  1,
+                  15
+                ]
+              ]
+            },
+            "candidate_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0,
+              "first_positions": []
+            },
+            "baseline_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 0.006892439676448703,
+              "different_elements": 56,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  1,
+                  14
+                ],
+                [
+                  0,
+                  1,
+                  15
+                ]
+              ]
+            }
+          },
+          "rope_cos_1": {
+            "old_new": {
+              "same_shape": true,
+              "max_abs_error": 4.4465065002441406e-05,
+              "different_elements": 32,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  2,
+                  4
+                ],
+                [
+                  0,
+                  2,
+                  5
+                ],
+                [
+                  0,
+                  2,
+                  12
+                ],
+                [
+                  0,
+                  2,
+                  13
+                ]
+              ]
+            },
+            "candidate_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0,
+              "first_positions": []
+            },
+            "baseline_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 4.4465065002441406e-05,
+              "different_elements": 32,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  2,
+                  4
+                ],
+                [
+                  0,
+                  2,
+                  5
+                ],
+                [
+                  0,
+                  2,
+                  12
+                ],
+                [
+                  0,
+                  2,
+                  13
+                ]
+              ]
+            }
+          },
+          "rope_sin_1": {
+            "old_new": {
+              "same_shape": true,
+              "max_abs_error": 0.006892439676448703,
+              "different_elements": 56,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  1,
+                  14
+                ],
+                [
+                  0,
+                  1,
+                  15
+                ]
+              ]
+            },
+            "candidate_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0,
+              "first_positions": []
+            },
+            "baseline_vs_independent_HF": {
+              "same_shape": true,
+              "max_abs_error": 0.006892439676448703,
+              "different_elements": 56,
+              "first_positions": [
+                [
+                  0,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  12
+                ],
+                [
+                  0,
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  1,
+                  14
+                ],
+                [
+                  0,
+                  1,
+                  15
+                ]
+              ]
+            }
+          },
+          "mask_fill_values": {
+            "old_new": {
+              "same_shape": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0,
+              "first_positions": []
+            }
+          }
+        }
+      }
+    },
+    "llama_full": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "native64, export8, eager12+4; full model",
+      "output": "tiny-llama-full-shape-retry",
+      "raw_status": "FAIL",
+      "comparisons_complete": true,
+      "torch_parity_required": true,
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "infrastructure_copy": true,
+      "same_checkpoint_and_dependencies": true,
+      "same_initial_quantization_state": true,
+      "eager": {
+        "capacity": 64,
+        "decode_steps": 4,
+        "kind": "text_only",
+        "prefill_tokens": 12,
+        "state_differences": [],
+        "state_preserved": true
+      },
+      "components_without_overriding_raw_status": {
+        "raw_status": "FAIL",
+        "raw_torch_parity_required": true,
+        "comparisons_complete": true,
+        "same_checkpoint_and_dependencies": true,
+        "same_initial_quantization_state": true,
+        "frozen_state_preserved": true,
+        "baseline_candidate_components": {
+          "stage_count": 1,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "model.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "candidate_before_after_components": {
+          "stage_count": 1,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "model.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "actual_stage_count_per_phase": {
+          "baseline/before": 1,
+          "candidate/after_eager": 1,
+          "candidate/before": 1
+        },
+        "independent_complete_array_coverage": true,
+        "independent_finite_arrays": true
+      }
+    },
+    "qwen_per_layer": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "native64, export8, eager12+4; vision/text per-layer",
+      "output": "tiny-qwen-old-new-cached",
+      "raw_status": "FAIL",
+      "comparisons_complete": true,
+      "torch_parity_required": true,
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "infrastructure_copy": false,
+      "same_checkpoint_and_dependencies": true,
+      "same_initial_quantization_state": true,
+      "eager": {
+        "capacity": 64,
+        "decode_steps": 4,
+        "kind": "text_only",
+        "prefill_tokens": 12,
+        "state_differences": [],
+        "state_preserved": true
+      },
+      "components_without_overriding_raw_status": {
+        "raw_status": "FAIL",
+        "raw_torch_parity_required": true,
+        "comparisons_complete": true,
+        "same_checkpoint_and_dependencies": true,
+        "same_initial_quantization_state": true,
+        "frozen_state_preserved": true,
+        "baseline_candidate_components": {
+          "stage_count": 9,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "candidate_before_after_components": {
+          "stage_count": 9,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+            "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "actual_stage_count_per_phase": {
+          "baseline/before": 9,
+          "candidate/after_eager": 9,
+          "candidate/before": 9
+        },
+        "independent_complete_array_coverage": true,
+        "independent_finite_arrays": true
+      }
+    },
+    "qwen_full_text_png": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "text static graph + one whole-VLM real-PNG eager call",
+      "output": "tiny-qwen-full-text-png-dirs-retry",
+      "raw_status": "PASS",
+      "comparisons_complete": true,
+      "torch_parity_required": true,
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "infrastructure_copy": true,
+      "same_checkpoint_and_dependencies": true,
+      "same_initial_quantization_state": true,
+      "eager": {
+        "calls": 1,
+        "file_sha256": "0f5355c6eae31e9e29622acc40f356bac2af8f07697c5c0bb4ed755e9b60e25c",
+        "kind": "user_kwargs",
+        "state_differences": [],
+        "state_preserved": true
+      },
+      "components_without_overriding_raw_status": {
+        "raw_status": "PASS",
+        "raw_torch_parity_required": true,
+        "comparisons_complete": true,
+        "same_checkpoint_and_dependencies": true,
+        "same_initial_quantization_state": true,
+        "frozen_state_preserved": true,
+        "baseline_candidate_components": {
+          "stage_count": 1,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": true,
+          "stage_failures": [],
+          "actual_numerical_differences": {}
+        },
+        "candidate_before_after_components": {
+          "stage_count": 1,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": true,
+          "stage_failures": [],
+          "actual_numerical_differences": {}
+        },
+        "actual_stage_count_per_phase": {
+          "baseline/before": 1,
+          "candidate/after_eager": 1,
+          "candidate/before": 1
+        },
+        "independent_complete_array_coverage": true,
+        "independent_finite_arrays": true
+      }
+    },
+    "gemma_multimodal": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "main baseline vision conversion reached unsupported rank2 RMS_NORM",
+      "output": "tiny-gemma-old-new-image70",
+      "raw_status": "ERROR",
+      "comparisons_complete": false,
+      "torch_parity_required": null,
+      "atol": null,
+      "rtol": null,
+      "infrastructure_copy": false,
+      "same_checkpoint_and_dependencies": null,
+      "same_initial_quantization_state": null,
+      "eager": null
+    },
+    "gemma_candidate_vision": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "candidate independently reproduced same unsupported vision RMS_NORM",
+      "output": "tiny-gemma-candidate-vision-isolation",
+      "raw_status": "ERROR",
+      "comparisons_complete": false,
+      "torch_parity_required": null,
+      "atol": null,
+      "rtol": null,
+      "infrastructure_copy": false,
+      "same_checkpoint_and_dependencies": null,
+      "same_initial_quantization_state": null,
+      "eager": null
+    },
+    "gemma_full_text_png": {
+      "level": "tiny random real-HF frozen PTQ + actual Torch/Circle",
+      "scope": "text static graph + one whole-VLM real-PNG eager call; recorded static masks",
+      "output": "tiny-gemma-full-text-png-masks-retry",
+      "raw_status": "FAIL",
+      "comparisons_complete": true,
+      "torch_parity_required": true,
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "infrastructure_copy": true,
+      "same_checkpoint_and_dependencies": true,
+      "same_initial_quantization_state": true,
+      "eager": {
+        "calls": 1,
+        "file_sha256": "fde489de9d8bb2ccd08126eab0a96b0b0a9d6d9f21a628194d682af34ecfe1c0",
+        "kind": "user_kwargs",
+        "state_differences": [],
+        "state_preserved": true
+      },
+      "components_without_overriding_raw_status": {
+        "raw_status": "FAIL",
+        "raw_torch_parity_required": true,
+        "comparisons_complete": true,
+        "same_checkpoint_and_dependencies": true,
+        "same_initial_quantization_state": true,
+        "frozen_state_preserved": true,
+        "baseline_candidate_components": {
+          "stage_count": 1,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "full_text_regression.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "candidate_before_after_components": {
+          "stage_count": 1,
+          "structure_equal": true,
+          "all_input_and_output_arrays_match": true,
+          "host_equal": true,
+          "strict_comparison_ok": false,
+          "stage_failures": [
+            "full_text_regression.q.circle: structural, input, output, or requested Torch parity mismatch"
+          ],
+          "actual_numerical_differences": {}
+        },
+        "actual_stage_count_per_phase": {
+          "baseline/before": 1,
+          "candidate/after_eager": 1,
+          "candidate/before": 1
+        },
+        "independent_complete_array_coverage": true,
+        "independent_finite_arrays": true
+      }
+    },
+    "gemma_text_independent": {
+      "scope": "independent explicit Gemma text decoder stage execution, not main multimodal export",
+      "raw_strict_status": "FAIL",
+      "raw_strict_exit_code": 1,
+      "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+      "same_checkpoint": true,
+      "recorder_sha256": "451508ace4f387be5306fe829a76bfbd5a11249148e80be089e1173e1a851111",
+      "original_recorder_sha256": "451508ace4f387be5306fe829a76bfbd5a11249148e80be089e1173e1a851111",
+      "recorder_unchanged_copy": true,
+      "worker_code_sha256": "131014d0d107bb10db815a62eee7b3d585e1c4d707a116cb9b8bad0e3ffed921",
+      "expected_stage_count_per_phase": 4,
+      "actual_phases": 3,
+      "actual_total_stages": 12,
+      "actual_total_probes": 30,
+      "graph_and_output_coverage_complete": true,
+      "old_new_binary_graph_host_numeric_equality": true,
+      "old_new_torch_fx_equal": false,
+      "candidate_isolation_all_components_exact": true,
+      "old_new_strict_ok": false,
+      "candidate_isolation_strict_ok": false,
+      "eager": {
+        "kind": "actual Gemma text wrapper only; no image/video or conditional generation",
+        "prefill_tokens": 12,
+        "decode_steps": 4,
+        "native_capacity": 64,
+        "static_capacity": 8,
+        "all_hidden_outputs_finite": true,
+        "output_hashes": [
+          {
+            "shape": [
+              1,
+              12,
+              32
+            ],
+            "dtype": "torch.float32",
+            "sha256": "7c366c3dfe079b52c5aa8610e204a304011ee02225ec1cf24a2252c13ab1bae1"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              32
+            ],
+            "dtype": "torch.float32",
+            "sha256": "5a060f034e91e9252274804797a812cad78f03440347a7185a7ef805ee1f1b00"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              32
+            ],
+            "dtype": "torch.float32",
+            "sha256": "e93fb7ea6597ade84949b5e7e87e07d12ebc73467617752f057c6a22e2fb18f8"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              32
+            ],
+            "dtype": "torch.float32",
+            "sha256": "205a1a925b5bc9fa1002fd3d3af2e6e026421fef334cafd4380f80ea54a39868"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              32
+            ],
+            "dtype": "torch.float32",
+            "sha256": "2c957f6e7e80dce619b40c9cf1b01437cc4826ea613bc995aba8fb29b58b0475"
+          }
+        ],
+        "state_changes": {
+          "parameters": [],
+          "buffers": [],
+          "observers": [],
+          "modules": []
+        },
+        "state_preserved": true
+      },
+      "original_multimodal_error_preserved": "tiny-gemma-old-new-image70/baseline.log:27-28 RMS_NORM rank2 op102"
+    },
+    "llama_long_eager_full": {
+      "raw_status": "FAIL",
+      "raw_exit_code": 1,
+      "scope": "tiny random native16384 model, static full Circle capacity8, actual eager4096+4 cache decode; not pretrained or static2048 or NPU",
+      "checkpoint_sha256": "bc5efaaaf81d4e3d4efdd8b9bbb790971e58a171cdbf26f80577739f2ac602bf",
+      "checkpoint_file_unchanged": true,
+      "native_capacity_original": 16384,
+      "original_rope_capacity": 8192,
+      "eager": {
+        "capacity": 16384,
+        "decode_steps": 4,
+        "kind": "text_only",
+        "prefill_tokens": 4096,
+        "state_differences": [],
+        "state_preserved": true
+      },
+      "evidence_complete": true,
+      "pre_post_component_identity": true,
+      "strict_torch_circle_parity": false,
+      "strict_ok": false,
+      "runner": "unmodified tico/quantization/recipes/debug/export_regression.py",
+      "runner_sha256": "451508ace4f387be5306fe829a76bfbd5a11249148e80be089e1173e1a851111",
+      "infrastructure_patch_used": false,
+      "resource_gate": {
+        "cgroup_current_bytes": 5644763136,
+        "cgroup_max_bytes": "17179869184",
+        "threshold_bytes": 12884901888,
+        "workspace_free_bytes": 29324861440,
+        "status": "READY"
+      },
+      "resources": {
+        "started_at": "2026-10-22T04:39:17.051086+00:00",
+        "disk_before": {
+          "total": 33770192896,
+          "used": 2710728704,
+          "free": 29324701696
+        },
+        "exit_code": 1,
+        "elapsed_seconds": 178.48865684700013,
+        "disk_after": {
+          "total": 33770192896,
+          "used": 2718707712,
+          "free": 29316722688
+        },
+        "max_process_tree_rss_bytes": 1374711808,
+        "minimum_available_memory_bytes": 14227992576
+      },
+      "parameter_count": 22688,
+      "weight_tensors": 21,
+      "observer_count": 143,
+      "quantization_modes_checked": 62
+    }
+  },
+  "completed_stage_counts": {
+    "llama_bundle": {
+      "baseline/before": 6,
+      "candidate/after_eager": 6,
+      "candidate/before": 6
+    },
+    "llama_full": {
+      "baseline/before": 1,
+      "candidate/after_eager": 1,
+      "candidate/before": 1
+    },
+    "qwen_per_layer": {
+      "baseline/before": 9,
+      "candidate/after_eager": 9,
+      "candidate/before": 9
+    },
+    "qwen_full_text_png": {
+      "baseline/before": 1,
+      "candidate/after_eager": 1,
+      "candidate/before": 1
+    },
+    "gemma_full_text_png": {
+      "baseline/before": 1,
+      "candidate/after_eager": 1,
+      "candidate/before": 1
+    }
+  },
+  "completed_actual_circle_stages_including_independent_gemma_text_and_long_llama": 68,
+  "expected_numerical_change": {
+    "scope": "Llama bundle host rotary tables and prefill inputs only",
+    "evidence": "tiny-llama-old-new-v2/llama_rope_diagnosis.json",
+    "candidate_vs_independent_hf_max_abs": 0.0,
+    "baseline_cos_max_abs": 4.4465065002441406e-05,
+    "baseline_sin_max_abs": 0.006892439676448703,
+    "same_external_input_actual_circle_replay_exact": true,
+    "raw_strict_fail_retained": true
+  },
+  "known_failures": [
+    "Baseline-existing strict Torch/Circle mismatches in Llama/Qwen/Gemma decoders/full paths; raw FAIL retained.",
+    "Gemma rank2 vision RMS_NORM unsupported in actual Circle reference runtime; raw ERROR retained.",
+    "Gemma validate_static_layout=True token-count bug reads hidden width of 2D features; separate default-False profile does not erase it.",
+    "Comparator false-accepts both missing Torch arrays/empty parity and both missing input arrays; actual runs independently audited."
+  ],
+  "diagnostics": [
+    "COMPARATOR_GAPS.md",
+    "FIXTURE_INFRASTRUCTURE.md",
+    "PARITY_DIAGNOSIS.md",
+    "ROUNDING_AND_PAST_DIAGNOSIS.json",
+    "QWEN_PARITY_DIAGNOSTIC.md",
+    "GEMMA_TEXT_PARITY_DIAGNOSIS.md",
+    "GEMMA_TEXT_STAGE_VALIDATION.md",
+    "GEMMA_FULL_TEXT_DIAGNOSTIC.md",
+    "tiny-llama-full-shape-retry/README.md"
+  ],
+  "limits": [
+    "Random tiny PTQ fixtures do not establish pretrained-model quality or pre-PR pretrained equivalence.",
+    "All static profiles used sequence8; native16384 Llama actual eager4096+4 completed independently.",
+    "Full-text probes are not full multimodal static exports.",
+    "Custom image kwargs replace automatic text stress; one image forward is not linked-cache multimodal decode.",
+    "No tolerance increase, product source edit, baseline source edit, checkpoint recast/recalibration in workers, commit/push/merge/PR metadata edit."
+  ]
+}

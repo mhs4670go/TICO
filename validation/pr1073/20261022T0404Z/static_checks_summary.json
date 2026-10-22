@@ -1,0 +1,114 @@
+{
+  "status": "FAIL",
+  "source_head": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "baseline": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "full_standard_completed": true,
+  "source_modified": false,
+  "config_modified": false,
+  "patches_applied": false,
+  "full_check": {
+    "status": "FAIL",
+    "command": [
+      "./ccex",
+      "format",
+      "--no-apply-patches"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 835.682550685,
+    "log": "format_all_retry.log",
+    "plain_log": "format_all_retry.plain.log",
+    "command_record": "format_all_retry.command.json"
+  },
+  "results_by_tool": {
+    "UFMT": {
+      "status": "FAIL",
+      "warnings": 19,
+      "files": 19
+    },
+    "PYLINT": {
+      "status": "FAIL",
+      "errors": 5,
+      "files": 1
+    },
+    "MYPY": {
+      "status": "FAIL",
+      "errors": 59,
+      "advisory_notes": 3,
+      "files": 11
+    }
+  },
+  "initial_full_check": {
+    "status": "TIMEOUT_INCOMPLETE",
+    "exit_code": 124,
+    "timeout_seconds": 900,
+    "command_record": "format_all.command.json"
+  },
+  "changed_check": {
+    "status": "INCORRECT_SELECTION_AND_TIMEOUT_INCOMPLETE",
+    "exit_code": 124,
+    "timeout_seconds": 600,
+    "intended_python_files": 63,
+    "audited_actual_ufmt_files": 59,
+    "selection_audit": "changed_static_selection_audit.json",
+    "completed_coverage_claim": false,
+    "superseded_by_completed_all_files_check": true
+  },
+  "invalid_baseline_attempts": [
+    {
+      "name": "format_baseline_ufmt_counterparts",
+      "status": "INVALID_NO_FILES_CHECKED",
+      "reported_exit_code": 0,
+      "excluded_from_pass_evidence": true
+    },
+    {
+      "name": "format_baseline_mypy_counterparts",
+      "status": "INVALID_NO_FILES_CHECKED",
+      "reported_exit_code": 0,
+      "excluded_from_pass_evidence": true
+    }
+  ],
+  "invalid_selection_evidence": "baseline_lintrunner_path_probe.log",
+  "invalid_report_archive": "STATIC_CHECKS_INVALID_SELECTION_v1.md",
+  "baseline_verified": {
+    "UFMT": {
+      "status": "PASS",
+      "exit_code": 0,
+      "matched_file_count": 11,
+      "matched_files": [
+        "/workspace/TICO-export-baseline/test/quantization/recipes/test_export_llama_bundle.py",
+        "/workspace/TICO-export-baseline/test/quantization/wrapq/wrappers/qwen_vl/test_quant_text_model.py",
+        "/workspace/TICO-export-baseline/tico/quantization/recipes/export/circle.py",
+        "/workspace/TICO-export-baseline/tico/quantization/recipes/export/llama.py",
+        "/workspace/TICO-export-baseline/tico/quantization/recipes/export/llama_bundle.py",
+        "/workspace/TICO-export-baseline/tico/quantization/wrapq/examples/llama/quantize_decoder_layer_prefill.py",
+        "/workspace/TICO-export-baseline/tico/quantization/wrapq/examples/quantize_full_qmodel_with_gptq.py",
+        "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/gemma4/export_adapters.py",
+        "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/llama/quant_decoder_layer.py",
+        "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/llama/quant_model.py",
+        "/workspace/TICO-export-baseline/tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py"
+      ],
+      "actual_adapter_invocation_verified": true,
+      "baseline_sha_verified": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+      "log": "format_baseline_ufmt_counterparts_verified.log",
+      "command_record": "format_baseline_ufmt_counterparts_verified.command.json"
+    },
+    "MYPY": {
+      "status": "PASS",
+      "exit_code": 0,
+      "matched_file_count": 2,
+      "matched_files": [
+        "/workspace/TICO-export-baseline/test/quantization/recipes/test_export_llama_bundle.py",
+        "/workspace/TICO-export-baseline/tico/quantization/recipes/export/llama.py"
+      ],
+      "actual_adapter_invocation_verified": true,
+      "baseline_sha_verified": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+      "log": "format_baseline_mypy_counterparts_verified.log",
+      "command_record": "format_baseline_mypy_counterparts_verified.command.json"
+    }
+  },
+  "diagnostics": "static_diagnostics.json",
+  "resource_samples": "static_resource_samples.jsonl",
+  "unresolved": [
+    "19 UFMT formatting findings,5 Pylint errors,59 mypy errors remain unapplied;3 mypy advice messages are not counted as errors."
+  ]
+}

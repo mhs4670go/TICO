@@ -1,0 +1,53 @@
+{
+  "checkpoint_sha256": "188d63c4f58dc6fa77a1746be695236afb20b65f0a2b8e1e961dd4a2761dfac6",
+  "commit": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e",
+  "effective_config": {
+    "calibration": {
+      "seq_len": 8
+    },
+    "evaluation": {
+      "enabled": false
+    },
+    "export": {
+      "artifacts": [
+        "circle_per_layer"
+      ],
+      "enabled": true,
+      "max_seq_len": 8,
+      "prefill_decode": true,
+      "strict": false
+    },
+    "model": {
+      "family": "qwen3_vl",
+      "name_or_path": "tiny-random-local-validation-fixture"
+    },
+    "model_args": {
+      "profile": "npu_export",
+      "vision": {
+        "grid_thw": [
+          1,
+          2,
+          2
+        ],
+        "spatial_merge_size": 2,
+        "visual_start_idx": 0
+      }
+    },
+    "pipeline": [],
+    "runtime": {
+      "device": "cpu",
+      "dtype": "float32",
+      "seed": 42,
+      "show_progress": false
+    }
+  },
+  "llama_rope_migration": null,
+  "repo": "/workspace/TICO-export-baseline",
+  "versions": {
+    "circle-schema": "0.10.1",
+    "numpy": "2.5.4",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0"
+  },
+  "working_tree": ""
+}

@@ -1,0 +1,199 @@
+{
+  "scope": "tiny random frozen Qwen fixture + real PNG + normal HF image processor; one image forward; no metric/pretrained or linked-cache decode claim",
+  "source_kwargs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.image_inputs.pt",
+  "source_kwargs_sha256": "947444c51d6136f0964aaea47b9563ade1e4596965efe89877bd18f2b4adb131",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_qwen_cached.pt",
+  "checkpoint_sha256": "188d63c4f58dc6fa77a1746be695236afb20b65f0a2b8e1e961dd4a2761dfac6",
+  "png": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/qwen_4x4.png",
+  "png_sha256": "525d27c46e6e18a7f5eeaf913f4e99da724318ce8adcdb6fa897715e1f806dbe",
+  "image_shape": [
+    4,
+    4,
+    3
+  ],
+  "processor_class": "Qwen2VLImageProcessor",
+  "processor_config": {
+    "size": {
+      "longest_edge": 16,
+      "shortest_edge": 16
+    },
+    "patch_size": 2,
+    "temporal_patch_size": 2,
+    "merge_size": 2,
+    "do_convert_rgb": true,
+    "do_resize": true,
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "image_processor_type": "Qwen2VLImageProcessor"
+  },
+  "processed_tensors": {
+    "pixel_values": {
+      "shape": [
+        4,
+        24
+      ],
+      "dtype": "float32",
+      "sha256": "e546c1d4a1e5c8bafe4f45256a56037dacfe370c74f78c3f30dd85a7b7abc3e1",
+      "finite": true
+    },
+    "image_grid_thw": {
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "int64",
+      "sha256": "8e593fdee7021d9c6f6f5c9766fcc2be8aa2b14b7196012be47a03197031dc3e",
+      "finite": true
+    }
+  },
+  "image_grid_thw": [
+    [
+      1,
+      2,
+      2
+    ]
+  ],
+  "output_kwargs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/qwen_actual_png_kwargs.pt",
+  "output_kwargs_sha256": "0f5355c6eae31e9e29622acc40f356bac2af8f07697c5c0bb4ed755e9b60e25c",
+  "preserved_keys": [
+    "attention_mask",
+    "input_ids",
+    "position_ids",
+    "return_dict",
+    "use_cache"
+  ],
+  "kwargs_tensors": {
+    "input_ids": {
+      "shape": [
+        1,
+        8
+      ],
+      "dtype": "int64",
+      "sha256": "faaa9afbd200dd9a535cb76f3c5b7f4a88c90fd371ca83a41ee131a6f660fe71",
+      "finite": true
+    },
+    "attention_mask": {
+      "shape": [
+        1,
+        8
+      ],
+      "dtype": "int64",
+      "sha256": "4bceb969a21579c6bc5a0fcbb54aa78d88778821db0846e1b49a71df6ed1f0f0",
+      "finite": true
+    },
+    "pixel_values": {
+      "shape": [
+        4,
+        24
+      ],
+      "dtype": "float32",
+      "sha256": "e546c1d4a1e5c8bafe4f45256a56037dacfe370c74f78c3f30dd85a7b7abc3e1",
+      "finite": true
+    },
+    "image_grid_thw": {
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "int64",
+      "sha256": "8e593fdee7021d9c6f6f5c9766fcc2be8aa2b14b7196012be47a03197031dc3e",
+      "finite": true
+    },
+    "position_ids": {
+      "shape": [
+        3,
+        1,
+        8
+      ],
+      "dtype": "int64",
+      "sha256": "dc3205eab6d5ae21629ff7dabac7202725d22c6b21761a86602890b1c9d4470a",
+      "finite": true
+    }
+  },
+  "gemma_existing_fixture": {
+    "status": "BLOCKED_PROCESSOR_PROFILE_MISMATCH",
+    "error_type": "ValueError",
+    "message": "`max_soft_tokens` must be one of (70, 140, 280, 560, 1120), got 4.",
+    "existing_fixture_max_soft_tokens": 4
+  },
+  "gemma_new_profile_proposal": {
+    "status": "PROCESSOR_ONLY_COMPLETED_MODEL_NOT_RUN",
+    "png": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_16x16_profile_proposal.png",
+    "png_sha256": "39423039ce55b9dd52d4a287c720351a50727c2fec7433f66489314c1d3ffd4d",
+    "processor_config": {
+      "patch_size": 4,
+      "pooling_kernel_size": 2,
+      "max_soft_tokens": 70,
+      "do_resize": false,
+      "do_convert_rgb": true,
+      "resample": 3,
+      "do_rescale": true,
+      "rescale_factor": 0.00392156862745098,
+      "do_normalize": false,
+      "image_mean": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "image_std": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "image_processor_type": "Gemma4ImageProcessor"
+    },
+    "processed_tensors": {
+      "pixel_values": {
+        "shape": [
+          1,
+          280,
+          48
+        ],
+        "dtype": "float32",
+        "sha256": "dbc055bbce1139a72c0740db8ad78e47e453070c3d41d8f0f205efe1aa17a71e",
+        "finite": true
+      },
+      "image_position_ids": {
+        "shape": [
+          1,
+          280,
+          2
+        ],
+        "dtype": "int64",
+        "sha256": "111375aac2fb04b1eafcc4c00a4c22eabc27f6bd80ae1e71bf17d21e6f246dfa",
+        "finite": true
+      },
+      "num_soft_tokens_per_image": {
+        "shape": [
+          1
+        ],
+        "dtype": "int64",
+        "sha256": "f0a0278e4372459cca6159cd5e71cfee638302a7b9ca9b05c34181ac0a65ac5d",
+        "finite": true
+      }
+    },
+    "num_soft_tokens_per_image": [
+      4
+    ],
+    "required_new_checkpoint_config": {
+      "vision_config.default_output_length": 70,
+      "model_args.vision.max_soft_tokens": 70,
+      "model_args.vision.num_visual_tokens": 4,
+      "model_args.vision.patch_grid_height": 4,
+      "model_args.vision.patch_grid_width": 4
+    },
+    "limitation": "A new profile-compatible frozen checkpoint calibrated with these actual processor outputs is required; existing max_soft_tokens=4 checkpoint is not modified."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "ERROR",
+  "scope": "one actual tiny Gemma vision Circle conversion and real reference-runtime reproduction; not completed Circle PASS, pretrained, full VLM, or NPU validation",
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "checkpoint": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/fixtures/baseline_gemma_image70.pt",
+  "checkpoint_sha256": "ab9e52cceb5c7442c0d2e03ed6eeddce75c741d78d51603a712d6d3bad19b107",
+  "inputs": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/png_circle_inputs/gemma_actual_png_kwargs.pt",
+  "inputs_sha256": "fde489de9d8bb2ccd08126eab0a96b0b0a9d6d9f21a628194d682af34ecfe1c0",
+  "pixels_shape": [
+    1,
+    280,
+    48
+  ],
+  "image_position_ids_shape": [
+    1,
+    280,
+    2
+  ],
+  "memory_current_before_bytes": 11307020288,
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "torch_outputs": {
+    "0": {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "sha256": "6dc5a7e4f7f1d4de291e72e6ad2f7f5b94921471617553789e836f71d5c0d0f2"
+    }
+  },
+  "saved_circle": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/gemma-vision-failure-artifact/vision_prefill.q.circle",
+  "saved_circle_sha256": "4cb5d8deecfef8cf41338211d4d298170048ef0bf64f1893d4b85b6442b0af5d",
+  "saved_circle_bytes": 165504,
+  "circle_structurally_verified": true,
+  "runtime_mode": "fake_quantize",
+  "error_type": "UnsupportedCircleOperatorError",
+  "message": "RMS_NORM supports rank 3 or 4 inputs, found shape (4, 32).\n  at subgraphs[0].operators[102] RMS_NORM (builtin code -6, version 1) inputs=[tensors[140] 'tico.quantization.wrapq.wrappers.gemma4.export_adapters.Gemma4VisionModelPrefillExportAdapter::mul_12' UINT8[4, 32] (activation, per-tensor quantized), tensors[1] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::_prop_tensor_constant412' UINT8[32] (constant, per-tensor quantized)] outputs=[tensors[141] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_7' UINT8[4, 32] (activation, per-tensor quantized)]",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/TICO/out/pr1073_validation/20261022T0404Z/preserve_gemma_vision_failure.py\", line 73, in main\n    actual=runtime.run([pixel_values.detach().numpy()],mode=mode).outputs\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/tico/circle/runtime/executor.py\", line 247, in run\n    self._execute_operator(operator, values, mode)\n  File \"/workspace/TICO/tico/circle/runtime/executor.py\", line 329, in _execute_operator\n    results = kernel(context)\n              ^^^^^^^^^^^^^^^\n  File \"/workspace/TICO/tico/circle/runtime/kernels/nn.py\", line 620, in _rms_norm\n    raise ctx.fail(\ntico.circle.runtime.errors.UnsupportedCircleOperatorError: RMS_NORM supports rank 3 or 4 inputs, found shape (4, 32).\n  at subgraphs[0].operators[102] RMS_NORM (builtin code -6, version 1) inputs=[tensors[140] 'tico.quantization.wrapq.wrappers.gemma4.export_adapters.Gemma4VisionModelPrefillExportAdapter::mul_12' UINT8[4, 32] (activation, per-tensor quantized), tensors[1] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::_prop_tensor_constant412' UINT8[32] (constant, per-tensor quantized)] outputs=[tensors[141] 'tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm.QuantGemma4RMSNorm::rms_norm_7' UINT8[4, 32] (activation, per-tensor quantized)]\n",
+  "classification": "REFERENCE_RUNTIME_UNSUPPORTED_OPERATOR_OR_SHAPE",
+  "comparisons_complete": false,
+  "frozen_state_preserved": true,
+  "memory_current_after_bytes": 11485646848,
+  "process_max_rss_kib": 516772
+}

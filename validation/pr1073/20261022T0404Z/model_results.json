@@ -1,0 +1,48 @@
+{
+  "policy": "Strict raw status retained separately from exact before/after component equality.",
+  "Llama_tiny_real_HF": {
+    "eager_supplement": "PASS",
+    "rope_HF_32_tests": "PASS",
+    "per_layer_circle": "FAIL",
+    "full_circle": "FAIL",
+    "old_new": "FAIL_EXPECTED_HOST_ROPE_CHANGE_PLUS_BASELINE_PARITY_FAILURE",
+    "eager_isolation_strict": "FAIL",
+    "completed_before_after_components": "EXACT",
+    "long_eager": "COMPLETED_4096_PLUS_4_NATIVE16384_STATIC8_STRICT_FAIL",
+    "frozen_state": "PASS"
+  },
+  "Llama_tiny_pretrained": {
+    "model": "Maykeye/TinyLLama-v0",
+    "ppl_likelihood": "PASS",
+    "generation_fp": "PASS",
+    "generation_quant": "FAIL_PREEXISTING_API",
+    "original_circle": "ERROR_NONFINITE_CACHE_SCALE",
+    "cache_calibrated_full_bundle": "INCOMPLETE_TIMEOUT_1200_SECONDS",
+    "selected_layer0_prefill_decode_strict": "FAIL",
+    "selected_before_after_components": "EXACT",
+    "frozen_state": "PASS",
+    "preexisting_pretrained_old_new": "BLOCKED"
+  },
+  "Qwen3_VL_tiny_real_HF": {
+    "additional_multimodal_unit": "PASS_23",
+    "PNG_connected_decode": "PASS",
+    "normal_generate_fp": "PASS",
+    "normal_generate_quant": "FAIL_PREEXISTING_API",
+    "per_layer_circle_old_new_and_isolation": "FAIL_BASELINE_PARITY",
+    "full_text_PNG_one_forward_old_new_and_isolation": "PASS",
+    "completed_before_after_components": "EXACT",
+    "frozen_state": "PASS",
+    "pretrained_evaluation": "BLOCKED"
+  },
+  "Gemma4_tiny_real_HF": {
+    "additional_multimodal_unit": "PASS_12",
+    "PNG_connected_decode": "PASS",
+    "normal_generate_fp_quant": "PASS",
+    "vision_circle": "ERROR_UNSUPPORTED_RANK2_RMS_NORM",
+    "independent_text_per_layer": "FAIL_BASELINE_QUANTIZATION_BOUNDARY_LOSS",
+    "full_text": "FAIL_UNEXPLAINED_BASELINE_PARITY",
+    "completed_text_before_after_components": "EXACT",
+    "frozen_state_completed_scope": "PASS",
+    "pretrained_evaluation": "BLOCKED"
+  }
+}

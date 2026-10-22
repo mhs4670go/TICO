@@ -1,0 +1,21 @@
+{
+  "name": "repository",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "bash",
+    "-c",
+    "git status --short; git rev-parse HEAD; git branch --show-current; git log --oneline -12; git diff --stat bb09ca852b0ca1b1a6271cfe1e10c162104c997e HEAD; git diff --name-only bb09ca852b0ca1b1a6271cfe1e10c162104c997e HEAD; git worktree list; git ls-remote https://github.com/mhs4670go/TICO.git refs/heads/ea; git ls-remote https://github.com/Samsung/TICO.git refs/pull/1073/head"
+  ],
+  "started_at": "2026-10-22T04:04:30.193003+00:00",
+  "environment": {
+    "VIRTUAL_ENV": null,
+    "PATH": "<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": null
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 1.221437574999996
+}

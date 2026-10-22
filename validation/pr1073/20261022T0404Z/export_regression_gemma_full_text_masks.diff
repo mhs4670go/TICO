@@ -1,0 +1,29 @@
+--- tico/quantization/recipes/debug/export_regression.py
++++ out/pr1073_validation/20261022T0404Z/export_regression_gemma_full_text_masks.py
+@@ -503,12 +503,25 @@
+         def __init__(self, model):
+             super().__init__()
+             self.model = model
++            self.mask_names = {}
++            if type(model).__name__ == "QuantGemma4TextModel":
++                for index, layer_type in enumerate(model.unique_layer_types):
++                    template = getattr(model, model._mask_template_name(layer_type))
++                    if template.shape[-1] < options.seq_len or template.shape[-2] < options.seq_len:
++                        raise ValueError("Recorded Gemma4 static masks do not cover requested profile.")
++                    name = f"static_mask_{index}"
++                    self.register_buffer(name, template[..., :options.seq_len, :options.seq_len].detach().clone(), persistent=False)
++                    self.mask_names[layer_type] = name
+ 
+         def forward(self, input_ids):
++            kwargs = {}
++            if self.mask_names:
++                kwargs["attention_mask"] = {layer_type: getattr(self, name) for layer_type, name in self.mask_names.items()}
+             return self.model(
+-                input_ids=input_ids, use_cache=False, return_dict=True
++                input_ids=input_ids, use_cache=False, return_dict=True, **kwargs
+             ).last_hidden_state
+ 
++    path.mkdir(parents=True, exist_ok=True)
+     adapter = TextProbe(owner).eval()
+     inputs = torch.randint(0, int(owner.config.vocab_size), (1, options.seq_len))
+     builder = getattr(owner, "_build_static_export_inputs", None)

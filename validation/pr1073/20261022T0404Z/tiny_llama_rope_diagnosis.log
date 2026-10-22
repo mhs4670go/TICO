@@ -1,0 +1,1033 @@
+[transformers] `rope_parameters`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=64
+{
+  "scope": "additional diagnosis; raw original old/new comparator FAIL is preserved",
+  "host": {
+    "rope_cos_0": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      }
+    },
+    "rope_sin_0": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      }
+    },
+    "rope_cos_1": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 4.4465065002441406e-05,
+        "different_elements": 32,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            12
+          ],
+          [
+            0,
+            2,
+            13
+          ]
+        ]
+      }
+    },
+    "rope_sin_1": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      },
+      "candidate_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      },
+      "baseline_vs_independent_HF": {
+        "same_shape": true,
+        "max_abs_error": 0.006892439676448703,
+        "different_elements": 56,
+        "first_positions": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            0,
+            1,
+            13
+          ],
+          [
+            0,
+            1,
+            14
+          ],
+          [
+            0,
+            1,
+            15
+          ]
+        ]
+      }
+    },
+    "mask_fill_values": {
+      "old_new": {
+        "same_shape": true,
+        "max_abs_error": 0.0,
+        "different_elements": 0,
+        "first_positions": []
+      }
+    }
+  },
+  "stages": {
+    "decoder_layer_decode_0.q.circle": {
+      "raw_array_differences": {},
+      "same_external_inputs_replay": [
+        {
+          "probe": "export_example",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "decoder_layer_decode_1.q.circle": {
+      "raw_array_differences": {},
+      "same_external_inputs_replay": [
+        {
+          "probe": "export_example",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "probe": "decode_empty_past",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "probe": "decode_full_past",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "decoder_layer_prefill_0.q.circle": {
+      "raw_array_differences": {
+        "p0_input_2": {
+          "same_shape": true,
+          "max_abs_error": 4.4465065002441406e-05,
+          "different_elements": 32,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              2,
+              13
+            ]
+          ]
+        },
+        "p0_input_3": {
+          "same_shape": true,
+          "max_abs_error": 0.006892439676448703,
+          "different_elements": 56,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              1,
+              14
+            ],
+            [
+              0,
+              1,
+              15
+            ]
+          ]
+        },
+        "p1_input_2": {
+          "same_shape": true,
+          "max_abs_error": 4.4465065002441406e-05,
+          "different_elements": 32,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              2,
+              13
+            ]
+          ]
+        },
+        "p1_input_3": {
+          "same_shape": true,
+          "max_abs_error": 0.006892439676448703,
+          "different_elements": 56,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              1,
+              14
+            ],
+            [
+              0,
+              1,
+              15
+            ]
+          ]
+        }
+      },
+      "same_external_inputs_replay": [
+        {
+          "probe": "export_example",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "decoder_layer_prefill_1.q.circle": {
+      "raw_array_differences": {
+        "p0_input_2": {
+          "same_shape": true,
+          "max_abs_error": 4.4465065002441406e-05,
+          "different_elements": 32,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              2,
+              13
+            ]
+          ]
+        },
+        "p0_input_3": {
+          "same_shape": true,
+          "max_abs_error": 0.006892439676448703,
+          "different_elements": 56,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              1,
+              14
+            ],
+            [
+              0,
+              1,
+              15
+            ]
+          ]
+        },
+        "p1_input_2": {
+          "same_shape": true,
+          "max_abs_error": 4.4465065002441406e-05,
+          "different_elements": 32,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              2,
+              13
+            ]
+          ]
+        },
+        "p1_input_3": {
+          "same_shape": true,
+          "max_abs_error": 0.006892439676448703,
+          "different_elements": 56,
+          "first_positions": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              1,
+              12
+            ],
+            [
+              0,
+              1,
+              13
+            ],
+            [
+              0,
+              1,
+              14
+            ],
+            [
+              0,
+              1,
+              15
+            ]
+          ]
+        }
+      },
+      "same_external_inputs_replay": [
+        {
+          "probe": "export_example",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "probe": "prefill_last_key_padded",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            },
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "lm_head.q.circle": {
+      "raw_array_differences": {},
+      "same_external_inputs_replay": [
+        {
+          "probe": "export_example",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "token_embedding.q.circle": {
+      "raw_array_differences": {},
+      "same_external_inputs_replay": [
+        {
+          "probe": "export_example",
+          "output_count_equal": true,
+          "comparisons": [
+            {
+              "ok": true,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "same_initial_frozen_state": true
+}

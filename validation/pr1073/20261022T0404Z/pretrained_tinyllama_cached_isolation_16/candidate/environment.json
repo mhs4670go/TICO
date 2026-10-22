@@ -1,0 +1,55 @@
+{
+  "checkpoint_sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+  "commit": "6b2f6a0511458d6a750e2a260d706080a78149dd",
+  "effective_config": {
+    "calibration": {
+      "dataset": "Salesforce/wikitext",
+      "dataset_config": "wikitext-2-raw-v1",
+      "decode_steps": 8,
+      "n_samples": 1,
+      "seq_len": 16,
+      "split": "train"
+    },
+    "evaluation": {
+      "enabled": false,
+      "lm_eval_tasks": null,
+      "max_seq_len": 2048,
+      "perplexity": null
+    },
+    "export": {
+      "artifacts": [
+        "circle_bundle"
+      ],
+      "enabled": true,
+      "max_seq_len": 16,
+      "output_dir": "./out/llama_quantized/circle_layers",
+      "prefill_decode": true
+    },
+    "model": {
+      "cache_dir": null,
+      "family": "llama",
+      "hf_token": null,
+      "name_or_path": "Maykeye/TinyLLama-v0",
+      "trust_remote_code": false
+    },
+    "model_args": {
+      "profile": "npu_export"
+    },
+    "pipeline": [],
+    "runtime": {
+      "device": "cpu",
+      "dtype": "float32",
+      "seed": 42,
+      "show_progress": true
+    }
+  },
+  "llama_rope_migration": null,
+  "repo": "/workspace/TICO",
+  "versions": {
+    "circle-schema": "0.10.1",
+    "numpy": "2.5.4",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0"
+  },
+  "working_tree": ""
+}

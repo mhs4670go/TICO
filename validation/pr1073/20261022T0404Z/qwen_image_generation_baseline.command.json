@@ -1,0 +1,32 @@
+{
+  "name": "qwen_image_generation_baseline",
+  "cwd": "/workspace/TICO-export-baseline",
+  "command": [
+    "env",
+    "PYTHONPATH=/workspace/TICO-export-baseline",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "/workspace/TICO/.venv/bin/python",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/image_generation_baseline.py",
+    "--checkpoint",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/image_generation_probe/qwen3_vl/frozen_full_module.pt",
+    "--inputs",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/image_generation_probe/qwen3_vl/generation_inputs.pt",
+    "--report",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/qwen_image_generation_baseline.json"
+  ],
+  "started_at": "2026-10-22T04:29:05.973120+00:00",
+  "environment": {
+    "VIRTUAL_ENV": null,
+    "PATH": "<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": null
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 62.32031918200005
+}

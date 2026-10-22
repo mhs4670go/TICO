@@ -1,0 +1,9 @@
+{
+  "original": "tico/quantization/recipes/debug/export_regression.py",
+  "original_sha256": "451508ace4f387be5306fe829a76bfbd5a11249148e80be089e1173e1a851111",
+  "parent": "out/pr1073_validation/20261022T0404Z/export_regression_full_text_dirs.py",
+  "parent_sha256": "ba6d08e91af4c5bd9187b2af20d85121c9da00d132228997164c8901e920e002",
+  "patched_copy": "out/pr1073_validation/20261022T0404Z/export_regression_gemma_full_text_masks.py",
+  "patched_sha256": "04895e3fce14dfe947c0cae357ebb13674d933200dbd4d3dc8ebcded1297d63f",
+  "change": "Preserve directory fix; supply required Gemma4 host full/sliding masks captured from bounded recorded templates before tracing as registered buffers. No custom positions, qparams, weight, dtype, runtime, tolerance or comparator changes."
+}

@@ -1,0 +1,40 @@
+{
+  "preexisting_pretrained_checkpoints": "NONE_FOUND_IN_CONFIGURED_PROJECT_PATHS_OR_APPROVED_HF_CACHE",
+  "large_model_downloads": "NOT_AUTHORIZED_AND_NOT_PERFORMED",
+  "gpu": "UNAVAILABLE",
+  "large_pretrained_2048_export": {
+    "status": "BLOCKED",
+    "reason": "No compatible trusted frozen full nn.Module pretrained checkpoints. CPU-only 17GiB RAM is recorded; per-checkpoint peak RAM/disk must be assessed before a multi-billion-parameter 2048 export. No such large export was attempted.",
+    "required": [
+      "trusted frozen full TICO nn.Module checkpoint (not state_dict), existing CPU float32 parameters",
+      "matching original HF model/config/tokenizer or processor revision",
+      "native recorded context capacity and quantization/attention/vision profile",
+      "checkpoint SHA256 and calibration provenance",
+      "sufficient RAM/disk for baseline, candidate and post-eager exports; run large models sequentially"
+    ]
+  },
+  "llama_3_2_pretrained_rope": {
+    "status": "BLOCKED",
+    "reason": "No local Llama-3.2 config/weights; tiny random HF and tiny Maykeye pretrained validation are separate levels."
+  },
+  "qwen3_vl_gemma4_pretrained_image_evaluation": {
+    "status": "BLOCKED",
+    "required": [
+      "matching pretrained FP model and trusted frozen Quant full-module checkpoint",
+      "tokenizer/processor and image benchmark sample IDs/data",
+      "matching inference/preprocessing/evaluation settings"
+    ]
+  },
+  "video_mme_actual_evaluation": {
+    "status": "BLOCKED",
+    "reason": "No configured Video-MME video/data assets or suitable pretrained VLM checkpoints; routing unit evidence only."
+  },
+  "preexisting_prepr_checkpoint_old_new": {
+    "status": "BLOCKED",
+    "reason": "No original user pretrained checkpoint available; baseline-generated random tiny PTQ fixture comparisons are reported separately."
+  },
+  "target_npu": {
+    "status": "OUT_OF_SCOPE",
+    "reason": "CircleReferenceRuntime is a CPU semantic reference, not NPU execution or bit-exact integer backend validation."
+  }
+}

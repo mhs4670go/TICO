@@ -1,0 +1,22 @@
+{
+  "name": "tiny_llama_evidence_inventory",
+  "cwd": "/workspace/TICO",
+  "command": [
+    "python",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/audit_circle_evidence.py",
+    "--run",
+    "/workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2"
+  ],
+  "started_at": "2026-10-22T04:33:45.673049+00:00",
+  "environment": {
+    "VIRTUAL_ENV": "/workspace/TICO/.venv",
+    "PATH": "/workspace/TICO/.venv/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:<USER_HOME>/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "HF_HUB_OFFLINE": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "RESULT_ROOT": "/workspace/TICO/out/pr1073_validation/20261022T0404Z"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 19.949524990999862
+}

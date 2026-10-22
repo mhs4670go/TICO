@@ -1,0 +1,11 @@
+Saving token_embedding.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/baseline/before/artifacts/token_embedding.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+Saving decoder_layer_prefill_0.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/baseline/before/artifacts/decoder_layer_prefill_0.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+Saving decoder_layer_decode_0.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/baseline/before/artifacts/decoder_layer_decode_0.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+Saving decoder_layer_prefill_1.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/baseline/before/artifacts/decoder_layer_prefill_1.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+Saving decoder_layer_decode_1.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/baseline/before/artifacts/decoder_layer_decode_1.q.circle
+[QuantCheck] WARNING: 3 nodes without qparam detected (see logs).
+Saving lm_head.q.circle to /workspace/TICO/out/pr1073_validation/20261022T0404Z/tiny-llama-old-new-v2/baseline/before/artifacts/lm_head.q.circle

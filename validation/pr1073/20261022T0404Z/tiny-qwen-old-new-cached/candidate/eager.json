@@ -1,0 +1,8 @@
+{
+  "capacity": 64,
+  "decode_steps": 4,
+  "kind": "text_only",
+  "prefill_tokens": 12,
+  "state_differences": [],
+  "state_preserved": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "repo": "/workspace/TICO",
+  "scope": "Tiny real-HF models, actual wrappers, and Torch Export; not pretrained-model Circle or NPU validation.",
+  "versions": {
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0",
+    "circle-schema": "0.10.1"
+  },
+  "tests_run": 32,
+  "failures": [],
+  "errors": [],
+  "skipped": []
+}

@@ -1,0 +1,110 @@
+{
+  "transformers_version": "5.18.0",
+  "architectures": null,
+  "output_hidden_states": false,
+  "return_dict": true,
+  "dtype": null,
+  "chunk_size_feed_forward": 0,
+  "is_encoder_decoder": false,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "problem_type": null,
+  "text_config": {
+    "architectures": null,
+    "output_hidden_states": false,
+    "return_dict": true,
+    "dtype": null,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "problem_type": null,
+    "vocab_size": 1000,
+    "hidden_size": 64,
+    "intermediate_size": 256,
+    "num_hidden_layers": 2,
+    "num_attention_heads": 2,
+    "num_key_value_heads": 2,
+    "head_dim": 32,
+    "hidden_act": "silu",
+    "max_position_embeddings": 1024,
+    "initializer_range": 0.02,
+    "rms_norm_eps": 1e-06,
+    "use_cache": true,
+    "rope_parameters": {
+      "rope_type": "default",
+      "mrope_section": [
+        1,
+        1,
+        2
+      ],
+      "rope_theta": 500000.0
+    },
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "pad_token_id": null,
+    "_name_or_path": "",
+    "model_type": "qwen3_vl_text",
+    "output_attentions": false
+  },
+  "vision_config": {
+    "architectures": null,
+    "output_hidden_states": false,
+    "return_dict": true,
+    "dtype": null,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "problem_type": null,
+    "depth": 2,
+    "hidden_size": 64,
+    "hidden_act": "gelu_pytorch_tanh",
+    "intermediate_size": 4304,
+    "num_heads": 4,
+    "in_channels": 3,
+    "patch_size": 16,
+    "spatial_merge_size": 2,
+    "temporal_patch_size": 2,
+    "out_hidden_size": 64,
+    "num_position_embeddings": 2304,
+    "deepstack_visual_indexes": [
+      0,
+      1
+    ],
+    "initializer_range": 0.02,
+    "rope_parameters": {
+      "rope_theta": 10000.0,
+      "rope_type": "axial"
+    },
+    "_name_or_path": "",
+    "model_type": "qwen3_vl_vision",
+    "output_attentions": false
+  },
+  "image_token_id": 998,
+  "video_token_id": 999,
+  "vision_start_token_id": 151652,
+  "vision_end_token_id": 151653,
+  "tie_word_embeddings": false,
+  "_name_or_path": "",
+  "model_type": "qwen3_vl",
+  "output_attentions": false
+}

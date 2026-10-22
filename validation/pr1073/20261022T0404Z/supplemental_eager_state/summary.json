@@ -1,0 +1,254 @@
+{
+  "scope": "Supplemental actual tiny HF text models and real PTQ; no pretrained benchmark, image evaluation or Circle execution",
+  "seed": 1073,
+  "models": {
+    "llama": {
+      "status": "PASS",
+      "level": "tiny-real-HF-random-text-PTQ",
+      "pretrained": false,
+      "actual_image": false,
+      "calibration_seq_len": 3,
+      "export_seq_len": 6,
+      "eager_prefill_seq_len": 12,
+      "decode_steps": 4,
+      "native_capacity": 32,
+      "checked_parameters": 20,
+      "checked_buffers": 572,
+      "checked_observers": 136,
+      "checked_quant_modules": 57,
+      "positional_config": {
+        "max_position_embeddings": 32,
+        "rope_scaling": {
+          "rope_type": "linear",
+          "factor": 2.0,
+          "rope_theta": 10000.0
+        },
+        "rope_parameters": {
+          "rope_type": "linear",
+          "factor": 2.0,
+          "rope_theta": 10000.0
+        }
+      },
+      "outputs": [
+        {
+          "shape": [
+            1,
+            12,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "d52d5c356e1311873f5b43c8f3ae670dceac7c2afef90394e9d87f202f8cc63d"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9eb6709ebae597a23811f51b0c3df0791cfd63d6bde76850eeabaa689925986b"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "5037ee14be6bff4f61b56a7da487bf0158b3bf51a7052924b1ca84b69131f9b0"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "90801f55fdaeb5fe86b9eb09d60831ad872ec068d8a8369283f4cf914dd49611"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "f0015c3fa14e3194d1706709a457d5d5b7fdf0891944d89cb97aad649220d999"
+        }
+      ],
+      "static_exception_cleanup": "PASS"
+    },
+    "qwen3_vl": {
+      "status": "PASS",
+      "level": "tiny-real-HF-random-text-PTQ",
+      "pretrained": false,
+      "actual_image": false,
+      "calibration_seq_len": 3,
+      "export_seq_len": 6,
+      "eager_prefill_seq_len": 12,
+      "decode_steps": 4,
+      "native_capacity": 32,
+      "checked_parameters": 26,
+      "checked_buffers": 644,
+      "checked_observers": 160,
+      "checked_quant_modules": 65,
+      "positional_config": {
+        "max_position_embeddings": 32,
+        "rope_scaling": {
+          "rope_type": "default",
+          "mrope_section": [
+            1,
+            1,
+            2
+          ],
+          "rope_theta": 500000.0
+        },
+        "rope_parameters": {
+          "rope_type": "default",
+          "mrope_section": [
+            1,
+            1,
+            2
+          ],
+          "rope_theta": 500000.0
+        }
+      },
+      "outputs": [
+        {
+          "shape": [
+            1,
+            12,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9bb3fcb92aaefed506adab37eb1ddecccdb4f8eb504090469de32445a1df63f2"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "2883e4ca33f9fd7598340737a7be64eddd25f0b7761bd74b537978c46fd90b4e"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "237c6d6a8c5419fd893584f03eae01de10817080cfe0718dc5048d5dfd0a218c"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "ad1449287e52e7553647860b1a686dc1b18e6afe4b2e34a6f90860c5556b04ef"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "a25b8db717155326b0f42c34ddf81444e68ce59fe69587cb20dc6b1809349c41"
+        }
+      ],
+      "static_exception_cleanup": "PASS"
+    },
+    "gemma4": {
+      "status": "PASS",
+      "level": "tiny-real-HF-random-text-PTQ",
+      "pretrained": false,
+      "actual_image": false,
+      "calibration_seq_len": 3,
+      "export_seq_len": 6,
+      "eager_prefill_seq_len": 12,
+      "decode_steps": 4,
+      "native_capacity": 32,
+      "checked_parameters": 28,
+      "checked_buffers": 706,
+      "checked_observers": 166,
+      "checked_quant_modules": 73,
+      "positional_config": {
+        "max_position_embeddings": 32,
+        "rope_scaling": {
+          "sliding_attention": {
+            "rope_type": "default",
+            "rope_theta": 10000.0
+          },
+          "full_attention": {
+            "rope_type": "proportional",
+            "partial_rotary_factor": 0.25,
+            "rope_theta": 1000000.0
+          }
+        },
+        "rope_parameters": {
+          "sliding_attention": {
+            "rope_type": "default",
+            "rope_theta": 10000.0
+          },
+          "full_attention": {
+            "rope_type": "proportional",
+            "partial_rotary_factor": 0.25,
+            "rope_theta": 1000000.0
+          }
+        }
+      },
+      "outputs": [
+        {
+          "shape": [
+            1,
+            12,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "e66c842526fe3f1f197a89bba8c2ce8b8db5ac82fb6a6a4ba38ee7bd22788b36"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "f4501b0cc9ebc8eeaee76c6d7a040aef3e1281e828561ffc1d255660c4ee355c"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "fa17b4388dcea91ac6a78ea239aa763ea7b5bd460f1f81b26ca45a4587145dd1"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "c46c61c990e4229b7e1da071ab6d072daa1cb5f729c30cfe91c9ae07e07a13a9"
+        },
+        {
+          "shape": [
+            1,
+            1,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "2350b41a717158398cbc488d12b7ba360a56fa8d1bbcf5ffdf2661157a1261f6"
+        }
+      ],
+      "static_exception_cleanup": "not checked"
+    }
+  }
+}

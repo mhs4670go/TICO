@@ -1,0 +1,4 @@
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/package_validation_artifacts.py", line 135
+    samples.update(status='CAPTURED', 'source_arrow': candidates[0].relative_to(root).as_posix(), 'source_arrow_sha256': sha256(candidates[0]), 'source_schema': str(batch.schema), 'selected_row_count': limit, 'rows': [{'dataset_row_index': index, 'row': row, 'row_json_sha256': hashlib.sha256(json.dumps(row, ensure_ascii=False, sort_keys=True).encode()).hexdigest()} for index, row in enumerate(selected)])
+                                                    ^
+SyntaxError: positional argument follows keyword argument

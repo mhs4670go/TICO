@@ -1,0 +1,32 @@
+Loading weights:   0%|          | 0/75 [00:00<?, ?it/s]Loading weights: 100%|██████████| 75/75 [00:00<00:00, 5138.57it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PPL:   0%|          | 0/21 [00:00<?, ?it/s]PPL:   5%|▍         | 1/21 [00:00<00:02,  8.42it/s]PPL:  10%|▉         | 2/21 [00:00<00:02,  6.92it/s]PPL:  19%|█▉        | 4/21 [00:00<00:01,  9.12it/s]PPL:  24%|██▍       | 5/21 [00:00<00:01,  8.65it/s]PPL:  29%|██▊       | 6/21 [00:01<00:04,  3.59it/s]PPL:  33%|███▎      | 7/21 [00:01<00:03,  4.36it/s]PPL:  38%|███▊      | 8/21 [00:01<00:02,  4.59it/s]PPL:  43%|████▎     | 9/21 [00:01<00:02,  4.94it/s]PPL:  48%|████▊     | 10/21 [00:01<00:01,  5.60it/s]PPL:  52%|█████▏    | 11/21 [00:01<00:01,  5.72it/s]PPL:  57%|█████▋    | 12/21 [00:02<00:01,  6.40it/s]PPL:  62%|██████▏   | 13/21 [00:02<00:01,  6.62it/s]PPL:  67%|██████▋   | 14/21 [00:02<00:01,  6.56it/s]PPL:  71%|███████▏  | 15/21 [00:02<00:00,  6.59it/s]PPL:  76%|███████▌  | 16/21 [00:02<00:00,  6.19it/s]PPL:  81%|████████  | 17/21 [00:03<00:01,  3.72it/s]PPL:  86%|████████▌ | 18/21 [00:03<00:00,  4.38it/s]PPL:  90%|█████████ | 19/21 [00:03<00:00,  5.35it/s]
+PPL:   0%|          | 0/21 [00:00<?, ?it/s][transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+PPL:   5%|▍         | 1/21 [00:00<00:18,  1.06it/s]PPL:  10%|▉         | 2/21 [00:01<00:13,  1.43it/s]PPL:  14%|█▍        | 3/21 [00:02<00:11,  1.52it/s]PPL:  19%|█▉        | 4/21 [00:02<00:09,  1.80it/s]PPL:  24%|██▍       | 5/21 [00:02<00:08,  1.90it/s]PPL:  29%|██▊       | 6/21 [00:03<00:07,  1.93it/s]PPL:  33%|███▎      | 7/21 [00:04<00:10,  1.33it/s]PPL:  38%|███▊      | 8/21 [00:05<00:10,  1.29it/s]PPL:  43%|████▎     | 9/21 [00:07<00:12,  1.02s/it]PPL:  48%|████▊     | 10/21 [00:08<00:11,  1.06s/it]PPL:  52%|█████▏    | 11/21 [00:09<00:12,  1.25s/it]PPL:  57%|█████▋    | 12/21 [00:11<00:11,  1.26s/it]PPL:  62%|██████▏   | 13/21 [00:11<00:08,  1.08s/it]PPL:  67%|██████▋   | 14/21 [00:12<00:06,  1.04it/s]PPL:  71%|███████▏  | 15/21 [00:13<00:06,  1.05s/it]PPL:  76%|███████▌  | 16/21 [00:14<00:04,  1.08it/s]PPL:  81%|████████  | 17/21 [00:15<00:03,  1.18it/s]PPL:  86%|████████▌ | 18/21 [00:16<00:03,  1.08s/it]PPL:  90%|█████████ | 19/21 [00:17<00:01,  1.06it/s]PPL:  90%|█████████ | 19/21 [00:18<00:01,  1.05it/s]
+Traceback (most recent call last):
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_llama_smoke.py", line 152, in <module>
+    
+  File "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_llama_smoke.py", line 138, in supplemental
+    nll=F.cross_entropy(output.logits[:,:-1].float().reshape(-1,output.logits.shape[-1]),ids[:,1:].reshape(-1),reduction='sum')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/tico/quantization/wrapq/wrappers/ptq_wrapper.py", line 90, in generate
+    return getattr(self.wrapped, "generate")(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2976, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 3197, in _sample
+    with self._optimize_model_for_decode():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2480, in _optimize_model_for_decode
+    original_experts_implementation = self.get_experts_implementation()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TICO/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1967, in __getattr__
+    raise AttributeError(
+AttributeError: 'QuantLlamaForCausalLM' object has no attribute 'get_experts_implementation'

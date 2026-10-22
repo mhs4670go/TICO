@@ -1,0 +1,30 @@
+model:
+  family: gemma4
+  name_or_path: tiny-random-local-validation-fixture
+runtime:
+  device: cpu
+  dtype: float32
+  seed: 42
+  show_progress: false
+model_args:
+  text:
+    max_seq: 8
+  vision:
+    visual_start_idx: 0
+    num_visual_tokens: 4
+    max_soft_tokens: 70
+    patch_grid_height: 4
+    patch_grid_width: 4
+    validate_static_layout: false
+calibration:
+  seq_len: 8
+pipeline: []
+evaluation:
+  enabled: false
+export:
+  enabled: true
+  max_seq_len: 8
+  prefill_decode: true
+  strict: false
+  artifacts:
+  - circle_per_layer

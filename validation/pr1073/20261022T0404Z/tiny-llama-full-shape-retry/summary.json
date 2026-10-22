@@ -1,0 +1,258 @@
+{
+  "atol": 1e-05,
+  "baseline_comparison_performed": true,
+  "baseline_vs_candidate": {
+    "failures": [
+      "model.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "ok": false,
+    "stages": {
+      "model.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": false,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0055593401193618774,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0055593401193618774,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "candidate_before_vs_after_eager": {
+    "failures": [
+      "model.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "ok": false,
+    "stages": {
+      "model.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0055593401193618774,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0055593401193618774,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "comparisons_complete": true,
+  "eager": {
+    "capacity": 64,
+    "decode_steps": 4,
+    "kind": "text_only",
+    "prefill_tokens": 12,
+    "state_differences": [],
+    "state_preserved": true
+  },
+  "intentional_change_note": "The candidate uses unified LLaMA RoPE. Differences from an old unscaled decoder are reported as FAIL, never waived automatically.",
+  "llama_rope_migration_requested": true,
+  "requested_scope": "run",
+  "rtol": 0.0001,
+  "same_checkpoint_and_dependencies": true,
+  "same_initial_quantization_state": true,
+  "scope": "Conservative Circle structure and stage-level reference numerics; not NPU or end-to-end generation validation.",
+  "status": "FAIL",
+  "torch_parity_required": true
+}

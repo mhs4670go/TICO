@@ -1,0 +1,3140 @@
+{
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "scope": "Read-only frozen observer coverage; no compute_qparams/fake_quant/recalibration is called",
+  "checkpoints": {
+    "original": {
+      "path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized.pt",
+      "sha256": "5f8b5a9b5f7e8ff182c6fc96d52f232a9958424f68c09039fd9452e101b17345",
+      "root_class": "PTQWrapper",
+      "observer_coverage": [
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_new_k",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_new_v",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "cached": {
+      "path": "/workspace/TICO/out/pr1073_validation/20261022T0404Z/pretrained_tinyllama_quantized_cached.pt",
+      "sha256": "c13bbd08a738a29c55c782bd1942f7b4056c20eb4c98b2f1628e1c99c64343ad",
+      "root_class": "PTQWrapper",
+      "observer_coverage": [
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.6955907344818115"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.1036128997802734"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "8.226541103795171e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-1.2662924528121948"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "1.1218218803405762"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "3.864535756292753e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-4.787258148193359"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "5.398248195648193"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0.0001647464814595878"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.077418804168701"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "1.810750961303711"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "6.339972605928779e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-3.118492364883423"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "3.45593523979187"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0.00010546998964855447"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.2.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.4306910037994385"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "1.7021808624267578"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "7.418106542900205e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-1.741639256477356"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.700014352798462"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "8.240041643148288e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.3.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-1.8675764799118042"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.129446506500244"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "6.498753646155819e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.9074552059173584"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.8306193351745605"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "8.873119804775342e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.4.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-3.033567428588867"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.151914358139038"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "9.257995407097042e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-3.666904926300049"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "3.746019124984741"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0.00011432292376412079"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.5.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.2961392402648926"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.1984477043151855"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "7.007474778220057e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.3248040676116943"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "1.9432045221328735"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "7.094955799402669e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.6.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.1987686157226562"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.7153327465057373"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "8.28679112601094e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_scale",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_logits_raw",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "inf"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": false,
+              "nonfinite_count": 1,
+              "first_values": [
+                "-inf"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            },
+            "_cached_zp": {
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": []
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_past_key",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.269472360610962"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.0469300746917725"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "6.926091737113893e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        },
+        {
+          "name": "wrapped.model.wrapped.layers.7.wrapped.self_attn.wrapped.obs_past_value",
+          "class": "MinMaxObserver",
+          "dtype": "int16",
+          "fields": {
+            "min_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "-2.266162633895874"
+              ]
+            },
+            "max_val": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "2.0001819133758545"
+              ]
+            },
+            "_cached_scale": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "6.915990525158122e-05"
+              ]
+            },
+            "_cached_zp": {
+              "shape": [],
+              "finite": true,
+              "nonfinite_count": 0,
+              "first_values": [
+                "0"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

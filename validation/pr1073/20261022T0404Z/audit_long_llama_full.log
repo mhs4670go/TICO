@@ -1,0 +1,14 @@
+{
+  "eager": {
+    "capacity": 16384,
+    "decode_steps": 4,
+    "kind": "text_only",
+    "prefill_tokens": 4096,
+    "state_differences": [],
+    "state_preserved": true
+  },
+  "evidence_complete": true,
+  "pre_post_component_identity": true,
+  "torch_circle_parity": false,
+  "strict_ok": false
+}

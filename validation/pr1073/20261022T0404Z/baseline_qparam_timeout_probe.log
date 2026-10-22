@@ -1,0 +1,7 @@
+test_full_model_example_rejects_bit_mismatch (test.quantization.examples.test_gptq_qparam_handoff.TestLegacyGPTQQParamHandoff.test_full_model_example_rejects_bit_mismatch)
+The full-model example must not retain an unchecked private copy. ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 33.394s
+
+OK

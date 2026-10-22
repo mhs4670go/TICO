@@ -1,0 +1,137 @@
+{
+  "recorded_at": "2026-10-22T05:18:35.454644+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/workspace/TICO/.venv/bin/python",
+  "disk_bytes": {
+    "total": 33770192896,
+    "used": 2894651392,
+    "free": 29140779008
+  },
+  "cpu_visible": 5,
+  "memory_info": "MemTotal:       18488496 kB\nMemFree:        16300168 kB\nMemAvailable:   17711268 kB\nBuffers:           19500 kB\nCached:          1560348 kB\nSwapCached:            0 kB\nActive:           541032 kB\nInactive:        1062368 kB\nActive(anon):        148 kB\nInactive(anon):    53440 kB\nActive(file):     540884 kB\nInactive(file):  1008928 kB\nUnevictable:       29924 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:               132 kB\nWriteback:             0 kB\nAnonPages:         53480 kB\nMapped:            77992 kB\nShmem:               140 kB\nKReclaimable:     213680 kB\nSlab:             267164 kB\nSReclaimable:     213680 kB\nSUnreclaim:        53484 kB\nKernelStack:        2308 kB\nPageTables:         2196 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9244248 kB\nCommitted_AS:     375616 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4524 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    202752 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       18432 kB\nDirectMap2M:     3182592 kB\nDirectMap1G:    32505856 kB\n",
+  "cpu_quota": "400000 100000",
+  "memory_limit": "17179869184",
+  "repositories": {
+    "candidate": {
+      "head": {
+        "command": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "/workspace/TICO",
+        "exit_code": 0,
+        "stdout": "6b2f6a0511458d6a750e2a260d706080a78149dd\n",
+        "stderr": ""
+      },
+      "status": {
+        "command": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=normal"
+        ],
+        "cwd": "/workspace/TICO",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "diff": {
+        "command": [
+          "git",
+          "diff",
+          "--exit-code"
+        ],
+        "cwd": "/workspace/TICO",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "cached_diff": {
+        "command": [
+          "git",
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "/workspace/TICO",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    "baseline": {
+      "head": {
+        "command": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "/workspace/TICO-export-baseline",
+        "exit_code": 0,
+        "stdout": "bb09ca852b0ca1b1a6271cfe1e10c162104c997e\n",
+        "stderr": ""
+      },
+      "status": {
+        "command": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=normal"
+        ],
+        "cwd": "/workspace/TICO-export-baseline",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "diff": {
+        "command": [
+          "git",
+          "diff",
+          "--exit-code"
+        ],
+        "cwd": "/workspace/TICO-export-baseline",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "cached_diff": {
+        "command": [
+          "git",
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "/workspace/TICO-export-baseline",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    }
+  },
+  "packages": {
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "transformers": "5.18.0",
+    "circle-schema": "0.10.1",
+    "datasets": "4.8.4",
+    "numpy": "2.5.4",
+    "accelerate": "1.12.0",
+    "lm-eval": null,
+    "lmms-eval": null
+  },
+  "tico_file": "/workspace/TICO/tico/__init__.py",
+  "cuda_available": false,
+  "dependency_check": {
+    "command": [
+      "/workspace/TICO/.venv/bin/python",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "/workspace/TICO",
+    "exit_code": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  }
+}
