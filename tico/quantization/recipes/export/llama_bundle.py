@@ -26,7 +26,6 @@ import torch
 from tico.circle import CircleDocument
 from tico.circle._schema import decode_text
 
-
 _INPUT_ROLES = {
     "input_ids": "input_ids",
     "hidden_states": "hidden_states",

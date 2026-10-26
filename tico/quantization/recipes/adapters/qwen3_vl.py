@@ -61,7 +61,6 @@ from tico.quantization.recipes.utils import (
     torch_dtype_from_name,
 )
 
-
 _VISION_LINEAR_MODULES = (
     "attn.qkv",
     "attn.proj",

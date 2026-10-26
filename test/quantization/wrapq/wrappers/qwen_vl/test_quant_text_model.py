@@ -95,9 +95,9 @@ class TestQuantQwen3VLTextModel(unittest.TestCase):
             low=0, high=vocab_size - 3, size=(batch_size, num_tokens)
         )
         input_ids[:, visual_start_idx - 1] = vision_start_token_id
-        input_ids[
-            :, visual_start_idx : visual_start_idx + num_visual_tokens
-        ] = image_token_id
+        input_ids[:, visual_start_idx : visual_start_idx + num_visual_tokens] = (
+            image_token_id
+        )
         attention_mask = torch.ones(batch_size, num_tokens, dtype=torch.int64)
         pixel_values = torch.full(
             size=(batch_size, 3, image_height, image_width), fill_value=-1.0

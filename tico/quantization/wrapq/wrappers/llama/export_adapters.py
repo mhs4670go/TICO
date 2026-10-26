@@ -19,7 +19,6 @@ import torch.nn as nn
 
 from transformers.cache_utils import Cache
 
-
 if TYPE_CHECKING:
     from tico.quantization.wrapq.wrappers.llama.quant_model import QuantLlamaModel
     from tico.quantization.wrapq.wrappers.llama.quant_model_for_causal_lm import (
