@@ -1,0 +1,41 @@
+{
+  "name": "conversion-module",
+  "command": [
+    "python",
+    "-m",
+    "test.performance.benchmark_conversion_memory",
+    "--sizes-mib",
+    "1",
+    "--tables",
+    "1",
+    "--width",
+    "16",
+    "--threads",
+    "1",
+    "--repeat",
+    "1",
+    "--optimization",
+    "O1",
+    "--input-kind",
+    "module",
+    "--workdir",
+    "${VALIDATION_ROOT}/benchmark-module",
+    "--keep-outputs",
+    "--json"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:46:48Z",
+  "log": "${VALIDATION_ROOT}/logs/conversion-module.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 8.588
+}

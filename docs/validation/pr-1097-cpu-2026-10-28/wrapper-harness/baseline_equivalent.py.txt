@@ -1,0 +1,27 @@
+"""Use candidate's corrected synthetic Qwen inputs with untouched baseline code.
+
+This only changes input fixture construction in the validation process. Original
+baseline CLI failures remain in wrapper-baseline; outputs go to separate paths.
+"""
+import json,pathlib,runpy,sys,torch
+from tico.quantization.recipes.debug.wrapper_smoke.cases import qwen3_vl as q
+from tico.quantization.recipes.debug.wrapper_smoke.case import ForwardInput
+case=sys.argv[sys.argv.index('--case')+1];out=pathlib.Path(sys.argv[sys.argv.index('--output-dir')+1])
+if case=='qwen3_vl_vision_attention':
+ def sample(self):return ForwardInput((torch.randn(self.seq_len,self.hidden_size),self.cu_seqlens),{'position_embeddings':self.position_embeddings})
+ q.QwenVisionAttentionCase._sample=sample
+ detail='Identical candidate fixture: pass position_embeddings by keyword; baseline original positional call mismatches Transformers5.18.'
+else:
+ original=q._create_image_input
+ def sample(cfg,*args,**kwargs):
+  result=original(cfg,*args,**kwargs);result['mm_token_type_ids']=(result['input_ids']==cfg.image_token_id).long();return result
+ q._create_image_input=sample
+ detail='Identical candidate fixture: supply processor-equivalent mm_token_type_ids from image-token positions; baseline original fixture omits required HF5.18 field.'
+code=0
+try:runpy.run_path(str(pathlib.Path(__file__).with_name('export_case.py')),run_name='__main__')
+except SystemExit as exc:code=exc.code
+finally:
+ p=out/'artifact-checks.json'
+ if p.exists():
+  result=json.loads(p.read_text());result['fixture_equivalence']=detail;p.write_text(json.dumps(result,indent=2))
+raise SystemExit(code)

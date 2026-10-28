@@ -1,0 +1,1472 @@
+{
+  "schema_version": 1,
+  "language": "ko",
+  "revisions": {
+    "pr_url": "https://github.com/Samsung/TICO/pull/1097",
+    "retrieved_utc": null,
+    "base_branch": "main",
+    "base_sha": "261bda28ec55fdac42f59346c950326e4065f8fa",
+    "head_sha": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+    "merge_base_sha": "261bda28ec55fdac42f59346c950326e4065f8fa",
+    "tested_commit_sha": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+    "tested_tree_sha": "c81b5f254023b21bb76f1f6d04405b5c7d3f54b2",
+    "base_is_ancestor_of_head": true,
+    "github_merge_ref": {
+      "sha": "6f3016abb6f190d01a28b047fe1cef4496d5a94a",
+      "parents": [
+        "261bda28ec55fdac42f59346c950326e4065f8fa",
+        "9f631d6651ce3780e3a8e054ab02910b9bd40fdc"
+      ],
+      "used_for_testing": false
+    },
+    "original_checkout": "${BASELINE_REPO}",
+    "original_head": "261bda28ec55fdac42f59346c950326e4065f8fa",
+    "initial_working_tree": "clean",
+    "tested_checkout": "${CANDIDATE_REPO}",
+    "strategy": "Head already includes latest fetched main; detached head worktree, no merge or product edits.",
+    "retrieved_before_utc": "2026-10-28T10:13:42Z",
+    "resolution_date_utc": "2026-10-28"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "cpu_count": 5,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+    "cuda_available": false,
+    "versions": {
+      "torch": "2.13.0+cpu",
+      "torchvision": "0.28.0+cpu",
+      "transformers": "5.18.0",
+      "datasets": "5.0.1",
+      "lm_eval": null,
+      "lm-eval": null,
+      "circle-schema": "0.10.1",
+      "flatbuffers": "25.12.19",
+      "tico": "0.1.0",
+      "lintrunner": "0.11.0"
+    }
+  },
+  "resources": {
+    "visible_cpus": 5,
+    "cgroup_cpu_quota_cores": 4,
+    "cgroup_memory_limit_bytes": 17179869184,
+    "thread_policy": "OMP/MKL/OPENBLAS=1, CPU explicit, heavy export/driver/benchmarks sequential"
+  },
+  "source_review": "coverage-review.md",
+  "discovery": {
+    "evidence_path": "discovery-inventory.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "full_suite": {
+    "evidence_path": "full-suite-summary.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "baseline_selective": {
+    "revision": "261bda28ec55fdac42f59346c950326e4065f8fa",
+    "tico_import_path": "${BASELINE_REPO}/tico/__init__.py",
+    "modules": [
+      "test.quantization.test_public_interface",
+      "test.quantization.recipes.test_folded_linear_qparam_handoff",
+      "test.quantization.recipes.test_cpu_evaluation"
+    ],
+    "collected": 13,
+    "executed": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 13,
+    "success": true,
+    "fixture_policy": "Each revision constructs and independently calibrates/converts its own tiny models. No head checkpoint passed to baseline."
+  },
+  "wrapper_numerical": {
+    "evidence_path": "wrapper-smoke/summary.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "wrapper_exports": {
+    "evidence_path": "wrapper-harness/export-summary.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "wrapper_export_completion": {
+    "exit_code": 1,
+    "registered": 50,
+    "records": 50,
+    "passed": 25,
+    "failed": 23,
+    "skipped": 2,
+    "completed_at": "2026-10-28T10:39:24Z"
+  },
+  "cpu_validation": {
+    "not_in_scope": [
+      "large pretrained quality",
+      "2048-token full-model capacity",
+      "NPU integer execution and performance"
+    ],
+    "stages": {
+      "coverage": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_tests",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/coverage-tests",
+          "--test-module",
+          "test.quantization.recipes.test_qwen_cache_coverage_cpu"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/coverage.log",
+        "returncode": 0,
+        "seconds": 10.009764944000153,
+        "status": "PASS",
+        "stderr": "merged into stdout log"
+      },
+      "evaluation": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_tests",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/evaluation-tests",
+          "--test-module",
+          "test.quantization.recipes.test_cpu_evaluation"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/evaluation.log",
+        "returncode": 0,
+        "seconds": 5.918166937000024,
+        "status": "PASS",
+        "stderr": "merged into stdout log"
+      },
+      "fixtures": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_fixtures",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures",
+          "--seed",
+          "1073"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/fixtures.log",
+        "returncode": 0,
+        "seconds": 5.330875969999852,
+        "status": "PASS",
+        "stderr": "merged into stdout log"
+      },
+      "generate": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_tests",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/generate-tests",
+          "--test-module",
+          "test.quantization.recipes.test_cpu_generation"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/generate.log",
+        "returncode": 0,
+        "seconds": 7.725610107999955,
+        "status": "PASS",
+        "stderr": "merged into stdout log"
+      },
+      "llama-16": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+          "isolation",
+          "--candidate-repo",
+          "${CANDIDATE_REPO}",
+          "--config",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/llama.json",
+          "--checkpoint",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/llama.pt",
+          "--seq-len",
+          "16",
+          "--eager-seq-len",
+          "48",
+          "--decode-steps",
+          "4",
+          "--seed",
+          "1073",
+          "--threads",
+          "1",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/llama-16",
+          "--require-torch-parity",
+          "--artifacts",
+          "circle_bundle,circle_full"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/llama-16.log",
+        "returncode": 1,
+        "seconds": 64.4297922579999,
+        "status": "FAIL",
+        "stderr": "merged into stdout log"
+      },
+      "qwen3_vl-16": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+          "isolation",
+          "--candidate-repo",
+          "${CANDIDATE_REPO}",
+          "--config",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.json",
+          "--checkpoint",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+          "--seq-len",
+          "16",
+          "--eager-seq-len",
+          "48",
+          "--decode-steps",
+          "4",
+          "--seed",
+          "1073",
+          "--threads",
+          "1",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16",
+          "--require-torch-parity"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16.log",
+        "returncode": 1,
+        "seconds": 58.618659557,
+        "status": "FAIL",
+        "stderr": "merged into stdout log"
+      },
+      "qwen3_vl-16-connected": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_connected",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16-connected",
+          "--checkpoint",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+          "--artifacts",
+          "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16/candidate/before/artifacts",
+          "--capacity",
+          "16"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16-connected.log",
+        "returncode": 1,
+        "seconds": 4.874402981999992,
+        "status": "FAIL",
+        "stderr": "merged into stdout log"
+      },
+      "qwen3_vl-32": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+          "isolation",
+          "--candidate-repo",
+          "${CANDIDATE_REPO}",
+          "--config",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.json",
+          "--checkpoint",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+          "--seq-len",
+          "32",
+          "--eager-seq-len",
+          "48",
+          "--decode-steps",
+          "4",
+          "--seed",
+          "1073",
+          "--threads",
+          "1",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32",
+          "--require-torch-parity"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32.log",
+        "returncode": 1,
+        "seconds": 56.525223260000075,
+        "status": "FAIL",
+        "stderr": "merged into stdout log"
+      },
+      "qwen3_vl-32-connected": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_connected",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32-connected",
+          "--checkpoint",
+          "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+          "--artifacts",
+          "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32/candidate/before/artifacts",
+          "--capacity",
+          "32"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32-connected.log",
+        "returncode": 1,
+        "seconds": 5.08817744299995,
+        "status": "FAIL",
+        "stderr": "merged into stdout log"
+      },
+      "regression": {
+        "command": [
+          "${VALIDATION_VENV}/bin/python",
+          "-m",
+          "tico.quantization.recipes.debug.cpu_validation",
+          "--stage",
+          "_tests",
+          "--output",
+          "${VALIDATION_ROOT}/cpu-validation/regression-tests",
+          "--test-module",
+          "test.quantization.recipes.test_cpu_fixtures",
+          "--test-module",
+          "test.quantization.recipes.test_cpu_validation",
+          "--test-module",
+          "test.quantization.recipes.test_export_regression",
+          "--test-module",
+          "test.quantization.wrapq.utils.test_static_export_inputs",
+          "--test-module",
+          "test.quantization.wrapq.wrappers.llama.test_rope_consistency"
+        ],
+        "cwd": "${CANDIDATE_REPO}",
+        "environment": {
+          "HF_HUB_OFFLINE": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "log": "${VALIDATION_ROOT}/cpu-validation/regression.log",
+        "returncode": 0,
+        "seconds": 7.663039921000063,
+        "status": "PASS",
+        "stderr": "merged into stdout log"
+      }
+    },
+    "status": "FAIL",
+    "strict_tolerances": {
+      "atol": 1e-05,
+      "rtol": 0.0001
+    }
+  },
+  "evaluation": {
+    "evidence_path": "evaluation/summary.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "conversion_benchmarks": {
+    "conversion-module": {
+      "comparisons": [
+        {
+          "baseline": "bytes",
+          "median_peak_rss_reduction_bytes": -3620864,
+          "median_peak_rss_reduction_percent": -1.1369628686447764,
+          "requested_mib": 1
+        }
+      ],
+      "flatbuffer_limit": null,
+      "identity_mul": false,
+      "input_kind": "module",
+      "optimization": "O1",
+      "platform": "linux",
+      "python": "3.12.14",
+      "results": [
+        {
+          "byte_identical_to_reference": true,
+          "elapsed_seconds": 1.3473285079999187,
+          "equivalent_to": "bytes",
+          "identity_mul": false,
+          "input_kind": "module",
+          "mode": "bytes",
+          "numpy": "2.5.4",
+          "output_bytes": 1049080,
+          "output_sha256": "4f92c500f7ebfc4b808adc839d72b938deaf23642f83ebbe5fbe8b47889d78cc",
+          "peak_before_conversion_bytes": 207327232,
+          "peak_rss_bytes": 318468096,
+          "requested_mib": 1,
+          "run": 0,
+          "source_constant_bytes": 1048576,
+          "tico_source": "${CANDIDATE_REPO}/tico/__init__.py",
+          "torch": "2.13.0+cpu",
+          "validation": {
+            "buffer_payloads": [
+              null,
+              {
+                "bytes": 1048576,
+                "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+              }
+            ],
+            "max_absolute_error": 0.0,
+            "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+            "numerical_probes": 3,
+            "operator_count": 1,
+            "reference_numerical_parity": "passed",
+            "structural_verification": "passed"
+          }
+        },
+        {
+          "byte_identical_to_reference": true,
+          "elapsed_seconds": 1.3933022229998642,
+          "equivalent_to": "bytes",
+          "identity_mul": false,
+          "input_kind": "module",
+          "mode": "file",
+          "numpy": "2.5.4",
+          "output_bytes": 1049080,
+          "output_sha256": "4f92c500f7ebfc4b808adc839d72b938deaf23642f83ebbe5fbe8b47889d78cc",
+          "peak_before_conversion_bytes": 207458304,
+          "peak_rss_bytes": 322088960,
+          "requested_mib": 1,
+          "run": 0,
+          "source_constant_bytes": 1048576,
+          "tico_source": "${CANDIDATE_REPO}/tico/__init__.py",
+          "torch": "2.13.0+cpu",
+          "validation": {
+            "buffer_payloads": [
+              null,
+              {
+                "bytes": 1048576,
+                "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+              }
+            ],
+            "max_absolute_error": 0.0,
+            "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+            "numerical_probes": 3,
+            "operator_count": 1,
+            "reference_numerical_parity": "passed",
+            "structural_verification": "passed"
+          }
+        }
+      ],
+      "revisions": {
+        "current": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc"
+      },
+      "rss_scope": "fresh process high-water mark including imports and source weights",
+      "seed": 2026,
+      "setup_scope": "source module and probes prepared in each measured process before timing",
+      "tables": 1,
+      "threads": 1,
+      "time_scope": "conversion API and file save; excludes setup and validation",
+      "width": 16,
+      "working_tree_dirty": {
+        "current": false
+      }
+    },
+    "conversion-pt2": {
+      "comparisons": [
+        {
+          "baseline": "bytes",
+          "median_peak_rss_reduction_bytes": -3489792,
+          "median_peak_rss_reduction_percent": -1.1158697104239519,
+          "requested_mib": 1
+        }
+      ],
+      "flatbuffer_limit": null,
+      "identity_mul": false,
+      "input_kind": "pt2",
+      "optimization": "O1",
+      "platform": "linux",
+      "python": "3.12.14",
+      "results": [
+        {
+          "byte_identical_to_reference": true,
+          "elapsed_seconds": 1.212679160999869,
+          "equivalent_to": "bytes",
+          "fixture_parameters": {
+            "identity_mul": false,
+            "seed": 2026,
+            "size_mib": 1,
+            "tables": 1,
+            "width": 16
+          },
+          "identity_mul": false,
+          "input_artifact_bytes": 1055534,
+          "input_kind": "pt2",
+          "mode": "bytes",
+          "numpy": "2.5.4",
+          "output_bytes": 1049080,
+          "output_sha256": "4f92c500f7ebfc4b808adc839d72b938deaf23642f83ebbe5fbe8b47889d78cc",
+          "peak_before_conversion_bytes": 205230080,
+          "peak_rss_bytes": 312741888,
+          "requested_mib": 1,
+          "run": 0,
+          "source_constant_bytes": 1048576,
+          "tico_source": "${CANDIDATE_REPO}/tico/__init__.py",
+          "torch": "2.13.0+cpu",
+          "validation": {
+            "buffer_payloads": [
+              null,
+              {
+                "bytes": 1048576,
+                "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+              }
+            ],
+            "max_absolute_error": 0.0,
+            "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+            "numerical_probes": 3,
+            "operator_count": 1,
+            "reference_numerical_parity": "passed",
+            "structural_verification": "passed"
+          }
+        },
+        {
+          "byte_identical_to_reference": true,
+          "elapsed_seconds": 1.2036123269999734,
+          "equivalent_to": "bytes",
+          "fixture_parameters": {
+            "identity_mul": false,
+            "seed": 2026,
+            "size_mib": 1,
+            "tables": 1,
+            "width": 16
+          },
+          "identity_mul": false,
+          "input_artifact_bytes": 1055534,
+          "input_kind": "pt2",
+          "mode": "file",
+          "numpy": "2.5.4",
+          "output_bytes": 1049080,
+          "output_sha256": "4f92c500f7ebfc4b808adc839d72b938deaf23642f83ebbe5fbe8b47889d78cc",
+          "peak_before_conversion_bytes": 205348864,
+          "peak_rss_bytes": 316231680,
+          "requested_mib": 1,
+          "run": 0,
+          "source_constant_bytes": 1048576,
+          "tico_source": "${CANDIDATE_REPO}/tico/__init__.py",
+          "torch": "2.13.0+cpu",
+          "validation": {
+            "buffer_payloads": [
+              null,
+              {
+                "bytes": 1048576,
+                "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+              }
+            ],
+            "max_absolute_error": 0.0,
+            "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+            "numerical_probes": 3,
+            "operator_count": 1,
+            "reference_numerical_parity": "passed",
+            "structural_verification": "passed"
+          }
+        }
+      ],
+      "revisions": {
+        "current": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc"
+      },
+      "rss_scope": "fresh process high-water mark including imports and source weights",
+      "seed": 2026,
+      "setup_scope": "PT2 and probes prepared once per size in an unmeasured subprocess; measured API includes PT2 load and creates no source module",
+      "tables": 1,
+      "threads": 1,
+      "time_scope": "conversion API and file save; excludes setup and validation",
+      "width": 16,
+      "working_tree_dirty": {
+        "current": false
+      }
+    },
+    "circle-optimizer": {
+      "byte_identical": true,
+      "execution_reduction": 0.0,
+      "input": "${VALIDATION_ROOT}/wrapper-circle/llama_attention_decode/llama_attention_decode.q.circle",
+      "repeat": 1,
+      "restart": {
+        "changes": 0,
+        "executions": 12,
+        "maximum_seconds": 0.046067111999946064,
+        "mean_seconds": 0.046067111999946064,
+        "minimum_seconds": 0.046067111999946064,
+        "output_bytes": 15624,
+        "output_sha256": "2bf1c56842d1b6f45d6557584025d176bacd469a6b37d4a441fe5603c05ebf7d",
+        "strategy": "restart"
+      },
+      "speedup": 1.0293979584010666,
+      "until_no_change": {
+        "changes": 0,
+        "executions": 12,
+        "maximum_seconds": 0.044751508999979706,
+        "mean_seconds": 0.044751508999979706,
+        "minimum_seconds": 0.044751508999979706,
+        "output_bytes": 15624,
+        "output_sha256": "2bf1c56842d1b6f45d6557584025d176bacd469a6b37d4a441fe5603c05ebf7d",
+        "strategy": "until-no-change"
+      },
+      "warmup": 0
+    }
+  },
+  "runs": {
+    "evidence_path": "commands.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "limitations": [
+    "CPU reference/fake-quant semantics; no NPU integer/GPU execution",
+    "Full-size pretrained model quality and performance not evaluated",
+    "External HellaSwag/Hugging Face dataset access blocked by proxy403; actual evaluator used local synthetic4 rows",
+    "No public CLI-only sample-limit path claimed; bounded real evaluator injected by documented harness",
+    "Default model-loader full models, large threshold -p and >2GiB serialization not run"
+  ],
+  "failure_assessments": [
+    {
+      "run": "assistant-capacity16-circle-base",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/assistant-capacity16-circle-base.log",
+      "status": "FAIL",
+      "classification": "검증 harness import 경로 오류 (수정 후 real r2 실행)",
+      "evidence": "gemma-export-review/harness-errors.json",
+      "reason": "sibling observe module missing from sys.path; model/export not executed"
+    },
+    {
+      "run": "assistant-capacity16-circle-r2-base",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/assistant-capacity16-circle-r2-base.log",
+      "status": "FAIL",
+      "classification": "기존 strict numerical parity 차이",
+      "baseline": "valid capacity16 head/base actual input/Torch/Circle outputs exactly equal; save/structure/runtime/frozen PASS",
+      "evidence": "gemma-export-review/assistant-capacity16-comparison.json"
+    },
+    {
+      "run": "assistant-capacity16-circle-r2",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/assistant-capacity16-circle-r2.log",
+      "status": "FAIL",
+      "classification": "기존 strict numerical parity 차이",
+      "baseline": "valid capacity16 head/base actual input/Torch/Circle outputs exactly equal; save/structure/runtime/frozen PASS",
+      "evidence": "gemma-export-review/assistant-capacity16-comparison.json"
+    },
+    {
+      "run": "assistant-capacity16-circle",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/assistant-capacity16-circle.log",
+      "status": "FAIL",
+      "classification": "검증 harness import 경로 오류 (수정 후 real r2 실행)",
+      "evidence": "gemma-export-review/harness-errors.json",
+      "reason": "sibling observe module missing from sys.path; model/export not executed"
+    },
+    {
+      "run": "baseline-cpu-llama-16",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/baseline-cpu-llama-16.log",
+      "status": "FAIL",
+      "classification": "기존 strict Circle numerical parity 실패",
+      "baseline": "independent base fixtures reproduce same stages/errors, active grids and all numerical hashes",
+      "evidence": "baseline-cpu-comparison/REPORT.md"
+    },
+    {
+      "run": "baseline-cpu-qwen3_vl-16-connected",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/baseline-cpu-qwen3_vl-16-connected.log",
+      "status": "FAIL",
+      "classification": "기존 strict Circle numerical parity 실패",
+      "baseline": "independent base fixtures reproduce same stages/errors, active grids and all numerical hashes",
+      "evidence": "baseline-cpu-comparison/REPORT.md"
+    },
+    {
+      "run": "baseline-cpu-qwen3_vl-16",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/baseline-cpu-qwen3_vl-16.log",
+      "status": "FAIL",
+      "classification": "기존 strict Circle numerical parity 실패",
+      "baseline": "independent base fixtures reproduce same stages/errors, active grids and all numerical hashes",
+      "evidence": "baseline-cpu-comparison/REPORT.md"
+    },
+    {
+      "run": "baseline-cpu-qwen3_vl-32-connected",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/baseline-cpu-qwen3_vl-32-connected.log",
+      "status": "FAIL",
+      "classification": "기존 strict Circle numerical parity 실패",
+      "baseline": "independent base fixtures reproduce same stages/errors, active grids and all numerical hashes",
+      "evidence": "baseline-cpu-comparison/REPORT.md"
+    },
+    {
+      "run": "baseline-cpu-qwen3_vl-32",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/baseline-cpu-qwen3_vl-32.log",
+      "status": "FAIL",
+      "classification": "기존 strict Circle numerical parity 실패",
+      "baseline": "independent base fixtures reproduce same stages/errors, active grids and all numerical hashes",
+      "evidence": "baseline-cpu-comparison/REPORT.md"
+    },
+    {
+      "run": "cpu-validation",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/cpu-validation.log",
+      "status": "FAIL",
+      "classification": "기존 strict Circle numerical parity 실패",
+      "baseline": "independent base fixtures reproduce same stages/errors, active grids and all numerical hashes",
+      "evidence": "baseline-cpu-comparison/REPORT.md"
+    },
+    {
+      "run": "evaluation-cli-fp-mc",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/evaluation-cli-fp-mc.log",
+      "status": "FAIL",
+      "classification": "검증 harness 오류 (수정 후 실제 평가 PASS)",
+      "evidence": "evaluation/HARNESS_CORRECTIONS.md",
+      "reason": "FP tracing used frozen-only contract before any evaluation"
+    },
+    {
+      "run": "evaluation-cli-fp-ppl",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/evaluation-cli-fp-ppl.log",
+      "status": "FAIL",
+      "classification": "검증 harness 오류 (수정 후 실제 평가 PASS)",
+      "evidence": "evaluation/HARNESS_CORRECTIONS.md",
+      "reason": "FP tracing used frozen-only contract before any evaluation"
+    },
+    {
+      "run": "external-benchmark-access",
+      "original_exit_code": 56,
+      "log": "${VALIDATION_ROOT}/logs/external-benchmark-access.log",
+      "status": "BLOCKED",
+      "classification": "환경 네트워크 제약",
+      "reason": "Hugging Face proxy CONNECT403; exit56",
+      "baseline": "shared same environment; not PR-specific"
+    },
+    {
+      "run": "wrapper-baseline-encoded-replay",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-encoded-replay.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-equivalent-encoded-replay",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-equivalent-encoded-replay.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-equivalent-qwen3_vl_for_conditional_generation",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-equivalent-qwen3_vl_for_conditional_generation.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_for_conditional_generation",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-equivalent-qwen3_vl_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-equivalent-qwen3_vl_model.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_model",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-equivalent-qwen3_vl_vision_attention",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-equivalent-qwen3_vl_vision_attention.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_assistant_core",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_assistant_core.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "gemma4_assistant_core",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-gemma4_for_causal_lm",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_for_causal_lm.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "gemma4_for_causal_lm",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-gemma4_for_conditional_generation",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_for_conditional_generation.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "gemma4_for_conditional_generation",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-gemma4_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_model.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_text_attention_k_eq_v_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_text_attention_k_eq_v_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_text_attention_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_text_attention_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_vision_attention",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_vision_attention.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_vision_encoder",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_vision_encoder.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_vision_encoder_layer",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_vision_encoder_layer.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_vision_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_vision_model.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-gemma4_vision_patch_embedder",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-gemma4_vision_patch_embedder.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-llama_attention_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-llama_attention_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-llama_decoder_layer_decode",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-llama_decoder_layer_decode.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-llama_decoder_layer_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-llama_decoder_layer_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-nn_tied_embedding",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-nn_tied_embedding.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_for_conditional_generation",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_for_conditional_generation.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_for_conditional_generation",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_model.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_model",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_text_attention_decode",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_text_attention_decode.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_text_attention_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_text_attention_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_text_decoder_layer_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_text_decoder_layer_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_text_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_text_model.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_text_model",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_vision_attention",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_vision_attention.log",
+      "status": "FAIL",
+      "classification": "기존 baseline HF positional fixture 오류; equivalent inputs 비교 별도",
+      "evidence": "wrapper-harness/equivalent-revision-comparison.json"
+    },
+    {
+      "run": "wrapper-baseline-qwen3_vl_vision_block",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-qwen3_vl_vision_block.log",
+      "status": "FAIL",
+      "classification": "기존 baseline HF positional fixture 오류; equivalent inputs 비교 별도",
+      "evidence": "wrapper-harness/equivalent-revision-comparison.json"
+    },
+    {
+      "run": "wrapper-circle-encoded-replay",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-encoded-replay.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_assistant_core",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_assistant_core.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "gemma4_assistant_core",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-circle-gemma4_for_causal_lm",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_for_causal_lm.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "gemma4_for_causal_lm",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-circle-gemma4_for_conditional_generation",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_for_conditional_generation.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "gemma4_for_conditional_generation",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-circle-gemma4_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_model.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_text_attention_k_eq_v_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_text_attention_k_eq_v_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_text_attention_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_text_attention_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_vision_attention",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_vision_attention.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_vision_encoder",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_vision_encoder.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_vision_encoder_layer",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_vision_encoder_layer.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_vision_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_vision_model.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-gemma4_vision_patch_embedder",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_vision_patch_embedder.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-llama_attention_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-llama_attention_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-llama_decoder_layer_decode",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-llama_decoder_layer_decode.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-llama_decoder_layer_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-llama_decoder_layer_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-nn_tied_embedding",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-nn_tied_embedding.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_for_conditional_generation",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_for_conditional_generation.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_for_conditional_generation",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_model.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_model",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_text_attention_decode",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_text_attention_decode.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_text_attention_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_text_attention_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_text_decoder_layer_prefill",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_text_decoder_layer_prefill.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_text_model",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_text_model.log",
+      "status": "FAIL",
+      "classification": "기존 generic smoke export fixture/ABI 구성 오류",
+      "case": "qwen3_vl_text_model",
+      "evidence": "wrapper-harness/WRAPPER_REPORT.md",
+      "baseline": "original failures retained; Qwen corrected equivalent inputs reproduce same final failure; Gemma earlier guard difference explained by same invalid ABI"
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_vision_attention",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_vision_attention.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    },
+    {
+      "run": "wrapper-circle-qwen3_vl_vision_block",
+      "original_exit_code": 1,
+      "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_vision_block.log",
+      "status": "FAIL",
+      "classification": "기존 saved-Circle strict numerical parity 실패 (원본 harness false positive 별도 보완)",
+      "baseline": "all17 comparable numerical failures identical in independent base input/Torch/Circle hashes",
+      "evidence": "wrapper-harness/FINAL_RESULTS.json",
+      "notes": "Gemma model initial dict binder error fixed in supplemental replay; Gemma vision whole-topology fingerprint difference is allowed profile creation, existing observer/grid mutation0."
+    }
+  ],
+  "validation_complete": true,
+  "overall_status": "INCOMPLETE",
+  "conclusion_ko": "필수 Circle strict 수치 검증이 통과하지 않아 머지 판단이 불완전함. 확인된 수치 실패는 최신 base에서도 동일하게 재현; 새 PR 회귀 증거 없음.",
+  "new_pr_regressions_demonstrated": 0,
+  "wrapper_final": {
+    "status": "FAIL",
+    "assessment": "All17 saved-file strict parity failures reproduced on independent baseline inputs/outputs, including corrected Qwen fixture. Six original generic export fixture failures are separately diagnosed. No candidate-only numerical regression found in this wrapper scope.",
+    "numerical": {
+      "registered": 50,
+      "executed": 50,
+      "passed": 50,
+      "failed": 0,
+      "skipped": 0,
+      "elapsed_seconds": 10.674,
+      "log": "logs/wrapper-numerical-all.log",
+      "summary": "wrapper-smoke/summary.json"
+    },
+    "original_export": {
+      "registered": 50,
+      "supported_attempted": 48,
+      "intentional_excluded": 2,
+      "inspector_pass": 42,
+      "inspector_fail": 6,
+      "saved_pass": 42,
+      "structural_pass": 42,
+      "runtime_pass": 41,
+      "runtime_harness_binding_error": 1,
+      "no_artifact": 6,
+      "strict_raw_parity_pass": 25,
+      "strict_raw_parity_fail": 16,
+      "strict_raw_parity_binding_incomplete": 1,
+      "frozen_full_hash_pass": 47,
+      "frozen_full_hash_profile_topology_difference": 1,
+      "source_existing_observer_or_weight_mutations": 0,
+      "elapsed_seconds": 452.337
+    },
+    "supplemental_saved_replay": {
+      "runtime_executed": 42,
+      "all_runtime_modes": "fake_quantize",
+      "strict_encoded_parity_pass": 25,
+      "strict_encoded_parity_fail": 17,
+      "no_artifact_not_replayable": 6,
+      "frozen_source_unchanged": 42,
+      "raw_failed_original_input_and_torch_output_hash_exactly_reproduced": 16,
+      "original_raw_results_preserved": true,
+      "dict_binding_supplement": "Exact signature-derived nested names required to equal serialized input ABI names; original production binder error preserved."
+    },
+    "baseline": {
+      "independent_original_case_runs": 26,
+      "original_pass": 3,
+      "original_fail": 23,
+      "elapsed_seconds": 211.419,
+      "equivalent_fixture_runs": 3,
+      "equivalent_elapsed_seconds": 21.357,
+      "comparable_saved_pairs": 20,
+      "comparable_pass_pairs": 3,
+      "comparable_strict_parity_failure_pairs": 17,
+      "all_comparable_raw_input_raw_torch_encoded_torch_encoded_circle_hashes_identical": true,
+      "new_checkpoint_fed_to_base": false,
+      "evidence": [
+        "wrapper-harness/encoded-revision-comparison.json",
+        "wrapper-harness/equivalent-revision-comparison.json",
+        "wrapper-harness/revision-comparison.json"
+      ]
+    },
+    "artifacts": {
+      "report": "wrapper-harness/WRAPPER_REPORT.md",
+      "registry": "wrapper-harness/registry.json",
+      "original_case_records": "wrapper-harness/export-summary.json",
+      "encoded_case_records": "wrapper-harness/wrapper-circle-encoded-replay/summary.json",
+      "baseline_case_records": "wrapper-harness/baseline-summary.json",
+      "equivalent_case_records": "wrapper-harness/qwen-equivalence-results.json",
+      "source_topology_diagnostic": "gemma4-topology-diagnostic.json",
+      "gemma_core_failures": "gemma-export-review/REPORT.md"
+    },
+    "limits": [
+      "Tiny synthetic inputs and random initialized real model modules; not pretrained quality benchmark.",
+      "FAKE_QUANTIZE CPU semantic reference, not integer NPU execution.",
+      "The extra corrected assistant profile is owned/reported by gemma_export_review and excluded from original counts."
+    ]
+  },
+  "cpu_candidate_audit": {
+    "evidence_path": "cpu-candidate-audit.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "baseline_cpu_comparison": {
+    "evidence_path": "baseline-cpu-comparison/comparison.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "baseline_cpu_observer_differences": {
+    "evidence_path": "baseline-cpu-comparison/observer-differences.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "gemma_export_review": {
+    "evidence_path": "gemma-export-review/summary.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "assistant_supplement": {
+    "evidence_path": "gemma-export-review/assistant-complete.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "assistant_comparison": {
+    "evidence_path": "gemma-export-review/assistant-capacity16-comparison.json",
+    "packaging_note": "See separately preserved result to avoid duplicate embedded evidence."
+  },
+  "final_environment": {
+    "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+    "source": {
+      "head": {
+        "cwd": "${CANDIDATE_REPO}",
+        "sha": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+        "tree": "c81b5f254023b21bb76f1f6d04405b5c7d3f54b2",
+        "porcelain": ""
+      },
+      "base": {
+        "cwd": "${BASELINE_REPO}",
+        "sha": "261bda28ec55fdac42f59346c950326e4065f8fa",
+        "tree": "1fc78940834264217b10ea370543e26ec033f129",
+        "porcelain": ""
+      }
+    },
+    "versions": {
+      "torch": "2.13.0+cpu",
+      "torchvision": "0.28.0+cpu",
+      "transformers": "5.18.0",
+      "datasets": "5.0.1",
+      "lm-eval": "0.4.13",
+      "accelerate": "1.15.0",
+      "peft": "0.21.2",
+      "circle-schema": "0.10.1",
+      "flatbuffers": "25.12.19"
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "artifact_manifest_path": "ARTIFACT_MANIFEST.json",
+  "frozen_contract_assessment": {
+    "status": "PASS",
+    "source_existing_observer_weight_mutations": 0,
+    "allowed_profile_materialization": "Gemma vision adds six independent profile observers; all existing source grids/weights/modes identical. See gemma4-topology-diagnostic.json",
+    "baseline_policy": "Independent per-revision fixture; active grids equal; inactive/schema inventory differences explicitly retained, no checkpoint migration."
+  },
+  "packaging": {
+    "original_results_sha256": "db69d8dfd1b11817f2079fbdb5f5c5e17925a2babb437ed68879ad714f495c74",
+    "full_original_results_bytes": 9859939,
+    "note": "Report projection: duplicate nested evidence replaced with explicit relative references; original local evidence remains unchanged."
+  }
+}

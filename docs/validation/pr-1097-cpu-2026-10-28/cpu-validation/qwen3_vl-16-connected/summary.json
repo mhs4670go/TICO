@@ -1,0 +1,438 @@
+{
+  "cache_source": "actual saved Circle image-conditioned prefill and connected decode deltas",
+  "capacity": 16,
+  "checkpoint_sha256": "cecec54d668a156a8d3dec99b200058b42f73ca89f9963e628674dc82b6d9bf1",
+  "connected_valid_lengths": [
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "frozen_state_preserved": true,
+  "full_cache_rejection": "Static cache has no room for the requested current token.",
+  "local_torch_circle_parity": false,
+  "past_buffer_slots": 15,
+  "prefill_valid_length": 12,
+  "stages": [
+    {
+      "evidence": "call-000.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 2,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "vision_prefill_t1_h2_w2.q.circle",
+      "structured_inputs": "call-000.inputs.pt"
+    },
+    {
+      "evidence": "call-001.npz",
+      "input_count": 2,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 1.1584488674998283e-06,
+          "ok": true
+        }
+      ],
+      "stage": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+      "structured_inputs": "call-001.inputs.pt"
+    },
+    {
+      "evidence": "call-002.npz",
+      "input_count": 4,
+      "mode": "fake_quantize",
+      "ok": false,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 4.595518112182617e-05,
+          "ok": false
+        },
+        {
+          "max_abs_error": 0.0020814836025238037,
+          "ok": false
+        },
+        {
+          "max_abs_error": 1.856684684753418e-05,
+          "ok": false
+        }
+      ],
+      "stage": "decoder_layer_prefill_0.q.circle",
+      "structured_inputs": "call-002.inputs.pt"
+    },
+    {
+      "evidence": "call-003.npz",
+      "input_count": 2,
+      "mode": "native",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "deepstack_fusion_0_t1_h2_w2.q.circle",
+      "structured_inputs": "call-003.inputs.pt"
+    },
+    {
+      "evidence": "call-004.npz",
+      "input_count": 4,
+      "mode": "fake_quantize",
+      "ok": false,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 1.1492520570755005e-05,
+          "ok": false
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 1.7896294593811035e-05,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_prefill_1.q.circle",
+      "structured_inputs": "call-004.inputs.pt"
+    },
+    {
+      "evidence": "call-005.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "lm_head.q.circle",
+      "structured_inputs": "call-005.inputs.pt"
+    },
+    {
+      "evidence": "call-006.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 1.139240339398384e-06,
+          "ok": true
+        }
+      ],
+      "stage": "token_embedding.q.circle",
+      "structured_inputs": "call-006.inputs.pt"
+    },
+    {
+      "evidence": "call-007.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_0.q.circle",
+      "structured_inputs": "call-007.inputs.pt"
+    },
+    {
+      "evidence": "call-008.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_1.q.circle",
+      "structured_inputs": "call-008.inputs.pt"
+    },
+    {
+      "evidence": "call-009.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "lm_head.q.circle",
+      "structured_inputs": "call-009.inputs.pt"
+    },
+    {
+      "evidence": "call-010.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 1.1548399925231934e-06,
+          "ok": true
+        }
+      ],
+      "stage": "token_embedding.q.circle",
+      "structured_inputs": "call-010.inputs.pt"
+    },
+    {
+      "evidence": "call-011.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_0.q.circle",
+      "structured_inputs": "call-011.inputs.pt"
+    },
+    {
+      "evidence": "call-012.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 3.831461071968079e-06,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_1.q.circle",
+      "structured_inputs": "call-012.inputs.pt"
+    },
+    {
+      "evidence": "call-013.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": false,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 1.710653305053711e-05,
+          "ok": false
+        }
+      ],
+      "stage": "lm_head.q.circle",
+      "structured_inputs": "call-013.inputs.pt"
+    },
+    {
+      "evidence": "call-014.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 1.1238735169172287e-06,
+          "ok": true
+        }
+      ],
+      "stage": "token_embedding.q.circle",
+      "structured_inputs": "call-014.inputs.pt"
+    },
+    {
+      "evidence": "call-015.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 6.564892828464508e-06,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_0.q.circle",
+      "structured_inputs": "call-015.inputs.pt"
+    },
+    {
+      "evidence": "call-016.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_1.q.circle",
+      "structured_inputs": "call-016.inputs.pt"
+    },
+    {
+      "evidence": "call-017.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "lm_head.q.circle",
+      "structured_inputs": "call-017.inputs.pt"
+    },
+    {
+      "evidence": "call-018.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 1.1343508958816528e-06,
+          "ok": true
+        }
+      ],
+      "stage": "token_embedding.q.circle",
+      "structured_inputs": "call-018.inputs.pt"
+    },
+    {
+      "evidence": "call-019.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_0.q.circle",
+      "structured_inputs": "call-019.inputs.pt"
+    },
+    {
+      "evidence": "call-020.npz",
+      "input_count": 6,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 3,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        },
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "decoder_layer_decode_1.q.circle",
+      "structured_inputs": "call-020.inputs.pt"
+    },
+    {
+      "evidence": "call-021.npz",
+      "input_count": 1,
+      "mode": "fake_quantize",
+      "ok": true,
+      "output_count": 1,
+      "outputs": [
+        {
+          "max_abs_error": 0.0,
+          "ok": true
+        }
+      ],
+      "stage": "lm_head.q.circle",
+      "structured_inputs": "call-021.inputs.pt"
+    }
+  ],
+  "status": "FAIL",
+  "strict_tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  }
+}

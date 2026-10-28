@@ -1,0 +1,29 @@
+{
+  "artifacts": {},
+  "case": "qwen3_vl_text_model",
+  "failures": [
+    "EXPORT"
+  ],
+  "messages": [
+    "Circle export failed: Observed exception\n  Explanation: Dynamo found no exception handler at the top-level compiled function when encountering an exception. Exception will propagate outside the compiled region.\n  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance(\"force_eager\")`. \n  Hint: It may be possible to write Dynamo tracing rules for this code. Please report an issue to PyTorch if you encounter this graph break often and it is causing performance issues.\n\n  Developer debug context: raised exception ValueError('Prepare fixed Qwen3-VL text inputs with prepared_static_export(model, max_seq_len) before full-model export. Per-layer export instead requires explicit host mask and RoPE tensors.')\n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0088.html\n\nfrom user code:\n   File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/functional_export.py\", line 232, in forward\n    res = self._export_root(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 46, in forward\n    return self.wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/qwen_vl/quant_text_model.py\", line 564, in forward\n    raise ValueError(\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+  ],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      8,
+      64
+    ],
+    "max_abs_diff": 0.405553936958313,
+    "mean_abs_diff": 0.06515797972679138,
+    "peir": 0.06938667829490724,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      8,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": false
+}

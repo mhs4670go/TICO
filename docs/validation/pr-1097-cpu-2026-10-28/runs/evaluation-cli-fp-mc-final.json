@@ -1,0 +1,34 @@
+{
+  "name": "evaluation-cli-fp-mc-final",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/evaluation/invoke_cli.py",
+    "--label",
+    "fp-mc-final",
+    "--",
+    "--config",
+    "${VALIDATION_ROOT}/evaluation/config.yaml",
+    "--device",
+    "cpu",
+    "--tasks",
+    "lm_eval",
+    "--output-dir",
+    "${VALIDATION_ROOT}/evaluation/fp-mc-final/protocol",
+    "--no-progress"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:18:21Z",
+  "log": "${VALIDATION_ROOT}/logs/evaluation-cli-fp-mc-final.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 13.257
+}

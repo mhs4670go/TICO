@@ -1,0 +1,14 @@
+"""Hypothesis experiment only; official runtime/tolerance/results never changed."""
+import pathlib,json,numpy as np
+from tico.circle.runtime import CircleReferenceRuntime,ExecutionMode
+from tico.circle.runtime import quantization as q
+root=pathlib.Path(__file__).parent
+records=[]
+for case in ['nn_tied_embedding','llama_attention_prefill','llama_decoder_layer_prefill','llama_decoder_layer_decode','qwen3_vl_text_attention_prefill','qwen3_vl_text_attention_decode']:
+ p=root/'wrapper-circle'/case;info=json.loads((p/'artifact-checks.json').read_text());a=np.load(p/'parity-arrays.npz');r=CircleReferenceRuntime(pathlib.Path(info['artifact']).read_bytes());ins=[a[f'input_{i}'] for i in range(len(r.program.inputs))]
+ original=q.round_half_away_from_zero;q.round_half_away_from_zero=np.rint
+ try:actual=r.run(ins,mode=ExecutionMode.FAKE_QUANTIZE).outputs
+ finally:q.round_half_away_from_zero=original
+ records.append({'case':case,'original_max_abs_errors':[c['max_abs_error'] for c in info['comparisons']],'diagnostic_bankers_rounding_max_abs_errors':[float(np.abs(a[f'torch_{i}']-v).max()) for i,v in enumerate(actual)]})
+proof={'diagnostic_only':True,'hypothesis':'Ties-away vs ties-even alone explains mismatch','outcome':'REJECTED: changing rounding policy alone produced exactly the same output errors in all6 cases','official_runtime_results_unchanged':True,'records':records}
+(root/'parity-rounding-diagnostic.json').write_text(json.dumps(proof,indent=2));print(json.dumps(proof,indent=2))

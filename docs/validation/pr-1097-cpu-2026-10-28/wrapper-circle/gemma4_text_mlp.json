@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_text_mlp/gemma4_text_mlp.q.circle"
+  },
+  "case": "gemma4_text_mlp",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      8,
+      64
+    ],
+    "max_abs_diff": 0.017069071531295776,
+    "mean_abs_diff": 0.0033173062838613987,
+    "peir": 0.021937806716502004,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      8,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

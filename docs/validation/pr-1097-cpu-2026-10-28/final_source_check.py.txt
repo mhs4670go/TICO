@@ -1,0 +1,12 @@
+import json,subprocess,pathlib,tico,sys,importlib.metadata as m,os
+r=pathlib.Path(__file__).parent
+out={'tico_file':tico.__file__,'source':{},'versions':{n:m.version(n) for n in ['torch','torchvision','transformers','datasets','lm-eval','accelerate','peft','circle-schema','flatbuffers']},'python':sys.version}
+for name,path,sha in [('head','${CANDIDATE_REPO}','9f631d6651ce3780e3a8e054ab02910b9bd40fdc'),('base','${BASELINE_REPO}','261bda28ec55fdac42f59346c950326e4065f8fa')]:
+ def git(*args):return subprocess.check_output(['git',*args],cwd=path,text=True).strip()
+ out['source'][name]={'cwd':path,'sha':git('rev-parse','HEAD'),'tree':git('rev-parse','HEAD^{tree}'),'porcelain':git('status','--porcelain=v1')}
+ assert out['source'][name]['sha']==sha
+ assert not out['source'][name]['porcelain']
+ subprocess.run(['git','diff','--exit-code'],cwd=path,check=True)
+assert '${CANDIDATE_REPO}/tico/' in tico.__file__
+(r/'final-source-environment.json').write_text(json.dumps(out,indent=2))
+print(json.dumps(out,indent=2))

@@ -1,0 +1,352 @@
+[
+  {
+    "name": "nn_linear",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "nn_conv3d",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "nn_conv3d_special_case",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "nn_layernorm",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "nn_tied_embedding",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "llama_mlp",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "llama_attention_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "llama_attention_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "llama_decoder_layer_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "llama_decoder_layer_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_text_attention_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_text_attention_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_text_mlp",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_text_decoder_layer_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_text_decoder_layer_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_text_model",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_vision_attention",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_vision_mlp",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_vision_block",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_vision_patch_embed",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_vision_patch_merger",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_vision_model",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_model",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "qwen3_vl_for_conditional_generation",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_mlp",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_sliding_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_sliding_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_k_eq_v_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_shared_kv_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_attention_shared_kv_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_decoder_layer_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_decoder_layer_sliding_prefill",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_decoder_layer_decode",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_decoder_layer_shared_kv",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_scaled_word_embedding",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_vision_patch_embedder",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_text_model",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": false,
+    "circle_export_unsupported_reason": "This case validates PTQ numerical parity only. Full Gemma4TextModel Circle export requires a dedicated static adapter."
+  },
+  {
+    "name": "gemma4_vision_attention",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_vision_encoder_layer",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_vision_pooler",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_vision_model",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_multimodal_embedder",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_vision_encoder",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_model",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_for_conditional_generation",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_for_causal_lm",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_assistant_core",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": true,
+    "circle_export_unsupported_reason": null
+  },
+  {
+    "name": "gemma4_assistant_sparse_head",
+    "available": true,
+    "availability_reason": null,
+    "supports_circle_export": false,
+    "circle_export_unsupported_reason": "The ordered sparse head runs on the host: dynamic top-k, token-ordering gathers, and the full-vocabulary scatter are intentionally excluded from the NPU core graph."
+  }
+]

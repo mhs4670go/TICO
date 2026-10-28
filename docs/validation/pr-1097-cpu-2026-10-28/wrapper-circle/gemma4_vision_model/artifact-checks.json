@@ -1,0 +1,2406 @@
+{
+  "case": "gemma4_vision_model",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "gemma4_vision_model",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_model",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_model.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "FAIL",
+  "semantic_contract": {
+    "weights": {
+      "wrapped.module.patch_embedder.position_embedding_table": {
+        "shape": [
+          2,
+          10240,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "7e8b067095f4ec928d7134b0e5017d214a3ccdb2220b436091276ffbde560561"
+      },
+      "wrapped.module.patch_embedder.input_proj.weight": {
+        "shape": [
+          32,
+          768
+        ],
+        "dtype": "float32",
+        "sha256": "e9497d8c3ad69832097d578d9d3d7eebba51f8f4b65335db40003e8b99fbfeb2"
+      },
+      "wrapped.module.encoder.layers.0.self_attn.q_proj.linear.weight": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "46eea88a54b0dab27a1f243214b30f949a439d692f589dbe282f50d487c19b9c"
+      },
+      "wrapped.module.encoder.layers.0.self_attn.k_proj.linear.weight": {
+        "shape": [
+          16,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "74bbc62af11f8bbf81d83a8b0d028af0ec4a488ed6432216317311d4f15de6c6"
+      },
+      "wrapped.module.encoder.layers.0.self_attn.v_proj.linear.weight": {
+        "shape": [
+          16,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "8b7be5ae0de58e73f395a9ccb91753cbe2b2704dc391d29b444f10d033f5aa1e"
+      },
+      "wrapped.module.encoder.layers.0.self_attn.o_proj.linear.weight": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "9901c9d4e810a2fa682e32ab02e80e00c3935eaa976c42dd6bcd3b784db41e5d"
+      },
+      "wrapped.module.encoder.layers.0.self_attn.q_norm.weight": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "sha256": "4f05df05f8da9356bd66425351f166a5f7305b7c805e6900d9ec0f50790c9886"
+      },
+      "wrapped.module.encoder.layers.0.self_attn.k_norm.weight": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "sha256": "4f05df05f8da9356bd66425351f166a5f7305b7c805e6900d9ec0f50790c9886"
+      },
+      "wrapped.module.encoder.layers.0.mlp.gate_proj.linear.weight": {
+        "shape": [
+          64,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "be7e4c4bf85bb73d195ac941fba90bfee1dca284fd3d2a30a09e5b68e4635c40"
+      },
+      "wrapped.module.encoder.layers.0.mlp.up_proj.linear.weight": {
+        "shape": [
+          64,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "605c674360ca652217c0c8e8d2aa0f556e2418511851a0f45bda66f88b7d7f0c"
+      },
+      "wrapped.module.encoder.layers.0.mlp.down_proj.linear.weight": {
+        "shape": [
+          32,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "07b4938b61283fec8e5f34fcd242e3f37e55add3712fa0f9dfd94cc1c5b43111"
+      },
+      "wrapped.module.encoder.layers.0.input_layernorm.weight": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "b638277a8690e175a9137feff1e43c067f9faf4e2f600caf468fb05b0403b717"
+      },
+      "wrapped.module.encoder.layers.0.post_attention_layernorm.weight": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "b638277a8690e175a9137feff1e43c067f9faf4e2f600caf468fb05b0403b717"
+      },
+      "wrapped.module.encoder.layers.0.pre_feedforward_layernorm.weight": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "b638277a8690e175a9137feff1e43c067f9faf4e2f600caf468fb05b0403b717"
+      },
+      "wrapped.module.encoder.layers.0.post_feedforward_layernorm.weight": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "b638277a8690e175a9137feff1e43c067f9faf4e2f600caf468fb05b0403b717"
+      },
+      "wrapped.patch_embedder.wrapped.input_proj.wrapped.module.weight": {
+        "shape": [
+          32,
+          768
+        ],
+        "dtype": "float32",
+        "sha256": "97f83a64180fbbd16a873e187cdf5d3a5258fe5b23c83a9e1a0a9f14b34859db"
+      },
+      "wrapped.patch_embedder.wrapped.input_proj.wrapped.module.bias": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "3fc54a1c7e577cba608d8e33a38b0c15441620a22164d5e294a6e713a54ce431"
+      }
+    },
+    "observer_grids": {
+      "wrapped.patch_embedder.wrapped.input_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "8c663696042cc579b959ff9e80edf798ff3e207685628c8418462de39e7e690c"
+        },
+        "_cached_zp": {
+          "shape": [
+            32
+          ],
+          "dtype": "int32",
+          "sha256": "9406ce6f486c121ed45379d2d29a526e7e8d479d6dab81c471cacc768171109c"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.input_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "c578093749f2c5779da7368c2a6ff4f1b81a90d47fa535a02533e33d2adff286"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "dd5e8ff17033e3d207902e855fc1f6d5ff1b0b34c5edfb94234d9e86078aca5a"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.input_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d3abe4bed329d62092c79b67a46425d0f0dbb498964dd09bef5516946ab7564"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "88984d5296621df42a642877e38a4b79a37ada684b2d36b1881903f25c4f8ebe"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.obs_emb_table": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "c578093749f2c5779da7368c2a6ff4f1b81a90d47fa535a02533e33d2adff286"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "dd5e8ff17033e3d207902e855fc1f6d5ff1b0b34c5edfb94234d9e86078aca5a"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.obs_hidden_states": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d3abe4bed329d62092c79b67a46425d0f0dbb498964dd09bef5516946ab7564"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "88984d5296621df42a642877e38a4b79a37ada684b2d36b1881903f25c4f8ebe"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.obs_position_embeddings": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d88c86f15bbea365d658ad95a81d45367c465f7af6f7264fb077f01747ddc77d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.patch_embedder.wrapped.obs_output": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d3abe4bed329d62092c79b67a46425d0f0dbb498964dd09bef5516946ab7564"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "5bb10a0ea4aab835b063f9406d8c27a850b80ee5042841828f83e40bbea74f1d"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "6dc4668b3d195ec1641828ba50f34b592182f70d561d15f5a3a2c8c5a07ded56"
+        },
+        "_cached_zp": {
+          "shape": [
+            32
+          ],
+          "dtype": "int32",
+          "sha256": "9fc77a623913f65b3ee7e4e7879461e1185fbf9b4c12de70db169bd4241742a0"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9a33a6ea07d39dbea1b77df5b772a5b79e5725a20b618680b13daa91eef3432f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "3fbf037cb6bcb6178ea17e51a1766736cbcb464e4bc6991e76c0961d313c9446"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "48d118165f3fe4445155be0d6b9fe02070deac29e3bc3fcc0138bebd2a5d837a"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8b72557f3c9722e86e9dba3e4bd7184aabe282c7171a3b5da44a5a943a1423d5"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            16
+          ],
+          "dtype": "float32",
+          "sha256": "de7c2dbf6fcb25e3c4e8bf4fe71597c032f6ebb65d215f2821264d5e4c181aaa"
+        },
+        "_cached_zp": {
+          "shape": [
+            16
+          ],
+          "dtype": "int32",
+          "sha256": "12013d2af6807e2fb8897cf355a2f9dc020b39803933bd863dbe31db1bdb4a9e"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9a33a6ea07d39dbea1b77df5b772a5b79e5725a20b618680b13daa91eef3432f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "3fbf037cb6bcb6178ea17e51a1766736cbcb464e4bc6991e76c0961d313c9446"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a517cdf6e6f2e2cb869bc3ff90a6f9ab44edcbfa44da65099c697c23a29fc9fc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8b72557f3c9722e86e9dba3e4bd7184aabe282c7171a3b5da44a5a943a1423d5"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            16
+          ],
+          "dtype": "float32",
+          "sha256": "ad3ef9f5735b7fd4b8d6cc88e071fdc61fd27d81934e99ba41d64fac01351d3a"
+        },
+        "_cached_zp": {
+          "shape": [
+            16
+          ],
+          "dtype": "int32",
+          "sha256": "7ec8d4d27fe8534bc2633830bd7a017eeb30eb2c3fc22a7281bff94a67d1ffa9"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9a33a6ea07d39dbea1b77df5b772a5b79e5725a20b618680b13daa91eef3432f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "3fbf037cb6bcb6178ea17e51a1766736cbcb464e4bc6991e76c0961d313c9446"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e17f3dc32ba78f7256f91c79b6f49995b49d510aff327bf14c6651756a565b7e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "895d79e3e0fc9b5679aed8ae35e529676b9a4ef6802c1423dfea6ab30c6faa7f"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "4e6a274b5d02bb40832e848e8e6bf112e021679817d843f3b15d22a25cb0f78c"
+        },
+        "_cached_zp": {
+          "shape": [
+            32
+          ],
+          "dtype": "int32",
+          "sha256": "a493584aa6c8ba426c6b7bfea12abe1fcf5d2330ecaf5b87332317e4d5ffe211"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "7d1cf5ea470643bd1f4beefcb77371541568502b6b7d71950022f17fa03e4784"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8a9e71105def7a2a1f68eaf26d8ab6687463d8e27ca3d3eed8c6f91a8b1261df"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "c79bb18d2d495f7bd36e50469a36449338f016ee96d66cbccde9ea332bcd2135"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a5dcf5b8418dfafec16079148ec90cf81dfc6276c1cce220017c782ecb7d7aea"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "48d118165f3fe4445155be0d6b9fe02070deac29e3bc3fcc0138bebd2a5d837a"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8b72557f3c9722e86e9dba3e4bd7184aabe282c7171a3b5da44a5a943a1423d5"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "aefa478e34a2471fb4cb0e022dff3265fb7a0c388ec5ce7abee2ba7de3c94076"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "775be457774803ff0221f0d18f407c9718a2f4c635445a691f6061bd5d651581"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a517cdf6e6f2e2cb869bc3ff90a6f9ab44edcbfa44da65099c697c23a29fc9fc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8b72557f3c9722e86e9dba3e4bd7184aabe282c7171a3b5da44a5a943a1423d5"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b93e46fd285d6f64ea3e6b1195ca1c6b9e9e12062a4f1aa51d1702e589045a49"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c7a63b0847b8493deba5cdaec17040b2d20c5b8b3056f00db390a2fd2c221012"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e17f3dc32ba78f7256f91c79b6f49995b49d510aff327bf14c6651756a565b7e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "895d79e3e0fc9b5679aed8ae35e529676b9a4ef6802c1423dfea6ab30c6faa7f"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5d16c886347eefd4c0d807ac98bf7101384ea2e994ccb3394795446c7825ea44"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c8b61e850892b75fa72f120a6bf36ae02a0ba97e1aae65abac4c97c94956d9de"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9a33a6ea07d39dbea1b77df5b772a5b79e5725a20b618680b13daa91eef3432f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "3fbf037cb6bcb6178ea17e51a1766736cbcb464e4bc6991e76c0961d313c9446"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a4fd6536675cfba982994fa62a13f3ed70c907f164caf6d5d1779ccf1c48f31e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fb055a91001f08dd942e3b50246a992c76ecedafbb452f17ff833ff2a6f52dff"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c8b61e850892b75fa72f120a6bf36ae02a0ba97e1aae65abac4c97c94956d9de"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x1": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fab9eb84c3c98f1965131860a9bc54e776014d176d5f06585b85e6294feb9812"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "775be457774803ff0221f0d18f407c9718a2f4c635445a691f6061bd5d651581"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x2": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fb6bcc511c701e8faebe50f412e8810b2146d06a2725993fa4a72749bae0890d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a508aba2f9ecb586e66af72ad7ae18a1b38f8a5bd61e5ca3022abcdd081c0531"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_neg": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fb6bcc511c701e8faebe50f412e8810b2146d06a2725993fa4a72749bae0890d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a89f4d51a46398cd4521b9587e4e3cd890599a3c1b87849b9a80b69a6abc3594"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "7992866d47389f034861bb957a0f6ede55fca3e4bcd721c56b58cea1fef321d4"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x1": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f83de3f906f6da21de5b4fb68520bd23dd4459dc89a6821f27110fbf1bddeb4e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "191949ff18d4ffd269d06c4b0bcd641257c885d3ea94c7556134740595c2d3fc"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d6d108f35c60f73b34009d17df118e15a575b89c6550c6e97b8a194c5968b831"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_neg": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d6d108f35c60f73b34009d17df118e15a575b89c6550c6e97b8a194c5968b831"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1fc3bd4778fdfdaea679fe9d9da2bf8a30ce49e7a9e477c602c0ae68da9f57b6"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "acce03ab8317bbaefff152ac9f4b04b05645a564086568a30618eb4962916592"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a0c29024d3ec6e3a16e4140a0f99885fbb44fa6182331a70ab4ca0886f93bad5"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "284b3bdf6e37564a04b0947080093ea2aa5667f2002d730ffeb59c9c3bd21c7e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "81f217018f98817351d90735cbc509ada36cacd6c12f3c88239232fa468784f9"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1fa12ddcd1115032e8903f915254b2193a8734b17e9210d552108b7716ee529b"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "6a88bb5691e85f15f31a60fc39eb00abcf631edef14f8acfec5048dec5f16b89"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "dd5e8ff17033e3d207902e855fc1f6d5ff1b0b34c5edfb94234d9e86078aca5a"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d045d52ec8188eae6c1d283b6d279b7980bf8124e8173a6d6406cd11de1ec55"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c7a63b0847b8493deba5cdaec17040b2d20c5b8b3056f00db390a2fd2c221012"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "143b67017fb1f1ee42bd7b1d36ee6528412d8216025d5afe2d2ca805c2795569"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "eb8bea58f47219991780a41685b95bc4aacb43302dc62d491093fdaaece1a771"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1fc3bd4778fdfdaea679fe9d9da2bf8a30ce49e7a9e477c602c0ae68da9f57b6"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_mask": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f57aa0626c341fb19422a0b976334f123dabd345a13d36ede69fab293fc78ec2"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "041f8c928efceefce56b2faccc0c0067fe7f247dcb297fb6972c27c932c7c8f1"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f57aa0626c341fb19422a0b976334f123dabd345a13d36ede69fab293fc78ec2"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "041f8c928efceefce56b2faccc0c0067fe7f247dcb297fb6972c27c932c7c8f1"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f57aa0626c341fb19422a0b976334f123dabd345a13d36ede69fab293fc78ec2"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "041f8c928efceefce56b2faccc0c0067fe7f247dcb297fb6972c27c932c7c8f1"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "ba61b38d1e0b94048ddfd845eac4749d633bfa2cd0534d5c566b357a306d5ffc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "7d1cf5ea470643bd1f4beefcb77371541568502b6b7d71950022f17fa03e4784"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8a9e71105def7a2a1f68eaf26d8ab6687463d8e27ca3d3eed8c6f91a8b1261df"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_weights": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "ba61b38d1e0b94048ddfd845eac4749d633bfa2cd0534d5c566b357a306d5ffc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out_h": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "7d1cf5ea470643bd1f4beefcb77371541568502b6b7d71950022f17fa03e4784"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8a9e71105def7a2a1f68eaf26d8ab6687463d8e27ca3d3eed8c6f91a8b1261df"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "3780d1c226f323871b6857b46a342aaa1b8855dee410dcec0aee1e82b7ee39da"
+        },
+        "_cached_zp": {
+          "shape": [
+            64
+          ],
+          "dtype": "int32",
+          "sha256": "d3704a12510400eee2b3b79fe49cb94e8425f648db62940574c8d066e7a74a16"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "54b17ac57b672ef601cb196c52180252f5f46120e23813aff4b1790e84a8a468"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "b7fc02907b1fe26a09f41a20cbcb2899ecd2b028a973d1997530873bcd349966"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "eb769ed9562ba38a607cfb88c80beedf336925d2a051d8d206b11e4f9ca5d7e5"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1fc3bd4778fdfdaea679fe9d9da2bf8a30ce49e7a9e477c602c0ae68da9f57b6"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "3962f43dedd111484b152bc68732ff9ba7e9e2d211559399e64f40af37c5263f"
+        },
+        "_cached_zp": {
+          "shape": [
+            64
+          ],
+          "dtype": "int32",
+          "sha256": "5c9ae5dbab4edd1438dfcf86e0d3c08ec4396a0f9183b06fb16c484b4daca30b"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "54b17ac57b672ef601cb196c52180252f5f46120e23813aff4b1790e84a8a468"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "b7fc02907b1fe26a09f41a20cbcb2899ecd2b028a973d1997530873bcd349966"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "ec56bc6fb3642c96e6767984de73fd2597f40c35e27460e7ed7e2564b4782f24"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "6c26be999c603064a73da291548dfbba47ba691df0c288ae297895477c00921d"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.linear.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "80dba9fd8d71278da68337628e042d8052009bacfa856c953e1ab15291fc36e9"
+        },
+        "_cached_zp": {
+          "shape": [
+            32
+          ],
+          "dtype": "int32",
+          "sha256": "c8ff61ad0aac3d109c32f713386bc7f1f6d7351954f1a0c88005d12979082512"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.linear.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9446ba43dffcf320e3b026f6581e31a54db524d5767fcbc8886f8dd15fb2e560"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "817582fca69e4a353868466d3a02114f3f7b945fad73b96be37523d1c0e18b70"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.linear.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5358ee111a0318016e9bd120c3279262218dce017591e2e0584d3422f5faaa63"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1fc3bd4778fdfdaea679fe9d9da2bf8a30ce49e7a9e477c602c0ae68da9f57b6"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.obs_gate_act": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d881ed3d94ca2b86a7f81b7c6ebb9f179d7c1fb3467211d903df98fd4426da08"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a2d398922901344d08180dc41d3e9d73d8c148c7f6e092835bbb28e02dbcf184"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.mlp.wrapped.obs_mul": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9446ba43dffcf320e3b026f6581e31a54db524d5767fcbc8886f8dd15fb2e560"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "817582fca69e4a353868466d3a02114f3f7b945fad73b96be37523d1c0e18b70"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d3abe4bed329d62092c79b67a46425d0f0dbb498964dd09bef5516946ab7564"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "5bb10a0ea4aab835b063f9406d8c27a850b80ee5042841828f83e40bbea74f1d"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9a33a6ea07d39dbea1b77df5b772a5b79e5725a20b618680b13daa91eef3432f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "3fbf037cb6bcb6178ea17e51a1766736cbcb464e4bc6991e76c0961d313c9446"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "c79bb18d2d495f7bd36e50469a36449338f016ee96d66cbccde9ea332bcd2135"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a5dcf5b8418dfafec16079148ec90cf81dfc6276c1cce220017c782ecb7d7aea"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "dfdcecf04e534339bcc481b7c6f68b14a9283321d8deb6221956a69e6de42a9e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "a5dcf5b8418dfafec16079148ec90cf81dfc6276c1cce220017c782ecb7d7aea"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b138c66d74885ee0743b0d2f5a2f6e3a37f2348669419659adbe52e61423fbf6"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d4cd219a8179c66acd195d0f07c34721c87ed2241a9de78a228b7b336488bc8"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "54b17ac57b672ef601cb196c52180252f5f46120e23813aff4b1790e84a8a468"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "b7fc02907b1fe26a09f41a20cbcb2899ecd2b028a973d1997530873bcd349966"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5358ee111a0318016e9bd120c3279262218dce017591e2e0584d3422f5faaa63"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1fc3bd4778fdfdaea679fe9d9da2bf8a30ce49e7a9e477c602c0ae68da9f57b6"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f8dcb2af2dfff0995c061cbcbfe1b33c4e7200865da53b5979e44ec39bdff6fd"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "895d79e3e0fc9b5679aed8ae35e529676b9a4ef6802c1423dfea6ab30c6faa7f"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d3abe4bed329d62092c79b67a46425d0f0dbb498964dd09bef5516946ab7564"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "5bb10a0ea4aab835b063f9406d8c27a850b80ee5042841828f83e40bbea74f1d"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.obs_attn_residual_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b138c66d74885ee0743b0d2f5a2f6e3a37f2348669419659adbe52e61423fbf6"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d4cd219a8179c66acd195d0f07c34721c87ed2241a9de78a228b7b336488bc8"
+        }
+      },
+      "wrapped.encoder.wrapped.layers.0.wrapped.obs_mlp_residual_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "1240041f7c0ff3d86010fe48c0533b007af2f3ab127d5e604f771dc39b5d4e37"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "0009ea1df10edeb0e3b634afe2f34b53463bc2e3155a4c3df79654d475a38755"
+        }
+      },
+      "wrapped.encoder.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "8d3abe4bed329d62092c79b67a46425d0f0dbb498964dd09bef5516946ab7564"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "5bb10a0ea4aab835b063f9406d8c27a850b80ee5042841828f83e40bbea74f1d"
+        }
+      },
+      "wrapped.encoder.wrapped.obs_attention_mask": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.encoder.wrapped.obs_position_cos": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a4fd6536675cfba982994fa62a13f3ed70c907f164caf6d5d1779ccf1c48f31e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03"
+        }
+      },
+      "wrapped.encoder.wrapped.obs_position_sin": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fb055a91001f08dd942e3b50246a992c76ecedafbb452f17ff833ff2a6f52dff"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c8b61e850892b75fa72f120a6bf36ae02a0ba97e1aae65abac4c97c94956d9de"
+        }
+      },
+      "wrapped.encoder.wrapped.obs_encoder_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "1240041f7c0ff3d86010fe48c0533b007af2f3ab127d5e604f771dc39b5d4e37"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "0009ea1df10edeb0e3b634afe2f34b53463bc2e3155a4c3df79654d475a38755"
+        }
+      },
+      "wrapped.pooler.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "1240041f7c0ff3d86010fe48c0533b007af2f3ab127d5e604f771dc39b5d4e37"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "0009ea1df10edeb0e3b634afe2f34b53463bc2e3155a4c3df79654d475a38755"
+        }
+      },
+      "wrapped.pooler.wrapped.obs_pool_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "1240041f7c0ff3d86010fe48c0533b007af2f3ab127d5e604f771dc39b5d4e37"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "0009ea1df10edeb0e3b634afe2f34b53463bc2e3155a4c3df79654d475a38755"
+        }
+      },
+      "wrapped.pooler.wrapped.obs_pool_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b1dd214d4f26a272310f2ebad304ea925ed602ff11bcafe1551c34828191b9a1"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1a00f51f3029fa4b7e61b9bf7aa9de5a64798857872981f7e056e4f437171955"
+        }
+      },
+      "wrapped.pooler.wrapped.obs_pool_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "421e30126264a505e1ec885cbe31289d4049b73c1645f9d0802e33c4c3c46c4d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.pooler.wrapped.obs_root_hidden_size": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f72cb8dedae36798db125af21d88a1a092337579f5edfd9ab7c1b8b36d5cd46d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.pooler.wrapped.obs_pool_matmul_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "03fb45937b3ed14e4283c9520c92eb88ce0c6e9102ef8565e45892a9ea2a31d4"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1a00f51f3029fa4b7e61b9bf7aa9de5a64798857872981f7e056e4f437171955"
+        }
+      },
+      "wrapped.obs_minus_bias": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b1dd214d4f26a272310f2ebad304ea925ed602ff11bcafe1551c34828191b9a1"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1a00f51f3029fa4b7e61b9bf7aa9de5a64798857872981f7e056e4f437171955"
+        }
+      },
+      "wrapped.obs_strip_padding": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b1dd214d4f26a272310f2ebad304ea925ed602ff11bcafe1551c34828191b9a1"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1a00f51f3029fa4b7e61b9bf7aa9de5a64798857872981f7e056e4f437171955"
+        }
+      },
+      "wrapped.obs_last_hidden_state": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b1dd214d4f26a272310f2ebad304ea925ed602ff11bcafe1551c34828191b9a1"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "1a00f51f3029fa4b7e61b9bf7aa9de5a64798857872981f7e056e4f437171955"
+        }
+      },
+      "wrapped.obs_std_bias": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.obs_std_scale": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      }
+    }
+  },
+  "frozen_before_sha256": "99ac1d5e77e83473d8dceeb1bc7891ebf1eefeea611f7bb0e2f08f91c2ee57a0",
+  "frozen_after_sha256": "67e48718ea29f7778e9ae5d8da1e991a330acd127657923f1cbc5720595a29ca",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_model/gemma4_vision_model.q.circle",
+  "bytes": 77272,
+  "sha256": "3a4f07156712e90cdd622a568f6943384d4668e0e776cd366f46d50358be5ddf",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        36,
+        768
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "input_records": [
+    {
+      "shape": [
+        1,
+        36,
+        768
+      ],
+      "dtype": "float32",
+      "sha256": "080ecda7a8ab92998e95cc02d0afe9a655236d9fbbdf23b15c74df26606d7aee"
+    }
+  ],
+  "torch_output_records": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "020f149866bd30ccb6e39addea7d8aa233c20b27d96e6fa4a967d520968e4ad8"
+    }
+  ],
+  "circle_output_records": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "5526a095c3cadc406cfb1f7f394a56220e7ea4fdfdca1b54f079f2bb8cb50318"
+    }
+  ],
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 0.3048877716064453
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "67e48718ea29f7778e9ae5d8da1e991a330acd127657923f1cbc5720595a29ca",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

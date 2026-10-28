@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_text_scaled_word_embedding/gemma4_text_scaled_word_embedding.q.circle"
+  },
+  "case": "gemma4_text_scaled_word_embedding",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      16,
+      64
+    ],
+    "max_abs_diff": 0.002763140946626663,
+    "mean_abs_diff": 0.0009652156149968505,
+    "peir": 0.0034812471998893397,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      16,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

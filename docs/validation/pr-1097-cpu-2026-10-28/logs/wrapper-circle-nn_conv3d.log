@@ -1,0 +1,91 @@
+[QuantCheck] WARNING: 1 nodes without qparam detected (see logs).
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : nn_conv3d
+│ Status           : PASS
+│ Mean |diff|      : 0.010710
+│ Max  |diff|      : 0.050890
+│ PEIR             : 0.020383
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/nn_conv3d/nn_conv3d.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/nn_conv3d.json
+{
+  "case": "nn_conv3d",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "nn_conv3d",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "51d77e1ea5f823702a0c8a81b7f645755a6a484cbb24355fd54b5c1973a1b0a1",
+  "frozen_after_sha256": "51d77e1ea5f823702a0c8a81b7f645755a6a484cbb24355fd54b5c1973a1b0a1",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d/nn_conv3d.q.circle",
+  "bytes": 8056,
+  "sha256": "47b34eaa606b5b3a03ad839c618873c837e5377d495ad066ec064d33b99849d5",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        3,
+        2,
+        8,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        8,
+        1,
+        2,
+        2
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "51d77e1ea5f823702a0c8a81b7f645755a6a484cbb24355fd54b5c1973a1b0a1",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

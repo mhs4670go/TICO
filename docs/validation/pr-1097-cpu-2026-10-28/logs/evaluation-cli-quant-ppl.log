@@ -1,0 +1,15 @@
+
+Loading weights:   0%|          | 0/21 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 21/21 [00:00<00:00, 8231.04it/s]
+
+Generating test split: 0 examples [00:00, ? examples/s]
+Generating test split: 4 examples [00:00, 1988.29 examples/s]
+
+PPL:   0%|          | 0/4 [00:00<?, ?it/s][transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+
+PPL:  50%|█████     | 2/4 [00:00<00:00, 78.94it/s]
+
+┌── Perplexity ─────────────────────────────
+│   128.04
+└───────────────────────────────────────────
+EVALUATION_EVIDENCE {"label": "quant-ppl", "forwards": [{"shape": [1, 16], "input_sha256": "d28bce312a78f51464d6e0e26208efa20e74c3e729424b9e1940f7d02e6133a7", "dtype": "torch.int64", "use_cache": null}, {"shape": [1, 16], "input_sha256": "d28bce312a78f51464d6e0e26208efa20e74c3e729424b9e1940f7d02e6133a7", "dtype": "torch.int64", "use_cache": null}, {"shape": [1, 16], "input_sha256": "c5df5ec8a21de5e779d35028835cc54859edcb49c7f7a7a5293d30149c990b63", "dtype": "torch.int64", "use_cache": null}, {"shape": [1, 16], "input_sha256": "c5df5ec8a21de5e779d35028835cc54859edcb49c7f7a7a5293d30149c990b63", "dtype": "torch.int64", "use_cache": null}, {"shape": [1, 12], "input_sha256": "1996b3e5823085213d9c37c22aaf0ce69fde60add6f650c310cde6cb78d6f103", "dtype": "torch.int64", "use_cache": null}, {"shape": [1, 12], "input_sha256": "1996b3e5823085213d9c37c22aaf0ce69fde60add6f650c310cde6cb78d6f103", "dtype": "torch.int64", "use_cache": null}], "metrics": {"ppl": 128.04383850097656}, "import_path": "${CANDIDATE_REPO}/tico/quantization/recipes/adapters/llama.py", "ppl_rows": 4, "ppl_scoring_tokens": 27, "frozen_state_equal": true, "frozen_before_sha256": "89f5e837cf2efdc19ad98b6ab7d8e43b0a45d2565254c00378fcc3861b1101c4", "frozen_after_sha256": "89f5e837cf2efdc19ad98b6ab7d8e43b0a45d2565254c00378fcc3861b1101c4", "checkpoint": "${VALIDATION_ROOT}/evaluation/quantized_model.pt", "model_class": "PTQWrapper"}

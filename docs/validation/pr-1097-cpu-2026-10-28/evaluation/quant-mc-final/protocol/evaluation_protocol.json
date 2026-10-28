@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "purpose": "quantization_quality",
+  "model": {
+    "family": "llama",
+    "name_or_path": "${VALIDATION_ROOT}/evaluation/model",
+    "loaded_name_or_path": "",
+    "revision": null,
+    "resolved_revision": null
+  },
+  "tokenizer": {
+    "class": "TokenizersBackend",
+    "name_or_path": "${VALIDATION_ROOT}/evaluation/model",
+    "chat_template_sha256": null
+  },
+  "processor": null,
+  "context": {
+    "requested": 64,
+    "resolved": 64,
+    "model_capacity": 128,
+    "pretrained_capacity": 128,
+    "calibration_seq_len": 8,
+    "export_max_seq_len": 16
+  },
+  "use_cache": true,
+  "seed": 1073,
+  "device": "cpu",
+  "configured_dtype": "torch.float32",
+  "parameter_dtypes": [
+    "torch.float32"
+  ],
+  "quantization_modes": [
+    "quant"
+  ],
+  "model_class": "QuantLlamaForCausalLM",
+  "checkpoint": "${VALIDATION_ROOT}/evaluation/quantized_model.pt",
+  "evaluation": {
+    "enabled": true,
+    "max_seq_len": 64,
+    "use_cache": true,
+    "perplexity": {
+      "dataset": "${VALIDATION_ROOT}/evaluation/ppl-data",
+      "dataset_config": null,
+      "split": "test",
+      "max_seq_len": 16,
+      "stride": 8
+    },
+    "lm_eval_tasks": "hellaswag",
+    "selected_tasks": [
+      "lm_eval"
+    ]
+  },
+  "versions": {
+    "tico": "0.1.0",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.18.0",
+    "datasets": "5.0.1",
+    "lm-eval": "0.4.13",
+    "lmms-eval": null
+  }
+}

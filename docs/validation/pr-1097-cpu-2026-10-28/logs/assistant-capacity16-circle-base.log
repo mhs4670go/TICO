@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "${VALIDATION_ROOT}/gemma-export-review/assistant_capacity16.py", line 10, in <module>
+    runpy.run_path(str(Path(__file__).resolve().parents[1]/'wrapper-harness/export_case.py'),run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "${VALIDATION_ROOT}/wrapper-harness/export_case.py", line 18, in <module>
+    from observe import semantic_contract
+ModuleNotFoundError: No module named 'observe'

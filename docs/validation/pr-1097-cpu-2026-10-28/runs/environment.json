@@ -1,0 +1,23 @@
+{
+  "name": "environment",
+  "command": [
+    "python",
+    "-c",
+    "import os,sys,json,platform,importlib.metadata as m,tico,torch;print(json.dumps({\"python\":sys.version,\"platform\":platform.platform(),\"cpu_count\":os.cpu_count(),\"cpu_affinity\":list(os.sched_getaffinity(0)),\"tico_file\":tico.__file__,\"cuda_available\":torch.cuda.is_available(),\"versions\":{p:m.version(p) if m.packages_distributions() and p in [d.metadata[\"Name\"] for d in m.distributions()] else None for p in [\"torch\",\"torchvision\",\"transformers\",\"datasets\",\"lm_eval\",\"lm-eval\",\"circle-schema\",\"flatbuffers\",\"tico\",\"lintrunner\"]}},indent=2))"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 60,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:13:52Z",
+  "log": "${VALIDATION_ROOT}/logs/environment.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 4.423
+}

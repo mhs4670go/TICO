@@ -1,0 +1,87 @@
+"""Replay saved artifacts with the existing test harness's quantized input ABI.
+
+Preserve original raw probe failures. Rebuild exact original case with same seed,
+then encode serialized integer ABI inputs and give identical values to Torch and
+Circle (as existing KV tests do). Never recalibrate from evaluation inputs.
+"""
+import argparse,copy,hashlib,json,pathlib,traceback
+import numpy as np
+import torch,yaml,tico
+from torch.utils._pytree import tree_map
+from tico.circle.runtime import CircleReferenceRuntime,ExecutionMode
+from tico.circle.runtime.quantization import fake_quantize_array
+from tico.quantization.recipes.debug import export_regression as er
+from tico.quantization.recipes.debug.wrapper_smoke.registry import get_case
+from tico.quantization.recipes.debug.wrapper_smoke.runner import _limit_inputs
+from tico.quantization.recipes.debug.wrapper_smoke.utils import calibration_iters
+from tico.quantization.recipes.utils import set_seed
+from tico.utils.signature import ModelInputSpec
+from observe import semantic_contract
+from bind import bind_inputs
+p=argparse.ArgumentParser();p.add_argument('--side',choices=['wrapper-circle','wrapper-baseline','wrapper-baseline-equivalent'],required=True);a=p.parse_args()
+if a.side=='wrapper-baseline-equivalent':
+ from tico.quantization.recipes.debug.wrapper_smoke.cases import qwen3_vl as q
+ from tico.quantization.recipes.debug.wrapper_smoke.case import ForwardInput
+ def corrected_sample(self):return ForwardInput((torch.randn(self.seq_len,self.hidden_size),self.cu_seqlens),{'position_embeddings':self.position_embeddings})
+ q.QwenVisionAttentionCase._sample=corrected_sample
+root=pathlib.Path('${VALIDATION_ROOT}');out=root/'wrapper-harness'/f'{a.side}-encoded-replay';out.mkdir(exist_ok=True)
+cfg=yaml.safe_load(pathlib.Path('tico/quantization/examples/configs/wrapper_smoke.yaml').read_text());torch.set_num_threads(1)
+records=[]
+for ep in sorted((root/a.side).glob('*/artifact-checks.json')):
+ original=json.loads(ep.read_text());name=original['case'];e={'case':name,'tico_file':tico.__file__,'original_raw_parity':original.get('parity'),'original_artifact_sha256':original.get('sha256'),'status':'INCOMPLETE','tolerances':{'atol':1e-5,'rtol':1e-4}}
+ if original.get('saved')!='PASS':
+  e.update(status='SKIPPED',reason='Original export produced no artifact; see original failure.');records.append(e);continue
+ try:
+  set_seed(cfg['runtime']['seed']);case=get_case(name)
+  with torch.no_grad():
+   model,reference=case.build(cfg);prepared=case.prepare_model(model,cfg);case.after_prepare(prepared,cfg)
+   for sample in _limit_inputs(case.calibration_inputs(prepared,cfg),calibration_iters(cfg,3)):case.forward(prepared,sample)
+   sample=case.eval_input(prepared,cfg)
+   if case.compare_reference_source=='prepared':case.forward(prepared,sample)
+   else:case.reference_forward(reference,sample)
+   quantized=case.convert_model(prepared,cfg);case.forward(quantized,sample)
+   invocation=case.export_invocation(quantized,sample,cfg);invocation.validate_static_decoder_inputs()
+   module=invocation.module.eval();args=invocation.inputs.args;kwargs=dict(invocation.inputs.kwargs)
+   state=er._state_contract(quantized);e['semantic_contract']=semantic_contract(quantized)
+   raw_expected=list(er._tree_arrays(module(*copy.deepcopy(args),**copy.deepcopy(kwargs))).values())
+   payload=pathlib.Path(original['artifact']).read_bytes()
+   e['same_artifact']=hashlib.sha256(payload).hexdigest()==original['sha256']
+   runtime=CircleReferenceRuntime(payload);mode=ExecutionMode.FAKE_QUANTIZE if runtime.has_quantized_activations() else ExecutionMode.NATIVE
+   inputs,binder=bind_inputs(payload,module,args,kwargs);e['input_binder']=binder
+   e['raw_input_records']=[er._array_record(v) for v in inputs];e['raw_torch_output_records']=[er._array_record(v) for v in raw_expected]
+   previous_inputs=original.get('input_records');previous_torch=original.get('torch_output_records')
+   raw_npz=ep.parent/'parity-arrays.npz'
+   if raw_npz.exists():
+    with np.load(raw_npz) as z:
+     previous_inputs=[er._array_record(z[k]) for k in sorted((k for k in z.files if k.startswith('input_')),key=lambda k:int(k[6:]))]
+     previous_torch=[er._array_record(z[k]) for k in sorted((k for k in z.files if k.startswith('torch_')),key=lambda k:int(k[6:]))]
+   e['original_input_hash_match']=e['raw_input_records']==previous_inputs if previous_inputs is not None else None
+   e['original_torch_hash_match']=e['raw_torch_output_records']==previous_torch if previous_torch is not None else None
+   raw_result=runtime.run(inputs,mode=mode).outputs
+   e['raw_replay_comparisons']=[er.compare_arrays(v,w,atol=1e-5,rtol=1e-4) for v,w in zip(raw_expected,raw_result)]
+   encoded=[];by_identity={};quantized_boundaries=[]
+   for v,index in zip(inputs,runtime.program.inputs):
+    tensor=runtime.program.tensor(index);array=er._array(v)
+    encoded_array=fake_quantize_array(array,tensor) if tensor.is_quantized_integer else array.copy()
+    encoded.append(np.array(encoded_array,copy=True))
+    if isinstance(v,torch.Tensor):
+     if id(v) in by_identity and not np.array_equal(by_identity[id(v)],encoded_array):raise ValueError('One input tensor aliases incompatible serialized input grids.')
+     by_identity[id(v)]=encoded_array
+    if tensor.is_quantized_integer:quantized_boundaries.append({'tensor_index':index,'changed_values':int(np.count_nonzero(array!=encoded_array))})
+   def replace(v):
+    if isinstance(v,torch.Tensor) and id(v) in by_identity:return torch.from_numpy(np.array(by_identity[id(v)],copy=True))
+    return copy.deepcopy(v)
+   aligned_args,aligned_kwargs=tree_map(replace,(args,kwargs))
+   rebound,_=bind_inputs(payload,module,aligned_args,aligned_kwargs)
+   e['same_effective_inputs']=all(np.array_equal(er._array(v),w) for v,w in zip(rebound,encoded))
+   golden=list(er._tree_arrays(module(*aligned_args,**aligned_kwargs)).values())
+   actual=runtime.run(encoded,mode=mode).outputs
+   comparisons=[er.compare_arrays(v,w,atol=1e-5,rtol=1e-4) for v,w in zip(golden,actual)]
+   e.update(execution_mode=mode.value,quantized_boundaries=quantized_boundaries,torch_output_count=len(golden),circle_output_count=len(actual),comparisons=comparisons,torch_output_records=[er._array_record(v) for v in golden],circle_output_records=[er._array_record(v) for v in actual],frozen_unchanged=state==er._state_contract(quantized))
+   e['status']='PASS' if e['same_artifact'] and e['same_effective_inputs'] and len(golden)==len(actual)>0 and all(c['ok'] for c in comparisons) and e['frozen_unchanged'] and e['original_input_hash_match'] is not False and e['original_torch_hash_match'] is not False else 'FAIL'
+   if e['status']=='FAIL':np.savez(out/f'{name}.npz',**{**{f'torch_{i}':v for i,v in enumerate(golden)},**{f'circle_{i}':v for i,v in enumerate(actual)},**{f'input_{i}':v for i,v in enumerate(encoded)}})
+ except Exception:e.update(status='FAIL',error=traceback.format_exc())
+ (out/f'{name}.json').write_text(json.dumps(e,indent=2));records.append(e)
+ (out/'summary.json').write_text(json.dumps(records,indent=2));print(name,e['status'],e.get('comparisons'),flush=True)
+(out/'summary.json').write_text(json.dumps(records,indent=2));print(json.dumps({'side':a.side,'passed':sum(r['status']=='PASS' for r in records),'failed':sum(r['status']=='FAIL' for r in records),'skipped':sum(r['status']=='SKIPPED' for r in records)}))
+raise SystemExit(0 if all(e['status'] in ('PASS','SKIPPED') for e in records) else 1)

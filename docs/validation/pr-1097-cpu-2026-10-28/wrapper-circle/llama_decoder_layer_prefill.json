@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/llama_decoder_layer_prefill/llama_decoder_layer_prefill.q.circle"
+  },
+  "case": "llama_decoder_layer_prefill",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      16,
+      16
+    ],
+    "max_abs_diff": 0.05442625284194946,
+    "mean_abs_diff": 0.014662188477814198,
+    "peir": 0.008806506360753424,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      16,
+      16
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

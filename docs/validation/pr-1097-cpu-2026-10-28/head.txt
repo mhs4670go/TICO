@@ -1,0 +1,11 @@
+commit 9f631d6651ce3780e3a8e054ab02910b9bd40fdc
+Author:     seongwoo <mhs4670go@naver.com>
+AuthorDate: Wed Oct 28 09:15:11 2026 +0000
+Commit:     seongwoo <mhs4670go@naver.com>
+CommitDate: Wed Oct 28 09:15:11 2026 +0000
+
+    [docs] Remove archived WrapQ investigation follow-up
+
+    Delete the requested archive document. No tracked references remain; git diff --check passes.
+
+    TICO-DCO-1.0-Signed-off-by: seongwoo <mhs4670go@naver.com>

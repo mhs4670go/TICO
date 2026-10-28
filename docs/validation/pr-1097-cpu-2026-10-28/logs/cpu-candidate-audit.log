@@ -1,0 +1,56 @@
+{
+  "scope": "candidate internal CPU verification, not base comparison",
+  "tests": {
+    "regression": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_cpu_fixtures",
+        "test.quantization.recipes.test_cpu_validation",
+        "test.quantization.recipes.test_export_regression",
+        "test.quantization.wrapq.utils.test_static_export_inputs",
+        "test.quantization.wrapq.wrappers.llama.test_rope_consistency"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 110
+    },
+    "generate": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_cpu_generation"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 7
+    },
+    "coverage": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_qwen_cache_coverage_cpu"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 12
+    },
+    "evaluation": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_cpu_evaluation"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 6
+    }
+  },
+  "tests_total": 135,
+  "evidence_note": "ExportRecorder.capture_save writes Circle bytes, load_mapped() reads saved file and document.verify(raise_on_error=True) passes before record JSON is emitted. capture_convert calls real compiler and CircleReferenceRuntime.run for each probe; connected helper separately reads saved Circle stages. Overall strict Torch FAIL remains FAIL even if raw before/after arrays and frozen state are unchanged."
+}
+llama-16 FAIL {'before': {'saved_structural_runtime_pass': 7, 'torch_stage_pass': 3, 'torch_stage_fail': 4, 'runtime_probe_count': 13, 'state_preserved': True, 'state_differences': []}, 'after_eager': {'saved_structural_runtime_pass': 7, 'torch_stage_pass': 3, 'torch_stage_fail': 4, 'runtime_probe_count': 13, 'state_preserved': True, 'state_differences': []}} {'array_comparisons': 129, 'array_comparisons_pass': 129, 'max_abs_error': 0.0, 'structure_all_equal': True, 'execution_modes_equal': True, 'numerical_coverage_complete': True, 'failures': ['decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch', 'decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch', 'decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch', 'decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch']}
+qwen3_vl-16 FAIL {'before': {'saved_structural_runtime_pass': 9, 'torch_stage_pass': 6, 'torch_stage_fail': 3, 'runtime_probe_count': 15, 'state_preserved': True, 'state_differences': []}, 'after_eager': {'saved_structural_runtime_pass': 9, 'torch_stage_pass': 6, 'torch_stage_fail': 3, 'runtime_probe_count': 15, 'state_preserved': True, 'state_differences': []}} {'array_comparisons': 131, 'array_comparisons_pass': 131, 'max_abs_error': 0.0, 'structure_all_equal': True, 'execution_modes_equal': True, 'numerical_coverage_complete': True, 'failures': ['decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch', 'decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch', 'multimodal_embedding_prefill_t1_h2_w2.q.circle: structural, input, output, or requested Torch parity mismatch']}
+qwen3_vl-32 FAIL {'before': {'saved_structural_runtime_pass': 9, 'torch_stage_pass': 5, 'torch_stage_fail': 4, 'runtime_probe_count': 15, 'state_preserved': True, 'state_differences': []}, 'after_eager': {'saved_structural_runtime_pass': 9, 'torch_stage_pass': 5, 'torch_stage_fail': 4, 'runtime_probe_count': 15, 'state_preserved': True, 'state_differences': []}} {'array_comparisons': 131, 'array_comparisons_pass': 131, 'max_abs_error': 0.0, 'structure_all_equal': True, 'execution_modes_equal': True, 'numerical_coverage_complete': True, 'failures': ['decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch', 'decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch', 'decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch', 'token_embedding.q.circle: structural, input, output, or requested Torch parity mismatch']}
+connected 16 {'status': 'FAIL', 'execution_calls_completed': 22, 'calls_torch_all_outputs_pass': 19, 'calls_torch_any_output_fail': 3, 'outputs_torch_pass': 38, 'outputs_torch_fail': 5, 'frozen_state_preserved': True, 'connected_valid_lengths': [12, 13, 14, 15, 16]}
+connected 32 {'status': 'FAIL', 'execution_calls_completed': 22, 'calls_torch_all_outputs_pass': 18, 'calls_torch_any_output_fail': 4, 'outputs_torch_pass': 36, 'outputs_torch_fail': 7, 'frozen_state_preserved': True, 'connected_valid_lengths': [28, 29, 30, 31, 32]}

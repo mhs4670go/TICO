@@ -1,0 +1,15 @@
+import json,pathlib,subprocess,sys,time
+root=pathlib.Path('${VALIDATION_ROOT}');marker=root/'wrapper-harness/exports-complete.json'
+while not marker.exists():time.sleep(3)
+candidate=json.loads((root/'wrapper-harness/export-summary.json').read_text())
+names=['nn_linear','llama_attention_decode','qwen3_vl_vision_attention','gemma4_text_attention_shared_kv_decode','gemma4_assistant_core']
+names=list(dict.fromkeys(names+[r['case'] for r in candidate if r['status'] not in ('PASS','SKIPPED')]))
+records=[]
+for name in names:
+ cmd=[sys.executable,str(root/'run.py'),'--name','wrapper-baseline-'+name,'--cwd','${BASELINE_REPO}','--timeout','240','--','python',str(root/'wrapper-harness/export_case.py'),'--config','tico/quantization/examples/configs/wrapper_smoke.yaml','--mode','wrapper-smoke','--case',name,'--device','cpu','--export','circle','--strict','--no-plot','--output-dir',str(root/'wrapper-baseline'/name),'--report-json',str(root/'wrapper-baseline'/f'{name}.json')]
+ code=subprocess.call(cmd);record={'case':name,'runner_exit_code':code}
+ for key,p in [('run',root/'runs'/f'wrapper-baseline-{name}.json'),('artifact_checks',root/'wrapper-baseline'/name/'artifact-checks.json')]:
+  if p.exists():record[key]=json.loads(p.read_text())
+ record['status']=record.get('run',{}).get('status','INCOMPLETE');records.append(record)
+ (root/'wrapper-harness/baseline-summary.json').write_text(json.dumps(records,indent=2))
+(root/'wrapper-harness/all-exports-complete.json').write_text(json.dumps({'candidate':json.loads(marker.read_text()),'baseline_cases':len(records),'baseline_passed':sum(r['status']=='PASS' for r in records),'baseline_failed':sum(r['status']=='FAIL' for r in records),'completed_at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())},indent=2))

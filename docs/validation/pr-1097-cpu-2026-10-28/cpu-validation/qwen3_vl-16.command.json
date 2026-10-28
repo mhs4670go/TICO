@@ -1,0 +1,39 @@
+{
+  "command": [
+    "${VALIDATION_VENV}/bin/python",
+    "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+    "isolation",
+    "--candidate-repo",
+    "${CANDIDATE_REPO}",
+    "--config",
+    "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.json",
+    "--checkpoint",
+    "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+    "--seq-len",
+    "16",
+    "--eager-seq-len",
+    "48",
+    "--decode-steps",
+    "4",
+    "--seed",
+    "1073",
+    "--threads",
+    "1",
+    "--output",
+    "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16",
+    "--require-torch-parity"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16.log",
+  "returncode": 1,
+  "seconds": 58.618659557,
+  "status": "FAIL",
+  "stderr": "merged into stdout log"
+}

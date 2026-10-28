@@ -1,0 +1,2 @@
+TICO_IMPORT_PATH ${BASELINE_REPO}/tico/__init__.py
+FAIL: ${VALIDATION_ROOT}/baseline-cpu-comparison/llama-16/summary.json

@@ -1,0 +1,23 @@
+Waiting for wrapper export completion ${VALIDATION_ROOT}/wrapper-harness/all-exports-complete.json
+Wrapper export completion: {
+  "candidate": {
+    "exit_code": 1,
+    "registered": 50,
+    "records": 50,
+    "passed": 25,
+    "failed": 23,
+    "skipped": 2,
+    "completed_at": "2026-10-28T10:39:24Z"
+  },
+  "baseline_cases": 26,
+  "baseline_passed": 3,
+  "baseline_failed": 23,
+  "completed_at": "2026-10-28T10:42:58Z"
+}
+{"name": "cpu-validation", "command": ["python", "-m", "tico.quantization.recipes.debug.cpu_validation", "--stage", "all", "--output", "${VALIDATION_ROOT}/cpu-validation"], "cwd": "${CANDIDATE_REPO}", "timeout": 1800, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:43:00Z", "log": "${VALIDATION_ROOT}/logs/cpu-validation.log", "exit_code": 1, "status": "FAIL", "elapsed_seconds": 227.768}
+{"name": "conversion-module", "command": ["python", "-m", "test.performance.benchmark_conversion_memory", "--sizes-mib", "1", "--tables", "1", "--width", "16", "--threads", "1", "--repeat", "1", "--optimization", "O1", "--input-kind", "module", "--workdir", "${VALIDATION_ROOT}/benchmark-module", "--keep-outputs", "--json"], "cwd": "${CANDIDATE_REPO}", "timeout": 180, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:46:48Z", "log": "${VALIDATION_ROOT}/logs/conversion-module.log", "exit_code": 0, "status": "PASS", "elapsed_seconds": 8.588}
+{"name": "conversion-pt2", "command": ["python", "-m", "test.performance.benchmark_conversion_memory", "--sizes-mib", "1", "--tables", "1", "--width", "16", "--threads", "1", "--repeat", "1", "--optimization", "O1", "--input-kind", "pt2", "--workdir", "${VALIDATION_ROOT}/benchmark-pt2", "--keep-outputs", "--json"], "cwd": "${CANDIDATE_REPO}", "timeout": 180, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:46:57Z", "log": "${VALIDATION_ROOT}/logs/conversion-pt2.log", "exit_code": 0, "status": "PASS", "elapsed_seconds": 10.64}
+{"name": "circle-optimizer", "command": ["python", "-m", "test.performance.benchmark_circle_optimizer", "${VALIDATION_ROOT}/wrapper-circle/llama_attention_decode/llama_attention_decode.q.circle", "--repeat", "1", "--warmup", "0", "--json"], "cwd": "${CANDIDATE_REPO}", "timeout": 180, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:47:07Z", "log": "${VALIDATION_ROOT}/logs/circle-optimizer.log", "exit_code": 0, "status": "PASS", "elapsed_seconds": 1.468}
+{"name": "format", "command": ["./ccex", "format", "--no-apply-patches"], "cwd": "${CANDIDATE_REPO}", "timeout": 900, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:47:09Z", "log": "${VALIDATION_ROOT}/logs/format.log", "exit_code": 0, "status": "PASS", "elapsed_seconds": 210.185}
+{"name": "pip-check-final", "command": ["python", "-m", "pip", "check"], "cwd": "${CANDIDATE_REPO}", "timeout": 60, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:50:39Z", "log": "${VALIDATION_ROOT}/logs/pip-check-final.log", "exit_code": 0, "status": "PASS", "elapsed_seconds": 0.415}
+{"name": "packages-final", "command": ["python", "-m", "pip", "list", "--format=freeze"], "cwd": "${CANDIDATE_REPO}", "timeout": 60, "env_overrides": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "CUDA_VISIBLE_DEVICES": "", "CCEX_RUNTIME": "reference", "PYTHONPATH": "${CANDIDATE_REPO}"}, "started": "2026-10-28T10:50:40Z", "log": "${VALIDATION_ROOT}/logs/packages-final.log", "exit_code": 0, "status": "PASS", "elapsed_seconds": 0.265}

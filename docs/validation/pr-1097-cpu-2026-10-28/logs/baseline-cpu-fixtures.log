@@ -1,0 +1,7 @@
+TICO_IMPORT_PATH ${BASELINE_REPO}/tico/__init__.py
+llama: 90432 parameters, approximately 361728 FP32 parameter bytes
+Wrapping model with PTQ wrappers …
+[Info] GPTQ qparam reuse disabled by config (reuse_gptq_qparams=false); PTQ weight observers will compute qparams from the current weights.
+qwen3_vl: 150272 parameters, approximately 601088 FP32 parameter bytes
+Wrapping model with PTQ wrappers …
+[Info] GPTQ qparam reuse disabled by config (reuse_gptq_qparams=false); PTQ weight observers will compute qparams from the current weights.

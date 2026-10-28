@@ -1,0 +1,52 @@
+"""Diagnostic only: rebuild tiny quantized eager case, no export; compare frozen observer intermediates with saved-Circle trace."""
+import copy,json,pathlib,numpy as np,torch,yaml
+from tico.circle.runtime import CircleReferenceRuntime,ExecutionMode
+from tico.quantization.recipes.debug.wrapper_smoke.registry import get_case
+from tico.quantization.recipes.debug import export_regression as er
+root=pathlib.Path(__file__).parent
+cfg=yaml.safe_load(pathlib.Path('${CANDIDATE_REPO}/tico/quantization/examples/configs/wrapper_smoke.yaml').read_text())
+torch.set_num_threads(1);torch.manual_seed(123)
+case=get_case('llama_attention_prefill')
+with torch.no_grad():
+ m,ref=case.build(cfg);p=case.prepare_model(m,cfg);case.after_prepare(p,cfg)
+ for sample in case.calibration_inputs(p,cfg)[:3]:case.forward(p,sample)
+ ev=case.eval_input(p,cfg);case.reference_forward(ref,ev);q=case.convert_model(p,cfg);case.forward(q,ev)
+ inv=case.export_invocation(q,ev,cfg);module=inv.module.eval()
+ records={}
+ for name,obs in q.named_modules():
+  if hasattr(obs,'fake_quant') and hasattr(obs,'frozen_state'):
+   old=obs.fake_quant
+   def call(value,old=old,name=name):
+    out=old(value);records.setdefault(name,[]).append((value.detach().cpu().numpy().copy(),out.detach().cpu().numpy().copy()));return out
+   obs.fake_quant=call
+ golden=list(er._tree_arrays(module(*copy.deepcopy(inv.inputs.args),**copy.deepcopy(dict(inv.inputs.kwargs)))).values())
+p=root/'wrapper-circle/llama_attention_prefill';saved=np.load(p/'parity-arrays.npz');info=json.loads((p/'artifact-checks.json').read_text());r=CircleReferenceRuntime(pathlib.Path(info['artifact']).read_bytes());actual=r.run([saved[f'input_{i}'] for i in range(len(r.program.inputs))],mode=ExecutionMode.FAKE_QUANTIZE,trace=True)
+print('rebuild-vs-savedtorch',[float(abs(g-saved[f'torch_{i}']).max()) for i,g in enumerate(golden)])
+for name,values in records.items():
+ if 'obs_k' not in name:continue
+ before,after=values[-1]
+ matches=[]
+ for index,value in actual.tensor_values.items():
+  tensor=r.program.tensor(index)
+  if value.shape!=after.shape:continue
+  error=float(abs(value-after).max());matches.append((error,index,tensor.name))
+ print(name,'scale',getattr(dict(q.named_modules())[name],'frozen_state').scale,'shape',after.shape,'closest',sorted(matches)[:3])
+ for suffix in ['::slice_2','::slice_3','::cat_1','::mul_3','::mul_4','::add_1']:
+  for index,value in actual.tensor_values.items():
+   t=r.program.tensor(index)
+   if t.name.endswith(suffix):print('tensor',index,t.name,t.quantization)
+import hashlib
+selected={}
+for name,values in records.items():
+ if 'obs_k' not in name:continue
+ obs=dict(q.named_modules())[name];s=obs.frozen_state;before,after=values[-1]
+ selected[name]={'scale':s.scale.cpu().tolist(),'zero_point':s.zero_point.cpu().tolist(),'input_shape':list(before.shape),'output_shape':list(after.shape),'input_sha256':hashlib.sha256(before.tobytes()).hexdigest(),'output_sha256':hashlib.sha256(after.tobytes()).hexdigest()}
+tensors={}
+for t in r.program.tensors:
+ if t.index not in [14,25,26,27,28,29,30,31]:continue
+ value=actual.tensor_values[t.index];tensors[str(t.index)]={'name':t.name,'quantization':{'scale':list(t.quantization.scale),'zero_point':list(t.quantization.zero_point),'axis':t.quantization.quantized_dimension},'shape':list(value.shape),'value_sha256':hashlib.sha256(value.tobytes()).hexdigest()}
+difference={}
+for name,index in [('wrapped.obs_k_x1',25),('wrapped.obs_k_x2',26),('wrapped.obs_k_cat',28),('wrapped.obs_k_cos',29),('wrapped.obs_k_sin',30),('wrapped.obs_k_rot',31)]:
+ after=records[name][-1][1];v=actual.tensor_values[index];difference[name]={'circle_tensor_index':index,'max_abs_error':float(abs(after-v).max()),'differing_elements':int(np.count_nonzero(after!=v))}
+proof={'diagnostic_only':True,'code_path':'Actual tiny eager prepare/calibrate/convert rebuild, no re-export; saved serialized Circle reference trace. Observer wrappers delegate original functions unchanged.','eager_rebuild_matches_original_captured_torch':[bool(np.array_equal(g,saved[f'torch_{i}'])) for i,g in enumerate(golden)],'original_torch_output_sha256':[hashlib.sha256(saved[f'torch_{i}'].tobytes()).hexdigest() for i in range(len(golden))],'rebuilt_eager_output_sha256':[hashlib.sha256(g.tobytes()).hexdigest() for g in golden],'observers':selected,'saved_circle_tensors':tensors,'comparisons':difference,'source_revisions':{'head':'9f631d6651ce3780e3a8e054ab02910b9bd40fdc','base':'261bda28ec55fdac42f59346c950326e4065f8fa'},'official_parity_results_unchanged':True}
+(root/'parity-trace-diagnostic.json').write_text(json.dumps(proof,indent=2))

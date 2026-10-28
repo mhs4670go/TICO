@@ -1,0 +1,92 @@
+{
+  "case": "qwen3_vl_vision_attention",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_vision_attention",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_attention",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_attention.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "d5b7e4d5667ca9f2bc73361c8bd54aff75e8da7fd1162732d29ad7c4a34c5c6e",
+  "frozen_after_sha256": "d5b7e4d5667ca9f2bc73361c8bd54aff75e8da7fd1162732d29ad7c4a34c5c6e",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_attention/qwen3_vl_vision_attention.q.circle",
+  "bytes": 53592,
+  "sha256": "ceed762e0c361a2d393b5eb3952a8ddfdd2df4860673d6b4d65648e6dc42d07c",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        2
+      ],
+      "dtype": "int32"
+    },
+    {
+      "shape": [
+        64,
+        16
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        64,
+        16
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 8.961232379078865e-05
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "d5b7e4d5667ca9f2bc73361c8bd54aff75e8da7fd1162732d29ad7c4a34c5c6e",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

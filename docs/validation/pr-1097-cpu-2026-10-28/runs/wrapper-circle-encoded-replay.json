@@ -1,0 +1,24 @@
+{
+  "name": "wrapper-circle-encoded-replay",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/wrapper-harness/encoded_replay.py",
+    "--side",
+    "wrapper-circle"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:43:00Z",
+  "log": "${VALIDATION_ROOT}/logs/wrapper-circle-encoded-replay.log",
+  "exit_code": 1,
+  "status": "FAIL",
+  "elapsed_seconds": 9.238
+}

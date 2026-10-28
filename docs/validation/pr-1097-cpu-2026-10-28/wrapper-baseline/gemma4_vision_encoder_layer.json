@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-baseline/gemma4_vision_encoder_layer/gemma4_vision_encoder_layer.q.circle"
+  },
+  "case": "gemma4_vision_encoder_layer",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      8,
+      32
+    ],
+    "max_abs_diff": 0.57081538438797,
+    "mean_abs_diff": 0.07822258025407791,
+    "peir": 0.058120988995196264,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      8,
+      32
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

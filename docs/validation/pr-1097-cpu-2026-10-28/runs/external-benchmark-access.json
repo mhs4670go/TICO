@@ -1,0 +1,25 @@
+{
+  "name": "external-benchmark-access",
+  "command": [
+    "curl",
+    "-I",
+    "--max-time",
+    "15",
+    "https://huggingface.co/datasets/Rowan/hellaswag"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 20,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:15:27Z",
+  "log": "${VALIDATION_ROOT}/logs/external-benchmark-access.log",
+  "exit_code": 56,
+  "status": "FAIL",
+  "elapsed_seconds": 0.032
+}

@@ -1,0 +1,24 @@
+test_all_adapters_keep_context_window_and_cache_independent (test.quantization.recipes.test_cpu_evaluation.TestAdapterPPLPlumbing.test_all_adapters_keep_context_window_and_cache_independent) ... ok
+test_actual_recipe_helpers_match_independent_fresh_token_nll (test.quantization.recipes.test_cpu_evaluation.TestCPUPerplexity.test_actual_recipe_helpers_match_independent_fresh_token_nll) ...
+PPL:   0%|          | 0/5 [00:00<?, ?it/s]
+PPL:  40%|████      | 2/5 [00:00<00:00, 537.49it/s]
+
+PPL:   0%|          | 0/5 [00:00<?, ?it/s][transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+
+PPL:  40%|████      | 2/5 [00:00<00:00, 407.73it/s]
+
+PPL:   0%|          | 0/5 [00:00<?, ?it/s]
+PPL:  40%|████      | 2/5 [00:00<00:00, 151.93it/s]
+CPU_PPL real HF/WrapQ W4A16, window=8 stride=3 tokens=13: {'fp': 131.49905395507812, 'no_quant': 131.49905395507812, 'quant_w4a16': 130.86241149902344}
+ok
+test_gemma_bounded_text_smoke_crosses_sliding_window (test.quantization.recipes.test_cpu_evaluation.TestCPUPerplexity.test_gemma_bounded_text_smoke_crosses_sliding_window) ... CPU_PPL Gemma dense text-only, PLE/shared-KV disabled, parameters=82624 float32_bytes=330496, sliding_window=8 window=12 stride=4 tokens=13: {'fp': 123.41830444335938, 'no_quant': 123.41830444335938, 'quant_w4a16': 120.72010040283203}
+ok
+test_no_valid_next_token_is_an_explicit_error (test.quantization.recipes.test_cpu_evaluation.TestCPUPerplexity.test_no_valid_next_token_is_an_explicit_error) ... ok
+test_padding_and_ignored_overlap_labels_match_real_logit_nll (test.quantization.recipes.test_cpu_evaluation.TestCPUPerplexity.test_padding_and_ignored_overlap_labels_match_real_logit_nll) ... ok
+test_qwen_actual_text_scoring_preserves_frozen_state (test.quantization.recipes.test_cpu_evaluation.TestCPUPerplexity.test_qwen_actual_text_scoring_preserves_frozen_state) ... CPU_PPL Qwen real HF/WrapQ W4A16, window=8 stride=3 tokens=13: {'fp': 129.3563232421875, 'no_quant': 129.3563232421875, 'quant_w4a16': 128.7648468017578}
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.116s
+
+OK

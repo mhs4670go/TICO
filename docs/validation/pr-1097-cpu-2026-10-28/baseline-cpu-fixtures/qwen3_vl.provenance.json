@@ -1,0 +1,130 @@
+{
+  "approximate_fp32_parameter_bytes": 601088,
+  "architecture": {
+    "_name_or_path": "",
+    "architectures": null,
+    "chunk_size_feed_forward": 0,
+    "dtype": null,
+    "eos_token_id": 127,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "image_token_id": 121,
+    "is_encoder_decoder": false,
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "model_type": "qwen3_vl",
+    "output_attentions": false,
+    "output_hidden_states": false,
+    "pad_token_id": 0,
+    "problem_type": null,
+    "return_dict": true,
+    "text_config": {
+      "_name_or_path": "",
+      "architectures": null,
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "chunk_size_feed_forward": 0,
+      "dtype": null,
+      "head_dim": 32,
+      "hidden_act": "silu",
+      "hidden_size": 64,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "initializer_range": 0.02,
+      "intermediate_size": 128,
+      "is_encoder_decoder": false,
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "max_position_embeddings": 128,
+      "model_type": "qwen3_vl_text",
+      "num_attention_heads": 2,
+      "num_hidden_layers": 2,
+      "num_key_value_heads": 1,
+      "output_attentions": false,
+      "output_hidden_states": false,
+      "pad_token_id": null,
+      "problem_type": null,
+      "return_dict": true,
+      "rms_norm_eps": 1e-06,
+      "rope_parameters": {
+        "mrope_section": [
+          4,
+          6,
+          6
+        ],
+        "rope_theta": 500000.0,
+        "rope_type": "default"
+      },
+      "use_cache": true,
+      "vocab_size": 128
+    },
+    "tie_word_embeddings": false,
+    "transformers_version": "5.18.0",
+    "video_token_id": 122,
+    "vision_config": {
+      "_name_or_path": "",
+      "architectures": null,
+      "chunk_size_feed_forward": 0,
+      "deepstack_visual_indexes": [
+        0
+      ],
+      "depth": 1,
+      "dtype": null,
+      "hidden_act": "gelu_pytorch_tanh",
+      "hidden_size": 32,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "in_channels": 3,
+      "initializer_range": 0.02,
+      "intermediate_size": 64,
+      "is_encoder_decoder": false,
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "model_type": "qwen3_vl_vision",
+      "num_heads": 2,
+      "num_position_embeddings": 16,
+      "out_hidden_size": 64,
+      "output_attentions": false,
+      "output_hidden_states": false,
+      "patch_size": 2,
+      "problem_type": null,
+      "return_dict": true,
+      "rope_parameters": {
+        "rope_theta": 10000.0,
+        "rope_type": "axial"
+      },
+      "spatial_merge_size": 2,
+      "temporal_patch_size": 2
+    },
+    "vision_end_token_id": 124,
+    "vision_start_token_id": 120
+  },
+  "calibration_path": "standard adapter.calibrate_prepared_model + PTQStage",
+  "calibration_samples": 2,
+  "calibration_tokens_per_sample": 8,
+  "checkpoint_sha256": "63d130fc59f167a89c6b63adb1189cbed3ff8e3f641978c54014457ceb10be09",
+  "config_sha256": "f4cc9e234c0f85e2274d64542943cfce935850a956216f91a6c8cfe4378b0fa0",
+  "parameters": 150272,
+  "quantization_state": {
+    "packaging_note": "Full tensor inventory omitted from report copy; original evidence file SHA256 is in PACKAGE_MANIFEST.json. Regenerate using preserved harness.",
+    "canonical_json_sha256": "3cd3aa51afdb4cf90afcb8387cb0d73e63e4b4436ee57129adb17e886280e73b",
+    "sections": [
+      "modes",
+      "observers",
+      "weights"
+    ]
+  },
+  "seed": 1073
+}

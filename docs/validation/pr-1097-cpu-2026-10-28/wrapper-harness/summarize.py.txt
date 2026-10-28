@@ -1,0 +1,9 @@
+import json,pathlib,collections
+r=pathlib.Path('${VALIDATION_ROOT}');cases=json.loads((r/'wrapper-harness/export-summary.json').read_text());families=collections.defaultdict(list)
+for c in cases:
+ n=c['case'];f='qwen3_vl' if n.startswith('qwen3_vl') else 'gemma4_assistant' if n.startswith('gemma4_assistant') else n.split('_')[0];families[f].append(c)
+rows=[]
+for family,cs in families.items():
+ checks=[c.get('artifact_checks',{}) for c in cs if c['status']!='SKIPPED']
+ rows.append({'family':family,'registered':len(cs),'export_attempted':len(checks),'process_pass':sum(c['status']=='PASS' for c in cs),'intentional_skips':sum(c['status']=='SKIPPED' for c in cs),'saved':sum(x.get('saved')=='PASS' for x in checks),'structural':sum(x.get('structural')=='PASS' for x in checks),'runtime':sum(x.get('runtime')=='PASS' for x in checks),'parity':sum(x.get('parity')=='PASS' for x in checks),'frozen_unchanged':sum(x.get('frozen_unchanged')=='PASS' for x in checks),'elapsed_seconds':round(sum(c.get('run',{}).get('elapsed_seconds',0) for c in cs),3)})
+x={'families':rows,'cases':cases};(r/'wrapper-harness/results.json').write_text(json.dumps(x,indent=2));print(json.dumps(rows,indent=2))

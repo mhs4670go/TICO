@@ -1,0 +1,23 @@
+"""No re-export: isolate fixed-profile materialization vs original frozen-grid mutation."""
+import copy,json,pathlib,hashlib,torch,yaml
+from tico.quantization.recipes.debug.wrapper_smoke.registry import get_case
+from tico.quantization.recipes.debug import export_regression as er
+from tico.quantization.wrapq.lifecycle import validate_frozen_model
+root=pathlib.Path(__file__).parent
+cfg=yaml.safe_load(pathlib.Path('${CANDIDATE_REPO}/tico/quantization/examples/configs/wrapper_smoke.yaml').read_text())
+torch.set_num_threads(1);torch.manual_seed(123)
+case=get_case('gemma4_vision_model')
+def digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True).encode()).hexdigest()
+def diff(a,b):
+ return {k:{'added':sorted(set(b[k])-set(a[k])),'removed':sorted(set(a[k])-set(b[k])),'changed':sorted(n for n in set(a[k])&set(b[k]) if a[k][n]!=b[k][n])} for k in a}
+with torch.no_grad():
+ m,ref=case.build(cfg);p=case.prepare_model(m,cfg);case.after_prepare(p,cfg)
+ for sample in case.calibration_inputs(p,cfg)[:3]:case.forward(p,sample)
+ ev=case.eval_input(p,cfg);case.reference_forward(ref,ev);q=case.convert_model(p,cfg);case.forward(q,ev)
+ before=er._state_contract(q);validate_frozen_model(q)
+ inv=case.export_invocation(q,ev,cfg);after_profile=er._state_contract(q);validate_frozen_model(q)
+ output=inv.module.eval()(*copy.deepcopy(inv.inputs.args),**copy.deepcopy(dict(inv.inputs.kwargs)))
+ after_forward=er._state_contract(q);validate_frozen_model(q)
+ proof={'case':case.name,'diagnostic_only':True,'real_export_executed':False,'before_sha256':digest(before),'after_profile_sha256':digest(after_profile),'after_forward_sha256':digest(after_forward),'profile_diff':diff(before,after_profile),'forward_diff':diff(after_profile,after_forward),'before_contract':before,'after_profile_contract':after_profile,'after_forward_contract':after_forward,'validate_frozen_model_before_after':'PASS','output_records':[er._array_record(v) for v in er._tree_arrays(output).values()]}
+ (root/'gemma4-topology-diagnostic.json').write_text(json.dumps(proof,indent=2))
+ print(json.dumps({k:v for k,v in proof.items() if not k.endswith('contract')},indent=2))

@@ -1,0 +1,635 @@
+[
+  {
+    "case": "gemma4_assistant_core",
+    "candidate": "SKIPPED",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "gemma4_for_causal_lm",
+    "candidate": "SKIPPED",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "gemma4_for_conditional_generation",
+    "candidate": "SKIPPED",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "gemma4_model",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.00031834840774536133
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.00031834840774536133
+      }
+    ]
+  },
+  {
+    "case": "gemma4_text_attention_k_eq_v_prefill",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.07833653688430786
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.14974308013916016
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.07833653688430786
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.14974308013916016
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "gemma4_text_attention_prefill",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.47829586267471313
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.47829586267471313
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "gemma4_text_attention_shared_kv_decode",
+    "candidate": "PASS",
+    "base": "PASS",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "gemma4_vision_attention",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.025043904781341553
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.03134346008300781
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.025043904781341553
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.03134346008300781
+      }
+    ]
+  },
+  {
+    "case": "gemma4_vision_encoder",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.1260686218738556
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.1260686218738556
+      }
+    ]
+  },
+  {
+    "case": "gemma4_vision_encoder_layer",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.16420865058898926
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.16420865058898926
+      }
+    ]
+  },
+  {
+    "case": "gemma4_vision_model",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.3048877716064453
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.3048877716064453
+      }
+    ]
+  },
+  {
+    "case": "gemma4_vision_patch_embedder",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.0318911075592041
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.0318911075592041
+      }
+    ]
+  },
+  {
+    "case": "llama_attention_decode",
+    "candidate": "PASS",
+    "base": "PASS",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "llama_attention_prefill",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.013716518878936768
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.013716518878936768
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "llama_decoder_layer_decode",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.017563581466674805
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.017563581466674805
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "llama_decoder_layer_prefill",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.05912160873413086
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.05912160873413086
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "nn_linear",
+    "candidate": "PASS",
+    "base": "PASS",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "nn_tied_embedding",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.08418607711791992
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.08418607711791992
+      }
+    ]
+  },
+  {
+    "case": "qwen3_vl_for_conditional_generation",
+    "candidate": "SKIPPED",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "qwen3_vl_model",
+    "candidate": "SKIPPED",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "qwen3_vl_text_attention_decode",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.003657206892967224
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.003657206892967224
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "qwen3_vl_text_attention_prefill",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.004152536392211914
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.004152536392211914
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "qwen3_vl_text_decoder_layer_prefill",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.04965412616729736
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.008152186870574951
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.04965412616729736
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.008152186870574951
+      },
+      {
+        "ok": true,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  {
+    "case": "qwen3_vl_text_model",
+    "candidate": "SKIPPED",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "qwen3_vl_vision_attention",
+    "candidate": "FAIL",
+    "base": "SKIPPED",
+    "same_raw_inputs": null,
+    "same_raw_torch": null,
+    "same_encoded_torch": null,
+    "same_encoded_circle": null,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 8.961232379078865e-05
+      }
+    ],
+    "base_comparisons": null
+  },
+  {
+    "case": "qwen3_vl_vision_block",
+    "candidate": "FAIL",
+    "base": "FAIL",
+    "same_raw_inputs": true,
+    "same_raw_torch": true,
+    "same_encoded_torch": true,
+    "same_encoded_circle": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.029397964477539062
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 0.029397964477539062
+      }
+    ]
+  }
+]

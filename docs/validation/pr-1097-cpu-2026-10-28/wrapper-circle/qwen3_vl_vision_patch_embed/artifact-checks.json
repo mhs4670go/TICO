@@ -1,0 +1,73 @@
+{
+  "case": "qwen3_vl_vision_patch_embed",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_vision_patch_embed",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_embed",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_embed.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "7d8cc9a6a615c9aa216bf0902a78bd12fb4daefaccc9a1828b926e183ab9c644",
+  "frozen_after_sha256": "7d8cc9a6a615c9aa216bf0902a78bd12fb4daefaccc9a1828b926e183ab9c644",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_embed/qwen3_vl_vision_patch_embed.q.circle",
+  "bytes": 51288,
+  "sha256": "70589bac57ac2739e18ee83dbf3c0cf6e0f05274cd9a557061458083681a3672",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        4,
+        1536
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "7d8cc9a6a615c9aa216bf0902a78bd12fb4daefaccc9a1828b926e183ab9c644",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

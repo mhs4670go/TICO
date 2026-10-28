@@ -1,0 +1,29 @@
+{
+  "artifacts": {},
+  "case": "gemma4_for_conditional_generation",
+  "failures": [
+    "EXPORT"
+  ],
+  "messages": [
+    "Circle export failed: Data-dependent branching\n  Explanation: Detected data-dependent branching (e.g. `if my_tensor.sum() > 0:`). Dynamo does not support tracing dynamic control flow.\n  Hint: For the common pattern `if tensor_cond: x = transform(x)` (e.g. clamping inf/nan values), consider making the code branchless by always applying the transform. Operations like torch.clamp, torch.nan_to_num, and torch.where are typically no-ops on well-behaved inputs and compile without graph breaks.\n  Hint: Note: Python `or`/`and` between tensor expressions (e.g. `tensor.any() or other_tensor.any()`) triggers implicit bool conversion. Use `torch.logical_or`/`torch.logical_and` or the `|`/`&` operators instead.\n  Hint: This graph break is fundamental - it is unlikely that Dynamo will ever be able to trace through your code. Consider finding a workaround.\n  Hint: Use `torch.cond` to express dynamic control flow.\n\n  Developer debug context: attempted to jump with TensorVariable()\n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0170.html\n\nfrom user code:\n   File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/functional_export.py\", line 232, in forward\n    res = self._export_root(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 46, in forward\n    return self.wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/gemma4/quant_for_conditional_generation.py\", line 104, in forward\n    outputs = self.model(\n              ^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 46, in forward\n    return self.wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/gemma4/quant_model.py\", line 306, in forward\n    if multimodal_mask.any():\n       ^^^^^^^^^^^^^^^^^^^^^^\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+  ],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      16,
+      256
+    ],
+    "max_abs_diff": 0.013619990088045597,
+    "mean_abs_diff": 0.000701736775226891,
+    "peir": 0.012761865518819025,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      16,
+      256
+    ],
+    "shape_match": true
+  },
+  "passed": false
+}

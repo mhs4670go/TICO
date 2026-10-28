@@ -1,0 +1,56 @@
+Available wrapper smoke cases:
+
+  nn_linear
+  nn_conv3d
+  nn_conv3d_special_case
+  nn_layernorm
+  nn_tied_embedding
+
+  llama_mlp
+  llama_attention_prefill
+  llama_attention_decode
+  llama_decoder_layer_prefill
+  llama_decoder_layer_decode
+
+  qwen3_vl_text_attention_prefill
+  qwen3_vl_text_attention_decode
+  qwen3_vl_text_mlp
+  qwen3_vl_text_decoder_layer_prefill
+  qwen3_vl_text_decoder_layer_decode
+  qwen3_vl_text_model
+  qwen3_vl_vision_attention
+  qwen3_vl_vision_mlp
+  qwen3_vl_vision_block
+  qwen3_vl_vision_patch_embed
+  qwen3_vl_vision_patch_merger
+  qwen3_vl_vision_model
+  qwen3_vl_model
+  qwen3_vl_for_conditional_generation
+
+  gemma4_text_mlp
+  gemma4_text_attention_prefill
+  gemma4_text_attention_decode
+  gemma4_text_attention_sliding_prefill
+  gemma4_text_attention_sliding_decode
+  gemma4_text_attention_k_eq_v_prefill
+  gemma4_text_attention_shared_kv_prefill
+  gemma4_text_attention_shared_kv_decode
+  gemma4_text_decoder_layer_prefill
+  gemma4_text_decoder_layer_sliding_prefill
+  gemma4_text_decoder_layer_decode
+  gemma4_text_decoder_layer_shared_kv
+  gemma4_text_scaled_word_embedding
+  gemma4_vision_patch_embedder
+  gemma4_text_model
+  gemma4_vision_attention
+  gemma4_vision_encoder_layer
+  gemma4_vision_pooler
+  gemma4_vision_model
+  gemma4_multimodal_embedder
+  gemma4_vision_encoder
+  gemma4_model
+  gemma4_for_conditional_generation
+  gemma4_for_causal_lm
+
+  gemma4_assistant_core
+  gemma4_assistant_sparse_head

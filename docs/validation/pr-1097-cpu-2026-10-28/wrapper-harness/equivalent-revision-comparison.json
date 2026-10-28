@@ -1,0 +1,45 @@
+[
+  {
+    "case": "qwen3_vl_for_conditional_generation",
+    "candidate": "SKIPPED",
+    "equivalent_base": "SKIPPED",
+    "raw_input_records_identical": null,
+    "raw_torch_output_records_identical": null,
+    "torch_output_records_identical": null,
+    "circle_output_records_identical": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "qwen3_vl_model",
+    "candidate": "SKIPPED",
+    "equivalent_base": "SKIPPED",
+    "raw_input_records_identical": null,
+    "raw_torch_output_records_identical": null,
+    "torch_output_records_identical": null,
+    "circle_output_records_identical": null,
+    "candidate_comparisons": null,
+    "base_comparisons": null
+  },
+  {
+    "case": "qwen3_vl_vision_attention",
+    "candidate": "FAIL",
+    "equivalent_base": "FAIL",
+    "raw_input_records_identical": true,
+    "raw_torch_output_records_identical": true,
+    "torch_output_records_identical": true,
+    "circle_output_records_identical": true,
+    "candidate_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 8.961232379078865e-05
+      }
+    ],
+    "base_comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 8.961232379078865e-05
+      }
+    ]
+  }
+]

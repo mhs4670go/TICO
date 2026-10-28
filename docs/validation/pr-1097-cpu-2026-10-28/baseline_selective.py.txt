@@ -1,0 +1,32 @@
+import json
+import pathlib
+import sys
+import unittest
+
+import tico
+import torch
+
+ROOT = pathlib.Path('${VALIDATION_ROOT}')
+expected = pathlib.Path('${BASELINE_REPO}/tico/__init__.py')
+print('TICO_IMPORT_PATH', tico.__file__, flush=True)
+assert pathlib.Path(tico.__file__).resolve() == expected
+torch.set_num_threads(1)
+modules = [
+    'test.quantization.test_public_interface',
+    'test.quantization.recipes.test_folded_linear_qparam_handoff',
+    'test.quantization.recipes.test_cpu_evaluation',
+]
+suite = unittest.defaultTestLoader.loadTestsFromNames(modules)
+result = unittest.TextTestRunner(verbosity=2).run(suite)
+record = {
+    'revision': '261bda28ec55fdac42f59346c950326e4065f8fa',
+    'tico_import_path': tico.__file__, 'modules': modules,
+    'collected': suite.countTestCases(), 'executed': result.testsRun,
+    'failures': len(result.failures), 'errors': len(result.errors),
+    'skipped': len(result.skipped),
+    'passed': result.testsRun - len(result.failures) - len(result.errors) - len(result.skipped),
+    'success': result.wasSuccessful(),
+    'fixture_policy': 'Each revision constructs and independently calibrates/converts its own tiny models. No head checkpoint passed to baseline.',
+}
+(ROOT / 'baseline-selective-summary.json').write_text(json.dumps(record, indent=2))
+sys.exit(not result.wasSuccessful())

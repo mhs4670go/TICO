@@ -1,0 +1,22 @@
+{
+  "name": "gemma-generic-export-diagnostic",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/gemma-export-review/diagnose.py"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 120,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:44:16Z",
+  "log": "${VALIDATION_ROOT}/logs/gemma-generic-export-diagnostic.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 5.43
+}

@@ -1,0 +1,78 @@
+{
+  "case": "nn_conv3d_special_case",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "nn_conv3d_special_case",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d_special_case",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d_special_case.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "ada745b47723d65758f60cf9e0042e3d2f768544366699829833165191800e69",
+  "frozen_after_sha256": "ada745b47723d65758f60cf9e0042e3d2f768544366699829833165191800e69",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d_special_case/nn_conv3d_special_case.q.circle",
+  "bytes": 8904,
+  "sha256": "ad27e6c619382079454c42e9eba1022229da5e64f2ee493a8465851cf3bec125",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        2,
+        3,
+        2,
+        8,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        2,
+        16,
+        1,
+        1,
+        1
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "ada745b47723d65758f60cf9e0042e3d2f768544366699829833165191800e69",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

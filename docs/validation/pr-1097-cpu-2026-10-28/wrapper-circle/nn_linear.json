@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/nn_linear/nn_linear.q.circle"
+  },
+  "case": "nn_linear",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      8
+    ],
+    "max_abs_diff": 0.12505368888378143,
+    "mean_abs_diff": 0.03713126480579376,
+    "peir": 0.05004631791923233,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      8
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

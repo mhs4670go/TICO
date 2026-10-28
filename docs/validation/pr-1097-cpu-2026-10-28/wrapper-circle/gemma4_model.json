@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_model/gemma4_model.q.circle"
+  },
+  "case": "gemma4_model",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      16,
+      64
+    ],
+    "max_abs_diff": 0.01396024227142334,
+    "mean_abs_diff": 0.000733006454538554,
+    "peir": 0.0024359058095064956,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      16,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

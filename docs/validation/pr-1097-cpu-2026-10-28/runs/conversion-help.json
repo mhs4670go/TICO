@@ -1,0 +1,24 @@
+{
+  "name": "conversion-help",
+  "command": [
+    "python",
+    "-m",
+    "test.performance.benchmark_conversion_memory",
+    "--help"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 30,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:17:24Z",
+  "log": "${VALIDATION_ROOT}/logs/conversion-help.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 0.064
+}

@@ -1,0 +1,18 @@
+[QuantCheck] WARNING: 1 nodes without qparam detected (see logs).
+Saved Circle model to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/model.q.circle
+Saving token_embedding.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/token_embedding.q.circle
+[QuantCheck] WARNING: 1 nodes without qparam detected (see logs).
+Saving decoder_layer_prefill_0.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/decoder_layer_prefill_0.q.circle
+Saving decoder_layer_decode_0.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/decoder_layer_decode_0.q.circle
+Saving decoder_layer_prefill_1.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/decoder_layer_prefill_1.q.circle
+Saving decoder_layer_decode_1.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/decoder_layer_decode_1.q.circle
+Saving lm_head.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/before/artifacts/lm_head.q.circle
+[QuantCheck] WARNING: 1 nodes without qparam detected (see logs).
+Saved Circle model to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/model.q.circle
+Saving token_embedding.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/token_embedding.q.circle
+[QuantCheck] WARNING: 1 nodes without qparam detected (see logs).
+Saving decoder_layer_prefill_0.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/decoder_layer_prefill_0.q.circle
+Saving decoder_layer_decode_0.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/decoder_layer_decode_0.q.circle
+Saving decoder_layer_prefill_1.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/decoder_layer_prefill_1.q.circle
+Saving decoder_layer_decode_1.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/decoder_layer_decode_1.q.circle
+Saving lm_head.q.circle to ${VALIDATION_ROOT}/cpu-validation/llama-16/candidate/after_eager/artifacts/lm_head.q.circle

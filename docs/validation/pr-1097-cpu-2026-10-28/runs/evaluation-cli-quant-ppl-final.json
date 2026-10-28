@@ -1,0 +1,36 @@
+{
+  "name": "evaluation-cli-quant-ppl-final",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/evaluation/invoke_cli.py",
+    "--label",
+    "quant-ppl-final",
+    "--",
+    "--config",
+    "${VALIDATION_ROOT}/evaluation/config.yaml",
+    "--checkpoint",
+    "${VALIDATION_ROOT}/evaluation/quantized_model.pt",
+    "--device",
+    "cpu",
+    "--tasks",
+    "ppl",
+    "--output-dir",
+    "${VALIDATION_ROOT}/evaluation/quant-ppl-final/protocol",
+    "--no-progress"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:18:13Z",
+  "log": "${VALIDATION_ROOT}/logs/evaluation-cli-quant-ppl-final.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 7.332
+}

@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_mlp/qwen3_vl_text_mlp.q.circle"
+  },
+  "case": "qwen3_vl_text_mlp",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      8,
+      64
+    ],
+    "max_abs_diff": 0.013462889939546585,
+    "mean_abs_diff": 0.0028913936112076044,
+    "peir": 0.01498084612966299,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      8,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

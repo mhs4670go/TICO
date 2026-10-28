@@ -1,0 +1,34 @@
+import collections
+import json
+import pathlib
+import unittest
+
+import tico
+
+ROOT = pathlib.Path('${VALIDATION_ROOT}')
+assert pathlib.Path(tico.__file__).resolve() == pathlib.Path('${CANDIDATE_REPO}/tico/__init__.py')
+loader = unittest.TestLoader()
+suite = loader.discover('${CANDIDATE_REPO}/test')
+
+def flatten(suite):
+    for case in suite:
+        if isinstance(case, unittest.TestSuite):
+            yield from flatten(case)
+        else:
+            yield case
+
+tests = []
+for case in flatten(suite):
+    method = getattr(case, case._testMethodName)
+    cls = type(case)
+    skipped = bool(getattr(cls, '__unittest_skip__', False) or getattr(method, '__unittest_skip__', False))
+    reason = getattr(cls, '__unittest_skip_why__', '') if getattr(cls, '__unittest_skip__', False) else getattr(method, '__unittest_skip_why__', '')
+    tests.append({'id': case.id(), 'decorated_skip': skipped, 'decorated_skip_reason': reason})
+families = {}
+for family, needle in [('llama', '.wrappers.llama.'), ('qwen_vl', '.wrappers.qwen_vl.'), ('gemma4', '.wrappers.gemma4.'), ('gemma4_assistant', '.wrappers.gemma4_assistant.'), ('fairseq', '.wrappers.fairseq.')]:
+    group = [x for x in tests if needle in x['id']]
+    families[family] = {'collected': len(group), 'decorated_skip': sum(x['decorated_skip'] for x in group), 'potentially_runnable': sum(not x['decorated_skip'] for x in group)}
+summary = {'tico_import_path': tico.__file__, 'collected': len(tests), 'decorated_skip': sum(x['decorated_skip'] for x in tests), 'loader_errors': loader.errors, 'family_inventory': families, 'skip_reasons': dict(collections.Counter(x['decorated_skip_reason'] for x in tests if x['decorated_skip'])), 'limitations': 'Inventory only, tests not run. setUp/setUpClass runtime skips are not counted here; actual execution log is authoritative.'}
+(ROOT/'discovery-inventory.json').write_text(json.dumps({'summary': summary, 'tests': tests}, indent=2))
+print(json.dumps(summary, indent=2))
+assert not loader.errors, loader.errors

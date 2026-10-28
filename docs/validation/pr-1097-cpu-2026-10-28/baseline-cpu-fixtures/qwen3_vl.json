@@ -1,0 +1,48 @@
+{
+  "calibration": {
+    "n_samples": 2,
+    "seq_len": 8
+  },
+  "evaluation": {
+    "enabled": false,
+    "max_seq_len": 64
+  },
+  "export": {
+    "enabled": true,
+    "max_seq_len": 16,
+    "prefill_decode": true
+  },
+  "model": {
+    "family": "qwen3_vl",
+    "name_or_path": "local-random-config"
+  },
+  "model_args": {
+    "profile": "npu_export",
+    "vision": {
+      "grid_thw": [
+        1,
+        2,
+        2
+      ],
+      "spatial_merge_size": 2,
+      "visual_start_idx": 2
+    }
+  },
+  "pipeline": [
+    {
+      "activation": "int16",
+      "decode_calibration_steps": 2,
+      "embedding_weight": "uint8",
+      "linear_weight": "uint4",
+      "lm_head_weight": "uint8",
+      "name": "ptq",
+      "reuse_gptq_qparams": false
+    }
+  ],
+  "runtime": {
+    "device": "cpu",
+    "dtype": "float32",
+    "seed": 1073,
+    "show_progress": false
+  }
+}

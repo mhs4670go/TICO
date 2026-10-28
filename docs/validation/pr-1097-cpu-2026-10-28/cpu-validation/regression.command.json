@@ -1,0 +1,34 @@
+{
+  "command": [
+    "${VALIDATION_VENV}/bin/python",
+    "-m",
+    "tico.quantization.recipes.debug.cpu_validation",
+    "--stage",
+    "_tests",
+    "--output",
+    "${VALIDATION_ROOT}/cpu-validation/regression-tests",
+    "--test-module",
+    "test.quantization.recipes.test_cpu_fixtures",
+    "--test-module",
+    "test.quantization.recipes.test_cpu_validation",
+    "--test-module",
+    "test.quantization.recipes.test_export_regression",
+    "--test-module",
+    "test.quantization.wrapq.utils.test_static_export_inputs",
+    "--test-module",
+    "test.quantization.wrapq.wrappers.llama.test_rope_consistency"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "log": "${VALIDATION_ROOT}/cpu-validation/regression.log",
+  "returncode": 0,
+  "seconds": 7.663039921000063,
+  "status": "PASS",
+  "stderr": "merged into stdout log"
+}

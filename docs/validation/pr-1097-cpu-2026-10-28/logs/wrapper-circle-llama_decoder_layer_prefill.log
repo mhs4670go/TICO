@@ -1,0 +1,136 @@
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : llama_decoder_layer_prefill
+│ Status           : PASS
+│ Mean |diff|      : 0.014662
+│ Max  |diff|      : 0.054426
+│ PEIR             : 0.008807
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/llama_decoder_layer_prefill/llama_decoder_layer_prefill.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/llama_decoder_layer_prefill.json
+{
+  "case": "llama_decoder_layer_prefill",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "llama_decoder_layer_prefill",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/llama_decoder_layer_prefill",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/llama_decoder_layer_prefill.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "45167ed80df820f72a61cb43376950ac71f8592ee236e891bf4e625c1f210652",
+  "frozen_after_sha256": "45167ed80df820f72a61cb43376950ac71f8592ee236e891bf4e625c1f210652",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/llama_decoder_layer_prefill/llama_decoder_layer_prefill.q.circle",
+  "bytes": 20648,
+  "sha256": "2d0342d366f98de6e54c583ee89d9984db84d6818aa6d7b7e5b1456dd9ce5254",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        16,
+        16
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        16,
+        16
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        16,
+        8
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        16,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 3,
+  "circle_output_count": 3,
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 0.05912160873413086
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        16,
+        16
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "45167ed80df820f72a61cb43376950ac71f8592ee236e891bf4e625c1f210652",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

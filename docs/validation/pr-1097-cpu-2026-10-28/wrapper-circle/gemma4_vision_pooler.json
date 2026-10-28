@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_pooler/gemma4_vision_pooler.q.circle"
+  },
+  "case": "gemma4_vision_pooler",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      4,
+      32
+    ],
+    "max_abs_diff": 0.55401611328125,
+    "mean_abs_diff": 0.029906880110502243,
+    "peir": 0.03801086290118372,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      4,
+      32
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

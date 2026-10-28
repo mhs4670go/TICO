@@ -1,0 +1,29 @@
+model:
+  family: llama
+  name_or_path: ${VALIDATION_ROOT}/evaluation/model
+runtime:
+  device: cpu
+  dtype: float32
+  seed: 1073
+  show_progress: false
+model_args:
+  profile: reference_eval
+calibration:
+  seq_len: 8
+  n_samples: 2
+pipeline: []
+evaluation:
+  enabled: true
+  max_seq_len: 64
+  use_cache: true
+  perplexity:
+    dataset: ${VALIDATION_ROOT}/evaluation/ppl-data
+    dataset_config: null
+    split: test
+    max_seq_len: 16
+    stride: 8
+  lm_eval_tasks: hellaswag
+export:
+  enabled: false
+  max_seq_len: 16
+  prefill_decode: true

@@ -1,0 +1,37 @@
+{
+  "name": "wrapper-numerical-all",
+  "command": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "all",
+    "--device",
+    "cpu",
+    "--export",
+    "none",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-smoke"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 900,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:15:11Z",
+  "log": "${VALIDATION_ROOT}/logs/wrapper-numerical-all.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 10.674
+}

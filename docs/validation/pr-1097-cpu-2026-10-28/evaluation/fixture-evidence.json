@@ -1,0 +1,14 @@
+{
+  "seed": 1073,
+  "calibration_samples": 2,
+  "calibration_tokens_per_sample": 8,
+  "decode_calibration_steps": 2,
+  "evaluation_rows": 4,
+  "ppl_input_tokens": 28,
+  "ppl_scoring_tokens": 27,
+  "parameters": 90432,
+  "checkpoint": "${VALIDATION_ROOT}/evaluation/quantized_model.pt",
+  "checkpoint_sha256": "2dca60284360a76bd0229a7dd73db1ad35919310ed48c7a28db81ddfa7235d32",
+  "roundtrip_state_equal": true,
+  "input_roles_disjoint": true
+}

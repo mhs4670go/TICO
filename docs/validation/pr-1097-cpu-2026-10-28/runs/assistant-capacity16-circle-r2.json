@@ -1,0 +1,38 @@
+{
+  "name": "assistant-capacity16-circle-r2",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/gemma-export-review/assistant_capacity16.py",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "gemma4_assistant_core",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2",
+    "--report-json",
+    "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2.json"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 240,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:54:30Z",
+  "log": "${VALIDATION_ROOT}/logs/assistant-capacity16-circle-r2.log",
+  "exit_code": 1,
+  "status": "FAIL",
+  "elapsed_seconds": 16.883
+}

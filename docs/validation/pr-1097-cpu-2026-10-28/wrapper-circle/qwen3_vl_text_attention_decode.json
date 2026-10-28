@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_decode/qwen3_vl_text_attention_decode.q.circle"
+  },
+  "case": "qwen3_vl_text_attention_decode",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      1,
+      64
+    ],
+    "max_abs_diff": 0.9146651029586792,
+    "mean_abs_diff": 0.3444608747959137,
+    "peir": 0.41616894466374177,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      1,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

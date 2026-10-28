@@ -1,0 +1,26 @@
+usage: benchmark_circle_optimizer.py [-h] [--repeat REPEAT] [--warmup WARMUP]
+                                     [--maximum-steps MAXIMUM_STEPS]
+                                     [--constant-folding-profile {basic,heavy}]
+                                     [--resolve-legacy-custom-ops]
+                                     [--legalize-dynamic-fully-connected]
+                                     [--fuse-transpose-conv-slice]
+                                     [--fuse-legacy-fc-gelu-fc] [--json]
+                                     input
+
+Benchmark O1 scheduling on one caller-provided full Circle artifact.
+
+positional arguments:
+  input                 Local full .circle artifact.
+
+options:
+  -h, --help            show this help message and exit
+  --repeat REPEAT       Measured runs per scheduler (default: 3).
+  --warmup WARMUP       Unmeasured runs per scheduler (default: 1).
+  --maximum-steps MAXIMUM_STEPS
+                        Maximum pass invocations per optimize phase.
+  --constant-folding-profile {basic,heavy}
+  --resolve-legacy-custom-ops
+  --legalize-dynamic-fully-connected
+  --fuse-transpose-conv-slice
+  --fuse-legacy-fc-gelu-fc
+  --json                Print one machine-readable JSON object.

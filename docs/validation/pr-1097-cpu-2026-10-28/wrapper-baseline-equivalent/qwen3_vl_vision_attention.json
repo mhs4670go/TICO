@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-baseline-equivalent/qwen3_vl_vision_attention/qwen3_vl_vision_attention.q.circle"
+  },
+  "case": "qwen3_vl_vision_attention",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      64,
+      64
+    ],
+    "max_abs_diff": 0.00018425955204293132,
+    "mean_abs_diff": 3.857176852761768e-05,
+    "peir": 0.016118809781898037,
+    "quant_finite": true,
+    "quant_shape": [
+      64,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

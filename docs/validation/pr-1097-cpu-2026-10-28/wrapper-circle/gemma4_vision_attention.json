@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_attention/gemma4_vision_attention.q.circle"
+  },
+  "case": "gemma4_vision_attention",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      8,
+      32
+    ],
+    "max_abs_diff": 0.07024819403886795,
+    "mean_abs_diff": 0.017681539058685303,
+    "peir": 0.029431065200731816,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      8,
+      32
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

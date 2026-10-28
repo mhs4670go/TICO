@@ -1,0 +1,19 @@
+{
+  "baseline": {
+    "exit_code": 1,
+    "run": "${VALIDATION_ROOT}/runs/assistant-capacity16-circle-r2-base.json",
+    "checks": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2-base/artifact-checks.json"
+  },
+  "exit_code": 1,
+  "run": "${VALIDATION_ROOT}/runs/assistant-capacity16-circle-r2.json",
+  "checks": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2/artifact-checks.json",
+  "profile_override": {
+    "sliding_kv_length": 16,
+    "original_sliding_kv_length": 8,
+    "kv_len": 10,
+    "full_kv_length": 16
+  },
+  "completed_utc": "2026-10-28T10:55:03Z",
+  "status": "FAIL",
+  "classification": "existing strict numerical parity difference; head/base same outputs and errors"
+}

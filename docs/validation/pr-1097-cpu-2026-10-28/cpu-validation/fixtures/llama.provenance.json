@@ -1,0 +1,65 @@
+{
+  "approximate_fp32_parameter_bytes": 361728,
+  "architecture": {
+    "_name_or_path": "",
+    "architectures": null,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 1,
+    "chunk_size_feed_forward": 0,
+    "dtype": null,
+    "eos_token_id": 127,
+    "head_dim": 32,
+    "hidden_act": "silu",
+    "hidden_size": 64,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "initializer_range": 0.02,
+    "intermediate_size": 128,
+    "is_encoder_decoder": false,
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "max_position_embeddings": 128,
+    "mlp_bias": false,
+    "model_type": "llama",
+    "num_attention_heads": 2,
+    "num_hidden_layers": 2,
+    "num_key_value_heads": 1,
+    "output_attentions": false,
+    "output_hidden_states": false,
+    "pad_token_id": 0,
+    "pretraining_tp": 1,
+    "problem_type": null,
+    "return_dict": true,
+    "rms_norm_eps": 1e-06,
+    "rope_parameters": {
+      "factor": 2.0,
+      "rope_theta": 10000.0,
+      "rope_type": "linear"
+    },
+    "tie_word_embeddings": false,
+    "transformers_version": "5.18.0",
+    "use_cache": true,
+    "vocab_size": 128
+  },
+  "calibration_path": "standard adapter.calibrate_prepared_model + PTQStage",
+  "calibration_samples": 2,
+  "calibration_tokens_per_sample": 8,
+  "checkpoint_sha256": "8bfdc3bc9482440709d8b124121f1aaabf7e79d96d7faa7ea634557a3e5ef663",
+  "config_sha256": "275d672ffc8dcf99e7ad369d3c4fd780eec2c389e3cde9a81baf2d4f358eec80",
+  "parameters": 90432,
+  "quantization_state": {
+    "packaging_note": "Full tensor inventory omitted from report copy; original evidence file SHA256 is in PACKAGE_MANIFEST.json. Regenerate using preserved harness.",
+    "canonical_json_sha256": "372b1540d938725ddfde695320e85246ca96c9353942b7f0a446fb1fa4caab80",
+    "sections": [
+      "modes",
+      "observers",
+      "weights"
+    ]
+  },
+  "seed": 1073
+}

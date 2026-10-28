@@ -1,0 +1,86 @@
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : qwen3_vl_text_mlp
+│ Status           : PASS
+│ Mean |diff|      : 0.002891
+│ Max  |diff|      : 0.013463
+│ PEIR             : 0.014981
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_mlp/qwen3_vl_text_mlp.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_mlp.json
+{
+  "case": "qwen3_vl_text_mlp",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_text_mlp",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_mlp",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_mlp.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "b0fe191ebe791e97794b280c870524b2753ef57690adf28428b1240850540e44",
+  "frozen_after_sha256": "b0fe191ebe791e97794b280c870524b2753ef57690adf28428b1240850540e44",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_mlp/qwen3_vl_text_mlp.q.circle",
+  "bytes": 30576,
+  "sha256": "9ba23a3873cb57836f7ab82cd815640ac83fb21248363315b1911bbe972e79aa",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        2,
+        8,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        2,
+        8,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "b0fe191ebe791e97794b280c870524b2753ef57690adf28428b1240850540e44",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

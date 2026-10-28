@@ -1,0 +1,46 @@
+{
+  "label": "fp-ppl-final",
+  "forwards": [
+    {
+      "shape": [
+        1,
+        16
+      ],
+      "input_sha256": "d28bce312a78f51464d6e0e26208efa20e74c3e729424b9e1940f7d02e6133a7",
+      "dtype": "torch.int64",
+      "use_cache": null,
+      "valid_scoring_tokens": 15
+    },
+    {
+      "shape": [
+        1,
+        16
+      ],
+      "input_sha256": "c5df5ec8a21de5e779d35028835cc54859edcb49c7f7a7a5293d30149c990b63",
+      "dtype": "torch.int64",
+      "use_cache": null,
+      "valid_scoring_tokens": 8
+    },
+    {
+      "shape": [
+        1,
+        12
+      ],
+      "input_sha256": "1996b3e5823085213d9c37c22aaf0ce69fde60add6f650c310cde6cb78d6f103",
+      "dtype": "torch.int64",
+      "use_cache": null,
+      "valid_scoring_tokens": 4
+    }
+  ],
+  "metrics": {
+    "ppl": 127.8993911743164
+  },
+  "import_path": "${CANDIDATE_REPO}/tico/quantization/recipes/adapters/llama.py",
+  "ppl_rows": 4,
+  "ppl_scoring_tokens": 27,
+  "frozen_state_equal": true,
+  "frozen_before_sha256": "521cb45f90cb99963ea7717674f1fe3000c59999ba5e7affe9d34fa43098aeeb",
+  "frozen_after_sha256": "521cb45f90cb99963ea7717674f1fe3000c59999ba5e7affe9d34fa43098aeeb",
+  "checkpoint": null,
+  "model_class": "LlamaForCausalLM"
+}

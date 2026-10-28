@@ -1,0 +1,23 @@
+{
+  "name": "format",
+  "command": [
+    "./ccex",
+    "format",
+    "--no-apply-patches"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 900,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:47:09Z",
+  "log": "${VALIDATION_ROOT}/logs/format.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 210.185
+}

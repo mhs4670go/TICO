@@ -1,0 +1,105 @@
+[QuantCheck] WARNING: 1 nodes without qparam detected (see logs).
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : qwen3_vl_vision_block
+│ Status           : PASS
+│ Mean |diff|      : 0.012817
+│ Max  |diff|      : 0.122866
+│ PEIR             : 0.017524
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_block/qwen3_vl_vision_block.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_block.json
+{
+  "case": "qwen3_vl_vision_block",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_vision_block",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_block",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_block.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "66936e6af1fd430c014f3920b4c40c30d963e6d618585fc98bed20aca1ba0e65",
+  "frozen_after_sha256": "66936e6af1fd430c014f3920b4c40c30d963e6d618585fc98bed20aca1ba0e65",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_block/qwen3_vl_vision_block.q.circle",
+  "bytes": 733816,
+  "sha256": "ade02474e4ba4234f3c2d1b46837a4e35b64124b019875486391d14fa1f58cdd",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        8,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        2
+      ],
+      "dtype": "int64"
+    },
+    {
+      "shape": [
+        8,
+        16
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        8,
+        16
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 0.029397964477539062
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        8,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "66936e6af1fd430c014f3920b4c40c30d963e6d618585fc98bed20aca1ba0e65",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

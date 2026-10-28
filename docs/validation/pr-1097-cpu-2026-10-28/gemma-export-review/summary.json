@@ -1,0 +1,182 @@
+{
+  "status": "FAIL",
+  "classification": "기존 smoke export fixture/ABI 결함, 새로운 PR 회귀 증거 없음",
+  "diagnostic_run": "runs/gemma-generic-export-diagnostic.json",
+  "diagnostic_expected_negative_checks_pass": true,
+  "cases": [
+    {
+      "case": "gemma4_for_conditional_generation",
+      "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+      "parameters": 749072,
+      "valid_original_eager_forward": "PASS",
+      "calibration_samples": 3,
+      "wrapped_type": "QuantGemma4ForConditionalGeneration",
+      "wrapped_forward_signature": "(input_ids: torch.LongTensor | None = None, pixel_values: torch.FloatTensor | None = None, pixel_values_videos: torch.FloatTensor | None = None, input_features: torch.FloatTensor | None = None, attention_mask: torch.Tensor | None = None, input_features_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, image_position_ids: torch.LongTensor | None = None, video_position_ids: torch.LongTensor | None = None, past_key_values=None, mm_token_type_ids: torch.LongTensor | None = None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, use_cache: bool | None = None, logits_to_keep: int | torch.Tensor = 0, per_layer_inputs: torch.Tensor | None = None, **kwargs) -> 'Gemma4CausalLMOutputWithPast'",
+      "has_as_export_module": false,
+      "export_module_same_as_quantized": true,
+      "export_args": [
+        {
+          "type": "Tensor",
+          "shape": [
+            1,
+            16,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        {
+          "type": "NoneType"
+        },
+        {
+          "type": "dict"
+        },
+        {
+          "type": "dict"
+        }
+      ],
+      "original_export_invocation_eager": "FAIL",
+      "exception_type": "RuntimeError",
+      "exception": "QuantGemma4Model: capability 'vision' is unavailable; reprepare and recalibrate its quantization sites.",
+      "preexisting_state_unchanged": true
+    },
+    {
+      "case": "gemma4_for_causal_lm",
+      "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+      "parameters": 57728,
+      "valid_original_eager_forward": "PASS",
+      "calibration_samples": 3,
+      "wrapped_type": "QuantGemma4ForCausalLM",
+      "wrapped_forward_signature": "(input_ids: torch.LongTensor | None = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values=None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, use_cache: bool | None = None, logits_to_keep: int | torch.Tensor = 0, per_layer_inputs: torch.Tensor | None = None, **kwargs) -> 'Gemma4CausalLMOutputWithPast'",
+      "has_as_export_module": false,
+      "export_module_same_as_quantized": true,
+      "export_args": [
+        {
+          "type": "Tensor",
+          "shape": [
+            1,
+            16,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        {
+          "type": "NoneType"
+        },
+        {
+          "type": "dict"
+        },
+        {
+          "type": "dict"
+        }
+      ],
+      "original_export_invocation_eager": "FAIL",
+      "exception_type": "RuntimeError",
+      "exception": "Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.FloatTensor instead (while checking arguments for embedding)",
+      "preexisting_state_unchanged": true
+    },
+    {
+      "case": "gemma4_assistant_core",
+      "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+      "parameters": 23376,
+      "valid_original_eager_forward": "PASS",
+      "calibration_samples": 3,
+      "wrapped_type": "QuantGemma4AssistantForCausalLM",
+      "wrapped_forward_signature": "(input_ids: Optional[torch.Tensor] = None, inputs_embeds: Optional[torch.Tensor] = None, position_ids: Optional[torch.Tensor] = None, attention_mask: Any = None, shared_kv_states: Optional[Mapping[str, Tuple[torch.Tensor, torch.Tensor]]] = None, use_cache: Optional[bool] = None, position_embeddings: Optional[Mapping[str, Tuple[torch.Tensor, torch.Tensor]]] = None, **kwargs)",
+      "has_as_export_module": false,
+      "original_export_invocation_eager": "FAIL",
+      "exception_type": "ValueError",
+      "exception": "Sliding shared KV exceeds the configured static capacity: valid=10, sliding_kv_length=8. Inputs that exceed capacity must not be silently cropped; increase sliding_kv_length or reduce the input sequence length.",
+      "preexisting_state_unchanged": true
+    }
+  ],
+  "original_cli_status": {
+    "gemma4_for_conditional_generation": "FAIL",
+    "gemma4_for_causal_lm": "FAIL",
+    "gemma4_assistant_core": "FAIL"
+  },
+  "baseline": {
+    "gemma4_for_conditional_generation": "FAIL: data-dependent mask branch in same invalid ABI",
+    "gemma4_for_causal_lm": "FAIL: float embedding index same as head",
+    "gemma4_assistant_core": "FAIL: valid KV10 exceeds sliding capacity8 same as head"
+  },
+  "assistant_supplement": {
+    "status": "FAIL",
+    "classification": "existing strict numerical difference at same valid capacity16 profile; no new numerical regression demonstrated",
+    "head": {
+      "saved": "PASS",
+      "structural": "PASS",
+      "runtime": "PASS",
+      "parity": "FAIL",
+      "frozen_unchanged": "PASS",
+      "inspector_exit_code": 0,
+      "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+      "artifact": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2/gemma4_assistant_core.q.circle",
+      "bytes": 58112,
+      "sha256": "3122b8c6b987c1f10da3314ad380c2e84e50d3b79ec74f36f185a438c97fd3d6",
+      "comparisons": [
+        {
+          "ok": false,
+          "max_abs_error": 1.9803643226623535e-05
+        },
+        {
+          "ok": false,
+          "max_abs_error": 0.00024640560150146484
+        },
+        {
+          "ok": true,
+          "max_abs_error": 1.1280179023742676e-05
+        }
+      ]
+    },
+    "base": {
+      "saved": "PASS",
+      "structural": "PASS",
+      "runtime": "PASS",
+      "parity": "FAIL",
+      "frozen_unchanged": "PASS",
+      "inspector_exit_code": 0,
+      "tico_file": "${BASELINE_REPO}/tico/__init__.py",
+      "artifact": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2-base/gemma4_assistant_core.q.circle",
+      "bytes": 58112,
+      "sha256": "001e2349a198784b40f205137df3ec0755f1783ab073242494f56d65aa6db050",
+      "comparisons": [
+        {
+          "ok": false,
+          "max_abs_error": 1.9803643226623535e-05
+        },
+        {
+          "ok": false,
+          "max_abs_error": 0.00024640560150146484
+        },
+        {
+          "ok": true,
+          "max_abs_error": 1.1280179023742676e-05
+        }
+      ]
+    },
+    "same": {
+      "input_records": true,
+      "torch_output_records": true,
+      "circle_output_records": true,
+      "comparisons": true,
+      "input_contract": true,
+      "output_contract": true
+    },
+    "weights_equal": true,
+    "full_observer_inventory_equal": false,
+    "inventory_note": "Inactive identity cache-storage sites and unused sparse-head observer topology differ with PR lifecycle; no full-grid inventory equality claim. Actual inputs/Torch/Circle outputs are exactly identical.",
+    "profile": {
+      "sliding_kv_length": 16,
+      "full_kv_length": 16,
+      "valid_kv_length": 10,
+      "calibration_samples": 3
+    },
+    "tolerance_unchanged": {
+      "atol": 1e-05,
+      "rtol": 0.0001
+    },
+    "original_capacity8_case": "FAIL remains; supplemental profile does not override original result",
+    "initial_import_errors": "harness-errors.json, before model/export; corrected r2 results used"
+  },
+  "harness_errors": "harness-errors.json"
+}

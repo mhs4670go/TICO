@@ -1,0 +1,11 @@
+{
+  "source_constant_bytes": 1048576,
+  "input_artifact_bytes": 1055534,
+  "fixture_parameters": {
+    "size_mib": 1,
+    "tables": 1,
+    "width": 16,
+    "seed": 2026,
+    "identity_mul": false
+  }
+}

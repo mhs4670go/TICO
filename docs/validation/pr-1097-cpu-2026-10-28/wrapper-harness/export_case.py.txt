@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+"""Run real inspector CLI plus observational saved-Circle checks.
+
+The two spies delegate unchanged to real _export_circle and tico.convert. They
+capture the exact inputs at the converter boundary; no model/output is mocked.
+Torch expected calls receive deep-copied inputs so cache inputs remain unchanged.
+"""
+import copy, hashlib, json, pathlib, sys, traceback
+import numpy as np
+import torch
+import tico
+from tico.circle import CircleDocument
+from tico.circle.runtime import CircleReferenceRuntime, ExecutionMode
+from tico.quantization.recipes.debug import export_regression as er
+from tico.quantization.recipes.debug.wrapper_smoke import runner
+from tico.utils.signature import ModelInputSpec
+from tico.quantization.examples import inspector
+from observe import semantic_contract
+
+case = sys.argv[sys.argv.index('--case')+1]
+out = pathlib.Path(sys.argv[sys.argv.index('--output-dir')+1])
+out.mkdir(parents=True,exist_ok=True)
+evidence={'case':case,'tico_file':tico.__file__,'argv':['python','-m','tico.quantization.examples.inspector',*sys.argv[1:]],'instrumentation':'Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.','tolerances':{'atol':1e-5,'rtol':1e-4},'saved':'INCOMPLETE','structural':'INCOMPLETE','runtime':'INCOMPLETE','parity':'INCOMPLETE','frozen_unchanged':'INCOMPLETE'}
+old_convert=tico.convert
+old_export=runner._export_circle
+captures=[]
+
+def convert_spy(module, args, *pos, **options):
+    kwargs = pos[0] if pos else options.get('kwargs') or {}
+    capture={}
+    try:
+        with torch.no_grad():
+            capture['expected']=list(er._tree_arrays(module(*copy.deepcopy(args),**copy.deepcopy(kwargs))).values())
+        capture['args']=copy.deepcopy(args);capture['kwargs']=copy.deepcopy(kwargs)
+    except Exception:
+        capture['capture_error']=traceback.format_exc()
+    captures.append(capture)
+    try:
+        return old_convert(module,args,*pos,**options)
+    except Exception:
+        evidence['converter_error']=traceback.format_exc()
+        traceback.print_exc()
+        raise
+
+def export_spy(case, quantized, eval_sample, cfg, output_dir, result):
+    before=er._state_contract(quantized)
+    evidence['semantic_contract']=semantic_contract(quantized)
+    evidence['frozen_before_sha256']=hashlib.sha256(json.dumps(before,sort_keys=True).encode()).hexdigest()
+    original_capture_count=len(captures)
+    old_export(case,quantized,eval_sample,cfg,output_dir,result)
+    after=er._state_contract(quantized)
+    evidence['frozen_after_sha256']=hashlib.sha256(json.dumps(after,sort_keys=True).encode()).hexdigest()
+    evidence['frozen_unchanged']='PASS' if before==after else 'FAIL'
+    p=result.artifacts.get('circle')
+    if not p:return
+    path=pathlib.Path(p)
+    evidence['artifact']=str(path)
+    evidence['saved']='PASS' if path.is_file() and path.stat().st_size>0 else 'FAIL'
+    evidence['bytes']=path.stat().st_size
+    payload=path.read_bytes();evidence['sha256']=hashlib.sha256(payload).hexdigest()
+    try:
+        doc=CircleDocument.load(path);report=doc.verify(raise_on_error=True)
+        evidence['structural']='PASS';evidence['verify_issues']=[i.format() for i in report.issues]
+    except Exception:
+        evidence['structural']='FAIL';evidence['structural_error']=traceback.format_exc();return
+    if len(captures)!=original_capture_count+1:
+        evidence['capture_error']='Expected exactly one real converter invocation.';return
+    capture=captures[-1]
+    if 'capture_error' in capture:evidence['capture_error']=capture['capture_error'];return
+    try:
+        runtime=CircleReferenceRuntime(payload)
+        mode=ExecutionMode.FAKE_QUANTIZE if runtime.has_quantized_activations() else ExecutionMode.NATIVE
+        inputs=ModelInputSpec(payload).bind(capture['args'],capture['kwargs'],check=False)
+        input_copies=[er._array(v).copy() for v in inputs]
+        with torch.no_grad():actual=runtime.run(inputs,mode=mode).outputs
+        evidence['runtime']='PASS';evidence['execution_mode']=mode.value
+        evidence['input_contract']=[{'shape':list(er._array(v).shape),'dtype':str(er._array(v).dtype)} for v in inputs]
+        evidence['input_unchanged']=all(np.array_equal(er._array(v),b) for v,b in zip(inputs,input_copies))
+        golden=capture['expected']
+        comparisons=[er.compare_arrays(a,b,atol=1e-5,rtol=1e-4) for a,b in zip(golden,actual)]
+        evidence['torch_output_count']=len(golden);evidence['circle_output_count']=len(actual)
+        evidence['input_records']=[er._array_record(v) for v in inputs]
+        evidence['torch_output_records']=[er._array_record(v) for v in golden]
+        evidence['circle_output_records']=[er._array_record(v) for v in actual]
+        evidence['comparisons']=comparisons
+        evidence['output_contract']=[{'shape':list(er._array(v).shape),'dtype':str(er._array(v).dtype)} for v in actual]
+        evidence['parity']='PASS' if len(golden)==len(actual) and len(actual)>0 and all(c['ok'] for c in comparisons) and evidence['input_unchanged'] else 'FAIL'
+        if evidence['parity']!='PASS':
+            np.savez(out/'parity-arrays.npz',**{**{f'torch_{i}':v for i,v in enumerate(golden)},**{f'circle_{i}':v for i,v in enumerate(actual)},**{f'input_{i}':v for i,v in enumerate(input_copies)}})
+    except Exception:
+        evidence['runtime']='FAIL';evidence['runtime_error']=traceback.format_exc()
+    final=er._state_contract(quantized)
+    evidence['frozen_after_runtime_sha256']=hashlib.sha256(json.dumps(final,sort_keys=True).encode()).hexdigest()
+    if before!=final:evidence['frozen_unchanged']='FAIL'
+
+torch.set_num_threads(1)
+tico.convert=convert_spy
+runner._export_circle=export_spy
+code=0
+try:
+    inspector.main()
+except SystemExit as exc:
+    code=exc.code if isinstance(exc.code,int) else 1
+except Exception:
+    code=1;evidence['inspector_error']=traceback.format_exc();traceback.print_exc()
+finally:
+    tico.convert=old_convert;runner._export_circle=old_export
+    evidence['inspector_exit_code']=code
+    evidence['status']='PASS' if code==0 and all(evidence[k]=='PASS' for k in ['saved','structural','runtime','parity','frozen_unchanged']) else 'FAIL'
+    (out/'artifact-checks.json').write_text(json.dumps(evidence,indent=2))
+    print(json.dumps(evidence,indent=2))
+sys.exit(0 if evidence['status']=='PASS' else 1)

@@ -1,0 +1,29 @@
+{
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "source": {
+    "head": {
+      "cwd": "${CANDIDATE_REPO}",
+      "sha": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+      "tree": "c81b5f254023b21bb76f1f6d04405b5c7d3f54b2",
+      "porcelain": ""
+    },
+    "base": {
+      "cwd": "${BASELINE_REPO}",
+      "sha": "261bda28ec55fdac42f59346c950326e4065f8fa",
+      "tree": "1fc78940834264217b10ea370543e26ec033f129",
+      "porcelain": ""
+    }
+  },
+  "versions": {
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "transformers": "5.18.0",
+    "datasets": "5.0.1",
+    "lm-eval": "0.4.13",
+    "accelerate": "1.15.0",
+    "peft": "0.21.2",
+    "circle-schema": "0.10.1",
+    "flatbuffers": "25.12.19"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+}

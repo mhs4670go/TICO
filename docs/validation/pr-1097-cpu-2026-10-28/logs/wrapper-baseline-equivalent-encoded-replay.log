@@ -1,0 +1,2 @@
+qwen3_vl_vision_attention FAIL [{'ok': False, 'max_abs_error': 8.961232379078865e-05}]
+{"side": "wrapper-baseline-equivalent", "passed": 0, "failed": 1, "skipped": 2}

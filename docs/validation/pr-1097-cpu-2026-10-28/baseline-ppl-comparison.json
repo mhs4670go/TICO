@@ -1,0 +1,42 @@
+{
+  "head": {
+    "llama": {
+      "fp": 131.49905395507812,
+      "no_quant": 131.49905395507812,
+      "quant_w4a16": 130.86241149902344
+    },
+    "gemma4": {
+      "fp": 123.41830444335938,
+      "no_quant": 123.41830444335938,
+      "quant_w4a16": 120.72010040283203
+    },
+    "qwen3_vl": {
+      "fp": 129.3563232421875,
+      "no_quant": 129.3563232421875,
+      "quant_w4a16": 128.7648468017578
+    }
+  },
+  "base": {
+    "llama": {
+      "fp": 131.49905395507812,
+      "no_quant": 131.49905395507812,
+      "quant_w4a16": 130.86241149902344
+    },
+    "gemma4": {
+      "fp": 123.41830444335938,
+      "no_quant": 123.41830444335938,
+      "quant_w4a16": 120.72010040283203
+    },
+    "qwen3_vl": {
+      "fp": 129.3563232421875,
+      "no_quant": 129.3563232421875,
+      "quant_w4a16": 128.7648468017578
+    }
+  },
+  "exact_matches": {
+    "llama": true,
+    "gemma4": true,
+    "qwen3_vl": true
+  },
+  "protocol": "Independent model initialization and PTQ calibration/convert per revision; local 2-row corpus, 13 valid next-token targets. Llama/Qwen window=8 stride=3, Gemma window=12 stride=4 and sliding_window=8. Same existing fixture seeds/configs. Random-model metrics are pipeline evidence, not quality regression evidence."
+}

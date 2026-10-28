@@ -1,0 +1,73 @@
+{
+  "case": "nn_tied_embedding",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "nn_tied_embedding",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_tied_embedding",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_tied_embedding.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "bce18537548c0b37f760c46caf4e387d39fa933681f1c33b06f9db6e46de331b",
+  "frozen_after_sha256": "bce18537548c0b37f760c46caf4e387d39fa933681f1c33b06f9db6e46de331b",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/nn_tied_embedding/nn_tied_embedding.q.circle",
+  "bytes": 1280,
+  "sha256": "0c5a5447c3d0e8cd1c27f8bb330555cdbb075923c8b6c452ab48b4751ee4911d",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        4
+      ],
+      "dtype": "int64"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 0.08418607711791992
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "bce18537548c0b37f760c46caf4e387d39fa933681f1c33b06f9db6e46de331b",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

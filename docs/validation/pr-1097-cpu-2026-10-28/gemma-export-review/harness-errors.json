@@ -1,0 +1,15 @@
+{
+  "initial_runs": [
+    "assistant-capacity16-circle",
+    "assistant-capacity16-circle-base"
+  ],
+  "status": "FAIL",
+  "classification": "validation harness import-path error before model/export; not a product regression",
+  "exception": "ModuleNotFoundError: No module named 'observe'",
+  "fix": "Add wrapper-harness directory to sys.path before runpy.run_path; no assertion/input/tolerance/product changes",
+  "original_source": "assistant_capacity16_initial.py",
+  "corrected_runs": [
+    "assistant-capacity16-circle-r2",
+    "assistant-capacity16-circle-r2-base"
+  ]
+}

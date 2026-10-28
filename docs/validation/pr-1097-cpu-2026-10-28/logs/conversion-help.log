@@ -1,0 +1,41 @@
+usage: benchmark_conversion_memory.py [-h] [--sizes-mib SIZES_MIB]
+                                      [--input-kind {module,pt2}]
+                                      [--identity-mul] [--modes MODES]
+                                      [--tables TABLES] [--width WIDTH]
+                                      [--seed SEED] [--threads THREADS]
+                                      [--optimization {O0,O1}]
+                                      [--repeat REPEAT]
+                                      [--flatbuffer-limit FLATBUFFER_LIMIT]
+                                      [--baseline-root BASELINE_ROOT]
+                                      [--workdir WORKDIR] [--keep-outputs]
+                                      [--json]
+
+Compare complete bytes conversion with explicit file conversion on CPU. Each
+measurement runs in a fresh, sequential subprocess. Module measurements
+include touched source weights and export; PT2 measurements include loading a
+fixture exported in an unmeasured subprocess. Elapsed time covers the
+conversion API and save only. Streaming file hashing, structural verification,
+constant/metadata equivalence, and reference numerical checks run outside that
+measurement. The driver never loads a complete model binary. Synthetic models
+sum embedding lookups from deterministic FP32 tables. Every constant survives
+conversion, while activations and numerical probes stay small as weight size
+increases. These are serialization-oriented full-conversion measurements, not
+a prediction for every model architecture or target backend.
+
+options:
+  -h, --help            show this help message and exit
+  --sizes-mib SIZES_MIB
+  --input-kind {module,pt2}
+  --identity-mul
+  --modes MODES
+  --tables TABLES
+  --width WIDTH
+  --seed SEED
+  --threads THREADS
+  --optimization {O0,O1}
+  --repeat REPEAT
+  --flatbuffer-limit FLATBUFFER_LIMIT
+  --baseline-root BASELINE_ROOT
+  --workdir WORKDIR
+  --keep-outputs
+  --json                Print JSON only to stdout.

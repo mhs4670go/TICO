@@ -1,0 +1,269 @@
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : gemma4_multimodal_embedder
+│ Status           : PASS
+│ Mean |diff|      : 0.006714
+│ Max  |diff|      : 0.296709
+│ PEIR             : 0.075301
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/gemma4_multimodal_embedder/gemma4_multimodal_embedder.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/gemma4_multimodal_embedder.json
+{
+  "case": "gemma4_multimodal_embedder",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "gemma4_multimodal_embedder",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_multimodal_embedder",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_multimodal_embedder.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "semantic_contract": {
+    "weights": {
+      "wrapped.embedding_projection.wrapped.module.weight": {
+        "shape": [
+          64,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "e12338b5fc5076fd424ec4efc1769357972eac4cb46db9e54a66cbe2383d1398"
+      }
+    },
+    "observer_grids": {
+      "wrapped.embedding_pre_projection_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.embedding_pre_projection_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f3c6c85b9cf029f557ad11172d994e1c787c9f780b5d08bfa94c4c9b9533f75c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8a9e71105def7a2a1f68eaf26d8ab6687463d8e27ca3d3eed8c6f91a8b1261df"
+        }
+      },
+      "wrapped.embedding_pre_projection_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "38b14e6a5646943963fb4df98a3178ecfafaac91202689ae00439aca3085097c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c40f565ed2d504c2d594598745e2886754111946c68db0b79622eb86621fd505"
+        }
+      },
+      "wrapped.embedding_projection.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "6f742744f975190103a50c5462d0503536485bc47b3bd529bd7ccef3c8826687"
+        },
+        "_cached_zp": {
+          "shape": [
+            64
+          ],
+          "dtype": "int32",
+          "sha256": "9c173f475ab60719a1615ef2943c0b058c9a8528c0fb213669ce8ed099b86631"
+        }
+      },
+      "wrapped.embedding_projection.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "38b14e6a5646943963fb4df98a3178ecfafaac91202689ae00439aca3085097c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c40f565ed2d504c2d594598745e2886754111946c68db0b79622eb86621fd505"
+        }
+      },
+      "wrapped.embedding_projection.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5e17576e6a077a204b28d64ec85d4c1e40c845037f18169296b603b768f7e8bc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03"
+        }
+      }
+    }
+  },
+  "frozen_before_sha256": "417fc520be2213922fdff03dba3e4539552cca03ff2c3351ec5894e3d2bafcfe",
+  "frozen_after_sha256": "417fc520be2213922fdff03dba3e4539552cca03ff2c3351ec5894e3d2bafcfe",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/gemma4_multimodal_embedder/gemma4_multimodal_embedder.q.circle",
+  "bytes": 4040,
+  "sha256": "a23e61d04804aa2f2737a2b413149855030e1a3cf6b7af9287bfab53712eb364",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        16,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "input_records": [
+    {
+      "shape": [
+        1,
+        16,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "9fb52476bb0e8eb1d83abf87f04eedb8b796ced2c43ca02a059bc134168e77d2"
+    }
+  ],
+  "torch_output_records": [
+    {
+      "shape": [
+        1,
+        16,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "cf828603ea129505d48691592fbeb8ef509ac489c03e1bbc90257cb5067e4188"
+    }
+  ],
+  "circle_output_records": [
+    {
+      "shape": [
+        1,
+        16,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "cf828603ea129505d48691592fbeb8ef509ac489c03e1bbc90257cb5067e4188"
+    }
+  ],
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        16,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "417fc520be2213922fdff03dba3e4539552cca03ff2c3351ec5894e3d2bafcfe",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

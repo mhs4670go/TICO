@@ -1,0 +1,12 @@
+import json,pathlib,subprocess,time
+r=pathlib.Path('${VALIDATION_ROOT}')
+while not (r/'remaining-complete.json').exists():time.sleep(3)
+records=[]
+for name in ['qwen3_vl_vision_attention','qwen3_vl_model','qwen3_vl_for_conditional_generation']:
+ cmd=['python',str(r/'run.py'),'--name','wrapper-baseline-equivalent-'+name,'--cwd','${BASELINE_REPO}','--timeout','240','--','python',str(r/'wrapper-harness/baseline_equivalent.py'),'--config','tico/quantization/examples/configs/wrapper_smoke.yaml','--mode','wrapper-smoke','--case',name,'--device','cpu','--export','circle','--strict','--no-plot','--output-dir',str(r/'wrapper-baseline-equivalent'/name),'--report-json',str(r/'wrapper-baseline-equivalent'/f'{name}.json')]
+ code=subprocess.call(cmd);record={'case':name,'runner_exit_code':code}
+ for key,p in [('run',r/'runs'/f'wrapper-baseline-equivalent-{name}.json'),('artifact_checks',r/'wrapper-baseline-equivalent'/name/'artifact-checks.json')]:
+  if p.exists():record[key]=json.loads(p.read_text())
+ records.append(record)
+(r/'wrapper-harness/qwen-equivalence-results.json').write_text(json.dumps(records,indent=2))
+(r/'wrapper-harness/qwen-equivalence-complete.json').write_text(json.dumps({'cases':len(records),'exit_codes':[x['runner_exit_code'] for x in records],'completed_at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())},indent=2))

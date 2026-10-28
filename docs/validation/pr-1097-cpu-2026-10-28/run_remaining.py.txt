@@ -1,0 +1,18 @@
+import pathlib,subprocess,time,sys,json
+root=pathlib.Path(__file__).parent
+marker=root/'wrapper-harness/all-exports-complete.json'
+print('Waiting for wrapper export completion',str(marker),flush=True)
+while not marker.exists():time.sleep(5)
+print('Wrapper export completion:',marker.read_text(),flush=True)
+def run(name,timeout,cmd):
+ return subprocess.run([sys.executable,str(root/'run.py'),'--name',name,'--timeout',str(timeout),'--',*cmd]).returncode
+run('cpu-validation',1800,['python','-m','tico.quantization.recipes.debug.cpu_validation','--stage','all','--output',str(root/'cpu-validation')])
+for kind in ('module','pt2'):
+ run('conversion-'+kind,180,['python','-m','test.performance.benchmark_conversion_memory','--sizes-mib','1','--tables','1','--width','16','--threads','1','--repeat','1','--optimization','O1','--input-kind',kind,'--workdir',str(root/f'benchmark-{kind}'),'--keep-outputs','--json'])
+files=list((root/'wrapper-circle/llama_attention_decode').rglob('*.circle'))
+if files:run('circle-optimizer',180,['python','-m','test.performance.benchmark_circle_optimizer',str(files[0]),'--repeat','1','--warmup','0','--json'])
+else:(root/'optimizer-blocked.json').write_text(json.dumps({'status':'BLOCKED','reason':'No Llama attention artifact'}))
+run('format',900,['./ccex','format','--no-apply-patches'])
+run('pip-check-final',60,['python','-m','pip','check'])
+run('packages-final',60,['python','-m','pip','list','--format=freeze'])
+(root/'remaining-complete.json').write_text(json.dumps({'complete':True}))

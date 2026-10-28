@@ -1,0 +1,17 @@
+{
+  "revision": "261bda28ec55fdac42f59346c950326e4065f8fa",
+  "tico_import_path": "${BASELINE_REPO}/tico/__init__.py",
+  "modules": [
+    "test.quantization.test_public_interface",
+    "test.quantization.recipes.test_folded_linear_qparam_handoff",
+    "test.quantization.recipes.test_cpu_evaluation"
+  ],
+  "collected": 13,
+  "executed": 13,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": 13,
+  "success": true,
+  "fixture_policy": "Each revision constructs and independently calibrates/converts its own tiny models. No head checkpoint passed to baseline."
+}

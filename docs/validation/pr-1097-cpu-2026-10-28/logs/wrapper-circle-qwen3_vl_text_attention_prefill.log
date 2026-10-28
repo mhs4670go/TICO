@@ -1,0 +1,137 @@
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : qwen3_vl_text_attention_prefill
+│ Status           : PASS
+│ Mean |diff|      : 0.014389
+│ Max  |diff|      : 0.144158
+│ PEIR             : 0.075289
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_prefill/qwen3_vl_text_attention_prefill.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_prefill.json
+{
+  "case": "qwen3_vl_text_attention_prefill",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_text_attention_prefill",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_prefill",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_prefill.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "090bf0330dcfbf54a8125ae884c7d1fe5c9fe39e1b841d06205fa0adc5ce02fe",
+  "frozen_after_sha256": "090bf0330dcfbf54a8125ae884c7d1fe5c9fe39e1b841d06205fa0adc5ce02fe",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_prefill/qwen3_vl_text_attention_prefill.q.circle",
+  "bytes": 36952,
+  "sha256": "13cf6a57554a732ab340c3a182ac74f6c99608e05f96e0e928c0a0eb8d9e65f3",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        8,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 3,
+  "circle_output_count": 3,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "ok": false,
+      "max_abs_error": 0.004152536392211914
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "090bf0330dcfbf54a8125ae884c7d1fe5c9fe39e1b841d06205fa0adc5ce02fe",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

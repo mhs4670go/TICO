@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2-base/gemma4_assistant_core.q.circle"
+  },
+  "case": "gemma4_assistant_core",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      1,
+      24
+    ],
+    "max_abs_diff": 0.006826579570770264,
+    "mean_abs_diff": 0.002843692200258374,
+    "peir": 0.012433988776395668,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      1,
+      24
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

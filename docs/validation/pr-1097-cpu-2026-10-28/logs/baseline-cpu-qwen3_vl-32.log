@@ -1,0 +1,2 @@
+TICO_IMPORT_PATH ${BASELINE_REPO}/tico/__init__.py
+FAIL: ${VALIDATION_ROOT}/baseline-cpu-comparison/qwen3_vl-32/summary.json

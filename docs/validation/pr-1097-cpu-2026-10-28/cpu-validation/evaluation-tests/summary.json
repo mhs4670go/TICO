@@ -1,0 +1,10 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "modules": [
+    "test.quantization.recipes.test_cpu_evaluation"
+  ],
+  "skips": [],
+  "status": "PASS",
+  "tests_run": 6
+}

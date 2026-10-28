@@ -1,0 +1,49 @@
+{
+  "tico_import_path": "${CANDIDATE_REPO}/tico/__init__.py",
+  "collected": 4760,
+  "decorated_skip": 157,
+  "loader_errors": [],
+  "family_inventory": {
+    "llama": {
+      "collected": 96,
+      "decorated_skip": 3,
+      "potentially_runnable": 93
+    },
+    "qwen_vl": {
+      "collected": 209,
+      "decorated_skip": 12,
+      "potentially_runnable": 197
+    },
+    "gemma4": {
+      "collected": 422,
+      "decorated_skip": 68,
+      "potentially_runnable": 354
+    },
+    "gemma4_assistant": {
+      "collected": 52,
+      "decorated_skip": 0,
+      "potentially_runnable": 52
+    },
+    "fairseq": {
+      "collected": 50,
+      "decorated_skip": 0,
+      "potentially_runnable": 50
+    }
+  },
+  "skip_reasons": {
+    "Not supported yet": 2,
+    "luci-interpreter does not support dynamic shape yet && onert does not support TransposeConv yet": 1,
+    "No kernel exist": 5,
+    "Not Support Operator": 3,
+    "Internal test \u2014 run only if --include-internal is set": 57,
+    "Skip when torch doesn't produce redundant slices.": 3,
+    "set GEMMA4_ASSISTANT_PATH to a local Gemma4 assistant checkpoint to run this integration test": 1,
+    "set GEMMA4_TARGET_PATH and GEMMA4_ASSISTANT_PATH to local Gemma4 checkpoints to run this integration test": 1,
+    "CUDA is unavailable": 1,
+    "Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.": 68,
+    "This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d": 11,
+    "opt-in ONE inference": 1,
+    "opt-in real >2 GiB serialization; requires a high-memory 64-bit host": 3
+  },
+  "limitations": "Inventory only, tests not run. setUp/setUpClass runtime skips are not counted here; actual execution log is authoritative."
+}

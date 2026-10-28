@@ -1,0 +1,170 @@
+{
+  "case": "qwen3_vl_vision_patch_embed",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "original_raw_parity": "PASS",
+  "original_artifact_sha256": "70589bac57ac2739e18ee83dbf3c0cf6e0f05274cd9a557061458083681a3672",
+  "status": "PASS",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "semantic_contract": {
+    "weights": {
+      "wrapped.proj.wrapped.module.weight": {
+        "shape": [
+          32,
+          1536
+        ],
+        "dtype": "float32",
+        "sha256": "066a96bbe20229c73ef07390c3b7932a63d36c47389b6cdab248baf3ce57fe8b"
+      },
+      "wrapped.proj.wrapped.module.bias": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "e8b4553209fc045f4570096fb1602f9fd0e98b46d4c413a2893cecf6eca457a7"
+      }
+    },
+    "observer_grids": {
+      "wrapped.proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "ddddcd72d4fc3a8b54e362516361af986835bf28d44d7a5f19fb81fd6994216d"
+        },
+        "_cached_zp": {
+          "shape": [
+            32
+          ],
+          "dtype": "int32",
+          "sha256": "11a5e838794c3b5a808fe2c61776afad90bff71d537caaf4871fe87cd055b118"
+        }
+      },
+      "wrapped.proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "c578093749f2c5779da7368c2a6ff4f1b81a90d47fa535a02533e33d2adff286"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "dd5e8ff17033e3d207902e855fc1f6d5ff1b0b34c5edfb94234d9e86078aca5a"
+        }
+      },
+      "wrapped.proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5c5612341d3862cc3ebc1f3c1cad58a056d6080588161246c6f5d8a2dd2335ee"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "191949ff18d4ffd269d06c4b0bcd641257c885d3ea94c7556134740595c2d3fc"
+        }
+      }
+    }
+  },
+  "same_artifact": true,
+  "input_binder": "production_ModelInputSpec",
+  "raw_input_records": [
+    {
+      "shape": [
+        1,
+        4,
+        1536
+      ],
+      "dtype": "float32",
+      "sha256": "67b1929f4c88360f17338789d70c95702cb7caa5eed039ae856318af315482ad"
+    }
+  ],
+  "raw_torch_output_records": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "cef2e42a674da475930e10e25f33c59cfbe3f092ef1d648f2a8f418839be9709"
+    }
+  ],
+  "original_input_hash_match": null,
+  "original_torch_hash_match": null,
+  "raw_replay_comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "same_effective_inputs": true,
+  "execution_mode": "fake_quantize",
+  "quantized_boundaries": [
+    {
+      "tensor_index": 2,
+      "changed_values": 6144
+    }
+  ],
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "torch_output_records": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "cef2e42a674da475930e10e25f33c59cfbe3f092ef1d648f2a8f418839be9709"
+    }
+  ],
+  "circle_output_records": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "cef2e42a674da475930e10e25f33c59cfbe3f092ef1d648f2a8f418839be9709"
+    }
+  ],
+  "frozen_unchanged": true
+}

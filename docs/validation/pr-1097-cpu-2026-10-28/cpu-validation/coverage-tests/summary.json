@@ -1,0 +1,10 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "modules": [
+    "test.quantization.recipes.test_qwen_cache_coverage_cpu"
+  ],
+  "skips": [],
+  "status": "PASS",
+  "tests_run": 12
+}

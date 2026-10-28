@@ -1,0 +1,18 @@
+import pathlib,time,subprocess,sys,json
+root=pathlib.Path(__file__).resolve().parents[1]
+marker=root/'baseline-cpu-comparison/complete.json'
+while not marker.exists(): time.sleep(5)
+name='assistant-capacity16-circle-r2'
+cmd=[sys.executable,str(root/'run.py'),'--name',name,'--timeout','240','--','python',str(root/'gemma-export-review/assistant_capacity16.py'),'--config','tico/quantization/examples/configs/wrapper_smoke.yaml','--mode','wrapper-smoke','--case','gemma4_assistant_core','--device','cpu','--export','circle','--strict','--no-plot','--output-dir',str(root/'gemma-export-review/assistant-capacity16-r2'),'--report-json',str(root/'gemma-export-review/assistant-capacity16-r2.json')]
+code=subprocess.call(cmd,cwd='${CANDIDATE_REPO}')
+baseline_record = None
+if code:
+ baseline_cmd = [*cmd]
+ baseline_cmd[baseline_cmd.index('--name')+1] = name+'-base'
+ baseline_cmd[baseline_cmd.index('--timeout'):baseline_cmd.index('--timeout')] = ['--cwd','${BASELINE_REPO}']
+ baseline_cmd[baseline_cmd.index('--output-dir')+1] = str(root/'gemma-export-review/assistant-capacity16-r2-base')
+ baseline_cmd[baseline_cmd.index('--report-json')+1] = str(root/'gemma-export-review/assistant-capacity16-r2-base.json')
+ baseline_code = subprocess.call(baseline_cmd,cwd='${BASELINE_REPO}')
+ baseline_record = {'exit_code':baseline_code,'run':str(root/'runs'/f'{name}-base.json'),'checks':str(root/'gemma-export-review/assistant-capacity16-r2-base/artifact-checks.json')}
+record={'baseline':baseline_record,'exit_code':code,'run':str(root/'runs'/f'{name}.json'),'checks':str(root/'gemma-export-review/assistant-capacity16-r2/artifact-checks.json'),'profile_override':{'sliding_kv_length':16,'original_sliding_kv_length':8,'kv_len':10,'full_kv_length':16},'completed_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}
+(root/'gemma-export-review/assistant-complete.json').write_text(json.dumps(record,indent=2));print(json.dumps(record));sys.exit(code)

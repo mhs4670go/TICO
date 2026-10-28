@@ -1,0 +1,38 @@
+"""Compare independently prepared candidate/base evidence without schema migration."""
+import json,pathlib,hashlib,numpy as np
+from collections import Counter
+root=pathlib.Path('${VALIDATION_ROOT}')
+
+def records(e,side,key,prefix):
+ if key in e:return e[key]
+ p=root/side/e['case']/'parity-arrays.npz'
+ if not p.exists():return None
+ x=np.load(p)
+ out=[]
+ for k in sorted((k for k in x.files if k.startswith(prefix)),key=lambda k:int(k[len(prefix):])):
+  a=np.ascontiguousarray(x[k]);out.append({'shape':list(a.shape),'dtype':str(a.dtype),'sha256':hashlib.sha256(a.reshape(-1).view(np.uint8)).hexdigest()})
+ return out
+rows=[]
+for record in json.loads((root/'wrapper-harness/baseline-summary.json').read_text()):
+ name=record['case'];candidate=json.loads((root/'wrapper-circle'/name/'artifact-checks.json').read_text());baseline=record.get('artifact_checks',{})
+ for side,e in [('wrapper-circle',candidate),('wrapper-baseline',baseline)]:
+  report=root/side/f'{name}.json'
+  messages=json.loads(report.read_text()).get('messages',[]) if report.exists() else []
+  e['core_message_signatures']=[{'first_line':m.splitlines()[0],'requires_position_ids':'position_ids must be provided' in m or 'position_ids is not None' in m,'requires_prepared_static_export':'Prepare fixed Qwen3-VL text inputs' in m} for m in messages]
+ c=candidate.get('semantic_contract');p=root/'wrapper-harness/candidate-semantic-contracts'/f'{name}.json'
+ if c is None and p.exists():c=json.loads(p.read_text())['semantic_contract']
+ b=baseline.get('semantic_contract')
+ row={'case':name,'candidate_inspector_exit':candidate.get('inspector_exit_code'),'base_inspector_exit':baseline.get('inspector_exit_code'),'candidate_parity':candidate.get('parity'),'base_parity':baseline.get('parity'),'candidate_max_abs':[v.get('max_abs_error') for v in candidate.get('comparisons',[])],'base_max_abs':[v.get('max_abs_error') for v in baseline.get('comparisons',[])],'candidate_sha256':candidate.get('sha256'),'base_sha256':baseline.get('sha256'),'circle_bytes_identical':candidate.get('sha256')==baseline.get('sha256') if candidate.get('sha256') and baseline.get('sha256') else None,'candidate_import':candidate.get('tico_file'),'base_import':baseline.get('tico_file')}
+ row['candidate_core_errors']=candidate.get('core_message_signatures');row['base_core_errors']=baseline.get('core_message_signatures')
+ if c and b:
+  for field in ('weights','observer_grids'):
+   cn,bn=c[field],b[field];common=cn.keys()&bn.keys();row[field+'_common']=len(common);row[field+'_only_candidate']=sorted(cn.keys()-bn.keys());row[field+'_only_base']=sorted(bn.keys()-cn.keys());row[field+'_changed']=[k for k in sorted(common) if cn[k]!=bn[k]]
+ for key,prefix in [('input_records','input_'),('torch_output_records','torch_'),('circle_output_records','circle_')]:
+  cr=records(candidate,'wrapper-circle',key,prefix);br=records(baseline,'wrapper-baseline',key,prefix);row[key+'_identical']=cr==br if cr is not None and br is not None else None
+  row['candidate_'+key]=cr;row['base_'+key]=br
+ if candidate.get('inspector_exit_code')==0 and baseline.get('inspector_exit_code')==0 and candidate.get('parity')==baseline.get('parity')=='PASS':row['classification']='PASS_BOTH'
+ elif row['candidate_inspector_exit']==row['base_inspector_exit'] and row['candidate_parity']==row['base_parity'] and ((row['candidate_inspector_exit']!=0 and row['candidate_core_errors']==row['base_core_errors']) or row['circle_output_records_identical']):row['classification']='EXISTING_FAILURE'
+ elif row['candidate_inspector_exit']!=0 and row['base_inspector_exit']==0 or row['candidate_parity']=='FAIL' and row['base_parity']=='PASS':row['classification']='CANDIDATE_ONLY_FAILURE'
+ else:row['classification']='UNRESOLVED'
+ rows.append(row)
+(root/'wrapper-harness/revision-comparison.json').write_text(json.dumps(rows,indent=2));print(json.dumps([{'case':r['case'],'classification':r['classification'],'circle_bytes_identical':r['circle_bytes_identical'],'grid_changes':len(r.get('observer_grids_changed',[]))} for r in rows],indent=2));print(dict(Counter(r['classification'] for r in rows)))

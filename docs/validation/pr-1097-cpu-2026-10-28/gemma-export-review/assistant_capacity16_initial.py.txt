@@ -1,0 +1,10 @@
+"""Additional valid static capacity profile; product case remains unchanged.
+
+Original kv_len10 and calibration sequence/count are unchanged. Set declared
+static sliding capacity16 so no valid KV input is truncated/cropped.
+"""
+import runpy
+from pathlib import Path
+from tico.quantization.recipes.debug.wrapper_smoke.registry import get_case
+get_case('gemma4_assistant_core').sliding_kv_length = 16
+runpy.run_path(str(Path(__file__).resolve().parents[1]/'wrapper-harness/export_case.py'),run_name='__main__')

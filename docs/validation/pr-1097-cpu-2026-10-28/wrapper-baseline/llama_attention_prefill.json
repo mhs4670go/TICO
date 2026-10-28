@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-baseline/llama_attention_prefill/llama_attention_prefill.q.circle"
+  },
+  "case": "llama_attention_prefill",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      6,
+      16
+    ],
+    "max_abs_diff": 0.08376401662826538,
+    "mean_abs_diff": 0.013611284084618092,
+    "peir": 0.04558931450858142,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      6,
+      16
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

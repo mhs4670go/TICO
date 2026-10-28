@@ -1,0 +1,49 @@
+"""Validate actual evaluator sample aggregation, scoring-token counts and FP/Quant identity."""
+import json
+import math
+import argparse
+from pathlib import Path
+
+import torch
+from lm_eval.models.huggingface import HFLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+root=Path(__file__).resolve().parent
+p=argparse.ArgumentParser();p.add_argument("--prefix",default="");args=p.parse_args()
+torch.set_num_threads(1)
+tokenizer=AutoTokenizer.from_pretrained(root/"model")
+model=AutoModelForCausalLM.from_pretrained(root/"model",dtype=torch.float32).eval()
+adapter=HFLM(pretrained=model,tokenizer=tokenizer,device="cpu",backend="causal",max_length=64,truncation=True,batch_size=1)
+records={}
+for mode in ("fp","quant"):
+    for target in ("ppl","mc"):
+        label=f"{args.prefix}-{mode}-{target}" if args.prefix else f"{mode}-{target}-final"
+        record=json.loads((root/label/"evidence.json").read_text())
+        assert record["frozen_state_equal"] and record["forwards"]
+        if mode=="quant": assert record["checkpoint"]
+        if target=="ppl":
+            assert record["ppl_scoring_tokens"]==27
+        else:
+            result=json.loads((root/label/"lm_eval_results.json").read_text())
+            samples=result["samples"]["hellaswag"]
+            assert len(samples)==4
+            scoring_tokens=0
+            for sample in samples:
+                for context,continuation in sample["arguments"]:
+                    _,ids=adapter._encode_pair(context,continuation)
+                    scoring_tokens+=len(ids)
+                assert all(math.isfinite(response[0]) for response in sample["filtered_resps"])
+            assert scoring_tokens==32
+            record["mc_scoring_tokens"]=scoring_tokens
+            record["sample_metrics_match_summary"]=all(sum(sample[key] for sample in samples)/len(samples)==record["metrics"]["hellaswag"][key] for key in ("acc","acc_norm"))
+            assert record["sample_metrics_match_summary"]
+        records[label]=record
+for target in ("ppl","mc"):
+    fp_label=f"{args.prefix}-fp-{target}" if args.prefix else f"fp-{target}-final"
+    quant_label=f"{args.prefix}-quant-{target}" if args.prefix else f"quant-{target}-final"
+    fp=records[fp_label];quant=records[quant_label]
+    assert fp["forwards"]==quant["forwards"],target
+    records[f"{target}_fp_quant_inputs_equal"]=True
+summary={"status":"PASS","model_parameters":90432,"seed":1073,"external_dataset_status":"BLOCKED","external_dataset_reason":"Hugging Face proxy CONNECT denied HTTP 403; local synthetic HellaSwag-format rows substituted only at dataset boundary","lm_eval_version":"0.4.13","scoring_and_aggregation":"real production helper, HFLM, lm_eval evaluator and metrics; no precomputed responses","evidence":records}
+(root/(f"{args.prefix}-summary.json" if args.prefix else "summary.json")).write_text(json.dumps(summary,indent=2))
+print(json.dumps(summary,indent=2))

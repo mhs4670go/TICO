@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+import argparse,os,subprocess,time,json,sys,pathlib,signal
+p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--cwd',default='${CANDIDATE_REPO}');p.add_argument('--timeout',type=int,default=1800);p.add_argument('cmd',nargs=argparse.REMAINDER);a=p.parse_args();cmd=a.cmd[1:] if a.cmd[:1]==['--'] else a.cmd
+root=pathlib.Path(__file__).resolve().parent; (root/'logs').mkdir(exist_ok=True);(root/'runs').mkdir(exist_ok=True)
+env=os.environ.copy();env.update(PATH='${VALIDATION_VENV}/bin:'+env['PATH'],OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',CUDA_VISIBLE_DEVICES='',CCEX_RUNTIME='reference',PYTHONPATH=a.cwd,PYTHONUNBUFFERED='1')
+r={'name':a.name,'command':cmd,'cwd':a.cwd,'timeout':a.timeout,'env_overrides':{k:env[k] for k in ['OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS','CUDA_VISIBLE_DEVICES','CCEX_RUNTIME','PYTHONPATH']},'started':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'log':str(root/'logs'/f'{a.name}.log')};t=time.monotonic()
+with open(r['log'],'w') as f:
+ proc=subprocess.Popen(cmd,cwd=a.cwd,env=env,stdout=f,stderr=subprocess.STDOUT,start_new_session=True)
+ try:r['exit_code']=proc.wait(timeout=a.timeout);r['status']='PASS' if r['exit_code']==0 else 'FAIL'
+ except subprocess.TimeoutExpired:
+  os.killpg(proc.pid,signal.SIGTERM)
+  try:proc.wait(10)
+  except subprocess.TimeoutExpired:os.killpg(proc.pid,signal.SIGKILL);proc.wait()
+  r.update(exit_code=proc.returncode,status='TIMEOUT')
+r['elapsed_seconds']=round(time.monotonic()-t,3);(root/'runs'/f'{a.name}.json').write_text(json.dumps(r,indent=2));print(json.dumps(r));sys.exit(0 if r['status']=='PASS' else 1)

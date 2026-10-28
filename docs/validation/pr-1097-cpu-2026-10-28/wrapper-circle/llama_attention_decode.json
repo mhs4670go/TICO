@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/llama_attention_decode/llama_attention_decode.q.circle"
+  },
+  "case": "llama_attention_decode",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      1,
+      16
+    ],
+    "max_abs_diff": 0.26898396015167236,
+    "mean_abs_diff": 0.09305524080991745,
+    "peir": 0.3941765868050651,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      1,
+      16
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

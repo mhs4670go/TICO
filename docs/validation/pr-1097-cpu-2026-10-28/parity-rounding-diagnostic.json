@@ -1,0 +1,82 @@
+{
+  "diagnostic_only": true,
+  "hypothesis": "Ties-away vs ties-even alone explains mismatch",
+  "outcome": "REJECTED: changing rounding policy alone produced exactly the same output errors in all6 cases",
+  "official_runtime_results_unchanged": true,
+  "records": [
+    {
+      "case": "nn_tied_embedding",
+      "original_max_abs_errors": [
+        0.08418607711791992
+      ],
+      "diagnostic_bankers_rounding_max_abs_errors": [
+        0.08418607711791992
+      ]
+    },
+    {
+      "case": "llama_attention_prefill",
+      "original_max_abs_errors": [
+        0.0,
+        0.013716518878936768,
+        0.0
+      ],
+      "diagnostic_bankers_rounding_max_abs_errors": [
+        0.0,
+        0.013716518878936768,
+        0.0
+      ]
+    },
+    {
+      "case": "llama_decoder_layer_prefill",
+      "original_max_abs_errors": [
+        0.05912160873413086,
+        0.0,
+        0.0
+      ],
+      "diagnostic_bankers_rounding_max_abs_errors": [
+        0.05912160873413086,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "llama_decoder_layer_decode",
+      "original_max_abs_errors": [
+        0.017563581466674805,
+        0.0,
+        0.0
+      ],
+      "diagnostic_bankers_rounding_max_abs_errors": [
+        0.017563581466674805,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "qwen3_vl_text_attention_prefill",
+      "original_max_abs_errors": [
+        0.0,
+        0.004152536392211914,
+        0.0
+      ],
+      "diagnostic_bankers_rounding_max_abs_errors": [
+        0.0,
+        0.004152536392211914,
+        0.0
+      ]
+    },
+    {
+      "case": "qwen3_vl_text_attention_decode",
+      "original_max_abs_errors": [
+        0.0,
+        0.003657206892967224,
+        0.0
+      ],
+      "diagnostic_bankers_rounding_max_abs_errors": [
+        0.0,
+        0.003657206892967224,
+        0.0
+      ]
+    }
+  ]
+}

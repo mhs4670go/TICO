@@ -1,0 +1,38 @@
+{
+  "name": "wrapper-circle-gemma4_vision_encoder",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/wrapper-harness/export_case.py",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "gemma4_vision_encoder",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_encoder",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_vision_encoder.json"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 240,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:38:40Z",
+  "log": "${VALIDATION_ROOT}/logs/wrapper-circle-gemma4_vision_encoder.log",
+  "exit_code": 1,
+  "status": "FAIL",
+  "elapsed_seconds": 12.907
+}

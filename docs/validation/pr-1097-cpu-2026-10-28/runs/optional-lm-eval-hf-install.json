@@ -1,0 +1,27 @@
+{
+  "name": "optional-lm-eval-hf-install",
+  "command": [
+    "python",
+    "-m",
+    "pip",
+    "install",
+    "lm-eval[hf]==0.4.13",
+    "-c",
+    "${VALIDATION_ROOT}/evaluation/constraints-existing.txt"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:16:17Z",
+  "log": "${VALIDATION_ROOT}/logs/optional-lm-eval-hf-install.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 2.219
+}

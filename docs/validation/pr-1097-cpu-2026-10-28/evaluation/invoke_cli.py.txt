@@ -1,0 +1,102 @@
+"""Run unchanged public CLI with read-only evidence tracing and bounded local task data.
+
+PPL reads a local JSON directory through real datasets.load_dataset. For lm-eval,
+the evaluator invocation adds only TaskManager(local YAML), limit/seed/cache settings;
+HFLM, model forwards, loglikelihoods, task metrics and aggregation remain real.
+"""
+import argparse
+import hashlib
+import json
+import math
+from pathlib import Path
+import runpy
+import sys
+
+import numpy as np
+import torch
+from tico.quantization.recipes.adapters import llama
+from tico.quantization.recipes.debug.export_regression import _state_contract
+
+p = argparse.ArgumentParser()
+p.add_argument("--label", required=True)
+p.add_argument("args", nargs=argparse.REMAINDER)
+a = p.parse_args()
+root = Path(__file__).resolve().parent
+output = root / a.label
+output.mkdir(exist_ok=True)
+torch.set_num_threads(1)
+records = {"label":a.label,"forwards":[],"metrics":{},"import_path":llama.__file__}
+
+def digest(value):
+    return hashlib.sha256(json.dumps(value,sort_keys=True).encode()).hexdigest()
+
+def native(value):
+    if isinstance(value, dict): return {str(k):native(v) for k,v in value.items()}
+    if isinstance(value,(list,tuple)): return [native(v) for v in value]
+    if isinstance(value,np.generic): return value.item()
+    if isinstance(value,torch.Tensor): return value.tolist()
+    if isinstance(value,(str,int,float,bool)) or value is None: return value
+    return str(value)
+
+old_ppl = llama.evaluate_perplexity
+def ppl(**kwargs):
+    result = old_ppl(**kwargs)
+    assert math.isfinite(result) and result>0
+    records["metrics"]["ppl"] = result
+    records["ppl_rows"] = 4
+    records["ppl_scoring_tokens"] = sum(record["valid_scoring_tokens"] for record in records["forwards"])
+    assert records["ppl_scoring_tokens"] == 27
+    return result
+llama.evaluate_perplexity = ppl
+
+if "lm_eval" in a.args:
+    from lm_eval import evaluator
+    from lm_eval.tasks import TaskManager
+    from tico.quantization.evaluation.hellaswag_eval_utils import get_hellaswag_accuracy
+    old_simple = evaluator.simple_evaluate
+    def simple(*args,**kwargs):
+        kwargs.update(task_manager=TaskManager(include_path=str(root/"task-configs")),limit=4,num_fewshot=0,batch_size=1,device="cpu",bootstrap_iters=0,random_seed=1073,numpy_random_seed=1073,torch_random_seed=1073,fewshot_random_seed=1073,use_cache=None,cache_requests=False)
+        result = old_simple(*args,**kwargs)
+        metrics = get_hellaswag_accuracy(result)
+        samples = result["samples"]["hellaswag"]
+        assert len(samples)==4
+        for metric,value in metrics.items():
+            assert math.isfinite(value) and 0 <= value <= 1
+            mean = sum(sample[metric] for sample in samples)/len(samples)
+            assert mean==value,(metric,mean,value)
+        records["metrics"]["hellaswag"] = metrics
+        records["mc_examples"] = len(samples)
+        records["mc_choices"] = 16
+        (output/"lm_eval_results.json").write_text(json.dumps(native(result),indent=2))
+        return result
+    evaluator.simple_evaluate = simple
+
+old_evaluate = llama.LlamaAdapter.evaluate
+def evaluate(self,ctx):
+    def contract():
+        if ctx.artifacts.get("evaluation_checkpoint"):
+            return _state_contract(ctx.model)
+        return {name:hashlib.sha256(value.detach().cpu().numpy().tobytes()).hexdigest() for name,value in ctx.model.state_dict().items() if isinstance(value,torch.Tensor)}
+    before = contract()
+    model = ctx.model
+    def trace(module,args,kwargs):
+        ids=kwargs.get("input_ids",args[0] if args else None)
+        if isinstance(ids,torch.Tensor):
+            labels=kwargs.get("labels")
+            records["forwards"].append({"shape":list(ids.shape),"input_sha256":hashlib.sha256(ids.detach().cpu().numpy().tobytes()).hexdigest(),"dtype":str(ids.dtype),"use_cache":kwargs.get("use_cache"),"valid_scoring_tokens":int((labels[:,1:]!=-100).sum().item()) if isinstance(labels,torch.Tensor) else 0})
+    # Both PPL and lm-eval call the genuine production child of PTQWrapper.
+    trace_model=getattr(model,"wrapped",model)
+    handle=trace_model.register_forward_pre_hook(trace,with_kwargs=True)
+    try: result=old_evaluate(self,ctx)
+    finally:
+        handle.remove()
+    after = contract()
+    assert before==after,"Evaluation mutated frozen observer/qparams"
+    assert records["forwards"],"No real model forwards"
+    records.update(frozen_state_equal=True,frozen_before_sha256=digest(before),frozen_after_sha256=digest(after),checkpoint=ctx.artifacts.get("evaluation_checkpoint"),model_class=type(ctx.model).__name__)
+    return result
+llama.LlamaAdapter.evaluate=evaluate
+sys.argv=["tico.quantization.examples.evaluate"]+([*a.args[1:]] if a.args[:1]==["--"] else a.args)
+runpy.run_module("tico.quantization.examples.evaluate",run_name="__main__")
+(output/"evidence.json").write_text(json.dumps(records,indent=2))
+print("EVALUATION_EVIDENCE",json.dumps(records))

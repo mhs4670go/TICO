@@ -1,0 +1,62 @@
+{
+  "case": "gemma4_vision_model",
+  "diagnostic_only": true,
+  "real_export_executed": false,
+  "before_sha256": "99ac1d5e77e83473d8dceeb1bc7891ebf1eefeea611f7bb0e2f08f91c2ee57a0",
+  "after_profile_sha256": "67e48718ea29f7778e9ae5d8da1e991a330acd127657923f1cbc5720595a29ca",
+  "after_forward_sha256": "67e48718ea29f7778e9ae5d8da1e991a330acd127657923f1cbc5720595a29ca",
+  "profile_diff": {
+    "weights": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "observers": {
+      "added": [
+        "wrapped.pooler_export.wrapped.obs_act_in",
+        "wrapped.pooler_export.wrapped.obs_pool_in",
+        "wrapped.pooler_export.wrapped.obs_pool_matmul_out",
+        "wrapped.pooler_export.wrapped.obs_pool_out",
+        "wrapped.pooler_export.wrapped.obs_pool_weight",
+        "wrapped.pooler_export.wrapped.obs_root_hidden_size"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "modes": {
+      "added": [
+        "wrapped.pooler_export.wrapped"
+      ],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "forward_diff": {
+    "weights": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "observers": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "modes": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "validate_frozen_model_before_after": "PASS",
+  "output_records": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32",
+      "sha256": "020f149866bd30ccb6e39addea7d8aa233c20b27d96e6fa4a967d520968e4ad8"
+    }
+  ]
+}

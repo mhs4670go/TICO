@@ -1,0 +1,84 @@
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : nn_linear
+│ Status           : PASS
+│ Mean |diff|      : 0.037131
+│ Max  |diff|      : 0.125054
+│ PEIR             : 0.050046
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/nn_linear/nn_linear.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/nn_linear.json
+{
+  "case": "nn_linear",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "nn_linear",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_linear",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_linear.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "935c1453174c377807715b88824d4edcec9d0ec21eb94ca6876773cd71d633ab",
+  "frozen_after_sha256": "935c1453174c377807715b88824d4edcec9d0ec21eb94ca6876773cd71d633ab",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/nn_linear/nn_linear.q.circle",
+  "bytes": 968,
+  "sha256": "ace7cdf22beb11f62d7a83786dba230f8286c8579d73192472b47287a37173c7",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        2,
+        16
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "935c1453174c377807715b88824d4edcec9d0ec21eb94ca6876773cd71d633ab",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "circle-optimizer",
+  "command": [
+    "python",
+    "-m",
+    "test.performance.benchmark_circle_optimizer",
+    "${VALIDATION_ROOT}/wrapper-circle/llama_attention_decode/llama_attention_decode.q.circle",
+    "--repeat",
+    "1",
+    "--warmup",
+    "0",
+    "--json"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:47:07Z",
+  "log": "${VALIDATION_ROOT}/logs/circle-optimizer.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 1.468
+}

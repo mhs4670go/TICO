@@ -1,0 +1,881 @@
+{
+  "before_freeze": {
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k": {
+      "max_val": 0.07587919384241104,
+      "min_val": -0.06921712309122086
+    },
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v": {
+      "max_val": 0.45900020003318787,
+      "min_val": -0.47657716274261475
+    },
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key": {
+      "max_val": 0.07587919384241104,
+      "min_val": -0.06921712309122086
+    },
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value": {
+      "max_val": 0.45900020003318787,
+      "min_val": -0.47657716274261475
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k": {
+      "max_val": 0.09389366209506989,
+      "min_val": -0.07681980729103088
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v": {
+      "max_val": 0.45189934968948364,
+      "min_val": -0.4223114848136902
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key": {
+      "max_val": 0.09389366209506989,
+      "min_val": -0.07681980729103088
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value": {
+      "max_val": 0.45189934968948364,
+      "min_val": -0.4223114848136902
+    }
+  },
+  "frozen_qparams": {
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 2.3157199393608607e-06
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 1.454442463000305e-05
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 2.3157199393608607e-06
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 1.454442463000305e-05
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 2.865494707293692e-06
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 1.3791294804832432e-05
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 2.865494707293692e-06
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    },
+    "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value": {
+      "scale": {
+        "dtype": "torch.float32",
+        "nonempty_finite": true,
+        "values": 1.3791294804832432e-05
+      },
+      "zero_point": {
+        "dtype": "torch.int32",
+        "nonempty_finite": true,
+        "values": 0
+      }
+    }
+  },
+  "instrumentation": "Read-only collect/forward tracing; original callables restored before freeze.",
+  "visits": [
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "prefill",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        6,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 6
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        7,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 7
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 8
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    },
+    {
+      "branch": "cache_decode",
+      "module": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+      "nonempty": true,
+      "observer": "MinMaxObserver",
+      "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+      "quant_dtype": "DType(bits=16, signed=True)",
+      "shape": [
+        1,
+        1,
+        1,
+        32
+      ],
+      "tensor_dtype": "torch.float32",
+      "valid_length": 1
+    }
+  ]
+}

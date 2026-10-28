@@ -1,0 +1,42 @@
+import collections
+import json
+import pathlib
+
+ROOT = pathlib.Path('${VALIDATION_ROOT}')
+CPU = ROOT/'cpu-validation'
+result = {'scope':'candidate internal CPU verification, not base comparison', 'tests':{}, 'exports':{}, 'connected':{}}
+for group in ['regression','generate','coverage','evaluation']:
+    data = json.loads((CPU/f'{group}-tests/summary.json').read_text())
+    result['tests'][group] = data
+result['tests_total'] = sum(x['tests_run'] for x in result['tests'].values())
+for case in ['llama-16','qwen3_vl-16','qwen3_vl-32']:
+    summary = json.loads((CPU/case/'summary.json').read_text())
+    stages = {}
+    for phase in ['before','after_eager']:
+        phasepath = CPU/case/'candidate'/phase
+        snap = json.loads((phasepath/'snapshot.json').read_text())
+        entries = []
+        for artifact, record in snap['stages'].items():
+            meta = json.loads((phasepath/'records'/f'{record}.json').read_text())
+            probes = [{'probe':p['probe'],'output_comparisons':len(p['torch_parity']),'torch_parity_pass':sum(x['ok'] for x in p['torch_parity']), 'torch_parity_fail':sum(not x['ok'] for x in p['torch_parity']), 'max_abs_errors':[x.get('max_abs_error') for x in p['torch_parity']]} for p in meta['probes']]
+            entries.append({'artifact':artifact, 'saved':(phasepath/'artifacts'/artifact).is_file(), 'reloaded_structural_verified':True,'reference_execution':True,'execution_mode':meta['mode'],'probes':probes,'torch_all_outputs_pass':all(x['ok'] for p in meta['probes'] for x in p['torch_parity'])})
+        stages[phase] = {'stages':entries, 'saved_structural_runtime_pass':len(entries), 'torch_stage_pass':sum(x['torch_all_outputs_pass'] for x in entries), 'torch_stage_fail':sum(not x['torch_all_outputs_pass'] for x in entries), 'runtime_probe_count':sum(len(x['probes']) for x in entries),'state_preserved':snap['state_preserved'],'state_differences':snap['state_differences']}
+    compare = summary['candidate_before_vs_after_eager']
+    array_checks = [a for s in compare['stages'].values() for a in s['arrays'].values()]
+    result['exports'][case] = {'overall_status':summary['status'],'worker_and_comparison_complete':summary['comparisons_complete'],'strict_torch_parity_required':summary['torch_parity_required'], 'tolerances':{'atol':summary['atol'],'rtol':summary['rtol']},'eager':summary['eager'], 'phases':stages, 'before_after':{'array_comparisons':len(array_checks),'array_comparisons_pass':sum(x['ok'] for x in array_checks),'max_abs_error':max((x.get('max_abs_error',0) for x in array_checks),default=None),'structure_all_equal':all(x['circle_structure_equal'] for x in compare['stages'].values()),'execution_modes_equal':all(x['execution_mode_equal'] for x in compare['stages'].values()),'numerical_coverage_complete':all(x['numerical_coverage_complete'] for x in compare['stages'].values()),'failures':compare['failures']}}
+for capacity in [16,32]:
+    data = json.loads((CPU/f'qwen3_vl-{capacity}-connected/summary.json').read_text())
+    stages = data['stages']
+    data['execution_calls_completed'] = len(stages)
+    data['calls_torch_all_outputs_pass'] = sum(x['ok'] for x in stages)
+    data['calls_torch_any_output_fail'] = sum(not x['ok'] for x in stages)
+    data['outputs_torch_pass'] = sum(x['ok'] for s in stages for x in s['outputs'])
+    data['outputs_torch_fail'] = sum(not x['ok'] for s in stages for x in s['outputs'])
+    result['connected'][str(capacity)] = data
+result['evidence_note']='ExportRecorder.capture_save writes Circle bytes, load_mapped() reads saved file and document.verify(raise_on_error=True) passes before record JSON is emitted. capture_convert calls real compiler and CircleReferenceRuntime.run for each probe; connected helper separately reads saved Circle stages. Overall strict Torch FAIL remains FAIL even if raw before/after arrays and frozen state are unchanged.'
+(ROOT/'cpu-candidate-audit.json').write_text(json.dumps(result,indent=2))
+print(json.dumps({k:v for k,v in result.items() if k not in ['exports','connected']},indent=2))
+for case,data in result['exports'].items():
+    print(case, data['overall_status'], {p:{k:v for k,v in d.items() if k!='stages'} for p,d in data['phases'].items()},data['before_after'])
+for case,data in result['connected'].items():
+    print('connected',case,{k:data[k] for k in ['status','execution_calls_completed','calls_torch_all_outputs_pass','calls_torch_any_output_fail','outputs_torch_pass','outputs_torch_fail','frozen_state_preserved','connected_valid_lengths']})

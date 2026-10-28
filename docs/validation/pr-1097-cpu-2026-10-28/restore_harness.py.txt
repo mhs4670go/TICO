@@ -1,0 +1,48 @@
+"""Restore validation-only scripts/configs outside the tracked report directory."""
+import argparse
+import pathlib
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output', required=True, type=pathlib.Path)
+parser.add_argument('--candidate', required=True, type=pathlib.Path)
+parser.add_argument('--baseline', required=True, type=pathlib.Path)
+parser.add_argument('--venv', required=True, type=pathlib.Path)
+args = parser.parse_args()
+package = pathlib.Path(__file__).resolve().parent
+output = args.output.resolve()
+if output.exists():
+    parser.error('--output must be a new directory')
+if output == package or package in output.parents:
+    parser.error('restore outside the tracked report package')
+values = {
+    '${VALIDATION_ROOT}': str(output),
+    '${CANDIDATE_REPO}': str(args.candidate.resolve()),
+    '${BASELINE_REPO}': str(args.baseline.resolve()),
+    '${VALIDATION_VENV}': str(args.venv.resolve()),
+    '${REPORT_REPO}': str(package.parents[2]),
+}
+selected = []
+for source in package.rglob('*'):
+    if not source.is_file():
+        continue
+    rel = source.relative_to(package)
+    if source.name.endswith('.py.txt') and source.name != 'restore_harness.py.txt':
+        target = output / str(rel)[:-4]
+    elif source.suffix in ('.yaml', '.jsonl') or str(rel) in (
+        'wrapper-harness/registry.json',
+        'evaluation/constraints-existing.txt',
+        'evaluation/reproduce.sh',
+    ):
+        target = output / rel
+    else:
+        continue
+    text = source.read_text()
+    for variable, value in values.items():
+        text = text.replace(variable, value)
+    selected.append((target, text))
+output.mkdir(parents=True)
+for target, text in selected:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(text)
+print(f'Restored {len(selected)} validation scripts/configs to {output}')
+print('No model, test, benchmark or network request was executed.')

@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+import json,pathlib,subprocess,sys,time
+root=pathlib.Path('${VALIDATION_ROOT}')
+registry=json.loads((root/'wrapper-harness/registry.json').read_text())
+records=[]
+for case in registry:
+ name=case['name']
+ if not case['supports_circle_export']:
+  records.append({'case':name,'status':'SKIPPED','reason':case['circle_export_unsupported_reason']});continue
+ cmd=[sys.executable,str(root/'run.py'),'--name','wrapper-circle-'+name,'--timeout','240','--','python',str(root/'wrapper-harness/export_case.py'),'--config','tico/quantization/examples/configs/wrapper_smoke.yaml','--mode','wrapper-smoke','--case',name,'--device','cpu','--export','circle','--strict','--no-plot','--output-dir',str(root/'wrapper-circle'/name),'--report-json',str(root/'wrapper-circle'/f'{name}.json')]
+ code=subprocess.call(cmd)
+ record={'case':name,'runner_exit_code':code}
+ run_path=root/'runs'/f'wrapper-circle-{name}.json'
+ if run_path.exists():record['run']=json.loads(run_path.read_text())
+ check_path=root/'wrapper-circle'/name/'artifact-checks.json'
+ if check_path.exists():record['artifact_checks']=json.loads(check_path.read_text())
+ record['status']=record.get('run',{}).get('status','INCOMPLETE')
+ records.append(record)
+ (root/'wrapper-harness/export-summary.json').write_text(json.dumps(records,indent=2))
+(root/'wrapper-harness/export-summary.json').write_text(json.dumps(records,indent=2))
+code=0 if all(r['status'] in ('PASS','SKIPPED') for r in records) else 1
+(root/'wrapper-harness/exports-complete.json').write_text(json.dumps({'exit_code':code,'registered':len(registry),'records':len(records),'passed':sum(r['status']=='PASS' for r in records),'failed':sum(r['status']=='FAIL' for r in records),'skipped':sum(r['status']=='SKIPPED' for r in records),'completed_at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())},indent=2))
+print('completed',len(records),'cases')
+sys.exit(code)

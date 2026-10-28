@@ -1,0 +1,25 @@
+{
+  "name": "packages-final",
+  "command": [
+    "python",
+    "-m",
+    "pip",
+    "list",
+    "--format=freeze"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 60,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:50:40Z",
+  "log": "${VALIDATION_ROOT}/logs/packages-final.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 0.265
+}

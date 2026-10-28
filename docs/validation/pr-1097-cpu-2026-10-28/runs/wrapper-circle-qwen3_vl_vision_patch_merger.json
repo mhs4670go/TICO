@@ -1,0 +1,38 @@
+{
+  "name": "wrapper-circle-qwen3_vl_vision_patch_merger",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/wrapper-harness/export_case.py",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_vision_patch_merger",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_merger",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_merger.json"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 240,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:34:46Z",
+  "log": "${VALIDATION_ROOT}/logs/wrapper-circle-qwen3_vl_vision_patch_merger.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 7.543
+}

@@ -1,0 +1,41 @@
+"""Real tiny prepare/calibrate/convert forwards, no export/model/scoring mocks."""
+import json,inspect,pathlib,copy
+import torch,yaml,tico
+from tico.quantization.recipes.debug.wrapper_smoke.registry import get_case
+from tico.quantization.recipes.debug.export_regression import _state_contract
+root=pathlib.Path(__file__).resolve().parent
+cfg=yaml.safe_load(pathlib.Path('tico/quantization/examples/configs/wrapper_smoke.yaml').read_text())
+torch.set_num_threads(1)
+records=[]
+for name in ['gemma4_for_conditional_generation','gemma4_for_causal_lm','gemma4_assistant_core']:
+ case=get_case(name)
+ record={'case':name,'tico_file':tico.__file__}
+ with torch.no_grad():
+  case.validate_config(cfg)
+  model,reference=case.build(cfg)
+  record['parameters']=sum(p.numel() for p in model.parameters())
+  prepared=case.prepare_model(model,cfg);case.after_prepare(prepared,cfg)
+  samples=case.calibration_inputs(prepared,cfg)[:3]
+  for sample in samples:case.forward(prepared,sample)
+  sample=case.eval_input(prepared,cfg)
+  case.reference_forward(reference,sample)
+  quantized=case.convert_model(prepared,cfg)
+  good=case.forward(quantized,sample)
+  record['valid_original_eager_forward']='PASS'
+  record['calibration_samples']=len(samples)
+  wrapped=getattr(quantized,'wrapped',quantized)
+  record['wrapped_type']=type(wrapped).__name__
+  record['wrapped_forward_signature']=str(inspect.signature(wrapped.forward))
+  record['has_as_export_module']=callable(getattr(wrapped,'as_export_module',None))
+  before=_state_contract(quantized)
+  try:
+   invocation=case.export_invocation(quantized,sample,cfg)
+   record['export_module_same_as_quantized']=invocation.module is quantized
+   record['export_args']=[{'type':type(x).__name__,'shape':list(x.shape),'dtype':str(x.dtype)} if isinstance(x,torch.Tensor) else {'type':type(x).__name__} for x in invocation.inputs.args]
+   invocation.module(*copy.deepcopy(invocation.inputs.args),**copy.deepcopy(dict(invocation.inputs.kwargs)))
+   record['original_export_invocation_eager']='PASS'
+  except Exception as e:
+   record['original_export_invocation_eager']='FAIL';record['exception_type']=type(e).__name__;record['exception']=str(e)
+  record['preexisting_state_unchanged']=before==_state_contract(quantized)
+ records.append(record)
+(root/'diagnostic.json').write_text(json.dumps(records,indent=2));print(json.dumps(records,indent=2))

@@ -1,0 +1,16 @@
+"""Read cached observer grids without calling compute_qparams or collecting data."""
+from tico.quantization.recipes.debug import export_regression as er
+from tico.quantization.wrapq.observers.base import ObserverBase
+
+def semantic_contract(model):
+    grids={}
+    for name,observer in model.named_modules():
+        if not isinstance(observer,ObserverBase):continue
+        fields={key:repr(getattr(observer,key,None)) for key in ('dtype','qscheme','channel_axis','_qparams_locked','enabled','fake_quant_enabled')}
+        dtype=getattr(observer,'dtype',None)
+        fields['quant_range']=[getattr(dtype,'qmin',None),getattr(dtype,'qmax',None)]
+        for key in ('_cached_scale','_cached_zp'):
+            value=getattr(observer,key,None)
+            fields[key]=None if value is None else er._array_record(value)
+        grids[name]=fields
+    return {'weights':{n:er._array_record(p) for n,p in model.named_parameters()},'observer_grids':grids}

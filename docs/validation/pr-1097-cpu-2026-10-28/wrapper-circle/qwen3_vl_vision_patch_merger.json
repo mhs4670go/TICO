@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_merger/qwen3_vl_vision_patch_merger.q.circle"
+  },
+  "case": "qwen3_vl_vision_patch_merger",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      64
+    ],
+    "max_abs_diff": 0.04787293076515198,
+    "mean_abs_diff": 0.010211654007434845,
+    "peir": 0.05304357755419341,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

@@ -1,0 +1,933 @@
+Collecting lm-eval==0.4.13
+  Downloading lm_eval-0.4.13-py3-none-any.whl.metadata (64 kB)
+Requirement already satisfied: datasets>=2.16.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from lm-eval==0.4.13) (5.0.1)
+Requirement already satisfied: numpy in ${VALIDATION_VENV}/lib/python3.12/site-packages (from lm-eval==0.4.13) (2.5.4)
+Collecting evaluate>=0.4.0 (from lm-eval==0.4.13)
+  Downloading evaluate-0.4.6-py3-none-any.whl.metadata (9.5 kB)
+Requirement already satisfied: jinja2 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from lm-eval==0.4.13) (3.1.6)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-1.2.1-py3-none-any.whl.metadata (38 kB)
+Collecting rouge-score>=0.0.4 (from lm-eval==0.4.13)
+  Downloading rouge_score-0.1.2.tar.gz (17 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting sacrebleu>=1.5.0 (from lm-eval==0.4.13)
+  Downloading sacrebleu-2.6.0-py3-none-any.whl.metadata (39 kB)
+Collecting scikit-learn>=0.24.1 (from lm-eval==0.4.13)
+  Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+Collecting sqlitedict (from lm-eval==0.4.13)
+  Downloading sqlitedict-2.1.0.tar.gz (21 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: dill in ${VALIDATION_VENV}/lib/python3.12/site-packages (from lm-eval==0.4.13) (0.4.1)
+Collecting word2number (from lm-eval==0.4.13)
+  Downloading word2number-1.1.zip (9.7 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting more_itertools (from lm-eval==0.4.13)
+  Downloading more_itertools-11.2.1-py3-none-any.whl.metadata (42 kB)
+Requirement already satisfied: typing_extensions in ${VALIDATION_VENV}/lib/python3.12/site-packages (from lm-eval==0.4.13) (4.16.0)
+Requirement already satisfied: tqdm>=4.59.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from lm-eval==0.4.13) (4.70.1)
+Requirement already satisfied: filelock in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (3.32.3)
+Requirement already satisfied: pyarrow>=21.0.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (26.0.0)
+Requirement already satisfied: pandas in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (3.1.0)
+Requirement already satisfied: requests>=2.32.2 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (2.34.2)
+Requirement already satisfied: httpx<1.0.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (0.28.1)
+Requirement already satisfied: xxhash in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (4.0.2)
+Requirement already satisfied: multiprocess<0.70.20 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (0.70.19)
+Requirement already satisfied: fsspec<=2026.6.0,>=2023.1.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (2026.2.0)
+Requirement already satisfied: huggingface-hub<2.0,>=0.25.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (1.33.0)
+Requirement already satisfied: packaging in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (26.3)
+Requirement already satisfied: pyyaml>=5.1 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from datasets>=2.16.0->lm-eval==0.4.13) (6.0.2)
+Collecting absl-py (from rouge-score>=0.0.4->lm-eval==0.4.13)
+  Downloading absl_py-2.5.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting nltk (from rouge-score>=0.0.4->lm-eval==0.4.13)
+  Downloading nltk-3.10.4-py3-none-any.whl.metadata (5.0 kB)
+Requirement already satisfied: six>=1.14.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from rouge-score>=0.0.4->lm-eval==0.4.13) (1.17.0)
+Collecting portalocker (from sacrebleu>=1.5.0->lm-eval==0.4.13)
+  Downloading portalocker-4.4.2-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: regex in ${VALIDATION_VENV}/lib/python3.12/site-packages (from sacrebleu>=1.5.0->lm-eval==0.4.13) (2026.9.29)
+Collecting tabulate>=0.8.9 (from sacrebleu>=1.5.0->lm-eval==0.4.13)
+  Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+Collecting colorama (from sacrebleu>=1.5.0->lm-eval==0.4.13)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting lxml (from sacrebleu>=1.5.0->lm-eval==0.4.13)
+  Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting scipy>=1.10.0 (from scikit-learn>=0.24.1->lm-eval==0.4.13)
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting joblib>=1.4.0 (from scikit-learn>=0.24.1->lm-eval==0.4.13)
+  Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn>=0.24.1->lm-eval==0.4.13)
+  Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn>=0.24.1->lm-eval==0.4.13)
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from jinja2->lm-eval==0.4.13) (3.0.3)
+Requirement already satisfied: setuptools>=38.3.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from pytablewriter->lm-eval==0.4.13) (78.1.0)
+Collecting DataProperty<2,>=1.1.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading dataproperty-1.1.1-py3-none-any.whl.metadata (12 kB)
+Collecting mbstrdecoder<2,>=1.0.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading mbstrdecoder-1.1.5-py3-none-any.whl.metadata (4.3 kB)
+Collecting pathvalidate<4,>=2.3.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading pathvalidate-3.3.1-py3-none-any.whl.metadata (12 kB)
+Collecting tabledata<2,>=1.3.1 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tabledata-1.3.5-py3-none-any.whl.metadata (4.0 kB)
+Collecting tcolorpy<1,>=0.0.5 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tcolorpy-0.1.7-py3-none-any.whl.metadata (6.3 kB)
+Collecting typepy<2,>=1.3.2 (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-1.3.5-py3-none-any.whl.metadata (9.6 kB)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (3.14.5)
+Requirement already satisfied: anyio in ${VALIDATION_VENV}/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.16.0->lm-eval==0.4.13) (4.15.1)
+Requirement already satisfied: certifi in ${VALIDATION_VENV}/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.16.0->lm-eval==0.4.13) (2026.10.19)
+Requirement already satisfied: httpcore==1.* in ${VALIDATION_VENV}/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.16.0->lm-eval==0.4.13) (1.0.9)
+Requirement already satisfied: idna in ${VALIDATION_VENV}/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.16.0->lm-eval==0.4.13) (3.20)
+Requirement already satisfied: h11>=0.16 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from httpcore==1.*->httpx<1.0.0->datasets>=2.16.0->lm-eval==0.4.13) (0.16.0)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from huggingface-hub<2.0,>=0.25.0->datasets>=2.16.0->lm-eval==0.4.13) (8.5.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.6.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from huggingface-hub<2.0,>=0.25.0->datasets>=2.16.0->lm-eval==0.4.13) (1.7.0)
+Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn>=0.24.1->lm-eval==0.4.13)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting chardet<7,>=3.0.4 (from mbstrdecoder<2,>=1.0.0->pytablewriter->lm-eval==0.4.13)
+  Downloading chardet-6.0.0.post1-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from requests>=2.32.2->datasets>=2.16.0->lm-eval==0.4.13) (3.5.2)
+Requirement already satisfied: urllib3<3,>=1.26 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from requests>=2.32.2->datasets>=2.16.0->lm-eval==0.4.13) (2.8.0)
+INFO: pip is looking at multiple versions of typepy[datetime] to determine which version is compatible with other requirements. This could take a while.
+Collecting typepy[datetime]<2,>=1.3.2 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-1.3.4-py3-none-any.whl.metadata (9.2 kB)
+  Downloading typepy-1.3.3-py3-none-any.whl.metadata (9.2 kB)
+  Downloading typepy-1.3.2-py3-none-any.whl.metadata (9.3 kB)
+Collecting DataProperty<2,>=1.1.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading DataProperty-1.1.0-py3-none-any.whl.metadata (11 kB)
+INFO: pip is still looking at multiple versions of typepy[datetime] to determine which version is compatible with other requirements. This could take a while.
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-1.2.0-py3-none-any.whl.metadata (37 kB)
+  Downloading pytablewriter-1.1.0-py3-none-any.whl.metadata (36 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+Collecting typepy[datetime]<2,>=1.2.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-1.3.1-py3-none-any.whl.metadata (9.3 kB)
+  Downloading typepy-1.3.0-py3-none-any.whl.metadata (9.3 kB)
+  Downloading typepy-1.2.0-py3-none-any.whl.metadata (9.1 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-1.0.0-py3-none-any.whl.metadata (33 kB)
+  Downloading pytablewriter-0.64.2-py3-none-any.whl.metadata (32 kB)
+Collecting pathvalidate<3,>=2.3.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading pathvalidate-2.5.2-py3-none-any.whl.metadata (11 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-0.64.1-py3-none-any.whl.metadata (32 kB)
+  Downloading pytablewriter-0.64.0-py3-none-any.whl.metadata (32 kB)
+  Downloading pytablewriter-0.63.0-py3-none-any.whl.metadata (32 kB)
+  Downloading pytablewriter-0.62.0-py3-none-any.whl.metadata (32 kB)
+  Downloading pytablewriter-0.61.0-py3-none-any.whl.metadata (31 kB)
+Collecting typepy[datetime]<2,>=1.1.4 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-1.1.5-py3-none-any.whl.metadata (9.1 kB)
+  Downloading typepy-1.1.4-py3-none-any.whl.metadata (9.0 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-0.60.0-py3-none-any.whl.metadata (31 kB)
+Collecting msgfy<1,>=0.1.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading msgfy-0.2.1-py3-none-any.whl.metadata (5.7 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-0.59.0-py3-none-any.whl.metadata (31 kB)
+  Downloading pytablewriter-0.58.0-py3-none-any.whl.metadata (31 kB)
+Collecting typepy[datetime]<2,>=1.1.1 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-1.1.3-py3-none-any.whl.metadata (9.0 kB)
+  Downloading typepy-1.1.2-py3-none-any.whl.metadata (8.9 kB)
+  Downloading typepy-1.1.1-py3-none-any.whl.metadata (9.1 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-0.57.0-py3-none-any.whl.metadata (31 kB)
+  Downloading pytablewriter-0.56.1-py3-none-any.whl.metadata (34 kB)
+  Downloading pytablewriter-0.56.0-py3-none-any.whl.metadata (33 kB)
+  Downloading pytablewriter-0.55.0-py3-none-any.whl.metadata (32 kB)
+  Downloading pytablewriter-0.54.0-py3-none-any.whl.metadata (32 kB)
+  Downloading pytablewriter-0.53.0-py3-none-any.whl.metadata (36 kB)
+  Downloading pytablewriter-0.52.0-py3-none-any.whl.metadata (35 kB)
+  Downloading pytablewriter-0.51.0-py3-none-any.whl.metadata (34 kB)
+Collecting typepy[datetime]<2,>=1.0.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-1.1.0-py3-none-any.whl.metadata (9.1 kB)
+  Downloading typepy-1.0.0-py3-none-any.whl.metadata (9.1 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-0.50.0-py3-none-any.whl.metadata (34 kB)
+Collecting typepy[datetime]<2,>=0.6.4 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-0.6.6-py2.py3-none-any.whl.metadata (9.3 kB)
+  Downloading typepy-0.6.5-py2.py3-none-any.whl.metadata (9.4 kB)
+  Downloading typepy-0.6.4-py2.py3-none-any.whl.metadata (9.8 kB)
+Collecting mbstrdecoder<2,>=0.8.3 (from pytablewriter->lm-eval==0.4.13)
+  Downloading mbstrdecoder-0.8.4-py2.py3-none-any.whl.metadata (4.6 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Downloading pytablewriter-0.49.0-py3-none-any.whl.metadata (34 kB)
+  Downloading pytablewriter-0.48.0-py3-none-any.whl.metadata (34 kB)
+  Downloading pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.46.1-py2.py3-none-any.whl.metadata (33 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting DataProperty<1.0.0,>=0.43.1 (from pytablewriter->lm-eval==0.4.13)
+  Downloading DataProperty-0.55.1-py3-none-any.whl.metadata (11 kB)
+Collecting msgfy<0.1.0,>=0.0.6 (from pytablewriter->lm-eval==0.4.13)
+  Downloading msgfy-0.0.7-py2.py3-none-any.whl.metadata (5.7 kB)
+Collecting pathvalidate<1.0.0,>=0.28.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading pathvalidate-0.29.1-py2.py3-none-any.whl.metadata (7.3 kB)
+Collecting tabledata<1.0.0,>=0.9.1 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tabledata-0.10.4-py2.py3-none-any.whl.metadata (4.0 kB)
+Collecting typepy[datetime]<1.0.0,>=0.6.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-0.6.3-py2.py3-none-any.whl.metadata (9.5 kB)
+  Downloading typepy-0.6.2-py3-none-any.whl.metadata (9.3 kB)
+  Downloading typepy-0.6.0-py2.py3-none-any.whl.metadata (9.4 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.46.0-py2.py3-none-any.whl.metadata (33 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting typepy[datetime]<1.0.0,>=0.5.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-0.5.0-py2.py3-none-any.whl.metadata (9.4 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.45.1-py2.py3-none-any.whl.metadata (33 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting typepy[datetime]<1.0.0,>=0.4.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-0.4.2-py2.py3-none-any.whl.metadata (9.2 kB)
+  Downloading typepy-0.4.1-py2.py3-none-any.whl.metadata (9.2 kB)
+  Downloading typepy-0.4.0-py2.py3-none-any.whl.metadata (9.2 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.45.0-py2.py3-none-any.whl.metadata (33 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.44.0-py2.py3-none-any.whl.metadata (30 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.43.1-py2.py3-none-any.whl.metadata (30 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.43.0-py2.py3-none-any.whl.metadata (30 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.42.0-py2.py3-none-any.whl.metadata (29 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting typepy[datetime]<1.0.0,>=0.3.3 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-0.3.4-py2.py3-none-any.whl.metadata (9.1 kB)
+  Downloading typepy-0.3.3-py2.py3-none-any.whl.metadata (9.0 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.41.2-py2.py3-none-any.whl.metadata (29 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.41.1-py2.py3-none-any.whl.metadata (29 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.41.0-py2.py3-none-any.whl.metadata (28 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.40.1-py2.py3-none-any.whl.metadata (27 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting dominate<3.0.0,>=2.3.5 (from pytablewriter->lm-eval==0.4.13)
+  Downloading dominate-2.9.1-py2.py3-none-any.whl.metadata (13 kB)
+Collecting logbook<2.0.0,>=1.1.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading logbook-1.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.6 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.40.0-py2.py3-none-any.whl.metadata (27 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.39.0-py2.py3-none-any.whl.metadata (27 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting typepy[datetime]<1.0.0,>=0.3.2 (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-0.3.2-py2.py3-none-any.whl.metadata (8.8 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Downloading pytablewriter-0.38.0-py2.py3-none-any.whl.metadata (27 kB)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting typepy[datetime] (from pytablewriter->lm-eval==0.4.13)
+  Downloading typepy-2.0.0-py3-none-any.whl.metadata (9.6 kB)
+  Downloading typepy-0.3.1-py2.py3-none-any.whl.metadata (8.8 kB)
+Requirement already satisfied: python-dateutil>=2.7.5 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from typepy[datetime]->pytablewriter->lm-eval==0.4.13) (3.0.0)
+Collecting pytz>=2018.7 (from typepy[datetime]->pytablewriter->lm-eval==0.4.13)
+  Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+Requirement already satisfied: tzdata in ${VALIDATION_VENV}/lib/python3.12/site-packages (from python-dateutil>=2.7.5->typepy[datetime]->pytablewriter->lm-eval==0.4.13) (2026.5)
+INFO: pip is looking at multiple versions of dataproperty to determine which version is compatible with other requirements. This could take a while.
+Collecting DataProperty>=0.37.0 (from pytablewriter->lm-eval==0.4.13)
+  Downloading DataProperty-1.0.2-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-1.0.1-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-1.0.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.55.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.54.2-py3-none-any.whl.metadata (11 kB)
+INFO: pip is still looking at multiple versions of dataproperty to determine which version is compatible with other requirements. This could take a while.
+  Downloading DataProperty-0.54.1-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.54.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.53.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.52.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.51.0-py3-none-any.whl.metadata (11 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading DataProperty-0.50.1-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.50.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.49.1-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.49.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.48.3-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.48.2-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.48.1-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.48.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.47.0-py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.46.4-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.46.3-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.46.2-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.46.1-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.46.0-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.45.0-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.44.0-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.43.3-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.43.2-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.43.1-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.43.0-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.42.4-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.42.3-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.42.2-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.42.1-py2.py3-none-any.whl.metadata (11 kB)
+  Downloading DataProperty-0.42.0-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.41.0-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.40.0-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.39.3-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.39.2-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.39.1-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.39.0-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.38.1-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.38.0-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.37.1-py2.py3-none-any.whl.metadata (12 kB)
+  Downloading DataProperty-0.37.0-py2.py3-none-any.whl.metadata (12 kB)
+WARNING: mbstrdecoder 1.1.5 does not provide the extra 'all'
+INFO: pip is looking at multiple versions of tabledata to determine which version is compatible with other requirements. This could take a while.
+Collecting tabledata>=0.0.26 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tabledata-1.3.4-py3-none-any.whl.metadata (3.7 kB)
+  Downloading tabledata-1.3.3-py3-none-any.whl.metadata (3.7 kB)
+  Downloading tabledata-1.3.2-py3-none-any.whl.metadata (3.7 kB)
+  Downloading tabledata-1.3.1-py3-none-any.whl.metadata (3.7 kB)
+  Downloading tabledata-1.3.0-py3-none-any.whl.metadata (3.6 kB)
+  Downloading tabledata-1.2.0-py3-none-any.whl.metadata (3.6 kB)
+  Downloading tabledata-1.1.4-py3-none-any.whl.metadata (3.6 kB)
+INFO: pip is still looking at multiple versions of tabledata to determine which version is compatible with other requirements. This could take a while.
+  Downloading tabledata-1.1.3-py3-none-any.whl.metadata (3.5 kB)
+  Downloading tabledata-1.1.2-py3-none-any.whl.metadata (3.8 kB)
+  Downloading tabledata-1.1.1-py3-none-any.whl.metadata (3.8 kB)
+  Downloading tabledata-1.1.0-py3-none-any.whl.metadata (3.8 kB)
+  Downloading tabledata-1.0.1-py3-none-any.whl.metadata (3.8 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading tabledata-1.0.0-py3-none-any.whl.metadata (3.8 kB)
+  Downloading tabledata-0.10.3-py2.py3-none-any.whl.metadata (4.0 kB)
+  Downloading tabledata-0.10.2-py2.py3-none-any.whl.metadata (4.0 kB)
+  Downloading tabledata-0.10.1-py2.py3-none-any.whl.metadata (4.0 kB)
+  Downloading tabledata-0.10.0-py2.py3-none-any.whl.metadata (4.0 kB)
+  Downloading tabledata-0.9.2-py2.py3-none-any.whl.metadata (4.0 kB)
+  Downloading tabledata-0.9.1-py2.py3-none-any.whl.metadata (4.4 kB)
+  Downloading tabledata-0.9.0-py2.py3-none-any.whl.metadata (4.4 kB)
+  Downloading tabledata-0.8.4-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.8.3-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.8.2-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.8.1-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.8.0-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.7.1-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.7.0-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.6.0-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.5.1-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.5.0-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.4.0-py2.py3-none-any.whl.metadata (4.2 kB)
+  Downloading tabledata-0.3.0-py2.py3-none-any.whl.metadata (4.1 kB)
+  Downloading tabledata-0.2.1-py2.py3-none-any.whl.metadata (3.9 kB)
+  Downloading tabledata-0.2.0-py2.py3-none-any.whl.metadata (3.9 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting tabledata>=0.0.26 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tabledata-0.1.1-py2.py3-none-any.whl.metadata (3.9 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting tabledata>=0.0.26 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tabledata-0.1.0-py2.py3-none-any.whl.metadata (3.9 kB)
+Collecting pytablewriter (from lm-eval==0.4.13)
+  Using cached pytablewriter-0.47.0-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.47.0 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/c6/79/62ff8772fa8b30e992053f7fd06cd5c9a484088732e11e70db4f421de2b0/pytablewriter-0.47.0-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+  Using cached pytablewriter-0.46.3-py2.py3-none-any.whl.metadata (35 kB)
+WARNING: Ignoring version 0.46.3 of pytablewriter since it has invalid metadata:
+Requested pytablewriter from https://files.pythonhosted.org/packages/f8/c4/9826a19f79c4d3109ec5eeb972d2ac9483e53df844786a2fcc29fe709939/pytablewriter-0.46.3-py2.py3-none-any.whl (from lm-eval==0.4.13) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier
+    pathvalidate (>=0.29.1<1) ; python_version < "3.5"
+                 ~~~~~~~~~^
+Please use pip<24.1 if you need to use this version.
+Collecting tabledata>=0.0.26 (from pytablewriter->lm-eval==0.4.13)
+  Downloading tabledata-0.0.26-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting defusedxml (from nltk->rouge-score>=0.0.4->lm-eval==0.4.13)
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (1.8.0)
+Requirement already satisfied: multidict<8.0,>=4.5 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (7.1.0)
+Requirement already satisfied: propcache>=0.2.0 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (0.5.4)
+Requirement already satisfied: yarl<2.0,>=1.25.1 in ${VALIDATION_VENV}/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets>=2.16.0->lm-eval==0.4.13) (1.25.1)
+Downloading lm_eval-0.4.13-py3-none-any.whl (9.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 24.1 MB/s eta 0:00:00
+Downloading evaluate-0.4.6-py3-none-any.whl (84 kB)
+Downloading sacrebleu-2.6.0-py3-none-any.whl (100 kB)
+Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 47.3 MB/s eta 0:00:00
+Downloading more_itertools-11.2.1-py3-none-any.whl (74 kB)
+Downloading pytablewriter-0.38.0-py2.py3-none-any.whl (57 kB)
+Downloading DataProperty-0.37.0-py2.py3-none-any.whl (23 kB)
+Downloading dominate-2.9.1-py2.py3-none-any.whl (29 kB)
+Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+Downloading msgfy-0.2.1-py3-none-any.whl (4.4 kB)
+Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+Downloading pathvalidate-3.3.1-py3-none-any.whl (24 kB)
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 62.6 MB/s eta 0:00:00
+Downloading tabledata-0.0.26-py2.py3-none-any.whl (10 kB)
+Downloading mbstrdecoder-1.1.5-py3-none-any.whl (8.0 kB)
+Downloading typepy-0.3.1-py2.py3-none-any.whl (31 kB)
+Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Downloading absl_py-2.5.1-py3-none-any.whl (137 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading logbook-1.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (337 kB)
+Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 22.6 MB/s eta 0:00:00
+Downloading nltk-3.10.4-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 28.9 MB/s eta 0:00:00
+Downloading portalocker-4.4.2-py3-none-any.whl (129 kB)
+Downloading chardet-6.0.0.post1-py3-none-any.whl (627 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 627.2/627.2 kB 56.4 MB/s eta 0:00:00
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Building wheels for collected packages: rouge-score, sqlitedict, word2number
+  Building wheel for rouge-score (setup.py): started
+  Building wheel for rouge-score (setup.py): finished with status 'done'
+  Created wheel for rouge-score: filename=rouge_score-0.1.2-py3-none-any.whl size=24986 sha256=9f031ca5dd0a8c14bdca2d0c483b70281ba6c5e937236a058cd2ee7247f9da56
+  Stored in directory: /home/agent/.cache/pip/wheels/85/9d/af/01feefbe7d55ef5468796f0c68225b6788e85d9d0a281e7a70
+  Building wheel for sqlitedict (setup.py): started
+  Building wheel for sqlitedict (setup.py): finished with status 'done'
+  Created wheel for sqlitedict: filename=sqlitedict-2.1.0-py3-none-any.whl size=16958 sha256=d145ebeec5f1839d47a2e335ff144d21bd3d30091b1e6db2ff511df57a187478
+  Stored in directory: /home/agent/.cache/pip/wheels/7a/6f/21/fc016aef45ffcabe27129a2252f061387cbf278d2086225a64
+  Building wheel for word2number (setup.py): started
+  Building wheel for word2number (setup.py): finished with status 'done'
+  Created wheel for word2number: filename=word2number-1.1-py3-none-any.whl size=5658 sha256=fae1434af740293ba69d1429f8a8617fdf55e4128b7562eb71d9ba1bef289add
+  Stored in directory: /home/agent/.cache/pip/wheels/5b/79/fb/d25928e599c7e11fe4e00d32048cd74933f34a74c633d2aea6
+Successfully built rouge-score sqlitedict word2number
+Installing collected packages: word2number, sqlitedict, pytz, threadpoolctl, tabulate, scipy, portalocker, pathvalidate, narwhals, msgfy, more_itertools, lxml, logbook, dominate, defusedxml, colorama, cloudpickle, chardet, absl-py, sacrebleu, mbstrdecoder, joblib, scikit-learn, nltk, typepy, rouge-score, evaluate, DataProperty, tabledata, pytablewriter, lm-eval
+Successfully installed DataProperty-0.37.0 absl-py-2.5.1 chardet-6.0.0.post1 cloudpickle-3.1.2 colorama-0.4.6 defusedxml-0.7.1 dominate-2.9.1 evaluate-0.4.6 joblib-1.6.0 lm-eval-0.4.13 logbook-1.10.1 lxml-6.1.3 mbstrdecoder-1.1.5 more_itertools-11.2.1 msgfy-0.2.1 narwhals-2.28.0 nltk-3.10.4 pathvalidate-3.3.1 portalocker-4.4.2 pytablewriter-0.38.0 pytz-2026.5 rouge-score-0.1.2 sacrebleu-2.6.0 scikit-learn-1.9.1 scipy-1.18.1 sqlitedict-2.1.0 tabledata-0.0.26 tabulate-0.10.0 threadpoolctl-3.7.0 typepy-0.3.1 word2number-1.1
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip

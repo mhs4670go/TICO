@@ -1,0 +1,15 @@
+{
+  "candidate": {
+    "exit_code": 1,
+    "registered": 50,
+    "records": 50,
+    "passed": 25,
+    "failed": 23,
+    "skipped": 2,
+    "completed_at": "2026-10-28T10:39:24Z"
+  },
+  "baseline_cases": 26,
+  "baseline_passed": 3,
+  "baseline_failed": 23,
+  "completed_at": "2026-10-28T10:42:58Z"
+}

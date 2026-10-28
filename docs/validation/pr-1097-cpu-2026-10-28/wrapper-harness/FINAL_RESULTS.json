@@ -1,0 +1,77 @@
+{
+  "status": "FAIL",
+  "assessment": "All17 saved-file strict parity failures reproduced on independent baseline inputs/outputs, including corrected Qwen fixture. Six original generic export fixture failures are separately diagnosed. No candidate-only numerical regression found in this wrapper scope.",
+  "numerical": {
+    "registered": 50,
+    "executed": 50,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "elapsed_seconds": 10.674,
+    "log": "logs/wrapper-numerical-all.log",
+    "summary": "wrapper-smoke/summary.json"
+  },
+  "original_export": {
+    "registered": 50,
+    "supported_attempted": 48,
+    "intentional_excluded": 2,
+    "inspector_pass": 42,
+    "inspector_fail": 6,
+    "saved_pass": 42,
+    "structural_pass": 42,
+    "runtime_pass": 41,
+    "runtime_harness_binding_error": 1,
+    "no_artifact": 6,
+    "strict_raw_parity_pass": 25,
+    "strict_raw_parity_fail": 16,
+    "strict_raw_parity_binding_incomplete": 1,
+    "frozen_full_hash_pass": 47,
+    "frozen_full_hash_profile_topology_difference": 1,
+    "source_existing_observer_or_weight_mutations": 0,
+    "elapsed_seconds": 452.337
+  },
+  "supplemental_saved_replay": {
+    "runtime_executed": 42,
+    "all_runtime_modes": "fake_quantize",
+    "strict_encoded_parity_pass": 25,
+    "strict_encoded_parity_fail": 17,
+    "no_artifact_not_replayable": 6,
+    "frozen_source_unchanged": 42,
+    "raw_failed_original_input_and_torch_output_hash_exactly_reproduced": 16,
+    "original_raw_results_preserved": true,
+    "dict_binding_supplement": "Exact signature-derived nested names required to equal serialized input ABI names; original production binder error preserved."
+  },
+  "baseline": {
+    "independent_original_case_runs": 26,
+    "original_pass": 3,
+    "original_fail": 23,
+    "elapsed_seconds": 211.419,
+    "equivalent_fixture_runs": 3,
+    "equivalent_elapsed_seconds": 21.357,
+    "comparable_saved_pairs": 20,
+    "comparable_pass_pairs": 3,
+    "comparable_strict_parity_failure_pairs": 17,
+    "all_comparable_raw_input_raw_torch_encoded_torch_encoded_circle_hashes_identical": true,
+    "new_checkpoint_fed_to_base": false,
+    "evidence": [
+      "wrapper-harness/encoded-revision-comparison.json",
+      "wrapper-harness/equivalent-revision-comparison.json",
+      "wrapper-harness/revision-comparison.json"
+    ]
+  },
+  "artifacts": {
+    "report": "wrapper-harness/WRAPPER_REPORT.md",
+    "registry": "wrapper-harness/registry.json",
+    "original_case_records": "wrapper-harness/export-summary.json",
+    "encoded_case_records": "wrapper-harness/wrapper-circle-encoded-replay/summary.json",
+    "baseline_case_records": "wrapper-harness/baseline-summary.json",
+    "equivalent_case_records": "wrapper-harness/qwen-equivalence-results.json",
+    "source_topology_diagnostic": "gemma4-topology-diagnostic.json",
+    "gemma_core_failures": "gemma-export-review/REPORT.md"
+  },
+  "limits": [
+    "Tiny synthetic inputs and random initialized real model modules; not pretrained quality benchmark.",
+    "FAKE_QUANTIZE CPU semantic reference, not integer NPU execution.",
+    "The extra corrected assistant profile is owned/reported by gemma_export_review and excluded from original counts."
+  ]
+}

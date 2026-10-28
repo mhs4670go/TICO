@@ -1,0 +1,2292 @@
+{
+  "case": "gemma4_for_causal_lm",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "gemma4_for_causal_lm",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_for_causal_lm",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/gemma4_for_causal_lm.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "INCOMPLETE",
+  "structural": "INCOMPLETE",
+  "runtime": "INCOMPLETE",
+  "parity": "INCOMPLETE",
+  "frozen_unchanged": "PASS",
+  "semantic_contract": {
+    "weights": {
+      "wrapped.module.model.embed_tokens.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "991e195f67881dec59be3e43a6584fa099652fe736b809974227c8d4bb896409"
+      },
+      "wrapped.module.model.layers.0.self_attn.q_proj.weight": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "bb7329700976797f307c659f35be1d027ed2cf2699604483c49f1a3fe10d39dc"
+      },
+      "wrapped.module.model.layers.0.self_attn.q_norm.weight": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "b638277a8690e175a9137feff1e43c067f9faf4e2f600caf468fb05b0403b717"
+      },
+      "wrapped.module.model.layers.0.self_attn.k_norm.weight": {
+        "shape": [
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "b638277a8690e175a9137feff1e43c067f9faf4e2f600caf468fb05b0403b717"
+      },
+      "wrapped.module.model.layers.0.self_attn.k_proj.weight": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "3885f784cee6969966543909e14de837d479b6b0f4a49534233ac9f4c5da9995"
+      },
+      "wrapped.module.model.layers.0.self_attn.v_proj.weight": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "a4924b27a5573fd3053319eae61fd4fb7a738ac464a1271552d40e57b073e830"
+      },
+      "wrapped.module.model.layers.0.self_attn.o_proj.weight": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "2e0f47bf22d8beaf7fadae0559166a358cc93c9dcead69bc33eea415883fd027"
+      },
+      "wrapped.module.model.layers.0.mlp.gate_proj.weight": {
+        "shape": [
+          128,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "9adc04ea3e675f8478af12493e4b43da8a0d6ed4aec7ca82cc04b8679e5bf9d0"
+      },
+      "wrapped.module.model.layers.0.mlp.up_proj.weight": {
+        "shape": [
+          128,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "75924382bbaff62d2c6a6daab72273437639b7883f6e387cd752dcc02f52a7e7"
+      },
+      "wrapped.module.model.layers.0.mlp.down_proj.weight": {
+        "shape": [
+          64,
+          128
+        ],
+        "dtype": "float32",
+        "sha256": "78f4425d02cae381b85881d949f448d00be572c6979b154f4e025d0f087df2bd"
+      },
+      "wrapped.module.model.layers.0.input_layernorm.weight": {
+        "shape": [
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "2f20cd03c9cd392a406c56232b0ff93a15f6d6d7da79086bfa14f55d4a4031b0"
+      },
+      "wrapped.module.model.layers.0.post_attention_layernorm.weight": {
+        "shape": [
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "2f20cd03c9cd392a406c56232b0ff93a15f6d6d7da79086bfa14f55d4a4031b0"
+      },
+      "wrapped.module.model.layers.0.pre_feedforward_layernorm.weight": {
+        "shape": [
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "2f20cd03c9cd392a406c56232b0ff93a15f6d6d7da79086bfa14f55d4a4031b0"
+      },
+      "wrapped.module.model.layers.0.post_feedforward_layernorm.weight": {
+        "shape": [
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "2f20cd03c9cd392a406c56232b0ff93a15f6d6d7da79086bfa14f55d4a4031b0"
+      },
+      "wrapped.module.model.norm.weight": {
+        "shape": [
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "2f20cd03c9cd392a406c56232b0ff93a15f6d6d7da79086bfa14f55d4a4031b0"
+      }
+    },
+    "observer_grids": {
+      "wrapped.model.wrapped.embed_tokens.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [
+            256
+          ],
+          "dtype": "float32",
+          "sha256": "81b72432b9c8ce0c59a1fb5a0b74ba02ac6852e478c9ba1043cae7c4e7a5e803"
+        },
+        "_cached_zp": {
+          "shape": [
+            256
+          ],
+          "dtype": "int32",
+          "sha256": "ddd27cc378253a53f71faf0180eaeba8fe8628a3330c409faad6c5e2c5e52d7b"
+        }
+      },
+      "wrapped.model.wrapped.embed_tokens.wrapped.obs_embedding": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "cd84ef3a92045a9e6aecaa53842686fd062e060bb6d65e12813ffcec62869345"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.embed_tokens.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d181a648578bc3b4737383b12c44dd2827bba1971fb6c192b0a3e2c3a6aca8b0"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.embed_tokens.wrapped.obs_embed_scale": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "ca3ff3f8ddc1b9a4f18ca06458c51dd69124f5fc02013fb2815af5761a42e1eb"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d1b50dd9da670b6cc08d2c9f7cdf2072354417f8cd23722f05c372afbc472b8c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "db3c6f876b63370057c307016fe07a56bff34a71c813758af9f45a28c131aa7b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "ed1a61562f605548043b3631b0b22fb3ec2ba471f6782068465f866c726db3c6"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "ed1a61562f605548043b3631b0b22fb3ec2ba471f6782068465f866c726db3c6"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "6a193eae31084bc3346210406c73e644c1615bae2d979906af96b7eb5f8b9b76"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "dcf01f20e5d1b72b13eaa3e89ca5e2efb659506f1e1f072fc1d9e5dd8f67708d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "db3c6f876b63370057c307016fe07a56bff34a71c813758af9f45a28c131aa7b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f21ebfd2b843fb8087fd6711833d772e16e440ba7f7ddee2b7c546e3950f361b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f21ebfd2b843fb8087fd6711833d772e16e440ba7f7ddee2b7c546e3950f361b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a7d0c888174805a72d85187ba6490be462268d4601ed248f8c57b2c9fef91064"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fc4e321fd01acefa3e17349394714dd88cdce4370cfcb8dc2ea521d3ec561c02"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "58bf6a1b48bbee6eb380b678d942bd552bbbf6bc8d884eb18fad754709d51000"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "db3c6f876b63370057c307016fe07a56bff34a71c813758af9f45a28c131aa7b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a7d0c888174805a72d85187ba6490be462268d4601ed248f8c57b2c9fef91064"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fff9be1db5f79f5d87014b7796c496fedb61cd33daaa3f99add979f51f32ce6c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e55c2813844a202bd7a48176e7c74ae452529570f13eb0a3876b5132100a94d8"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "054f16b3289cf303f327d55b7daa9a1dc5bd5053b28fb04be36be0436e3124aa"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "db3c6f876b63370057c307016fe07a56bff34a71c813758af9f45a28c131aa7b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fc43d49ab1b55bd773c96d343ca937d4331bc6a9256e39600dd0e6c03aec1bd9"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x1": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "6a193eae31084bc3346210406c73e644c1615bae2d979906af96b7eb5f8b9b76"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x2": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d35fdaa2a5ab2232c0388cdec99ff68505b6e6c4f929ad7223c33ff1fbbbf2f9"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_neg": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "True",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [
+            0
+          ],
+          "dtype": "float32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "_cached_zp": {
+          "shape": [
+            0
+          ],
+          "dtype": "int32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "6a193eae31084bc3346210406c73e644c1615bae2d979906af96b7eb5f8b9b76"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x1": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "36f8aec32169ca73a64f29090f4639830d3c1ede913b30fa19b8dbe13eae1377"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_neg": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "True",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [
+            0
+          ],
+          "dtype": "float32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "_cached_zp": {
+          "shape": [
+            0
+          ],
+          "dtype": "int32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d35fdaa2a5ab2232c0388cdec99ff68505b6e6c4f929ad7223c33ff1fbbbf2f9"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5339200bbcb1a267750026f86e751aed0df90d9127f632a91f1ad9c26f92f2bc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "c9c3c5c7b7774bcb7d083345360b2d06986c30c03b4bef9a30e91a50afca95db"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "afd23fa2f20a507cbdefa5c839bddaba422100dea1313bdb57e715f291ab4a4f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fc4e321fd01acefa3e17349394714dd88cdce4370cfcb8dc2ea521d3ec561c02"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "5a68eae40e90161460380497bcfdac7b6905fb9a2dabe06a2346dad46b46a572"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fc4e321fd01acefa3e17349394714dd88cdce4370cfcb8dc2ea521d3ec561c02"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_mask": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b9637ae3fcd20d8fff34b74560599568ecc420c1c2c8f01ae87f545a0e56747d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "eceee6659bf88395b3ba9be39d43cc51b9f1bffa60553b2b18b007367d69b35c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "True",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [
+            0
+          ],
+          "dtype": "float32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "_cached_zp": {
+          "shape": [
+            0
+          ],
+          "dtype": "int32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "eceee6659bf88395b3ba9be39d43cc51b9f1bffa60553b2b18b007367d69b35c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "635ae353a385bb709e2faf131c96d818b4a4066a0392f7fcc9fd14e4e6345ae4"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e55c2813844a202bd7a48176e7c74ae452529570f13eb0a3876b5132100a94d8"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_weights": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out_h": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e55c2813844a202bd7a48176e7c74ae452529570f13eb0a3876b5132100a94d8"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "a3687e8014afa13576f6580abdd687bb3c5f2fd7580788567e1a8450ee747e9e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f940cf2fffdd5154f069800c9452395cd673ece8a709a6f5332ab4253277947e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "adbd5165e4d1ebfbf5defb308e4c28956fe0c243ea0f449f7de7182918f0f44d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "7b0bb24fdd3f630d1d97896bf99a9bccacca7d5895c342a869987937140c5d0b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f940cf2fffdd5154f069800c9452395cd673ece8a709a6f5332ab4253277947e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "df75c7b44c487c5ec072708a1c22a77a8edd05cc160eed887971d3a4b1005d76"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d67dd53ed64e880598ca0db20b4415526cb4311663c71ea6f90bb603f5fa8241"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "908280e34a8d7d0421e01ae06bb91bc8c26c77329d5f19bb5b1babc6e35b4c7d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "4db5e6d879d54cfd914c8cff8a54b5ba1f22e3d8baf335fa80171565f1857380"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_gate_act": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "7e1bdf7929c116e3067b3ee30e92157d42747351f5bc0c151497c9962aac649f"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_mul": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "908280e34a8d7d0421e01ae06bb91bc8c26c77329d5f19bb5b1babc6e35b4c7d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d181a648578bc3b4737383b12c44dd2827bba1971fb6c192b0a3e2c3a6aca8b0"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "db3c6f876b63370057c307016fe07a56bff34a71c813758af9f45a28c131aa7b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "054f16b3289cf303f327d55b7daa9a1dc5bd5053b28fb04be36be0436e3124aa"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "4a72f5c13bdbd3ee0a70b313db1f9de0c0fcdadb81db6591d4c5c76c4f2b71ed"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "6cb32e376740aeb01e9745b13ad25c60f967a661384266563db8eb7b63587f06"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.pre_feedforward_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f940cf2fffdd5154f069800c9452395cd673ece8a709a6f5332ab4253277947e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "4db5e6d879d54cfd914c8cff8a54b5ba1f22e3d8baf335fa80171565f1857380"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.post_feedforward_layernorm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "1f883dcb5305a320b0d64d52ee014bdf9ac5d1e71813d6d813297fc9f849f0f6"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d181a648578bc3b4737383b12c44dd2827bba1971fb6c192b0a3e2c3a6aca8b0"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.obs_attn_residual_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "6cb32e376740aeb01e9745b13ad25c60f967a661384266563db8eb7b63587f06"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.obs_mlp_residual_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f174ecda0040bb77d96da96eb85f198df587323e0d14b707b19d549551e05f3c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.obs_layer_scalar": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.layers.0.wrapped.obs_layer_scalar_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f174ecda0040bb77d96da96eb85f198df587323e0d14b707b19d549551e05f3c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.norm.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.norm.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "f174ecda0040bb77d96da96eb85f198df587323e0d14b707b19d549551e05f3c"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.norm.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "0df08245776ff0030c1b0d1edeaed2265a0eaa16d9a310acc0d3f87c093a059d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.obs_inputs_embeds": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [
+            0
+          ],
+          "dtype": "float32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "_cached_zp": {
+          "shape": [
+            0
+          ],
+          "dtype": "int32",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "wrapped.model.wrapped.obs_attention_masks.full_attention": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "b9637ae3fcd20d8fff34b74560599568ecc420c1c2c8f01ae87f545a0e56747d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.obs_position_cos.full_attention": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "244fc6c083ce4a71f50e044f3a7490d8f515bf30511f3e46217fe7827748814b"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.model.wrapped.obs_position_sin.full_attention": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "fc43d49ab1b55bd773c96d343ca937d4331bc6a9256e39600dd0e6c03aec1bd9"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.lm_head.wrapped.obs_weight": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "cd84ef3a92045a9e6aecaa53842686fd062e060bb6d65e12813ffcec62869345"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.lm_head.wrapped.obs_act_in": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "0df08245776ff0030c1b0d1edeaed2265a0eaa16d9a310acc0d3f87c093a059d"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.lm_head.wrapped.obs_act_out": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "525c7638609b5fc6f96270120941d8c39310a10323faf301569937daca9e27dc"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.obs_logit_softcapping_div": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "09682197b8787c68a287b668150b2fa945719a774a31db0f1f888fb45b42a92e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.obs_logit_softcapping_tanh": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "2201029d8fa3255a1f067b298d6ccaa00421d533531192cc3099c901dc1228a8"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      },
+      "wrapped.obs_logits": {
+        "dtype": "DType(bits=16, signed=True)",
+        "qscheme": "<QScheme.PER_TENSOR_SYMM: 2>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          -32768,
+          32767
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "0320c19ebc6745a809c4eafb1c72b0465c1a5ed1fa1a7efb801dcc46d22a6ba8"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      }
+    }
+  },
+  "frozen_before_sha256": "5f0123890eef9954fff0641717566857245191aa738aea2a678a515f53e627c1",
+  "converter_error": "Traceback (most recent call last):\n  File \"${VALIDATION_ROOT}/wrapper-harness/export_case.py\", line 39, in convert_spy\n    return old_convert(module,args,*pos,**options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${CANDIDATE_REPO}/tico/utils/convert.py\", line 403, in convert\n    exported_program = export(\n                       ^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/__init__.py\", line 205, in export\n    raise e\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/__init__.py\", line 171, in export\n    return _export(\n           ^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 1344, in wrapper\n    raise e\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 1310, in wrapper\n    ep = fn(*args, **kwargs)\n         ^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/exported_program.py\", line 124, in wrapper\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_utils_internal.py\", line 96, in wrapper_function\n    return function(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 2516, in _export\n    ep = _export_for_training(\n         ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 1344, in wrapper\n    raise e\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 1310, in wrapper\n    ep = fn(*args, **kwargs)\n         ^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/exported_program.py\", line 124, in wrapper\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 2304, in _export_for_training\n    export_artifact = export_func(\n                      ^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 1599, in _strict_export\n    gm_torch_level = _export_to_torch_ir(\n                     ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/export/_trace.py\", line 917, in _export_to_torch_ir\n    gm_torch_level = dynamo_graph_capture(*args, **kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/functional_export.py\", line 965, in inner\n    out = fullgraph_capture(\n          ^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 1422, in fullgraph_capture\n    return _fullgraph_capture_frame(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 1470, in _fullgraph_capture_frame\n    dynamo_output = compile_frame(\n                    ^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 1584, in compile_frame\n    bytecode, tracer_output = transform_code_object(code, transform)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py\", line 1821, in transform_code_object\n    tracer_output = transformations(instructions, code_options)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 1555, in transform\n    tracer_output = trace_frame(\n                    ^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 368, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 954, in trace_frame\n    run_tracer()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py\", line 935, in run_tracer\n    tracer.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/nn_module.py\", line 1188, in call_function\n    return variables.UserFunctionVariable(fn, source=source).call_function(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 1521, in call_function\n    return self.obj.call_method(tx, self.name, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 309, in call_method\n    return fn_vt.call_function(tx, [self.objvar] + args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/nn_module.py\", line 1188, in call_function\n    return variables.UserFunctionVariable(fn, source=source).call_function(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 1521, in call_function\n    return self.obj.call_method(tx, self.name, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 309, in call_method\n    return fn_vt.call_function(tx, [self.objvar] + args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/nn_module.py\", line 1188, in call_function\n    return variables.UserFunctionVariable(fn, source=source).call_function(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 1521, in call_function\n    return self.obj.call_method(tx, self.name, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 309, in call_method\n    return fn_vt.call_function(tx, [self.objvar] + args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/nn_module.py\", line 1188, in call_function\n    return variables.UserFunctionVariable(fn, source=source).call_function(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 1521, in call_function\n    return self.obj.call_method(tx, self.name, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 309, in call_method\n    return fn_vt.call_function(tx, [self.objvar] + args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 4520, in CALL\n    self._call(inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 4511, in _call\n    self.call_function(fn, args, kwargs)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/nn_module.py\", line 1188, in call_function\n    return variables.UserFunctionVariable(fn, source=source).call_function(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 1521, in call_function\n    return self.obj.call_method(tx, self.name, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 309, in call_method\n    return fn_vt.call_function(tx, [self.objvar] + args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/nn_module.py\", line 1188, in call_function\n    return variables.UserFunctionVariable(fn, source=source).call_function(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 1521, in call_function\n    return self.obj.call_method(tx, self.name, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/misc.py\", line 309, in call_method\n    return fn_vt.call_function(tx, [self.objvar] + args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 3097, in CALL_FUNCTION_EX\n    self.call_function(fn, argsvars.items, kwargsvars)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 1722, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 890, in call_function\n    return super().call_function(tx, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py\", line 519, in call_function\n    return tx.inline_user_function_return(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1521, in inline_user_function_return\n    return InliningInstructionTranslator.inline_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5721, in inline_call\n    return tracer.inline_call_()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 5965, in inline_call_\n    self.run()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1950, in run\n    while self.step():\n          ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1603, in step\n    self.dispatch_table[inst.opcode](self, inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1076, in wrapper\n    return inner_fn(self, inst)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 4520, in CALL\n    self._call(inst)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 4511, in _call\n    self.call_function(fn, args, kwargs)\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py\", line 1493, in call_function\n    self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/lazy.py\", line 514, in realize_and_forward\n    return getattr(self.realize(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/torch.py\", line 3214, in call_function\n    tensor_variable = wrap_fx_proxy(\n                      ^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/builder.py\", line 3561, in wrap_fx_proxy\n    return wrap_fx_proxy_cls(target_cls=TensorVariable, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/builder.py\", line 3636, in wrap_fx_proxy_cls\n    out: VTTypeAlias = _wrap_fx_proxy(\n                       ^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/variables/builder.py\", line 3767, in _wrap_fx_proxy\n    example_value = get_fake_value(proxy.node, tx, allow_non_graph_fake=True)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/utils.py\", line 3949, in get_fake_value\n    return _get_fake_value_impl(node, tx, allow_non_graph_fake)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/utils.py\", line 4154, in _get_fake_value_impl\n    _wrap_graph_break_with_torch_runtime_err(\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/utils.py\", line 3938, in _wrap_graph_break_with_torch_runtime_err\n    raise exc.with_traceback(e.__traceback__) from None\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/utils.py\", line 3935, in _wrap_graph_break_with_torch_runtime_err\n    gb_fn()\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/utils.py\", line 4155, in <lambda>\n    lambda: unimplemented(\n            ^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/exc.py\", line 723, in unimplemented\n    raise Unsupported(\ntorch._dynamo.exc.TorchRuntimeError: RuntimeError when making fake tensor call\n  Explanation: Dynamo failed to run FX node with fake tensors: call_function <function embedding at 0x7f17bc500ea0>(*(FakeTensor(..., size=(1, 16, 64)), FakeTensor(..., size=(256, 64))), **{'padding_idx': 0, 'max_norm': None, 'norm_type': 2.0, 'scale_grad_by_freq': False, 'sparse': False}): got RuntimeError(\"Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.float32 instead\")\n  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance(\"force_eager\")`. \n\n  Developer debug context: \n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html\n",
+  "frozen_after_sha256": "5f0123890eef9954fff0641717566857245191aa738aea2a678a515f53e627c1",
+  "inspector_error": "Traceback (most recent call last):\n  File \"${VALIDATION_ROOT}/wrapper-harness/export_case.py\", line 101, in <module>\n    inspector.main()\n  File \"${CANDIDATE_REPO}/tico/quantization/examples/inspector.py\", line 243, in main\n    _run_wrapper_smoke_mode(args)\n  File \"${CANDIDATE_REPO}/tico/quantization/examples/inspector.py\", line 226, in _run_wrapper_smoke_mode\n    run_wrapper_smoke(\n  File \"${CANDIDATE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/runner.py\", line 274, in run_wrapper_smoke\n    result.raise_if_failed()\n  File \"${CANDIDATE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/result.py\", line 69, in raise_if_failed\n    raise RuntimeError(\nRuntimeError: Wrapper smoke case 'gemma4_for_causal_lm' failed (EXPORT): Circle export failed: RuntimeError when making fake tensor call\n  Explanation: Dynamo failed to run FX node with fake tensors: call_function <function embedding at 0x7f17bc500ea0>(*(FakeTensor(..., size=(1, 16, 64)), FakeTensor(..., size=(256, 64))), **{'padding_idx': 0, 'max_norm': None, 'norm_type': 2.0, 'scale_grad_by_freq': False, 'sparse': False}): got RuntimeError(\"Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.float32 instead\")\n  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance(\"force_eager\")`. \n\n  Developer debug context: \n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html\n",
+  "inspector_exit_code": 1,
+  "status": "FAIL"
+}

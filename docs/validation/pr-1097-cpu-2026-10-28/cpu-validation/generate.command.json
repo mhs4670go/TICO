@@ -1,0 +1,26 @@
+{
+  "command": [
+    "${VALIDATION_VENV}/bin/python",
+    "-m",
+    "tico.quantization.recipes.debug.cpu_validation",
+    "--stage",
+    "_tests",
+    "--output",
+    "${VALIDATION_ROOT}/cpu-validation/generate-tests",
+    "--test-module",
+    "test.quantization.recipes.test_cpu_generation"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "log": "${VALIDATION_ROOT}/cpu-validation/generate.log",
+  "returncode": 0,
+  "seconds": 7.725610107999955,
+  "status": "PASS",
+  "stderr": "merged into stdout log"
+}

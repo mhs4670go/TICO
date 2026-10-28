@@ -1,0 +1,18 @@
+
+Loading weights:   0%|          | 0/21 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 21/21 [00:00<00:00, 9001.57it/s]
+Traceback (most recent call last):
+  File "${VALIDATION_ROOT}/evaluation/invoke_cli.py", line 96, in <module>
+    runpy.run_module("tico.quantization.examples.evaluate",run_name="__main__")
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "${CANDIDATE_REPO}/tico/quantization/examples/evaluate.py", line 116, in <module>
+    main()
+  File "${CANDIDATE_REPO}/tico/quantization/examples/evaluate.py", line 112, in main
+    adapter.evaluate(ctx)
+  File "${VALIDATION_ROOT}/evaluation/invoke_cli.py", line 75, in evaluate
+    before = _state_contract(ctx.model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py", line 333, in _state_contract
+    raise ValueError(
+ValueError: This regression runner requires a frozen quantized checkpoint.

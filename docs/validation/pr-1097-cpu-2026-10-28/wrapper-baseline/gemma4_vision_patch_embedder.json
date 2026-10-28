@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-baseline/gemma4_vision_patch_embedder/gemma4_vision_patch_embedder.q.circle"
+  },
+  "case": "gemma4_vision_patch_embedder",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      16,
+      32
+    ],
+    "max_abs_diff": 0.33023905754089355,
+    "mean_abs_diff": 0.014020802453160286,
+    "peir": 0.042480635304204574,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      16,
+      32
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

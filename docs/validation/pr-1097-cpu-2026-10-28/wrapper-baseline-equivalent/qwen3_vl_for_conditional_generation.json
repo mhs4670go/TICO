@@ -1,0 +1,29 @@
+{
+  "artifacts": {},
+  "case": "qwen3_vl_for_conditional_generation",
+  "failures": [
+    "EXPORT"
+  ],
+  "messages": [
+    "Circle export failed: Data-dependent assertion failed (cannot compile partial graph)\n  Explanation: Dynamo has determined when encountering a data-dependent assert failure that it should not compile the partial graph.\n  Hint: This graph break is fundamental - it is unlikely that Dynamo will ever be able to trace through your code. Consider finding a workaround.\n  Hint: Use `torch._assert()` to raise a hard AssertionError when the check fails. This error will propagate back the user code that called the compiled function (i.e. Dynamo will not trace any exception handling).\n  Hint: Remove the assert statement.\n  Hint: Move the assert statement outside of any context managers in order to graph break with partial graph compilation (if fullgraph=False).\n\n  Developer debug context: value: ConstantVariable(bool: False)\n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0034.html\n\nfrom user code:\n   File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/_dynamo/functional_export.py\", line 232, in forward\n    res = self._export_root(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 46, in forward\n    return self.wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/qwen_vl/quant_for_conditional_generation.py\", line 142, in forward\n    outputs = self.model(\n              ^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/ptq_wrapper.py\", line 46, in forward\n    return self.wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/wrapq/wrappers/qwen_vl/quant_model.py\", line 158, in forward\n    position_ids is not None\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+  ],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      50,
+      1000
+    ],
+    "max_abs_diff": 0.07040628045797348,
+    "mean_abs_diff": 0.009957339614629745,
+    "peir": 0.052220007549040916,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      50,
+      1000
+    ],
+    "shape_match": true
+  },
+  "passed": false
+}

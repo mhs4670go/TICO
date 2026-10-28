@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_text_attention_sliding_prefill/gemma4_text_attention_sliding_prefill.q.circle"
+  },
+  "case": "gemma4_text_attention_sliding_prefill",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      8,
+      64
+    ],
+    "max_abs_diff": 0.09896450489759445,
+    "mean_abs_diff": 0.016376247629523277,
+    "peir": 0.02989366420250596,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      8,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

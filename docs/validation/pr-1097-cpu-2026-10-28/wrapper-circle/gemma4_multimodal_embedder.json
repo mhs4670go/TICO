@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_multimodal_embedder/gemma4_multimodal_embedder.q.circle"
+  },
+  "case": "gemma4_multimodal_embedder",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      16,
+      64
+    ],
+    "max_abs_diff": 0.29670894145965576,
+    "mean_abs_diff": 0.0067140799947083,
+    "peir": 0.07530093144164038,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      16,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

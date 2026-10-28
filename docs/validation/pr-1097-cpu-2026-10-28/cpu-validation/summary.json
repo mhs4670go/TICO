@@ -1,0 +1,331 @@
+{
+  "not_in_scope": [
+    "large pretrained quality",
+    "2048-token full-model capacity",
+    "NPU integer execution and performance"
+  ],
+  "stages": {
+    "coverage": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_tests",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/coverage-tests",
+        "--test-module",
+        "test.quantization.recipes.test_qwen_cache_coverage_cpu"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/coverage.log",
+      "returncode": 0,
+      "seconds": 10.009764944000153,
+      "status": "PASS",
+      "stderr": "merged into stdout log"
+    },
+    "evaluation": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_tests",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/evaluation-tests",
+        "--test-module",
+        "test.quantization.recipes.test_cpu_evaluation"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/evaluation.log",
+      "returncode": 0,
+      "seconds": 5.918166937000024,
+      "status": "PASS",
+      "stderr": "merged into stdout log"
+    },
+    "fixtures": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_fixtures",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures",
+        "--seed",
+        "1073"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/fixtures.log",
+      "returncode": 0,
+      "seconds": 5.330875969999852,
+      "status": "PASS",
+      "stderr": "merged into stdout log"
+    },
+    "generate": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_tests",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/generate-tests",
+        "--test-module",
+        "test.quantization.recipes.test_cpu_generation"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/generate.log",
+      "returncode": 0,
+      "seconds": 7.725610107999955,
+      "status": "PASS",
+      "stderr": "merged into stdout log"
+    },
+    "llama-16": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+        "isolation",
+        "--candidate-repo",
+        "${CANDIDATE_REPO}",
+        "--config",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/llama.json",
+        "--checkpoint",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/llama.pt",
+        "--seq-len",
+        "16",
+        "--eager-seq-len",
+        "48",
+        "--decode-steps",
+        "4",
+        "--seed",
+        "1073",
+        "--threads",
+        "1",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/llama-16",
+        "--require-torch-parity",
+        "--artifacts",
+        "circle_bundle,circle_full"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/llama-16.log",
+      "returncode": 1,
+      "seconds": 64.4297922579999,
+      "status": "FAIL",
+      "stderr": "merged into stdout log"
+    },
+    "qwen3_vl-16": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+        "isolation",
+        "--candidate-repo",
+        "${CANDIDATE_REPO}",
+        "--config",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.json",
+        "--checkpoint",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+        "--seq-len",
+        "16",
+        "--eager-seq-len",
+        "48",
+        "--decode-steps",
+        "4",
+        "--seed",
+        "1073",
+        "--threads",
+        "1",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16",
+        "--require-torch-parity"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16.log",
+      "returncode": 1,
+      "seconds": 58.618659557,
+      "status": "FAIL",
+      "stderr": "merged into stdout log"
+    },
+    "qwen3_vl-16-connected": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_connected",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16-connected",
+        "--checkpoint",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+        "--artifacts",
+        "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16/candidate/before/artifacts",
+        "--capacity",
+        "16"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16-connected.log",
+      "returncode": 1,
+      "seconds": 4.874402981999992,
+      "status": "FAIL",
+      "stderr": "merged into stdout log"
+    },
+    "qwen3_vl-32": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "${CANDIDATE_REPO}/tico/quantization/recipes/debug/export_regression.py",
+        "isolation",
+        "--candidate-repo",
+        "${CANDIDATE_REPO}",
+        "--config",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.json",
+        "--checkpoint",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+        "--seq-len",
+        "32",
+        "--eager-seq-len",
+        "48",
+        "--decode-steps",
+        "4",
+        "--seed",
+        "1073",
+        "--threads",
+        "1",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32",
+        "--require-torch-parity"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32.log",
+      "returncode": 1,
+      "seconds": 56.525223260000075,
+      "status": "FAIL",
+      "stderr": "merged into stdout log"
+    },
+    "qwen3_vl-32-connected": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_connected",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32-connected",
+        "--checkpoint",
+        "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+        "--artifacts",
+        "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32/candidate/before/artifacts",
+        "--capacity",
+        "32"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-32-connected.log",
+      "returncode": 1,
+      "seconds": 5.08817744299995,
+      "status": "FAIL",
+      "stderr": "merged into stdout log"
+    },
+    "regression": {
+      "command": [
+        "${VALIDATION_VENV}/bin/python",
+        "-m",
+        "tico.quantization.recipes.debug.cpu_validation",
+        "--stage",
+        "_tests",
+        "--output",
+        "${VALIDATION_ROOT}/cpu-validation/regression-tests",
+        "--test-module",
+        "test.quantization.recipes.test_cpu_fixtures",
+        "--test-module",
+        "test.quantization.recipes.test_cpu_validation",
+        "--test-module",
+        "test.quantization.recipes.test_export_regression",
+        "--test-module",
+        "test.quantization.wrapq.utils.test_static_export_inputs",
+        "--test-module",
+        "test.quantization.wrapq.wrappers.llama.test_rope_consistency"
+      ],
+      "cwd": "${CANDIDATE_REPO}",
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "log": "${VALIDATION_ROOT}/cpu-validation/regression.log",
+      "returncode": 0,
+      "seconds": 7.663039921000063,
+      "status": "PASS",
+      "stderr": "merged into stdout log"
+    }
+  },
+  "status": "FAIL",
+  "strict_tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  }
+}

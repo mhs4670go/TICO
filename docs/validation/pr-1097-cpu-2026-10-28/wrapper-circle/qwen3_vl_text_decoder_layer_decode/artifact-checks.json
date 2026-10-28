@@ -1,0 +1,143 @@
+{
+  "case": "qwen3_vl_text_decoder_layer_decode",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_text_decoder_layer_decode",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_decode",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_decode.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "0c0282b2e0cf3efe8b5683c2a9a3a12f27f72ce38c1f218a1a684fdccf6bf760",
+  "frozen_after_sha256": "0c0282b2e0cf3efe8b5683c2a9a3a12f27f72ce38c1f218a1a684fdccf6bf760",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_decode/qwen3_vl_text_decoder_layer_decode.q.circle",
+  "bytes": 69000,
+  "sha256": "d6efa446f2e2b4a7260c454fefd1980a561c9f92967d7963d0a529c6e7db47c2",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        7,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        7,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 3,
+  "circle_output_count": 3,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "0c0282b2e0cf3efe8b5683c2a9a3a12f27f72ce38c1f218a1a684fdccf6bf760",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

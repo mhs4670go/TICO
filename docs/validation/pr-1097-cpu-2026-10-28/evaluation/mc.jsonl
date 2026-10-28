@@ -1,0 +1,4 @@
+{"activity_label": "t80", "ctx_a": "t90 t94", "ctx_b": "", "endings": ["t100 t104", "t101 t105", "t102 t106", "t103 t107"], "label": "0"}
+{"activity_label": "t81", "ctx_a": "t91 t95", "ctx_b": "", "endings": ["t100 t104", "t101 t105", "t102 t106", "t103 t107"], "label": "1"}
+{"activity_label": "t82", "ctx_a": "t92 t96", "ctx_b": "", "endings": ["t100 t104", "t101 t105", "t102 t106", "t103 t107"], "label": "2"}
+{"activity_label": "t83", "ctx_a": "t93 t97", "ctx_b": "", "endings": ["t100 t104", "t101 t105", "t102 t106", "t103 t107"], "label": "3"}

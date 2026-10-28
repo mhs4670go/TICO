@@ -1,0 +1,22 @@
+{
+  "name": "full-suite",
+  "command": [
+    "./ccex",
+    "test"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 2400,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:15:13Z",
+  "log": "${VALIDATION_ROOT}/logs/full-suite.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 995.207
+}

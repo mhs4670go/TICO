@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/nn_layernorm/nn_layernorm.q.circle"
+  },
+  "case": "nn_layernorm",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      4,
+      32
+    ],
+    "max_abs_diff": 0.43215370178222656,
+    "mean_abs_diff": 0.08428211510181427,
+    "peir": 0.08984875573790937,
+    "quant_finite": true,
+    "quant_shape": [
+      4,
+      32
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

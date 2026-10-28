@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/gemma4_text_attention_shared_kv_prefill/gemma4_text_attention_shared_kv_prefill.q.circle"
+  },
+  "case": "gemma4_text_attention_shared_kv_prefill",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      8,
+      64
+    ],
+    "max_abs_diff": 0.27223777770996094,
+    "mean_abs_diff": 0.025416595861315727,
+    "peir": 0.08056081175469565,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      8,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

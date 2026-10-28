@@ -1,0 +1,34 @@
+import json
+import pathlib
+import subprocess
+import sys
+import time
+
+ROOT=pathlib.Path('${VALIDATION_ROOT}')
+deadline=time.monotonic()+2400
+markers=[ROOT/'remaining-complete.json',ROOT/'wrapper-harness/qwen-equivalence-complete.json',ROOT/'gemma-export-review/assistant-complete.json']
+while not all(x.exists() for x in markers):
+    if time.monotonic()>deadline:
+        raise TimeoutError('Heavy queue prerequisite marker not completed')
+    time.sleep(5)
+OUT=ROOT/'baseline-cpu-comparison'
+OUT.mkdir(exist_ok=False)
+records=[]
+def run(name,module,args,timeout=600):
+    command=[sys.executable,str(ROOT/'run.py'),'--name',name,'--cwd','${BASELINE_REPO}','--timeout',str(timeout),'--','python',str(ROOT/'checked_module.py'),'${BASELINE_REPO}',module,*args]
+    result=subprocess.run(command)
+    records.append({'command':command,'wrapper_exit':result.returncode})
+    (OUT/'commands.json').write_text(json.dumps(records,indent=2))
+    return result.returncode
+
+assert run('baseline-cpu-fixtures','tico.quantization.recipes.debug.cpu_validation',['--stage','_fixtures','--output',str(ROOT/'baseline-cpu-fixtures'),'--seed','1073'])==0
+for case in ['llama-16','qwen3_vl-16','qwen3_vl-32']:
+    family,capacity=case.rsplit('-',1)
+    args=['isolation','--candidate-repo','${BASELINE_REPO}','--config',str(ROOT/'baseline-cpu-fixtures'/f'{family}.json'),'--checkpoint',str(ROOT/'baseline-cpu-fixtures'/f'{family}.pt'),'--seq-len',capacity,'--eager-seq-len','48','--decode-steps','4','--seed','1073','--threads','1','--output',str(OUT/case),'--require-torch-parity']
+    if family=='llama':args+=['--artifacts','circle_bundle,circle_full']
+    run(f'baseline-cpu-{case}','tico.quantization.recipes.debug.export_regression',args,600)
+    if family=='qwen3_vl':
+        run(f'baseline-cpu-{case}-connected','tico.quantization.recipes.debug.cpu_validation',['--stage','_connected','--checkpoint',str(ROOT/'baseline-cpu-fixtures/qwen3_vl.pt'),'--artifacts',str(OUT/case/'candidate/before/artifacts'),'--output',str(OUT/f'{case}-connected'),'--capacity',capacity],600)
+result=subprocess.run([sys.executable,str(ROOT/'baseline_cpu_compare.py')])
+(OUT/'complete.json').write_text(json.dumps({'status':'COMPLETE' if result.returncode==0 else 'COMPARE_ERROR','compare_exit':result.returncode},indent=2))
+sys.exit(result.returncode)

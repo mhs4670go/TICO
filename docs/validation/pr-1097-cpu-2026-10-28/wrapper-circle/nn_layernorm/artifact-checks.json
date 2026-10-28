@@ -1,0 +1,72 @@
+{
+  "case": "nn_layernorm",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "nn_layernorm",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_layernorm",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/nn_layernorm.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "6f29286d5ec1c22c9d533e759940f4d98faf38db0e138dd10da59aac82e88a8f",
+  "frozen_after_sha256": "6f29286d5ec1c22c9d533e759940f4d98faf38db0e138dd10da59aac82e88a8f",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/nn_layernorm/nn_layernorm.q.circle",
+  "bytes": 3032,
+  "sha256": "ae5d943d0eb84678d5ea97f2119e69619762d45e857c4587b8970dcdcde33144",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        4,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "6f29286d5ec1c22c9d533e759940f4d98faf38db0e138dd10da59aac82e88a8f",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

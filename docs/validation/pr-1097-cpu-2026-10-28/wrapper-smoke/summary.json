@@ -1,0 +1,462 @@
+{
+  "status": "PASS",
+  "registered": 50,
+  "executed": 50,
+  "passed": 50,
+  "failed": 0,
+  "skip": 0,
+  "details": [
+    {
+      "Case": "nn_linear",
+      "Status": "PASS",
+      "Mean |diff|": "0.037131",
+      "Max  |diff|": "0.125054",
+      "PEIR": "0.050046",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "nn_conv3d",
+      "Status": "PASS",
+      "Mean |diff|": "0.010710",
+      "Max  |diff|": "0.050890",
+      "PEIR": "0.020383",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "nn_conv3d_special_case",
+      "Status": "PASS",
+      "Mean |diff|": "0.004197",
+      "Max  |diff|": "0.009592",
+      "PEIR": "0.003854",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "nn_layernorm",
+      "Status": "PASS",
+      "Mean |diff|": "0.084282",
+      "Max  |diff|": "0.432154",
+      "PEIR": "0.089849",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "nn_tied_embedding",
+      "Status": "PASS",
+      "Mean |diff|": "0.021643",
+      "Max  |diff|": "0.072661",
+      "PEIR": "0.004841",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "llama_mlp",
+      "Status": "PASS",
+      "Mean |diff|": "0.000018",
+      "Max  |diff|": "0.000075",
+      "PEIR": "0.000088",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "llama_attention_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.013611",
+      "Max  |diff|": "0.083764",
+      "PEIR": "0.045589",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "llama_attention_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.093055",
+      "Max  |diff|": "0.268984",
+      "PEIR": "0.394177",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "llama_decoder_layer_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.014662",
+      "Max  |diff|": "0.054426",
+      "PEIR": "0.008807",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "llama_decoder_layer_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.258623",
+      "Max  |diff|": "0.498042",
+      "PEIR": "0.141055",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_text_attention_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.014389",
+      "Max  |diff|": "0.144158",
+      "PEIR": "0.075289",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_text_attention_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.344461",
+      "Max  |diff|": "0.914665",
+      "PEIR": "0.416169",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_text_mlp",
+      "Status": "PASS",
+      "Mean |diff|": "0.002891",
+      "Max  |diff|": "0.013463",
+      "PEIR": "0.014981",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_text_decoder_layer_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.015504",
+      "Max  |diff|": "0.071172",
+      "PEIR": "0.012970",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_text_decoder_layer_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.100431",
+      "Max  |diff|": "0.267552",
+      "PEIR": "0.054146",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_text_model",
+      "Status": "PASS",
+      "Mean |diff|": "0.065158",
+      "Max  |diff|": "0.405554",
+      "PEIR": "0.069387",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_vision_attention",
+      "Status": "PASS",
+      "Mean |diff|": "0.000039",
+      "Max  |diff|": "0.000184",
+      "PEIR": "0.016119",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_vision_mlp",
+      "Status": "PASS",
+      "Mean |diff|": "0.001944",
+      "Max  |diff|": "0.009269",
+      "PEIR": "0.012572",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_vision_block",
+      "Status": "PASS",
+      "Mean |diff|": "0.012817",
+      "Max  |diff|": "0.122866",
+      "PEIR": "0.017524",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_vision_patch_embed",
+      "Status": "PASS",
+      "Mean |diff|": "0.005805",
+      "Max  |diff|": "0.018122",
+      "PEIR": "0.007235",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_vision_patch_merger",
+      "Status": "PASS",
+      "Mean |diff|": "0.010212",
+      "Max  |diff|": "0.047873",
+      "PEIR": "0.053044",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_vision_model",
+      "Status": "PASS",
+      "Mean |diff|": "0.001913",
+      "Max  |diff|": "0.015738",
+      "PEIR": "0.067054",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_model",
+      "Status": "PASS",
+      "Mean |diff|": "0.061826",
+      "Max  |diff|": "0.374105",
+      "PEIR": "0.051891",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "qwen3_vl_for_conditional_generation",
+      "Status": "PASS",
+      "Mean |diff|": "0.009957",
+      "Max  |diff|": "0.070406",
+      "PEIR": "0.052220",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_mlp",
+      "Status": "PASS",
+      "Mean |diff|": "0.003317",
+      "Max  |diff|": "0.017069",
+      "PEIR": "0.021938",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.032040",
+      "Max  |diff|": "0.279597",
+      "PEIR": "0.085341",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.027683",
+      "Max  |diff|": "0.083481",
+      "PEIR": "0.044587",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_sliding_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.016376",
+      "Max  |diff|": "0.098965",
+      "PEIR": "0.029894",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_sliding_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.039753",
+      "Max  |diff|": "0.109523",
+      "PEIR": "0.045453",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_k_eq_v_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.040377",
+      "Max  |diff|": "0.324485",
+      "PEIR": "0.102199",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_shared_kv_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.025417",
+      "Max  |diff|": "0.272238",
+      "PEIR": "0.080561",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_attention_shared_kv_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.008298",
+      "Max  |diff|": "0.029047",
+      "PEIR": "0.015762",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_decoder_layer_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.144962",
+      "Max  |diff|": "1.137167",
+      "PEIR": "0.119748",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_decoder_layer_sliding_prefill",
+      "Status": "PASS",
+      "Mean |diff|": "0.109635",
+      "Max  |diff|": "1.095015",
+      "PEIR": "0.118720",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_decoder_layer_decode",
+      "Status": "PASS",
+      "Mean |diff|": "0.026636",
+      "Max  |diff|": "0.110090",
+      "PEIR": "0.015615",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_decoder_layer_shared_kv",
+      "Status": "PASS",
+      "Mean |diff|": "0.073109",
+      "Max  |diff|": "0.449784",
+      "PEIR": "0.041620",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_scaled_word_embedding",
+      "Status": "PASS",
+      "Mean |diff|": "0.000965",
+      "Max  |diff|": "0.002763",
+      "PEIR": "0.003481",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_vision_patch_embedder",
+      "Status": "PASS",
+      "Mean |diff|": "0.014021",
+      "Max  |diff|": "0.330239",
+      "PEIR": "0.042481",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_text_model",
+      "Status": "PASS",
+      "Mean |diff|": "0.079053",
+      "Max  |diff|": "0.483881",
+      "PEIR": "0.083751",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_vision_attention",
+      "Status": "PASS",
+      "Mean |diff|": "0.017682",
+      "Max  |diff|": "0.070248",
+      "PEIR": "0.029431",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_vision_encoder_layer",
+      "Status": "PASS",
+      "Mean |diff|": "0.078223",
+      "Max  |diff|": "0.570815",
+      "PEIR": "0.058121",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_vision_pooler",
+      "Status": "PASS",
+      "Mean |diff|": "0.029907",
+      "Max  |diff|": "0.554016",
+      "PEIR": "0.038011",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_vision_model",
+      "Status": "PASS",
+      "Mean |diff|": "0.089394",
+      "Max  |diff|": "1.228954",
+      "PEIR": "0.031835",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_multimodal_embedder",
+      "Status": "PASS",
+      "Mean |diff|": "0.006714",
+      "Max  |diff|": "0.296709",
+      "PEIR": "0.075301",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_vision_encoder",
+      "Status": "PASS",
+      "Mean |diff|": "0.079886",
+      "Max  |diff|": "0.503346",
+      "PEIR": "0.056661",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_model",
+      "Status": "PASS",
+      "Mean |diff|": "0.000733",
+      "Max  |diff|": "0.013960",
+      "PEIR": "0.002436",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_for_conditional_generation",
+      "Status": "PASS",
+      "Mean |diff|": "0.000702",
+      "Max  |diff|": "0.013620",
+      "PEIR": "0.012762",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_for_causal_lm",
+      "Status": "PASS",
+      "Mean |diff|": "0.000554",
+      "Max  |diff|": "0.024903",
+      "PEIR": "0.021237",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_assistant_core",
+      "Status": "PASS",
+      "Mean |diff|": "0.002844",
+      "Max  |diff|": "0.006827",
+      "PEIR": "0.012434",
+      "Shape match": "True",
+      "Quant finite": "True"
+    },
+    {
+      "Case": "gemma4_assistant_sparse_head",
+      "Status": "PASS",
+      "Mean |diff|": "0.000000",
+      "Max  |diff|": "0.000000",
+      "PEIR": "0.000000",
+      "Shape match": "True",
+      "Quant finite": "True"
+    }
+  ],
+  "source": "logs/wrapper-numerical-all.log",
+  "individual_json": false
+}

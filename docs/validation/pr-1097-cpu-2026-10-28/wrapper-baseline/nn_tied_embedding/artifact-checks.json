@@ -1,0 +1,237 @@
+{
+  "case": "nn_tied_embedding",
+  "tico_file": "${BASELINE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "nn_tied_embedding",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-baseline/nn_tied_embedding",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-baseline/nn_tied_embedding.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "semantic_contract": {
+    "weights": {
+      "embed.wrapped.module.weight": {
+        "shape": [
+          16,
+          8
+        ],
+        "dtype": "float32",
+        "sha256": "0c4cd8f353c7706919615e37d58f9e7275ce784da39b00ad24ae1df892107820"
+      }
+    },
+    "observer_grids": {
+      "embed.wrapped.weight_obs": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            16
+          ],
+          "dtype": "float32",
+          "sha256": "c53efb157bf28e3a3bbefda588007ee0fe55f0d5c734133bb3bde70078dd109e"
+        },
+        "_cached_zp": {
+          "shape": [
+            16
+          ],
+          "dtype": "int32",
+          "sha256": "9356c9c66b27dfc74e96ca3d2f07a3efb745da6b193eb1d1055457d736b75d4e"
+        }
+      },
+      "embed.wrapped.act_out_obs": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e5b607798e9cdee2216e3aa4ddb5b28bb38f8d09d421b56a903a535fb8ecacca"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "191949ff18d4ffd269d06c4b0bcd641257c885d3ea94c7556134740595c2d3fc"
+        }
+      },
+      "lm_head.wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            16
+          ],
+          "dtype": "float32",
+          "sha256": "c53efb157bf28e3a3bbefda588007ee0fe55f0d5c734133bb3bde70078dd109e"
+        },
+        "_cached_zp": {
+          "shape": [
+            16
+          ],
+          "dtype": "int32",
+          "sha256": "9356c9c66b27dfc74e96ca3d2f07a3efb745da6b193eb1d1055457d736b75d4e"
+        }
+      },
+      "lm_head.wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "e5b607798e9cdee2216e3aa4ddb5b28bb38f8d09d421b56a903a535fb8ecacca"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "191949ff18d4ffd269d06c4b0bcd641257c885d3ea94c7556134740595c2d3fc"
+        }
+      },
+      "lm_head.wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "1dc271b1e1c6b1620575a7f25624f1f0d1a03c97db1101795fa370cb4da2dd6e"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c0736411a62ec0f4aca1e1133550491bd09b6fa99ae36c7b2f85a12c4dc387d1"
+        }
+      }
+    }
+  },
+  "frozen_before_sha256": "5abe7f36dd9b1d9e762662f3485de95b00629d59e8099ebcb84434ee569d6cb4",
+  "frozen_after_sha256": "5abe7f36dd9b1d9e762662f3485de95b00629d59e8099ebcb84434ee569d6cb4",
+  "artifact": "${VALIDATION_ROOT}/wrapper-baseline/nn_tied_embedding/nn_tied_embedding.q.circle",
+  "bytes": 1280,
+  "sha256": "d0e6d9254e2c0b62c869ae9a0f9929da09f6c957f0ae45f18a5d6d71766bc3a6",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        4
+      ],
+      "dtype": "int64"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "input_records": [
+    {
+      "shape": [
+        1,
+        4
+      ],
+      "dtype": "int64",
+      "sha256": "dbddea0ed0f106185dbb14c3d07916f98b029609f1c35f83668957241fab413f"
+    }
+  ],
+  "torch_output_records": [
+    {
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "dtype": "float32",
+      "sha256": "84301dd5f5e939d7e128c641e0d58e6fe486ca6511f26753fd875884b4966004"
+    }
+  ],
+  "circle_output_records": [
+    {
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "dtype": "float32",
+      "sha256": "01247ebdad9b96fc7ded075e5c7fe7a4ba1385a95bd43397f5061cb69c454269"
+    }
+  ],
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 0.08418607711791992
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "5abe7f36dd9b1d9e762662f3485de95b00629d59e8099ebcb84434ee569d6cb4",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

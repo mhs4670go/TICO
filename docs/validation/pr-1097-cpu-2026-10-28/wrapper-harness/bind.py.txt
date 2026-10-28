@@ -1,0 +1,27 @@
+"""Supplemental name-checked nested-dict binding for the validation harness.
+
+The production ModelInputSpec binder currently cannot flatten positional dicts.
+Retain its failure as first-run evidence. Use the actual Python signature and
+serialized input names to prove mapping instead of assuming tensor order.
+"""
+import inspect
+import torch
+from tico.utils.signature import ModelInputSpec
+
+def bind_inputs(payload,module,args,kwargs):
+    spec=ModelInputSpec(payload)
+    try:return spec.bind(args,kwargs,check=False),'production_ModelInputSpec'
+    except RuntimeError as exc:
+        if 'dict' not in str(exc):raise
+        values={}
+        bound=inspect.signature(module.forward).bind(*args,**kwargs)
+        def flatten(name,value):
+            if value is None:return
+            if isinstance(value,dict):
+                for k,v in value.items():flatten(f'{name}_{k}',v)
+            elif isinstance(value,(tuple,list)):
+                for i,v in enumerate(value):flatten(f'{name}_{i}',v)
+            else:values[name]=value if isinstance(value,torch.Tensor) else torch.tensor(value)
+        for k,v in bound.arguments.items():flatten(k,v)
+        if set(values)!=set(spec.names):raise ValueError(f'Nested input names do not match serialized ABI: {list(values)} != {spec.names}') from exc
+        return [values[n] for n in spec.names],'supplemental_signature_recursive_dict_name_checked'

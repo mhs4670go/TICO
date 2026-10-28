@@ -1,0 +1,31 @@
+"""Capture semantic pre-export grids for initial runs made before spy enhancement.
+
+Replays real builder/prepare/calibrate/reference/convert/quantized forward steps
+from production runner with same config and per-case seed, without new export.
+This is supplemental evidence; original artifact checks/logs remain untouched.
+"""
+import json,pathlib,yaml,torch,tico
+from observe import semantic_contract
+from tico.quantization.recipes.debug.wrapper_smoke.registry import get_case
+from tico.quantization.recipes.debug.wrapper_smoke.runner import _limit_inputs
+from tico.quantization.recipes.debug.wrapper_smoke.utils import calibration_iters
+from tico.quantization.recipes.utils import set_seed
+root=pathlib.Path('${VALIDATION_ROOT}');out=root/'wrapper-harness/candidate-semantic-contracts';out.mkdir(exist_ok=True)
+cfg=yaml.safe_load(pathlib.Path('tico/quantization/examples/configs/wrapper_smoke.yaml').read_text())
+paths=list((root/'wrapper-circle').glob('*/artifact-checks.json'))
+records=[]
+torch.set_num_threads(1)
+for p in paths:
+ e=json.loads(p.read_text())
+ if 'semantic_contract' in e:continue
+ name=e['case'];set_seed(cfg['runtime']['seed']);case=get_case(name)
+ with torch.no_grad():
+  model,reference=case.build(cfg);prepared=case.prepare_model(model,cfg);case.after_prepare(prepared,cfg)
+  for sample in _limit_inputs(case.calibration_inputs(prepared,cfg),calibration_iters(cfg,3)):case.forward(prepared,sample)
+  sample=case.eval_input(prepared,cfg)
+  if case.compare_reference_source=='prepared':case.forward(prepared,sample)
+  else:case.reference_forward(reference,sample)
+  quantized=case.convert_model(prepared,cfg);case.forward(quantized,sample)
+  value={'case':name,'tico_file':tico.__file__,'semantic_contract':semantic_contract(quantized),'source':'Replay of production runner preparation/evaluation sequence, no export; original artifact evidence preserved.'}
+  (out/f'{name}.json').write_text(json.dumps(value,indent=2));records.append(name)
+print(json.dumps({'captured':records}))

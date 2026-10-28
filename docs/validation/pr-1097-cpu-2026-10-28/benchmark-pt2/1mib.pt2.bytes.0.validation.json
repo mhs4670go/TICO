@@ -1,0 +1,15 @@
+{
+  "structural_verification": "passed",
+  "reference_numerical_parity": "passed",
+  "numerical_probes": 3,
+  "max_absolute_error": 0.0,
+  "operator_count": 1,
+  "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+  "buffer_payloads": [
+    null,
+    {
+      "bytes": 1048576,
+      "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+    }
+  ]
+}

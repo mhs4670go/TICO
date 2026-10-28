@@ -1,0 +1,29 @@
+{
+  "artifacts": {},
+  "case": "gemma4_assistant_core",
+  "failures": [
+    "EXPORT"
+  ],
+  "messages": [
+    "Circle export failed: Sliding shared KV exceeds the configured static capacity: valid=10, sliding_kv_length=8. Inputs that exceed capacity must not be silently cropped; increase sliding_kv_length or reduce the input sequence length."
+  ],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      1,
+      24
+    ],
+    "max_abs_diff": 0.006826579570770264,
+    "mean_abs_diff": 0.002843692200258374,
+    "peir": 0.012433988776395668,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      1,
+      24
+    ],
+    "shape_match": true
+  },
+  "passed": false
+}

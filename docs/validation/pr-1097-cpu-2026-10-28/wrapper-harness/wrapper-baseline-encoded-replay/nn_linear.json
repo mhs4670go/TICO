@@ -1,0 +1,162 @@
+{
+  "case": "nn_linear",
+  "tico_file": "${BASELINE_REPO}/tico/__init__.py",
+  "original_raw_parity": "PASS",
+  "original_artifact_sha256": "b6e403203e4bab5a1b4003d37afee0072616940a3a9d1cd1952f3c94554711bd",
+  "status": "PASS",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "semantic_contract": {
+    "weights": {
+      "wrapped.module.weight": {
+        "shape": [
+          8,
+          16
+        ],
+        "dtype": "float32",
+        "sha256": "723dbae6fcafefd86ec92771dab7ac743e77cedfb7f1aa4fe9e2ed85aa1787d4"
+      }
+    },
+    "observer_grids": {
+      "wrapped.obs_weight": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_CHANNEL_ASYMM: 3>",
+        "channel_axis": "0",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [
+            8
+          ],
+          "dtype": "float32",
+          "sha256": "f593c6b99074e08c4a9224199bf1a42504ea5ce67dcaf66a591f2c28610f232a"
+        },
+        "_cached_zp": {
+          "shape": [
+            8
+          ],
+          "dtype": "int32",
+          "sha256": "465c4f3c3849c060ac60bb86b5e54f7c3f41ac3d2dea04b1ac592144855b4aec"
+        }
+      },
+      "wrapped.obs_act_in": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "06de4a4a41b754f9cda3376fed6455db41180addb3ae428bad2527c64aff0956"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "c40f565ed2d504c2d594598745e2886754111946c68db0b79622eb86621fd505"
+        }
+      },
+      "wrapped.obs_act_out": {
+        "dtype": "DType(bits=8, signed=False)",
+        "qscheme": "<QScheme.PER_TENSOR_ASYMM: 1>",
+        "channel_axis": "None",
+        "_qparams_locked": "False",
+        "enabled": "False",
+        "fake_quant_enabled": "True",
+        "quant_range": [
+          0,
+          255
+        ],
+        "_cached_scale": {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "d961917596298ab72c6616f7daa6bfd988917c913c5e02284543cbe69c0542e4"
+        },
+        "_cached_zp": {
+          "shape": [],
+          "dtype": "int32",
+          "sha256": "3f56473d402a3176f3cb8bbe1a85ae9805d876cb1a8398188774c6afc929cb8b"
+        }
+      }
+    }
+  },
+  "same_artifact": true,
+  "input_binder": "production_ModelInputSpec",
+  "raw_input_records": [
+    {
+      "shape": [
+        2,
+        16
+      ],
+      "dtype": "float32",
+      "sha256": "307dfd9b5534dca3b3c5f2d87b2dd6a5aad922c133bb320ca51537b424d68e3c"
+    }
+  ],
+  "raw_torch_output_records": [
+    {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "float32",
+      "sha256": "1e313342bc2c8e1ff5e41629ca08b9059a0f5fbc4acb622035fa22b5eb89f3c3"
+    }
+  ],
+  "original_input_hash_match": true,
+  "original_torch_hash_match": true,
+  "raw_replay_comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "same_effective_inputs": true,
+  "execution_mode": "fake_quantize",
+  "quantized_boundaries": [
+    {
+      "tensor_index": 1,
+      "changed_values": 32
+    }
+  ],
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "torch_output_records": [
+    {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "float32",
+      "sha256": "1e313342bc2c8e1ff5e41629ca08b9059a0f5fbc4acb622035fa22b5eb89f3c3"
+    }
+  ],
+  "circle_output_records": [
+    {
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "float32",
+      "sha256": "1e313342bc2c8e1ff5e41629ca08b9059a0f5fbc4acb622035fa22b5eb89f3c3"
+    }
+  ],
+  "frozen_unchanged": true
+}

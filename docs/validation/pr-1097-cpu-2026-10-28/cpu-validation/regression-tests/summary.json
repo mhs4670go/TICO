@@ -1,0 +1,14 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "modules": [
+    "test.quantization.recipes.test_cpu_fixtures",
+    "test.quantization.recipes.test_cpu_validation",
+    "test.quantization.recipes.test_export_regression",
+    "test.quantization.wrapq.utils.test_static_export_inputs",
+    "test.quantization.wrapq.wrappers.llama.test_rope_consistency"
+  ],
+  "skips": [],
+  "status": "PASS",
+  "tests_run": 110
+}

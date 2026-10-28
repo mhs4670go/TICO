@@ -1,0 +1,24 @@
+{
+  "name": "wrapper-baseline-encoded-replay",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/wrapper-harness/encoded_replay.py",
+    "--side",
+    "wrapper-baseline"
+  ],
+  "cwd": "${BASELINE_REPO}",
+  "timeout": 180,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${BASELINE_REPO}"
+  },
+  "started": "2026-10-28T10:43:10Z",
+  "log": "${VALIDATION_ROOT}/logs/wrapper-baseline-encoded-replay.log",
+  "exit_code": 1,
+  "status": "FAIL",
+  "elapsed_seconds": 6.98
+}

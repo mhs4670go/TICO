@@ -1,0 +1,1795 @@
+{
+  "atol": 1e-05,
+  "baseline_comparison_performed": false,
+  "baseline_vs_candidate": {
+    "reason": "Isolation-only run; no baseline checkout.",
+    "status": "NOT_RUN"
+  },
+  "candidate_before_vs_after_eager": {
+    "failures": [
+      "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+      "multimodal_embedding_prefill_t1_h2_w2.q.circle: structural, input, output, or requested Torch parity mismatch"
+    ],
+    "ok": false,
+    "stages": {
+      "decoder_layer_decode_0.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_empty_past"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_full_past"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_empty_past"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_full_past"
+            }
+          ]
+        },
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "decoder_layer_decode_1.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_4": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_input_5": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p2_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_empty_past"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_full_past"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_empty_past"
+            },
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "decode_full_past"
+            }
+          ]
+        },
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_empty_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "decode_full_past",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "decoder_layer_prefill_0.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 3.282725811004639e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.8559396266937256e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 3.282725811004639e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.8559396266937256e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "prefill_last_key_padded"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 3.282725811004639e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.8559396266937256e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 3.282725811004639e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.8559396266937256e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "prefill_last_key_padded"
+            }
+          ]
+        },
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 3.282725811004639e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.8559396266937256e-05,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 3.282725811004639e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.8559396266937256e-05,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 3.282725811004639e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.8559396266937256e-05,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 3.282725811004639e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.8559396266937256e-05,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "decoder_layer_prefill_1.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_circle_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_input_3": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p1_torch_2": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 2.6814639568328857e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.7881393432617188e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 2.6814639568328857e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.7881393432617188e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "prefill_last_key_padded"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 2.6814639568328857e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.7881393432617188e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            },
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 2.6814639568328857e-05,
+                  "ok": false
+                },
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 1.7881393432617188e-05,
+                  "ok": true
+                }
+              ],
+              "probe": "prefill_last_key_padded"
+            }
+          ]
+        },
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 2.6814639568328857e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.7881393432617188e-05,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 2.6814639568328857e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.7881393432617188e-05,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 2.6814639568328857e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.7881393432617188e-05,
+                "ok": true
+              }
+            ]
+          },
+          {
+            "probe": "prefill_last_key_padded",
+            "torch_parity": [
+              {
+                "max_abs_error": 2.6814639568328857e-05,
+                "ok": false
+              },
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              },
+              {
+                "max_abs_error": 1.7881393432617188e-05,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "deepstack_fusion_0_t1_h2_w2.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "lm_head.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 0.0,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.0,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "multimodal_embedding_prefill_t1_h2_w2.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 0.003315865993499756,
+                  "ok": false
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": false,
+              "outputs": [
+                {
+                  "max_abs_error": 0.003315865993499756,
+                  "ok": false
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "ok": false,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.003315865993499756,
+                "ok": false
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 0.003315865993499756,
+                "ok": false
+              }
+            ]
+          }
+        ]
+      },
+      "token_embedding.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 1.1548399925231934e-06,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 1.1548399925231934e-06,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 1.1548399925231934e-06,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 1.1548399925231934e-06,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      },
+      "vision_prefill_t1_h2_w2.q.circle": {
+        "array_keys_equal": true,
+        "arrays": {
+          "p0_circle_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_circle_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_input_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_0": {
+            "max_abs_error": 0.0,
+            "ok": true
+          },
+          "p0_torch_1": {
+            "max_abs_error": 0.0,
+            "ok": true
+          }
+        },
+        "circle_structure_differences": [],
+        "circle_structure_equal": true,
+        "execution_mode_equal": true,
+        "numerical_coverage_complete": true,
+        "numerical_evidence_left": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 4.706904292106628e-06,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.949273377656937e-06,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "numerical_evidence_right": {
+          "failures": [],
+          "ok": true,
+          "parity": [
+            {
+              "ok": true,
+              "outputs": [
+                {
+                  "max_abs_error": 4.706904292106628e-06,
+                  "ok": true
+                },
+                {
+                  "max_abs_error": 3.949273377656937e-06,
+                  "ok": true
+                }
+              ],
+              "probe": "export_example"
+            }
+          ]
+        },
+        "ok": true,
+        "probe_names_equal": true,
+        "torch_export_ops_equal": true,
+        "torch_parity_left": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.706904292106628e-06,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.949273377656937e-06,
+                "ok": true
+              }
+            ]
+          }
+        ],
+        "torch_parity_right": [
+          {
+            "probe": "export_example",
+            "torch_parity": [
+              {
+                "max_abs_error": 4.706904292106628e-06,
+                "ok": true
+              },
+              {
+                "max_abs_error": 3.949273377656937e-06,
+                "ok": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "comparisons_complete": true,
+  "eager": {
+    "capacity": 128,
+    "decode_input_ids": [
+      [
+        [
+          35
+        ]
+      ],
+      [
+        [
+          33
+        ]
+      ],
+      [
+        [
+          72
+        ]
+      ],
+      [
+        [
+          2
+        ]
+      ]
+    ],
+    "decode_steps": 4,
+    "kind": "text_only",
+    "ordinary_token_count": 122,
+    "prefill_input_ids": [
+      [
+        94,
+        44,
+        73,
+        23,
+        101,
+        83,
+        79,
+        9,
+        41,
+        53,
+        67,
+        35,
+        78,
+        1,
+        7,
+        110,
+        24,
+        42,
+        63,
+        61,
+        79,
+        51,
+        58,
+        113,
+        46,
+        49,
+        116,
+        61,
+        93,
+        96,
+        26,
+        98,
+        37,
+        76,
+        86,
+        112,
+        107,
+        20,
+        84,
+        108,
+        54,
+        84,
+        71,
+        58,
+        53,
+        50,
+        92,
+        98
+      ]
+    ],
+    "prefill_tokens": 48,
+    "state_differences": [],
+    "state_preserved": true,
+    "token_sampling": "uniform over ordinary root/text-config token IDs"
+  },
+  "intentional_change_note": null,
+  "legacy_calibration_length_requested": false,
+  "llama_rope_migration_requested": false,
+  "requested_scope": "isolation",
+  "rtol": 0.0001,
+  "same_checkpoint_and_dependencies": true,
+  "same_initial_quantization_state": true,
+  "scope": "Conservative Circle structure and stage-level reference numerics; not NPU or end-to-end generation validation.",
+  "status": "FAIL",
+  "torch_parity_required": true
+}

@@ -1,0 +1,18 @@
+{
+  "elapsed_seconds": 1.212679160999869,
+  "peak_rss_bytes": 312741888,
+  "peak_before_conversion_bytes": 205230080,
+  "source_constant_bytes": 1048576,
+  "input_artifact_bytes": 1055534,
+  "fixture_parameters": {
+    "size_mib": 1,
+    "tables": 1,
+    "width": 16,
+    "seed": 2026,
+    "identity_mul": false
+  },
+  "output_bytes": 1049080,
+  "torch": "2.13.0+cpu",
+  "numpy": "2.5.4",
+  "tico_source": "${CANDIDATE_REPO}/tico/__init__.py"
+}

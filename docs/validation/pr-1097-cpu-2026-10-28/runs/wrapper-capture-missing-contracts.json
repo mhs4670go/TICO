@@ -1,0 +1,22 @@
+{
+  "name": "wrapper-capture-missing-contracts",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/wrapper-harness/capture_missing_contracts.py"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 120,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:35:31Z",
+  "log": "${VALIDATION_ROOT}/logs/wrapper-capture-missing-contracts.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 6.433
+}

@@ -1,0 +1,72 @@
+{
+  "case": "qwen3_vl_vision_patch_merger",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_vision_patch_merger",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_merger",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_merger.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "44840b06de5824474bec3f6af89b5abc0d4e6cce5a98c874d42a7d51d01f8f47",
+  "frozen_after_sha256": "44840b06de5824474bec3f6af89b5abc0d4e6cce5a98c874d42a7d51d01f8f47",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_patch_merger/qwen3_vl_vision_patch_merger.q.circle",
+  "bytes": 34576,
+  "sha256": "03b94d535548ffb2b5d88f41ef6a6640214851e1b4ef799742af39e6d9803391",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        8,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 1,
+  "circle_output_count": 1,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        2,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "44840b06de5824474bec3f6af89b5abc0d4e6cce5a98c874d42a7d51d01f8f47",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

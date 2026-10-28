@@ -1,0 +1,163 @@
+{
+  "label": "fp-mc-r2",
+  "forwards": [
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "b5172988032a6c91a8bd665e0d687ba593747265fe10ce5b145d8ecebc199576",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "fe054ef9a341a5819a2baff5b5714bfb94889dd043b4561e84beeb453a647b1e",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "ab0e65fa2b90cf8e7c0a6d5e76b601b14fe2e5c11e65c76a896bab6422b27b33",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "f6237fa1d6d4f530272baa474ad6c7827b9be99d9e5b0bcfbbd48de449c3f2fc",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "84fec054d870ad50dc8121035db28ee12a5e7b0cf3429cef4d52692c1165d679",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "e1dcefc046c4795316f9862391f71bc23effe30c467774daff582d6348ab38de",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "48d32bb92a4eef78f1bb3579243e59bea102ff270de140c94936aea6d7838557",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "72ade7c6aae3a617aa5f27371856231e606e975b8dcbcae4d214e73b3c5a0750",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "8c3a7fcfb04d593c6e09e9d5e40b73377283c8f88ddc1336b0dac94228cb4356",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "c289621cd266ed8bc3bfbc1099f833449e0a9af2dc79e8f855bc4b536217129f",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "1765678908fd2bae592aaaa128eb70ac2112e48a911c933e1eed2eaf943189f7",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "68f7232aa8b73e63df23da75edb1b60a40a299059e3ac919da7c58eac40e44c9",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "cbdd8bab013463d5d24fd05d785714646a8d031dcce2c60c587146a8235762cb",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "af932ef82fc280dab7f573ccf4440eb6a26cc81adc8cd9201581e4065692e320",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "d4267e4373a406b270b56dae1fb3550fa621d4c058ebdaca0c637f4cc703963e",
+      "dtype": "torch.int64",
+      "use_cache": null
+    },
+    {
+      "shape": [
+        1,
+        5
+      ],
+      "input_sha256": "849ecd1fd3db6ac576ded835f270b7f548407d631532155578cf1c61d51be3d1",
+      "dtype": "torch.int64",
+      "use_cache": null
+    }
+  ],
+  "metrics": {
+    "hellaswag": {
+      "acc": 0.25,
+      "acc_norm": 0.25
+    }
+  },
+  "import_path": "${CANDIDATE_REPO}/tico/quantization/recipes/adapters/llama.py",
+  "mc_examples": 4,
+  "mc_choices": 16,
+  "frozen_state_equal": true,
+  "frozen_before_sha256": "521cb45f90cb99963ea7717674f1fe3000c59999ba5e7affe9d34fa43098aeeb",
+  "frozen_after_sha256": "521cb45f90cb99963ea7717674f1fe3000c59999ba5e7affe9d34fa43098aeeb",
+  "checkpoint": null,
+  "model_class": "LlamaForCausalLM"
+}

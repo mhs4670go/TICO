@@ -1,0 +1,10 @@
+{
+  "elapsed_seconds": 1.3933022229998642,
+  "peak_rss_bytes": 322088960,
+  "peak_before_conversion_bytes": 207458304,
+  "source_constant_bytes": 1048576,
+  "output_bytes": 1049080,
+  "torch": "2.13.0+cpu",
+  "numpy": "2.5.4",
+  "tico_source": "${CANDIDATE_REPO}/tico/__init__.py"
+}

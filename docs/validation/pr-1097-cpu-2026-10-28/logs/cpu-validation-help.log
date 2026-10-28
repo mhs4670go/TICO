@@ -1,0 +1,32 @@
+usage: cpu_validation.py [-h]
+                         [--stage {all,regression,generate,coverage,evaluation,circle,replay,_fixtures,_connected,_tests}]
+                         --output OUTPUT [--seed SEED] [--fixtures FIXTURES]
+                         [--baseline-repo BASELINE_REPO] [--evidence EVIDENCE]
+                         [--repo REPO] [--checkpoint CHECKPOINT]
+                         [--artifacts ARTIFACTS]
+
+Run download-free CPU recipe checks, including real saved Circle execution.
+Invoke with ``python -m tico.quantization.recipes.debug.cpu_validation`` from
+an installed development checkout. Each invocation requires a new output
+directory. All original child exit codes, configurations and logs remain
+available there.
+
+options:
+  -h, --help            show this help message and exit
+  --stage {all,regression,generate,coverage,evaluation,circle,replay,_fixtures,_connected,_tests}
+  --output OUTPUT
+  --seed SEED
+  --fixtures FIXTURES   Reuse trusted local frozen fixtures without
+                        recalibrating.
+  --baseline-repo BASELINE_REPO
+                        Baseline checkout for same-checkpoint exporter
+                        comparison.
+  --evidence EVIDENCE   Original connected-run evidence directory for replay.
+  --repo REPO           Checkout providing the imported TICO package for
+                        replay.
+  --checkpoint CHECKPOINT
+                        Trusted frozen checkpoint for connected execution or
+                        replay.
+  --artifacts ARTIFACTS
+                        Directory of saved Circle stages for connected
+                        execution or replay.

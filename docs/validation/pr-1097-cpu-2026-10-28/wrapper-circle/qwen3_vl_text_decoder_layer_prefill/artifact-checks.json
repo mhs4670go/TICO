@@ -1,0 +1,125 @@
+{
+  "case": "qwen3_vl_text_decoder_layer_prefill",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_text_decoder_layer_prefill",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_prefill",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_prefill.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "b879a57fcad92d5f4c79853a92ce6b5bf71b23d280c52f269d50709a4136f070",
+  "frozen_after_sha256": "b879a57fcad92d5f4c79853a92ce6b5bf71b23d280c52f269d50709a4136f070",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_prefill/qwen3_vl_text_decoder_layer_prefill.q.circle",
+  "bytes": 68512,
+  "sha256": "03541adcacd016fa14487421a030b70e1ad5e6f5cfa4e7d352170cd4494e0f6e",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        8,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 3,
+  "circle_output_count": 3,
+  "comparisons": [
+    {
+      "ok": false,
+      "max_abs_error": 0.04965412616729736
+    },
+    {
+      "ok": false,
+      "max_abs_error": 0.008152186870574951
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        8,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        8,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "b879a57fcad92d5f4c79853a92ce6b5bf71b23d280c52f269d50709a4136f070",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

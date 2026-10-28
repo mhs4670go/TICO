@@ -1,0 +1,320 @@
+{
+  "diagnostic_only": true,
+  "code_path": "Actual tiny eager prepare/calibrate/convert rebuild, no re-export; saved serialized Circle reference trace. Observer wrappers delegate original functions unchanged.",
+  "eager_rebuild_matches_original_captured_torch": [
+    true,
+    true,
+    true
+  ],
+  "original_torch_output_sha256": [
+    "01d65312c1ee4ed83a500925bdbd5d636ffda79cf1e455169f2c8c5a29183683",
+    "864d04b6e1c7c7b1f8df15169573df210d869cd7284008fd0160d4ef5d966638",
+    "4f637ec3e972324d92d5c2f20e94f4f76d76b82e81cd696a56791f3aad849999"
+  ],
+  "rebuilt_eager_output_sha256": [
+    "01d65312c1ee4ed83a500925bdbd5d636ffda79cf1e455169f2c8c5a29183683",
+    "864d04b6e1c7c7b1f8df15169573df210d869cd7284008fd0160d4ef5d966638",
+    "4f637ec3e972324d92d5c2f20e94f4f76d76b82e81cd696a56791f3aad849999"
+  ],
+  "observers": {
+    "wrapped.obs_k_x1": {
+      "scale": 0.01104535162448883,
+      "zero_point": 143,
+      "input_shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "output_shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "input_sha256": "c2d5b3ebf84c015bf041bfb825597ae22394101336f0587af94e820fe1e972fe",
+      "output_sha256": "8c76ce7885e8c6ccfb4471c7c0dc1418dd619c6417fd710d1f0b6c6962cc9d39"
+    },
+    "wrapped.obs_k_x2": {
+      "scale": 0.013347335159778595,
+      "zero_point": 103,
+      "input_shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "output_shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "input_sha256": "326dac65dadb2917d7885e6e2a027aa7d5dadf832d3f6819582d989f7b7c2517",
+      "output_sha256": "4ac20f2a013cede744f9822fcdf4600ca9a11dbdd036e7b713c6b39c989f3393"
+    },
+    "wrapped.obs_k_cat": {
+      "scale": 0.013347335159778595,
+      "zero_point": 152,
+      "input_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "output_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "input_sha256": "ef53c6449d049bc4562b3dfe885ac68814d933598cd2fd5863057b431d0b285b",
+      "output_sha256": "07e17f24eb2f18694c51b90af22ba518c7abe9e15cc6c0b848df9a5a14690d44"
+    },
+    "wrapped.obs_k_cos": {
+      "scale": 0.012048261240124702,
+      "zero_point": 128,
+      "input_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "output_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "input_sha256": "6b5c48ef5f0b99a0cb1d5d6dbd308f1595669694a00ba834d48f457896e791bd",
+      "output_sha256": "1bc394aef0b32a21ba7d7a13a398855b6048647c88bc222eeaa70e2927fc6e38"
+    },
+    "wrapped.obs_k_sin": {
+      "scale": 0.011627855710685253,
+      "zero_point": 130,
+      "input_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "output_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "input_sha256": "f63882f0b321ec7a4e98c29060c9120bbeeea3a66c28ad5994bb46c62f106bce",
+      "output_sha256": "b716d382e23b0ca51eea2c36a2630b8ada5ba540f754017bdf43e903d9bc7cdb"
+    },
+    "wrapped.obs_k_rot": {
+      "scale": 0.013716510497033596,
+      "zero_point": 123,
+      "input_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "output_shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "input_sha256": "97f6d4cf266293c2edf7ac06013fd732ee90566836c965d5b5db065e66fdd165",
+      "output_sha256": "864d04b6e1c7c7b1f8df15169573df210d869cd7284008fd0160d4ef5d966638"
+    }
+  },
+  "saved_circle_tensors": {
+    "14": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::permute_1",
+      "quantization": {
+        "scale": [
+          0.014135867357254028
+        ],
+        "zero_point": [
+          112
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "value_sha256": "5b4fbd7c62c9e157df3d66fe44d6dca1e7ea95626a463dea4126c4d7ef32f6e4"
+    },
+    "25": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::getitem_2",
+      "quantization": {
+        "scale": [
+          0.013347335159778595
+        ],
+        "zero_point": [
+          152
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "value_sha256": "c2d5b3ebf84c015bf041bfb825597ae22394101336f0587af94e820fe1e972fe"
+    },
+    "26": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::getitem_3",
+      "quantization": {
+        "scale": [
+          0.014135867357254028
+        ],
+        "zero_point": [
+          112
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "value_sha256": "326dac65dadb2917d7885e6e2a027aa7d5dadf832d3f6819582d989f7b7c2517"
+    },
+    "27": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::neg_1",
+      "quantization": {
+        "scale": [
+          0.013347335159778595
+        ],
+        "zero_point": [
+          152
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        4
+      ],
+      "value_sha256": "7ba04f3f80b446f6a8071a5539f0941cffcb060ad2283701c85408b35c85cf36"
+    },
+    "28": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::cat_1",
+      "quantization": {
+        "scale": [
+          0.013347335159778595
+        ],
+        "zero_point": [
+          152
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "value_sha256": "277e69169b4a7a43a6c5d1d53f7bdad33230d53dd99787ae41c43082bd9a0cbf"
+    },
+    "29": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_2",
+      "quantization": {
+        "scale": [
+          0.012048261240124702
+        ],
+        "zero_point": [
+          128
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "value_sha256": "1bc394aef0b32a21ba7d7a13a398855b6048647c88bc222eeaa70e2927fc6e38"
+    },
+    "30": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::mul_3",
+      "quantization": {
+        "scale": [
+          0.011627855710685253
+        ],
+        "zero_point": [
+          130
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "value_sha256": "d38791495647fb24c4e11d12767ff46f60612f0ea35173a17bb6b0bca5d5a1b8"
+    },
+    "31": {
+      "name": "tico.quantization.wrapq.wrappers.llama.quant_attention.QuantLlamaAttention::add_1",
+      "quantization": {
+        "scale": [
+          0.013716510497033596
+        ],
+        "zero_point": [
+          123
+        ],
+        "axis": 0
+      },
+      "shape": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "value_sha256": "8f2d5e760c5a2dc46119347e5adfe3ceff4b6fef5a8ff499d57bc49dc5cd247b"
+    }
+  },
+  "comparisons": {
+    "wrapped.obs_k_x1": {
+      "circle_tensor_index": 25,
+      "max_abs_error": 0.0054305195808410645,
+      "differing_elements": 62
+    },
+    "wrapped.obs_k_x2": {
+      "circle_tensor_index": 26,
+      "max_abs_error": 0.2084416151046753,
+      "differing_elements": 64
+    },
+    "wrapped.obs_k_cat": {
+      "circle_tensor_index": 28,
+      "max_abs_error": 0.011154890060424805,
+      "differing_elements": 62
+    },
+    "wrapped.obs_k_cos": {
+      "circle_tensor_index": 29,
+      "max_abs_error": 0.0,
+      "differing_elements": 0
+    },
+    "wrapped.obs_k_sin": {
+      "circle_tensor_index": 30,
+      "max_abs_error": 0.011627882719039917,
+      "differing_elements": 7
+    },
+    "wrapped.obs_k_rot": {
+      "circle_tensor_index": 31,
+      "max_abs_error": 0.013716518878936768,
+      "differing_elements": 7
+    }
+  },
+  "source_revisions": {
+    "head": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+    "base": "261bda28ec55fdac42f59346c950326e4065f8fa"
+  },
+  "official_parity_results_unchanged": true
+}

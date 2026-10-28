@@ -1,0 +1,2733 @@
+{
+  "scope": "candidate internal CPU verification, not base comparison",
+  "tests": {
+    "regression": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_cpu_fixtures",
+        "test.quantization.recipes.test_cpu_validation",
+        "test.quantization.recipes.test_export_regression",
+        "test.quantization.wrapq.utils.test_static_export_inputs",
+        "test.quantization.wrapq.wrappers.llama.test_rope_consistency"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 110
+    },
+    "generate": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_cpu_generation"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 7
+    },
+    "coverage": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_qwen_cache_coverage_cpu"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 12
+    },
+    "evaluation": {
+      "errors": 0,
+      "failures": 0,
+      "modules": [
+        "test.quantization.recipes.test_cpu_evaluation"
+      ],
+      "skips": [],
+      "status": "PASS",
+      "tests_run": 6
+    }
+  },
+  "exports": {
+    "llama-16": {
+      "overall_status": "FAIL",
+      "worker_and_comparison_complete": true,
+      "strict_torch_parity_required": true,
+      "tolerances": {
+        "atol": 1e-05,
+        "rtol": 0.0001
+      },
+      "eager": {
+        "capacity": 128,
+        "decode_input_ids": [
+          [
+            [
+              51
+            ]
+          ],
+          [
+            [
+              24
+            ]
+          ],
+          [
+            [
+              117
+            ]
+          ],
+          [
+            [
+              84
+            ]
+          ]
+        ],
+        "decode_steps": 4,
+        "kind": "text_only",
+        "ordinary_token_count": 125,
+        "prefill_input_ids": [
+          [
+            9,
+            58,
+            56,
+            60,
+            98,
+            33,
+            26,
+            34,
+            39,
+            91,
+            97,
+            59,
+            100,
+            93,
+            11,
+            5,
+            112,
+            75,
+            6,
+            99,
+            94,
+            33,
+            9,
+            62,
+            86,
+            59,
+            60,
+            12,
+            56,
+            49,
+            22,
+            44,
+            43,
+            90,
+            107,
+            111,
+            68,
+            104,
+            121,
+            5,
+            35,
+            102,
+            6,
+            53,
+            29,
+            16,
+            38,
+            89
+          ]
+        ],
+        "prefill_tokens": 48,
+        "state_differences": [],
+        "state_preserved": true,
+        "token_sampling": "uniform over ordinary root/text-config token IDs"
+      },
+      "phases": {
+        "before": {
+          "stages": [
+            {
+              "artifact": "decoder_layer_decode_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.05972930230200291,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.07284612534567714,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.05728918872773647,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_decode_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.131247625220567,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.12270445935428143,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.09201683849096298,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.07433352479711175,
+                    2.3152679204940796e-06,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.07433352479711175,
+                    2.3152679204940796e-06,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.11018675938248634,
+                    2.868473529815674e-06,
+                    1.3768672943115234e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.11018675938248634,
+                    2.868473529815674e-06,
+                    1.3768672943115234e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "lm_head.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "model.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 5,
+                  "torch_parity_pass": 5,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "token_embedding.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    1.043081283569336e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            }
+          ],
+          "saved_structural_runtime_pass": 7,
+          "torch_stage_pass": 3,
+          "torch_stage_fail": 4,
+          "runtime_probe_count": 13,
+          "state_preserved": true,
+          "state_differences": []
+        },
+        "after_eager": {
+          "stages": [
+            {
+              "artifact": "decoder_layer_decode_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.05972930230200291,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.07284612534567714,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.05728918872773647,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_decode_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.131247625220567,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.12270445935428143,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.09201683849096298,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.07433352479711175,
+                    2.3152679204940796e-06,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.07433352479711175,
+                    2.3152679204940796e-06,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.11018675938248634,
+                    2.868473529815674e-06,
+                    1.3768672943115234e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.11018675938248634,
+                    2.868473529815674e-06,
+                    1.3768672943115234e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "lm_head.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "model.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 5,
+                  "torch_parity_pass": 5,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "token_embedding.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    1.043081283569336e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            }
+          ],
+          "saved_structural_runtime_pass": 7,
+          "torch_stage_pass": 3,
+          "torch_stage_fail": 4,
+          "runtime_probe_count": 13,
+          "state_preserved": true,
+          "state_differences": []
+        }
+      },
+      "before_after": {
+        "array_comparisons": 129,
+        "array_comparisons_pass": 129,
+        "max_abs_error": 0.0,
+        "structure_all_equal": true,
+        "execution_modes_equal": true,
+        "numerical_coverage_complete": true,
+        "failures": [
+          "decoder_layer_decode_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch"
+        ]
+      }
+    },
+    "qwen3_vl-16": {
+      "overall_status": "FAIL",
+      "worker_and_comparison_complete": true,
+      "strict_torch_parity_required": true,
+      "tolerances": {
+        "atol": 1e-05,
+        "rtol": 0.0001
+      },
+      "eager": {
+        "capacity": 128,
+        "decode_input_ids": [
+          [
+            [
+              35
+            ]
+          ],
+          [
+            [
+              33
+            ]
+          ],
+          [
+            [
+              72
+            ]
+          ],
+          [
+            [
+              2
+            ]
+          ]
+        ],
+        "decode_steps": 4,
+        "kind": "text_only",
+        "ordinary_token_count": 122,
+        "prefill_input_ids": [
+          [
+            94,
+            44,
+            73,
+            23,
+            101,
+            83,
+            79,
+            9,
+            41,
+            53,
+            67,
+            35,
+            78,
+            1,
+            7,
+            110,
+            24,
+            42,
+            63,
+            61,
+            79,
+            51,
+            58,
+            113,
+            46,
+            49,
+            116,
+            61,
+            93,
+            96,
+            26,
+            98,
+            37,
+            76,
+            86,
+            112,
+            107,
+            20,
+            84,
+            108,
+            54,
+            84,
+            71,
+            58,
+            53,
+            50,
+            92,
+            98
+          ]
+        ],
+        "prefill_tokens": 48,
+        "state_differences": [],
+        "state_preserved": true,
+        "token_sampling": "uniform over ordinary root/text-config token IDs"
+      },
+      "phases": {
+        "before": {
+          "stages": [
+            {
+              "artifact": "decoder_layer_decode_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "decoder_layer_decode_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "decoder_layer_prefill_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    3.282725811004639e-05,
+                    0.0,
+                    1.8559396266937256e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    3.282725811004639e-05,
+                    0.0,
+                    1.8559396266937256e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    2.6814639568328857e-05,
+                    0.0,
+                    1.7881393432617188e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    2.6814639568328857e-05,
+                    0.0,
+                    1.7881393432617188e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "deepstack_fusion_0_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "native",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "lm_head.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.003315865993499756
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "token_embedding.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    1.1548399925231934e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "vision_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 2,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    4.706904292106628e-06,
+                    3.949273377656937e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            }
+          ],
+          "saved_structural_runtime_pass": 9,
+          "torch_stage_pass": 6,
+          "torch_stage_fail": 3,
+          "runtime_probe_count": 15,
+          "state_preserved": true,
+          "state_differences": []
+        },
+        "after_eager": {
+          "stages": [
+            {
+              "artifact": "decoder_layer_decode_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "decoder_layer_decode_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "decoder_layer_prefill_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    3.282725811004639e-05,
+                    0.0,
+                    1.8559396266937256e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    3.282725811004639e-05,
+                    0.0,
+                    1.8559396266937256e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    2.6814639568328857e-05,
+                    0.0,
+                    1.7881393432617188e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    2.6814639568328857e-05,
+                    0.0,
+                    1.7881393432617188e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "deepstack_fusion_0_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "native",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "lm_head.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.003315865993499756
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "token_embedding.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    1.1548399925231934e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "vision_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 2,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    4.706904292106628e-06,
+                    3.949273377656937e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            }
+          ],
+          "saved_structural_runtime_pass": 9,
+          "torch_stage_pass": 6,
+          "torch_stage_fail": 3,
+          "runtime_probe_count": 15,
+          "state_preserved": true,
+          "state_differences": []
+        }
+      },
+      "before_after": {
+        "array_comparisons": 131,
+        "array_comparisons_pass": 131,
+        "max_abs_error": 0.0,
+        "structure_all_equal": true,
+        "execution_modes_equal": true,
+        "numerical_coverage_complete": true,
+        "failures": [
+          "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "multimodal_embedding_prefill_t1_h2_w2.q.circle: structural, input, output, or requested Torch parity mismatch"
+        ]
+      }
+    },
+    "qwen3_vl-32": {
+      "overall_status": "FAIL",
+      "worker_and_comparison_complete": true,
+      "strict_torch_parity_required": true,
+      "tolerances": {
+        "atol": 1e-05,
+        "rtol": 0.0001
+      },
+      "eager": {
+        "capacity": 128,
+        "decode_input_ids": [
+          [
+            [
+              35
+            ]
+          ],
+          [
+            [
+              33
+            ]
+          ],
+          [
+            [
+              72
+            ]
+          ],
+          [
+            [
+              2
+            ]
+          ]
+        ],
+        "decode_steps": 4,
+        "kind": "text_only",
+        "ordinary_token_count": 122,
+        "prefill_input_ids": [
+          [
+            94,
+            44,
+            73,
+            23,
+            101,
+            83,
+            79,
+            9,
+            41,
+            53,
+            67,
+            35,
+            78,
+            1,
+            7,
+            110,
+            24,
+            42,
+            63,
+            61,
+            79,
+            51,
+            58,
+            113,
+            46,
+            49,
+            116,
+            61,
+            93,
+            96,
+            26,
+            98,
+            37,
+            76,
+            86,
+            112,
+            107,
+            20,
+            84,
+            108,
+            54,
+            84,
+            71,
+            58,
+            53,
+            50,
+            92,
+            98
+          ]
+        ],
+        "prefill_tokens": 48,
+        "state_differences": [],
+        "state_preserved": true,
+        "token_sampling": "uniform over ordinary root/text-config token IDs"
+      },
+      "phases": {
+        "before": {
+          "stages": [
+            {
+              "artifact": "decoder_layer_decode_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    3.2782554626464844e-06,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "decoder_layer_decode_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0008886456489562988,
+                    1.843273639678955e-05,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    3.8370490074157715e-06,
+                    1.843273639678955e-05,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0008158758282661438,
+                    1.843273639678955e-05,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0009420812129974365,
+                    0.010790005326271057,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0009420812129974365,
+                    0.010790005326271057,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 3,
+                  "max_abs_errors": [
+                    0.00044815242290496826,
+                    0.015594124794006348,
+                    1.7911195755004883e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 3,
+                  "max_abs_errors": [
+                    0.00044815242290496826,
+                    0.015594124794006348,
+                    1.7911195755004883e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "deepstack_fusion_0_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "native",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "lm_head.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    1.1592055670917034e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "token_embedding.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.003315865993499756
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "vision_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 2,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    4.706904292106628e-06,
+                    3.949273377656937e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            }
+          ],
+          "saved_structural_runtime_pass": 9,
+          "torch_stage_pass": 5,
+          "torch_stage_fail": 4,
+          "runtime_probe_count": 15,
+          "state_preserved": true,
+          "state_differences": []
+        },
+        "after_eager": {
+          "stages": [
+            {
+              "artifact": "decoder_layer_decode_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    3.2782554626464844e-06,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 3,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "decoder_layer_decode_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0008886456489562988,
+                    1.843273639678955e-05,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_empty_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    3.8370490074157715e-06,
+                    1.843273639678955e-05,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "decode_full_past",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0008158758282661438,
+                    1.843273639678955e-05,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_0.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0009420812129974365,
+                    0.010790005326271057,
+                    0.0
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 2,
+                  "max_abs_errors": [
+                    0.0009420812129974365,
+                    0.010790005326271057,
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "decoder_layer_prefill_1.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 3,
+                  "max_abs_errors": [
+                    0.00044815242290496826,
+                    0.015594124794006348,
+                    1.7911195755004883e-05
+                  ]
+                },
+                {
+                  "probe": "prefill_last_key_padded",
+                  "output_comparisons": 3,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 3,
+                  "max_abs_errors": [
+                    0.00044815242290496826,
+                    0.015594124794006348,
+                    1.7911195755004883e-05
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "deepstack_fusion_0_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "native",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "lm_head.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    0.0
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 1,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    1.1592055670917034e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            },
+            {
+              "artifact": "token_embedding.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 1,
+                  "torch_parity_pass": 0,
+                  "torch_parity_fail": 1,
+                  "max_abs_errors": [
+                    0.003315865993499756
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": false
+            },
+            {
+              "artifact": "vision_prefill_t1_h2_w2.q.circle",
+              "saved": true,
+              "reloaded_structural_verified": true,
+              "reference_execution": true,
+              "execution_mode": "fake_quantize",
+              "probes": [
+                {
+                  "probe": "export_example",
+                  "output_comparisons": 2,
+                  "torch_parity_pass": 2,
+                  "torch_parity_fail": 0,
+                  "max_abs_errors": [
+                    4.706904292106628e-06,
+                    3.949273377656937e-06
+                  ]
+                }
+              ],
+              "torch_all_outputs_pass": true
+            }
+          ],
+          "saved_structural_runtime_pass": 9,
+          "torch_stage_pass": 5,
+          "torch_stage_fail": 4,
+          "runtime_probe_count": 15,
+          "state_preserved": true,
+          "state_differences": []
+        }
+      },
+      "before_after": {
+        "array_comparisons": 131,
+        "array_comparisons_pass": 131,
+        "max_abs_error": 0.0,
+        "structure_all_equal": true,
+        "execution_modes_equal": true,
+        "numerical_coverage_complete": true,
+        "failures": [
+          "decoder_layer_decode_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "decoder_layer_prefill_0.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "decoder_layer_prefill_1.q.circle: structural, input, output, or requested Torch parity mismatch",
+          "token_embedding.q.circle: structural, input, output, or requested Torch parity mismatch"
+        ]
+      }
+    }
+  },
+  "connected": {
+    "16": {
+      "cache_source": "actual saved Circle image-conditioned prefill and connected decode deltas",
+      "capacity": 16,
+      "checkpoint_sha256": "cecec54d668a156a8d3dec99b200058b42f73ca89f9963e628674dc82b6d9bf1",
+      "connected_valid_lengths": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "frozen_state_preserved": true,
+      "full_cache_rejection": "Static cache has no room for the requested current token.",
+      "local_torch_circle_parity": false,
+      "past_buffer_slots": 15,
+      "prefill_valid_length": 12,
+      "stages": [
+        {
+          "evidence": "call-000.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 2,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "vision_prefill_t1_h2_w2.q.circle",
+          "structured_inputs": "call-000.inputs.pt"
+        },
+        {
+          "evidence": "call-001.npz",
+          "input_count": 2,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1584488674998283e-06,
+              "ok": true
+            }
+          ],
+          "stage": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+          "structured_inputs": "call-001.inputs.pt"
+        },
+        {
+          "evidence": "call-002.npz",
+          "input_count": 4,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 4.595518112182617e-05,
+              "ok": false
+            },
+            {
+              "max_abs_error": 0.0020814836025238037,
+              "ok": false
+            },
+            {
+              "max_abs_error": 1.856684684753418e-05,
+              "ok": false
+            }
+          ],
+          "stage": "decoder_layer_prefill_0.q.circle",
+          "structured_inputs": "call-002.inputs.pt"
+        },
+        {
+          "evidence": "call-003.npz",
+          "input_count": 2,
+          "mode": "native",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "deepstack_fusion_0_t1_h2_w2.q.circle",
+          "structured_inputs": "call-003.inputs.pt"
+        },
+        {
+          "evidence": "call-004.npz",
+          "input_count": 4,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 1.1492520570755005e-05,
+              "ok": false
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 1.7896294593811035e-05,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_prefill_1.q.circle",
+          "structured_inputs": "call-004.inputs.pt"
+        },
+        {
+          "evidence": "call-005.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-005.inputs.pt"
+        },
+        {
+          "evidence": "call-006.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.139240339398384e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-006.inputs.pt"
+        },
+        {
+          "evidence": "call-007.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-007.inputs.pt"
+        },
+        {
+          "evidence": "call-008.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-008.inputs.pt"
+        },
+        {
+          "evidence": "call-009.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-009.inputs.pt"
+        },
+        {
+          "evidence": "call-010.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1548399925231934e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-010.inputs.pt"
+        },
+        {
+          "evidence": "call-011.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-011.inputs.pt"
+        },
+        {
+          "evidence": "call-012.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 3.831461071968079e-06,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-012.inputs.pt"
+        },
+        {
+          "evidence": "call-013.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.710653305053711e-05,
+              "ok": false
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-013.inputs.pt"
+        },
+        {
+          "evidence": "call-014.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1238735169172287e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-014.inputs.pt"
+        },
+        {
+          "evidence": "call-015.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 6.564892828464508e-06,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-015.inputs.pt"
+        },
+        {
+          "evidence": "call-016.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-016.inputs.pt"
+        },
+        {
+          "evidence": "call-017.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-017.inputs.pt"
+        },
+        {
+          "evidence": "call-018.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1343508958816528e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-018.inputs.pt"
+        },
+        {
+          "evidence": "call-019.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-019.inputs.pt"
+        },
+        {
+          "evidence": "call-020.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-020.inputs.pt"
+        },
+        {
+          "evidence": "call-021.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-021.inputs.pt"
+        }
+      ],
+      "status": "FAIL",
+      "strict_tolerances": {
+        "atol": 1e-05,
+        "rtol": 0.0001
+      },
+      "execution_calls_completed": 22,
+      "calls_torch_all_outputs_pass": 19,
+      "calls_torch_any_output_fail": 3,
+      "outputs_torch_pass": 38,
+      "outputs_torch_fail": 5
+    },
+    "32": {
+      "cache_source": "actual saved Circle image-conditioned prefill and connected decode deltas",
+      "capacity": 32,
+      "checkpoint_sha256": "cecec54d668a156a8d3dec99b200058b42f73ca89f9963e628674dc82b6d9bf1",
+      "connected_valid_lengths": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "frozen_state_preserved": true,
+      "full_cache_rejection": "Static cache has no room for the requested current token.",
+      "local_torch_circle_parity": false,
+      "past_buffer_slots": 31,
+      "prefill_valid_length": 28,
+      "stages": [
+        {
+          "evidence": "call-000.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 2,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "vision_prefill_t1_h2_w2.q.circle",
+          "structured_inputs": "call-000.inputs.pt"
+        },
+        {
+          "evidence": "call-001.npz",
+          "input_count": 2,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1585652828216553e-06,
+              "ok": true
+            }
+          ],
+          "stage": "multimodal_embedding_prefill_t1_h2_w2.q.circle",
+          "structured_inputs": "call-001.inputs.pt"
+        },
+        {
+          "evidence": "call-002.npz",
+          "input_count": 4,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.00038733601104468107,
+              "ok": false
+            },
+            {
+              "max_abs_error": 0.0020814836025238037,
+              "ok": false
+            },
+            {
+              "max_abs_error": 1.856684684753418e-05,
+              "ok": false
+            }
+          ],
+          "stage": "decoder_layer_prefill_0.q.circle",
+          "structured_inputs": "call-002.inputs.pt"
+        },
+        {
+          "evidence": "call-003.npz",
+          "input_count": 2,
+          "mode": "native",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "deepstack_fusion_0_t1_h2_w2.q.circle",
+          "structured_inputs": "call-003.inputs.pt"
+        },
+        {
+          "evidence": "call-004.npz",
+          "input_count": 4,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 1.5322118997573853e-05,
+              "ok": false
+            },
+            {
+              "max_abs_error": 0.0008110404014587402,
+              "ok": false
+            },
+            {
+              "max_abs_error": 1.7896294593811035e-05,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_prefill_1.q.circle",
+          "structured_inputs": "call-004.inputs.pt"
+        },
+        {
+          "evidence": "call-005.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-005.inputs.pt"
+        },
+        {
+          "evidence": "call-006.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1026859283447266e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-006.inputs.pt"
+        },
+        {
+          "evidence": "call-007.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 1.5303492546081543e-05,
+              "ok": false
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-007.inputs.pt"
+        },
+        {
+          "evidence": "call-008.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-008.inputs.pt"
+        },
+        {
+          "evidence": "call-009.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-009.inputs.pt"
+        },
+        {
+          "evidence": "call-010.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1315569281578064e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-010.inputs.pt"
+        },
+        {
+          "evidence": "call-011.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 9.84780490398407e-06,
+              "ok": true
+            },
+            {
+              "max_abs_error": 1.531839370727539e-05,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-011.inputs.pt"
+        },
+        {
+          "evidence": "call-012.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 3.831461071968079e-06,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-012.inputs.pt"
+        },
+        {
+          "evidence": "call-013.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-013.inputs.pt"
+        },
+        {
+          "evidence": "call-014.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.1362135410308838e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-014.inputs.pt"
+        },
+        {
+          "evidence": "call-015.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": false,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 6.5658241510391235e-06,
+              "ok": true
+            },
+            {
+              "max_abs_error": 1.5305355191230774e-05,
+              "ok": false
+            },
+            {
+              "max_abs_error": 1.856684684753418e-05,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-015.inputs.pt"
+        },
+        {
+          "evidence": "call-016.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-016.inputs.pt"
+        },
+        {
+          "evidence": "call-017.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-017.inputs.pt"
+        },
+        {
+          "evidence": "call-018.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.0812655091285706e-06,
+              "ok": true
+            }
+          ],
+          "stage": "token_embedding.q.circle",
+          "structured_inputs": "call-018.inputs.pt"
+        },
+        {
+          "evidence": "call-019.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_0.q.circle",
+          "structured_inputs": "call-019.inputs.pt"
+        },
+        {
+          "evidence": "call-020.npz",
+          "input_count": 6,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 3,
+          "outputs": [
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            },
+            {
+              "max_abs_error": 0.0,
+              "ok": true
+            }
+          ],
+          "stage": "decoder_layer_decode_1.q.circle",
+          "structured_inputs": "call-020.inputs.pt"
+        },
+        {
+          "evidence": "call-021.npz",
+          "input_count": 1,
+          "mode": "fake_quantize",
+          "ok": true,
+          "output_count": 1,
+          "outputs": [
+            {
+              "max_abs_error": 1.7076730728149414e-05,
+              "ok": true
+            }
+          ],
+          "stage": "lm_head.q.circle",
+          "structured_inputs": "call-021.inputs.pt"
+        }
+      ],
+      "status": "FAIL",
+      "strict_tolerances": {
+        "atol": 1e-05,
+        "rtol": 0.0001
+      },
+      "execution_calls_completed": 22,
+      "calls_torch_all_outputs_pass": 18,
+      "calls_torch_any_output_fail": 4,
+      "outputs_torch_pass": 36,
+      "outputs_torch_fail": 7
+    }
+  },
+  "tests_total": 135,
+  "evidence_note": "ExportRecorder.capture_save writes Circle bytes, load_mapped() reads saved file and document.verify(raise_on_error=True) passes before record JSON is emitted. capture_convert calls real compiler and CircleReferenceRuntime.run for each probe; connected helper separately reads saved Circle stages. Overall strict Torch FAIL remains FAIL even if raw before/after arrays and frozen state are unchanged."
+}

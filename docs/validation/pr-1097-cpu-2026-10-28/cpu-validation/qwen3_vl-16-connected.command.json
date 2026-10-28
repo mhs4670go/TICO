@@ -1,0 +1,30 @@
+{
+  "command": [
+    "${VALIDATION_VENV}/bin/python",
+    "-m",
+    "tico.quantization.recipes.debug.cpu_validation",
+    "--stage",
+    "_connected",
+    "--output",
+    "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16-connected",
+    "--checkpoint",
+    "${VALIDATION_ROOT}/cpu-validation/fixtures/qwen3_vl.pt",
+    "--artifacts",
+    "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16/candidate/before/artifacts",
+    "--capacity",
+    "16"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "log": "${VALIDATION_ROOT}/cpu-validation/qwen3_vl-16-connected.log",
+  "returncode": 1,
+  "seconds": 4.874402981999992,
+  "status": "FAIL",
+  "stderr": "merged into stdout log"
+}

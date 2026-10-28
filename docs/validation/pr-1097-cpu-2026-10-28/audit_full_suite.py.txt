@@ -1,0 +1,100 @@
+import collections
+import datetime
+import json
+import pathlib
+import re
+import subprocess
+import time
+
+ROOT = pathlib.Path('${VALIDATION_ROOT}')
+deadline = time.monotonic() + 2400
+while not (ROOT / 'runs/full-suite.json').exists():
+    if time.monotonic() > deadline:
+        raise TimeoutError('full-suite process still has no final run record')
+    time.sleep(5)
+
+run = json.loads((ROOT/'runs/full-suite.json').read_text())
+inventory = json.loads((ROOT/'discovery-inventory.json').read_text())
+by_id = {x['id']: x for x in inventory['tests']}
+raw = (ROOT/'logs/full-suite.log').read_text()
+raw = re.sub(r'\x1b\[[0-9;]*[A-Za-z]', '', raw).replace('\r', '\n')
+lines = raw.splitlines()
+headers = []
+for index, line in enumerate(lines):
+    match = re.match(r'^(.*?) \(([^()]+)\)(?: |$)', line)
+    if match and match.group(2) in by_id:
+        headers.append((index, match.group(2)))
+records = []
+for i, (start, test_id) in enumerate(headers):
+    end = headers[i+1][0] if i+1 < len(headers) else len(lines)
+    statuses = []
+    for line in lines[start:end]:
+        match = re.search(r'(?:\.\.\. |^)(ok|skipped (?:\'.*\'|".*")|expected failure|unexpected success|FAIL|ERROR)\s*$', line)
+        if match:
+            statuses.append(match.group(1))
+    status = statuses[-1] if statuses else 'UNPARSED'
+    reason = status[9:-1] if status.startswith('skipped ') else ''
+    state = 'SKIPPED' if reason else {'ok':'PASS', 'expected failure':'EXPECTED_FAILURE', 'unexpected success':'UNEXPECTED_SUCCESS'}.get(status, status)
+    records.append({'id': test_id, 'status': state, 'skip_reason': reason, 'log_line':start+1})
+
+counts = dict(collections.Counter(x['status'] for x in records))
+families = {}
+for family, needle in [('llama', '.wrappers.llama.'), ('qwen_vl', '.wrappers.qwen_vl.'), ('gemma4', '.wrappers.gemma4.'), ('gemma4_assistant', '.wrappers.gemma4_assistant.'), ('fairseq', '.wrappers.fairseq.')]:
+    group = [x for x in records if needle in x['id']]
+    families[family] = {'collected': inventory['summary']['family_inventory'][family]['collected'], 'result_records': len(group), **dict(collections.Counter(x['status'] for x in group))}
+runtime_skips = [x for x in records if x['status']=='SKIPPED' and not by_id[x['id']]['decorated_skip']]
+reported_matches = list(re.finditer(r'^Ran (\d+) tests? in ([0-9.]+)s$', raw, re.M))
+reported = reported_matches[-1] if reported_matches else None
+final_matches = list(re.finditer(r'^(OK(?: \(skipped=\d+\))?|FAILED \(.*\))$', raw, re.M))
+final_result = final_matches[-1] if final_matches else None
+source_status = {}
+for label, cwd in [('head','${CANDIDATE_REPO}'), ('base','${BASELINE_REPO}')]:
+    source_status[label] = {'cwd':cwd, 'revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=cwd,text=True).strip(), 'porcelain':subprocess.check_output(['git','status','--porcelain=v1'],cwd=cwd,text=True), 'tracked_diff_exit':subprocess.run(['git','diff','--exit-code'],cwd=cwd,stdout=subprocess.DEVNULL).returncode}
+missing = sorted(set(by_id) - {x['id'] for x in records})
+summary = {
+    'run_record':run, 'collected':inventory['summary']['collected'],
+    'reported_ran':int(reported.group(1)) if reported else None,
+    'reported_unittest_seconds':float(reported.group(2)) if reported else None,
+    'reported_result':final_result.group(1) if final_result else None,
+    'parsed_records':len(records), 'counts':counts,
+    'family_results':families,
+    'decorated_skips':inventory['summary']['decorated_skip'],
+    'runtime_skips':runtime_skips,
+    'skip_reasons':dict(collections.Counter(x['skip_reason'] for x in records if x['status']=='SKIPPED')),
+    'missing_test_ids':missing,
+    'import_errors_in_discovery':inventory['summary']['loader_errors'],
+    'source_status_at_audit_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    'source_status':source_status,
+}
+summary['audit_ok'] = (
+    not missing and not counts.get('UNPARSED',0)
+    and summary['reported_ran']==len(records)==summary['collected']
+    and not summary['import_errors_in_discovery']
+    and sum(counts.values())==summary['reported_ran']
+)
+(ROOT/'full-suite-summary.json').write_text(json.dumps({'summary':summary,'tests':records},indent=2))
+report = f'''# 전체 기본 suite audit
+
+- 수집 {summary['collected']}, unittest 보고 실행 {summary['reported_ran']}, 결과 `{summary['reported_result']}`.
+- verbose 결과 {len(records)}개 파싱: {counts}.
+- unittest {summary['reported_unittest_seconds']}초, 프로세스 wall time {run['elapsed_seconds']}초, 원본 exit code {run['exit_code']}.
+- discovery import error {len(summary['import_errors_in_discovery'])}개, 결과 누락 {len(missing)}개.
+- decorator skip {summary['decorated_skips']}개, 실행 시 동적 skip {len(runtime_skips)}개.
+- audit consistency: {summary['audit_ok']}.
+
+| family | 수집 | 실제 PASS | SKIPPED | FAIL/ERROR |
+|---|---:|---:|---:|---:|
+'''
+for family, data in families.items():
+    report += f"| {family} | {data['collected']} | {data.get('PASS',0)} | {data.get('SKIPPED',0)} | {data.get('FAIL',0)+data.get('ERROR',0)} |\n"
+report += '\n모든 family의 PASS가 0보다 크면 import/전체 skip에 의한 family 누락은 없다. 구조·runtime·수치 개별 assertion은 각 테스트와 원본 로그를 참조한다.\n\n동적 skip:\n\n'
+for rec in runtime_skips:
+    report += f"- `{rec['id']}`: {rec['skip_reason']}\n"
+report += '\n원본 로그: `logs/full-suite.log`. 전체 test ID/status/line와 skip 사유: `full-suite-summary.json`.\n'
+report += '\nAudit 시점 source status: ' + json.dumps(source_status, ensure_ascii=False) + '\n'
+(ROOT/'full-suite-audit.md').write_text(report)
+print(json.dumps(summary,indent=2))
+assert not missing, missing
+assert counts.get('UNPARSED',0)==0, counts
+assert summary['reported_ran']==len(records)==summary['collected']
+assert not summary['import_errors_in_discovery']

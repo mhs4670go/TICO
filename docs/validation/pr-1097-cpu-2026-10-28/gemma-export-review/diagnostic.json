@@ -1,0 +1,86 @@
+[
+  {
+    "case": "gemma4_for_conditional_generation",
+    "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+    "parameters": 749072,
+    "valid_original_eager_forward": "PASS",
+    "calibration_samples": 3,
+    "wrapped_type": "QuantGemma4ForConditionalGeneration",
+    "wrapped_forward_signature": "(input_ids: torch.LongTensor | None = None, pixel_values: torch.FloatTensor | None = None, pixel_values_videos: torch.FloatTensor | None = None, input_features: torch.FloatTensor | None = None, attention_mask: torch.Tensor | None = None, input_features_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, image_position_ids: torch.LongTensor | None = None, video_position_ids: torch.LongTensor | None = None, past_key_values=None, mm_token_type_ids: torch.LongTensor | None = None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, use_cache: bool | None = None, logits_to_keep: int | torch.Tensor = 0, per_layer_inputs: torch.Tensor | None = None, **kwargs) -> 'Gemma4CausalLMOutputWithPast'",
+    "has_as_export_module": false,
+    "export_module_same_as_quantized": true,
+    "export_args": [
+      {
+        "type": "Tensor",
+        "shape": [
+          1,
+          16,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      {
+        "type": "NoneType"
+      },
+      {
+        "type": "dict"
+      },
+      {
+        "type": "dict"
+      }
+    ],
+    "original_export_invocation_eager": "FAIL",
+    "exception_type": "RuntimeError",
+    "exception": "QuantGemma4Model: capability 'vision' is unavailable; reprepare and recalibrate its quantization sites.",
+    "preexisting_state_unchanged": true
+  },
+  {
+    "case": "gemma4_for_causal_lm",
+    "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+    "parameters": 57728,
+    "valid_original_eager_forward": "PASS",
+    "calibration_samples": 3,
+    "wrapped_type": "QuantGemma4ForCausalLM",
+    "wrapped_forward_signature": "(input_ids: torch.LongTensor | None = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values=None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, use_cache: bool | None = None, logits_to_keep: int | torch.Tensor = 0, per_layer_inputs: torch.Tensor | None = None, **kwargs) -> 'Gemma4CausalLMOutputWithPast'",
+    "has_as_export_module": false,
+    "export_module_same_as_quantized": true,
+    "export_args": [
+      {
+        "type": "Tensor",
+        "shape": [
+          1,
+          16,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      {
+        "type": "NoneType"
+      },
+      {
+        "type": "dict"
+      },
+      {
+        "type": "dict"
+      }
+    ],
+    "original_export_invocation_eager": "FAIL",
+    "exception_type": "RuntimeError",
+    "exception": "Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.FloatTensor instead (while checking arguments for embedding)",
+    "preexisting_state_unchanged": true
+  },
+  {
+    "case": "gemma4_assistant_core",
+    "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+    "parameters": 23376,
+    "valid_original_eager_forward": "PASS",
+    "calibration_samples": 3,
+    "wrapped_type": "QuantGemma4AssistantForCausalLM",
+    "wrapped_forward_signature": "(input_ids: Optional[torch.Tensor] = None, inputs_embeds: Optional[torch.Tensor] = None, position_ids: Optional[torch.Tensor] = None, attention_mask: Any = None, shared_kv_states: Optional[Mapping[str, Tuple[torch.Tensor, torch.Tensor]]] = None, use_cache: Optional[bool] = None, position_embeddings: Optional[Mapping[str, Tuple[torch.Tensor, torch.Tensor]]] = None, **kwargs)",
+    "has_as_export_module": false,
+    "original_export_invocation_eager": "FAIL",
+    "exception_type": "ValueError",
+    "exception": "Sliding shared KV exceeds the configured static capacity: valid=10, sliding_kv_length=8. Inputs that exceed capacity must not be silently cropped; increase sliding_kv_length or reduce the input sequence length.",
+    "preexisting_state_unchanged": true
+  }
+]

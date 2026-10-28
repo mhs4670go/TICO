@@ -1,0 +1,26 @@
+{
+  "pr_url": "https://github.com/Samsung/TICO/pull/1097",
+  "retrieved_utc": null,
+  "base_branch": "main",
+  "base_sha": "261bda28ec55fdac42f59346c950326e4065f8fa",
+  "head_sha": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+  "merge_base_sha": "261bda28ec55fdac42f59346c950326e4065f8fa",
+  "tested_commit_sha": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+  "tested_tree_sha": "c81b5f254023b21bb76f1f6d04405b5c7d3f54b2",
+  "base_is_ancestor_of_head": true,
+  "github_merge_ref": {
+    "sha": "6f3016abb6f190d01a28b047fe1cef4496d5a94a",
+    "parents": [
+      "261bda28ec55fdac42f59346c950326e4065f8fa",
+      "9f631d6651ce3780e3a8e054ab02910b9bd40fdc"
+    ],
+    "used_for_testing": false
+  },
+  "original_checkout": "${BASELINE_REPO}",
+  "original_head": "261bda28ec55fdac42f59346c950326e4065f8fa",
+  "initial_working_tree": "clean",
+  "tested_checkout": "${CANDIDATE_REPO}",
+  "strategy": "Head already includes latest fetched main; detached head worktree, no merge or product edits.",
+  "retrieved_before_utc": "2026-10-28T10:13:42Z",
+  "resolution_date_utc": "2026-10-28"
+}

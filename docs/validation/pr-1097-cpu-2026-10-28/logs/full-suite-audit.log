@@ -1,0 +1,106 @@
+{
+  "run_record": {
+    "name": "full-suite",
+    "command": [
+      "./ccex",
+      "test"
+    ],
+    "cwd": "${CANDIDATE_REPO}",
+    "timeout": 2400,
+    "env_overrides": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "CUDA_VISIBLE_DEVICES": "",
+      "CCEX_RUNTIME": "reference",
+      "PYTHONPATH": "${CANDIDATE_REPO}"
+    },
+    "started": "2026-10-28T10:15:13Z",
+    "log": "${VALIDATION_ROOT}/logs/full-suite.log",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 995.207
+  },
+  "collected": 4760,
+  "reported_ran": 4760,
+  "reported_unittest_seconds": 987.679,
+  "reported_result": "OK (skipped=158)",
+  "parsed_records": 4760,
+  "counts": {
+    "PASS": 4602,
+    "SKIPPED": 158
+  },
+  "family_results": {
+    "llama": {
+      "collected": 96,
+      "result_records": 96,
+      "PASS": 93,
+      "SKIPPED": 3
+    },
+    "qwen_vl": {
+      "collected": 209,
+      "result_records": 209,
+      "PASS": 197,
+      "SKIPPED": 12
+    },
+    "gemma4": {
+      "collected": 422,
+      "result_records": 422,
+      "PASS": 354,
+      "SKIPPED": 68
+    },
+    "gemma4_assistant": {
+      "collected": 52,
+      "result_records": 52,
+      "PASS": 52
+    },
+    "fairseq": {
+      "collected": 50,
+      "result_records": 50,
+      "PASS": 50
+    }
+  },
+  "decorated_skips": 157,
+  "runtime_skips": [
+    {
+      "id": "quantization.evaluation.test_evaluation.TestEvaluationUtils.test_plot_two_outputs_installed_plotext",
+      "status": "SKIPPED",
+      "skip_reason": "Optional plotting dependency plotext is not installed",
+      "log_line": 1589
+    }
+  ],
+  "skip_reasons": {
+    "Not supported yet": 2,
+    "luci-interpreter does not support dynamic shape yet && onert does not support TransposeConv yet": 1,
+    "No kernel exist": 5,
+    "Not Support Operator": 3,
+    "Internal test \u2014 run only if --include-internal is set": 57,
+    "Optional plotting dependency plotext is not installed": 1,
+    "Skip when torch doesn't produce redundant slices.": 3,
+    "set GEMMA4_ASSISTANT_PATH to a local Gemma4 assistant checkpoint to run this integration test": 1,
+    "set GEMMA4_TARGET_PATH and GEMMA4_ASSISTANT_PATH to local Gemma4 checkpoints to run this integration test": 1,
+    "CUDA is unavailable": 1,
+    "Internal smoke test \u2014 set RUN_INTERNAL_TESTS=1 to enable it.": 68,
+    "This test is skipped becuse QuantConv3d is not currently used to wrap Conv3d": 11,
+    "opt-in ONE inference": 1,
+    "opt-in real >2 GiB serialization; requires a high-memory 64-bit host": 3
+  },
+  "missing_test_ids": [],
+  "import_errors_in_discovery": [],
+  "source_status_at_audit_utc": "2026-10-28T10:32:17.308104+00:00",
+  "source_status": {
+    "head": {
+      "cwd": "${CANDIDATE_REPO}",
+      "revision": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc",
+      "porcelain": "",
+      "tracked_diff_exit": 0
+    },
+    "base": {
+      "cwd": "${BASELINE_REPO}",
+      "revision": "261bda28ec55fdac42f59346c950326e4065f8fa",
+      "porcelain": "",
+      "tracked_diff_exit": 0
+    }
+  },
+  "audit_ok": true
+}

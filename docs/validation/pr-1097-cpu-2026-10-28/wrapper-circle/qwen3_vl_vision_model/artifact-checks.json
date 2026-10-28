@@ -1,0 +1,84 @@
+{
+  "case": "qwen3_vl_vision_model",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_vision_model",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_model",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_model.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "PASS",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "87daa5e071ae14e402116e9d25dcc7ca45ed1bfcef2305f9d380b68a28aa2bf2",
+  "frozen_after_sha256": "87daa5e071ae14e402116e9d25dcc7ca45ed1bfcef2305f9d380b68a28aa2bf2",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_vision_model/qwen3_vl_vision_model.q.circle",
+  "bytes": 1025608,
+  "sha256": "3c8ad43ba4d24b3df61fe48e5575ef0db77a0def9f492a5b3397073fc9f33d6b",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        4,
+        1536
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 2,
+  "circle_output_count": 2,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        64
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "87daa5e071ae14e402116e9d25dcc7ca45ed1bfcef2305f9d380b68a28aa2bf2",
+  "inspector_exit_code": 0,
+  "status": "PASS"
+}

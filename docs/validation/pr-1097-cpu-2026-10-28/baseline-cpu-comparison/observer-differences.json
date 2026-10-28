@@ -1,0 +1,5479 @@
+{
+  "llama-16": {
+    "raw_observer_differences": [
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.embed_tokens.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.embed_tokens.wrapped.weight_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_attn_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_mlp_residual_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out_h",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_weights",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_attn_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_mlp_residual_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out_h",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_weights",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.obs_causal_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      }
+    ],
+    "canonical_observer_differences": [],
+    "active_frozen_observer_differences": [],
+    "head_unavailable_or_inactive_observers": [
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+      "wrapped.model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+      "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+      "wrapped.model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale"
+    ],
+    "schema_difference_note": "Head _state_contract captures lock as snapshot.locked; base captures _qparams_locked. Raw field equality is intentionally false; canonical check maps that location. Qwen additionally removes two unused vision scale observers, leaves four fused text scale/raw-logit observers inactive, and leaves unused DeepStack layer1 without fabricated qparams; these exact differences are preserved."
+  },
+  "qwen3_vl-16": {
+    "raw_observer_differences": [
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_0",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.embed_tokens.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.embed_tokens.wrapped.weight_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.obs_gated_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.obs_post_attn",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out_h",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_weights",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_causal_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.obs_gated_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.obs_post_attn",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out_h",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_weights",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_causal_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_attention_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_inputs_embeds",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_local_this",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.obs_mm_fusion",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_mul_logits_scale",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_scaling",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.qkv.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.qkv.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.qkv.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.act_fn.wrapped.act_in_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.act_fn.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc2.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.obs_post_attn",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.act_fn.wrapped.act_in_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.act_fn.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc2.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.act_fn.wrapped.act_in_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.act_fn.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc2.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_pos_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_pos_embeds",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_rope_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_rope_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.patch_embed.wrapped.proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.patch_embed.wrapped.proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.patch_embed.wrapped.proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      }
+    ],
+    "canonical_observer_differences": [
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_mul_logits_scale",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_scaling",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      }
+    ],
+    "active_frozen_observer_differences": [],
+    "head_unavailable_or_inactive_observers": [
+      "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+      "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+      "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+      "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+      "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale"
+    ],
+    "schema_difference_note": "Head _state_contract captures lock as snapshot.locked; base captures _qparams_locked. Raw field equality is intentionally false; canonical check maps that location. Qwen additionally removes two unused vision scale observers, leaves four fused text scale/raw-logit observers inactive, and leaves unused DeepStack layer1 without fabricated qparams; these exact differences are preserved."
+  },
+  "qwen3_vl-32": {
+    "raw_observer_differences": [
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.lm_head.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_0",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.embed_tokens.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.embed_tokens.wrapped.weight_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.input_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.obs_gated_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.obs_post_attn",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.post_attention_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_out_h",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_attn_weights",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_causal_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_mask_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_k",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_new_v",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_key",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_present_value",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.input_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.act_fn.wrapped.obs_sig",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.down_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.gate_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.obs_gated_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.mlp.wrapped.up_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.obs_post_attn",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.post_attention_layernorm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.k_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.o_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_out_h",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_attn_weights",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_causal_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_mask_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_k",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_new_v",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_key",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_present_value",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.q_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.v_proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.norm.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_attention_mask",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_inputs_embeds",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_local_this",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.obs_mm_fusion",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_attn_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_hidden",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_k_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_logits",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_mul_logits_scale",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_cat",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_neg",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_rot",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_x1",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_q_x2",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_scaling",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_softmax",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.qkv.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.qkv.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.qkv.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.act_fn.wrapped.act_in_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.act_fn.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc2.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.linear_fc2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.mlp.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.norm2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.obs_post_attn",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.act_fn.wrapped.act_in_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.act_fn.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc2.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.linear_fc2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.deepstack_merger_list.0.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.act_fn.wrapped.act_in_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.act_fn.wrapped.act_out_obs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc1.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc1.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc1.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc2.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc2.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.linear_fc2.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_act_outs",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_add_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_affine_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_affine_mul",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_bias",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_centered",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_eps",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_inv_std",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_mean",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_norm",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_square",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_var",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.merger.wrapped.norm.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_pos_add",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_pos_embeds",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_rope_cos",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.obs_rope_sin",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.patch_embed.wrapped.proj.wrapped.obs_act_in",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.patch_embed.wrapped.proj.wrapped.obs_act_out",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.patch_embed.wrapped.proj.wrapped.obs_weight",
+        "field": "_qparams_locked",
+        "base": "False",
+        "head": null
+      }
+    ],
+    "canonical_observer_differences": [
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_scale",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "d7173dd8a9e81deded3f2e4719ef149effbd21afd81da9d10ed50b5dff69a708",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.float32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "_cached_zp",
+        "base": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": [
+              4
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": []
+        },
+        "head": {
+          "bytes": {
+            "dtype": "uint8",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "shape": [
+              0
+            ]
+          },
+          "dtype": "torch.int32",
+          "shape": [
+            0
+          ]
+        }
+      },
+      {
+        "observer": "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale",
+        "field": "enabled",
+        "base": "False",
+        "head": "True"
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_mul_logits_scale",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      },
+      {
+        "observer": "wrapped.model.wrapped.visual.wrapped.blocks.0.wrapped.attn.wrapped.obs_scaling",
+        "field": "observer_presence",
+        "base": true,
+        "head": false
+      }
+    ],
+    "active_frozen_observer_differences": [],
+    "head_unavailable_or_inactive_observers": [
+      "wrapped.model.wrapped.language_model.wrapped.deepstack_visual_embeds_1",
+      "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_logits_raw",
+      "wrapped.model.wrapped.language_model.wrapped.layers.0.wrapped.self_attn.wrapped.obs_scale",
+      "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_logits_raw",
+      "wrapped.model.wrapped.language_model.wrapped.layers.1.wrapped.self_attn.wrapped.obs_scale"
+    ],
+    "schema_difference_note": "Head _state_contract captures lock as snapshot.locked; base captures _qparams_locked. Raw field equality is intentionally false; canonical check maps that location. Qwen additionally removes two unused vision scale observers, leaves four fused text scale/raw-logit observers inactive, and leaves unused DeepStack layer1 without fabricated qparams; these exact differences are preserved."
+  }
+}

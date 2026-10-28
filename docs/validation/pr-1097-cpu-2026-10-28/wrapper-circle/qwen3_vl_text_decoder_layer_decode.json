@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_decoder_layer_decode/qwen3_vl_text_decoder_layer_decode.q.circle"
+  },
+  "case": "qwen3_vl_text_decoder_layer_decode",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      1,
+      64
+    ],
+    "max_abs_diff": 0.26755207777023315,
+    "mean_abs_diff": 0.10043146461248398,
+    "peir": 0.05414642077070664,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      1,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

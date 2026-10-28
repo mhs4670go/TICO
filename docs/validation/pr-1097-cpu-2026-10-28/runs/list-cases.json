@@ -1,0 +1,26 @@
+{
+  "name": "list-cases",
+  "command": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--mode",
+    "wrapper-smoke",
+    "--list-cases"
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 60,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:13:57Z",
+  "log": "${VALIDATION_ROOT}/logs/list-cases.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 5.976
+}

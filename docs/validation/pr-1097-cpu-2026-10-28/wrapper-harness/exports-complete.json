@@ -1,0 +1,9 @@
+{
+  "exit_code": 1,
+  "registered": 50,
+  "records": 50,
+  "passed": 25,
+  "failed": 23,
+  "skipped": 2,
+  "completed_at": "2026-10-28T10:39:24Z"
+}

@@ -1,0 +1,22 @@
+usage: evaluate.py [-h] --config CONFIG [--checkpoint CHECKPOINT]
+                   [--model MODEL] [--device DEVICE] [--output-dir OUTPUT_DIR]
+                   [--tasks TASKS] [--set KEY=VALUE] [--verbose]
+                   [--no-progress]
+
+Evaluate an FP or fake-quant checkpoint.
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG       Base recipe config.
+  --checkpoint CHECKPOINT
+                        Optional torch checkpoint to evaluate.
+  --model MODEL         Override model.name_or_path.
+  --device DEVICE       Override runtime.device.
+  --output-dir OUTPUT_DIR
+                        Write evaluation_protocol.json here.
+  --tasks TASKS         Comma-separated top-level evaluation targets. When
+                        set, only these targets run; benchmark details remain
+                        in the config.
+  --set KEY=VALUE
+  --verbose             Print detailed evaluation sample logs.
+  --no-progress         Disable tqdm/progress bars.

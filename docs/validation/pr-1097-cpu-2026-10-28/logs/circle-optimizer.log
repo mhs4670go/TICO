@@ -1,0 +1,28 @@
+{
+  "byte_identical": true,
+  "execution_reduction": 0.0,
+  "input": "${VALIDATION_ROOT}/wrapper-circle/llama_attention_decode/llama_attention_decode.q.circle",
+  "repeat": 1,
+  "restart": {
+    "changes": 0,
+    "executions": 12,
+    "maximum_seconds": 0.046067111999946064,
+    "mean_seconds": 0.046067111999946064,
+    "minimum_seconds": 0.046067111999946064,
+    "output_bytes": 15624,
+    "output_sha256": "2bf1c56842d1b6f45d6557584025d176bacd469a6b37d4a441fe5603c05ebf7d",
+    "strategy": "restart"
+  },
+  "speedup": 1.0293979584010666,
+  "until_no_change": {
+    "changes": 0,
+    "executions": 12,
+    "maximum_seconds": 0.044751508999979706,
+    "mean_seconds": 0.044751508999979706,
+    "minimum_seconds": 0.044751508999979706,
+    "output_bytes": 15624,
+    "output_sha256": "2bf1c56842d1b6f45d6557584025d176bacd469a6b37d4a441fe5603c05ebf7d",
+    "strategy": "until-no-change"
+  },
+  "warmup": 0
+}

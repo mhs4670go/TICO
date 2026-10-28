@@ -1,0 +1,154 @@
+┌───────────── Wrapper Smoke Summary ─────────────
+│ Case             : qwen3_vl_text_attention_decode
+│ Status           : PASS
+│ Mean |diff|      : 0.344461
+│ Max  |diff|      : 0.914665
+│ PEIR             : 0.416169
+│ Shape match      : True
+│ Quant finite     : True
+└─────────────────────────────────────────────────
+Artifacts:
+  - circle: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_decode/qwen3_vl_text_attention_decode.q.circle
+  - report_json: ${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_decode.json
+{
+  "case": "qwen3_vl_text_attention_decode",
+  "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_text_attention_decode",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_decode",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_decode.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "PASS",
+  "structural": "PASS",
+  "runtime": "PASS",
+  "parity": "FAIL",
+  "frozen_unchanged": "PASS",
+  "frozen_before_sha256": "4aed7b6661beba012f6204acc75f74a493b1f55d0f2f60381c2091439f02db0f",
+  "frozen_after_sha256": "4aed7b6661beba012f6204acc75f74a493b1f55d0f2f60381c2091439f02db0f",
+  "artifact": "${VALIDATION_ROOT}/wrapper-circle/qwen3_vl_text_attention_decode/qwen3_vl_text_attention_decode.q.circle",
+  "bytes": 37120,
+  "sha256": "e75fe330b22ad52e3315f7258d38012c1a62cf464f6451ee57b813b8195cc319",
+  "verify_issues": [],
+  "execution_mode": "fake_quantize",
+  "input_contract": [
+    {
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        7,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        7,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        1,
+        8
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "input_unchanged": true,
+  "torch_output_count": 3,
+  "circle_output_count": 3,
+  "comparisons": [
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "ok": false,
+      "max_abs_error": 0.003657206892967224
+    },
+    {
+      "ok": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "output_contract": [
+    {
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "shape": [
+        1,
+        2,
+        1,
+        32
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "frozen_after_runtime_sha256": "4aed7b6661beba012f6204acc75f74a493b1f55d0f2f60381c2091439f02db0f",
+  "inspector_exit_code": 0,
+  "status": "FAIL"
+}

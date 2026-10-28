@@ -1,0 +1,79 @@
+{
+  "status": "FAIL",
+  "classification": "existing strict numerical difference at same valid capacity16 profile; no new numerical regression demonstrated",
+  "head": {
+    "saved": "PASS",
+    "structural": "PASS",
+    "runtime": "PASS",
+    "parity": "FAIL",
+    "frozen_unchanged": "PASS",
+    "inspector_exit_code": 0,
+    "tico_file": "${CANDIDATE_REPO}/tico/__init__.py",
+    "artifact": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2/gemma4_assistant_core.q.circle",
+    "bytes": 58112,
+    "sha256": "3122b8c6b987c1f10da3314ad380c2e84e50d3b79ec74f36f185a438c97fd3d6",
+    "comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 1.9803643226623535e-05
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.00024640560150146484
+      },
+      {
+        "ok": true,
+        "max_abs_error": 1.1280179023742676e-05
+      }
+    ]
+  },
+  "base": {
+    "saved": "PASS",
+    "structural": "PASS",
+    "runtime": "PASS",
+    "parity": "FAIL",
+    "frozen_unchanged": "PASS",
+    "inspector_exit_code": 0,
+    "tico_file": "${BASELINE_REPO}/tico/__init__.py",
+    "artifact": "${VALIDATION_ROOT}/gemma-export-review/assistant-capacity16-r2-base/gemma4_assistant_core.q.circle",
+    "bytes": 58112,
+    "sha256": "001e2349a198784b40f205137df3ec0755f1783ab073242494f56d65aa6db050",
+    "comparisons": [
+      {
+        "ok": false,
+        "max_abs_error": 1.9803643226623535e-05
+      },
+      {
+        "ok": false,
+        "max_abs_error": 0.00024640560150146484
+      },
+      {
+        "ok": true,
+        "max_abs_error": 1.1280179023742676e-05
+      }
+    ]
+  },
+  "same": {
+    "input_records": true,
+    "torch_output_records": true,
+    "circle_output_records": true,
+    "comparisons": true,
+    "input_contract": true,
+    "output_contract": true
+  },
+  "weights_equal": true,
+  "full_observer_inventory_equal": false,
+  "inventory_note": "Inactive identity cache-storage sites and unused sparse-head observer topology differ with PR lifecycle; no full-grid inventory equality claim. Actual inputs/Torch/Circle outputs are exactly identical.",
+  "profile": {
+    "sliding_kv_length": 16,
+    "full_kv_length": 16,
+    "valid_kv_length": 10,
+    "calibration_samples": 3
+  },
+  "tolerance_unchanged": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "original_capacity8_case": "FAIL remains; supplemental profile does not override original result",
+  "initial_import_errors": "harness-errors.json, before model/export; corrected r2 results used"
+}

@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/nn_tied_embedding/nn_tied_embedding.q.circle"
+  },
+  "case": "nn_tied_embedding",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      4,
+      16
+    ],
+    "max_abs_diff": 0.07266092300415039,
+    "mean_abs_diff": 0.021642666310071945,
+    "peir": 0.004840749349943537,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      4,
+      16
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

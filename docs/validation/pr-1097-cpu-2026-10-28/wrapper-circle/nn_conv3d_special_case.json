@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/nn_conv3d_special_case/nn_conv3d_special_case.q.circle"
+  },
+  "case": "nn_conv3d_special_case",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      16,
+      1,
+      1,
+      1
+    ],
+    "max_abs_diff": 0.00959169864654541,
+    "mean_abs_diff": 0.004197212867438793,
+    "peir": 0.0038538616209774683,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      16,
+      1,
+      1,
+      1
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

@@ -1,0 +1,81 @@
+Traceback (most recent call last):
+  File "${VALIDATION_ROOT}/wrapper-harness/export_case.py", line 101, in <module>
+    inspector.main()
+  File "${BASELINE_REPO}/tico/quantization/examples/inspector.py", line 243, in main
+    _run_wrapper_smoke_mode(args)
+  File "${BASELINE_REPO}/tico/quantization/examples/inspector.py", line 226, in _run_wrapper_smoke_mode
+    run_wrapper_smoke(
+  File "${BASELINE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/runner.py", line 192, in run_wrapper_smoke
+    fp_output = case.reference_forward(reference, eval_sample)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${BASELINE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/case.py", line 232, in reference_forward
+    return self.forward(reference, sample)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${BASELINE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/case.py", line 226, in forward
+    return module(*sample.args, **dict(sample.kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/utils/generic.py", line 939, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py", line 1376, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/utils/generic.py", line 939, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py", line 1242, in forward
+    position_ids = self.compute_3d_position_ids(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py", line 1118, in compute_3d_position_ids
+    raise ValueError(
+ValueError: Multimodal data was passed (via `image_grid_thw` or `video_grid_thw`) but `mm_token_type_ids` is missing. Please pass `mm_token_type_ids` to the model so that multimodal RoPE (M-RoPE) can be computed correctly. `mm_token_type_ids` is returned by the processor alongside `input_ids`.
+{
+  "case": "qwen3_vl_for_conditional_generation",
+  "tico_file": "${BASELINE_REPO}/tico/__init__.py",
+  "argv": [
+    "python",
+    "-m",
+    "tico.quantization.examples.inspector",
+    "--config",
+    "tico/quantization/examples/configs/wrapper_smoke.yaml",
+    "--mode",
+    "wrapper-smoke",
+    "--case",
+    "qwen3_vl_for_conditional_generation",
+    "--device",
+    "cpu",
+    "--export",
+    "circle",
+    "--strict",
+    "--no-plot",
+    "--output-dir",
+    "${VALIDATION_ROOT}/wrapper-baseline/qwen3_vl_for_conditional_generation",
+    "--report-json",
+    "${VALIDATION_ROOT}/wrapper-baseline/qwen3_vl_for_conditional_generation.json"
+  ],
+  "instrumentation": "Read-only spies delegate unchanged to real converter/export helper; exact converter inputs captured; expected forward uses cloned inputs.",
+  "tolerances": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "saved": "INCOMPLETE",
+  "structural": "INCOMPLETE",
+  "runtime": "INCOMPLETE",
+  "parity": "INCOMPLETE",
+  "frozen_unchanged": "INCOMPLETE",
+  "inspector_error": "Traceback (most recent call last):\n  File \"${VALIDATION_ROOT}/wrapper-harness/export_case.py\", line 101, in <module>\n    inspector.main()\n  File \"${BASELINE_REPO}/tico/quantization/examples/inspector.py\", line 243, in main\n    _run_wrapper_smoke_mode(args)\n  File \"${BASELINE_REPO}/tico/quantization/examples/inspector.py\", line 226, in _run_wrapper_smoke_mode\n    run_wrapper_smoke(\n  File \"${BASELINE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/runner.py\", line 192, in run_wrapper_smoke\n    fp_output = case.reference_forward(reference, eval_sample)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/case.py\", line 232, in reference_forward\n    return self.forward(reference, sample)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${BASELINE_REPO}/tico/quantization/recipes/debug/wrapper_smoke/case.py\", line 226, in forward\n    return module(*sample.args, **dict(sample.kwargs))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/utils/generic.py\", line 939, in wrapper\n    output = func(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py\", line 1376, in forward\n    outputs = self.model(\n              ^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/utils/generic.py\", line 939, in wrapper\n    output = func(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py\", line 1242, in forward\n    position_ids = self.compute_3d_position_ids(\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${VALIDATION_VENV}/lib/python3.12/site-packages/transformers/models/qwen3_vl/modeling_qwen3_vl.py\", line 1118, in compute_3d_position_ids\n    raise ValueError(\nValueError: Multimodal data was passed (via `image_grid_thw` or `video_grid_thw`) but `mm_token_type_ids` is missing. Please pass `mm_token_type_ids` to the model so that multimodal RoPE (M-RoPE) can be computed correctly. `mm_token_type_ids` is returned by the processor alongside `input_ids`.\n",
+  "inspector_exit_code": 1,
+  "status": "FAIL"
+}

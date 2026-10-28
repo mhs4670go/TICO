@@ -1,0 +1,11 @@
+import pathlib
+import runpy
+import sys
+
+repo, module, *args = sys.argv[1:]
+sys.path.insert(0, repo)
+import tico
+print('TICO_IMPORT_PATH', tico.__file__, flush=True)
+assert pathlib.Path(tico.__file__).resolve() == pathlib.Path(repo)/'tico/__init__.py'
+sys.argv = [module, *args]
+runpy.run_module(module, run_name='__main__')

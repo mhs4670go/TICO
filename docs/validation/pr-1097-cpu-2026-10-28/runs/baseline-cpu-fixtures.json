@@ -1,0 +1,30 @@
+{
+  "name": "baseline-cpu-fixtures",
+  "command": [
+    "python",
+    "${VALIDATION_ROOT}/checked_module.py",
+    "${BASELINE_REPO}",
+    "tico.quantization.recipes.debug.cpu_validation",
+    "--stage",
+    "_fixtures",
+    "--output",
+    "${VALIDATION_ROOT}/baseline-cpu-fixtures",
+    "--seed",
+    "1073"
+  ],
+  "cwd": "${BASELINE_REPO}",
+  "timeout": 600,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${BASELINE_REPO}"
+  },
+  "started": "2026-10-28T10:51:21Z",
+  "log": "${VALIDATION_ROOT}/logs/baseline-cpu-fixtures.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 5.528
+}

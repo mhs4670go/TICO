@@ -1,0 +1,51 @@
+"""Build local genuine HF model/tokenizer and disjoint calibration/eval fixtures."""
+import copy
+import hashlib
+import json
+from pathlib import Path
+
+import torch
+import yaml
+from tico.quantization.recipes.debug.cpu_fixtures import fixture_context
+from tico.quantization.recipes.debug.export_regression import _state_contract
+from tico.quantization.recipes.stages.ptq import PTQStage
+from tico.quantization.wrapq.lifecycle import validate_frozen_model
+from tokenizers import Tokenizer
+from tokenizers.models import WordLevel
+from tokenizers.pre_tokenizers import Whitespace
+from transformers import PreTrainedTokenizerFast
+
+root = Path(__file__).resolve().parent
+torch.set_num_threads(1)
+context = fixture_context("llama", seed=1073)
+fp = copy.deepcopy(context.model)
+model_dir = root / "model"
+fp.save_pretrained(model_dir)
+vocab = {"<pad>": 0, "<unk>": 1}
+vocab.update({f"t{i}": i for i in range(2,128)})
+backend = Tokenizer(WordLevel(vocab, unk_token="<unk>"))
+backend.pre_tokenizer = Whitespace()
+tokenizer = PreTrainedTokenizerFast(tokenizer_object=backend, pad_token="<pad>", unk_token="<unk>", eos_token="t127", bos_token="t126")
+tokenizer.save_pretrained(model_dir)
+PTQStage().run(context, context.cfg["pipeline"][0])
+validate_frozen_model(context.model)
+before = _state_contract(context.model)
+path = root / "quantized_model.pt"
+torch.save(context.model, path)
+restored = torch.load(path, map_location="cpu", weights_only=False).eval()
+validate_frozen_model(restored)
+assert before == _state_contract(restored)
+data_dir = root / "ppl-data"
+data_dir.mkdir(exist_ok=True)
+texts = [" ".join(f"t{i}" for i in range(start,start+7)) for start in (80,87,94,101)]
+(data_dir / "test.jsonl").write_text("\n".join(json.dumps({"text":s}) for s in texts)+"\n")
+cfg = copy.deepcopy(context.cfg)
+cfg["model"]["name_or_path"] = str(model_dir)
+cfg["model_args"]["profile"] = "reference_eval"
+cfg["pipeline"] = []
+cfg["evaluation"] = {"enabled": True, "max_seq_len": 64, "use_cache": True,"perplexity":{"dataset":str(data_dir),"dataset_config":None,"split":"test","max_seq_len":16,"stride":8},"lm_eval_tasks":"hellaswag"}
+cfg["export"]["enabled"] = False
+(root / "config.yaml").write_text(yaml.safe_dump(cfg,sort_keys=False))
+proof = {"seed":1073,"calibration_samples":2,"calibration_tokens_per_sample":8,"decode_calibration_steps":2,"evaluation_rows":4,"ppl_input_tokens":28,"ppl_scoring_tokens":27,"parameters":sum(p.numel() for p in fp.parameters()),"checkpoint":str(path),"checkpoint_sha256":hashlib.sha256(path.read_bytes()).hexdigest(),"roundtrip_state_equal":True,"input_roles_disjoint":True}
+(root / "fixture-evidence.json").write_text(json.dumps(proof,indent=2))
+print(json.dumps(proof,indent=2))

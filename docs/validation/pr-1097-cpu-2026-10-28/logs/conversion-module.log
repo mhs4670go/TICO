@@ -1,0 +1,99 @@
+Measuring 1 MiB module bytes, run 1
+Measuring 1 MiB module file, run 1
+{
+  "comparisons": [
+    {
+      "baseline": "bytes",
+      "median_peak_rss_reduction_bytes": -3620864,
+      "median_peak_rss_reduction_percent": -1.1369628686447764,
+      "requested_mib": 1
+    }
+  ],
+  "flatbuffer_limit": null,
+  "identity_mul": false,
+  "input_kind": "module",
+  "optimization": "O1",
+  "platform": "linux",
+  "python": "3.12.14",
+  "results": [
+    {
+      "byte_identical_to_reference": true,
+      "elapsed_seconds": 1.3473285079999187,
+      "equivalent_to": "bytes",
+      "identity_mul": false,
+      "input_kind": "module",
+      "mode": "bytes",
+      "numpy": "2.5.4",
+      "output_bytes": 1049080,
+      "output_sha256": "4f92c500f7ebfc4b808adc839d72b938deaf23642f83ebbe5fbe8b47889d78cc",
+      "peak_before_conversion_bytes": 207327232,
+      "peak_rss_bytes": 318468096,
+      "requested_mib": 1,
+      "run": 0,
+      "source_constant_bytes": 1048576,
+      "tico_source": "${CANDIDATE_REPO}/tico/__init__.py",
+      "torch": "2.13.0+cpu",
+      "validation": {
+        "buffer_payloads": [
+          null,
+          {
+            "bytes": 1048576,
+            "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+          }
+        ],
+        "max_absolute_error": 0.0,
+        "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+        "numerical_probes": 3,
+        "operator_count": 1,
+        "reference_numerical_parity": "passed",
+        "structural_verification": "passed"
+      }
+    },
+    {
+      "byte_identical_to_reference": true,
+      "elapsed_seconds": 1.3933022229998642,
+      "equivalent_to": "bytes",
+      "identity_mul": false,
+      "input_kind": "module",
+      "mode": "file",
+      "numpy": "2.5.4",
+      "output_bytes": 1049080,
+      "output_sha256": "4f92c500f7ebfc4b808adc839d72b938deaf23642f83ebbe5fbe8b47889d78cc",
+      "peak_before_conversion_bytes": 207458304,
+      "peak_rss_bytes": 322088960,
+      "requested_mib": 1,
+      "run": 0,
+      "source_constant_bytes": 1048576,
+      "tico_source": "${CANDIDATE_REPO}/tico/__init__.py",
+      "torch": "2.13.0+cpu",
+      "validation": {
+        "buffer_payloads": [
+          null,
+          {
+            "bytes": 1048576,
+            "sha256": "44a39c78ec21825d469a3299a055e7865f707d6a80f05f458a8dc028375429b9"
+          }
+        ],
+        "max_absolute_error": 0.0,
+        "metadata_sha256": "e88cd80f6c12bf3e0dda02fd55eb919172684157a5b4d7a3a7e9f1281fc7ac56",
+        "numerical_probes": 3,
+        "operator_count": 1,
+        "reference_numerical_parity": "passed",
+        "structural_verification": "passed"
+      }
+    }
+  ],
+  "revisions": {
+    "current": "9f631d6651ce3780e3a8e054ab02910b9bd40fdc"
+  },
+  "rss_scope": "fresh process high-water mark including imports and source weights",
+  "seed": 2026,
+  "setup_scope": "source module and probes prepared in each measured process before timing",
+  "tables": 1,
+  "threads": 1,
+  "time_scope": "conversion API and file save; excludes setup and validation",
+  "width": 16,
+  "working_tree_dirty": {
+    "current": false
+  }
+}

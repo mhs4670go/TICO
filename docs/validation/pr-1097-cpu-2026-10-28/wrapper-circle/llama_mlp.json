@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-circle/llama_mlp/llama_mlp.q.circle"
+  },
+  "case": "llama_mlp",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      2,
+      5,
+      16
+    ],
+    "max_abs_diff": 7.528066635131836e-05,
+    "mean_abs_diff": 1.800628160708584e-05,
+    "peir": 8.819804070461784e-05,
+    "quant_finite": true,
+    "quant_shape": [
+      2,
+      5,
+      16
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

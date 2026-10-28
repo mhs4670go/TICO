@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "circle": "${VALIDATION_ROOT}/wrapper-baseline/gemma4_text_attention_shared_kv_decode/gemma4_text_attention_shared_kv_decode.q.circle"
+  },
+  "case": "gemma4_text_attention_shared_kv_decode",
+  "failures": [],
+  "messages": [],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      1,
+      64
+    ],
+    "max_abs_diff": 0.02904677391052246,
+    "mean_abs_diff": 0.008298070169985294,
+    "peir": 0.01576227430298147,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      1,
+      64
+    ],
+    "shape_match": true
+  },
+  "passed": true
+}

@@ -1,0 +1,29 @@
+{
+  "artifacts": {},
+  "case": "gemma4_for_causal_lm",
+  "failures": [
+    "EXPORT"
+  ],
+  "messages": [
+    "Circle export failed: RuntimeError when making fake tensor call\n  Explanation: Dynamo failed to run FX node with fake tensors: call_function <function embedding at 0x7f17bc500ea0>(*(FakeTensor(..., size=(1, 16, 64)), FakeTensor(..., size=(256, 64))), **{'padding_idx': 0, 'max_norm': None, 'norm_type': 2.0, 'scale_grad_by_freq': False, 'sparse': False}): got RuntimeError(\"Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.float32 instead\")\n  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance(\"force_eager\")`. \n\n  Developer debug context: \n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html"
+  ],
+  "metrics": {
+    "fp_finite": true,
+    "fp_shape": [
+      1,
+      16,
+      256
+    ],
+    "max_abs_diff": 0.02490270882844925,
+    "mean_abs_diff": 0.0005540703423321247,
+    "peir": 0.021236632501525913,
+    "quant_finite": true,
+    "quant_shape": [
+      1,
+      16,
+      256
+    ],
+    "shape_match": true
+  },
+  "passed": false
+}

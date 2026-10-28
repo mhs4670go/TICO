@@ -1,0 +1,23 @@
+{
+  "name": "resource-snapshot",
+  "command": [
+    "bash",
+    "-c",
+    "date -u; nproc; lscpu; free -b; df -B1 /workspace; cat /sys/fs/cgroup/cpu.max /sys/fs/cgroup/memory.max; git status --porcelain; git rev-parse HEAD HEAD^{tree}; python -c \"import tico; print(tico.__file__)\""
+  ],
+  "cwd": "${CANDIDATE_REPO}",
+  "timeout": 30,
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CCEX_RUNTIME": "reference",
+    "PYTHONPATH": "${CANDIDATE_REPO}"
+  },
+  "started": "2026-10-28T10:16:36Z",
+  "log": "${VALIDATION_ROOT}/logs/resource-snapshot.log",
+  "exit_code": 0,
+  "status": "PASS",
+  "elapsed_seconds": 1.628
+}
