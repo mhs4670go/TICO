@@ -1,0 +1,246 @@
+{
+  "command": "source .venv/bin/activate && OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python ${ARTIFACT_ROOT}/audit/trace_cache_clipping.py > ${ARTIFACT_ROOT}/audit/cache-clipping.log 2>&1",
+  "exit_code": 0,
+  "hashes": {
+    "cache-clipping.json": "dd1c22885a0122204cd08ec3173ff8e0b5bb30492ee55e2c064d8fad2e4d37fe",
+    "cache-clipping.log": "09ec8fcfecf31ee61e2966237d8ed83abd976a929241a4d4b593ccb8b648f699",
+    "trace_cache_clipping.py": "3798bf4f873eb71c3b20b407272934e7d70da71757d38897e72be5d4e7fa69c7"
+  },
+  "qparams_and_state_match_main_all24": true,
+  "selected_outputs_exact_all96": true,
+  "source_commit": "279ea8cedc1e8c52b69d5341f6614f760b1171e8",
+  "summary_by_call_class": {
+    "affine": {
+      "concat_C": {
+        "max_clipping_rate": 0.001736111111111111,
+        "max_code_overshoot": 5.0763096197670166e-06,
+        "max_endpoint_occupancy": 0.001736111111111111,
+        "samples": 72,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.001736111111111111,
+          0.001736111111111111,
+          1.5967008266670746e-06,
+          123,
+          "R1K1",
+          1,
+          "K",
+          1,
+          576,
+          0
+        ]
+      },
+      "current_C": {
+        "max_clipping_rate": 0.001953125,
+        "max_code_overshoot": 1.5967008266670746e-06,
+        "max_endpoint_occupancy": 0.015625,
+        "samples": 96,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.001953125,
+          0.001953125,
+          1.5967008266670746e-06,
+          123,
+          "R1K1",
+          0,
+          "K",
+          1,
+          512,
+          0
+        ]
+      },
+      "current_S_delta": {
+        "max_clipping_rate": 0.001953125,
+        "max_code_overshoot": 1.5967008266670746e-06,
+        "max_endpoint_occupancy": 0.015625,
+        "samples": 96,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.001953125,
+          0.001953125,
+          1.5967008266670746e-06,
+          123,
+          "R1K1",
+          0,
+          "K",
+          1,
+          512,
+          0
+        ]
+      },
+      "past_C": {
+        "max_clipping_rate": 0.001953125,
+        "max_code_overshoot": 5.0763096197670166e-06,
+        "max_endpoint_occupancy": 0.001953125,
+        "samples": 72,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.001953125,
+          0.001953125,
+          1.5967008266670746e-06,
+          123,
+          "R1K1",
+          1,
+          "K",
+          1,
+          512,
+          0
+        ]
+      },
+      "past_P": {
+        "max_clipping_rate": 0.002199074074074074,
+        "max_code_overshoot": 10.054315723964635,
+        "max_endpoint_occupancy": 0.0025462962962962965,
+        "samples": 36,
+        "total_clipped_over_half_code_elements": 36,
+        "worst_call": [
+          0.002199074074074074,
+          0.0025462962962962965,
+          10.054315723964635,
+          123,
+          "R1K0",
+          128,
+          "V",
+          19,
+          8640,
+          16
+        ]
+      },
+      "past_S_declaration": {
+        "max_clipping_rate": 0.001953125,
+        "max_code_overshoot": 5.0763096197670166e-06,
+        "max_endpoint_occupancy": 0.001953125,
+        "samples": 72,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.001953125,
+          0.001953125,
+          1.5967008266670746e-06,
+          123,
+          "R1K1",
+          1,
+          "K",
+          1,
+          512,
+          0
+        ]
+      }
+    },
+    "u8s16c": {
+      "concat_C": {
+        "max_clipping_rate": 0.00011488970588235294,
+        "max_code_overshoot": 0.0012313919614825863,
+        "max_endpoint_occupancy": 0.0005744485294117647,
+        "samples": 72,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.00011488970588235294,
+          0.00011488970588235294,
+          0.0012313919614825863,
+          456,
+          "R1K1",
+          128,
+          "V",
+          1,
+          8704,
+          0
+        ]
+      },
+      "current_C": {
+        "max_clipping_rate": 0.0,
+        "max_code_overshoot": 0.0,
+        "max_endpoint_occupancy": 0.0,
+        "samples": 96,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.0,
+          0.0,
+          0.0,
+          789,
+          "R1K1",
+          128,
+          "V",
+          0,
+          64,
+          0
+        ]
+      },
+      "current_S_delta": {
+        "max_clipping_rate": 0.015625,
+        "max_code_overshoot": 21.491412044331923,
+        "max_endpoint_occupancy": 0.015625,
+        "samples": 96,
+        "total_clipped_over_half_code_elements": 8,
+        "worst_call": [
+          0.015625,
+          0.015625,
+          21.491412044331923,
+          789,
+          "R1K1",
+          128,
+          "K",
+          1,
+          64,
+          1
+        ]
+      },
+      "past_C": {
+        "max_clipping_rate": 0.0005787037037037037,
+        "max_code_overshoot": 106.6499899679402,
+        "max_endpoint_occupancy": 0.0005787037037037037,
+        "samples": 72,
+        "total_clipped_over_half_code_elements": 30,
+        "worst_call": [
+          0.0005787037037037037,
+          0.0005787037037037037,
+          64.95288303968118,
+          123,
+          "R1K1",
+          128,
+          "K",
+          5,
+          8640,
+          5
+        ]
+      },
+      "past_P": {
+        "max_clipping_rate": 0.0023148148148148147,
+        "max_code_overshoot": 10.054315723964635,
+        "max_endpoint_occupancy": 0.0025462962962962965,
+        "samples": 36,
+        "total_clipped_over_half_code_elements": 38,
+        "worst_call": [
+          0.0023148148148148147,
+          0.0025462962962962965,
+          10.054315723964635,
+          123,
+          "R1K0",
+          128,
+          "V",
+          20,
+          8640,
+          17
+        ]
+      },
+      "past_S_declaration": {
+        "max_clipping_rate": 0.001953125,
+        "max_code_overshoot": 5.0763096197670166e-06,
+        "max_endpoint_occupancy": 0.001953125,
+        "samples": 72,
+        "total_clipped_over_half_code_elements": 0,
+        "worst_call": [
+          0.001953125,
+          0.001953125,
+          1.5967008266670746e-06,
+          123,
+          "R1K1",
+          1,
+          "K",
+          1,
+          512,
+          0
+        ]
+      }
+    }
+  }
+}

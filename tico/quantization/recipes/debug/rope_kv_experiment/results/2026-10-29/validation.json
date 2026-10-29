@@ -1,0 +1,197 @@
+{
+  "artifact_versions": {
+    "explanation": "Editable source module and retained installed distribution metadata have different declared versions; actual source SHA/digest identify executed runtime.",
+    "runtime_source": "279ea8cedc1e8c52b69d5341f6614f760b1171e8",
+    "tico_distribution_metadata": "0.1.0",
+    "tico_module": "0.2.0"
+  },
+  "assets": {
+    "huggingface_network_allowed": false,
+    "matches": 0,
+    "patterns": [
+      "safetensors",
+      "tokenizer.json",
+      "gemma*.bin/json",
+      "wikitext",
+      "parquet"
+    ],
+    "searched_roots": [
+      "${WORKSPACE_ROOT}",
+      "/mnt",
+      "/opt"
+    ],
+    "secrets_configured": false,
+    "status": "ASSET_UNAVAILABLE"
+  },
+  "cache_clipping_supplement": {
+    "command": "source .venv/bin/activate && OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python ${ARTIFACT_ROOT}/audit/trace_cache_clipping.py > ${ARTIFACT_ROOT}/audit/cache-clipping.log 2>&1",
+    "exit_code": 0,
+    "hashes": {
+      "cache-clipping.json": "dd1c22885a0122204cd08ec3173ff8e0b5bb30492ee55e2c064d8fad2e4d37fe",
+      "cache-clipping.log": "09ec8fcfecf31ee61e2966237d8ed83abd976a929241a4d4b593ccb8b648f699",
+      "trace_cache_clipping.py": "3798bf4f873eb71c3b20b407272934e7d70da71757d38897e72be5d4e7fa69c7"
+    },
+    "manifest": "cache-clipping-summary.json",
+    "scope": "Per-call valid-only eager clipping at steps0,1,32,128, all24 variants reconstructed with exact qparams/state and96 outputs matching main; not full128-step clipping aggregate.",
+    "source_commit": "279ea8cedc1e8c52b69d5341f6614f760b1171e8"
+  },
+  "commands": [
+    {
+      "command": "python -m unittest test.quantization.wrapq.wrappers.gemma4.test_quant_text_attention test.quantization.wrapq.wrappers.gemma4.test_attention_rope_options test.quantization.wrapq.wrappers.gemma4.test_past_kv_observers test.quantization.wrapq.wrappers.gemma4.test_kv_cache_circle test.quantization.wrapq.wrappers.gemma4.test_quant_text_attention_export test.quantization.recipes.adapters.test_gemma4_decode_calibration_integration -v",
+      "exit_code": 0,
+      "log": "gemma4-regression.log",
+      "tests": 79
+    },
+    {
+      "command": "python -m tico.quantization.examples.inspector --config tico/quantization/examples/configs/wrapper_smoke.yaml --mode wrapper-smoke --case gemma4_text_attention_prefill --export circle --output-dir ARTIFACT_ROOT/audit/smoke-prefill --no-plot",
+      "exit_code": 0,
+      "log": "smoke-prefill.log",
+      "scope": "eager quant quality and export; saved runtime parity not established by smoke PASS"
+    },
+    {
+      "command": "python -m unittest discover -s test/quantization/passes -v",
+      "exit_code": 0,
+      "log": "quantization-passes.log",
+      "skipped": 2,
+      "tests": 166
+    },
+    {
+      "command": "python -m tico.quantization.examples.inspector --config tico/quantization/examples/configs/wrapper_smoke.yaml --mode wrapper-smoke --case gemma4_text_attention_decode --export circle --output-dir ARTIFACT_ROOT/audit/smoke-decode --no-plot",
+      "exit_code": 0,
+      "log": "smoke-decode.log",
+      "scope": "eager quant quality and export; saved runtime parity not established by smoke PASS"
+    },
+    {
+      "command": "python -m unittest test.quantization.recipes.test_rope_kv_policy test.quantization.recipes.test_rope_kv_circle test.quantization.recipes.test_rope_kv_metrics test.quantization.recipes.test_rope_kv_frozen_replay test.quantization.recipes.test_rope_kv_runner test.quantization.recipes.test_rope_kv_report -v",
+      "exit_code": 0,
+      "label": "new regression suite (31 tests)",
+      "log": "final-tests.log",
+      "sha256": "7f6e02f7633d17a0dfabd53bb140fee2f528bc340d884f0e6453f7404b229758"
+    },
+    {
+      "command": "python -m unittest test.quantization.recipes.test_rope_kv_frozen_replay test.quantization.recipes.test_rope_kv_runner test.quantization.recipes.test_rope_kv_report -v",
+      "exit_code": 0,
+      "label": "affected tests after final fixes (11 tests)",
+      "log": "final-tests2.log",
+      "sha256": "5340cefb97aa7c381263464725c4d34e361cc063e79c5a23a005de6ef96e84ea"
+    },
+    {
+      "command": "python -m unittest test.unit_test.utils.test_runtime_independence -v",
+      "exit_code": 0,
+      "label": "runtime independence (4 tests)",
+      "log": "runtime-independence.log",
+      "sha256": "485d9af19beb3bb7b64254ebdc0f615acd2ad25fcf5422c8d66943b7f93b5301"
+    },
+    {
+      "command": "lintrunner --revision 54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "exit_code": 0,
+      "label": "formatting and static checks against actual base",
+      "log": "format-final2.log",
+      "sha256": "4f68256e401c43c770730db3d9d1f5db51273f066c0c9ceea137fb2261d42b3d"
+    },
+    {
+      "command": "python -m mypy tico/quantization/recipes/debug/rope_kv_experiment test/quantization/recipes/test_rope_kv*.py --follow-imports=silent",
+      "exit_code": 0,
+      "label": "mypy entire new source/tests",
+      "log": "mypy-final.log",
+      "sha256": "8f3f4c0ebcb835e848682f2c6610a1bf32c86a993bdb626d9ff36e3a49408398"
+    }
+  ],
+  "fidelity_diagnosis": {
+    "all_matched_boundary_dtype_scale_zp_equal": true,
+    "command": "source .venv/bin/activate && OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python ${ARTIFACT_ROOT}/audit/trace_prefill_fidelity.py > ${ARTIFACT_ROOT}/audit/fidelity-trace.log 2>&1",
+    "conclusion": {
+      "affine456": "Sine ABI inputs exact. K-projection inputs and dequantized weights agree. Eager raw/scale 63.4999886, NumPy raw/scale63.5000076; first quantized divergence explains downstream K norm/RoPE/cache delta difference. Attention output and V delta exact.",
+      "limits": "Diagnoses these two prefills; no blanket bitexact-runtime or domainloss absence claim for every replay, recurrent step, policy, or backend.",
+      "mixed123": "Two sine inputs are exactly at scaled +/-17470.5; eager ties-to-even and runtime ties-away encode differently. Final FC inputs and dequantized weights agree; NumPy raw accumulation crosses output code boundary relative to Torch F.linear, explaining sole output difference. Torch matmul on same Circle operands equals eager raw; Torch quantizing NumPy raw equals Circle output. Cache outputs exact."
+    },
+    "exit_code": 0,
+    "hashes": {
+      "fidelity-trace.json": "547511435602375552f9d4280e4738dc97ce43a8ac29950b0d93b4c513995315",
+      "fidelity-trace.log": "6f0e1a17a7cd00f2805e36320705501cdbe96d206103d039f792eecff4266e1e",
+      "trace_prefill_fidelity.py": "9976dda5aafb7db682c0dcded0be52ee7fa066f2aafa21e88daac4a84a955e19"
+    },
+    "scope": "two saved prefill artifacts: u8s16c seed123 R0K1 and affine seed456 R0K1; independently reconstruct sameFPweights and calibration; read-only runtime trace, no source changes",
+    "source_commit": "279ea8cedc1e8c52b69d5341f6614f760b1171e8",
+    "tico_distribution_version": "0.1.0",
+    "tico_module_version": "0.2.0"
+  },
+  "generated_report_files": {
+    "artifact-manifest.json": "a4c8152719c81550d467ef4e66eeb6476cb5ac631ee9cc9c0ffc6d23e4fd00ce",
+    "detail.json": "e832777fd367ddf10d1f3abf951a34e256bf60c308f3d1490f2e83b0288dacfd",
+    "report.md": "a4795d0edc21c98c30bd3f08da09c9850352bbb15f829e2cf127829d403495bb",
+    "summary.json": "9b2ae594ad9c0cf3169eaa490ecaa8a6414f18ed40c1cf91d768435736b27586"
+  },
+  "initial_failures_preserved": [
+    {
+      "command": "./ccex format --diff-only --no-apply-patches",
+      "exit_code": 128,
+      "log": "format-check.log",
+      "reason": "local main ref absent; created base-anchored main for helper"
+    },
+    {
+      "command": "./ccex format --diff-only --no-apply-patches",
+      "exit_code": 143,
+      "log": "format-check2.log",
+      "reason": "interrupted broad stale-origin/main scan; used explicit actual base for narrow lintrunner"
+    },
+    {
+      "command": "lintrunner --revision 54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "exit_code": 1,
+      "logs": [
+        "format-targeted.log",
+        "format-final.log"
+      ],
+      "reason": "test typing and pylint inference issues fixed without changing tolerance"
+    },
+    {
+      "command": "initial main run",
+      "log": "main-source244a641-interrupted.log",
+      "process_returncode": -15,
+      "reason": "interrupted to rerun final corrected source; partial metrics excluded",
+      "shell_exit_code": 241
+    }
+  ],
+  "interpretation_artifacts": {
+    "cache-clipping-manifest.json": "690070bf69d03cf7d3e22acbcc17cf476aee1f96cfd38a98d735f2359e7a2fa7",
+    "fidelity-diagnosis.json": "580921593a5513254cfcf2fadf415ab1696d4e27aa2dd22dcacf0ee7feb09679",
+    "long-context-interpretation.json": "68a66e8f0347d8c7d3c2ffd522e1a2c586f03fa3cdd336e413ce36ce80fdbd82",
+    "main-interpretation.json": "346e87fe761268f2d431122d0e4fd5795c2bbd14bf3fbeaf141f4f4de175b4e1"
+  },
+  "main_execution": {
+    "command": [
+      "${REPO_ROOT}/.venv/bin/python",
+      "-m",
+      "tico.quantization.recipes.debug.rope_kv_experiment.runner",
+      "--output",
+      "${ARTIFACT_ROOT}/main"
+    ],
+    "environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    },
+    "interpretation": "All24 measurements completed; CLI1 preserves strict saved-artifact fidelity mismatches (38/48PASS,10/48FAIL), not an export/NaN/missing-runtime error.",
+    "returncode": 1,
+    "seconds": 425.8987870369999,
+    "source_commit": "279ea8cedc1e8c52b69d5341f6614f760b1171e8"
+  },
+  "portable_copy": "Only machine-specific path prefixes replaced with REPO_ROOT/ARTIFACT_ROOT placeholders. Numerical measurements and hashes preserved. detail.json and raw artifacts remain external.",
+  "report_execution": {
+    "command": "python -m tico.quantization.recipes.debug.rope_kv_experiment.report --input ${ARTIFACT_ROOT}/main --output ${ARTIFACT_ROOT}/main-report",
+    "exit_code": 0
+  },
+  "scope": "No production wrappers/common passes modified. No Llama/Qwen3-VL full benchmark needed. Existing exporter regression covers domain controls.",
+  "source_commit": "279ea8cedc1e8c52b69d5341f6614f760b1171e8",
+  "upstream_refresh": {
+    "command": "git ls-remote https://github.com/Samsung/TICO.git refs/heads/main",
+    "error": "HTTP503 upstream connect error / remote refused stream reset",
+    "exit_code": 128,
+    "later_root_observation": {
+      "command": "git ls-remote https://github.com/Samsung/TICO.git refs/heads/main",
+      "exit_code": 0,
+      "main_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "source": "successful root-agent observation; initial audit503 preserved separately"
+    },
+    "local_origin_main": "3768004"
+  }
+}
