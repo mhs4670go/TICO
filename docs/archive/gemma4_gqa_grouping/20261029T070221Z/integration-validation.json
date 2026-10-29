@@ -1,0 +1,138 @@
+{
+  "full_gemma4": {
+    "base": {
+      "tests_run": 422,
+      "pass": 354,
+      "fail": 0,
+      "skip": 68,
+      "seconds": 568.329,
+      "log": "base-gemma4.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "a": {
+      "tests_run": 429,
+      "pass": 361,
+      "fail": 0,
+      "skip": 68,
+      "seconds": 444.943,
+      "log": "a-gemma4.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "b": {
+      "tests_run": 431,
+      "pass": 363,
+      "fail": 0,
+      "skip": 68,
+      "seconds": 442.771,
+      "log": "b-gemma4.log",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "related": {
+    "base": {
+      "tests_run": 61,
+      "pass": 61,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 291.477,
+      "log": "base-related-clean.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "a": {
+      "tests_run": 61,
+      "pass": 61,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 383.036,
+      "log": "a-related.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "b": {
+      "tests_run": 61,
+      "pass": 61,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 375.102,
+      "log": "b-related.log",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "internal_attention": {
+    "base": {
+      "tests_run": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 0.15,
+      "log": "base-internal-attention.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "a": {
+      "tests_run": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 0.135,
+      "log": "a-internal-attention.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "b": {
+      "tests_run": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 0.13,
+      "log": "b-internal-attention.log",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "new_integration": {
+    "a": {
+      "tests_run": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 0.593,
+      "log": "a-integration.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "b": {
+      "tests_run": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "seconds": 0.823,
+      "log": "b-integration.log",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "commands": {
+    "full_gemma4": "python -m unittest discover -s test/quantization/wrapq/wrappers/gemma4 -v",
+    "related": "python -m unittest test.quantization.config.test_gemma4_attention test.quantization.wrapq.test_lifecycle test.quantization.wrapq.test_frozen_state_export test.quantization.passes.test_split_concat_domain_export test.quantization.passes.test_mixed_dtype_concat_export -v",
+    "internal_attention": "RUN_INTERNAL_TESTS=1 python -m unittest test.quantization.wrapq.wrappers.gemma4.test_quantize_text_attention -v",
+    "new_integration": "python -m unittest test.quantization.wrapq.wrappers.gemma4.test_grouped_attention_integration -v"
+  },
+  "environment": {
+    "cpu_threads": 1,
+    "dtype": "float32",
+    "isolation": "separate process per worktree; cwd and PYTHONPATH set to that worktree"
+  },
+  "notes": [
+    "Full Gemma suites skip68 pre-existing internal smoke tests because RUN_INTERNAL_TESTS unset; no Gemma import skips.",
+    "One relevant internal tiny prepare/calibrate/convert attention smoke explicitly enabled and passed all3.",
+    "Initial pre-fix A/B full runs interrupted; excluded. Final full runs imported stable product after per-tensor QUANT grouped output fix.",
+    "B test-only followup retaining real output projection occurred during full run; final focused grouping rerun reported separately by variant agent.",
+    "BASE initial related log collided with parent process; both interrupted, only unique clean rerun included."
+  ]
+}

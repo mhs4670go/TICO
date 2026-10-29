@@ -1,0 +1,17 @@
+{
+  "base": {
+    "tico": "/workspace/gemma4-base/tico/__init__.py",
+    "attention": "/workspace/gemma4-base/tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+    "torch": "2.13.0+cpu"
+  },
+  "a": {
+    "tico": "/workspace/gemma4-a/tico/__init__.py",
+    "attention": "/workspace/gemma4-a/tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+    "torch": "2.13.0+cpu"
+  },
+  "b": {
+    "tico": "/workspace/gemma4-b/tico/__init__.py",
+    "attention": "/workspace/gemma4-b/tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+    "torch": "2.13.0+cpu"
+  }
+}
