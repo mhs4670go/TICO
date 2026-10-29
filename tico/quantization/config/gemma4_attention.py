@@ -41,8 +41,8 @@ class Gemma4TextAttentionOptions:
     ----------
     layout : AttentionLayout
         ``"batched"`` uses a Hugging Face-like batched GQA graph and is useful
-        for reference evaluation. ``"unrolled"`` emits one rank-3 attention
-        matmul per query head and avoids KV-head broadcasting for NPU export.
+        for reference evaluation. ``"unrolled"`` keeps per-query-head QK and Softmax, then groups PV
+        query rows sharing a KV head in rank-3 matmuls for NPU export.
     rope : RopeConvention
         ``"hf"`` consumes ordinary sine tables and uses ``[-x2, x1]``.
         ``"pre_negated_sin"`` consumes sine tables with their first half

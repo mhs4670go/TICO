@@ -53,8 +53,8 @@ class QuantGemma4TextAttention(QuantModuleBase):
 
     - ``batched`` uses a Hugging Face-like batched GQA implementation and is
       intended for reference evaluation.
-    - ``unrolled`` emits rank-3 attention matmuls for every query head and avoids
-      head-axis broadcasting for static NPU export.
+    - ``unrolled`` keeps QK/Softmax per query head and groups PV query rows
+      sharing a KV head, using rank-3 matmuls without KV broadcasting.
 
     The dense E2B scope supports regular K/V-owning layers, global layers where
     ``attention_k_eq_v=True``, and shared-KV consumer layers. Dynamic runtime
@@ -1020,7 +1020,7 @@ class QuantGemma4TextAttention(QuantModuleBase):
         value_states: torch.Tensor,
         attention_mask: torch.Tensor,
     ) -> tuple[torch.Tensor, torch.Tensor]:
-        """Run NPU-friendly attention with one rank-3 graph per query head."""
+        """Keep per-head QK/Softmax and share each rank-3 PV across a KV group."""
         batch_size, _, q_len, num_kv_heads = self._validate_attention_shapes(
             query_states=query_states,
             key_states=key_states,
@@ -1037,6 +1037,7 @@ class QuantGemma4TextAttention(QuantModuleBase):
             key_i = key_states[:, kv_idx, :, :]
             value_i = value_states[:, kv_idx, :, :]
 
+            group_weights: list[torch.Tensor] = []
             for rep_idx in range(kv_rep):
                 query_idx = kv_idx * kv_rep + rep_idx
                 query_i = query_states[:, query_idx, :, :]
@@ -1056,9 +1057,35 @@ class QuantGemma4TextAttention(QuantModuleBase):
                     )
                 attn_i = self._fq(attn_i, self.obs_softmax)
 
-                out_i = self._fq(attn_i @ value_i, self.obs_attn_out)
                 attn_weights_parts.append(attn_i)
-                attn_out_parts.append(out_i)
+                group_weights.append(attn_i)
+
+            # Concatenate query rows in head-major order; K/V are never repeated.
+            p_group = (
+                group_weights[0] if kv_rep == 1 else torch.cat(group_weights, dim=1)
+            )
+            out_group = p_group @ value_i
+            group_output_quant = (
+                self._mode is Mode.QUANT
+                and isinstance(self.obs_attn_out, AffineObserverBase)
+                and self.obs_attn_out.channel_axis is None
+            )
+            if kv_rep != 1 and group_output_quant:
+                # A frozen per-tensor grid is independent of row grouping. Mark
+                # the MatMul output before slicing so Circle retains its domain.
+                out_group = self._fq(out_group, self.obs_attn_out)
+            if kv_rep == 1:
+                attn_out_parts.append(self._fq(out_group, self.obs_attn_out))
+            else:
+                # Preserve the original per-head observation order and shape,
+                # including EMA updates, without undoing the grouped MatMul.
+                for rep_idx in range(kv_rep):
+                    out_i = out_group[:, rep_idx * q_len : (rep_idx + 1) * q_len, :]
+                    attn_out_parts.append(
+                        out_i
+                        if group_output_quant
+                        else self._fq(out_i, self.obs_attn_out)
+                    )
 
         attn_weights = self._fq(
             torch.stack(attn_weights_parts, dim=1),
