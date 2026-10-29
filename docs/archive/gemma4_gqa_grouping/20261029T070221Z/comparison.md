@@ -224,7 +224,7 @@ PYTHON_BIN="$PYTHON_BIN" bash "$TOOLS/run_exports.sh" \
 "$PYTHON_BIN" "$TOOLS/summarize_benchmarks.py" "$OUT/benchmark" --output "$OUT/benchmark_summary"
 ```
 
-`run_exports.sh` components were executed individually in this run and the combined script was syntax checked. The export collector records per-stage errors and may exit0 after collecting failures; inspect the runtime status fields, not just process status. Raw detailed graph/tensor records, Circle binaries/checkpoints and timing samples are intentionally external to Git; the scripts regenerate them.
+`run_exports.sh` components were executed individually in this run and the combined script was syntax checked. The export collector records per-stage errors and may exit0 after collecting failures; inspect the runtime status fields, not just process status. Raw detailed graph/tensor records, checkpoints and timing samples remain external to Git. Primary O1 Circle snapshots were subsequently added under `circle_artifacts/` following the explicit follow-up request; the scripts regenerate them.
 
 Tests (run separately from benchmarks in each worktree, with cwd/PYTHONPATH set as above):
 
@@ -265,3 +265,7 @@ done
 ```
 
 Keep compiler reports for each variant and compare shapes/kernel allocation/latency using the installed toolchain documentation. No unverified extra compiler flags are assumed.
+
+## Follow-up: committed Circle snapshots
+
+The user subsequently requested pushing the exported Circle binaries. Each independent branch now contains its own10 primary O1 artifacts and the common BASE10 under [circle_artifacts](circle_artifacts/README.md). The files were copied from this measured run, structurally reverified, and checked against recorded hashes. The per-branch manifest preserves known FP runtime failures and does not claim new runtime/NPU validation. See SHA256SUMS for byte verification. No product code or measured implementation SHA changed.

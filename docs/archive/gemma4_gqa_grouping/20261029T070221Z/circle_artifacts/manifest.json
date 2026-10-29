@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "run_id": "20261029T070221Z",
+  "branch_variant": "a",
+  "source_report_commit": "e725091231e1708d67116241adfa3433dde94f47",
+  "kind": "byte-identical snapshots of existing exports; no regeneration",
+  "artifact_count": 20,
+  "total_bytes": 1465064,
+  "validation_source": "../export_summary.json",
+  "schema_reverified_after_followup": true,
+  "runtime_validation": "Uses previous recorded runtime results; runtime not rerun for this binary-only addition. EXECUTED quantized runtime is FAKE_QUANTIZE semantic reference, not NPU execution.",
+  "npu_compile": "NOT_RUN: compiler unavailable",
+  "omitted": "BASE O0 diagnostic is not a primary comparison artifact and is not included.",
+  "artifacts": [
+    {
+      "path": "base/custom/h24_decode_fp.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 161988,
+      "sha256": "6ad3ac4e02ecb4ac69ebe0d08c2077bf698f543ddbf638f1ddeb650c776e4737",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "FAIL",
+        "error": "operator 38 (BATCH_MATMUL) output 0 has shape [1, 1, 1, 4], but tensors[53] 'tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_1' FLOAT32[1, 1, 4] (activation) requires rank 3.\n"
+      }
+    },
+    {
+      "path": "base/custom/h24_decode_quant.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 105048,
+      "sha256": "2cfcc436bb87b7f9539899625634be4679fd728dcafdf1007db40f557a7a1640",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "base/custom/h24_prefill_fp.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 161600,
+      "sha256": "067fee146406e6ffe5ea48dc75615ff7d5f9d08f7473320128581aed704275ba",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "FAIL",
+        "error": "operator 36 (BATCH_MATMUL) output 0 has shape [1, 1, 3, 4], but tensors[49] 'tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_1' FLOAT32[1, 3, 4] (activation) requires rank 3.\n"
+      }
+    },
+    {
+      "path": "base/custom/h24_prefill_quant.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 103992,
+      "sha256": "299e41b51c59d48fd4c19bf2a8073767fe5cffcd2ea0f78297ea3ee79b65c298",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "base/inspector-decode/gemma4_text_attention_decode.q.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 2,
+        "Hkv": 2,
+        "D": 32,
+        "G": 1
+      },
+      "attention_mode": "decode",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 41056,
+      "sha256": "720664fb3a15d7977efcac4ce271992d7587a553ba962ac984fea484de29d343",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "base/inspector-prefill/gemma4_text_attention_prefill.q.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 2,
+        "Hkv": 2,
+        "D": 32,
+        "G": 1
+      },
+      "attention_mode": "prefill",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 39520,
+      "sha256": "eda8192d35ac5b52b06ba4c2547acf9f73c2ac8cdb4acbb884791812cd1676c6",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "base/tiny/h4_decode_fp.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 21824,
+      "sha256": "2f29f1d0a5e274e29141052ac10bb5b556da2b21abfbc8e0b4e0e64ac4055ad4",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "FAIL",
+        "error": "operator 38 (BATCH_MATMUL) output 0 has shape [1, 1, 1, 4], but tensors[53] 'tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_1' FLOAT32[1, 1, 4] (activation) requires rank 3.\n"
+      }
+    },
+    {
+      "path": "base/tiny/h4_decode_quant.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 26992,
+      "sha256": "8daf78087aef240c45e27e3957e88e4729e1507d12337e89c814dcc90a5ba1ae",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "base/tiny/h4_prefill_fp.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 21436,
+      "sha256": "805e1f4562aca5322e37874e2f86bfc5cfa0a51f61755cbe257694672af90928",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "FAIL",
+        "error": "operator 36 (BATCH_MATMUL) output 0 has shape [1, 1, 3, 4], but tensors[49] 'tico.quantization.wrapq.wrappers.gemma4.quant_text_attention.QuantGemma4TextAttention::bmm_1' FLOAT32[1, 3, 4] (activation) requires rank 3.\n"
+      }
+    },
+    {
+      "path": "base/tiny/h4_prefill_quant.circle",
+      "implementation": "base",
+      "implementation_sha": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 25936,
+      "sha256": "e4f616e66a0e66f258de50c8ee41cf86bbca432bde1ed59879b2b2beebdb46f0",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "a/custom/h24_decode_fp.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 171344,
+      "sha256": "6064be16da196cb7cd8955ab84a68a6e68eccb38cab3027045c7b5c06466cefd",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "NATIVE"
+      }
+    },
+    {
+      "path": "a/custom/h24_decode_quant.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 114936,
+      "sha256": "b3b02093a4029fb34dc74856b61cacf2724adc4c9a46f7a2eb4b7d0b0b60b782",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "a/custom/h24_prefill_fp.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 170956,
+      "sha256": "61949bd45e41a6f5d50d92af8c9e8767ce126e8927230bf76ae1281cb6553d1d",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "NATIVE"
+      }
+    },
+    {
+      "path": "a/custom/h24_prefill_quant.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 24,
+        "Hkv": 8,
+        "G": 3,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 113880,
+      "sha256": "0107e321c034ffa183c1243273353b51e7dbb3cc2f9721630afb87f66ae9a70c",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "a/inspector-decode/gemma4_text_attention_decode.q.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 2,
+        "Hkv": 2,
+        "D": 32,
+        "G": 1
+      },
+      "attention_mode": "decode",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 41056,
+      "sha256": "720664fb3a15d7977efcac4ce271992d7587a553ba962ac984fea484de29d343",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "a/inspector-prefill/gemma4_text_attention_prefill.q.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 2,
+        "Hkv": 2,
+        "D": 32,
+        "G": 1
+      },
+      "attention_mode": "prefill",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 39520,
+      "sha256": "eda8192d35ac5b52b06ba4c2547acf9f73c2ac8cdb4acbb884791812cd1676c6",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "a/tiny/h4_decode_fp.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 23824,
+      "sha256": "5f1b248711e960bae22ce0c306d73271a881bcd45c69fb0d3b9bdec50695dbc1",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "NATIVE"
+      }
+    },
+    {
+      "path": "a/tiny/h4_decode_quant.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 1,
+        "S": 8,
+        "D": 4
+      },
+      "attention_mode": "decode",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 28888,
+      "sha256": "2d794c057f77bd79fc5248e37fc302857ef02783a62290a9ff16aa7be75408ba",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    },
+    {
+      "path": "a/tiny/h4_prefill_fp.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "FP32_NO_QUANT",
+      "optimization": "default O1",
+      "bytes": 23436,
+      "sha256": "fa643113f9c3df1412e6121724215cf217a08d8520ea5f2eb75d15ca29b24942",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "NATIVE"
+      }
+    },
+    {
+      "path": "a/tiny/h4_prefill_quant.circle",
+      "implementation": "a",
+      "implementation_sha": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+      "fixture": {
+        "Hq": 4,
+        "Hkv": 2,
+        "G": 2,
+        "B": 1,
+        "T": 3,
+        "S": 3,
+        "D": 4
+      },
+      "attention_mode": "prefill",
+      "precision": "QUANT",
+      "optimization": "default O1",
+      "bytes": 27832,
+      "sha256": "0442689b3ca404648acda18ab4ae75746488f4831e7c49c9a682498ae444ae32",
+      "schema_reverification": "PASS",
+      "prior_torch_export": "PASS",
+      "prior_circle_reference_runtime": {
+        "status": "EXECUTED",
+        "execution_mode": "FAKE_QUANTIZE"
+      }
+    }
+  ]
+}

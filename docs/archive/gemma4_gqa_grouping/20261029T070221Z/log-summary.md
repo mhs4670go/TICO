@@ -41,7 +41,7 @@ The full discovery test count differs from the eventual final test count: test d
 
 Excluded runs: initial pre-fix A/B full discoveries were interrupted and restarted; a duplicate A post-fix cache-only suite was stopped with143 because stable full discovery covered it; a BASE related-log filename collision was resolved by interrupting both initial related runs and a unique clean rerun. The initial A KV-only test exposed real floating grouped PV/qparam propagation and redundant-Quantize issues before the final marker fix; these are not presented as passing results. Final full cache tests pass. Existing FP serialized Softmax rank failures remain recorded in export_summary.json and are not hidden by the collectors' successful process exit.
 
-Large Circle/checkpoint/tensor dumps and raw logs are intentionally not committed. Export metadata includes hashes; all raw artifacts can be regenerated with the scripts beside this file.
+Primary small O1 Circle snapshots were subsequently committed at the explicit follow-up request. Checkpoint/tensor dumps and raw logs remain external. Export metadata includes hashes; all raw artifacts can be regenerated with the scripts beside this file.
 
 Final report-script Pylint: `python -m pylint --jobs=1 --rcfile=.pylintrc docs/archive/gemma4_gqa_grouping/20261029T070221Z/*.py`, exit0,10.00/10 (all8 final Python scripts).
 
@@ -52,3 +52,5 @@ Final report-script static checks after annotation-only fixes:
 - Initial combined report-script selected MYPY run exited1 for missing heterogeneous JSON/Counters annotations and registry return narrowing; all were corrected without ignores or runtime/metric changes.
 - A separate direct mypy invocation on numerical scripts reported4 diagnostics in unmodified imported `tico/utils/mx` code. The repository's normal selected-file adapter filters diagnostics outside selected paths; its final selected-file checks pass. This is not a full-tree type-check claim.
 - Reproduction scripts changed only type annotations/casts after measurement; timed code and metric values are unchanged. `run_exports.sh` passes `bash -n`. Final JSON parsing/Python syntax and byte-identical report-file checks across branches pass.
+
+Follow-up artifact addition:30 distinct primary Circle source files passed CircleDocument.verify(); custom/tiny24 hashes and sizes matched export_summary.json. Each branch contains20 byte-identical copied files with a SHA256SUMS and manifest. No model tests, runtime inference or benchmark were rerun for this addition.
