@@ -21,4 +21,4 @@ PYTHON_BIN=/path/to/venv/bin/python bash /path/to/report/run_exports.sh \
   /path/to/base-worktree /path/to/a-worktree /path/to/b-worktree /path/to/new-artifacts
 ```
 
-The main harness captures per-stage failures in its JSON while exiting zero when it finishes collecting them; successful process exit is not a runtime pass. `run_exports.sh` has been syntax checked; the component commands were executed individually during this run. Large Circle files and detailed raw graph records are local artifacts and should not be committed.
+The main harness captures per-stage failures in its JSON while exiting zero when it finishes collecting them; successful process exit is not a runtime pass. `run_exports.sh` has been syntax checked; the component commands were executed individually during this run. The user subsequently requested committing the small primary O1 Circle snapshots; they are now under circle_artifacts/ with hashes and per-file validation status. Detailed raw graph records remain local artifacts.
