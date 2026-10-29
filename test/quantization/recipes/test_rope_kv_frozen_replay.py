@@ -79,7 +79,7 @@ class TestRoPEKVFrozenReplay(unittest.TestCase):
                 1,
             )
             with np.load(root / "frozen-replay.npz", allow_pickle=False) as archive:
-                self.assertEqual(archive["past_k"].dtype, np.uint8)
+                self.assertEqual(torch.from_numpy(archive["past_k"]).dtype, torch.uint8)
                 for variant in ("R0_pastP_removed", "R0_currentS_removed", "R0K1"):
                     self.assertFalse(np.array_equal(archive["R0K0"], archive[variant]))
             metric = {

@@ -27,7 +27,7 @@ Output directories must be new. `--no-circle` explicitly records NOT_RUN.
 policy. `u8s16c` changes activations/compute to INT16 per-tensor symmetric while
 retaining UINT8 storage and the same weight policy. No GPTQ or rotation is used.
 Models have real HF Gemma4 attention implementations, smoke tiny geometry
-(hidden 64, two Q/KV heads, head dimension 32), random weights and no LM head.
+(hidden 64, two Q/KV heads, head dimension 32), fixed seed-123 random weights and no LM head. The three seeds vary only the calibration/evaluation streams; the FP weights stay identical across all variants and seeds.
 These metrics measure local attention error, not pretrained language quality.
 Inputs are deterministic Gaussian hidden traces with consistent analytic RoPE;
 they are independent of the attention output, as in an attention replay.

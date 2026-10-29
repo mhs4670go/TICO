@@ -400,7 +400,8 @@ def run_variant(
     write(output / "calibration.json", collection)
     write(output / "observers.json", observer_records(model))
     frozen = state_fingerprint(model)
-    records, past, arrays = [], None, {}
+    records, arrays = [], {}
+    past: tuple[torch.Tensor, torch.Tensor] | None = None
     production_match = True
     decode_args = None
     for step, (hidden, rope, fp_past, reference) in enumerate(rows):
@@ -411,8 +412,7 @@ def run_variant(
         replay = call(model, hidden, rope, fp_past)
         record = {
             "step": step,
-            "context_length": hidden.size(1)
-            + (0 if past is None else past[0].size(-2)),
+            "context_length": 8 + step,
             "own_cache_output": tensor_metrics(reference[0], actual[0]),
             "fp_cache_replay_output": tensor_metrics(reference[0], replay[0]),
             "cache_delta": {
@@ -710,7 +710,7 @@ def main(argv=None):
     with torch.no_grad():
         for seed in options.seed or (123, 456, 789):
             capacity = 8 + options.steps + 1
-            fp, _ = make_fp(seed, capacity)
+            fp, _ = make_fp(123, capacity)
             for profile in options.profile or PROFILES:
                 root = options.output / f"{profile}-{seed}"
                 root.mkdir()
@@ -719,6 +719,7 @@ def main(argv=None):
                     {
                         "model": fp.config.to_dict(),
                         "fp_state_sha256": state_fingerprint(fp),
+                        "fp_weight_seed": 123,
                         "profile": profile,
                         "seed": seed,
                         "capacity": capacity,

@@ -334,9 +334,22 @@ def build_summary(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str,
     profiles, seeds = _paired_selection(records, environment["command"])
     effects = []
     common_grids = []
+    configurations = []
     for profile in profiles:
         for seed in seeds:
             group_root = root / f"{profile}-{seed}"
+            config = _read(group_root / "config.json")
+            configurations.append(
+                {
+                    "profile": profile,
+                    "seed": seed,
+                    "fp_state_sha256": config["fp_state_sha256"],
+                    "config_file_sha256": _hash(group_root / "config.json"),
+                    "calibration_tokens": config["calibration_tokens"],
+                    "evaluation_tokens": config["evaluation_tokens"],
+                    "fp_weight_seed": config["fp_weight_seed"],
+                }
+            )
             if _read(group_root / "noquant-reference.json")["status"] != "PASS":
                 raise ValueError("Independent NO_QUANT reference did not pass.")
             values = _read(group_root / "frozen-replay.json")
@@ -441,6 +454,10 @@ def build_summary(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str,
             decompositions.append(
                 {"profile": profile, "seed": seed, "evidence": decomposition}
             )
+    if len({row["fp_state_sha256"] for row in configurations}) != 1:
+        raise ValueError(
+            "FP weights/state differ across the paired experimental groups."
+        )
     aggregate_effects = {
         profile: {
             key: _stats(
@@ -486,7 +503,7 @@ def build_summary(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str,
             "decode_steps": records[0]["steps"],
             "replication": {
                 "seed_count": len(seeds),
-                "population": "independently initialized tiny real Gemma4 attention wrappers; fixed hidden traces; no language-model hidden feedback",
+                "population": "one fixed seed-123 random-weight Gemma4 attention fixture; independent calibration/evaluation data seeds; no language-model hidden feedback",
                 "statistical_claim": "descriptive paired seed results; no significance claim",
             },
             "pretrained_cached_nll_ppl": {
@@ -499,6 +516,7 @@ def build_summary(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str,
                 "aggregate": _aggregate(records),
                 "records": records,
                 "common_qparams": common_grids,
+                "configurations": configurations,
                 "paired_effects": effects,
                 "aggregate_effects": aggregate_effects,
             },

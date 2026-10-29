@@ -226,6 +226,7 @@ class TestRopeKVRunnerControl(unittest.TestCase):
                     self.assertTrue(torch.equal(left, right))
                 for left, right in zip(outputs[0][2], outputs[1][2]):
                     self.assertTrue(torch.equal(left, right))
+            assert decode is not None
             records = [
                 export_and_check(
                     model.as_export_module("decode").eval(),
