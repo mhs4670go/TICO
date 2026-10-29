@@ -1,0 +1,3282 @@
+{
+  "peir_definition": "max_abs_error / (reference.max-reference.min), denominator=1 when range=0",
+  "peir_units": "fraction and percent (=fraction*100)",
+  "summary_aggregation": "Each worst_case field is maximum across decode/append/batch2 x core/full. case_metrics retain actual per-tensor means, maxima, relative L2, PEIR.",
+  "implementations": {
+    "base": {
+      "environment": {
+        "commit": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+        "dirty": "",
+        "import_path": "/workspace/gemma4-base/tico/__init__.py",
+        "cwd": "/workspace/gemma4-base",
+        "torch": "2.13.0+cpu",
+        "python": "3.12.14",
+        "threads": 1,
+        "interop_threads": 1,
+        "seed": 4670,
+        "dtype": "float32",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+      },
+      "fixture_weights_sha256": "eaca1d046b3bdc4ab14e2c526f8a89ef4ca44b4858586e6fcf7dc99aed90b655",
+      "dataset_digests": {
+        "calibration_sha256": "949dd4cf88137c1335d0a1a600843592f1d860f9d62da6d839e092509c45c798",
+        "evaluation_sha256": "3843d88e0f69775acd71687ea6e05e9261575441565c0d0fd880296d135ffa89"
+      },
+      "no_quant_vs_base": {
+        "output": {
+          "worst_case_max_abs": 0.0,
+          "worst_case_mean_abs": 0.0,
+          "worst_case_relative_l2": 0.0,
+          "worst_case_peir_percent": 0.0
+        },
+        "weights": {
+          "worst_case_max_abs": 0.0,
+          "worst_case_mean_abs": 0.0,
+          "worst_case_relative_l2": 0.0,
+          "worst_case_peir_percent": 0.0
+        }
+      },
+      "policies": {
+        "default": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "independent_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "qparam_differences_vs_base": [],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.minmax",
+            "MinMaxObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        },
+        "minmax": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "independent_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "qparam_differences_vs_base": [],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.minmax",
+            "MinMaxObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        },
+        "ema": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "b088e4a76c00fd8b8801b392c44c2ceb968e5b4d253270d9b76ae89880757582",
+          "independent_qparam_snapshot_sha256": "b088e4a76c00fd8b8801b392c44c2ceb968e5b4d253270d9b76ae89880757582",
+          "qparam_differences_vs_base": [],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.6398009955883026,
+              "worst_case_mean_abs": 0.20291131472913548,
+              "worst_case_relative_l2": 0.6002098200274125,
+              "worst_case_peir_percent": 31.849582314860474
+            },
+            "weights": {
+              "worst_case_max_abs": 0.8075700998306274,
+              "worst_case_mean_abs": 0.02938854704675644,
+              "worst_case_relative_l2": 0.5309647446931482,
+              "worst_case_peir_percent": 80.7939752670616
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.6398009955883026,
+              "worst_case_mean_abs": 0.20291131472913548,
+              "worst_case_relative_l2": 0.6002098200274125,
+              "worst_case_peir_percent": 31.849582314860474
+            },
+            "weights": {
+              "worst_case_max_abs": 0.8075700998306274,
+              "worst_case_mean_abs": 0.02938854704675644,
+              "worst_case_relative_l2": 0.5309647446931482,
+              "worst_case_peir_percent": 80.7939752670616
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "logits": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5064504146575928,
+              "zero_point": 246,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "softmax": {
+              "scale": 0.0036337205674499273,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out": {
+              "scale": 0.011763451620936394,
+              "zero_point": 115,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003917803522199392,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.018462875857949257,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.ema",
+            "EMAObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "logits": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5064504146575928,
+              "zero_point": 246,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "softmax": {
+              "scale": 0.0036337205674499273,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out": {
+              "scale": 0.011763451620936394,
+              "zero_point": 115,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003917803522199392,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.018462875857949257,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "a": {
+      "environment": {
+        "commit": "a2bec27766e08a3c79754b61f60e657a7a1b24dd",
+        "dirty": "",
+        "import_path": "/workspace/gemma4-a/tico/__init__.py",
+        "cwd": "/workspace/gemma4-a",
+        "torch": "2.13.0+cpu",
+        "python": "3.12.14",
+        "threads": 1,
+        "interop_threads": 1,
+        "seed": 4670,
+        "dtype": "float32",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+      },
+      "fixture_weights_sha256": "eaca1d046b3bdc4ab14e2c526f8a89ef4ca44b4858586e6fcf7dc99aed90b655",
+      "dataset_digests": {
+        "calibration_sha256": "949dd4cf88137c1335d0a1a600843592f1d860f9d62da6d839e092509c45c798",
+        "evaluation_sha256": "3843d88e0f69775acd71687ea6e05e9261575441565c0d0fd880296d135ffa89"
+      },
+      "no_quant_vs_base": {
+        "output": {
+          "worst_case_max_abs": 0.0,
+          "worst_case_mean_abs": 0.0,
+          "worst_case_relative_l2": 0.0,
+          "worst_case_peir_percent": 0.0
+        },
+        "weights": {
+          "worst_case_max_abs": 0.0,
+          "worst_case_mean_abs": 0.0,
+          "worst_case_relative_l2": 0.0,
+          "worst_case_peir_percent": 0.0
+        }
+      },
+      "policies": {
+        "default": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "independent_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "qparam_differences_vs_base": [],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.minmax",
+            "MinMaxObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        },
+        "minmax": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "independent_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "qparam_differences_vs_base": [],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.minmax",
+            "MinMaxObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        },
+        "ema": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "b088e4a76c00fd8b8801b392c44c2ceb968e5b4d253270d9b76ae89880757582",
+          "independent_qparam_snapshot_sha256": "b088e4a76c00fd8b8801b392c44c2ceb968e5b4d253270d9b76ae89880757582",
+          "qparam_differences_vs_base": [],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.6398009955883026,
+              "worst_case_mean_abs": 0.20291131472913548,
+              "worst_case_relative_l2": 0.6002098200274125,
+              "worst_case_peir_percent": 31.849582314860474
+            },
+            "weights": {
+              "worst_case_max_abs": 0.8075700998306274,
+              "worst_case_mean_abs": 0.02938854704675644,
+              "worst_case_relative_l2": 0.5309647446931482,
+              "worst_case_peir_percent": 80.7939752670616
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.6398009955883026,
+              "worst_case_mean_abs": 0.20291131472913548,
+              "worst_case_relative_l2": 0.6002098200274125,
+              "worst_case_peir_percent": 31.849582314860474
+            },
+            "weights": {
+              "worst_case_max_abs": 0.8075700998306274,
+              "worst_case_mean_abs": 0.02938854704675644,
+              "worst_case_relative_l2": 0.5309647446931482,
+              "worst_case_peir_percent": 80.7939752670616
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "logits": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5064504146575928,
+              "zero_point": 246,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "softmax": {
+              "scale": 0.0036337205674499273,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out": {
+              "scale": 0.011763451620936394,
+              "zero_point": 115,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003917803522199392,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.018462875857949257,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.ema",
+            "EMAObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "logits": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5064504146575928,
+              "zero_point": 246,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "softmax": {
+              "scale": 0.0036337205674499273,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out": {
+              "scale": 0.011763451620936394,
+              "zero_point": 115,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003917803522199392,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.018462875857949257,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "b": {
+      "environment": {
+        "commit": "d191ac62cad9e85cb8d284363d5b32a1f45ddaa7",
+        "dirty": "",
+        "import_path": "/workspace/gemma4-b/tico/__init__.py",
+        "cwd": "/workspace/gemma4-b",
+        "torch": "2.13.0+cpu",
+        "python": "3.12.14",
+        "threads": 1,
+        "interop_threads": 1,
+        "seed": 4670,
+        "dtype": "float32",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+      },
+      "fixture_weights_sha256": "eaca1d046b3bdc4ab14e2c526f8a89ef4ca44b4858586e6fcf7dc99aed90b655",
+      "dataset_digests": {
+        "calibration_sha256": "949dd4cf88137c1335d0a1a600843592f1d860f9d62da6d839e092509c45c798",
+        "evaluation_sha256": "3843d88e0f69775acd71687ea6e05e9261575441565c0d0fd880296d135ffa89"
+      },
+      "no_quant_vs_base": {
+        "output": {
+          "worst_case_max_abs": 3.5762786865234375e-07,
+          "worst_case_mean_abs": 7.241033017635345e-08,
+          "worst_case_relative_l2": 2.297964068723582e-07,
+          "worst_case_peir_percent": 1.5300704438312057e-05
+        },
+        "weights": {
+          "worst_case_max_abs": 4.172325134277344e-07,
+          "worst_case_mean_abs": 1.1131109635431448e-08,
+          "worst_case_relative_l2": 1.482011747836274e-07,
+          "worst_case_peir_percent": 4.1726086600942915e-05
+        }
+      },
+      "policies": {
+        "default": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "independent_qparam_snapshot_sha256": "44a410543af2860ad5273256c4f2b7671896cbdb1ef3cf7fd12b9b4fab228630",
+          "qparam_differences_vs_base": [
+            "o_proj.act_out"
+          ],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 1.1920928955078125e-07,
+              "worst_case_mean_abs": 2.5174813345074654e-08,
+              "worst_case_relative_l2": 8.389698846560175e-08,
+              "worst_case_peir_percent": 6.081745470680879e-06
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.1950632631778717,
+              "worst_case_mean_abs": 0.04411811657882936,
+              "worst_case_relative_l2": 0.1259324888330076,
+              "worst_case_peir_percent": 8.030820424656175
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.minmax",
+            "MinMaxObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        },
+        "minmax": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "cecb198c38170c4d1b5a2f158576ea6611c346c3d5e61cefa8015da719c6d940",
+          "independent_qparam_snapshot_sha256": "44a410543af2860ad5273256c4f2b7671896cbdb1ef3cf7fd12b9b4fab228630",
+          "qparam_differences_vs_base": [
+            "o_proj.act_out"
+          ],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 1.1920928955078125e-07,
+              "worst_case_mean_abs": 2.5174813345074654e-08,
+              "worst_case_relative_l2": 8.389698846560175e-08,
+              "worst_case_peir_percent": 6.081745470680879e-06
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.19506332278251648,
+              "worst_case_mean_abs": 0.044118118667029194,
+              "worst_case_relative_l2": 0.12593248834706952,
+              "worst_case_peir_percent": 8.030821451022458
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.1950632631778717,
+              "worst_case_mean_abs": 0.04411811657882936,
+              "worst_case_relative_l2": 0.1259324888330076,
+              "worst_case_peir_percent": 8.030820424656175
+            },
+            "weights": {
+              "worst_case_max_abs": 0.3221905082464218,
+              "worst_case_mean_abs": 0.012819096361182149,
+              "worst_case_relative_l2": 0.11676008983700435,
+              "worst_case_peir_percent": 32.28771068850297
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.minmax",
+            "MinMaxObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "logits": {
+              "scale": 0.09304263442754745,
+              "zero_point": 130,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5634493827819824,
+              "zero_point": 234,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "softmax": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003921528346836567,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.023219803348183632,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        },
+        "ema": {
+          "fixed_qparams_identical": true,
+          "frozen_unchanged_after_evaluation": true,
+          "observer_count": 48,
+          "fixed_qparam_snapshot_sha256": "b088e4a76c00fd8b8801b392c44c2ceb968e5b4d253270d9b76ae89880757582",
+          "independent_qparam_snapshot_sha256": "1478814ccf2d4f5bf908c5c0c8b2b8c3a1b76907a6c4271e312915e0e2189a9b",
+          "qparam_differences_vs_base": [
+            "logits_raw",
+            "logits",
+            "mask_add",
+            "softmax"
+          ],
+          "fixed_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            },
+            "weights": {
+              "worst_case_max_abs": 0.0,
+              "worst_case_mean_abs": 0.0,
+              "worst_case_relative_l2": 0.0,
+              "worst_case_peir_percent": 0.0
+            }
+          },
+          "independent_vs_base": {
+            "output": {
+              "worst_case_max_abs": 0.37319648265838623,
+              "worst_case_mean_abs": 0.12885519373230636,
+              "worst_case_relative_l2": 0.524122207264803,
+              "worst_case_peir_percent": 35.35353101074021
+            },
+            "weights": {
+              "worst_case_max_abs": 0.4035337567329407,
+              "worst_case_mean_abs": 0.019300944031462732,
+              "worst_case_relative_l2": 0.4077980196419923,
+              "worst_case_peir_percent": 57.86516666665242
+            }
+          },
+          "fixed_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.6398009955883026,
+              "worst_case_mean_abs": 0.20291131472913548,
+              "worst_case_relative_l2": 0.6002098200274125,
+              "worst_case_peir_percent": 31.849582314860474
+            },
+            "weights": {
+              "worst_case_max_abs": 0.8075700998306274,
+              "worst_case_mean_abs": 0.02938854704675644,
+              "worst_case_relative_l2": 0.5309647446931482,
+              "worst_case_peir_percent": 80.7939752670616
+            }
+          },
+          "independent_vs_fp": {
+            "output": {
+              "worst_case_max_abs": 0.382778525352478,
+              "worst_case_mean_abs": 0.12792401626938954,
+              "worst_case_relative_l2": 0.3834832351336745,
+              "worst_case_peir_percent": 18.452893646776293
+            },
+            "weights": {
+              "worst_case_max_abs": 0.6768405139446259,
+              "worst_case_mean_abs": 0.015545067139905947,
+              "worst_case_relative_l2": 0.37267175786765017,
+              "worst_case_peir_percent": 67.7150357135616
+            }
+          },
+          "first_divergence_boundary": {
+            "fixed_vs_base": {
+              "decode/core": null,
+              "decode/full": null,
+              "append/core": null,
+              "append/full": null,
+              "batch2/core": null,
+              "batch2/full": null
+            },
+            "independent_vs_base": {
+              "decode/core": "logits_raw",
+              "decode/full": "logits_raw",
+              "append/core": "logits_raw",
+              "append/full": "logits_raw",
+              "batch2/core": "logits_raw",
+              "batch2/full": "logits_raw"
+            }
+          },
+          "fixed_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "logits": {
+              "scale": 0.04469681903719902,
+              "zero_point": 133,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5064504146575928,
+              "zero_point": 246,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "softmax": {
+              "scale": 0.0036337205674499273,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out": {
+              "scale": 0.011763451620936394,
+              "zero_point": 115,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003917803522199392,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.018462875857949257,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            }
+          },
+          "observer_class": [
+            "tico.quantization.wrapq.observers.ema",
+            "EMAObserver"
+          ],
+          "independent_boundary_qparams": {
+            "logits_raw": {
+              "scale": 0.056501127779483795,
+              "zero_point": 127,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "logits": {
+              "scale": 0.056501127779483795,
+              "zero_point": 127,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "mask_add": {
+              "scale": 0.5176382660865784,
+              "zero_point": 243,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "softmax": {
+              "scale": 0.0038529441226273775,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out": {
+              "scale": 0.011763451620936394,
+              "zero_point": 115,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_weights": {
+              "scale": 0.003917803522199392,
+              "zero_point": 0,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            },
+            "attn_out_h": {
+              "scale": 0.018462875857949257,
+              "zero_point": 124,
+              "enabled": false,
+              "frozen": true,
+              "fake_quant_enabled": true,
+              "policy": [
+                8,
+                false,
+                "PER_TENSOR_ASYMM",
+                null,
+                0.9
+              ]
+            }
+          },
+          "calibration_calls": {
+            "logits_raw": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "logits": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "mask_add": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "softmax": {
+              "calls": 96,
+              "shapes": [
+                [
+                  1,
+                  12,
+                  7
+                ]
+              ]
+            },
+            "attn_out": {
+              "calls": 288,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  8
+                ]
+              ]
+            },
+            "attn_weights": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  24,
+                  4,
+                  7
+                ]
+              ]
+            },
+            "attn_out_h": {
+              "calls": 12,
+              "shapes": [
+                [
+                  1,
+                  4,
+                  24,
+                  8
+                ]
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "identical_initial_weights_verified": true,
+  "identical_calibration_evaluation_data_verified": true
+}
