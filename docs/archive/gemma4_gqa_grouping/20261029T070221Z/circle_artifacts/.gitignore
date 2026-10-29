@@ -1,0 +1,2 @@
+# Explicitly requested small Circle snapshots, limited to this directory.
+!*.circle
