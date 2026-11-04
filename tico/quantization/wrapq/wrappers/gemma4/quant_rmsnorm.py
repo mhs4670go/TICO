@@ -19,7 +19,7 @@ import torch.nn as nn
 
 from tico.quantization.config.ptq import PTQConfig
 from tico.quantization.wrapq.mode import Mode
-from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
+from tico.quantization.wrapq.wrappers.ops.quant_rmsnorm import _QuantRMSNormBase
 from tico.quantization.wrapq.wrappers.registry import try_register
 
 if TYPE_CHECKING:
@@ -27,7 +27,7 @@ if TYPE_CHECKING:
 
 
 @try_register("transformers.models.gemma4.modeling_gemma4.Gemma4RMSNorm")
-class QuantGemma4RMSNorm(QuantModuleBase):
+class QuantGemma4RMSNorm(_QuantRMSNormBase):
     """PTQ wrapper for Gemma4 RMSNorm with optional scale weights."""
 
     def __init__(
@@ -46,6 +46,7 @@ class QuantGemma4RMSNorm(QuantModuleBase):
         self.obs_weight = self._make_per_tensor_obs("weight")
         self.obs_act_in = self._make_obs("act_in")
         self.obs_act_out = self._make_obs("act_out")
+        self._init_gamma_split()
 
     def _prepare_calibration(self) -> None:
         """Capture the static scale weight when it exists."""
@@ -71,14 +72,22 @@ class QuantGemma4RMSNorm(QuantModuleBase):
         x = self._fq(hidden_states, self.obs_act_in)
         weight = self._weight_for_rms_norm(x)
 
-        out = torch.ops.circle_custom.rms_norm(
-            x,
-            weight=weight,
-            eps=self.eps,
-        )
+        if self.obs_act_pre_gamma is not None:
+            out = torch.ops.circle_custom.rms_norm(
+                x,
+                weight=self._unit_weight(x),
+                eps=self.eps,
+                preserve_gamma_boundary=True,
+            )
+            out = self._fq(out, self.obs_act_pre_gamma) * weight
+        else:
+            out = torch.ops.circle_custom.rms_norm(x, weight=weight, eps=self.eps)
         out = out.to(dtype=hidden_states.dtype)
         return self._fq(out, self.obs_act_out)
 
     def _all_observers(self) -> Iterable:
         """Return observers owned directly by this wrapper."""
-        return (self.obs_weight, self.obs_act_in, self.obs_act_out)
+        observers = (self.obs_weight, self.obs_act_in, self.obs_act_out)
+        if self.obs_act_pre_gamma is not None:
+            return (*observers, self.obs_act_pre_gamma)
+        return observers

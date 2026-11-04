@@ -90,11 +90,17 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
 
     @staticmethod
     def _qcfg(
-        *, rope="pre_negated_sin", dtype=UINT8, observer=MinMaxObserver, overrides=None
+        *,
+        rope="pre_negated_sin",
+        dtype=UINT8,
+        observer=MinMaxObserver,
+        overrides=None,
+        split_rmsnorm_gamma=True,
     ):
         return make_affine_ptq_config(
             dtype=dtype,
             observer=observer,
+            split_rmsnorm_gamma=split_rmsnorm_gamma,
             overrides={} if overrides is None else overrides,
             model_args={
                 "attention": {"layout": "unrolled", "rope": rope},
@@ -620,8 +626,8 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
             tuple(quantization.zero_point),
         )
 
-    def _rope_chains(self, program):
-        """Return per-branch (norm output, halves, concat output, quantizes)."""
+    def _rope_chains(self, program, *, split_rmsnorm_gamma):
+        """Return branches starting at the final, post-gamma norm output grid."""
         producers = {
             output: operator
             for operator in program.operators
@@ -633,6 +639,23 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
                 continue
             source = norm.outputs[0]
             users = [op for op in program.operators if source in op.inputs]
+            if split_rmsnorm_gamma:
+                gamma_muls = [
+                    op
+                    for op in users
+                    if op.name == "MUL"
+                    and any(program.tensor(index).is_constant for index in op.inputs)
+                ]
+                if not gamma_muls:
+                    continue  # v_norm has no learned gamma and does not rotate.
+                self.assertEqual(len(gamma_muls), 1)
+                self.assertEqual(users, gamma_muls)
+                # RoPE inherits the Mul's final grid, never act_pre_gamma's grid.
+                pre_gamma = source
+                source = gamma_muls[0].outputs[0]
+                self.assertNotEqual(source, pre_gamma)
+                self.assertIs(producers[source], gamma_muls[0])
+                users = [op for op in program.operators if source in op.inputs]
             split_ops = [
                 op for op in users if op.name in ("SPLIT", "SPLIT_V", "STRIDED_SLICE")
             ]
@@ -692,6 +715,9 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
     def test_serialized_rope_domains_match_the_norm_output(self):
         profiles = {
             "uint8": dict(dtype=UINT8, overrides=None),
+            "uint8 fused RMSNorm": dict(
+                dtype=UINT8, overrides=None, split_rmsnorm_gamma=False
+            ),
             "u8 storage / i16 compute": dict(
                 dtype=INT16,
                 overrides={"new_k": affine(UINT8), "new_v": affine(UINT8)},
@@ -699,7 +725,28 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
         }
         for profile, kwargs in profiles.items():
             attention = self._attention(**kwargs)
+            # Distinct signed gamma values distinguish the final norm grids from
+            # both act_pre_gamma and the other RoPE branch.
+            with torch.no_grad():
+                for name, low, high in (("q_norm", -1.7, 2.4), ("k_norm", -3.1, 0.9)):
+                    weight = getattr(attention, name).wrapped.module.weight
+                    weight.copy_(torch.linspace(low, high, weight.numel()))
             self._calibrate(attention)
+            split = attention.q_norm.wrapped.split_rmsnorm_gamma
+            norm_grids = []
+            for name in ("q_norm", "k_norm"):
+                norm = getattr(attention, name).wrapped
+                state = norm.obs_act_out.require_frozen()
+                norm_grids.append(
+                    (
+                        str(norm.obs_act_out.dtype),
+                        tuple(state.scale.flatten().tolist()),
+                        tuple(state.zero_point.flatten().tolist()),
+                    )
+                )
+                if split:
+                    pre = norm.obs_act_pre_gamma.require_frozen()
+                    self.assertFalse(torch.equal(state.scale, pre.scale))
             prefill_module = attention.as_export_module("prefill").eval()
             decode_module = attention.as_export_module("decode").eval()
             hidden, rope = self._inputs(attention, 3)
@@ -710,8 +757,17 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
                     prefill = self._runtime(
                         prefill_module, prefill_args, optimize=optimize
                     )
-                    chains = self._rope_chains(prefill.program)
+                    chains = self._rope_chains(
+                        prefill.program, split_rmsnorm_gamma=split
+                    )
                     self.assertEqual(len(chains), 2)
+                    self.assertCountEqual(
+                        [
+                            self._grid(prefill.program.tensor(chain[0]))
+                            for chain in chains
+                        ],
+                        norm_grids,
+                    )
                     for source, halves, concat_out, quantizes in chains:
                         grid = self._grid(prefill.program.tensor(source))
                         self.assertIsNotNone(grid)
@@ -741,8 +797,17 @@ class TestGemma4RopeDomainInheritance(unittest.TestCase):
                     decode = self._runtime(
                         decode_module, decode_args, decode_kwargs, optimize=optimize
                     )
-                    chains = self._rope_chains(decode.program)
+                    chains = self._rope_chains(
+                        decode.program, split_rmsnorm_gamma=split
+                    )
                     self.assertEqual(len(chains), 2)
+                    self.assertCountEqual(
+                        [
+                            self._grid(decode.program.tensor(chain[0]))
+                            for chain in chains
+                        ],
+                        norm_grids,
+                    )
                     for source, halves, concat_out, quantizes in chains:
                         grid = self._grid(decode.program.tensor(source))
                         for index in (*halves, concat_out):

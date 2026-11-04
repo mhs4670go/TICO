@@ -727,6 +727,95 @@ class LinearDtypeMismatchTest(InsertQuantizeOnDtypeMismatchTest):
 
 
 class MulDtypeMismatchTest(InsertQuantizeOnDtypeMismatchTest):
+    def test_rmsnorm_scale_preserves_independent_observed_domains(self):
+        class NormScale(torch.nn.Module):
+            def __init__(self, reverse, marked=True):
+                super().__init__()
+                self.reverse = reverse
+                self.marked = marked
+
+            def forward(self, x, gamma):
+                r = torch.ops.circle_custom.rms_norm(
+                    x, torch.ones(8), 1e-5, preserve_gamma_boundary=self.marked
+                )
+                return gamma * r if self.reverse else r * gamma
+
+        for reverse in (False, True):
+            for pre_dtype, out_dtype in (
+                ("int16", "uint8"),
+                ("uint8", "int16"),
+                ("mxint8", "uint8"),
+                ("int16", "mxint8"),
+            ):
+                with self.subTest(reverse=reverse, pre=pre_dtype, out=out_dtype):
+                    ep = torch.export.export(
+                        NormScale(reverse), (torch.randn(1, 2, 8), torch.randn(8))
+                    )
+                    product = next(
+                        n
+                        for n in ep.graph.nodes
+                        if n.target == torch.ops.aten.mul.Tensor
+                    )
+                    norm = next(
+                        n for n in product.all_input_nodes if n.op == "call_function"
+                    )
+                    gamma = next(
+                        n for n in product.all_input_nodes if n.op == "placeholder"
+                    )
+                    for node, dtype, scale in (
+                        (norm, pre_dtype, 0.125),
+                        (gamma, "uint8", 0.25),
+                        (product, out_dtype, 0.5),
+                    ):
+                        qparam = QuantParam()
+                        qparam.dtype = dtype
+                        if dtype == "mxint8":
+                            qparam.quantized_dimension = len(node.meta["val"].shape) - 1
+                        else:
+                            qparam.scale, qparam.zero_point = [scale], [0]
+                        node.meta[QPARAM_KEY] = qparam
+                    domains = {
+                        node: copy.deepcopy(node.meta[QPARAM_KEY])
+                        for node in (norm, gamma, product)
+                    }
+                    before_nodes = tuple(ep.graph.nodes)
+                    InsertQuantizeOnDtypeMismatch().call(ep)
+                    self.assertEqual(tuple(ep.graph.nodes), before_nodes)
+                    for node, domain in domains.items():
+                        self.assertEqual(node.meta[QPARAM_KEY], domain)
+
+        # A fused RMSNorm followed by another Mul is the existing path, even
+        # though it is structurally similar to the explicitly split boundary.
+        ep = torch.export.export(
+            NormScale(False, marked=False), (torch.randn(1, 2, 8), torch.randn(8))
+        )
+        product = next(
+            n for n in ep.graph.nodes if n.target == torch.ops.aten.mul.Tensor
+        )
+        for node in product.all_input_nodes:
+            qparam = QuantParam()
+            qparam.dtype, qparam.scale, qparam.zero_point = "int16", [0.125], [0]
+            node.meta[QPARAM_KEY] = qparam
+        output_qparam = QuantParam()
+        output_qparam.dtype, output_qparam.scale, output_qparam.zero_point = (
+            "uint8",
+            [0.5],
+            [1],
+        )
+        product.meta[QPARAM_KEY] = output_qparam
+        InsertQuantizeOnDtypeMismatch().call(ep)
+        self.assertEqual(product.meta[QPARAM_KEY].dtype, "int16")
+        self.assertEqual(list(product.users)[0].meta[QPARAM_KEY].dtype, "uint8")
+
+    def test_ordinary_mul_retains_existing_dtype_legalization(self):
+        self.setup(
+            SimpleMulWithTensor(), torch.ops.aten.mul.Tensor, input_dtype="int16"
+        )
+        self.assertEqual(self.target.meta[QPARAM_KEY].dtype, "uint8")
+        InsertQuantizeOnDtypeMismatch().call(self.ep)
+        self.assertEqual(self.target.meta[QPARAM_KEY].dtype, "int16")
+        self.assertEqual(list(self.target.users)[0].meta[QPARAM_KEY].dtype, "uint8")
+
     def test_no_mismatch_mul(self):
         self.setup(
             SimpleMulWithTensor(),

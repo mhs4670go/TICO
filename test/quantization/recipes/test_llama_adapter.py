@@ -63,6 +63,15 @@ class TiedEmbeddingLlamaModel(torch.nn.Module):
 
 
 class TestLlamaAdapter(unittest.TestCase):
+    def test_rmsnorm_gamma_option_reaches_real_builder(self):
+        ctx = _fake_llama_context({})
+        self.assertTrue(ctx.adapter.build_ptq_config(ctx, {}).split_rmsnorm_gamma)
+        for split in (True, False):
+            cfg = ctx.adapter.build_ptq_config(ctx, {"split_rmsnorm_gamma": split})
+            self.assertIs(cfg.child("model").child("norm").split_rmsnorm_gamma, split)
+        with self.assertRaisesRegex(TypeError, "split_rmsnorm_gamma"):
+            ctx.adapter.build_ptq_config(ctx, {"split_rmsnorm_gamma": "false"})
+
     def test_full_export_uses_export_shape_without_calibration_samples(self):
         """A static full-model graph uses the independently configured capacity."""
         ctx = _fake_llama_context(
@@ -132,6 +141,7 @@ class TestLlamaAdapter(unittest.TestCase):
                     "lm_head_weight": 8,
                     "norm_weight": "int16",
                     "strict_wrap": False,
+                    "split_rmsnorm_gamma": False,
                 },
             )
 
@@ -143,6 +153,7 @@ class TestLlamaAdapter(unittest.TestCase):
         self.assertEqual(captured["lm_head_weight"].dtype, DType.uint(8))
         self.assertEqual(captured["profile"], "reference_eval")
         self.assertFalse(captured["strict_wrap"])
+        self.assertFalse(captured["split_rmsnorm_gamma"])
 
     def test_build_ptq_config_defaults_lm_head_bits_to_embedding_bits(self):
         """LlamaAdapter should default LM head bit-width to embedding bit-width."""

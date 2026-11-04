@@ -40,6 +40,22 @@ class _TestGemma4Adapter(Gemma4Adapter):
 class TestGemma4AdapterStaticCalibration(unittest.TestCase):
     """Tests for Gemma4 static image sizing during calibration input build."""
 
+    def test_rmsnorm_gamma_option_reaches_real_builder(self):
+        text_config = SimpleNamespace(num_hidden_layers=1)
+        model = SimpleNamespace(
+            config=SimpleNamespace(
+                get_text_config=lambda: text_config,
+                vision_config=SimpleNamespace(num_hidden_layers=1),
+            )
+        )
+        ctx = RecipeContext(cfg={}, adapter=_TestGemma4Adapter(), model=model)
+        self.assertTrue(ctx.adapter.build_ptq_config(ctx, {}).split_rmsnorm_gamma)
+        for split in (True, False):
+            cfg = ctx.adapter.build_ptq_config(ctx, {"split_rmsnorm_gamma": split})
+            self.assertIs(cfg.child("model").child("norm").split_rmsnorm_gamma, split)
+        with self.assertRaisesRegex(TypeError, "split_rmsnorm_gamma"):
+            ctx.adapter.build_ptq_config(ctx, {"split_rmsnorm_gamma": "false"})
+
     def test_build_calibration_inputs_forces_static_image_processor_size(self):
         """Static Gemma4 image dimensions should be applied during preprocessing."""
         adapter = _TestGemma4Adapter()

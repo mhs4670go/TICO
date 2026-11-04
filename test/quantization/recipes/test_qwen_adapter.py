@@ -78,6 +78,7 @@ def _ptq_stage_cfg() -> dict[str, Any]:
         "quantize_text": False,
         "quantize_lm_head": True,
         "strict_wrap": False,
+        "split_rmsnorm_gamma": False,
     }
 
 
@@ -96,6 +97,19 @@ def _vision_recipe_cfg() -> dict[str, Any]:
 
 
 class TestQwen3VLAdapter(unittest.TestCase):
+    def test_rmsnorm_gamma_option_reaches_real_builder(self):
+        ctx = RecipeContext(
+            cfg=_vision_recipe_cfg(), adapter=Qwen3VLAdapter(), model=_fake_qwen_model()
+        )
+        self.assertTrue(ctx.adapter.build_ptq_config(ctx, {}).split_rmsnorm_gamma)
+        for split in (True, False):
+            cfg = ctx.adapter.build_ptq_config(ctx, {"split_rmsnorm_gamma": split})
+            self.assertIs(
+                cfg.child("model").child("language_model").split_rmsnorm_gamma, split
+            )
+        with self.assertRaisesRegex(TypeError, "split_rmsnorm_gamma"):
+            ctx.adapter.build_ptq_config(ctx, {"split_rmsnorm_gamma": "false"})
+
     def assert_recipe_cfg_untouched(
         self,
         cfg: dict[str, Any],
@@ -148,6 +162,7 @@ class TestQwen3VLAdapter(unittest.TestCase):
         self.assertEqual(captured["lm_head_weight"].dtype, DType.uint(4))
         self.assertEqual(captured["spin_rotation_weight"].dtype, DType.int(16))
         self.assertFalse(captured["strict_wrap"])
+        self.assertFalse(captured["split_rmsnorm_gamma"])
 
         # Preparing the builder arguments must not write into the recipe cfg.
         self.assert_recipe_cfg_untouched(
@@ -173,6 +188,7 @@ class TestQwen3VLAdapter(unittest.TestCase):
         self.assertEqual(result.model_args["vision"]["visual_start_idx"], 0)
         self.assertEqual(result.activation.dtype, DType.int(16))
         self.assertFalse(result.strict_wrap)
+        self.assertFalse(result.split_rmsnorm_gamma)
         self.assertEqual(
             result.overrides["model"]["visual"]["patch_embed"]["proj"]["weight"]["dtype"],  # type: ignore[index]
             DType.uint(8),

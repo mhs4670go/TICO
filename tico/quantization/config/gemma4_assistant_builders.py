@@ -48,6 +48,7 @@ def build_gemma4_assistant_ptq_config(
     lm_head_weight: Optional[QuantSpec] = None,
     norm_weight: Optional[QuantSpec] = None,
     strict_wrap: bool = True,
+    split_rmsnorm_gamma: bool = True,
 ) -> PTQConfig:
     """Build a PTQConfig for ``QuantGemma4AssistantForCausalLM``.
 
@@ -113,4 +114,5 @@ def build_gemma4_assistant_ptq_config(
         overrides=overrides,
         model_args=normalized_model_args,
         strict_wrap=strict_wrap,
+        split_rmsnorm_gamma=split_rmsnorm_gamma,
     )

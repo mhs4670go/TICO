@@ -24,7 +24,7 @@ from tico.quantization.config.ptq import PTQConfig
 from tico.quantization.config.specs import affine, QuantSpec
 from tico.quantization.wrapq.dtypes import DType
 
-_RMSNORM_ACTIVATION_OBSERVERS = ("act_in", "act_out")
+_RMSNORM_ACTIVATION_OBSERVERS = ("act_in", "act_pre_gamma", "act_out")
 _LAYERNORM_ACTIVATION_OBSERVERS = (
     "act_in",
     "mean",
@@ -206,6 +206,7 @@ def build_llm_ptq_config(
     norm: Optional[QuantSpec] = None,
     norm_weight: Optional[QuantSpec] = None,
     strict_wrap: bool = True,
+    split_rmsnorm_gamma: bool = True,
     profile: ExecutionProfile = DEFAULT_EXECUTION_PROFILE,
 ) -> PTQConfig:
     """
@@ -223,6 +224,7 @@ def build_llm_ptq_config(
         norm: Activation spec for norm module internals.
         norm_weight: Weight spec for norm affine parameters.
         strict_wrap: If True, unsupported modules raise during wrapping.
+        split_rmsnorm_gamma: Split gamma at prepare time (default True).
         profile: Llama execution profile stored in model_args.
 
     Returns:
@@ -257,6 +259,7 @@ def build_llm_ptq_config(
         overrides=overrides,
         model_args={"profile": profile},
         strict_wrap=strict_wrap,
+        split_rmsnorm_gamma=split_rmsnorm_gamma,
     )
 
 
@@ -479,6 +482,7 @@ def build_qwen3_vl_ptq_config(
     norm: Optional[QuantSpec] = None,
     norm_weight: Optional[QuantSpec] = None,
     strict_wrap: bool = True,
+    split_rmsnorm_gamma: bool = True,
 ) -> PTQConfig:
     """Build a PTQConfig for the full Qwen3-VL model.
 
@@ -502,6 +506,7 @@ def build_qwen3_vl_ptq_config(
         norm: Activation spec for norm module internals.
         norm_weight: Weight spec for norm affine parameters.
         strict_wrap: If True, unsupported modules raise during wrapping.
+        split_rmsnorm_gamma: Split gamma at prepare time (default True).
 
     Returns:
         A PTQ configuration object ready to pass into prepare().
@@ -529,5 +534,6 @@ def build_qwen3_vl_ptq_config(
         weight=weight,
         overrides=overrides,
         strict_wrap=strict_wrap,
+        split_rmsnorm_gamma=split_rmsnorm_gamma,
         model_args=model_args,
     )

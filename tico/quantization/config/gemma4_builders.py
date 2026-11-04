@@ -297,6 +297,7 @@ def build_gemma4_e2b_ptq_config(
     vision_patch_embed_weight: Optional[QuantSpec] = None,
     norm_weight: Optional[QuantSpec] = None,
     strict_wrap: bool = True,
+    split_rmsnorm_gamma: bool = True,
 ) -> PTQConfig:
     """Build a PTQConfig for Gemma4 E2B static image-text runtime.
 
@@ -365,4 +366,5 @@ def build_gemma4_e2b_ptq_config(
         overrides=overrides,
         model_args=dict(model_args or {}),
         strict_wrap=strict_wrap,
+        split_rmsnorm_gamma=split_rmsnorm_gamma,
     )

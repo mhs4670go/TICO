@@ -194,6 +194,19 @@ class TestPTQConfigOverrides(unittest.TestCase):
 
 
 class TestPTQConfigChild(unittest.TestCase):
+    def test_rmsnorm_gamma_default_validation_and_child_propagation(self):
+        self.assertTrue(PTQConfig().split_rmsnorm_gamma)
+        for split in (True, False):
+            with self.subTest(split=split):
+                cfg = PTQConfig(split_rmsnorm_gamma=split)
+                child = cfg.child("model").child("norm")
+                self.assertIs(child.split_rmsnorm_gamma, split)
+                self.assertIn(f"split_rmsnorm_gamma={split}", repr(child))
+        for invalid in (None, 0, 1, "false"):
+            with self.subTest(invalid=invalid):
+                with self.assertRaisesRegex(TypeError, "split_rmsnorm_gamma.*bool"):
+                    PTQConfig(split_rmsnorm_gamma=invalid)  # type: ignore[arg-type]
+
     def test_child_inherits_specs_and_model_args(self):
         parent = PTQConfig(
             activation=affine(DType.int(16)),

@@ -331,6 +331,7 @@ class LlamaAdapter(ModelAdapter):
             norm=quant_spec_from_config(stage_cfg.get("norm")),
             norm_weight=quant_spec_from_config(stage_cfg.get("norm_weight")),
             strict_wrap=bool(stage_cfg.get("strict_wrap", True)),
+            split_rmsnorm_gamma=stage_cfg.get("split_rmsnorm_gamma", True),
             profile=profile,
         )
 

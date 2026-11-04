@@ -1080,7 +1080,10 @@ def CircleRMSNorm():
         hidden_states: torch.Tensor,
         weight: torch.Tensor,
         eps: float = 1e-06,
+        preserve_gamma_boundary: bool = False,
     ) -> torch.Tensor:
+        # This flag records an explicit wrapper quantization boundary for export;
+        # it does not change the normalization calculation or Circle schema.
         input_dtype = hidden_states.dtype
         hidden_states = hidden_states.to(torch.float32)
         variance = hidden_states.pow(2).mean(-1, keepdim=True)
@@ -1092,6 +1095,7 @@ def CircleRMSNorm():
         hidden_states: torch.Tensor,
         weight: torch.Tensor,
         eps: float = 1e-06,
+        preserve_gamma_boundary: bool = False,
     ) -> torch.Tensor:
         return hidden_states.new_empty(hidden_states.size())
 

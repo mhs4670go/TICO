@@ -268,8 +268,10 @@ class TestGemma4AssistantAdapterWithTinyModel(unittest.TestCase):
                 "lm_head_weight": "uint8",
                 "norm_weight": "int16",
                 "strict_wrap": True,
+                "split_rmsnorm_gamma": False,
             },
         )
+        self.assertFalse(qcfg.split_rmsnorm_gamma)
         self.assertEqual(qcfg.activation.dtype, DType.int(16))
         self.assertEqual(
             qcfg.overrides["model"]["layers"]["0"]["self_attn"]["q_proj"]["weight"]["dtype"],  # type: ignore[index]

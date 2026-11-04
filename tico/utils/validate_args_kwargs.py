@@ -223,6 +223,7 @@ class CircleRMSNormArgs:
     input: torch.fx.Node
     weight: torch.fx.Node
     eps: float = 1e-6
+    preserve_gamma_boundary: bool = False
 
 
 @enforce_type

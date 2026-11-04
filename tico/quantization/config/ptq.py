@@ -230,6 +230,9 @@ class PTQConfig(BaseConfig):
         Additional model-specific metadata required by certain wrappers.
     strict_wrap : bool
         If `True`, unsupported modules raise during wrapping.
+    split_rmsnorm_gamma : bool
+        Split RMSNorm gamma into a Mul with an independent activation boundary.
+        Selected at prepare time; defaults to True.
     attention_mask_fill_value : float
         Value used to fill masked positions before attention softmax.
     """
@@ -240,9 +243,12 @@ class PTQConfig(BaseConfig):
     model_args: Mapping[str, Any] = field(default_factory=dict)
     strict_wrap: bool = True
     attention_mask_fill_value: float = -120.0
+    split_rmsnorm_gamma: bool = True
 
     def __post_init__(self) -> None:
         """Normalize path-based overrides and validate override leaves."""
+        if not isinstance(self.split_rmsnorm_gamma, bool):
+            raise TypeError("PTQConfig.split_rmsnorm_gamma must be a bool.")
         self.normalize_overrides()
 
     @property
@@ -326,6 +332,7 @@ class PTQConfig(BaseConfig):
             overrides=sub_overrides,
             model_args=self.model_args,
             strict_wrap=self.strict_wrap,
+            split_rmsnorm_gamma=self.split_rmsnorm_gamma,
             attention_mask_fill_value=self.attention_mask_fill_value,
         )
 
@@ -336,5 +343,6 @@ class PTQConfig(BaseConfig):
             f"weight={self.weight}, "
             f"overrides={dict(self.overrides)}, "
             f"model_args={dict(self.model_args)}, "
-            f"strict_wrap={self.strict_wrap})"
+            f"strict_wrap={self.strict_wrap}, "
+            f"split_rmsnorm_gamma={self.split_rmsnorm_gamma})"
         )

@@ -324,6 +324,14 @@ Clamp lowering and Linear fusion remain outside the core converter.
 It then reports missing qparams non-strictly, with a specific exception for
 `split_with_sizes` because qparams are attached to its `getitem` result nodes.
 
+For explicitly split RMSNorm gamma multiplication, dtype legalization preserves
+the independently observed normalization and product domains, including mixed
+affine and MX policies. A prepare-time wrapper marks its custom RMSNorm with
+`preserve_gamma_boundary=True`; unmarked RMSNorm and ordinary Mul retain their
+existing legalization. No additional product grid may add rounding absent from
+quantized evaluation. This marker changes no Circle schema; support for mixed
+tensor types still depends on the selected backend.
+
 MX quantization stores a validated, non-negative block axis in tensor qparams.
 Propagation remaps that axis through permutations and permits reshapes only when
 the existing 32-element blocks remain intact, including aligned attention head

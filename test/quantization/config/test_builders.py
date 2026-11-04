@@ -32,6 +32,37 @@ from tico.quantization.wrapq.qscheme import QScheme
 
 
 class TestBuilderHelpers(unittest.TestCase):
+    def test_rmsnorm_split_option_reaches_all_builders(self):
+        from tico.quantization.config.gemma4_assistant_builders import (
+            build_gemma4_assistant_ptq_config,
+        )
+
+        builders = (
+            (build_llm_ptq_config, {"model_type": "llama", "num_hidden_layers": 1}),
+            (
+                build_qwen3_vl_ptq_config,
+                {
+                    "num_vision_blocks": 1,
+                    "num_text_layers": 1,
+                    "num_deepstack_mergers": 0,
+                    "model_args": {},
+                },
+            ),
+            (
+                build_gemma4_e2b_ptq_config,
+                {"num_text_layers": 1, "num_vision_layers": 1},
+            ),
+            (build_gemma4_assistant_ptq_config, {"num_hidden_layers": 1}),
+        )
+        for builder, kwargs in builders:
+            for split in (True, False):
+                with self.subTest(builder=builder.__name__, split=split):
+                    cfg = builder(**kwargs, split_rmsnorm_gamma=split)
+                    self.assertIs(cfg.split_rmsnorm_gamma, split)
+                    self.assertIs(
+                        cfg.child("model").child("norm").split_rmsnorm_gamma, split
+                    )
+
     def test_build_weight_override_from_quant_spec(self):
         override = _build_weight_override(affine(DType.uint(8)))
         self.assertEqual(override["weight"]["dtype"], DType.uint(8))
@@ -47,6 +78,7 @@ class TestBuilderHelpers(unittest.TestCase):
 
         self.assertEqual(override["act_in"]["dtype"], DType.uint(8))
         self.assertEqual(override["act_out"]["dtype"], DType.uint(8))
+        self.assertEqual(override["act_pre_gamma"]["dtype"], DType.uint(8))
         self.assertEqual(override["weight"]["dtype"], DType.uint(4))
         self.assertEqual(override["weight"]["qscheme"], QScheme.PER_CHANNEL_ASYMM)
 

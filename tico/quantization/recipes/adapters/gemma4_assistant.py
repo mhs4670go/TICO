@@ -431,6 +431,7 @@ class Gemma4AssistantAdapter(ModelAdapter):
             lm_head_weight=quant_spec_from_config(stage_cfg.get("lm_head_weight")),
             norm_weight=quant_spec_from_config(stage_cfg.get("norm_weight")),
             strict_wrap=bool(stage_cfg.get("strict_wrap", True)),
+            split_rmsnorm_gamma=stage_cfg.get("split_rmsnorm_gamma", True),
         )
 
     # --- Evaluation ----------------------------------------------------------

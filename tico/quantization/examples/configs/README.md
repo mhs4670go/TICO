@@ -399,6 +399,47 @@ role. It does not choose the floating-point execution dtype; `runtime.dtype`
 does that. `activation: null` retains the normal default-resolution behavior and
 must not be used as an alias for disabling activation quantization.
 
+### RMSNorm gamma splitting
+
+PTQ stages accept `split_rmsnorm_gamma: true` (the default) for the common
+Llama/Qwen3-VL and Gemma4 RMSNorm wrappers. It creates an `act_pre_gamma` activation
+site between normalization and the learned gamma Mul. Affine policies calibrate
+this intermediate independently; MX policies apply dynamic block fake
+quantization without a fixed scale/zero point. Its default policy is `activation`;
+`norm` also covers this site in builders that expose a norm activation policy.
+
+Select the previous fused path before preparation with:
+
+```yaml
+pipeline:
+  - name: ptq
+    enabled: true
+    split_rmsnorm_gamma: false
+    activation: int16
+```
+
+Or override only the intermediate policy using the existing observer path syntax:
+
+```yaml
+pipeline:
+  - name: ptq
+    enabled: true
+    split_rmsnorm_gamma: true
+    activation: uint8
+    raw_overrides:
+      model.layers.0.input_layernorm.act_pre_gamma:
+        kind: mx
+        elem_format: int8
+        axis: -1
+```
+
+Use the actual module path for your model, or an affine override with an explicit
+`dtype`. `--set pipeline.ptq.split_rmsnorm_gamma=false` also works and is preserved
+in the effective recipe config. Changing the option requires preparing and
+calibrating again; saved state must match the prepared structure. Old state without
+the setting means `false`. See the [WrapQ boundary and state contract](../../wrapq/README.md#rmsnorm-gamma-boundary)
+for Python examples and compatibility details.
+
 ### Observer selection (`observer`)
 
 Affine specs accept an optional `observer` field that selects the calibration

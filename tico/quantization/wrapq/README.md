@@ -121,6 +121,74 @@ observer call. Passing a compatibility check is not proof of CUDA/NPU support.
 
 ---
 
+## RMSNorm gamma boundary
+
+`PTQConfig.split_rmsnorm_gamma` defaults to `True`. The common Llama/Qwen3-VL
+RMSNorm wrapper and the Gemma4 RMSNorm wrapper separate a present gamma parameter
+into normalization followed by `Mul(gamma)`. This models backends that cannot
+apply gamma inside RMSNorm, so calibration, quantized evaluation, and Circle export
+use the same gamma-preceding activation boundary:
+
+```text
+True:  FQ(input) -> RMSNorm(unit weight) -> FQ(act_pre_gamma)
+       -> Mul(FQ(gamma)) -> FQ(act_out)
+False: FQ(input) -> RMSNorm(FQ(gamma)) -> FQ(act_out)
+```
+
+Here `FQ` collects statistics during calibration and applies fake quantization in
+quantized mode. An affine `act_pre_gamma` observer calibrates its own tensor and
+freezes its own scale and zero point; it does not reuse output qparams. An MX
+policy instead applies dynamic block quantization to the current intermediate
+values without fixed affine qparams. Both use the normal activation policy unless
+a per-observer override is supplied. The gamma weight policy is unchanged.
+Both paths preserve the existing custom RMSNorm's FP32 normalization and cast to
+input dtype before gamma multiplication. Gemma4 keeps its final cast after the
+multiply and uses `weight` directly, without a `1 + weight` transformation.
+
+```python
+from tico.quantization import prepare
+from tico.quantization.config.ptq import PTQConfig
+from tico.quantization.config.specs import affine, mx
+from tico.quantization.wrapq.dtypes import DType
+
+# Retain the previous fused RMSNorm path.
+prepared = prepare(model, PTQConfig(split_rmsnorm_gamma=False))
+
+# Choose an intermediate policy independently of input and output policies.
+qcfg = PTQConfig(activation=affine(DType.uint(8)))
+qcfg.set_override("model.layers.0.input_layernorm.act_pre_gamma", affine(DType.int(16)))
+# Or use MXINT8 for that same intermediate site:
+qcfg.set_override("model.layers.0.input_layernorm.act_pre_gamma", mx("int8", axis=-1))
+prepared = prepare(model, qcfg)
+```
+
+Choose this option **before `prepare`**. Each wrapper captures its structure then;
+editing the original config later does not change its quantization boundaries.
+Changing the option for a prepared or converted model requires preparing the source
+model again and recalibrating the active affine sites. A module with no gamma does
+not gain an extra intermediate observer or Mul. A gamma parameter whose values
+happen to be all ones is still a gamma parameter and follows the selected path.
+
+The final Circle represents the split with RMSNorm and a separate real-gamma Mul;
+the intermediate tensor retains its affine grid or MX format/axis metadata through
+the default export pipeline. A normalization unit weight is distinct from the
+learned gamma and uses its own exact-one representation. No internal square,
+reduction, or reciprocal-square-root quantization boundaries are added.
+The split normalization constant uses UINT8 with scale `1` and zero point `0`,
+independently of activation and learned-weight policies. The Mul retains its
+observed input and output domains even when an intermediate override changes
+dtype or MX axis; export does not insert an additional product rounding grid.
+
+New quantization states record the selected split setting. States without this
+setting mean the old fused (`False`) structure and remain loadable into an
+explicitly fused wrapper within the existing lifecycle checks. Loading a fused
+state into a split wrapper, or the reverse, raises an error: prepare with the
+matching setting, or prepare and recalibrate a fresh model. Missing intermediate
+qparams are never synthesized. Other incomplete or incompatible observer states
+remain invalid under the normal freeze/load rules.
+
+---
+
 ## 3. Wrapper Design
 
 Wrappers define how quantization is applied to a specific submodule family.

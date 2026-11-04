@@ -30,6 +30,17 @@ from tico.quantization.recipes.config import (
 
 
 class TestRecipeConfig(unittest.TestCase):
+    def test_rmsnorm_split_false_roundtrips_yaml_and_cli_override(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "effective.yaml"
+            save_effective_config(
+                path, {"pipeline": [{"name": "ptq", "split_rmsnorm_gamma": False}]}
+            )
+            cfg = load_recipe_config(path)
+            self.assertIs(cfg["pipeline"][0]["split_rmsnorm_gamma"], False)
+            cfg = load_recipe_config(path, ["pipeline.ptq.split_rmsnorm_gamma=true"])
+            self.assertIs(cfg["pipeline"][0]["split_rmsnorm_gamma"], True)
+
     def test_load_recipe_config_applies_nested_list_and_named_overrides(self):
         """Recipe config loading should support dotted paths and list item names."""
         with tempfile.TemporaryDirectory() as tmpdir:

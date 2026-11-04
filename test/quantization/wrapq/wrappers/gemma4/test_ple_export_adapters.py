@@ -597,8 +597,59 @@ class TestGemma4PLEExportAdapters(unittest.TestCase):
                     adds = arithmetic[circle.BuiltinOperator.BuiltinOperator.ADD]
                     muls = arithmetic[circle.BuiltinOperator.BuiltinOperator.MUL]
                     self.assertEqual(len(adds), 1)
-                    self.assertEqual(len(muls), 2)
-                    for operator in (*adds, *muls):
+                    # Gamma scaling contributes its own vector MUL after the
+                    # RMSNorm. The two PLE scale MULs still use stored scalars.
+                    scalar_muls = [
+                        operator
+                        for operator in muls
+                        if any(
+                            graph.tensors[index].buffer != 0
+                            and int(np.prod(graph.tensors[index].shape)) == 1
+                            for index in operator.inputs
+                        )
+                    ]
+                    self.assertEqual(len(muls), 3)
+                    self.assertEqual(len(scalar_muls), 2)
+                    norms = [
+                        operator
+                        for operator in graph.operators
+                        if model.operatorCodes[operator.opcodeIndex].builtinCode
+                        == circle.BuiltinOperator.BuiltinOperator.RMS_NORM
+                    ]
+                    self.assertEqual(len(norms), 1)
+                    norm = norms[0]
+                    gamma_muls = [
+                        operator
+                        for operator in muls
+                        if norm.outputs[0] in operator.inputs
+                    ]
+                    self.assertEqual(len(gamma_muls), 1)
+                    gamma_mul = gamma_muls[0]
+                    self.assertNotIn(gamma_mul, scalar_muls)
+                    norm_wrapper = qtext.per_layer_projection_norm.wrapped
+                    for tensor_index, observer in (
+                        (norm.outputs[0], norm_wrapper.obs_act_pre_gamma),
+                        (gamma_mul.outputs[0], norm_wrapper.obs_act_out),
+                        (
+                            next(
+                                index
+                                for index in gamma_mul.inputs
+                                if index != norm.outputs[0]
+                            ),
+                            norm_wrapper.obs_weight,
+                        ),
+                    ):
+                        tensor = graph.tensors[tensor_index]
+                        self.assertIsNotNone(tensor.quantization, tensor.name)
+                        scale, zero_point = observer.compute_qparams()
+                        np.testing.assert_array_equal(
+                            tensor.quantization.scale, scale.detach().cpu().reshape(-1)
+                        )
+                        np.testing.assert_array_equal(
+                            tensor.quantization.zeroPoint,
+                            zero_point.detach().cpu().reshape(-1),
+                        )
+                    for operator in (*adds, *scalar_muls):
                         for tensor_index in (*operator.inputs, *operator.outputs):
                             tensor = graph.tensors[tensor_index]
                             self.assertEqual(tensor.type, expected_type, tensor.name)
@@ -610,7 +661,7 @@ class TestGemma4PLEExportAdapters(unittest.TestCase):
                     # Each scale is a stored quantized scalar, not a float
                     # constant attached to an otherwise quantized MUL.
                     for operator, scale_value in zip(
-                        muls,
+                        scalar_muls,
                         (
                             _fp_model.per_layer_model_projection_scale,
                             _fp_model.per_layer_input_scale,

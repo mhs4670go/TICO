@@ -232,6 +232,22 @@ def _mul_handler(node, logger):
     if QPARAM_KEY not in node.meta:
         return
 
+    if any(
+        getattr(getattr(operand.target, "_schema", None), "name", None)
+        == "circle_custom::rms_norm"
+        and operand.kwargs.get(
+            "preserve_gamma_boundary",
+            operand.args[3] if len(operand.args) > 3 else False,
+        )
+        is True
+        for operand in (x, y)
+    ):
+        # Normalization followed by scale multiplication has independently
+        # observed normalization and product domains. Retain both, including
+        # mixed affine/MX policies: synthesizing a product grid in the first
+        # operand's dtype would add rounding absent from quantized evaluation.
+        return
+
     if qparam_dtype(x) == qparam_dtype(node):
         return
 
