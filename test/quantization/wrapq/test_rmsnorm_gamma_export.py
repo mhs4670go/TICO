@@ -24,7 +24,7 @@ from circle_schema import circle
 from tico.circle import CircleDocument
 from tico.circle.runtime import CircleReferenceRuntime, ExecutionMode
 from tico.quantization.config.ptq import PTQConfig
-from tico.quantization.config.specs import affine, mx
+from tico.quantization.config.specs import affine, mx, no_quant
 from tico.quantization.wrapq.dtypes import DType
 from tico.quantization.wrapq.observers.mx import MXObserver
 from tico.quantization.wrapq.wrappers.gemma4.quant_rmsnorm import QuantGemma4RMSNorm
@@ -79,14 +79,22 @@ class RMSNormGammaExportTest(unittest.TestCase):
         unit_gamma=False,
         width=8,
         pre_spec=None,
+        qcfg=None,
+        disable_fake_quant=False,
     ):
         module = wrapper(
             _Norm(width, gamma=gamma, unit_gamma=unit_gamma),
-            qcfg=PTQConfig(
-                activation=spec,
-                weight=affine(DType.uint(8)),
-                split_rmsnorm_gamma=split,
-                overrides={"act_pre_gamma": pre_spec} if pre_spec is not None else {},
+            qcfg=(
+                qcfg
+                if qcfg is not None
+                else PTQConfig(
+                    activation=spec,
+                    weight=affine(DType.uint(8)),
+                    split_rmsnorm_gamma=split,
+                    overrides=(
+                        {"act_pre_gamma": pre_spec} if pre_spec is not None else {}
+                    ),
+                )
             ),
         ).eval()
         sample = torch.linspace(-2.173, 1.921, 6 * width).reshape(1, 6, width)
@@ -94,11 +102,144 @@ class RMSNormGammaExportTest(unittest.TestCase):
         with torch.no_grad():
             module(sample)
         module.freeze_qparams()
+        if disable_fake_quant:
+            for _, observer in module.named_observers():
+                observer.disable_fake_quant()
         # No compile-config overrides: this includes the default Circle O1 passes.
         converted = tico.convert(module, (sample,))
         document = CircleDocument.from_bytes(converted.circle_binary)
         document.verify(raise_on_error=True)
         return module, sample, document
+
+    def _assert_floating_export(self, module, sample, document, *, split):
+        model = document.model
+        graph = model.subgraphs[0]
+        for tensor in graph.tensors:
+            self.assertEqual(tensor.type, circle.TensorType.TensorType.FLOAT32)
+            self.assertIsNone(tensor.quantization)
+        self.assertEqual(
+            _operators(model, circle.BuiltinOperator.BuiltinOperator.QUANTIZE), []
+        )
+        self.assertEqual(
+            _operators(model, circle.BuiltinOperator.BuiltinOperator.DEQUANTIZE), []
+        )
+        norms = _operators(model, circle.BuiltinOperator.BuiltinOperator.RMS_NORM)
+        self.assertEqual(len(norms), 1)
+        muls = _operators(model, circle.BuiltinOperator.BuiltinOperator.MUL)
+        self.assertEqual(len(muls), 1 if split else 0)
+        if split:
+            unit = graph.tensors[norms[0].inputs[1]]
+            np.testing.assert_array_equal(
+                np.frombuffer(model.buffers[unit.buffer].data, dtype=np.float32),
+                np.ones(sample.shape[-1], dtype=np.float32),
+            )
+            self.assertIn(norms[0].outputs[0], muls[0].inputs)
+        # Independent FP32 reference, with the existing cast-before-gamma order.
+        value = sample.float()
+        normalized = value * torch.rsqrt(
+            value.square().mean(-1, keepdim=True) + module.eps
+        )
+        expected = (normalized * module.module.weight.detach()).numpy()
+        runtime = CircleReferenceRuntime(document)
+        self.assertFalse(runtime.has_quantized_activations())
+        probe = runtime.probe_static_contracts()
+        np.testing.assert_array_equal(probe.outputs[0], np.zeros_like(expected))
+        # Use the default NATIVE execution mode, including its operand checks.
+        actual = runtime.run([sample.numpy()]).outputs[0]
+        np.testing.assert_allclose(actual, expected, rtol=1e-6, atol=1e-6)
+
+    def test_no_quant_policies_export_float_and_run_natively(self):
+        for wrapper in (QuantRMSNorm, QuantGemma4RMSNorm):
+            for split in (True, False):
+                with self.subTest(wrapper=wrapper.__name__, split=split):
+                    module, sample, document = self._export(
+                        wrapper,
+                        no_quant(),
+                        qcfg=PTQConfig(
+                            activation=no_quant(),
+                            weight=no_quant(),
+                            split_rmsnorm_gamma=split,
+                        ),
+                    )
+                    self._assert_floating_export(module, sample, document, split=split)
+
+    def test_no_quant_observer_overrides_export_float(self):
+        for wrapper in (QuantRMSNorm, QuantGemma4RMSNorm):
+            for activation in (affine(DType.uint(8)), mx(axis=-1)):
+                with self.subTest(wrapper=wrapper.__name__, activation=activation):
+                    qcfg = PTQConfig(
+                        activation=activation, weight=affine(DType.uint(8))
+                    )
+                    for name in ("weight", "act_in", "act_pre_gamma", "act_out"):
+                        qcfg.set_override(name, no_quant())
+                    module, sample, document = self._export(
+                        wrapper, activation, qcfg=qcfg
+                    )
+                    self._assert_floating_export(module, sample, document, split=True)
+
+    def test_disabled_fake_quant_policies_export_float(self):
+        for wrapper in (QuantRMSNorm, QuantGemma4RMSNorm):
+            for activation in (affine(DType.uint(8)), mx(axis=-1)):
+                with self.subTest(wrapper=wrapper.__name__, activation=activation):
+                    module, sample, document = self._export(
+                        wrapper,
+                        activation,
+                        disable_fake_quant=True,
+                    )
+                    for _, observer in module.named_observers():
+                        self.assertFalse(observer.enabled)
+                        self.assertFalse(observer.fake_quant_enabled)
+                    self._assert_floating_export(module, sample, document, split=True)
+
+    def test_quantized_intermediate_override_survives_no_quant_defaults(self):
+        for wrapper in (QuantRMSNorm, QuantGemma4RMSNorm):
+            for intermediate in (affine(DType.int(16)), mx(axis=-1)):
+                with self.subTest(wrapper=wrapper.__name__, intermediate=intermediate):
+                    qcfg = PTQConfig(
+                        activation=no_quant(),
+                        weight=no_quant(),
+                        overrides={"act_pre_gamma": intermediate},
+                    )
+                    module, _, document = self._export(
+                        wrapper,
+                        no_quant(),
+                        qcfg=qcfg,
+                        width=65,
+                    )
+                    model = document.model
+                    graph = model.subgraphs[0]
+                    norm = _operators(
+                        model, circle.BuiltinOperator.BuiltinOperator.RMS_NORM
+                    )[0]
+                    muls = _operators(model, circle.BuiltinOperator.BuiltinOperator.MUL)
+                    self.assertEqual(len(muls), 1)
+                    mul = muls[0]
+                    self.assertIn(norm.outputs[0], mul.inputs)
+                    self._assert_activation(
+                        graph.tensors[norm.outputs[0]], module.obs_act_pre_gamma
+                    )
+                    self.assertFalse(module.obs_act_pre_gamma.enabled)
+                    self.assertTrue(module.obs_act_pre_gamma.fake_quant_enabled)
+                    unit = graph.tensors[norm.inputs[1]]
+                    self.assertEqual(unit.type, circle.TensorType.TensorType.UINT8)
+                    self.assertEqual(list(unit.quantization.scale), [1.0])
+                    self.assertEqual(list(unit.quantization.zeroPoint), [0])
+                    np.testing.assert_array_equal(_constant(model, unit), np.ones(65))
+                    gamma_index = next(
+                        index for index in mul.inputs if index != norm.outputs[0]
+                    )
+                    self.assertNotEqual(gamma_index, norm.inputs[1])
+                    gamma = graph.tensors[gamma_index]
+                    self.assertEqual(gamma.type, circle.TensorType.TensorType.FLOAT32)
+                    self.assertIsNone(gamma.quantization)
+                    self.assertEqual(
+                        sum(gamma_index in op.inputs for op in graph.operators), 1
+                    )
+                    self.assertEqual(
+                        graph.tensors[mul.outputs[0]].type,
+                        circle.TensorType.TensorType.FLOAT32,
+                    )
+                    self.assertIsNone(graph.tensors[mul.outputs[0]].quantization)
 
     def _assert_affine(self, tensor, observer):
         quant = tensor.quantization

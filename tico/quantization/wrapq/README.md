@@ -174,10 +174,15 @@ the intermediate tensor retains its affine grid or MX format/axis metadata throu
 the default export pipeline. A normalization unit weight is distinct from the
 learned gamma and uses its own exact-one representation. No internal square,
 reduction, or reciprocal-square-root quantization boundaries are added.
-The split normalization constant uses UINT8 with scale `1` and zero point `0`,
-independently of activation and learned-weight policies. The Mul retains its
-observed input and output domains even when an intermediate override changes
-dtype or MX axis; export does not insert an additional product rounding grid.
+When a resolved observer actually applies affine or MX fake quantization, the
+split normalization constant uses UINT8 with scale `1` and zero point `0`,
+independently of activation and learned-weight policies. If all local observers
+use `no_quant()` or bypass fake quantization, the unit constant stays floating,
+including after freeze switches the wrapper to QUANT mode. This decision follows
+the actual observer overrides and fake-quantization flags, not collection flags.
+The Mul retains its observed input and output domains even when an intermediate
+override changes dtype or MX axis; export does not insert an additional product
+rounding grid.
 
 New quantization states record the selected split setting. States without this
 setting mean the old fused (`False`) structure and remain loadable into an

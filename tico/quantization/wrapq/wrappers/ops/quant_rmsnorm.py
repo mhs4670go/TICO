@@ -19,6 +19,7 @@ import torch.nn as nn
 
 from tico.quantization.config.ptq import PTQConfig
 from tico.quantization.wrapq.mode import Mode
+from tico.quantization.wrapq.observers.identity import IdentityObserver
 from tico.quantization.wrapq.wrappers.quant_module_base import QuantModuleBase
 from tico.quantization.wrapq.wrappers.registry import try_register
 
@@ -62,9 +63,13 @@ class _QuantRMSNormBase(QuantModuleBase):
 
     def _unit_weight(self, x: torch.Tensor) -> torch.Tensor:
         unit = torch.ones((x.shape[-1],), dtype=x.dtype, device=x.device)
-        if self._mode is Mode.QUANT:
+        if self._mode is Mode.QUANT and any(
+            observer.fake_quant_enabled and not isinstance(observer, IdentityObserver)
+            for observer in self._all_observers()
+        ):
             # This exact constant grid is independent of the learned gamma policy.
             # It also gives the Circle normalization weight valid integer metadata.
+            # Identity and bypassed observers must keep a fully floating export.
             unit = torch.fake_quantize_per_tensor_affine(unit, 1.0, 0, 0, 255)
         return unit
 
