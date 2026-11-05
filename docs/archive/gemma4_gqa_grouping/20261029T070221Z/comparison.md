@@ -1,3 +1,5 @@
+> Historical October measurement: the branches were rebased on 2026-11-05. See [rebase validation](../20261105T002539Z/rebase.md); the numbers and measured SHAs below remain the original run.
+
 # Gemma4 unrolled GQA grouping comparison — 20261029T070221Z
 
 ## Scope and provenance

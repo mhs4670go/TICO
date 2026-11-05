@@ -1,0 +1,130 @@
+{
+  "run_id": "20261105T002539Z",
+  "upstream_main": "42779caf9229ac176b47bfa6e341de84b07e8622",
+  "original_comparison_base": "54411f0ebf4782988193f1b40beab9d82c0f830d",
+  "branches": {
+    "a": {
+      "branch": "perf/gemma4-unrolled-pv-grouped",
+      "before": "7353bcc2b7b5f6f8ddc532b57a764e5b439269ac",
+      "backup": "backup/gemma4-unrolled-pv-grouped-pre-rebase-20261105T002539Z",
+      "publication_branch": "perf/gemma4-unrolled-pv-grouped-rebased-20261105",
+      "rebased_head": "7d9ad1f6af6565a634f640270ad16c69461767d1",
+      "validation": {
+        "branch": "perf/gemma4-unrolled-pv-grouped",
+        "rebased_implementation": "e4853c7cc52cebd7941bddd1b6da7eb7bbbe7948",
+        "rebased_final": "7d9ad1f6af6565a634f640270ad16c69461767d1",
+        "upstream": "42779caf9229ac176b47bfa6e341de84b07e8622",
+        "rebase_conflicts": 0,
+        "extra_fixes": false,
+        "tests": [
+          {
+            "command": "PYTHONPATH=/workspace/gemma4-a OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /workspace/TICO/.venv/bin/python -m unittest test.quantization.wrapq.wrappers.gemma4.test_quant_text_attention test.quantization.wrapq.wrappers.gemma4.test_unrolled_pv_grouping test.quantization.wrapq.wrappers.gemma4.test_grouped_attention_integration test.quantization.wrapq.wrappers.gemma4.test_rope_domain_inheritance -v",
+            "exit_code": 0,
+            "passed": 39,
+            "failed": 0,
+            "skipped": 0,
+            "duration_seconds": 50.222,
+            "log": "a-focused.log"
+          },
+          {
+            "command": "PYTHONPATH=/workspace/gemma4-a OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /workspace/TICO/.venv/bin/python -m unittest test.quantization.wrapq.wrappers.gemma4.test_kv_cache_circle -v",
+            "exit_code": 0,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "duration_seconds": 166.651,
+            "log": "a-kv-circle.log"
+          }
+        ],
+        "import_log": "a-environment.log",
+        "source_isolation_log": "a-git-verification.json",
+        "historical_archive_changed": false,
+        "new_performance_or_oct29_export_regeneration": false,
+        "pushed": false
+      },
+      "range_diff": [
+        "1:  a2bec27 = 1:  e4853c7 [quantization] Group Gemma4 unrolled PV rows by KV head",
+        "2:  e725091 = 2:  c5ecf3c [docs] Compare independent Gemma4 unrolled grouping variants",
+        "3:  7353bcc = 3:  7d9ad1f [artifacts] Store measured Gemma4 Circle export snapshots"
+      ],
+      "historical_archive_tree_preserved_before_notice": true
+    },
+    "b": {
+      "branch": "perf/gemma4-unrolled-qk-pv-grouped",
+      "before": "66a803fc76f228f6e521e944d2e0788bc268678b",
+      "backup": "backup/gemma4-unrolled-qk-pv-grouped-pre-rebase-20261105T002539Z",
+      "publication_branch": "perf/gemma4-unrolled-qk-pv-grouped-rebased-20261105",
+      "rebased_head": "4c6eb7d56a1180982c76d7befe089eeb9e643866",
+      "validation": {
+        "head": "4c6eb7d56a1180982c76d7befe089eeb9e643866",
+        "upstream": "42779caf9229ac176b47bfa6e341de84b07e8622",
+        "tico_import": "/workspace/gemma4-b/tico/__init__.py",
+        "wrapper_import": "/workspace/gemma4-b/tico/quantization/wrapq/wrappers/gemma4/quant_text_attention.py",
+        "torch": "2.13.0+cpu",
+        "transformers": "5.18.0",
+        "threads": 1,
+        "AST_equivalence": {
+          "_forward_unrolled": true,
+          "_rot": true,
+          "_resolve_rope_domains": true,
+          "_rope_branch_inherits": true
+        },
+        "branch": "perf/gemma4-unrolled-qk-pv-grouped",
+        "pre_rebase_head": "66a803fc76f228f6e521e944d2e0788bc268678b",
+        "implementation_sha": "f4bd75af474a0dc5f4657d6f13976cbf51a210c0",
+        "test_fix_sha": "c35e2250036dc23b12f8677d731480f6d5077400",
+        "rebase_conflicts": 0,
+        "range_diff": "all four commits patch-equivalent (=)",
+        "command": "PYTHONPATH=/workspace/gemma4-b OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /workspace/TICO/.venv/bin/python -m unittest -v test.quantization.wrapq.wrappers.gemma4.test_quant_text_attention test.quantization.wrapq.wrappers.gemma4.test_unrolled_qk_pv_grouping test.quantization.wrapq.wrappers.gemma4.test_grouped_attention_integration test.quantization.wrapq.wrappers.gemma4.test_rope_domain_inheritance test.quantization.wrapq.wrappers.gemma4.test_kv_cache_circle",
+        "exit_code": 0,
+        "tests": {
+          "run": 47,
+          "pass": 47,
+          "fail": 0,
+          "error": 0,
+          "skip": 0,
+          "elapsed_seconds": 219.955
+        },
+        "source_diffcheck_exit": 0,
+        "archives_unchanged": true,
+        "identities_verified": true,
+        "working_tree_clean": true,
+        "push": "NOT_RUN (parent owns suffix branch publication)"
+      },
+      "range_diff": [
+        "1:  386a4ec = 1:  f4bd75a [quantization] Group Gemma4 unrolled QK and PV query rows",
+        "2:  d191ac6 = 2:  c35e225 [test] Keep the real Gemma4 output projection in grouping checks",
+        "3:  f18a4e8 = 3:  dfea0b1 [docs] Compare independent Gemma4 unrolled grouping variants",
+        "4:  66a803f = 4:  4c6eb7d [artifacts] Store measured Gemma4 Circle export snapshots"
+      ],
+      "historical_archive_tree_preserved_before_notice": true
+    }
+  },
+  "scope": "Rebase existing independent alternatives, fresh focused regression tests and default QUANT 24/8 Circle smoke. No performance rerun or replacement of the original comparison baseline.",
+  "publication_policy": "Preserve original remote refs: explicit no-force-push instruction remains. Publish new rebased refs with ordinary push.",
+  "fresh_circle_smoke": {
+    "commands": [
+      {
+        "cwd": "/workspace/gemma4-a",
+        "command": "PYTHONPATH=/workspace/gemma4-a OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /workspace/TICO/.venv/bin/python docs/archive/gemma4_gqa_grouping/20261029T070221Z/export_check.py --quant quant --output /workspace/gemma4-rebase-20261105T002539Z/export/a",
+        "exit_code": 0,
+        "log": "/workspace/gemma4-rebase-20261105T002539Z/export/a.log"
+      },
+      {
+        "cwd": "/workspace/gemma4-b",
+        "command": "PYTHONPATH=/workspace/gemma4-b OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /workspace/TICO/.venv/bin/python docs/archive/gemma4_gqa_grouping/20261029T070221Z/export_check.py --quant quant --output /workspace/gemma4-rebase-20261105T002539Z/export/b",
+        "exit_code": 0,
+        "log": "/workspace/gemma4-rebase-20261105T002539Z/export/b.log"
+      },
+      {
+        "cwd": "/workspace/gemma4-a",
+        "command": "PYTHONPATH=/workspace/gemma4-a OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /workspace/TICO/.venv/bin/python /workspace/gemma4-rebase-20261105T002539Z/export/summarize_current.py",
+        "exit_code": 0
+      }
+    ],
+    "summary_file": "circle_smoke.json",
+    "runtime": "FAKE_QUANTIZE semantic reference; all4 hidden/key/value outputs exactly equal to ABI-aligned eager",
+    "fresh_calibration": true,
+    "old_checkpoints_reused": false
+  }
+}
