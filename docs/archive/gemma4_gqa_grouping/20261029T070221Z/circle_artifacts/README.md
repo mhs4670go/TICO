@@ -1,3 +1,5 @@
+> Historical October binaries: these payloads were preserved during the 2026-11-05 rebase and are not regenerated exports of the rebased code. See [rebase validation](../../20261105T002539Z/rebase.md).
+
 # Exported Circle snapshots
 
 Added following the explicit request to push the exported Circle files. These are the existing measured binaries, copied byte-for-byte; no weights, qparams or exports were regenerated.
