@@ -1,0 +1,26 @@
+{
+  "collection": 4.774397749000059,
+  "suite": 0.7532697359999929,
+  "inside_wall": 7.050699123999948,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.linear.test.modules.op.linear.FQLinearWithFp32Bias",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 411,
+    "inputs": 411,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 411,
+    "inputs": 412,
+    "probe": 1
+  },
+  "tico": "<BASELINE>/tico/__init__.py",
+  "testsRun": 1,
+  "successful": true
+}

@@ -1,0 +1,10 @@
+test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd) ... ok
+
+Slowest test durations
+----------------------------------------------------------------------
+0.655s     test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.658s
+
+OK

@@ -1,0 +1,7 @@
+test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.722s
+
+OK
+RUN unit tests with -k *test.modules.op.add.SimpleAdd ...

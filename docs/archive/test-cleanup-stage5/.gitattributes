@@ -1,0 +1,4 @@
+# Evidence hashes refer to stored bytes, independent of checkout newline settings.
+* -text
+# Preserve trailing spaces emitted by unittest and CI terminal output.
+*.log -whitespace

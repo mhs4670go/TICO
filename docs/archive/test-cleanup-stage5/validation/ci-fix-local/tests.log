@@ -1,0 +1,36 @@
+test_conversion_only_keeps_reference_probe (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_conversion_only_keeps_reference_probe) ... ok
+test_dynamic_shapes_keep_actual_and_alternative_reference_execution (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_dynamic_shapes_keep_actual_and_alternative_reference_execution) ... ok
+test_external_boundary_keeps_real_reference_prevalidation (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_external_boundary_keeps_real_reference_prevalidation) ... ok
+test_real_reference_failure_after_successful_probe_propagates (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_real_reference_failure_after_successful_probe_propagates) ... ok
+test_real_reference_still_rejects_wrong_operator_shape_and_dtype (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_real_reference_still_rejects_wrong_operator_shape_and_dtype) ... ok
+test_reference_keeps_structure_probe_public_loading_and_real_execution (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_reference_keeps_structure_probe_public_loading_and_real_execution) ... ok
+test_zero_probe_is_an_additional_data_case_even_with_static_shapes (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_zero_probe_is_an_additional_data_case_even_with_static_shapes) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.119s
+
+OK
+
+TEST FAILED at 'infer_circle ...'
+ GATHER indices contain values outside [0, 2): min=2, max=2.
+  at subgraphs[0].operators[0] GATHER (builtin code 36, version 1) inputs=[tensors[0] 'x' FLOAT32[2] (activation), tensors[1] 'index' INT32[1] (activation)] outputs=[tensors[2] 'out' FLOAT32[1] (activation)]
+
+TEST FAILED at 'verify_circle ...'
+ operator 0 (ADD) output 0 has shape [1, 2], but tensors[2] 'out' FLOAT32[2, 1] (activation) requires dimension 0 to be 2.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' FLOAT32[2, 1] (activation)]
+
+TEST FAILED at 'infer_circle ...'
+ operator 0 (ADD) output 0 has shape [1, 2], but tensors[2] 'out' FLOAT32[2, 1] (activation) requires dimension 0 to be 2.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' FLOAT32[2, 1] (activation)]
+
+TEST FAILED at 'verify_circle ...'
+ operator 0 (ADD) output 0 has dtype float32, but tensors[2] 'out' INT32[1, 2] (activation) requires INT32.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' INT32[1, 2] (activation)]
+
+TEST FAILED at 'infer_circle ...'
+ operator 0 (ADD) output 0 has dtype float32, but tensors[2] 'out' INT32[1, 2] (activation) requires INT32.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' INT32[1, 2] (activation)]
+
+TEST FAILED at 'verify_circle ...'
+ RESHAPE target [0, 0] has 0 elements but the input has 4.
+  at subgraphs[0].operators[0] RESHAPE (builtin code 22, version 1) inputs=[tensors[0] 'x' FLOAT32[4] (activation), tensors[1] 'shape' INT32[2] (activation)] outputs=[tensors[2] 'out' FLOAT32[2, 2] (activation)]

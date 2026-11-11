@@ -1,0 +1,22 @@
+{
+  "base_commit": "b7ed542e9a717580456b63bcac000c16cea08ac8",
+  "full_command": "./ccex test",
+  "exit": 0,
+  "run": 5018,
+  "passed": 4969,
+  "skipped": 49,
+  "failures": 0,
+  "errors": 0,
+  "expected_failures": 0,
+  "unexecuted": "internal opt-ins, remote model/device/external backends, actual Python 3.10/3.11",
+  "focused_command": "python -m unittest -v test.unit_test.utils.test_lazy_generated_tests test.unit_test.utils.test_circle_harness test.unit_test.utils.test_ccex_test test.unit_test.utils.test_result_validation test.unit_test.circle.runtime.test_executor test.unit_test.utils.test_runtime_independence",
+  "focused_count": 71,
+  "focused_exit": 0,
+  "dynamic_command": "./ccex test -k test.modules.net.mlp_dyn --durations 3",
+  "dynamic_count": 1,
+  "dynamic_exit": 0,
+  "format_command": "./ccex format --no-apply-patches",
+  "format_exit": 0,
+  "explicit_changed_files_lintrunner_exit": 0,
+  "full_suite_not_used_as_before_after_performance_comparison": true
+}

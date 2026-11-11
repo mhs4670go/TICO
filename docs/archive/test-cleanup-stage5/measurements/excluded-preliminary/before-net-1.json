@@ -1,0 +1,28 @@
+{
+  "collection": 5.85367458799999,
+  "suite": 0.6992451410000058,
+  "inside_wall": 6.61277531799999,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_net.test.modules.net.mlp.test.modules.net.mlp.MLP",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "tico": "<BASELINE>/tico/__init__.py",
+  "testsRun": 1,
+  "successful": true,
+  "process_wall": 7.847259869000027,
+  "exit": 0
+}

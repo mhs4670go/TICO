@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-11T02:09:23Z",
+  "repository": "Samsung/TICO",
+  "data": {
+    "url": "https://github.com/Samsung/TICO/pull/1126",
+    "number": 1126,
+    "state": "open",
+    "head": "test/stage5-harness-costs",
+    "head_sha": "739d59792fa8b4ad022ddbe3b5306c32669abb05",
+    "head_repo_full_name": "mhs4670go/TICO",
+    "base": "main",
+    "base_sha": "ec15b65298a67da42ddf8de507619f1ffdfd2fbc",
+    "merge_commit_sha": "2b5420b997be0574e3f12159afed7687327af6ff"
+  }
+}

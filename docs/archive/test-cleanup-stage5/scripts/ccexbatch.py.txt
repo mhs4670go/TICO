@@ -1,0 +1,11 @@
+import json,subprocess,sys,time
+from pathlib import Path
+phase=sys.argv[1]; root=Path('<STAGE5_RECORDS>'); records=[]
+for name, keyword in [('single','*test.modules.op.add.SimpleAdd'),('op','test.modules.op.add'),('net','test.modules.net.mlp.'),('conversion','test.modules.op.linear.FQLinearWithFp32Bias')]:
+    for i in range(3):
+        cmd=['./ccex','test','-k',keyword]
+        with (root/f'{phase}-ccex-{name}-{i}.log').open('w') as log:
+            start=time.perf_counter(); r=subprocess.run(cmd,stdout=log,stderr=subprocess.STDOUT); wall=time.perf_counter()-start
+        records.append({'name':name,'iteration':i,'command':cmd,'wall':wall,'exit':r.returncode})
+        print(phase,name,i,round(wall,3),r.returncode,flush=True)
+(root/f'{phase}-ccex.json').write_text(json.dumps(records,indent=2))

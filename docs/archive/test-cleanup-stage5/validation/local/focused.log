@@ -1,0 +1,261 @@
+test_class_skip_never_constructs_model_or_inputs (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_class_skip_never_constructs_model_or_inputs) ... ok
+test_discovery_and_filter_only_construct_selected_model (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_discovery_and_filter_only_construct_selected_model) ... ok
+test_factories_bind_distinct_models_and_reloads_use_fresh_state (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_factories_bind_distinct_models_and_reloads_use_fresh_state) ... ok
+test_instance_metadata_is_resolved_after_construction (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_instance_metadata_is_resolved_after_construction) ... ok
+test_invalid_example_input_contract_is_preparation_error (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_invalid_example_input_contract_is_preparation_error) ... ok
+test_negative_execution_still_requires_expected_failure (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_negative_execution_still_requires_expected_failure) ... ok
+test_negative_fixture_errors_are_errors_even_when_diagnostic_matches (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_negative_fixture_errors_are_errors_even_when_diagnostic_matches) ... ok
+test_one_input_creation_is_used_through_the_execution (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_one_input_creation_is_used_through_the_execution) ... ok
+test_runtime_specific_negative_runs_normally_on_other_runtime (test.unit_test.utils.test_lazy_generated_tests.LazyGeneratedTests.test_runtime_specific_negative_runs_normally_on_other_runtime) ... ok
+test_conversion_only_keeps_reference_probe (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_conversion_only_keeps_reference_probe) ... ok
+test_dynamic_shapes_keep_actual_and_alternative_reference_execution (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_dynamic_shapes_keep_actual_and_alternative_reference_execution) ... ok
+test_external_boundary_keeps_real_reference_prevalidation (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_external_boundary_keeps_real_reference_prevalidation) ... ok
+test_real_reference_failure_after_successful_probe_propagates (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_real_reference_failure_after_successful_probe_propagates) ... ok
+test_real_reference_still_rejects_wrong_operator_shape_and_dtype (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_real_reference_still_rejects_wrong_operator_shape_and_dtype) ... ok
+test_reference_keeps_structure_probe_public_loading_and_real_execution (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_reference_keeps_structure_probe_public_loading_and_real_execution) ... ok
+test_zero_probe_is_an_additional_data_case_even_with_static_shapes (test.unit_test.utils.test_circle_harness.TestCircleHarness.test_zero_probe_is_an_additional_data_case_even_with_static_shapes) ... ok
+test_discovery_preserves_project_path (test.unit_test.utils.test_ccex_test.CcexTestTest.test_discovery_preserves_project_path) ... ok
+test_duration_compatibility_result_preserves_failfast_and_outcomes (test.unit_test.utils.test_ccex_test.CcexTestTest.test_duration_compatibility_result_preserves_failfast_and_outcomes) ... ok
+test_duration_results_preserve_buffer_and_class_setup_errors (test.unit_test.utils.test_ccex_test.CcexTestTest.test_duration_results_preserve_buffer_and_class_setup_errors) ... ok
+test_durations_forward_model_and_shorthand_selectors (test.unit_test.utils.test_ccex_test.CcexTestTest.test_durations_forward_model_and_shorthand_selectors) ... ok
+test_durations_preserve_failure_import_and_no_match_status (test.unit_test.utils.test_ccex_test.CcexTestTest.test_durations_preserve_failure_import_and_no_match_status) ... ok
+test_durations_preserve_selection_and_report_full_ids (test.unit_test.utils.test_ccex_test.CcexTestTest.test_durations_preserve_selection_and_report_full_ids) ... ok
+test_durations_preserve_skip_expected_failure_and_subtests (test.unit_test.utils.test_ccex_test.CcexTestTest.test_durations_preserve_skip_expected_failure_and_subtests) ... ok
+test_failed_test_returns_nonzero (test.unit_test.utils.test_ccex_test.CcexTestTest.test_failed_test_returns_nonzero) ... ok
+test_keyword_preserves_project_path (test.unit_test.utils.test_ccex_test.CcexTestTest.test_keyword_preserves_project_path) ... ok
+test_keyword_with_spaces_remains_one_argument (test.unit_test.utils.test_ccex_test.CcexTestTest.test_keyword_with_spaces_remains_one_argument) ... ok
+test_model_pattern_reaches_model_loader (test.unit_test.utils.test_ccex_test.CcexTestTest.test_model_pattern_reaches_model_loader) ... ok
+test_module_keyword_shorthands_are_preserved (test.unit_test.utils.test_ccex_test.CcexTestTest.test_module_keyword_shorthands_are_preserved) ... ok
+test_runtime_internal_and_logging_options_reach_tests (test.unit_test.utils.test_ccex_test.CcexTestTest.test_runtime_internal_and_logging_options_reach_tests) ... ok
+test_bool_scalar_has_its_own_kind_and_exact_value (test.unit_test.utils.test_result_validation.TestResultValidation.test_bool_scalar_has_its_own_kind_and_exact_value) ... ok
+test_discrete_tensors_ignore_float_tolerances (test.unit_test.utils.test_result_validation.TestResultValidation.test_discrete_tensors_ignore_float_tolerances) ... ok
+test_float_scalar_cannot_become_discrete (test.unit_test.utils.test_result_validation.TestResultValidation.test_float_scalar_cannot_become_discrete) ... ok
+test_float_tensor_uses_callers_tolerance (test.unit_test.utils.test_result_validation.TestResultValidation.test_float_tensor_uses_callers_tolerance) ... ok
+test_integer_scalar_is_not_cast_to_narrow_or_float_output (test.unit_test.utils.test_result_validation.TestResultValidation.test_integer_scalar_is_not_cast_to_narrow_or_float_output) ... ok
+test_integer_tensor_off_by_one_is_not_relative_error (test.unit_test.utils.test_result_validation.TestResultValidation.test_integer_tensor_off_by_one_is_not_relative_error) ... ok
+test_large_integer_scalar_does_not_round_through_float (test.unit_test.utils.test_result_validation.TestResultValidation.test_large_integer_scalar_does_not_round_through_float) ... ok
+test_matching_nan_and_signed_infinities_are_preserved (test.unit_test.utils.test_result_validation.TestResultValidation.test_matching_nan_and_signed_infinities_are_preserved) ... ok
+test_nonmatching_nonfinite_values_are_rejected (test.unit_test.utils.test_result_validation.TestResultValidation.test_nonmatching_nonfinite_values_are_rejected) ... ok
+test_output_count_includes_extra_outputs (test.unit_test.utils.test_result_validation.TestResultValidation.test_output_count_includes_extra_outputs) ... ok
+test_scalar_and_single_element_output_representations (test.unit_test.utils.test_result_validation.TestResultValidation.test_scalar_and_single_element_output_representations) ... ok
+test_tensor_shape_and_dtype_cannot_change (test.unit_test.utils.test_result_validation.TestResultValidation.test_tensor_shape_and_dtype_cannot_change) ... ok
+test_declared_dtype_is_checked_against_computed_dtype (test.unit_test.circle.runtime.test_executor.DynamicShapeTest.test_declared_dtype_is_checked_against_computed_dtype)
+An INT32 output produced by a FLOAT32 ADD is rejected without casting. ... ok
+test_declared_static_output_shape_is_checked_against_computed_shape (test.unit_test.circle.runtime.test_executor.DynamicShapeTest.test_declared_static_output_shape_is_checked_against_computed_shape)
+A wrong serialized output shape is reported, not silently reshaped. ... ok
+test_probe_rejects_dynamic_inputs (test.unit_test.circle.runtime.test_executor.DynamicShapeTest.test_probe_rejects_dynamic_inputs) ... ok
+test_same_model_runs_with_several_batch_sizes (test.unit_test.circle.runtime.test_executor.DynamicShapeTest.test_same_model_runs_with_several_batch_sizes) ... ok
+test_static_dimension_of_dynamic_input_is_still_enforced (test.unit_test.circle.runtime.test_executor.DynamicShapeTest.test_static_dimension_of_dynamic_input_is_still_enforced) ... ok
+test_constant_only_graph (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_constant_only_graph)
+A graph without operators or inputs returns its constant outputs. ... ok
+test_input_count_shape_and_dtype_are_validated (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_input_count_shape_and_dtype_are_validated) ... ok
+test_inputs_are_not_mutated_and_runs_are_independent (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_inputs_are_not_mutated_and_runs_are_independent)
+Repeated runs on one runtime do not leak state or modify inputs. ... ok
+test_multiple_outputs_keep_declared_order_and_graph_input_passthrough (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_multiple_outputs_keep_declared_order_and_graph_input_passthrough)
+A graph input reused as an output is returned as a copy in interface order. ... ok
+test_scalar_and_zero_sized_constants_keep_their_rank (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_scalar_and_zero_sized_constants_keep_their_rank)
+Scalar constants stay 0-d and zero-sized constants stay empty. ... ok
+test_torch_tensor_inputs_are_accepted (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_torch_tensor_inputs_are_accepted) ... ok
+test_trace_keeps_intermediate_values (test.unit_test.circle.runtime.test_executor.InterfaceBindingTest.test_trace_keeps_intermediate_values) ... ok
+test_arithmetic_on_quantized_integers_is_rejected_in_native_mode (test.unit_test.circle.runtime.test_executor.NativeQuantizedPolicyTest.test_arithmetic_on_quantized_integers_is_rejected_in_native_mode) ... ok
+test_value_preserving_operator_moves_quantized_integers_exactly (test.unit_test.circle.runtime.test_executor.NativeQuantizedPolicyTest.test_value_preserving_operator_moves_quantized_integers_exactly) ... ok
+test_bfloat16_activations_are_rejected_before_execution (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_bfloat16_activations_are_rejected_before_execution)
+Raw BFLOAT16 storage must not be admitted as UINT16 arithmetic. ... ok
+test_bfloat16_constants_are_rejected_by_public_runtime_apis (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_bfloat16_constants_are_rejected_by_public_runtime_apis)
+Constant outputs retain storage support without runtime dtype support. ... ok
+test_bfloat16_output_is_rejected_before_execution (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_bfloat16_output_is_rejected_before_execution)
+A BFLOAT16 output is unsupported even when all inputs are FLOAT32. ... ok
+test_constant_with_wrong_payload_size_is_rejected (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_constant_with_wrong_payload_size_is_rejected) ... ok
+test_custom_operator_is_rejected (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_custom_operator_is_rejected) ... ok
+test_invalid_option_is_rejected (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_invalid_option_is_rejected) ... ok
+test_operator_arity_is_validated (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_operator_arity_is_validated) ... ok
+test_static_probe_accepts_consistent_model (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_static_probe_accepts_consistent_model) ... ok
+test_uint16_arithmetic_remains_supported (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_uint16_arithmetic_remains_supported)
+UINT16 values use integer semantics, independently of BFLOAT16 storage. ... ok
+test_unknown_fused_activation_is_rejected (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_unknown_fused_activation_is_rejected) ... ok
+test_unproduced_tensor_is_reported_by_structural_verification (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_unproduced_tensor_is_reported_by_structural_verification) ... ok
+test_unsupported_operator_reports_opcode_version_and_operands (test.unit_test.circle.runtime.test_executor.PrepareValidationTest.test_unsupported_operator_reports_opcode_version_and_operands) ... ok
+test_conversion_and_execution_do_not_use_external_runtimes (test.unit_test.utils.test_runtime_independence.DefaultRuntimeIndependenceTest.test_conversion_and_execution_do_not_use_external_runtimes)
+Convert, save, reload, and execute through CircleModel under the guard. ... ok
+test_default_runtime_name_is_reference (test.unit_test.utils.test_runtime_independence.DefaultRuntimeIndependenceTest.test_default_runtime_name_is_reference) ... ok
+test_guard_detects_external_runtime_usage (test.unit_test.utils.test_runtime_independence.DefaultRuntimeIndependenceTest.test_guard_detects_external_runtime_usage)
+The guard itself must fail when an external runtime is requested. ... ok
+test_quantized_evaluation_does_not_use_external_toolchain (test.unit_test.utils.test_runtime_independence.DefaultRuntimeIndependenceTest.test_quantized_evaluation_does_not_use_external_toolchain)
+evaluate(BACKEND.CIRCLE) must not call onecc or import onert. ... ok
+
+----------------------------------------------------------------------
+Ran 71 tests in 35.733s
+
+OK
+
+TEST FAILED at 'infer_circle ...'
+ GATHER indices contain values outside [0, 2): min=2, max=2.
+  at subgraphs[0].operators[0] GATHER (builtin code 36, version 1) inputs=[tensors[0] 'x' FLOAT32[2] (activation), tensors[1] 'index' INT32[1] (activation)] outputs=[tensors[2] 'out' FLOAT32[1] (activation)]
+
+TEST FAILED at 'verify_circle ...'
+ operator 0 (ADD) output 0 has shape [1, 2], but tensors[2] 'out' FLOAT32[2, 1] (activation) requires dimension 0 to be 2.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' FLOAT32[2, 1] (activation)]
+
+TEST FAILED at 'infer_circle ...'
+ operator 0 (ADD) output 0 has shape [1, 2], but tensors[2] 'out' FLOAT32[2, 1] (activation) requires dimension 0 to be 2.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' FLOAT32[2, 1] (activation)]
+
+TEST FAILED at 'verify_circle ...'
+ operator 0 (ADD) output 0 has dtype float32, but tensors[2] 'out' INT32[1, 2] (activation) requires INT32.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' INT32[1, 2] (activation)]
+
+TEST FAILED at 'infer_circle ...'
+ operator 0 (ADD) output 0 has dtype float32, but tensors[2] 'out' INT32[1, 2] (activation) requires INT32.
+  at subgraphs[0].operators[0] ADD (builtin code 0, version 1) inputs=[tensors[0] 'x' FLOAT32[1, 2] (activation), tensors[1] 'one' FLOAT32[] (constant)] outputs=[tensors[2] 'out' INT32[1, 2] (activation)]
+
+TEST FAILED at 'verify_circle ...'
+ RESHAPE target [0, 0] has 0 elements but the input has 4.
+  at subgraphs[0].operators[0] RESHAPE (builtin code 22, version 1) inputs=[tensors[0] 'x' FLOAT32[4] (activation), tensors[1] 'shape' INT32[2] (activation)] outputs=[tensors[2] 'out' FLOAT32[2, 2] (activation)]
+
+TEST FAILED at 'validate_result ...'
+ Scalar value mismatches: expected True, got False.
+
+TEST FAILED at 'validate_result ...'
+ Scalar result True cannot be compared with circle output int32[1].
+
+TEST FAILED at 'validate_result ...'
+ Scalar result 1 cannot be compared with circle output bool[1].
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not equal!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: 1 at index (0,)
+Greatest relative difference: 1.1102230246251565e-16 at index (0,)
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not equal!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: 1 at index (0,)
+Greatest relative difference: 1.0 at index (0,)
+
+TEST FAILED at 'validate_result ...'
+ Scalar result 1.5 cannot be compared with circle output uint8[1].
+
+TEST FAILED at 'validate_result ...'
+ Scalar result 1.5 cannot be compared with circle output int64[].
+
+TEST FAILED at 'validate_result ...'
+ Scalar result 1.5 cannot be compared with circle output bool[].
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not close!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: 0.009999990463256836 at index (0,) (up to 0.001 allowed)
+Greatest relative difference: 0.009999990463256836 at index (0,) (up to 0 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Scalar value mismatches: expected 257, got 1.
+
+TEST FAILED at 'validate_result ...'
+ Scalar value mismatches: expected -1, got 255.
+
+TEST FAILED at 'validate_result ...'
+ Scalar result 9007199254740993 cannot be compared with circle output float64[1].
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not equal!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: 1 at index (0,)
+Greatest relative difference: 9.999999747378752e-06 at index (0,)
+
+TEST FAILED at 'validate_result ...'
+ Scalar value mismatches: expected 9007199254740993, got 9007199254740994.
+
+TEST FAILED at 'validate_result ...'
+ Scalar value mismatches: expected 18446744073709551615, got 18446744073709551614.
+
+TEST FAILED at 'validate_result ...'
+ Scalars are not close!
+
+Expected inf but got -inf.
+Absolute difference: inf (up to 1e-05 allowed)
+Relative difference: nan (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not close!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: inf at index (0,) (up to 1e-05 allowed)
+Greatest relative difference: nan at index (0,) (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Scalars are not close!
+
+Expected 1.0 but got nan.
+Absolute difference: nan (up to 1e-05 allowed)
+Relative difference: nan (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not close!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: nan at index (0,) (up to 1e-05 allowed)
+Greatest relative difference: nan at index (0,) (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Scalars are not close!
+
+Expected nan but got 1.0.
+Absolute difference: nan (up to 1e-05 allowed)
+Relative difference: nan (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not close!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: nan at index (0,) (up to 1e-05 allowed)
+Greatest relative difference: nan at index (0,) (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Scalars are not close!
+
+Expected 1e+300 but got inf.
+Absolute difference: inf (up to 1e-05 allowed)
+Relative difference: inf (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ Tensor-likes are not close!
+
+Mismatched elements: 1 / 1 (100.0%)
+Greatest absolute difference: inf at index (0,) (up to 1e-05 allowed)
+Greatest relative difference: inf at index (0,) (up to 1e-05 allowed)
+
+TEST FAILED at 'validate_result ...'
+ 
+Items are not equal:
+Number of outputs mismatches.
+expected result: #1, circle result: #2
+ ACTUAL: 1
+ DESIRED: 2
+
+TEST FAILED at 'validate_result ...'
+ 
+Items are not equal:
+Number of outputs mismatches.
+expected result: #1, circle result: #0
+ ACTUAL: 1
+ DESIRED: 0
+
+TEST FAILED at 'validate_result ...'
+ Scalar result 3 cannot be compared with circle output int64[2].
+
+TEST FAILED at 'validate_result ...'
+ 
+Items are not equal:
+Shape mismatches.
+expected result: torch.Size([1])
+circle result: ()
+ ACTUAL: 1
+ DESIRED: 0
+
+TEST FAILED at 'validate_result ...'
+ The values for attribute 'dtype' do not match: torch.float64 != torch.float32.

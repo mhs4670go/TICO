@@ -1,0 +1,26 @@
+{
+  "collection": 4.2594523519999825,
+  "suite": 0.6204102519999992,
+  "inside_wall": 6.440182421000031,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 411,
+    "inputs": 411,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 411,
+    "inputs": 412,
+    "probe": 1
+  },
+  "tico": "<BASELINE>/tico/__init__.py",
+  "testsRun": 1,
+  "successful": true
+}

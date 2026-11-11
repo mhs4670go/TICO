@@ -1,0 +1,40 @@
+{
+  "collection": 4.560263350000241,
+  "suite": 0.7604677230001471,
+  "inside_wall": 6.909055714999795,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 411,
+    "inputs": 411,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 411,
+    "inputs": 412,
+    "probe": 1
+  },
+  "preparation_discovery": {
+    "construct": 0.04125814000099126,
+    "inputs": 0.14998203299774104
+  },
+  "preparation_total": {
+    "construct": 0.04125814000099126,
+    "inputs": 0.15009130899761658
+  },
+  "tico": "<BASELINE>/tico/__init__.py",
+  "durations": [
+    [
+      "test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd)",
+      0.758058850999987
+    ]
+  ],
+  "testsRun": 1,
+  "successful": true
+}

@@ -1,0 +1,29 @@
+2026-11-11T01:07:13.9571615Z ##[group]Run lintrunner --force-color --all-files --take PYLINT,MYPY --config .lintrunner.toml
+2026-11-11T01:07:13.9572233Z lintrunner --force-color --all-files --take PYLINT,MYPY --config .lintrunner.toml
+2026-11-11T01:07:13.9585076Z shell: /usr/bin/bash -e {0}
+2026-11-11T01:07:13.9585359Z env:
+2026-11-11T01:07:13.9585723Z   pythonLocation: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:07:13.9586216Z   PKG_CONFIG_PATH: <CI_PYTHON>/Python/3.12.16/x64/lib/pkgconfig
+2026-11-11T01:07:13.9586663Z   Python_ROOT_DIR: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:07:13.9587051Z   Python2_ROOT_DIR: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:07:13.9587425Z   Python3_ROOT_DIR: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:07:13.9587877Z   LD_LIBRARY_PATH: <CI_PYTHON>/Python/3.12.16/x64/lib
+2026-11-11T01:07:13.9588241Z ##[endgroup]
+2026-11-11T01:10:20.8744162Z 
+2026-11-11T01:10:20.8744184Z 
+2026-11-11T01:10:20.8745548Z >>> Lint for test/unit_test/utils/test_circle_harness.py:
+2026-11-11T01:10:20.8746306Z 
+2026-11-11T01:10:20.8746591Z   Error (MYPY) arg-type
+2026-11-11T01:10:20.8746987Z     Argument after ** must be a mapping, not "object"
+2026-11-11T01:10:20.8747358Z     
+2026-11-11T01:10:20.8747645Z     To disable, use `  # type: ignore[arg-type]`
+2026-11-11T01:10:20.8747925Z 
+2026-11-11T01:10:20.8748381Z         101  |            ({"dtype": np.int32}, "dtype float32.*requires INT32"),
+2026-11-11T01:10:20.8748770Z         102  |        ]:
+2026-11-11T01:10:20.8749110Z         103  |            with self.subTest(kwargs=kwargs):
+2026-11-11T01:10:20.8749633Z     >>> 104  |                self._add_document(**kwargs).save(self.path)
+2026-11-11T01:10:20.8750185Z         105  |                with self.assertRaisesRegex(CircleRuntimeValidationError, error):
+2026-11-11T01:10:20.8750669Z         106  |                    verify_circle(self.path)
+2026-11-11T01:10:20.8751204Z         107  |                with self.assertRaisesRegex(CircleRuntimeValidationError, error):
+2026-11-11T01:10:20.8751509Z 
+2026-11-11T01:10:20.8764067Z ##[error]Process completed with exit code 1.

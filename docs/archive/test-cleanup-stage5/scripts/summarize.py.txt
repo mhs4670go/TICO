@@ -1,0 +1,29 @@
+from pathlib import Path
+import json,statistics,collections,sys,importlib.metadata as m,os
+p=Path('<STAGE5_RECORDS>')
+summary={'environment':{'python':sys.version,'packages':{name:m.version(name) for name in ['torch','torchvision','circle-schema','numpy','transformers','datasets','tico']},'OMP_NUM_THREADS':os.environ.get('OMP_NUM_THREADS'),'MKL_NUM_THREADS':os.environ.get('MKL_NUM_THREADS'),'runtime':'reference','seed_policy':'existing fixtures, no new global seed','cache':'warm OS/bytecode caches; fresh processes; no cache clearing'},'cases':{},'preservation':{}}
+def stats(xs): return {'median':statistics.median(xs),'min':min(xs),'max':max(xs)}
+for name in ('discovery','single','op','net','conversion'):
+ item={}
+ for phase,root in [('baseline',p/'baseline'),('after',Path('<CHECKOUT>'))]:
+  ds=[json.loads((p/f'{phase}-{name}-{i}.json').read_text()) for i in range(3)]
+  assert all(d['tico']==str(root/'tico/__init__.py') for d in ds)
+  assert all(d['exit']==0 and not d['loader_errors'] for d in ds)
+  item[phase]={k:stats([d[k] for d in ds]) for k in ('collection','process_wall','suite') if ds[0][k] is not None}
+  diag=json.loads((p/f'{phase}-{name}-count.json').read_text())
+  item[phase].update({'counts_discovery':diag['counts_discovery'],'counts_total':diag['counts_total'],'test_count':len(ds[0]['manifest'])})
+  if name != 'discovery':
+   native=json.loads((p/f'{phase}-ccex.json').read_text()); rows=[d for d in native if d['name']==name]
+   assert len(rows)==3 and all(d['exit']==0 for d in rows)
+   item[phase]['ccex_wall']=stats([d['wall'] for d in rows])
+ a=json.loads((p/f'baseline-{name}-1.json').read_text()); b=json.loads((p/f'after-{name}-1.json').read_text())
+ old,new=collections.Counter(map(tuple,a['manifest'])),collections.Counter(map(tuple,b['manifest']))
+ assert not old-new
+ assert a['manifest']==[t for t in b['manifest'] if tuple(t) in old]
+ assert not [i for i,n in collections.Counter(t[0] for t in b['manifest']).items() if n>1]
+ summary['preservation'][name]={'original_count':len(a['manifest']),'after_count':len(b['manifest']),'added':sum((new-old).values()),'removed':sum((old-new).values()),'declarative_skips_before':sum(t[1] for t in a['manifest']),'declarative_skips_after':sum(t[1] for t in b['manifest']),'same_original_order_and_skip_reasons':True,'loader_errors':[],'failed_tests':sum('_FailedTest' in t[0] for t in b['manifest'])}
+ summary['cases'][name]=item
+ print(name)
+ for phase in ('baseline','after'): print(phase,item[phase])
+(p/'summary.json').write_text(json.dumps(summary,indent=2))
+print(summary['environment']); print(summary['preservation'])

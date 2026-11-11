@@ -1,0 +1,184 @@
+{
+  "collection": 10.021669008000003,
+  "suite": 23.688894226000002,
+  "inside_wall": 37.29878138699996,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuffer",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinFloat",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinInt",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskFolded",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskLegalized",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithNonPersistentBuffer",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddFloat",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddInt",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithDifferentMemoryFormat",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithoutPt2",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith1DInput",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith2DInput",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlpha",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroBeta",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 17,
+    "inputs": 17,
+    "probe": 17
+  },
+  "preparation_discovery": {
+    "construct": 0.0,
+    "inputs": 0.0
+  },
+  "preparation_total": {
+    "construct": 0.0014249030001565188,
+    "inputs": 0.0013724070000762367
+  },
+  "tico": "<CHECKOUT>/tico/__init__.py",
+  "durations": [
+    [
+      "test.modules.op.add.AddWithBuffer (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuffer)",
+      0.8487337750000279
+    ],
+    [
+      "test.modules.op.add.AddWithBuiltinFloat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinFloat)",
+      0.47144182900001397
+    ],
+    [
+      "test.modules.op.add.AddWithBuiltinInt (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinInt)",
+      0.5545945119999942
+    ],
+    [
+      "test.modules.op.add.AddWithCausalMaskFolded (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskFolded)",
+      0.31765076800002134
+    ],
+    [
+      "test.modules.op.add.AddWithCausalMaskLegalized (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskLegalized)",
+      0.6062395420000257
+    ],
+    [
+      "test.modules.op.add.AddWithNonPersistentBuffer (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithNonPersistentBuffer)",
+      15.24324288799994
+    ],
+    [
+      "test.modules.op.add.ScalarAddFloat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddFloat)",
+      0.5821644899999683
+    ],
+    [
+      "test.modules.op.add.ScalarAddInt (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddInt)",
+      0.33231232200000704
+    ],
+    [
+      "test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd)",
+      0.355373601999986
+    ],
+    [
+      "test.modules.op.add.SimpleAddWithDifferentMemoryFormat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithDifferentMemoryFormat)",
+      0.4832562389999566
+    ],
+    [
+      "test.modules.op.add.SimpleAddWithoutPt2 (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithoutPt2)",
+      0.9491315060000716
+    ],
+    [
+      "test.modules.op.addmm.SimpleAddmmWith1DInput (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith1DInput)",
+      0.37398017999998956
+    ],
+    [
+      "test.modules.op.addmm.SimpleAddmmWith2DInput (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith2DInput)",
+      0.4534212880000723
+    ],
+    [
+      "test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta)",
+      0.5054229480000458
+    ],
+    [
+      "test.modules.op.addmm.SimpleAddmmWithZeroAlpha (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlpha)",
+      0.37026953999998113
+    ],
+    [
+      "test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta)",
+      0.8624017280000089
+    ],
+    [
+      "test.modules.op.addmm.SimpleAddmmWithZeroBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroBeta)",
+      0.372732828999915
+    ]
+  ],
+  "testsRun": 17,
+  "successful": true
+}

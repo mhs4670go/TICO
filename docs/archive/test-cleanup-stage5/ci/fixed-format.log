@@ -1,0 +1,12 @@
+2026-11-11T01:41:38.7964691Z ##[group]Run lintrunner --force-color --all-files --take UFMT --config .lintrunner.toml
+2026-11-11T01:41:38.7965074Z lintrunner --force-color --all-files --take UFMT --config .lintrunner.toml
+2026-11-11T01:41:38.7982913Z shell: /usr/bin/bash -e {0}
+2026-11-11T01:41:38.7983059Z env:
+2026-11-11T01:41:38.7983215Z   pythonLocation: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:41:38.7983460Z   PKG_CONFIG_PATH: <CI_PYTHON>/Python/3.12.16/x64/lib/pkgconfig
+2026-11-11T01:41:38.7983709Z   Python_ROOT_DIR: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:41:38.7983926Z   Python2_ROOT_DIR: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:41:38.7984146Z   Python3_ROOT_DIR: <CI_PYTHON>/Python/3.12.16/x64
+2026-11-11T01:41:38.7984363Z   LD_LIBRARY_PATH: <CI_PYTHON>/Python/3.12.16/x64/lib
+2026-11-11T01:41:38.7984554Z ##[endgroup]
+2026-11-11T01:42:07.8873994Z ok No lint issues.

@@ -1,0 +1,42 @@
+test.modules.op.add.AddWithBuffer (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuffer) ... ok
+test.modules.op.add.AddWithBuiltinFloat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinFloat) ... ok
+test.modules.op.add.AddWithBuiltinInt (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinInt) ... ok
+test.modules.op.add.AddWithCausalMaskFolded (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskFolded) ... ok
+test.modules.op.add.AddWithCausalMaskLegalized (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskLegalized) ... ok
+test.modules.op.add.AddWithNonPersistentBuffer (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithNonPersistentBuffer) ... ok
+test.modules.op.add.ScalarAddFloat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddFloat) ... ok
+test.modules.op.add.ScalarAddInt (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddInt) ... ok
+test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd) ... ok
+test.modules.op.add.SimpleAddWithDifferentMemoryFormat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithDifferentMemoryFormat) ... ok
+test.modules.op.add.SimpleAddWithoutPt2 (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithoutPt2) ... ok
+test.modules.op.addmm.SimpleAddmmWith1DInput (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith1DInput) ... ok
+test.modules.op.addmm.SimpleAddmmWith2DInput (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith2DInput) ... ok
+test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta) ... ok
+test.modules.op.addmm.SimpleAddmmWithZeroAlpha (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlpha) ... ok
+test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta) ... ok
+test.modules.op.addmm.SimpleAddmmWithZeroBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroBeta) ... ok
+
+Slowest test durations
+----------------------------------------------------------------------
+15.243s    test.modules.op.add.AddWithNonPersistentBuffer (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithNonPersistentBuffer)
+0.949s     test.modules.op.add.SimpleAddWithoutPt2 (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithoutPt2)
+0.862s     test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta)
+0.849s     test.modules.op.add.AddWithBuffer (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuffer)
+0.606s     test.modules.op.add.AddWithCausalMaskLegalized (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskLegalized)
+0.582s     test.modules.op.add.ScalarAddFloat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddFloat)
+0.555s     test.modules.op.add.AddWithBuiltinInt (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinInt)
+0.505s     test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta)
+0.483s     test.modules.op.add.SimpleAddWithDifferentMemoryFormat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithDifferentMemoryFormat)
+0.471s     test.modules.op.add.AddWithBuiltinFloat (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinFloat)
+0.453s     test.modules.op.addmm.SimpleAddmmWith2DInput (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith2DInput)
+0.374s     test.modules.op.addmm.SimpleAddmmWith1DInput (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith1DInput)
+0.373s     test.modules.op.addmm.SimpleAddmmWithZeroBeta (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroBeta)
+0.370s     test.modules.op.addmm.SimpleAddmmWithZeroAlpha (pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlpha)
+0.355s     test.modules.op.add.SimpleAdd (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd)
+0.332s     test.modules.op.add.ScalarAddInt (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddInt)
+0.318s     test.modules.op.add.AddWithCausalMaskFolded (pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskFolded)
+
+----------------------------------------------------------------------
+Ran 17 tests in 23.689s
+
+OK

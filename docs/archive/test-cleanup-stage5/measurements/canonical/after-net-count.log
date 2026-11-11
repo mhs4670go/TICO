@@ -1,0 +1,10 @@
+test.modules.net.mlp.MLP (pt2_to_circle_test.test_net.test.modules.net.mlp.test.modules.net.mlp.MLP) ... ok
+
+Slowest test durations
+----------------------------------------------------------------------
+0.669s     test.modules.net.mlp.MLP (pt2_to_circle_test.test_net.test.modules.net.mlp.test.modules.net.mlp.MLP)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.671s
+
+OK

@@ -1,0 +1,18 @@
+import os, subprocess, sys, time, json
+from pathlib import Path
+phase=sys.argv[1]
+root=Path('<STAGE5_RECORDS>')
+cases={'discovery': [], 'single': ['--keyword','*test.modules.op.add.SimpleAdd','--run'], 'op': ['--keyword','test.modules.op.add','--run'], 'net':['--keyword','test.modules.net.mlp.','--run'], 'conversion':['--keyword','test.modules.op.linear.FQLinearWithFp32Bias','--run']}
+for key, args in cases.items():
+    for i in range(3):
+        dest=root/f'{phase}-{key}-{i}.json'
+        start=time.perf_counter()
+        with (root/f'{phase}-{key}-{i}.log').open('w') as log:
+            r=subprocess.run([sys.executable,str(root/'measure.py'),*args,'--out',str(dest)],stdout=log,stderr=subprocess.STDOUT)
+        wall=time.perf_counter()-start
+        data=json.loads(dest.read_text()); data['process_wall']=wall; data['exit']=r.returncode; dest.write_text(json.dumps(data,indent=2))
+        print(phase,key,i,round(wall,3),round(data['collection'],3),data['testsRun'],r.returncode,flush=True)
+    dest=root/f'{phase}-{key}-count.json'
+    with (root/f'{phase}-{key}-count.log').open('w') as log:
+        r=subprocess.run([sys.executable,str(root/'measure.py'),*args,'--count','--out',str(dest)],stdout=log,stderr=subprocess.STDOUT)
+    print(key,'count',r.returncode,flush=True)

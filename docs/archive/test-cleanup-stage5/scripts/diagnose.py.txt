@@ -1,0 +1,9 @@
+import subprocess,sys,json
+from pathlib import Path
+root=Path('<STAGE5_RECORDS>')
+for phase, checkout in [('baseline',root/'baseline'),('after',Path('<CHECKOUT>'))]:
+    for i in range(3):
+        dest=root/f'{phase}-preparation-{i}.json'
+        with (root/f'{phase}-preparation-{i}.log').open('w') as log:
+            subprocess.run([sys.executable,str(root/'measure.py'),'--count','--out',str(dest)],cwd=checkout,stdout=log,stderr=subprocess.STDOUT,check=True)
+        d=json.loads(dest.read_text()); print(phase,i,d['preparation_discovery'],flush=True)

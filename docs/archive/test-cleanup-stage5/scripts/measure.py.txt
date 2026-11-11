@@ -1,0 +1,75 @@
+import time
+started = time.perf_counter()
+import argparse, json, os, sys, unittest
+from pathlib import Path
+sys.path.insert(0, os.getcwd())
+p = argparse.ArgumentParser()
+p.add_argument('--keyword')
+p.add_argument('--run', action='store_true')
+p.add_argument('--count', action='store_true')
+p.add_argument('--out', required=True)
+a = p.parse_args()
+counts = {'construct': 0, 'inputs': 0, 'probe': 0}
+preparation = {'construct': 0.0, 'inputs': 0.0}
+# Counters are a separate diagnostic pass; timing runs have no instrumentation.
+if a.count:
+    from test.support.base_builders import TestDictBuilderBase
+    from tico.circle.runtime import CircleReferenceRuntime
+    original = TestDictBuilderBase._get_nnmodules
+    patched = set()
+    depth = {'construct': 0, 'inputs': 0}
+    def collect(self, name):
+        classes = original(self, name)
+        for cls in classes:
+            if cls in patched: continue
+            patched.add(cls)
+            init, inputs = cls.__init__, cls.get_example_inputs
+            def wrap_init(self, *args, _init=init, **kwargs):
+                outer = depth['construct'] == 0
+                if outer: counts['construct'] += 1
+                tick = time.perf_counter()
+                depth['construct'] += 1
+                try: return _init(self, *args, **kwargs)
+                finally:
+                    depth['construct'] -= 1
+                    if outer: preparation['construct'] += time.perf_counter() - tick
+            def wrap_inputs(self, _inputs=inputs):
+                outer = depth['inputs'] == 0
+                if outer: counts['inputs'] += 1
+                tick = time.perf_counter()
+                depth['inputs'] += 1
+                try: return _inputs(self)
+                finally:
+                    depth['inputs'] -= 1
+                    if outer: preparation['inputs'] += time.perf_counter() - tick
+            cls.__init__, cls.get_example_inputs = wrap_init, wrap_inputs
+        return classes
+    TestDictBuilderBase._get_nnmodules = collect
+    probe = CircleReferenceRuntime.probe_static_contracts
+    def counted_probe(self):
+        counts['probe'] += 1
+        return probe(self)
+    CircleReferenceRuntime.probe_static_contracts = counted_probe
+loader = unittest.TestLoader()
+if a.keyword:
+    loader.testNamePatterns = [a.keyword if '*' in a.keyword else '*' + a.keyword + '*']
+begin = time.perf_counter()
+suite = loader.discover('test')
+collected = time.perf_counter() - begin
+def flatten(s):
+    for t in s:
+        if isinstance(t, unittest.TestSuite): yield from flatten(t)
+        else: yield t
+tests = list(flatten(suite))
+manifest = [(t.id(), bool(getattr(type(t), '__unittest_skip__', False) or getattr(getattr(t,t._testMethodName), '__unittest_skip__', False)), getattr(getattr(t,t._testMethodName), '__unittest_skip_why__', getattr(type(t),'__unittest_skip_why__',''))) for t in tests]
+discovery_counts = counts.copy()
+discovery_preparation = preparation.copy()
+run_seconds = None
+result = None
+if a.run:
+    begin = time.perf_counter()
+    result = unittest.TextTestRunner(verbosity=2, **({'durations': 0} if a.count else {})).run(suite)
+    run_seconds = time.perf_counter() - begin
+import tico
+Path(a.out).write_text(json.dumps({'collection': collected, 'suite': run_seconds, 'inside_wall': time.perf_counter()-started, 'manifest': manifest, 'loader_errors': loader.errors, 'counts_discovery':discovery_counts, 'counts_total':counts, 'preparation_discovery':discovery_preparation, 'preparation_total':preparation, 'tico':tico.__file__, 'durations': result.collectedDurations if result and a.count else None, 'testsRun':result.testsRun if result else None, 'successful':result.wasSuccessful() if result else None}, indent=2))
+if result and not result.wasSuccessful(): sys.exit(1)

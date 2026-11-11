@@ -1,0 +1,109 @@
+{
+  "collection": 6.307156237999948,
+  "suite": 5.547250744000053,
+  "inside_wall": 11.931721575999973,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuffer",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinFloat",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithBuiltinInt",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskFolded",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithCausalMaskLegalized",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.AddWithNonPersistentBuffer",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddFloat",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.ScalarAddInt",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAdd",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithDifferentMemoryFormat",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.add.test.modules.op.add.SimpleAddWithoutPt2",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith1DInput",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWith2DInput",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithNanInputZeroBeta",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlpha",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroAlphaAndBeta",
+      false,
+      ""
+    ],
+    [
+      "pt2_to_circle_test.test_op.test.modules.op.addmm.test.modules.op.addmm.SimpleAddmmWithZeroBeta",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "tico": "<CHECKOUT>/tico/__init__.py",
+  "durations": null,
+  "testsRun": 17,
+  "successful": true,
+  "process_wall": 13.073923861999901,
+  "exit": 0
+}

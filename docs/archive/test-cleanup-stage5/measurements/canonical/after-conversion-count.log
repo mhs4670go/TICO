@@ -1,0 +1,10 @@
+test.modules.op.linear.FQLinearWithFp32Bias (pt2_to_circle_test.test_op.test.modules.op.linear.test.modules.op.linear.FQLinearWithFp32Bias) ... ok
+
+Slowest test durations
+----------------------------------------------------------------------
+0.687s     test.modules.op.linear.FQLinearWithFp32Bias (pt2_to_circle_test.test_op.test.modules.op.linear.test.modules.op.linear.FQLinearWithFp32Bias)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.689s
+
+OK

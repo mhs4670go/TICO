@@ -1,0 +1,20 @@
+after discovery 0 7.774 6.424 None 0
+after discovery 1 7.332 5.874 None 0
+after discovery 2 7.68 6.302 None 0
+discovery count 0
+after single 0 7.917 5.974 1 0
+after single 1 7.842 5.788 1 0
+after single 2 8.316 6.527 1 0
+single count 0
+after op 0 12.178 5.598 17 0
+after op 1 13.074 6.307 17 0
+after op 2 19.348 7.281 17 0
+op count 0
+after net 0 9.088 6.82 1 0
+after net 1 7.582 5.682 1 0
+after net 2 7.971 6.174 1 0
+net count 0
+after conversion 0 7.953 6.103 1 0
+after conversion 1 7.59 5.691 1 0
+after conversion 2 7.619 5.755 1 0
+conversion count 0

@@ -1,0 +1,37 @@
+{
+  "collection": 6.819732496000029,
+  "suite": 0.9034429770000543,
+  "inside_wall": 7.806207733000065,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_net.test.modules.net.mlp.test.modules.net.mlp.MLP",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "preparation_discovery": {
+    "construct": 0.0,
+    "inputs": 0.0
+  },
+  "preparation_total": {
+    "construct": 0.0,
+    "inputs": 0.0
+  },
+  "tico": "<CHECKOUT>/tico/__init__.py",
+  "durations": null,
+  "testsRun": 1,
+  "successful": true,
+  "process_wall": 9.088036100000068,
+  "exit": 0
+}

@@ -1,0 +1,40 @@
+{
+  "collection": 4.4158792409999705,
+  "suite": 0.6711833310000657,
+  "inside_wall": 6.65962434000005,
+  "manifest": [
+    [
+      "pt2_to_circle_test.test_net.test.modules.net.mlp.test.modules.net.mlp.MLP",
+      false,
+      ""
+    ]
+  ],
+  "loader_errors": [],
+  "counts_discovery": {
+    "construct": 0,
+    "inputs": 0,
+    "probe": 0
+  },
+  "counts_total": {
+    "construct": 1,
+    "inputs": 1,
+    "probe": 1
+  },
+  "preparation_discovery": {
+    "construct": 0.0,
+    "inputs": 0.0
+  },
+  "preparation_total": {
+    "construct": 0.0005749690000129704,
+    "inputs": 2.0738999978675565e-05
+  },
+  "tico": "<CHECKOUT>/tico/__init__.py",
+  "durations": [
+    [
+      "test.modules.net.mlp.MLP (pt2_to_circle_test.test_net.test.modules.net.mlp.test.modules.net.mlp.MLP)",
+      0.6691391660000363
+    ]
+  ],
+  "testsRun": 1,
+  "successful": true
+}

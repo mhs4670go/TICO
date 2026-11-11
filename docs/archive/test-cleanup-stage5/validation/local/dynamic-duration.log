@@ -1,0 +1,13 @@
+test.modules.net.mlp_dyn.MLP_DynamicShape (pt2_to_circle_test.test_net.test.modules.net.mlp_dyn.test.modules.net.mlp_dyn.MLP_DynamicShape) ... ok
+
+Slowest test durations
+----------------------------------------------------------------------
+0.999s     pt2_to_circle_test.test_net.test.modules.net.mlp_dyn.test.modules.net.mlp_dyn.MLP_DynamicShape
+
+----------------------------------------------------------------------
+Ran 1 test in 1.001s
+
+OK
+Collection (worker import through discovery): 27.066s
+Suite (including class/module fixtures): 1.002s
+RUN unit tests with -k test.modules.net.mlp_dyn ...

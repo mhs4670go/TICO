@@ -1,0 +1,146 @@
+[
+  {
+    "name": "single",
+    "iteration": 0,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "*test.modules.op.add.SimpleAdd"
+    ],
+    "wall": 7.7013854429999355,
+    "exit": 0
+  },
+  {
+    "name": "single",
+    "iteration": 1,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "*test.modules.op.add.SimpleAdd"
+    ],
+    "wall": 7.906322583999895,
+    "exit": 0
+  },
+  {
+    "name": "single",
+    "iteration": 2,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "*test.modules.op.add.SimpleAdd"
+    ],
+    "wall": 7.444088459999989,
+    "exit": 0
+  },
+  {
+    "name": "op",
+    "iteration": 0,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.op.add"
+    ],
+    "wall": 12.196864381999944,
+    "exit": 0
+  },
+  {
+    "name": "op",
+    "iteration": 1,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.op.add"
+    ],
+    "wall": 12.037709974999984,
+    "exit": 0
+  },
+  {
+    "name": "op",
+    "iteration": 2,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.op.add"
+    ],
+    "wall": 17.162481670000034,
+    "exit": 0
+  },
+  {
+    "name": "net",
+    "iteration": 0,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.net.mlp."
+    ],
+    "wall": 10.211013757999922,
+    "exit": 0
+  },
+  {
+    "name": "net",
+    "iteration": 1,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.net.mlp."
+    ],
+    "wall": 8.461497030000032,
+    "exit": 0
+  },
+  {
+    "name": "net",
+    "iteration": 2,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.net.mlp."
+    ],
+    "wall": 7.480409865999945,
+    "exit": 0
+  },
+  {
+    "name": "conversion",
+    "iteration": 0,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.op.linear.FQLinearWithFp32Bias"
+    ],
+    "wall": 7.511564358999976,
+    "exit": 0
+  },
+  {
+    "name": "conversion",
+    "iteration": 1,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.op.linear.FQLinearWithFp32Bias"
+    ],
+    "wall": 7.862204991999988,
+    "exit": 0
+  },
+  {
+    "name": "conversion",
+    "iteration": 2,
+    "command": [
+      "./ccex",
+      "test",
+      "-k",
+      "test.modules.op.linear.FQLinearWithFp32Bias"
+    ],
+    "wall": 7.428746492000073,
+    "exit": 0
+  }
+]

@@ -1,0 +1,16 @@
+before discovery 0 9.854 8.351 None 0
+before discovery 1 6.774 5.772 None 0
+before discovery 2 6.823 5.798 None 0
+discovery count 0
+before single 0 7.359 5.648 1 0
+before single 1 7.551 5.715 1 0
+before single 2 7.432 5.737 1 0
+single count 0
+before op 0 13.0 5.759 17 0
+before op 1 13.592 7.214 17 0
+before op 2 12.251 5.736 17 0
+op count 0
+before net 0 14.375 10.977 1 0
+before net 1 7.847 5.854 1 0
+before net 2 7.879 5.862 1 0
+net count 0

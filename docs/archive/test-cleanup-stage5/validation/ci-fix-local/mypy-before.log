@@ -1,0 +1,6 @@
+tico/utils/mx/formats.py:60:1: error: Need type annotation for "_FORMAT_CACHE" (hint: "_FORMAT_CACHE: dict[<type>, <type>] = ...")  [var-annotated]
+tico/utils/mx/elemwise_ops.py:116:9: error: Module "tico.utils.mx" has no attribute "custom_extensions"  [attr-defined]
+tico/utils/mx/elemwise_ops.py:166:62: error: Cannot determine type of "output"  [has-type]
+tico/utils/mx/mx_ops.py:117:32: error: "Tensor" has no attribute "value"  [attr-defined]
+test/unit_test/utils/test_circle_harness.py:104:17: error: Argument after ** must be a mapping, not "object"  [arg-type]
+Found 5 errors in 4 files (checked 1 source file)

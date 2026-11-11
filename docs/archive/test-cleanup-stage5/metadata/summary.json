@@ -1,0 +1,470 @@
+{
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "packages": {
+      "torch": "2.13.0+cpu",
+      "torchvision": "0.28.0+cpu",
+      "circle-schema": "0.10.1",
+      "numpy": "2.5.4",
+      "transformers": "5.18.0",
+      "datasets": "5.0.1",
+      "tico": "0.1.0"
+    },
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "runtime": "reference",
+    "seed_policy": "existing fixtures, no new global seed",
+    "cache": "warm OS/bytecode caches; fresh processes; no cache clearing"
+  },
+  "cases": {
+    "discovery": {
+      "baseline": {
+        "collection": {
+          "median": 6.125179038999988,
+          "min": 6.101302910000015,
+          "max": 6.184583383000017
+        },
+        "process_wall": {
+          "median": 7.4905198000000155,
+          "min": 7.323922617999983,
+          "max": 7.535951742999998
+        },
+        "counts_discovery": {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        "test_count": 4996
+      },
+      "after": {
+        "collection": {
+          "median": 6.302458232000049,
+          "min": 5.874372730000005,
+          "max": 6.423560868999971
+        },
+        "process_wall": {
+          "median": 7.6803238249999595,
+          "min": 7.3315444309999975,
+          "max": 7.773930807000056
+        },
+        "counts_discovery": {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        "test_count": 5018
+      }
+    },
+    "single": {
+      "baseline": {
+        "collection": {
+          "median": 5.976945645000001,
+          "min": 5.678915248000067,
+          "max": 6.012681153000017
+        },
+        "process_wall": {
+          "median": 7.842877510999983,
+          "min": 7.487236619999976,
+          "max": 8.152186831999984
+        },
+        "suite": {
+          "median": 0.6499454730000025,
+          "min": 0.6433091449999893,
+          "max": 0.7308358709999538
+        },
+        "counts_discovery": {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 411,
+          "inputs": 412,
+          "probe": 1
+        },
+        "test_count": 1,
+        "ccex_wall": {
+          "median": 7.7013854429999355,
+          "min": 7.444088459999989,
+          "max": 7.906322583999895
+        }
+      },
+      "after": {
+        "collection": {
+          "median": 5.973753595000062,
+          "min": 5.7875782759999765,
+          "max": 6.52742622300002
+        },
+        "process_wall": {
+          "median": 7.917345204000071,
+          "min": 7.841891526999916,
+          "max": 8.316133543999968
+        },
+        "suite": {
+          "median": 0.6647543990000031,
+          "min": 0.6569005420000167,
+          "max": 0.6672028309999405
+        },
+        "counts_discovery": {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 1,
+          "inputs": 1,
+          "probe": 1
+        },
+        "test_count": 1,
+        "ccex_wall": {
+          "median": 7.859720291000031,
+          "min": 7.819803762999982,
+          "max": 7.9484450759999845
+        }
+      }
+    },
+    "op": {
+      "baseline": {
+        "collection": {
+          "median": 5.8696537619999845,
+          "min": 5.712911408000082,
+          "max": 5.920299326999952
+        },
+        "process_wall": {
+          "median": 12.366463453000051,
+          "min": 12.197589912000012,
+          "max": 12.386425433999989
+        },
+        "suite": {
+          "median": 5.307519192000086,
+          "min": 5.232062014999997,
+          "max": 5.354451833000098
+        },
+        "counts_discovery": {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 411,
+          "inputs": 428,
+          "probe": 17
+        },
+        "test_count": 17,
+        "ccex_wall": {
+          "median": 12.196864381999944,
+          "min": 12.037709974999984,
+          "max": 17.162481670000034
+        }
+      },
+      "after": {
+        "collection": {
+          "median": 6.307156237999948,
+          "min": 5.597762461000002,
+          "max": 7.281434550000085
+        },
+        "process_wall": {
+          "median": 13.073923861999901,
+          "min": 12.178065733999915,
+          "max": 19.348048725000012
+        },
+        "suite": {
+          "median": 5.547250744000053,
+          "min": 5.424220099999957,
+          "max": 9.876024254000072
+        },
+        "counts_discovery": {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 17,
+          "inputs": 17,
+          "probe": 17
+        },
+        "test_count": 17,
+        "ccex_wall": {
+          "median": 13.06875288099991,
+          "min": 13.00771557400003,
+          "max": 13.938580843999944
+        }
+      }
+    },
+    "net": {
+      "baseline": {
+        "collection": {
+          "median": 5.791668429000083,
+          "min": 5.743195218999972,
+          "max": 5.923733939000044
+        },
+        "process_wall": {
+          "median": 7.631065741000043,
+          "min": 7.617681121000032,
+          "max": 7.791742771000031
+        },
+        "suite": {
+          "median": 0.6794966370000566,
+          "min": 0.6726824950000037,
+          "max": 0.6930516879999686
+        },
+        "counts_discovery": {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 411,
+          "inputs": 412,
+          "probe": 1
+        },
+        "test_count": 1,
+        "ccex_wall": {
+          "median": 8.461497030000032,
+          "min": 7.480409865999945,
+          "max": 10.211013757999922
+        }
+      },
+      "after": {
+        "collection": {
+          "median": 6.174023838999915,
+          "min": 5.682341124000004,
+          "max": 6.819732496000029
+        },
+        "process_wall": {
+          "median": 7.971030029999952,
+          "min": 7.582446410999978,
+          "max": 9.088036100000068
+        },
+        "suite": {
+          "median": 0.6916119039999558,
+          "min": 0.6743149650000078,
+          "max": 0.9034429770000543
+        },
+        "counts_discovery": {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 1,
+          "inputs": 1,
+          "probe": 1
+        },
+        "test_count": 1,
+        "ccex_wall": {
+          "median": 8.130077833000087,
+          "min": 7.741842643000155,
+          "max": 8.142251030000125
+        }
+      }
+    },
+    "conversion": {
+      "baseline": {
+        "collection": {
+          "median": 5.950550264999947,
+          "min": 5.619792103000009,
+          "max": 5.9866053220000595
+        },
+        "process_wall": {
+          "median": 7.886401620000015,
+          "min": 7.583819865999999,
+          "max": 8.113429562999954
+        },
+        "suite": {
+          "median": 0.7236286059999202,
+          "min": 0.7026875830000563,
+          "max": 0.7371003599999995
+        },
+        "counts_discovery": {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 411,
+          "inputs": 412,
+          "probe": 1
+        },
+        "test_count": 1,
+        "ccex_wall": {
+          "median": 7.511564358999976,
+          "min": 7.428746492000073,
+          "max": 7.862204991999988
+        }
+      },
+      "after": {
+        "collection": {
+          "median": 5.75497692700003,
+          "min": 5.69099453299998,
+          "max": 6.10293820000004
+        },
+        "process_wall": {
+          "median": 7.618963744999974,
+          "min": 7.590213837999954,
+          "max": 7.952749893000032
+        },
+        "suite": {
+          "median": 0.7065369249999094,
+          "min": 0.7014107079999121,
+          "max": 0.733326801999965
+        },
+        "counts_discovery": {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        "counts_total": {
+          "construct": 1,
+          "inputs": 1,
+          "probe": 1
+        },
+        "test_count": 1,
+        "ccex_wall": {
+          "median": 7.969979604000173,
+          "min": 7.69674279700007,
+          "max": 9.301403776999905
+        }
+      }
+    }
+  },
+  "preservation": {
+    "discovery": {
+      "original_count": 4996,
+      "after_count": 5018,
+      "added": 22,
+      "removed": 0,
+      "declarative_skips_before": 48,
+      "declarative_skips_after": 48,
+      "same_original_order_and_skip_reasons": true,
+      "loader_errors": [],
+      "failed_tests": 0
+    },
+    "single": {
+      "original_count": 1,
+      "after_count": 1,
+      "added": 0,
+      "removed": 0,
+      "declarative_skips_before": 0,
+      "declarative_skips_after": 0,
+      "same_original_order_and_skip_reasons": true,
+      "loader_errors": [],
+      "failed_tests": 0
+    },
+    "op": {
+      "original_count": 17,
+      "after_count": 17,
+      "added": 0,
+      "removed": 0,
+      "declarative_skips_before": 0,
+      "declarative_skips_after": 0,
+      "same_original_order_and_skip_reasons": true,
+      "loader_errors": [],
+      "failed_tests": 0
+    },
+    "net": {
+      "original_count": 1,
+      "after_count": 1,
+      "added": 0,
+      "removed": 0,
+      "declarative_skips_before": 0,
+      "declarative_skips_after": 0,
+      "same_original_order_and_skip_reasons": true,
+      "loader_errors": [],
+      "failed_tests": 0
+    },
+    "conversion": {
+      "original_count": 1,
+      "after_count": 1,
+      "added": 0,
+      "removed": 0,
+      "declarative_skips_before": 0,
+      "declarative_skips_after": 0,
+      "same_original_order_and_skip_reasons": true,
+      "loader_errors": [],
+      "failed_tests": 0
+    }
+  },
+  "preparation_diagnostic": {
+    "baseline": {
+      "median_seconds": 0.1879120559990497,
+      "range_seconds": [
+        0.18416998400221019,
+        0.20436253199568455
+      ],
+      "counts": [
+        {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        },
+        {
+          "construct": 411,
+          "inputs": 411,
+          "probe": 0
+        }
+      ]
+    },
+    "after": {
+      "median_seconds": 0.0,
+      "range_seconds": [
+        0.0,
+        0.0
+      ],
+      "counts": [
+        {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        },
+        {
+          "construct": 0,
+          "inputs": 0,
+          "probe": 0
+        }
+      ]
+    }
+  },
+  "individual_diagnostic": {
+    "baseline": {
+      "median": 0.7731989679996332,
+      "min": 0.758058850999987,
+      "max": 1.113135429999602,
+      "samples": [
+        0.7731989679996332,
+        1.113135429999602,
+        0.758058850999987
+      ]
+    },
+    "after": {
+      "median": 0.877134606999789,
+      "min": 0.7941728880000483,
+      "max": 0.9888625759999741,
+      "samples": [
+        0.7941728880000483,
+        0.9888625759999741,
+        0.877134606999789
+      ]
+    }
+  }
+}

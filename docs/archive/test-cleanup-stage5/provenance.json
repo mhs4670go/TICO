@@ -1,0 +1,2649 @@
+{
+  "purpose": "record-only branch; no PR or merge requested",
+  "implementation_base": "b7ed542e9a717580456b63bcac000c16cea08ac8",
+  "implementation_commit": "053866cfd58245b646be433a7392e5d79c95aaaf",
+  "ci_fix_commit": "739d59792fa8b4ad022ddbe3b5306c32669abb05",
+  "measurement_worktree_note": "Measurements ran before implementation commit creation; final script snapshots evolved during diagnostics, not per-run immutable script captures.",
+  "original_hash_scope": "SHA256 of source files retained in the session filesystem, not compressed GitHub API transport bytes",
+  "redaction_note": "Stored text/JSON is path-normalized and ANSI-cleaned; numerical observations, test IDs and diagnostics are preserved.",
+  "excluded_from_commit": [
+    "baseline source checkout",
+    "Circle/PT2/model artifacts",
+    "Python caches",
+    "commit-message.txt",
+    "full CI setup/download logs"
+  ],
+  "excluded_from_performance_summary": "measurements/excluded-preliminary/before-*",
+  "files": [
+    {
+      "path": "measurements/canonical/after-batch.log",
+      "source_label": "<STAGE5_RECORDS>/after-batch.log",
+      "source_bytes": 552,
+      "source_sha256": "83e53856b42efddacb08ae0e68cd1393a06b9ee5badd9ff0b54d5e1dc183075c",
+      "archived_bytes": 552,
+      "archived_sha256": "83e53856b42efddacb08ae0e68cd1393a06b9ee5badd9ff0b54d5e1dc183075c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-conversion-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-conversion-0.log",
+      "source_bytes": 315,
+      "source_sha256": "38215ca1010c3cb4af6354ad30690f0de1e847f35c310e242b1bb2375b888eec",
+      "archived_bytes": 315,
+      "archived_sha256": "38215ca1010c3cb4af6354ad30690f0de1e847f35c310e242b1bb2375b888eec",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-conversion-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-conversion-1.log",
+      "source_bytes": 315,
+      "source_sha256": "b06bb55983158bb449916fecb2aa1843cbb254e8827795ec03090b65f55883af",
+      "archived_bytes": 315,
+      "archived_sha256": "b06bb55983158bb449916fecb2aa1843cbb254e8827795ec03090b65f55883af",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-conversion-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-conversion-2.log",
+      "source_bytes": 315,
+      "source_sha256": "6614063a011391adf88ddf545ae7dfcf990166e3ecf000173e35b5b6c0de2f2f",
+      "archived_bytes": 315,
+      "archived_sha256": "6614063a011391adf88ddf545ae7dfcf990166e3ecf000173e35b5b6c0de2f2f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-net-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-net-0.log",
+      "source_bytes": 254,
+      "source_sha256": "cded1ae700a713c9cff96ac4b0a922fde52c4a4332e03c079d2ba9fdf0797e74",
+      "archived_bytes": 254,
+      "archived_sha256": "cded1ae700a713c9cff96ac4b0a922fde52c4a4332e03c079d2ba9fdf0797e74",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-net-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-net-1.log",
+      "source_bytes": 254,
+      "source_sha256": "39cf51198a0a8f3159ba26f24bac3686483de6bf3efe93e823af23f89e15250a",
+      "archived_bytes": 254,
+      "archived_sha256": "39cf51198a0a8f3159ba26f24bac3686483de6bf3efe93e823af23f89e15250a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-net-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-net-2.log",
+      "source_bytes": 254,
+      "source_sha256": "2d79b24e5257eac1620a9dc7ced58f5f02bd8c8a9f77d05641cf19a1adf971e0",
+      "archived_bytes": 254,
+      "archived_sha256": "2d79b24e5257eac1620a9dc7ced58f5f02bd8c8a9f77d05641cf19a1adf971e0",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-op-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-op-0.log",
+      "source_bytes": 2578,
+      "source_sha256": "938eb2a4ae0e91f36233857630afd5d2eafa47590fd821ed4b94018cd25517e4",
+      "archived_bytes": 2578,
+      "archived_sha256": "938eb2a4ae0e91f36233857630afd5d2eafa47590fd821ed4b94018cd25517e4",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-op-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-op-1.log",
+      "source_bytes": 2578,
+      "source_sha256": "1fbd65845830b6a84f6e2f536ff5d5d59d9e04ce1a88aa7d92bb3acc13f1553e",
+      "archived_bytes": 2578,
+      "archived_sha256": "1fbd65845830b6a84f6e2f536ff5d5d59d9e04ce1a88aa7d92bb3acc13f1553e",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-op-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-op-2.log",
+      "source_bytes": 2578,
+      "source_sha256": "872df47dc6f9d01c1f3fa5934a7027ce50958982b483824204e05b840dc74ba8",
+      "archived_bytes": 2578,
+      "archived_sha256": "872df47dc6f9d01c1f3fa5934a7027ce50958982b483824204e05b840dc74ba8",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-single-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-single-0.log",
+      "source_bytes": 271,
+      "source_sha256": "1838ee85f1618ed5d604526b5643ffe1dc3b8ec0e1441ee950bde8381abeced8",
+      "archived_bytes": 271,
+      "archived_sha256": "1838ee85f1618ed5d604526b5643ffe1dc3b8ec0e1441ee950bde8381abeced8",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-single-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-single-1.log",
+      "source_bytes": 271,
+      "source_sha256": "29bbc3d2a54cab70bfe639b6bd98ee7547e7211f7762564d8d187294a8ab7361",
+      "archived_bytes": 271,
+      "archived_sha256": "29bbc3d2a54cab70bfe639b6bd98ee7547e7211f7762564d8d187294a8ab7361",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex-single-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex-single-2.log",
+      "source_bytes": 271,
+      "source_sha256": "4a11e5f7e7e91e4a15c86db043ecc154e8f5701f698ae71bc272626301fa6daf",
+      "archived_bytes": 271,
+      "archived_sha256": "4a11e5f7e7e91e4a15c86db043ecc154e8f5701f698ae71bc272626301fa6daf",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex.json",
+      "source_label": "<STAGE5_RECORDS>/after-ccex.json",
+      "source_bytes": 2385,
+      "source_sha256": "c07a9fc583c97934026f05e00fb7a5f851556b11b4e940fb1fc80cf794a11ed3",
+      "archived_bytes": 2385,
+      "archived_sha256": "c07a9fc583c97934026f05e00fb7a5f851556b11b4e940fb1fc80cf794a11ed3",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-ccex.log",
+      "source_label": "<STAGE5_RECORDS>/after-ccex.log",
+      "source_bytes": 266,
+      "source_sha256": "a5d3c3e66f2b1394aad288a941d52a028a1277669df6755ee3fecd00db39cafe",
+      "archived_bytes": 266,
+      "archived_sha256": "a5d3c3e66f2b1394aad288a941d52a028a1277669df6755ee3fecd00db39cafe",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-0.json",
+      "source_bytes": 740,
+      "source_sha256": "333a3b770088453a9f93f6b71b0183ae861378ba20e8f8ff279a63b75bffe652",
+      "archived_bytes": 735,
+      "archived_sha256": "4cc3ce34e3741dea91594433974efbddbfe16a28f30eff11c10d7ec1faa8e9dd",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-0.log",
+      "source_bytes": 244,
+      "source_sha256": "78fe747282cc8fcfb45bf9ea8b6fdbadbeed10def14df25ace53386e4cf2505e",
+      "archived_bytes": 244,
+      "archived_sha256": "78fe747282cc8fcfb45bf9ea8b6fdbadbeed10def14df25ace53386e4cf2505e",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-1.json",
+      "source_bytes": 742,
+      "source_sha256": "5f2d358e92e99a4b7d683d2313a204dda7a26f1320fc1fb9b553884e61ada0f6",
+      "archived_bytes": 737,
+      "archived_sha256": "c25829e6f85e61c69bf16863cb0a41e7ff5f1f56810b5f265463de4532e08458",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-1.log",
+      "source_bytes": 244,
+      "source_sha256": "a158b9e367f2dc02fa3e55f12c447245206413067e83f7418c58fb077b33fbf4",
+      "archived_bytes": 244,
+      "archived_sha256": "a158b9e367f2dc02fa3e55f12c447245206413067e83f7418c58fb077b33fbf4",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-2.json",
+      "source_bytes": 742,
+      "source_sha256": "5a86c5b8e3ca840add079559e24663855e70deccd65b8d6b9888fb1af2e0defe",
+      "archived_bytes": 737,
+      "archived_sha256": "2c427735126dbaf58a2dfcffb43318010b7d0248a35610cfe05cf7dd777970a2",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-2.log",
+      "source_bytes": 244,
+      "source_sha256": "b522afc0f7f4625f178d2c32f7f4daac76a678f8da4bd9ecf6f033dcd115c8d5",
+      "archived_bytes": 244,
+      "archived_sha256": "b522afc0f7f4625f178d2c32f7f4daac76a678f8da4bd9ecf6f033dcd115c8d5",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-count.json",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-count.json",
+      "source_bytes": 916,
+      "source_sha256": "888ecb3f5c31cc0275fb7dc0ccd5cc53ff7f303cd3c79a5b842acc87b941eda9",
+      "archived_bytes": 911,
+      "archived_sha256": "31d150f6df8c925bb636b648edd2f330f9351fddcce5f69108877481c72e69ea",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-conversion-count.log",
+      "source_label": "<STAGE5_RECORDS>/after-conversion-count.log",
+      "source_bytes": 490,
+      "source_sha256": "90a135ede6f0dc35234ebf3bda4825c3faa74b6ec68467ef29c008831ba3deaa",
+      "archived_bytes": 490,
+      "archived_sha256": "90a135ede6f0dc35234ebf3bda4825c3faa74b6ec68467ef29c008831ba3deaa",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-0.json",
+      "source_bytes": 812711,
+      "source_sha256": "832989095de0de612e60fbad5a56e2a1535b4e809dda53b8ee5f918f073aee27",
+      "archived_bytes": 812706,
+      "archived_sha256": "f2122f26981e556fcf8a5e8dfd988e75c6e35bfa4d94ebff0bc2ec54efe11bd2",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-0.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-1.json",
+      "source_bytes": 812712,
+      "source_sha256": "8095bbdae2a2dcd7cab89f82337503a8be5dda3df5a5960691f964f299fb01a4",
+      "archived_bytes": 812707,
+      "archived_sha256": "0b6a2f3047c744e4bf3726f1a204b5e3849d99ea9baef640a98bdfa76d139338",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-1.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-2.json",
+      "source_bytes": 812712,
+      "source_sha256": "05a38c108f175765c9558986b35e8b590f903325d0344c89e2990e61b09fe261",
+      "archived_bytes": 812707,
+      "archived_sha256": "c741ce5479fb2ae5df13bc94fde6b456dfc638b2ffc8aa6b37398393703c038a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-2.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-count.json",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-count.json",
+      "source_bytes": 812660,
+      "source_sha256": "a8d495e944dfe170f5b583041030bae0d7c44e04d319b0b353c6a6371134d8fd",
+      "archived_bytes": 812655,
+      "archived_sha256": "a8a817d5a51f84f9a7acc3c6e98e9ba37d0ff04603c3bbb9b07345ea80c8616e",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-discovery-count.log",
+      "source_label": "<STAGE5_RECORDS>/after-discovery-count.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-individual-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-individual-0.json",
+      "source_bytes": 870,
+      "source_sha256": "685a18ca91ca666cd7742fcb3f65c84c8eb210e272eabde1471f016de557a821",
+      "archived_bytes": 865,
+      "archived_sha256": "8c7f575228a116e66be5c9f22298303cc3ec1ca767302ae650607507594bb254",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-individual-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-individual-0.log",
+      "source_bytes": 428,
+      "source_sha256": "bdbf69bffb9e1764b8ba4e9761202a104451366fa1048625503be70deb633628",
+      "archived_bytes": 428,
+      "archived_sha256": "bdbf69bffb9e1764b8ba4e9761202a104451366fa1048625503be70deb633628",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-individual-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-individual-1.json",
+      "source_bytes": 867,
+      "source_sha256": "40b4a34f960bf78f4e82f60177eda2d3787d1028fc0217282820b986512d7a0a",
+      "archived_bytes": 862,
+      "archived_sha256": "6d64644b00f2051b78a059aa6d25f8698d2f5f7791b761d8c7f00eb0422c78fd",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-individual-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-individual-1.log",
+      "source_bytes": 428,
+      "source_sha256": "53289dbf9b2041669f0a59c7dc99f032c6af3fe17752403a12851824bf3d0ee7",
+      "archived_bytes": 428,
+      "archived_sha256": "53289dbf9b2041669f0a59c7dc99f032c6af3fe17752403a12851824bf3d0ee7",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-individual-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-individual-2.json",
+      "source_bytes": 862,
+      "source_sha256": "cb4489129f4f9e731f893b3fed7a6b64deeab2355fbf80105df2bcaddef11ed4",
+      "archived_bytes": 857,
+      "archived_sha256": "2e1d53f7afb24c39d54b84ed867fc6893921bd09fee927ff85010e6ed72a9127",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-individual-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-individual-2.log",
+      "source_bytes": 428,
+      "source_sha256": "b8f68e3d291fa048ae01d01c287e39513978dd3990836c3ce7b219cb19c2c657",
+      "archived_bytes": 428,
+      "archived_sha256": "b8f68e3d291fa048ae01d01c287e39513978dd3990836c3ce7b219cb19c2c657",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-net-0.json",
+      "source_bytes": 723,
+      "source_sha256": "a1d5581b8ec8b9068db9a553487e3178c4bec4c2919ccbeb92cfe28094d16244",
+      "archived_bytes": 718,
+      "archived_sha256": "547d58a45a5e11ac023e94165a0705b6c0be1bbbb180eaa769fda7b17d4c6048",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-net-0.log",
+      "source_bytes": 205,
+      "source_sha256": "7faf1532caa1421f66919f11bd25df09cebba3a128dc9d4714d2b495aa62f2dc",
+      "archived_bytes": 205,
+      "archived_sha256": "7faf1532caa1421f66919f11bd25df09cebba3a128dc9d4714d2b495aa62f2dc",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-net-1.json",
+      "source_bytes": 723,
+      "source_sha256": "3c39129a8eb68abfe06556c82a3e7150cd75052f6d99f09501677f68f219e23d",
+      "archived_bytes": 718,
+      "archived_sha256": "ca2f1360b31f75d13065c3203e6f19d810c169fe8fbe6f6479484a3ae5a95ae8",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-net-1.log",
+      "source_bytes": 205,
+      "source_sha256": "772490b5e9ee704e438f55e6a72c5e7aa76d8d18d09b8d6c3ae2077952afadaf",
+      "archived_bytes": 205,
+      "archived_sha256": "772490b5e9ee704e438f55e6a72c5e7aa76d8d18d09b8d6c3ae2077952afadaf",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-net-2.json",
+      "source_bytes": 724,
+      "source_sha256": "7586cf4a9ac908247df7daf79627c4e862ec15c870272381a527bdd0e8c20861",
+      "archived_bytes": 719,
+      "archived_sha256": "b47fe7af670cd26a8d33c97df4e416455073dbc66222521cc6d9c7bb16ea6a3e",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-net-2.log",
+      "source_bytes": 205,
+      "source_sha256": "7453c62d1dbe10818902da4a24c8616a93e4e6fef051217d6e5f56700f451447",
+      "archived_bytes": 205,
+      "archived_sha256": "7453c62d1dbe10818902da4a24c8616a93e4e6fef051217d6e5f56700f451447",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-count.json",
+      "source_label": "<STAGE5_RECORDS>/after-net-count.json",
+      "source_bytes": 858,
+      "source_sha256": "119ca247a3d42b5cd95402f43ddfa74ed1adb509939ecd7c22c9d9b3ee4fa74a",
+      "archived_bytes": 853,
+      "archived_sha256": "818436b5df5518ba9f0cc16b4e22759b833422fbdfb0c5cb96714f07b0df82a2",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-net-count.log",
+      "source_label": "<STAGE5_RECORDS>/after-net-count.log",
+      "source_bytes": 412,
+      "source_sha256": "d7311aa34b7c1ca0f5f9c69dcec616a4d87cacdb78d23be250ab3ae362588ed6",
+      "archived_bytes": 412,
+      "archived_sha256": "d7311aa34b7c1ca0f5f9c69dcec616a4d87cacdb78d23be250ab3ae362588ed6",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-op-0.json",
+      "source_bytes": 2756,
+      "source_sha256": "70ece0a99ada3e3deaafbc13ecffd04e0798c15f5d3f11968bece1361032f60d",
+      "archived_bytes": 2751,
+      "archived_sha256": "b1b95abc8f102ab0866157639c3d2020c689424e67d2243dc8ae08f2b5a4d78b",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-op-0.log",
+      "source_bytes": 2531,
+      "source_sha256": "ccabe8176cf7167b00218ca49b8f1b61404fce6e9de91e13e175dc0264dce8ef",
+      "archived_bytes": 2531,
+      "archived_sha256": "ccabe8176cf7167b00218ca49b8f1b61404fce6e9de91e13e175dc0264dce8ef",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-op-1.json",
+      "source_bytes": 2756,
+      "source_sha256": "e5bc7528410db3fa83503b722aa71c1b1420887628da0d13b428f26c6a8597e9",
+      "archived_bytes": 2751,
+      "archived_sha256": "32303bcc533f261059d3cdda4b1a38bddea214baacdbf239cd1991ee28201865",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-op-1.log",
+      "source_bytes": 2531,
+      "source_sha256": "5d5c27033c08f368b5e3a3fedd3783273dedd568619592b923071964cb63451e",
+      "archived_bytes": 2531,
+      "archived_sha256": "5d5c27033c08f368b5e3a3fedd3783273dedd568619592b923071964cb63451e",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-op-2.json",
+      "source_bytes": 2900,
+      "source_sha256": "a4f3dc7342d9600890978678ec434c84a2fe79c6d9bcf841a3a3e6b2f735f7de",
+      "archived_bytes": 2895,
+      "archived_sha256": "855d2f4026ac447f882fad437f4423513a29a1581fa908874aee380be598bf82",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-op-2.log",
+      "source_bytes": 2531,
+      "source_sha256": "4e2ff92bc184086d7ea9f52e682ce1edb540eb5622182284ac20aef1b9cc742c",
+      "archived_bytes": 2531,
+      "archived_sha256": "4e2ff92bc184086d7ea9f52e682ce1edb540eb5622182284ac20aef1b9cc742c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-count.json",
+      "source_label": "<STAGE5_RECORDS>/after-op-count.json",
+      "source_bytes": 6003,
+      "source_sha256": "09c2b5b5c465045419de424420f950ead20bb0122312df9a2ab94dee99b627d4",
+      "archived_bytes": 5998,
+      "archived_sha256": "0d7f67d76ce39aea5c7f0f7ee474bfdcffc6b973d6fa09f0e0b6c9d4164fb689",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-op-count.log",
+      "source_label": "<STAGE5_RECORDS>/after-op-count.log",
+      "source_bytes": 5127,
+      "source_sha256": "e0279d2fcb71774e23d09cb3ef26e4b4cbec6395589543147c4f928c1dc750cf",
+      "archived_bytes": 5127,
+      "archived_sha256": "e0279d2fcb71774e23d09cb3ef26e4b4cbec6395589543147c4f928c1dc750cf",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-preparation-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-preparation-0.json",
+      "source_bytes": 812805,
+      "source_sha256": "b9b6dffb5f6f9290ff1984afdd708aab54f1552e926aa12d3892eb17d59dc499",
+      "archived_bytes": 812800,
+      "archived_sha256": "97bdc287a8fc86b12174188ecc8ac0d3c37d44a1567b6c5c95d858db175fed6d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-preparation-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-preparation-0.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-preparation-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-preparation-1.json",
+      "source_bytes": 812805,
+      "source_sha256": "59a6886e7a843a119ee7b929c50a144bc408ceb505ae5dd095f9d5da416fe192",
+      "archived_bytes": 812800,
+      "archived_sha256": "5facd875e52612acd35bf394b2aab0ca73c0a737d4cd603622dcb80b8e6718a4",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-preparation-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-preparation-1.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-preparation-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-preparation-2.json",
+      "source_bytes": 812805,
+      "source_sha256": "8f7828eab444e068c6375e8308574ff655fcd082a9fa11d4c47b5bc150b66295",
+      "archived_bytes": 812800,
+      "archived_sha256": "a2d7613546d98ecff996717d5621cb243428b6c0f910db132af9fa3a2d653aba",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-preparation-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-preparation-2.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-0.json",
+      "source_label": "<STAGE5_RECORDS>/after-single-0.json",
+      "source_bytes": 582,
+      "source_sha256": "409eb2a4a56acff03572aceb6cb006c03ead40996f82c2f874ef46937e2d92d4",
+      "archived_bytes": 577,
+      "archived_sha256": "7791648fb9a80f52769f718248d012ab0eac9912b7d94cf6712ce149874bcc3f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-0.log",
+      "source_label": "<STAGE5_RECORDS>/after-single-0.log",
+      "source_bytes": 213,
+      "source_sha256": "23155c534a9bc4da0e4c4324e8a5d458263472af8d9005d65df05fefc7bfb9bd",
+      "archived_bytes": 213,
+      "archived_sha256": "23155c534a9bc4da0e4c4324e8a5d458263472af8d9005d65df05fefc7bfb9bd",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-1.json",
+      "source_label": "<STAGE5_RECORDS>/after-single-1.json",
+      "source_bytes": 583,
+      "source_sha256": "634029c81d30db5416f2783487e98a37ca9dcb8834d123be593aedf5499c891c",
+      "archived_bytes": 578,
+      "archived_sha256": "9086c7ef34929c92e5e25aadd2292b57e1c0a3780276030c6c48ae2e1e2da4fc",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-1.log",
+      "source_label": "<STAGE5_RECORDS>/after-single-1.log",
+      "source_bytes": 213,
+      "source_sha256": "ed8bbab040afcc0622a8d314cfcc1049c69a2e23c861f40146a4427e9562c546",
+      "archived_bytes": 213,
+      "archived_sha256": "ed8bbab040afcc0622a8d314cfcc1049c69a2e23c861f40146a4427e9562c546",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-2.json",
+      "source_label": "<STAGE5_RECORDS>/after-single-2.json",
+      "source_bytes": 581,
+      "source_sha256": "7b354db94d9edea9958a3d42e5f6d145e2b4dc138b0cc18b1b2a635ece65b04f",
+      "archived_bytes": 576,
+      "archived_sha256": "5d8e078a0a32077929a157dc46620032bc2aa529fdb255a99d566cc1bfa576e1",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-2.log",
+      "source_label": "<STAGE5_RECORDS>/after-single-2.log",
+      "source_bytes": 213,
+      "source_sha256": "c6d1c6e2eb92eb429fa0a22d47fc07f52e0e82336971f841d421bf22f41f4d47",
+      "archived_bytes": 213,
+      "archived_sha256": "c6d1c6e2eb92eb429fa0a22d47fc07f52e0e82336971f841d421bf22f41f4d47",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-count.json",
+      "source_label": "<STAGE5_RECORDS>/after-single-count.json",
+      "source_bytes": 689,
+      "source_sha256": "0f1968e8189d96975c27ad9579f84a2fd576c2124462ce24d28091bd4bb0c063",
+      "archived_bytes": 684,
+      "archived_sha256": "e574290479730d4b07961caa58ca56134e6ac72a91ad9c27d22fec46e2fa05ec",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/after-single-count.log",
+      "source_label": "<STAGE5_RECORDS>/after-single-count.log",
+      "source_bytes": 428,
+      "source_sha256": "a8c9cfff2719178826f2ce1f9ee88eb352a7fb4d9b252f0716c6aaeeab00ca5d",
+      "archived_bytes": 428,
+      "archived_sha256": "a8c9cfff2719178826f2ce1f9ee88eb352a7fb4d9b252f0716c6aaeeab00ca5d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-batch.log",
+      "source_label": "<BASELINE>-batch.log",
+      "source_bytes": 597,
+      "source_sha256": "93862887efd1fd4229b4d9a92f71570b803d5bea3788a43d29b2c93643da985b",
+      "archived_bytes": 597,
+      "archived_sha256": "93862887efd1fd4229b4d9a92f71570b803d5bea3788a43d29b2c93643da985b",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-conversion-0.log",
+      "source_label": "<BASELINE>-ccex-conversion-0.log",
+      "source_bytes": 315,
+      "source_sha256": "f8c402007f931827614ae0724581ec3c9bdd497d37dd0f7b83dbbd925689b1ff",
+      "archived_bytes": 315,
+      "archived_sha256": "f8c402007f931827614ae0724581ec3c9bdd497d37dd0f7b83dbbd925689b1ff",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-conversion-1.log",
+      "source_label": "<BASELINE>-ccex-conversion-1.log",
+      "source_bytes": 315,
+      "source_sha256": "2c0b395607546f9cdba5b45f77c051da2cda95cb8a434c7ad53110e863ae62f5",
+      "archived_bytes": 315,
+      "archived_sha256": "2c0b395607546f9cdba5b45f77c051da2cda95cb8a434c7ad53110e863ae62f5",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-conversion-2.log",
+      "source_label": "<BASELINE>-ccex-conversion-2.log",
+      "source_bytes": 315,
+      "source_sha256": "a757d87a8a070b79ddd79154572358a476d2478df648abf5e72c37799dac4ae5",
+      "archived_bytes": 315,
+      "archived_sha256": "a757d87a8a070b79ddd79154572358a476d2478df648abf5e72c37799dac4ae5",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-net-0.log",
+      "source_label": "<BASELINE>-ccex-net-0.log",
+      "source_bytes": 254,
+      "source_sha256": "712ea850d6eda4ac2530f6bfeeef2b41679eac5c74ef86c6662e4cd60d87d758",
+      "archived_bytes": 254,
+      "archived_sha256": "712ea850d6eda4ac2530f6bfeeef2b41679eac5c74ef86c6662e4cd60d87d758",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-net-1.log",
+      "source_label": "<BASELINE>-ccex-net-1.log",
+      "source_bytes": 254,
+      "source_sha256": "9adc4b47b2ef7ad6bddfefe99ceb0cd9744240d210be703c08f04e23df3e7d77",
+      "archived_bytes": 254,
+      "archived_sha256": "9adc4b47b2ef7ad6bddfefe99ceb0cd9744240d210be703c08f04e23df3e7d77",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-net-2.log",
+      "source_label": "<BASELINE>-ccex-net-2.log",
+      "source_bytes": 254,
+      "source_sha256": "03a0092cfabe8a3c0ca966762438c178c58fe740c14c8d5733ac44a2065ecfc6",
+      "archived_bytes": 254,
+      "archived_sha256": "03a0092cfabe8a3c0ca966762438c178c58fe740c14c8d5733ac44a2065ecfc6",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-op-0.log",
+      "source_label": "<BASELINE>-ccex-op-0.log",
+      "source_bytes": 2578,
+      "source_sha256": "36c157522fd2d2afb52a31c4456883af9d4602157d52fb30eeedde8d8854f85d",
+      "archived_bytes": 2578,
+      "archived_sha256": "36c157522fd2d2afb52a31c4456883af9d4602157d52fb30eeedde8d8854f85d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-op-1.log",
+      "source_label": "<BASELINE>-ccex-op-1.log",
+      "source_bytes": 2578,
+      "source_sha256": "4ab340ebd1e3383ee7e184bcbcf9ca1f49cd40c660aefe119e41ab5be02d1c7c",
+      "archived_bytes": 2578,
+      "archived_sha256": "4ab340ebd1e3383ee7e184bcbcf9ca1f49cd40c660aefe119e41ab5be02d1c7c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-op-2.log",
+      "source_label": "<BASELINE>-ccex-op-2.log",
+      "source_bytes": 2578,
+      "source_sha256": "d33bfae64411db4a32044b567b4e54819e8a065abda65b54e156e732d98bcd24",
+      "archived_bytes": 2578,
+      "archived_sha256": "d33bfae64411db4a32044b567b4e54819e8a065abda65b54e156e732d98bcd24",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-single-0.log",
+      "source_label": "<BASELINE>-ccex-single-0.log",
+      "source_bytes": 271,
+      "source_sha256": "91fe3c975b2bdfba3bd38e3817a4e1990bca9bb1b84bcfe589cca4aafc669158",
+      "archived_bytes": 271,
+      "archived_sha256": "91fe3c975b2bdfba3bd38e3817a4e1990bca9bb1b84bcfe589cca4aafc669158",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-single-1.log",
+      "source_label": "<BASELINE>-ccex-single-1.log",
+      "source_bytes": 271,
+      "source_sha256": "91e3fb17a45fae2413cf8e84b8e84b90558be1017fe8d8d8ec705a235ed5c68a",
+      "archived_bytes": 271,
+      "archived_sha256": "91e3fb17a45fae2413cf8e84b8e84b90558be1017fe8d8d8ec705a235ed5c68a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex-single-2.log",
+      "source_label": "<BASELINE>-ccex-single-2.log",
+      "source_bytes": 271,
+      "source_sha256": "a9344839c29875aeb04913a0bb8e9f264346c74b822bf3959cea0849e3617955",
+      "archived_bytes": 271,
+      "archived_sha256": "a9344839c29875aeb04913a0bb8e9f264346c74b822bf3959cea0849e3617955",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex.json",
+      "source_label": "<BASELINE>-ccex.json",
+      "source_bytes": 2389,
+      "source_sha256": "8b1a32722d2ef67b853deec1a4174ad5d9aa1586361c1357d46bb62ac2292a18",
+      "archived_bytes": 2389,
+      "archived_sha256": "8b1a32722d2ef67b853deec1a4174ad5d9aa1586361c1357d46bb62ac2292a18",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-ccex.log",
+      "source_label": "<BASELINE>-ccex.log",
+      "source_bytes": 306,
+      "source_sha256": "e0f3ac7ebbec3d531453a89ca1e554a0b7c15d8a7fcdc14f8034909cc1565be4",
+      "archived_bytes": 306,
+      "archived_sha256": "e0f3ac7ebbec3d531453a89ca1e554a0b7c15d8a7fcdc14f8034909cc1565be4",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-0.json",
+      "source_label": "<BASELINE>-conversion-0.json",
+      "source_bytes": 602,
+      "source_sha256": "1ed705b0884a499705127961083a2b9606184b89203575a21ebfefb00247129e",
+      "archived_bytes": 573,
+      "archived_sha256": "5ef4c2784de05c425860bf7d66f5885def9c386877dfd5d082f611ecbe490b3b",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-0.log",
+      "source_label": "<BASELINE>-conversion-0.log",
+      "source_bytes": 244,
+      "source_sha256": "88330a5d5776c55bcead59eabd173f56c2a58cf5028f5c5b4864bb1ea9651d9b",
+      "archived_bytes": 244,
+      "archived_sha256": "88330a5d5776c55bcead59eabd173f56c2a58cf5028f5c5b4864bb1ea9651d9b",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-1.json",
+      "source_label": "<BASELINE>-conversion-1.json",
+      "source_bytes": 602,
+      "source_sha256": "8137b3f4220632b5aeffbd60bbf99be2244784790c393fcb3688766d06e7a5b1",
+      "archived_bytes": 573,
+      "archived_sha256": "1c3606ba1e2a32bfcb9e0632a4484e359e12e4ddc891fc6ae5059781fb9863e3",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-1.log",
+      "source_label": "<BASELINE>-conversion-1.log",
+      "source_bytes": 244,
+      "source_sha256": "31d9d9b7ce5dc8ba3b67236c52c0b14715d9d5c9ecf07541b4b041cf7a653883",
+      "archived_bytes": 244,
+      "archived_sha256": "31d9d9b7ce5dc8ba3b67236c52c0b14715d9d5c9ecf07541b4b041cf7a653883",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-2.json",
+      "source_label": "<BASELINE>-conversion-2.json",
+      "source_bytes": 603,
+      "source_sha256": "fdf6c4eb38751208c9d7d42e76ec6451df5ba38bd66cd5ac3100fcb57fe99c80",
+      "archived_bytes": 574,
+      "archived_sha256": "ea418d61a55f76bc8fbf6f4f72ca1296134a9e29b32ecdbf3d5ca8882207574a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-2.log",
+      "source_label": "<BASELINE>-conversion-2.log",
+      "source_bytes": 244,
+      "source_sha256": "b3222be888d195b837116ad808503c382a58602aa54994b5d53742c40deb4222",
+      "archived_bytes": 244,
+      "archived_sha256": "b3222be888d195b837116ad808503c382a58602aa54994b5d53742c40deb4222",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-count.json",
+      "source_label": "<BASELINE>-conversion-count.json",
+      "source_bytes": 560,
+      "source_sha256": "928188e3a1e5f44ca6965cb9900e10e5a6ee75d2d73353d92f6361deaa8018ea",
+      "archived_bytes": 531,
+      "archived_sha256": "0120c38974ba3ea1f23bba3178455432c30c904c04778e9c97c00d6d4862afbd",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-conversion-count.log",
+      "source_label": "<BASELINE>-conversion-count.log",
+      "source_bytes": 244,
+      "source_sha256": "da4d5e5e968d2862502101703d2a73e8e46e57eca98105608b4cb45965a9ce70",
+      "archived_bytes": 244,
+      "archived_sha256": "da4d5e5e968d2862502101703d2a73e8e46e57eca98105608b4cb45965a9ce70",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-0.json",
+      "source_label": "<BASELINE>-discovery-0.json",
+      "source_bytes": 809248,
+      "source_sha256": "650a0a549211f300d452f2160f5c7c02e0f2bd6de20ea8ca73d8eac7d65a8b8a",
+      "archived_bytes": 809219,
+      "archived_sha256": "6d18008ecfa47aea91f662f7b5337e92a0ab0f7268da70b9e5b376ee4813728f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-0.log",
+      "source_label": "<BASELINE>-discovery-0.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-1.json",
+      "source_label": "<BASELINE>-discovery-1.json",
+      "source_bytes": 809247,
+      "source_sha256": "649f499d8fdce1c020b64b9a6924302ed22aaf585fbaea34f65779f5492665de",
+      "archived_bytes": 809218,
+      "archived_sha256": "cdbf3352858125ae15d0f9097d56c4dd1bf2424f6ba55ba0ae67f8f44fc509d7",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-1.log",
+      "source_label": "<BASELINE>-discovery-1.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-2.json",
+      "source_label": "<BASELINE>-discovery-2.json",
+      "source_bytes": 809248,
+      "source_sha256": "31754430e1eff472076f0feb44394cab0afe0ed90d57292b53c89dfd9ef3cee3",
+      "archived_bytes": 809219,
+      "archived_sha256": "38773229bd4fd4b774b1c36ce118c50c9ded5ab634308e2f2b95a38ea8068258",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-2.log",
+      "source_label": "<BASELINE>-discovery-2.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-count.json",
+      "source_label": "<BASELINE>-discovery-count.json",
+      "source_bytes": 809205,
+      "source_sha256": "ebb8e381f659c4d6d8512cc480505d71c56fd8f03e60bc89eb8b8181bed0ca80",
+      "archived_bytes": 809176,
+      "archived_sha256": "185e64cd6981adffccd059497787d0340ad60ed7be5f195fca1adb45d55c204f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-discovery-count.log",
+      "source_label": "<BASELINE>-discovery-count.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-individual-0.json",
+      "source_label": "<BASELINE>-individual-0.json",
+      "source_bytes": 926,
+      "source_sha256": "034bacd218deca9ff5d392d10afa4ac5428397925fb3deeefd2c92a8775ed03e",
+      "archived_bytes": 897,
+      "archived_sha256": "f72bca6b63c96e6be900ff7b620f151c03bf8e541b2b404df6d7f495e91e7078",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-individual-0.log",
+      "source_label": "<BASELINE>-individual-0.log",
+      "source_bytes": 428,
+      "source_sha256": "9429292d1444d7762bbb317acafe4fed0f26d0cf7fdfd2e997d4c41104d5160d",
+      "archived_bytes": 428,
+      "archived_sha256": "9429292d1444d7762bbb317acafe4fed0f26d0cf7fdfd2e997d4c41104d5160d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-individual-1.json",
+      "source_label": "<BASELINE>-individual-1.json",
+      "source_bytes": 925,
+      "source_sha256": "87ee562d3374434eb06a82e3363f2857c7fd45b72fbd070c589cfa4c9aac604f",
+      "archived_bytes": 896,
+      "archived_sha256": "cc1df8e4c437af69d45dd9091bed8919349ab3408139cb11c195d56cbae68af0",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-individual-1.log",
+      "source_label": "<BASELINE>-individual-1.log",
+      "source_bytes": 428,
+      "source_sha256": "83d7e12a3760cd9780b54a85aaee272505266178e52e1af32bf0f4f70cc2d03b",
+      "archived_bytes": 428,
+      "archived_sha256": "83d7e12a3760cd9780b54a85aaee272505266178e52e1af32bf0f4f70cc2d03b",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-individual-2.json",
+      "source_label": "<BASELINE>-individual-2.json",
+      "source_bytes": 927,
+      "source_sha256": "c3b28f3be0e525d5e7d79fd320491366794b3e27b6700d7ba546e31d95d01de0",
+      "archived_bytes": 898,
+      "archived_sha256": "dff20a6854cc255aa846ff7a90e6b00ca85b5f808d7e3548a15a012fa33daa49",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-individual-2.log",
+      "source_label": "<BASELINE>-individual-2.log",
+      "source_bytes": 428,
+      "source_sha256": "5b736bd9d569fa8b03782ccdf0b1920348433fb476b8e76ec3b1ded54ee9f705",
+      "archived_bytes": 428,
+      "archived_sha256": "5b736bd9d569fa8b03782ccdf0b1920348433fb476b8e76ec3b1ded54ee9f705",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-0.json",
+      "source_label": "<BASELINE>-net-0.json",
+      "source_bytes": 582,
+      "source_sha256": "8accf48592dc1370feca1ccdf7977f894a8dcf57914f2db32e36271bc25cf005",
+      "archived_bytes": 553,
+      "archived_sha256": "1d3488c2156926c61d7186f1ec6f155be4de789c1b3959ddabf1299672718b9c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-0.log",
+      "source_label": "<BASELINE>-net-0.log",
+      "source_bytes": 205,
+      "source_sha256": "e59e6023650922f9de1c7cc2c8a0a8acff1f6802a47a246776f46d3ef447efc3",
+      "archived_bytes": 205,
+      "archived_sha256": "e59e6023650922f9de1c7cc2c8a0a8acff1f6802a47a246776f46d3ef447efc3",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-1.json",
+      "source_label": "<BASELINE>-net-1.json",
+      "source_bytes": 582,
+      "source_sha256": "d7fe5ac901bacb7c4f5165f67202c5928437a015f4be1302f5365cb3b5579907",
+      "archived_bytes": 553,
+      "archived_sha256": "29884de88c837c1e5f3ca071f9ae8e78fb1715ec18d1c225323f28a93690f146",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-1.log",
+      "source_label": "<BASELINE>-net-1.log",
+      "source_bytes": 205,
+      "source_sha256": "fe7aa916f1582696961d03cfb8f893b25aa5ec9e01c255a17f69bd1439f53067",
+      "archived_bytes": 205,
+      "archived_sha256": "fe7aa916f1582696961d03cfb8f893b25aa5ec9e01c255a17f69bd1439f53067",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-2.json",
+      "source_label": "<BASELINE>-net-2.json",
+      "source_bytes": 582,
+      "source_sha256": "21bf9838b4f86ddb3e1da22a5b8477707d06804aacd029f909bf03372ec20bb0",
+      "archived_bytes": 553,
+      "archived_sha256": "4f7220d606a5dc5e384fdef6792105d211bdde05264a934782515e09a5bb4e54",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-2.log",
+      "source_label": "<BASELINE>-net-2.log",
+      "source_bytes": 205,
+      "source_sha256": "5ead4e53621a6a5d76beb69b13df1d6bddbf1259895f09b9ddfd31e6ddba9dec",
+      "archived_bytes": 205,
+      "archived_sha256": "5ead4e53621a6a5d76beb69b13df1d6bddbf1259895f09b9ddfd31e6ddba9dec",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-count.json",
+      "source_label": "<BASELINE>-net-count.json",
+      "source_bytes": 539,
+      "source_sha256": "1c06841f17bf5b23a403d52ef1e6c15397ae9a9fa64ab59e3d8afefb17d8edc3",
+      "archived_bytes": 510,
+      "archived_sha256": "e7f37e8c592f110bf25c57f38087a1cf5154dba1173bfd9505bbf7218c4667d4",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-net-count.log",
+      "source_label": "<BASELINE>-net-count.log",
+      "source_bytes": 205,
+      "source_sha256": "e89c7cc6d9e7c1be0a032c7d5814f241ea0af3aab90bc94747730b27458aea9f",
+      "archived_bytes": 205,
+      "archived_sha256": "e89c7cc6d9e7c1be0a032c7d5814f241ea0af3aab90bc94747730b27458aea9f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-0.json",
+      "source_label": "<BASELINE>-op-0.json",
+      "source_bytes": 2760,
+      "source_sha256": "84897ff97900a8674da82d0f8aa94ef64c685ff40183027ff7cb6924d2fa4ea6",
+      "archived_bytes": 2731,
+      "archived_sha256": "873f92c3c0c3de1998afb82b66bf35f07635bc3c74baf577cdedf70f68e946f5",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-0.log",
+      "source_label": "<BASELINE>-op-0.log",
+      "source_bytes": 2531,
+      "source_sha256": "b7235e80c2b0e09fba0a45eb6b787455edbc0452683fea0ec44c8ba9951c4128",
+      "archived_bytes": 2531,
+      "archived_sha256": "b7235e80c2b0e09fba0a45eb6b787455edbc0452683fea0ec44c8ba9951c4128",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-1.json",
+      "source_label": "<BASELINE>-op-1.json",
+      "source_bytes": 2759,
+      "source_sha256": "42da1cb2095f27b204d4ee58908ff64f9553078dd4de4c004fccabf46c0586ea",
+      "archived_bytes": 2730,
+      "archived_sha256": "203e6543d26dacec892040650e7b78808657bd48f5634f2f76b3ff6d77699926",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-1.log",
+      "source_label": "<BASELINE>-op-1.log",
+      "source_bytes": 2531,
+      "source_sha256": "dd0082ac8b3c17b511fab7cb6e4fb78c6e3f94ca090f6512b369917644723151",
+      "archived_bytes": 2531,
+      "archived_sha256": "dd0082ac8b3c17b511fab7cb6e4fb78c6e3f94ca090f6512b369917644723151",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-2.json",
+      "source_label": "<BASELINE>-op-2.json",
+      "source_bytes": 2759,
+      "source_sha256": "f109b5cf98010ed1793a0a0a110c0eb1974dcb2f2f80968554c3024f3f286bf7",
+      "archived_bytes": 2730,
+      "archived_sha256": "e303d1e4a73b5ea9d6beb37f733af15b36a9019d4a79c842e3d484fec117e4bb",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-2.log",
+      "source_label": "<BASELINE>-op-2.log",
+      "source_bytes": 2531,
+      "source_sha256": "a08006d0840827cd1524a0a991d12d1409739abddbecae69e3e4e2191167912a",
+      "archived_bytes": 2531,
+      "archived_sha256": "a08006d0840827cd1524a0a991d12d1409739abddbecae69e3e4e2191167912a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-count.json",
+      "source_label": "<BASELINE>-op-count.json",
+      "source_bytes": 2717,
+      "source_sha256": "52c7e88716dd7ae52f0ae9f21c5c95d626419e59fc3cfdf5ca0e1add64769551",
+      "archived_bytes": 2688,
+      "archived_sha256": "976149d70fd649585fd498a77eb1c5988099f690abe7a8c7915b4d18e9066077",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-op-count.log",
+      "source_label": "<BASELINE>-op-count.log",
+      "source_bytes": 2531,
+      "source_sha256": "3e5b86c5ad76e5220cc5f8708be80a8b993260564922c808504ea11be945e071",
+      "archived_bytes": 2531,
+      "archived_sha256": "3e5b86c5ad76e5220cc5f8708be80a8b993260564922c808504ea11be945e071",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-preparation-0.json",
+      "source_label": "<BASELINE>-preparation-0.json",
+      "source_bytes": 809434,
+      "source_sha256": "d07b5ea197640798b1dba894d9acc11a7e84d5a7be1d0c875a72b7e06c347ae5",
+      "archived_bytes": 809405,
+      "archived_sha256": "90952b19cdb2d5122c5b4bb270bf48597e4150afb59c76cb9d11c6cce0230f0c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-preparation-0.log",
+      "source_label": "<BASELINE>-preparation-0.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-preparation-1.json",
+      "source_label": "<BASELINE>-preparation-1.json",
+      "source_bytes": 809432,
+      "source_sha256": "18bcccafb63ee72d604659643d304b7a1a2ac377fe188bde8052863d8f1a137f",
+      "archived_bytes": 809403,
+      "archived_sha256": "c84c08e5940cc1298c5c80c375172c64fbae198f2a788af2b3f7218ce1626342",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-preparation-1.log",
+      "source_label": "<BASELINE>-preparation-1.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-preparation-2.json",
+      "source_label": "<BASELINE>-preparation-2.json",
+      "source_bytes": 809433,
+      "source_sha256": "4d6663da220ba6f3aedd2af8aff6932f97f96fc6d0b4fc30e17a21fc593f1ffb",
+      "archived_bytes": 809404,
+      "archived_sha256": "57b015a35251bc55e8ff5a95aa78e788b28f879a11871d47d068303dd7956875",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-preparation-2.log",
+      "source_label": "<BASELINE>-preparation-2.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-0.json",
+      "source_label": "<BASELINE>-single-0.json",
+      "source_bytes": 584,
+      "source_sha256": "6278a2abf751c85dfd404b84668adf3f59d2264c93f5e133451609af5aec4411",
+      "archived_bytes": 555,
+      "archived_sha256": "1de1e495ce13872dc03d3356b734012be38e7d6b0c7bee1a9491095fc8241e6d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-0.log",
+      "source_label": "<BASELINE>-single-0.log",
+      "source_bytes": 213,
+      "source_sha256": "53a29353c117a67b4c79e3e3db4828673154535df10039fe897b78bccd5625b1",
+      "archived_bytes": 213,
+      "archived_sha256": "53a29353c117a67b4c79e3e3db4828673154535df10039fe897b78bccd5625b1",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-1.json",
+      "source_label": "<BASELINE>-single-1.json",
+      "source_bytes": 585,
+      "source_sha256": "4829429d120797516a57a0cb8ab1db4a66953414a77436a1399ec935fd24dea2",
+      "archived_bytes": 556,
+      "archived_sha256": "8362c284baa796afdb8b62a5d5d4e7b9875d0279f672aac1c00c2ddb15f86bf7",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-1.log",
+      "source_label": "<BASELINE>-single-1.log",
+      "source_bytes": 213,
+      "source_sha256": "75f48ef39efbb5f16b41bda4869aca2f0a0e5d9e4253c764f75ef2c72cf49d5a",
+      "archived_bytes": 213,
+      "archived_sha256": "75f48ef39efbb5f16b41bda4869aca2f0a0e5d9e4253c764f75ef2c72cf49d5a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-2.json",
+      "source_label": "<BASELINE>-single-2.json",
+      "source_bytes": 585,
+      "source_sha256": "fc51bc92091950e2c0c6d0905e1ef61a6edef70f2a075f44e724feeb3c30e26b",
+      "archived_bytes": 556,
+      "archived_sha256": "aee2cd6c9e30c5f740d49e25dc1281945dcab960a8a17cd3016acc2bf1128dc1",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-2.log",
+      "source_label": "<BASELINE>-single-2.log",
+      "source_bytes": 213,
+      "source_sha256": "e10b204516d1e5e90f077626ebd0388865a0c7b02f0d45123f858cb05102bbb7",
+      "archived_bytes": 213,
+      "archived_sha256": "e10b204516d1e5e90f077626ebd0388865a0c7b02f0d45123f858cb05102bbb7",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-count.json",
+      "source_label": "<BASELINE>-single-count.json",
+      "source_bytes": 720,
+      "source_sha256": "22328e0203aeb48249ca26d0a8599ce18c2d17970c7f44a406edd4f6d7972462",
+      "archived_bytes": 691,
+      "archived_sha256": "f42b2b490553f9b1431cdb7228eb99da0b79b3a41bd0b03f3ac3130f82f745dc",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/canonical/baseline-single-count.log",
+      "source_label": "<BASELINE>-single-count.log",
+      "source_bytes": 428,
+      "source_sha256": "30933ff86a4922eaa550bae15d17e3fe37fd47089b5c349996efa56d4c189ca5",
+      "archived_bytes": 428,
+      "archived_sha256": "30933ff86a4922eaa550bae15d17e3fe37fd47089b5c349996efa56d4c189ca5",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "scripts/batch.py.txt",
+      "source_label": "<STAGE5_RECORDS>/batch.py",
+      "source_bytes": 1303,
+      "source_sha256": "62bd5d8f0a18c9855f1452ab80f2007a8807d0f2d209c88ee399451641aaac2f",
+      "archived_bytes": 1289,
+      "archived_sha256": "f19f6a327cc13545eddfbc7c8d1e621f7ea7ff89ad7975f0981aae484ecba516",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-batch.log",
+      "source_label": "<STAGE5_RECORDS>/before-batch.log",
+      "source_bytes": 443,
+      "source_sha256": "7e6d9b30e85cfbcfb3929c4d76997f0c2a2c8c7e9458bbdc43e5d7de3e9c348c",
+      "archived_bytes": 443,
+      "archived_sha256": "7e6d9b30e85cfbcfb3929c4d76997f0c2a2c8c7e9458bbdc43e5d7de3e9c348c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-conversion-0.json",
+      "source_label": "<STAGE5_RECORDS>/before-conversion-0.json",
+      "source_bytes": 552,
+      "source_sha256": "78ee80520f9362d339361a06fd2184e4134e77e1d83db3f7c38efa1cd91a9001",
+      "archived_bytes": 523,
+      "archived_sha256": "618b77820840b7dd8b793051a0bd9b5030275429e37a147b141cb432861ba77a",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-conversion-0.log",
+      "source_label": "<STAGE5_RECORDS>/before-conversion-0.log",
+      "source_bytes": 244,
+      "source_sha256": "5847b25d83e9597c708d94a754d362d08284f851862c54e159fce929fcabdde9",
+      "archived_bytes": 244,
+      "archived_sha256": "5847b25d83e9597c708d94a754d362d08284f851862c54e159fce929fcabdde9",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-0.json",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-0.json",
+      "source_bytes": 809241,
+      "source_sha256": "03036fc6a938a932502da79e61f169cfc5bc5b2a8caaf9d7acf22252b0e35bfd",
+      "archived_bytes": 809212,
+      "archived_sha256": "bee2b67c39de3b984d72b1acb9ce6636d148ba13e5379326798b56f1c1b0f2ab",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-0.log",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-0.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-1.json",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-1.json",
+      "source_bytes": 809247,
+      "source_sha256": "a52518fe9424bfe3097532206ca41d9a517045bc06e30fd1e2f68ca449668757",
+      "archived_bytes": 809218,
+      "archived_sha256": "d44cb5c23e9665765d149f0b035e135d087251fe7f64933809f43baeef6f68e2",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-1.log",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-1.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-2.json",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-2.json",
+      "source_bytes": 809247,
+      "source_sha256": "cbfe39a606bbcd8c8a4013762f55d91775ca9811ab668645b4ae3da1bee3bdc2",
+      "archived_bytes": 809218,
+      "archived_sha256": "cf5999045e3dc6a73c1c1a7ec2742b073f256a084aec1e07d9726b94e6c67a86",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-2.log",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-2.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-count.json",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-count.json",
+      "source_bytes": 809205,
+      "source_sha256": "471eb9f9c925fc506d53b97bbffaecdec3946d633bab9bbb1c7d81df018efa2d",
+      "archived_bytes": 809176,
+      "archived_sha256": "d2e074ddf5e38a50f3a45dbe053a0c24c2a7c7b6eb4acaff6501cb75154d9a77",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-discovery-count.log",
+      "source_label": "<STAGE5_RECORDS>/before-discovery-count.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archived_bytes": 0,
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-0.json",
+      "source_label": "<STAGE5_RECORDS>/before-net-0.json",
+      "source_bytes": 584,
+      "source_sha256": "b02ee3633c32fae7d20843bf0a0576fe84e5511816077a92954fc39c8034da9b",
+      "archived_bytes": 555,
+      "archived_sha256": "eca68d6ae2a6e38085c985d16bc3cf8170850eb703827db52fc59d402bf33e3d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-0.log",
+      "source_label": "<STAGE5_RECORDS>/before-net-0.log",
+      "source_bytes": 205,
+      "source_sha256": "6ddc6b7aa8b61e909d4576cc1010b07a86d1a72d88c6920d347b9e2399865075",
+      "archived_bytes": 205,
+      "archived_sha256": "6ddc6b7aa8b61e909d4576cc1010b07a86d1a72d88c6920d347b9e2399865075",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-1.json",
+      "source_label": "<STAGE5_RECORDS>/before-net-1.json",
+      "source_bytes": 580,
+      "source_sha256": "63e99f54dac33cd5dabee3cc3ca37ecb2974b6314cd07d0500b98de3ba40eeff",
+      "archived_bytes": 551,
+      "archived_sha256": "e098f351d1090b44473fa4e8fcb6d113a96fec3b699ee0af36ca1e8746b033a2",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-1.log",
+      "source_label": "<STAGE5_RECORDS>/before-net-1.log",
+      "source_bytes": 205,
+      "source_sha256": "ea7f1bf9b20ea78f1e56085dccc5659af04b63c51c1960f0d43abe764df58bda",
+      "archived_bytes": 205,
+      "archived_sha256": "ea7f1bf9b20ea78f1e56085dccc5659af04b63c51c1960f0d43abe764df58bda",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-2.json",
+      "source_label": "<STAGE5_RECORDS>/before-net-2.json",
+      "source_bytes": 580,
+      "source_sha256": "c1a690d87b96dc9b4ec18f56bd576a8eebf0c594aa10ea09f73760e8f7a37cb5",
+      "archived_bytes": 551,
+      "archived_sha256": "16d8bb8cccdf60e950e4c346f62a7003a0ecb89f4caf9debb1d0674b35d33670",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-2.log",
+      "source_label": "<STAGE5_RECORDS>/before-net-2.log",
+      "source_bytes": 205,
+      "source_sha256": "aa994d04f72e59a7ced51352f2fc048b550409141d7f0bdbe5992eb09a960b9c",
+      "archived_bytes": 205,
+      "archived_sha256": "aa994d04f72e59a7ced51352f2fc048b550409141d7f0bdbe5992eb09a960b9c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-count.json",
+      "source_label": "<STAGE5_RECORDS>/before-net-count.json",
+      "source_bytes": 540,
+      "source_sha256": "b35277c49b5fe1a681374a257a796861f7439b48e358e1d2e7ac766c962bee4d",
+      "archived_bytes": 511,
+      "archived_sha256": "9784fd100172bd1b409fdfda673dfd33bf8835bd7e801764189154d79d9a6697",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-net-count.log",
+      "source_label": "<STAGE5_RECORDS>/before-net-count.log",
+      "source_bytes": 205,
+      "source_sha256": "6b764716976c0824f203b5fa8ab88d0a3cceb1ce0065fe37350eeb76ce060752",
+      "archived_bytes": 205,
+      "archived_sha256": "6b764716976c0824f203b5fa8ab88d0a3cceb1ce0065fe37350eeb76ce060752",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-0.json",
+      "source_label": "<STAGE5_RECORDS>/before-op-0.json",
+      "source_bytes": 2759,
+      "source_sha256": "5d283bfd1e9841621cf4e68d803f7d19ca4f7d1ec10e40131899b4368bfd5e68",
+      "archived_bytes": 2730,
+      "archived_sha256": "dfa1ec07348ddd5acc7d8d1497bf00f2fc9e6896a853747628ddbdeac02090bd",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-0.log",
+      "source_label": "<STAGE5_RECORDS>/before-op-0.log",
+      "source_bytes": 2531,
+      "source_sha256": "edbc19c7c6830b046176d6dbcb38a4285ceb8517627fad6ba321333c72af82c3",
+      "archived_bytes": 2531,
+      "archived_sha256": "edbc19c7c6830b046176d6dbcb38a4285ceb8517627fad6ba321333c72af82c3",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-1.json",
+      "source_label": "<STAGE5_RECORDS>/before-op-1.json",
+      "source_bytes": 2759,
+      "source_sha256": "14f59183ab01aef6657af738d32b524edf9e8d5ccca57cde99b799cc5c7556d7",
+      "archived_bytes": 2730,
+      "archived_sha256": "de85fdfd9b4fb9fae856a550b0b1b882498825e6a0eb81e72d04a7cdee452805",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-1.log",
+      "source_label": "<STAGE5_RECORDS>/before-op-1.log",
+      "source_bytes": 2531,
+      "source_sha256": "6606555d8cbd533797c1212066ccb7b29eebd3eafe74450455229504cba04180",
+      "archived_bytes": 2531,
+      "archived_sha256": "6606555d8cbd533797c1212066ccb7b29eebd3eafe74450455229504cba04180",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-2.json",
+      "source_label": "<STAGE5_RECORDS>/before-op-2.json",
+      "source_bytes": 2758,
+      "source_sha256": "56e3ceacfcc1eed249022d45d4f705678bb1ce57bb0c044ac5247ad5dc889f86",
+      "archived_bytes": 2729,
+      "archived_sha256": "42bc3c921160bf8dca160fbfb139b34f15e860c9e35380fa37ad70ae4597df04",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-2.log",
+      "source_label": "<STAGE5_RECORDS>/before-op-2.log",
+      "source_bytes": 2531,
+      "source_sha256": "3269daa987c5c9d40b4111f205427a4e4b807e19a39236fd5a9bd10e0889ab80",
+      "archived_bytes": 2531,
+      "archived_sha256": "3269daa987c5c9d40b4111f205427a4e4b807e19a39236fd5a9bd10e0889ab80",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-count.json",
+      "source_label": "<STAGE5_RECORDS>/before-op-count.json",
+      "source_bytes": 2717,
+      "source_sha256": "5b9213803b71667a9687157667eaf1765f105c5f18ad6a38a997c49c390ce007",
+      "archived_bytes": 2688,
+      "archived_sha256": "01e9401480c7b24547ca76d58f767ce03a53b85be255b55597395a1f49429f23",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-op-count.log",
+      "source_label": "<STAGE5_RECORDS>/before-op-count.log",
+      "source_bytes": 2531,
+      "source_sha256": "2b8ba54186a510494a8db379c879735b8b656a2ff362abe1ef4cf8380b73ef7f",
+      "archived_bytes": 2531,
+      "archived_sha256": "2b8ba54186a510494a8db379c879735b8b656a2ff362abe1ef4cf8380b73ef7f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-0.json",
+      "source_label": "<STAGE5_RECORDS>/before-single-0.json",
+      "source_bytes": 585,
+      "source_sha256": "2d04f0a57e3ab14b5991eef6f2077a6e11185283b8ca57500deb92cb2d0dcbe6",
+      "archived_bytes": 556,
+      "archived_sha256": "17e33f7801dbac08bd6b5a54ac990f94f0fbf499a51bd91c4bdcea1c8957268f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-0.log",
+      "source_label": "<STAGE5_RECORDS>/before-single-0.log",
+      "source_bytes": 213,
+      "source_sha256": "99c3f9f8485c37ad79da8a9a2bec33059ccc793a04d48cccc5aede5975d8c861",
+      "archived_bytes": 213,
+      "archived_sha256": "99c3f9f8485c37ad79da8a9a2bec33059ccc793a04d48cccc5aede5975d8c861",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-1.json",
+      "source_label": "<STAGE5_RECORDS>/before-single-1.json",
+      "source_bytes": 584,
+      "source_sha256": "405927660eae0750a5eef51011ebeea58bc3c68de9e153c9f311a97fcc232afc",
+      "archived_bytes": 555,
+      "archived_sha256": "5863cd06fbe2d60954640ee5c500ae31839db3e60d3d9ebf8f6b9daa2338990c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-1.log",
+      "source_label": "<STAGE5_RECORDS>/before-single-1.log",
+      "source_bytes": 213,
+      "source_sha256": "f88389c099014a9f5b7bb831df1ecd2266d677dcbcd7eb626b14cd9f4d73d091",
+      "archived_bytes": 213,
+      "archived_sha256": "f88389c099014a9f5b7bb831df1ecd2266d677dcbcd7eb626b14cd9f4d73d091",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-2.json",
+      "source_label": "<STAGE5_RECORDS>/before-single-2.json",
+      "source_bytes": 586,
+      "source_sha256": "4e40084d1e3c2c5079526b1225b85431cce593cae7a7415e4ef97db734073193",
+      "archived_bytes": 557,
+      "archived_sha256": "b78b2976cd43274a0d75b6a03d39a02312c788ba389f2c29a020e61bbadd79e8",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-2.log",
+      "source_label": "<STAGE5_RECORDS>/before-single-2.log",
+      "source_bytes": 213,
+      "source_sha256": "461866aa1a077fd46a160dd34f9c8b600b50f960b184756cec10236bde79239c",
+      "archived_bytes": 213,
+      "archived_sha256": "461866aa1a077fd46a160dd34f9c8b600b50f960b184756cec10236bde79239c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-count.json",
+      "source_label": "<STAGE5_RECORDS>/before-single-count.json",
+      "source_bytes": 544,
+      "source_sha256": "2c45266454b45d02294cc734de79e3195c3931abeee8a61863375f8f78120c37",
+      "archived_bytes": 515,
+      "archived_sha256": "41d52ca047ab94f1d1ddee3712d9ad9fddc3064f56ee38ae0725edccbd42e222",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "measurements/excluded-preliminary/before-single-count.log",
+      "source_label": "<STAGE5_RECORDS>/before-single-count.log",
+      "source_bytes": 213,
+      "source_sha256": "c156dd0384ee8dcf1197d718f79cd5a2d923ed168d0f1c00ca3bb8b533aa39c5",
+      "archived_bytes": 213,
+      "archived_sha256": "c156dd0384ee8dcf1197d718f79cd5a2d923ed168d0f1c00ca3bb8b533aa39c5",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "scripts/ccexbatch.py.txt",
+      "source_label": "<STAGE5_RECORDS>/ccexbatch.py",
+      "source_bytes": 819,
+      "source_sha256": "87189f27a0e162ea3a19b301cddafad308a9e7e156d8cc984d3a81031805c867",
+      "archived_bytes": 805,
+      "archived_sha256": "fda9662cbd79a47a293a945e11ce17db7081f23b5e7c4e75d647d2e8da8e775b",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "scripts/diagnose.py.txt",
+      "source_label": "<STAGE5_RECORDS>/diagnose.py",
+      "source_bytes": 576,
+      "source_sha256": "74b2687df100c7dc9ca50ed65b94b049d1d5a5028de40750bef77e584c845bec",
+      "archived_bytes": 557,
+      "archived_sha256": "32fff02ac29d0e8d36f7778e4acf65c2854a5ddf965954caa5c27eff059f0955",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/local/dynamic-duration.log",
+      "source_label": "<STAGE5_RECORDS>/dynamic-duration.log",
+      "source_bytes": 598,
+      "source_sha256": "9543cacf46aa7745a7a7454e23b654d7d23f526865dcc41bc030fbf7fbb7fd53",
+      "archived_bytes": 598,
+      "archived_sha256": "9543cacf46aa7745a7a7454e23b654d7d23f526865dcc41bc030fbf7fbb7fd53",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/local/focused.log",
+      "source_label": "<STAGE5_RECORDS>/focused.log",
+      "source_bytes": 19831,
+      "source_sha256": "12636224dab6a798fe0844ee413a1c8e9cbec168119e478e5d91473161b16640",
+      "archived_bytes": 19831,
+      "archived_sha256": "12636224dab6a798fe0844ee413a1c8e9cbec168119e478e5d91473161b16640",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/local/initial-static-before-tracking/format-changed.log",
+      "source_label": "<STAGE5_RECORDS>/format-changed.log",
+      "source_bytes": 19,
+      "source_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "archived_bytes": 19,
+      "archived_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/local/initial-static-before-tracking/format-full.log",
+      "source_label": "<STAGE5_RECORDS>/format-full.log",
+      "source_bytes": 28,
+      "source_sha256": "63f97583462ca3fd1deb09dae14f24137e22392d9ec1795122d5a4985737ab39",
+      "archived_bytes": 19,
+      "archived_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/local/full.log",
+      "source_label": "<STAGE5_RECORDS>/full.log",
+      "source_bytes": 1102506,
+      "source_sha256": "a566489893af8ab2b160132708cac535b207e2805031cb3276163ee6773a8aab",
+      "archived_bytes": 1102612,
+      "archived_sha256": "b4ae1fd8c620125ec81e024951f30702ccd726c81a062db592a68e3d492d070c",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "scripts/measure.py.txt",
+      "source_label": "<STAGE5_RECORDS>/measure.py",
+      "source_bytes": 3774,
+      "source_sha256": "d5b536b62d4559e3aaaaee12a51f05d0ae537cce4a5031bafd8f5d9623d13d58",
+      "archived_bytes": 3774,
+      "archived_sha256": "d5b536b62d4559e3aaaaee12a51f05d0ae537cce4a5031bafd8f5d9623d13d58",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "metadata/preparation.log",
+      "source_label": "<STAGE5_RECORDS>/preparation.log",
+      "source_bytes": 357,
+      "source_sha256": "fe83a223cf7e0c3ca8f9bc70b4a3f6fd6e11d27594e72badf7789304b1286ac6",
+      "archived_bytes": 357,
+      "archived_sha256": "fe83a223cf7e0c3ca8f9bc70b4a3f6fd6e11d27594e72badf7789304b1286ac6",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "scripts/summarize.py.txt",
+      "source_label": "<STAGE5_RECORDS>/summarize.py",
+      "source_bytes": 2632,
+      "source_sha256": "39c5a379f732c38eb29c89903a1a2cc00bb38a2e51c67fbab49293a45d190de7",
+      "archived_bytes": 2613,
+      "archived_sha256": "96a50f7729b4d675c11159a44e7109b9010fdd6d938afc0b8e33c00e4126984f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "metadata/summary.json",
+      "source_label": "<STAGE5_RECORDS>/summary.json",
+      "source_bytes": 11525,
+      "source_sha256": "0416761d8e64a473ab18db6a052b95661547c85816951fab0965f6b4dc2bd430",
+      "archived_bytes": 11525,
+      "archived_sha256": "0416761d8e64a473ab18db6a052b95661547c85816951fab0965f6b4dc2bd430",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "metadata/verification.json",
+      "source_label": "<STAGE5_RECORDS>/verification.json",
+      "source_bytes": 980,
+      "source_sha256": "1d6f8a5bd2ce5aedd96aefa8f2ddb6ec82c246e433575b974f5cd64f09bb7d61",
+      "archived_bytes": 980,
+      "archived_sha256": "1d6f8a5bd2ce5aedd96aefa8f2ddb6ec82c246e433575b974f5cd64f09bb7d61",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/ci-fix-local/mypy-after-target.log",
+      "source_label": "<CI_FIX_RECORDS>/mypy-after-target.log",
+      "source_bytes": 42,
+      "source_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "archived_bytes": 42,
+      "archived_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/ci-fix-local/mypy-before.log",
+      "source_label": "<CI_FIX_RECORDS>/mypy-before.log",
+      "source_bytes": 619,
+      "source_sha256": "eed736ef70d8f578991e34cda7e7343f07b21785d9c652a6182ad095fc5ae14f",
+      "archived_bytes": 619,
+      "archived_sha256": "eed736ef70d8f578991e34cda7e7343f07b21785d9c652a6182ad095fc5ae14f",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/ci-fix-local/static.log",
+      "source_label": "<CI_FIX_RECORDS>/static.log",
+      "source_bytes": 19,
+      "source_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "archived_bytes": 19,
+      "archived_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/ci-fix-local/tests.log",
+      "source_label": "<CI_FIX_RECORDS>/tests.log",
+      "source_bytes": 3481,
+      "source_sha256": "8106af9da33c16d3b43b8b42d2560124c18866b2b73a1369a9f478f74a9ea142",
+      "archived_bytes": 3481,
+      "archived_sha256": "8106af9da33c16d3b43b8b42d2560124c18866b2b73a1369a9f478f74a9ea142",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "validation/ci-fix-local/ufmt.log",
+      "source_label": "<CI_FIX_RECORDS>/ufmt.log",
+      "source_bytes": 19,
+      "source_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "archived_bytes": 19,
+      "archived_sha256": "83b7a6d9b73223ec3d2c583c51fd3fc127059f7cadeeac00ce5c3444a21e304d",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/fixed-jobs-final.json",
+      "source_label": "<CI_SOURCE>/fixed-jobs-final.json",
+      "source_bytes": 13166,
+      "source_sha256": "24cc361e19a0406b88780d1edb967352d4958d0f3503bbedb495571940a6c7c9",
+      "archived_bytes": 13166,
+      "archived_sha256": "24cc361e19a0406b88780d1edb967352d4958d0f3503bbedb495571940a6c7c9",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/fixed-jobs.json",
+      "source_label": "<CI_SOURCE>/fixed-jobs.json",
+      "source_bytes": 12898,
+      "source_sha256": "15a78a5a44b0408fe93f3de315acec5a3c06d4e0abbc4211e5fd1c8d2a9eecf9",
+      "archived_bytes": 12898,
+      "archived_sha256": "15a78a5a44b0408fe93f3de315acec5a3c06d4e0abbc4211e5fd1c8d2a9eecf9",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/initial-jobs.json",
+      "source_label": "<CI_SOURCE>/initial-jobs.json",
+      "source_bytes": 13083,
+      "source_sha256": "fb1d824f6925d0fec65f671637ed167330cfb944f6f30df914d33976f468c754",
+      "archived_bytes": 13083,
+      "archived_sha256": "fb1d824f6925d0fec65f671637ed167330cfb944f6f30df914d33976f468c754",
+      "selection": "complete file",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/pr-info.json",
+      "source_label": "<CI_SOURCE>/pr-info.json",
+      "source_bytes": 2141,
+      "source_sha256": "1841edecb966c33a7a1bdde102e54f50f4cdc23961e75909c59f624a0795ad9b",
+      "archived_bytes": 483,
+      "archived_sha256": "676bccdad9337fb3571517aadcbfcb314c7338f0f143ea6a939c7f20edae595c",
+      "selection": "PR identity, state and refs only",
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/initial-static.log",
+      "source_label": "GitHub decoded job log: initial-static",
+      "source_bytes": 94020,
+      "source_sha256": "901be79f270ef3a2d5eb697c00a57e7254d7f3685e54c755109b440c65503144",
+      "archived_bytes": 2116,
+      "archived_sha256": "826baaecbb74d6ffea42455362b19f07a558ae152291193d9e74c71056e06d9d",
+      "selection": {
+        "kind": "contiguous line excerpt",
+        "first": 854,
+        "last": 882
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/fixed-static.log",
+      "source_label": "GitHub decoded job log: fixed-static",
+      "source_bytes": 93023,
+      "source_sha256": "75cdc0d39934fb46b2e12f16e35fad01a532c5ab7543fe097ca891746e22db65",
+      "archived_bytes": 909,
+      "archived_sha256": "2825ab38c51044e92bd25d9fde5a38ff20d59443f5259ad282f7cdffd031210e",
+      "selection": {
+        "kind": "contiguous line excerpt",
+        "first": 854,
+        "last": 865
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/fixed-format.log",
+      "source_label": "GitHub decoded job log: fixed-format",
+      "source_bytes": 41354,
+      "source_sha256": "6d8f538632f3b73a82918386c01fe95c6de759f7b22ecb8f23ec57946b150e64",
+      "archived_bytes": 895,
+      "archived_sha256": "526bb534585776526484c40c19aedb617e834d9c35bcb3155d6bc3661edcfa25",
+      "selection": {
+        "kind": "contiguous line excerpt",
+        "first": 347,
+        "last": 358
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/initial-full.log",
+      "source_label": "GitHub decoded job log: initial-full",
+      "source_bytes": 1415059,
+      "source_sha256": "ff2e5706828c86d1df46e4b3e02c24116a667691e4a27f78d17e753588a5f6e7",
+      "archived_bytes": 1356536,
+      "archived_sha256": "a832e13dcc011c773e604ffd4237b7d9e94cb01e2a403a3b18bfc39ca8ca45ae",
+      "selection": {
+        "kind": "contiguous line excerpt",
+        "first": 541,
+        "last": 9042
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/fixed-full.log",
+      "source_label": "GitHub decoded job log: fixed-full",
+      "source_bytes": 1415069,
+      "source_sha256": "08822465f23ad869f30b0f17aafa2fd512634ef66846bfb846ec654edfa0914e",
+      "archived_bytes": 1356536,
+      "archived_sha256": "c4da5c07d68d5414e9c7e908a80dfab1ff2e8a41f31935adbb9c86d68dc9144c",
+      "selection": {
+        "kind": "contiguous line excerpt",
+        "first": 541,
+        "last": 9042
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/initial-context.log",
+      "source_label": "<CI_SOURCE>/initial-static.log",
+      "source_bytes": 94020,
+      "source_sha256": "901be79f270ef3a2d5eb697c00a57e7254d7f3685e54c755109b440c65503144",
+      "archived_bytes": 756,
+      "archived_sha256": "8eadc5f70765f2356d94a244beb1192e4c21753ce9e177cc93566b579955d22c",
+      "selection": {
+        "kind": "context lines",
+        "line_numbers": [
+          119,
+          163,
+          535,
+          756,
+          761,
+          787,
+          790,
+          802,
+          812,
+          814,
+          818,
+          819,
+          822,
+          828
+        ]
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    },
+    {
+      "path": "ci/fixed-context.log",
+      "source_label": "<CI_SOURCE>/fixed-static.log",
+      "source_bytes": 93023,
+      "source_sha256": "75cdc0d39934fb46b2e12f16e35fad01a532c5ab7543fe097ca891746e22db65",
+      "archived_bytes": 756,
+      "archived_sha256": "345741461ecb91dc06e1eb90b9747ff8711e4b6caf962c28da9798e663beda4c",
+      "selection": {
+        "kind": "context lines",
+        "line_numbers": [
+          119,
+          163,
+          535,
+          756,
+          761,
+          787,
+          790,
+          802,
+          812,
+          814,
+          818,
+          819,
+          822,
+          828
+        ]
+      },
+      "transformations": [
+        "ANSI CSI sequences removed",
+        "absolute local/environment path prefixes replaced with stable labels"
+      ]
+    }
+  ]
+}

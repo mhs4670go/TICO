@@ -1,0 +1,6 @@
+baseline 0 {'construct': 0.042025787000966375, 'inputs': 0.1421441970012438}
+baseline 1 {'construct': 0.04125148200091644, 'inputs': 0.14666057399813326}
+baseline 2 {'construct': 0.04274820999762596, 'inputs': 0.16161432199805859}
+after 0 {'construct': 0.0, 'inputs': 0.0}
+after 1 {'construct': 0.0, 'inputs': 0.0}
+after 2 {'construct': 0.0, 'inputs': 0.0}
